@@ -40,7 +40,9 @@ export class Toast {
     `;
 
     const closeBtn = toast.querySelector('button');
-    closeBtn.addEventListener('click', () => this.dismiss(toast));
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => this.dismiss(toast));
+    }
 
     this.container.appendChild(toast);
     requestAnimationFrame(() => {
