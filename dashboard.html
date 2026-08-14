@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="dashboard.title">لوحة تحكم الأداء وإدارة الأعمال - معيار | Meyar</title>
+
+  <!-- Anti-FOUC Early Theme & Language Execution -->
+  <script>
+    (function() {
+      try {
+        const theme = localStorage.getItem('meyar_theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        const lang = localStorage.getItem('meyar_lang') || 'ar';
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Typography & Compiled Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/output.css">
+</head>
+<body class="bg-canvas text-text-main min-h-screen flex flex-col antialiased selection:bg-brand-gold selection:text-white transition-colors duration-200 pb-16 lg:pb-0">
+
+  <!-- ================= GLOBAL TOPBAR ================= -->
+  <header class="sticky top-0 w-full border-b border-border-subtle bg-surface-1 z-30 shrink-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-4">
+      
+      <!-- Brand Identity -->
+      <a href="index.html" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-xl p-1 shrink-0" aria-label="Meyar Home">
+        <div class="w-10 h-10 rounded-xl bg-brand-gold flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="flex flex-col text-start">
+          <span class="font-extrabold text-lg sm:text-xl tracking-tight text-text-main flex items-center gap-1.5 leading-none">
+            معيار <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle uppercase">Meyar</span>
+          </span>
+          <span class="text-[10px] text-text-muted hidden md:inline-block mt-0.5" data-i18n="auth.brand_tagline">منصة الطهي الاحترافية وشبكة تجارة المستلزمات والمطاعم</span>
+        </div>
+      </a>
+
+      <!-- Global Search Bar Button Trigger -->
+      <button type="button" data-action="open-search" data-modal-target="search-modal"
+              class="hidden md:flex items-center justify-between w-60 lg:w-72 xl:w-80 px-3.5 py-2 text-xs sm:text-sm bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-muted transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+              aria-label="Search">
+        <span class="flex items-center gap-2.5 min-w-0">
+          <svg class="w-4 h-4 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+          <span class="truncate" data-i18n="search.placeholder">ابحث في الوصفات، الطهاة، التوريدات...</span>
+        </span>
+        <kbd class="hidden xl:inline-flex items-center px-2 py-0.5 text-[10px] font-mono font-semibold bg-surface-1 border border-border-subtle rounded text-text-muted shrink-0">Ctrl K</kbd>
+      </button>
+
+      <!-- Desktop Center Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5" aria-label="Main Navigation">
+        <a href="index.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.feed">خلاصة الاستكشاف</a>
+        <a href="explore.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.explore">استكشف وتصفح</a>
+        <a href="supplies.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.supplies">توريدات المطاعم</a>
+        <a href="courses.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.courses">دورات وورش عمل</a>
+        <a href="dashboard.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-bold text-brand-gold bg-surface-2 border border-border-subtle transition-colors" data-i18n="nav.dashboard">لوحة التحكم</a>
+      </nav>
+
+      <!-- Topbar Action Controls -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5">
+        
+        <!-- Mobile Search Button -->
+        <button type="button" data-action="open-search" data-modal-target="search-modal"
+                class="md:hidden p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                aria-label="Open Search">
+          <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+        </button>
+
+        <!-- Language Toggle -->
+        <button type="button" data-action="toggle-lang"
+                class="px-2.5 py-1.5 text-xs font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-main transition-colors flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                aria-label="Toggle language">
+          <svg class="w-3.5 h-3.5 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+            <path d="M2 12h20"/>
+          </svg>
+          <span class="lang-label font-bold text-[11px]">English</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button type="button" data-action="toggle-theme"
+                class="p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                aria-label="Toggle color theme">
+          <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+        </button>
+
+        <!-- Direct Messages / Negotiations -->
+        <a href="chat.html" class="p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors relative hidden sm:flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-gold"
+           aria-label="Messages">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+          </svg>
+          <span class="absolute top-1 end-1 w-2 h-2 rounded-full bg-brand-gold"></span>
+        </a>
+
+        <!-- Notifications -->
+        <a href="notifications.html" class="p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors relative hidden sm:flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-gold"
+           aria-label="Notifications">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+          </svg>
+          <span class="absolute top-1 end-1 w-2 h-2 rounded-full bg-brand-emerald"></span>
+        </a>
+
+        <!-- User Profile Dropdown Trigger -->
+        <div class="relative">
+          <button type="button" data-dropdown-trigger="user-menu-dropdown"
+                  class="flex items-center gap-2 p-1 bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                  aria-label="User account menu" aria-expanded="false">
+            <img id="topbar-user-avatar"
+                 src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=100&q=80"
+                 alt="Chef Faisal Al-Hashemi"
+                 class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg object-cover bg-surface-2">
+            <span class="hidden xl:inline-block text-xs font-bold text-text-main pe-1.5" id="topbar-user-name">شيف فيصل</span>
+            <svg class="w-3.5 h-3.5 text-text-muted hidden sm:inline-block me-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div id="user-menu-dropdown" data-dropdown class="hidden absolute end-0 mt-2 w-56 bg-surface-1 border border-border-subtle rounded-2xl shadow-2xl p-1.5 z-50 text-start">
+            <div class="px-3 py-2 border-b border-border-subtle mb-1 text-start">
+              <p class="text-xs font-bold text-text-main" id="dropdown-user-fullname">الشيف فيصل الهاشمي</p>
+              <p class="text-[10px] text-text-muted font-mono" id="dropdown-user-email">faisal@meyar.sa</p>
+            </div>
+            <a href="chef.html?id=chef-1" class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium text-text-main hover:bg-surface-2 transition-colors">
+              <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span data-i18n="nav.profile">ملفي الشخصي</span>
+            </a>
+            <a href="dashboard.html" class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold text-brand-gold bg-surface-2 border border-border-subtle">
+              <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+              <span data-i18n="nav.dashboard">لوحة التحكم</span>
+            </a>
+            <a href="create-recipe.html" class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium text-text-main hover:bg-surface-2 transition-colors">
+              <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+              <span data-i18n="nav.create_recipe">ابتكار وصفة جديدة</span>
+            </a>
+            <div class="border-t border-border-subtle my-1"></div>
+            <a href="auth.html" class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium text-red-500 hover:bg-surface-2 transition-colors">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              <span data-i18n="nav.logout">تسجيل الخروج</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Trigger -->
+        <button type="button" data-action="toggle-mobile-menu" data-target="mobile-drawer"
+                class="lg:hidden p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                aria-label="Toggle navigation drawer">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="12" x2="20" y2="12"/>
+            <line x1="4" y1="6" x2="20" y2="6"/>
+            <line x1="4" y1="18" x2="20" y2="18"/>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT CONTAINER ================= -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="flex items-center gap-2 text-xs text-text-muted" aria-label="Breadcrumb">
+      <a href="index.html" class="hover:text-text-main transition-colors" data-i18n="nav.feed">الرئيسية</a>
+      <svg class="w-3 h-3 shrink-0 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      <span class="text-text-main font-semibold" data-i18n="nav.dashboard">لوحة التحكم</span>
+    </nav>
+
+    <!-- ================= PAGE HEADER & QUICK ACTIONS ================= -->
+    <section class="bg-surface-1 border border-border-subtle rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+      
+      <!-- Title & Subtitle Info -->
+      <div class="space-y-2 text-start">
+        <div class="flex flex-wrap items-center gap-3">
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-text-main tracking-tight" data-i18n="dashboard.title">لوحة تحكم الأداء وإدارة الأعمال</h1>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-gold/15 text-brand-gold border border-brand-gold/30 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-brand-emerald animate-pulse"></span>
+            <span id="dashboard-user-role-label">حساب شيف ومورد موثق</span>
+          </span>
+        </div>
+        <p class="text-xs sm:text-sm text-text-muted max-w-2xl" data-i18n="dashboard.subtitle">
+          متابعة إحصائيات التفاعل، حركة الزوار، مبيعات التوريدات، وإدارة الوصفات والطلبات
+        </p>
+      </div>
+
+      <!-- Header Controls: Period Filter & Action Buttons -->
+      <div class="flex flex-wrap items-center gap-3 shrink-0">
+        
+        <!-- Metrics Period Selector -->
+        <div class="inline-flex p-1 bg-surface-2 border border-border-subtle rounded-2xl" role="group" aria-label="Metrics Period Filter">
+          <button type="button" data-period="7d" class="period-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-text-muted hover:text-text-main transition-colors" data-i18n="dashboard.period_7d">آخر 7 أيام</button>
+          <button type="button" data-period="30d" class="period-btn px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-brand-gold shadow-sm transition-colors" data-i18n="dashboard.period_30d">آخر 30 يوماً</button>
+          <button type="button" data-period="6m" class="period-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-text-muted hover:text-text-main transition-colors" data-i18n="dashboard.period_6m">آخر 6 أشهر</button>
+          <button type="button" data-period="1y" class="period-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-text-muted hover:text-text-main transition-colors" data-i18n="dashboard.period_1y">هذا العام</button>
+        </div>
+
+        <!-- Quick Action Buttons -->
+        <div class="flex items-center gap-2">
+          <!-- Create Recipe Button -->
+          <a href="create-recipe.html" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-brand-gold hover:bg-brand-gold-hover text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-95">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
+            <span data-i18n="dashboard.btn_create_recipe">ابتكار وصفة جديدة</span>
+          </a>
+
+          <!-- Add Supply Product Button -->
+          <button type="button" id="btn-open-add-supply" data-action="open-add-supply"
+                  class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-2xl bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-main text-xs sm:text-sm font-bold transition-all active:scale-95">
+            <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M12 11v6M9 14h6"/></svg>
+            <span data-i18n="dashboard.btn_add_supply">إضافة منتج توريد</span>
+          </button>
+
+          <!-- Export Report Button -->
+          <button type="button" id="btn-export-report" data-action="export-report"
+                  class="p-2.5 rounded-2xl bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-muted hover:text-text-main transition-colors"
+                  title="Export Performance Report" aria-label="Export Report">
+            <svg class="w-4 h-4 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= KPI METRICS SUMMARY GRID ================= -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6" aria-label="Key Performance Indicators">
+      
+      <!-- KPI Card 1: Views -->
+      <div class="bg-surface-1 border border-border-subtle rounded-3xl p-5 sm:p-6 shadow-sm hover:border-brand-gold/40 transition-colors flex flex-col justify-between space-y-4">
+        <div class="flex items-start justify-between">
+          <div class="space-y-1 text-start">
+            <span class="text-xs font-semibold text-text-muted" data-i18n="dashboard.kpi_views">مشاهدات الملف والوصفات</span>
+            <div class="text-2xl sm:text-3xl font-extrabold text-text-main tracking-tight font-mono" id="kpi-views-value">48,250</div>
+          </div>
+          <div class="w-12 h-12 rounded-2xl bg-brand-gold/15 text-brand-gold flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 pt-2 border-t border-border-subtle text-xs">
+          <span class="inline-flex items-center gap-1 font-bold text-brand-emerald bg-brand-emerald/15 px-2 py-0.5 rounded-lg font-mono" id="kpi-views-growth">
+            <svg class="w-3.5 h-3.5 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+            +18.4%
+          </span>
+          <span class="text-text-muted truncate" data-i18n="dashboard.growth">النمو مقارنة بالشهر السابق</span>
+        </div>
+      </div>
+
+      <!-- KPI Card 2: Impressions -->
+      <div class="bg-surface-1 border border-border-subtle rounded-3xl p-5 sm:p-6 shadow-sm hover:border-brand-gold/40 transition-colors flex flex-col justify-between space-y-4">
+        <div class="flex items-start justify-between">
+          <div class="space-y-1 text-start">
+            <span class="text-xs font-semibold text-text-muted" data-i18n="dashboard.kpi_impressions">الظهور الشهري الإجمالي</span>
+            <div class="text-2xl sm:text-3xl font-extrabold text-text-main tracking-tight font-mono" id="kpi-impressions-value">142,800</div>
+          </div>
+          <div class="w-12 h-12 rounded-2xl bg-brand-emerald/15 text-brand-emerald flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 6 12 12 16 14"/></svg>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 pt-2 border-t border-border-subtle text-xs">
+          <span class="inline-flex items-center gap-1 font-bold text-brand-emerald bg-brand-emerald/15 px-2 py-0.5 rounded-lg font-mono" id="kpi-impressions-growth">
+            <svg class="w-3.5 h-3.5 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+            +24.1%
+          </span>
+          <span class="text-text-muted truncate" data-i18n="dashboard.growth">النمو مقارنة بالشهر السابق</span>
+        </div>
+      </div>
+
+      <!-- KPI Card 3: RFQs -->
+      <div class="bg-surface-1 border border-border-subtle rounded-3xl p-5 sm:p-6 shadow-sm hover:border-brand-gold/40 transition-colors flex flex-col justify-between space-y-4">
+        <div class="flex items-start justify-between">
+          <div class="space-y-1 text-start">
+            <span class="text-xs font-semibold text-text-muted" data-i18n="dashboard.kpi_rfqs">طلبات التسعير النشطة (RFQ)</span>
+            <div class="text-2xl sm:text-3xl font-extrabold text-text-main tracking-tight font-mono" id="kpi-rfqs-value">38</div>
+          </div>
+          <div class="w-12 h-12 rounded-2xl bg-brand-gold/15 text-brand-gold flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 pt-2 border-t border-border-subtle text-xs">
+          <span class="inline-flex items-center gap-1 font-bold text-brand-emerald bg-brand-emerald/15 px-2 py-0.5 rounded-lg font-mono" id="kpi-rfqs-growth">
+            <svg class="w-3.5 h-3.5 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+            +12.5%
+          </span>
+          <span class="text-text-muted truncate" data-i18n="dashboard.growth">النمو مقارنة بالشهر السابق</span>
+        </div>
+      </div>
+
+      <!-- KPI Card 4: Revenue -->
+      <div class="bg-surface-1 border border-border-subtle rounded-3xl p-5 sm:p-6 shadow-sm hover:border-brand-gold/40 transition-colors flex flex-col justify-between space-y-4">
+        <div class="flex items-start justify-between">
+          <div class="space-y-1 text-start">
+            <span class="text-xs font-semibold text-text-muted" data-i18n="dashboard.kpi_revenue">حجم المعاملات التقديري</span>
+            <div class="text-2xl sm:text-3xl font-extrabold text-text-main tracking-tight font-mono" id="kpi-revenue-value">194,500 ر.س</div>
+          </div>
+          <div class="w-12 h-12 rounded-2xl bg-brand-emerald/15 text-brand-emerald flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 pt-2 border-t border-border-subtle text-xs">
+          <span class="inline-flex items-center gap-1 font-bold text-brand-emerald bg-brand-emerald/15 px-2 py-0.5 rounded-lg font-mono" id="kpi-revenue-growth">
+            <svg class="w-3.5 h-3.5 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+            +31.2%
+          </span>
+          <span class="text-text-muted truncate" data-i18n="dashboard.growth">النمو مقارنة بالشهر السابق</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Secondary Quick Stats Bar -->
+    <section class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="bg-surface-2 border border-border-subtle rounded-2xl p-3.5 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-surface-1 border border-border-subtle flex items-center justify-center text-brand-gold font-bold">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="text-start">
+          <p class="text-lg font-bold text-text-main font-mono leading-none" id="quick-recipes-count">24</p>
+          <p class="text-[11px] text-text-muted mt-0.5" data-i18n="dashboard.tab_recipes">الوصفات المنشورة</p>
+        </div>
+      </div>
+
+      <div class="bg-surface-2 border border-border-subtle rounded-2xl p-3.5 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-surface-1 border border-border-subtle flex items-center justify-center text-brand-gold font-bold">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+        </div>
+        <div class="text-start">
+          <p class="text-lg font-bold text-text-main font-mono leading-none" id="quick-supplies-count">14</p>
+          <p class="text-[11px] text-text-muted mt-0.5" data-i18n="dashboard.tab_supplies">منتجات التوريد</p>
+        </div>
+      </div>
+
+      <div class="bg-surface-2 border border-border-subtle rounded-2xl p-3.5 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-surface-1 border border-border-subtle flex items-center justify-center text-brand-emerald font-bold">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div class="text-start">
+          <p class="text-lg font-bold text-text-main font-mono leading-none" id="quick-rfqs-count">7</p>
+          <p class="text-[11px] text-text-muted mt-0.5" data-i18n="dashboard.tab_rfqs">طلبات بانتظار العرض</p>
+        </div>
+      </div>
+
+      <div class="bg-surface-2 border border-border-subtle rounded-2xl p-3.5 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-surface-1 border border-border-subtle flex items-center justify-center text-brand-gold font-bold">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="text-start">
+          <p class="text-lg font-bold text-text-main font-mono leading-none" id="quick-enrollments-count">42</p>
+          <p class="text-[11px] text-text-muted mt-0.5" data-i18n="dashboard.tab_enrollments">الطلاب المسجلين</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTERACTIVE SVG ANALYTICS CHARTS ================= -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6" aria-label="Visual Performance Analytics">
+      
+      <!-- Chart Card 1: Traffic & Impressions Line Chart -->
+      <div class="bg-surface-1 border border-border-subtle rounded-3xl p-6 shadow-sm space-y-4 flex flex-col justify-between">
+        
+        <!-- Chart Header -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-start">
+          <div>
+            <h2 class="text-base sm:text-lg font-extrabold text-text-main" data-i18n="dashboard.chart_traffic_title">حركة الزوار ومعدل الظهور الشهري</h2>
+            <p class="text-xs text-text-muted mt-0.5" data-i18n="dashboard.chart_traffic_subtitle">مقارنة المشاهدات التفاعلية ومعدل ظهور المحتوى</p>
+          </div>
+
+          <!-- Chart Legend -->
+          <div class="flex items-center gap-3 text-xs shrink-0">
+            <span class="inline-flex items-center gap-1.5 text-text-muted font-medium">
+              <span class="w-3 h-3 rounded-full bg-brand-gold"></span>
+              <span data-i18n="dashboard.views_legend">المشاهدات</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-text-muted font-medium">
+              <span class="w-3 h-3 rounded-full bg-brand-emerald"></span>
+              <span data-i18n="dashboard.impressions_legend">الظهور</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- SVG Line Chart Canvas Wrapper -->
+        <div class="relative w-full h-64 sm:h-72 bg-surface-2 rounded-2xl p-3 border border-border-subtle overflow-hidden flex items-center justify-center" id="traffic-chart-wrapper">
+          <div id="dashboard-traffic-chart" class="w-full h-full">
+            <!-- Dynamic SVG generated by DashboardPage -->
+          </div>
+          <!-- Floating Interactive Hover Tooltip -->
+          <div id="traffic-chart-tooltip" class="hidden absolute pointer-events-none bg-surface-1 border border-border-subtle rounded-xl p-2.5 shadow-xl text-xs space-y-1 z-20 transition-all text-start">
+            <div class="font-bold text-text-main" id="traffic-tooltip-month">الشهر</div>
+            <div class="flex items-center justify-between gap-4 text-[11px] text-text-muted">
+              <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-brand-gold"></span> <span data-i18n="dashboard.views_legend">المشاهدات</span>:</span>
+              <span class="font-bold font-mono text-text-main" id="traffic-tooltip-views">0</span>
+            </div>
+            <div class="flex items-center justify-between gap-4 text-[11px] text-text-muted">
+              <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-brand-emerald"></span> <span data-i18n="dashboard.impressions_legend">الظهور</span>:</span>
+              <span class="font-bold font-mono text-text-main" id="traffic-tooltip-impressions">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-[11px] text-text-muted pt-1">
+          <span>* إحصائيات دقيقة محدثة يومياً من خوادم شبكة معيار</span>
+          <span class="font-mono font-semibold text-brand-gold">+18.4% نمو إجمالي</span>
+        </div>
+      </div>
+
+      <!-- Chart Card 2: Commercial Revenue & RFQ Bar Chart -->
+      <div class="bg-surface-1 border border-border-subtle rounded-3xl p-6 shadow-sm space-y-4 flex flex-col justify-between">
+        
+        <!-- Chart Header -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-start">
+          <div>
+            <h2 class="text-base sm:text-lg font-extrabold text-text-main" data-i18n="dashboard.chart_revenue_title">حجم الإيرادات وعقود التوريد التجاري</h2>
+            <p class="text-xs text-text-muted mt-0.5" data-i18n="dashboard.chart_revenue_subtitle">العائدات التقديرية (ر.س) وطلبات عروض الأسعار</p>
+          </div>
+
+          <!-- Chart Legend -->
+          <div class="flex items-center gap-3 text-xs shrink-0">
+            <span class="inline-flex items-center gap-1.5 text-text-muted font-medium">
+              <span class="w-3 h-3 rounded-full bg-brand-gold"></span>
+              <span data-i18n="dashboard.revenue_legend">الإيرادات</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-text-muted font-medium">
+              <span class="w-3 h-3 rounded-full bg-brand-emerald"></span>
+              <span data-i18n="dashboard.rfqs_legend">الطلبات</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- SVG Bar Chart Canvas Wrapper -->
+        <div class="relative w-full h-64 sm:h-72 bg-surface-2 rounded-2xl p-3 border border-border-subtle overflow-hidden flex items-center justify-center" id="revenue-chart-wrapper">
+          <div id="dashboard-revenue-chart" class="w-full h-full">
+            <!-- Dynamic SVG generated by DashboardPage -->
+          </div>
+          <!-- Floating Interactive Hover Tooltip -->
+          <div id="revenue-chart-tooltip" class="hidden absolute pointer-events-none bg-surface-1 border border-border-subtle rounded-xl p-2.5 shadow-xl text-xs space-y-1 z-20 transition-all text-start">
+            <div class="font-bold text-text-main" id="revenue-tooltip-month">الشهر</div>
+            <div class="flex items-center justify-between gap-4 text-[11px] text-text-muted">
+              <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-brand-gold"></span> <span data-i18n="dashboard.revenue_legend">الإيرادات</span>:</span>
+              <span class="font-bold font-mono text-text-main" id="revenue-tooltip-rev">0 ر.س</span>
+            </div>
+            <div class="flex items-center justify-between gap-4 text-[11px] text-text-muted">
+              <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-brand-emerald"></span> <span data-i18n="dashboard.rfqs_legend">الطلبات</span>:</span>
+              <span class="font-bold font-mono text-text-main" id="revenue-tooltip-rfqs">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-[11px] text-text-muted pt-1">
+          <span>* المبالغ مقدّرة بالريال السعودي شاملة ضريبة القيمة المضافة</span>
+          <span class="font-mono font-semibold text-brand-emerald">+31.2% نمو الإيرادات</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= TABBED MANAGEMENT TABLES SECTION ================= -->
+    <section class="bg-surface-1 border border-border-subtle rounded-3xl p-6 sm:p-8 shadow-sm space-y-6" aria-label="Management Tables">
+      
+      <!-- Table Controls Bar: Tabs, Search & Status Filters -->
+      <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-2 border-b border-border-subtle">
+        
+        <!-- Tab Navigation Buttons -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-2 xl:pb-0 scrollbar-none" role="tablist" aria-label="Dashboard Management Tabs">
+          
+          <!-- Recipes Tab -->
+          <button type="button" role="tab" id="tab-btn-recipes" data-tab="recipes" aria-selected="true"
+                  class="dashboard-tab-btn px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold bg-brand-gold text-white shadow-md transition-all flex items-center gap-2 shrink-0">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span data-i18n="dashboard.tab_recipes">إدارة الوصفات</span>
+            <span class="tab-counter px-2 py-0.5 rounded-full text-[10px] font-mono bg-white/20 text-white" id="badge-count-recipes">0</span>
+          </button>
+
+          <!-- B2B Supplies Tab -->
+          <button type="button" role="tab" id="tab-btn-supplies" data-tab="supplies" aria-selected="false"
+                  class="dashboard-tab-btn px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold text-text-muted hover:text-text-main hover:bg-surface-2 transition-all flex items-center gap-2 shrink-0">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+            <span data-i18n="dashboard.tab_supplies">كتالوج التوريدات</span>
+            <span class="tab-counter px-2 py-0.5 rounded-full text-[10px] font-mono bg-surface-2 text-text-muted" id="badge-count-supplies">0</span>
+          </button>
+
+          <!-- RFQ Quotes Tab -->
+          <button type="button" role="tab" id="tab-btn-rfqs" data-tab="rfqs" aria-selected="false"
+                  class="dashboard-tab-btn px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold text-text-muted hover:text-text-main hover:bg-surface-2 transition-all flex items-center gap-2 shrink-0">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-i18n="dashboard.tab_rfqs">عروض وطلبات الأسعار</span>
+            <span class="tab-counter px-2 py-0.5 rounded-full text-[10px] font-mono bg-surface-2 text-text-muted" id="badge-count-rfqs">0</span>
+          </button>
+
+          <!-- Enrollments Tab -->
+          <button type="button" role="tab" id="tab-btn-enrollments" data-tab="enrollments" aria-selected="false"
+                  class="dashboard-tab-btn px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold text-text-muted hover:text-text-main hover:bg-surface-2 transition-all flex items-center gap-2 shrink-0">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <span data-i18n="dashboard.tab_enrollments">تسجيلات الورش والطلاب</span>
+            <span class="tab-counter px-2 py-0.5 rounded-full text-[10px] font-mono bg-surface-2 text-text-muted" id="badge-count-enrollments">0</span>
+          </button>
+
+        </div>
+
+        <!-- Search & Filter Controls -->
+        <div class="flex flex-wrap items-center gap-3">
+          
+          <!-- Table Search Input -->
+          <div class="relative flex-1 sm:w-64 min-w-[200px]">
+            <svg class="w-4 h-4 text-brand-gold absolute start-3.5 top-1/2 -translate-y-1/2 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="dashboard-table-search" data-dashboard-search
+                   placeholder="بحث في العناصر والبيانات..."
+                   class="w-full ps-10 pe-3.5 py-2 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-2xl text-text-main placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold transition-colors">
+          </div>
+
+          <!-- Table Status Filter Dropdown -->
+          <div class="relative shrink-0">
+            <select id="dashboard-status-filter" data-dashboard-filter
+                    class="appearance-none bg-surface-2 border border-border-subtle rounded-2xl ps-4 pe-8 py-2 text-xs sm:text-sm font-medium text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold cursor-pointer transition-colors"
+                    aria-label="Filter Table by Status">
+              <option value="all" data-i18n="dashboard.filter_all_status">كافة الحالات</option>
+              <option value="published" data-i18n="dashboard.status_published">منشورة</option>
+              <option value="draft" data-i18n="dashboard.status_draft">مسودة</option>
+              <option value="active" data-i18n="dashboard.status_active">نشط</option>
+              <option value="paused" data-i18n="dashboard.status_paused">متوقف</option>
+              <option value="pending" data-i18n="dashboard.status_pending">قيد المراجعة</option>
+              <option value="quoted" data-i18n="dashboard.status_quoted">تم التسعير</option>
+              <option value="accepted" data-i18n="dashboard.status_accepted">مقبول</option>
+            </select>
+            <svg class="w-3.5 h-3.5 text-text-muted absolute end-3 top-1/2 -translate-y-1/2 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Management Table Container -->
+      <div class="overflow-x-auto rounded-2xl border border-border-subtle bg-surface-1" id="dashboard-table-wrapper">
+        <div id="dashboard-table-container">
+          <!-- Dynamic Table Content Rendered by DashboardPage -->
+        </div>
+      </div>
+
+      <!-- Table Pagination & Items Count Bar -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 text-xs text-text-muted">
+        <div id="dashboard-items-summary" class="font-medium">
+          <!-- Showing X of Y items -->
+          عرض 1-10 من إجمالي 24 عنصر
+        </div>
+        <div class="flex items-center gap-2 self-end sm:self-auto">
+          <button type="button" id="btn-table-prev" class="p-2 bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-muted hover:text-text-main disabled:opacity-50 disabled:cursor-not-allowed transition-colors" aria-label="Previous page">
+            <svg class="w-4 h-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <span class="px-3 py-1 font-mono font-bold text-text-main bg-surface-2 rounded-xl border border-border-subtle" id="table-page-indicator">1 / 1</span>
+          <button type="button" id="btn-table-next" class="p-2 bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-muted hover:text-text-main disabled:opacity-50 disabled:cursor-not-allowed transition-colors" aria-label="Next page">
+            <svg class="w-4 h-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================= MODAL: ADD B2B SUPPLY PRODUCT ================= -->
+  <div id="modal-add-supply" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-add-supply-title">
+    <div class="fixed inset-0 bg-black/80" data-modal-close="modal-add-supply"></div>
+    <div class="relative w-full max-w-2xl bg-surface-1 border border-border-subtle rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]">
+      
+      <!-- Modal Header -->
+      <div class="p-5 sm:p-6 border-b border-border-subtle flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M12 11v6M9 14h6"/></svg>
+          </div>
+          <div class="text-start">
+            <h3 id="modal-add-supply-title" class="text-lg font-bold text-text-main" data-i18n="dashboard.btn_add_supply">إضافة منتج توريد جديد</h3>
+            <p class="text-xs text-text-muted">أضف منتجك أو معدتك التجارية لكتالوج توريدات منصة معيار</p>
+          </div>
+        </div>
+        <button type="button" data-modal-close="modal-add-supply" class="p-2 text-text-muted hover:text-text-main rounded-xl hover:bg-surface-2 transition-colors" aria-label="Close dialog">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Modal Form Body -->
+      <form id="form-add-supply" class="p-5 sm:p-6 space-y-4 overflow-y-auto flex-1 text-start">
+        
+        <!-- Product Name (AR & EN) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1.5">
+            <label for="supply-input-name-ar" class="text-xs font-bold text-text-main">اسم المنتج بالعربية *</label>
+            <input type="text" id="supply-input-name-ar" required placeholder="مثال: قطاعة خضروات حلزونية تجارية"
+                   class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          </div>
+          <div class="space-y-1.5">
+            <label for="supply-input-name-en" class="text-xs font-bold text-text-main">Product Name in English *</label>
+            <input type="text" id="supply-input-name-en" required placeholder="e.g. Commercial Spiral Vegetable Cutter"
+                   class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          </div>
+        </div>
+
+        <!-- Category & Price -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="space-y-1.5">
+            <label for="supply-input-category" class="text-xs font-bold text-text-main" data-i18n="supplies.filter_category">التصنيف التجاري</label>
+            <select id="supply-input-category" class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+              <option value="heavy_equipment">معدات المطابخ الثقيلة</option>
+              <option value="knives">سكاكين وأدوات القطع</option>
+              <option value="bulk_ingredients">مكونات خام بالجملة</option>
+              <option value="packaging">حلول التغليف المستدام</option>
+            </select>
+          </div>
+          <div class="space-y-1.5">
+            <label for="supply-input-price" class="text-xs font-bold text-text-main">السعر التقديري (ر.س) *</label>
+            <input type="number" id="supply-input-price" required min="1" step="0.5" placeholder="1250"
+                   class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main font-mono placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          </div>
+          <div class="space-y-1.5">
+            <label for="supply-input-moq" class="text-xs font-bold text-text-main">الحد الأدنى للطلب (MOQ)</label>
+            <input type="number" id="supply-input-moq" min="1" value="1"
+                   class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main font-mono focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          </div>
+        </div>
+
+        <!-- Stock Count & Lead Time -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1.5">
+            <label for="supply-input-stock" class="text-xs font-bold text-text-main">الكمية المتوفرة بالمخزن</label>
+            <input type="number" id="supply-input-stock" min="0" value="15"
+                   class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main font-mono focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          </div>
+          <div class="space-y-1.5">
+            <label for="supply-input-leadtime" class="text-xs font-bold text-text-main" data-i18n="supplies.lead_time">مدة التوريد المتوقعة</label>
+            <input type="text" id="supply-input-leadtime" value="3 إلى 5 أيام عمل" placeholder="3 إلى 5 أيام عمل"
+                   class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="space-y-1.5">
+          <label for="supply-input-desc" class="text-xs font-bold text-text-main">الوصف والمواصفات الفنية</label>
+          <textarea id="supply-input-desc" rows="3" placeholder="مواصفات الفولاذ المقاوم للصدأ والجهد الكهربائي..."
+                    class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold"></textarea>
+        </div>
+
+        <!-- Image URL -->
+        <div class="space-y-1.5">
+          <label for="supply-input-image" class="text-xs font-bold text-text-main">رابط صورة المنتج (URL)</label>
+          <input type="url" id="supply-input-image" value="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=800&q=80"
+                 class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main font-mono placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold">
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center justify-end gap-3 pt-4 border-t border-border-subtle">
+          <button type="button" data-modal-close="modal-add-supply" class="px-4 py-2.5 rounded-xl bg-surface-2 hover:bg-surface-1 border border-border-subtle text-xs font-semibold text-text-muted hover:text-text-main transition-colors">
+            إلغاء
+          </button>
+          <button type="submit" class="px-5 py-2.5 rounded-xl bg-brand-gold hover:bg-brand-gold-hover text-white text-xs font-bold shadow-md transition-all active:scale-95">
+            حفظ وإضافة للكتالوج
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: RFQ QUOTATION RESPONSE ================= -->
+  <div id="modal-rfq-response" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-rfq-title">
+    <div class="fixed inset-0 bg-black/80" data-modal-close="modal-rfq-response"></div>
+    <div class="relative w-full max-w-xl bg-surface-1 border border-border-subtle rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]">
+      
+      <!-- Modal Header -->
+      <div class="p-5 sm:p-6 border-b border-border-subtle flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-brand-emerald/15 text-brand-emerald flex items-center justify-center">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="text-start">
+            <h3 id="modal-rfq-title" class="text-lg font-bold text-text-main">تقديم عرض سعر (RFQ Response)</h3>
+            <p class="text-xs text-text-muted" id="modal-rfq-id-subtitle">طلب تسعير #RFQ-9801</p>
+          </div>
+        </div>
+        <button type="button" data-modal-close="modal-rfq-response" class="p-2 text-text-muted hover:text-text-main rounded-xl hover:bg-surface-2 transition-colors" aria-label="Close dialog">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Modal RFQ Details & Response Form -->
+      <form id="form-rfq-response" class="p-5 sm:p-6 space-y-4 overflow-y-auto flex-1 text-start">
+        
+        <!-- RFQ Details Box -->
+        <div class="p-4 rounded-2xl bg-surface-2 border border-border-subtle space-y-2">
+          <div class="flex justify-between items-center text-xs">
+            <span class="text-text-muted">الجهة الطالبة:</span>
+            <span class="font-bold text-text-main" id="rfq-detail-client">شركة مطاعم لوسيل الفاخرة</span>
+          </div>
+          <div class="flex justify-between items-center text-xs">
+            <span class="text-text-muted">الصنف المطلوب:</span>
+            <span class="font-bold text-text-main" id="rfq-detail-item">عجانة حلزونية 50 لتر</span>
+          </div>
+          <div class="flex justify-between items-center text-xs">
+            <span class="text-text-muted">الكمية المطلوبة:</span>
+            <span class="font-bold text-text-main font-mono" id="rfq-detail-qty">3 وحدات</span>
+          </div>
+          <div class="flex justify-between items-center text-xs">
+            <span class="text-text-muted">مدينة التوصيل:</span>
+            <span class="font-bold text-text-main" id="rfq-detail-dest">الرياض - حي الملز</span>
+          </div>
+        </div>
+
+        <input type="hidden" id="rfq-response-target-id" value="">
+
+        <!-- Quote Input Fields -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1.5">
+            <label for="rfq-input-unit-price" class="text-xs font-bold text-text-main">سعر الوحدة المقترح (ر.س) *</label>
+            <input type="number" id="rfq-input-unit-price" required min="1" step="0.5" placeholder="13800"
+                   class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main font-mono placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          </div>
+          <div class="space-y-1.5">
+            <label for="rfq-input-leadtime" class="text-xs font-bold text-text-main">مدة التوصيل المضمونة *</label>
+            <input type="text" id="rfq-input-leadtime" required value="4 أيام عمل"
+                   class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          </div>
+        </div>
+
+        <!-- Supplier Terms & Commercial Notes -->
+        <div class="space-y-1.5">
+          <label for="rfq-input-notes" class="text-xs font-bold text-text-main">شروط التوريد والضمان</label>
+          <textarea id="rfq-input-notes" rows="2" placeholder="العرض يشمل التوصيل والتركيب وضمان سنتين صيانة مجانية..."
+                    class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold"></textarea>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center justify-end gap-3 pt-4 border-t border-border-subtle">
+          <button type="button" data-modal-close="modal-rfq-response" class="px-4 py-2.5 rounded-xl bg-surface-2 hover:bg-surface-1 border border-border-subtle text-xs font-semibold text-text-muted hover:text-text-main transition-colors">
+            إلغاء
+          </button>
+          <button type="submit" class="px-5 py-2.5 rounded-xl bg-brand-emerald hover:bg-brand-emerald-hover text-white text-xs font-bold shadow-md transition-all active:scale-95">
+            إرسال عرض السعر للعميل
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: DELETE CONFIRMATION ================= -->
+  <div id="modal-delete-confirm" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-delete-title">
+    <div class="fixed inset-0 bg-black/80" data-modal-close="modal-delete-confirm"></div>
+    <div class="relative w-full max-w-md bg-surface-1 border border-border-subtle rounded-3xl shadow-2xl overflow-hidden z-10 p-6 space-y-4 text-start">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-red-500/15 text-red-500 flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+        </div>
+        <div>
+          <h3 id="modal-delete-title" class="text-base font-bold text-text-main">تأكيد عملية الحذف</h3>
+          <p class="text-xs text-text-muted">هل أنت متأكد من رغبتك في حذف هذا العنصر؟</p>
+        </div>
+      </div>
+      <p class="text-xs text-text-muted bg-surface-2 p-3 rounded-xl border border-border-subtle" id="modal-delete-item-name">
+        العنصر المحدد
+      </p>
+      <input type="hidden" id="delete-target-id" value="">
+      <input type="hidden" id="delete-target-type" value="">
+      <div class="flex items-center justify-end gap-3 pt-2">
+        <button type="button" data-modal-close="modal-delete-confirm" class="px-4 py-2 rounded-xl bg-surface-2 hover:bg-surface-1 border border-border-subtle text-xs font-semibold text-text-muted hover:text-text-main transition-colors">
+          إلغاء
+        </button>
+        <button type="button" id="btn-confirm-delete" class="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-md transition-all">
+          حذف نهائي
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= GLOBAL SEARCH MODAL ================= -->
+  <div id="search-modal" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 p-4" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+    <div class="fixed inset-0 bg-black/80" data-modal-close="search-modal"></div>
+    <div class="relative w-full max-w-2xl bg-surface-1 border border-border-subtle rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[80vh]">
+      <div class="p-4 border-b border-border-subtle flex items-center gap-3">
+        <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="global-search-input"
+               placeholder="ابحث في معيار (وصفات، طهاة، توريدات، دورات)..."
+               class="w-full bg-transparent text-sm sm:text-base text-text-main placeholder-text-muted outline-none border-none">
+        <button type="button" data-modal-close="search-modal" class="p-1 text-text-muted hover:text-text-main rounded-lg" aria-label="Close search">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div id="global-search-results" class="p-4 overflow-y-auto space-y-2 flex-1 divide-y divide-border-subtle">
+        <!-- Instant search results -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MOBILE NAVIGATION DRAWER ================= -->
+  <div id="mobile-drawer" data-mobile-drawer class="hidden fixed inset-y-0 start-0 w-72 bg-surface-1 border-e border-border-subtle z-50 p-5 flex flex-col justify-between shadow-2xl overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between pb-4 border-b border-border-subtle">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-brand-gold flex items-center justify-center text-white font-bold">M</div>
+          <span class="font-extrabold text-base text-text-main">معيار Meyar</span>
+        </div>
+        <button type="button" data-action="close-mobile-menu" data-target="mobile-drawer" class="p-1.5 text-text-muted hover:text-text-main rounded-lg" aria-label="Close drawer">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <nav class="py-4 space-y-1.5" aria-label="Mobile Navigation">
+        <a href="index.html" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium text-text-main hover:bg-surface-2 transition-colors">
+          <svg class="w-5 h-5 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span data-i18n="nav.feed">خلاصة الاستكشاف</span>
+        </a>
+        <a href="explore.html" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium text-text-main hover:bg-surface-2 transition-colors">
+          <svg class="w-5 h-5 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          <span data-i18n="nav.explore">استكشف وتصفح</span>
+        </a>
+        <a href="create-recipe.html" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium text-text-main hover:bg-surface-2 transition-colors">
+          <svg class="w-5 h-5 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          <span data-i18n="nav.create_recipe">ابتكار وصفة</span>
+        </a>
+        <a href="supplies.html" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium text-text-main hover:bg-surface-2 transition-colors">
+          <svg class="w-5 h-5 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+          <span data-i18n="nav.supplies">توريدات المطاعم</span>
+        </a>
+        <a href="courses.html" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium text-text-main hover:bg-surface-2 transition-colors">
+          <svg class="w-5 h-5 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span data-i18n="nav.courses">دورات وورش عمل</span>
+        </a>
+        <a href="dashboard.html" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-bold text-brand-gold bg-surface-2 border border-border-subtle">
+          <svg class="w-5 h-5 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+          <span data-i18n="nav.dashboard">لوحة التحكم</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="pt-4 border-t border-border-subtle space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" data-action="toggle-lang" class="px-3 py-2 text-xs font-semibold bg-surface-2 text-text-main border border-border-subtle rounded-xl flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <span class="lang-label">English</span>
+        </button>
+        <button type="button" data-action="toggle-theme" class="p-2 bg-surface-2 text-brand-gold border border-border-subtle rounded-xl">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+      </div>
+      <a href="auth.html" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 text-xs font-bold text-red-500 bg-surface-2 border border-border-subtle rounded-xl">
+        <span data-i18n="nav.logout">تسجيل الخروج</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ================= MOBILE FIXED BOTTOM NAVIGATION BAR ================= -->
+  <nav class="fixed bottom-0 start-0 end-0 bg-surface-1 border-t border-border-subtle z-40 lg:hidden flex items-center justify-around py-2 px-3 shadow-lg" aria-label="Mobile Bottom Navigation">
+    <a href="index.html" class="flex flex-col items-center gap-1 text-text-muted hover:text-text-main p-1" aria-label="Home Feed">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <span class="text-[10px] font-medium" data-i18n="nav.feed">الرئيسية</span>
+    </a>
+
+    <a href="explore.html" class="flex flex-col items-center gap-1 text-text-muted hover:text-text-main p-1" aria-label="Explore">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      <span class="text-[10px] font-medium" data-i18n="nav.explore">استكشف</span>
+    </a>
+
+    <a href="create-recipe.html" class="flex items-center justify-center w-11 h-11 -mt-4 rounded-2xl bg-brand-gold hover:bg-brand-gold-hover text-white shadow-lg border-2 border-surface-1 transition-transform active:scale-95" aria-label="Create Recipe">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+    </a>
+
+    <a href="supplies.html" class="flex flex-col items-center gap-1 text-text-muted hover:text-text-main p-1" aria-label="Supplies">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+      <span class="text-[10px] font-medium" data-i18n="nav.supplies">توريدات</span>
+    </a>
+
+    <a href="dashboard.html" class="flex flex-col items-center gap-1 text-brand-gold p-1" aria-label="Dashboard">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+      <span class="text-[10px] font-bold" data-i18n="nav.dashboard">لوحتي</span>
+    </a>
+  </nav>
+
+  <!-- ================= GLOBAL TOAST CONTAINER ================= -->
+  <div id="toast-container" class="fixed bottom-20 lg:bottom-6 start-4 end-4 sm:start-auto sm:end-6 z-50 flex flex-col gap-2 pointer-events-none" aria-live="polite"></div>
+
+  <!-- ================= GLOBAL FOOTER ================= -->
+  <footer class="mt-auto border-t border-border-subtle bg-surface-1 py-8 text-center text-xs text-text-muted">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded-lg bg-brand-gold flex items-center justify-center text-white font-bold text-xs">M</div>
+        <span class="font-bold text-text-main">معيار Meyar © 2026</span>
+      </div>
+      <p data-i18n="auth.brand_tagline">منصة الطهي الاحترافية وشبكة تجارة المستلزمات والمطاعم</p>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-text-main transition-colors" data-i18n="nav.feed">خلاصة الاستكشاف</a>
+        <a href="explore.html" class="hover:text-text-main transition-colors" data-i18n="nav.explore">استكشف</a>
+        <a href="supplies.html" class="hover:text-text-main transition-colors" data-i18n="nav.supplies">التوريدات</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Scripts -->
+  <script type="module" src="./js/app.js"></script>
+  <script type="module" src="./js/pages/dashboard.js"></script>
+</body>
+</html>
