@@ -303,6 +303,7 @@ export const translations = {
     'chef.awards': 'الجوائز والتكريمات الدولية',
     'chef.signature_dishes': 'الأطباق المميزة والتوقيع',
     'chef.restaurants': 'المطاعم والخبرات السابقة',
+    'chef.follow': 'متابعة الشيف',
 
     // Creator & Supplier Dashboard
     'dashboard.title': 'لوحة تحكم الأداء وإدارة الأعمال',
@@ -453,6 +454,7 @@ export const translations = {
     'settings.cr_number': 'رقم السجل التجاري (CR)',
     'settings.vat_number': 'الرقم الضريبي (VAT)',
     'settings.business_category': 'تصنيف النشاط التجاري',
+    'settings.business_desc': 'إدارة بيانات المنشأة التجارية ومعلومات السجل التجاري والضريبة.',
     'settings.save_success': 'تم حفظ وتحديث الإعدادات بنجاح!',
     'settings.passwords_mismatch': 'كلمتا المرور غير متطابقتين',
     'settings.discard_changes': 'تراجع عن التعديلات',
@@ -524,10 +526,12 @@ export const translations = {
     'explore.empty_title': 'لم يتم العثور على نتائج',
     'explore.empty_desc': 'جرب استخدام كلمات بحث مختلفة أو تغيير التصنيف المحدد.',
     'explore.reset_filters': 'إعادة ضبط البحث والتصنيفات',
+    'explore.view_all': 'عرض جميع الوصفات',
 
     // Global Search Modal
     'search.placeholder': 'ابحث في الوصفات، الطهاة، التوريدات، والدورات...',
     'search.type_prompt': 'اكتب حرفين على الأقل للبحث الفوري...',
+    'search.type_to_search': 'اكتب للبحث في المنصة...',
     'search.no_results': 'لم يتم العثور على نتائج مطابقة لطلب البحث',
     'search.chefs': 'الطهاة',
     'search.recipes': 'الوصفات',
@@ -867,6 +871,7 @@ export const translations = {
     'chef.awards': 'Awards & International Honors',
     'chef.signature_dishes': 'Signature Creations',
     'chef.restaurants': 'Affiliated Kitchens & Experience',
+    'chef.follow': 'Follow Chef',
 
     // Creator & Supplier Dashboard
     'dashboard.title': 'Performance & Business Dashboard',
@@ -1017,6 +1022,7 @@ export const translations = {
     'settings.cr_number': 'Commercial Registration (CR)',
     'settings.vat_number': 'VAT Registration Number',
     'settings.business_category': 'Commercial Business Category',
+    'settings.business_desc': 'Manage commercial business details, CR number, and VAT registry.',
     'settings.save_success': 'Settings updated successfully!',
     'settings.passwords_mismatch': 'Passwords do not match',
     'settings.discard_changes': 'Discard Changes',
@@ -1088,10 +1094,12 @@ export const translations = {
     'explore.empty_title': 'No matching results found',
     'explore.empty_desc': 'Try adjusting your search terms or selecting a different category.',
     'explore.reset_filters': 'Reset Search & Filters',
+    'explore.view_all': 'View All Recipes',
 
     // Global Search Modal
     'search.placeholder': 'Search recipes, chefs, supplies, masterclasses...',
     'search.type_prompt': 'Type at least 2 characters to search instantly...',
+    'search.type_to_search': 'Type to search platform...',
     'search.no_results': 'No matching culinary results found',
     'search.chefs': 'Chefs',
     'search.recipes': 'Recipes',

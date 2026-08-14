@@ -11,6 +11,7 @@
 **Spec:** `docs/superpowers/specs/2026-08-15-meyar-platform-design.md`
 
 ## Global Constraints
+
 - **100% Solid Surfaces:** Strictly zero glassmorphism, zero `backdrop-blur`, and zero semi-transparent background hacks.
 - **Strict CSS Logical Properties:** Exclusively use `ms-*`, `me-*`, `ps-*`, `pe-*`, `start-*`, `end-*`, `text-start`, `text-end`, `border-s`, `border-e`. No physical `left` or `right` utility classes.
 - **Bilingual Engine:** Arabic (`dir="rtl"`, Cairo font) and English (`dir="ltr"`, Inter font) dynamic switching without full page reloads.
@@ -22,11 +23,13 @@
 ### Task 1: Project Setup & Tailwind CSS v4 Toolchain
 
 **Files:**
+
 - Create: `package.json`
 - Create: `css/input.css`
 - Produce: `css/output.css`
 
 **Interfaces:**
+
 - Produces: Compiled stylesheet `css/output.css` containing solid color tokens (`bg-canvas`, `bg-surface-1`, `bg-surface-2`, `border-border-subtle`, `text-text-main`, `text-text-muted`, `text-brand-gold`, `bg-brand-gold`, `bg-brand-emerald`, `font-arabic`, `font-english`).
 
 - [ ] **Step 1: Create `package.json` with build scripts and dependencies**
@@ -145,11 +148,13 @@ git commit -m "chore: initialize Tailwind v4 build system with solid color token
 ### Task 2: Core Infrastructure (Theme Manager, Anti-FOUC, Toasts & Modals)
 
 **Files:**
+
 - Create: `js/core/theme.js`
 - Create: `js/core/toast.js`
 - Create: `js/core/modal.js`
 
 **Interfaces:**
+
 - Produces:
   - `ThemeManager`: `{ getTheme(), setTheme(theme), toggleTheme(), init() }`
   - `Toast`: `{ show({ title, message, type, duration }), success(msg), error(msg), info(msg) }`
@@ -370,10 +375,12 @@ git commit -m "feat(core): implement ThemeManager, Toast, and Modal systems"
 ### Task 3: Bilingual Engine & Complete Translation Dictionary
 
 **Files:**
+
 - Create: `js/data/translations.js`
 - Create: `js/core/i18n.js`
 
 **Interfaces:**
+
 - Produces:
   - `translations`: Comprehensive `{ ar: {...}, en: {...} }` dictionary.
   - `I18n`: `{ getLang(), setLang(lang), t(key), translatePage(), init() }`
@@ -381,6 +388,7 @@ git commit -m "feat(core): implement ThemeManager, Toast, and Modal systems"
 - [ ] **Step 1: Write `js/data/translations.js` with 150+ UI keys**
 
 Create rich bilingual translations covering:
+
 - Navigation: `nav.feed`, `nav.explore`, `nav.recipes`, `nav.supplies`, `nav.courses`, `nav.dashboard`, `nav.chat`, `nav.notifications`, `nav.settings`, `nav.create_recipe`, `nav.auth_login`, `nav.auth_register`.
 - Roles: `role.chef`, `role.enthusiast`, `role.supplier`, `role.chef_desc`, `role.enthusiast_desc`, `role.supplier_desc`.
 - Actions: `btn.save`, `btn.saved`, `btn.like`, `btn.share`, `btn.follow`, `btn.following`, `btn.rfq_request`, `btn.enroll`, `btn.publish`, `btn.draft`, `btn.send_message`.
@@ -493,15 +501,18 @@ git commit -m "feat(i18n): implement bilingual engine and translation dictionari
 ### Task 4: Rich Culinary Mock Dataset
 
 **Files:**
+
 - Create: `js/data/mock-data.js`
 
 **Interfaces:**
+
 - Produces:
   - `MOCK_DATA`: `{ chefs, recipes, supplies, courses, chats, notifications, stats }`
 
 - [ ] **Step 1: Write `js/data/mock-data.js`**
 
 Include:
+
 - 6 detailed Chef profiles with bilingual bios, awards (Michelin / Bocuse d'Or), verified status, followers.
 - 8 gourmet Recipes with structured ingredient objects (amount, unit, name_ar, name_en, notes), step-by-step instructions with timers, wine pairings, nutrition.
 - 8 B2B Marketplace Supply listings (commercial spiral mixers, 50L extra virgin olive oil drums, Damascus knives, vacuum sealers, truffle oils) with MOQ, specs, certifications.
@@ -521,10 +532,12 @@ git commit -m "feat(data): populate structured bilingual culinary and B2B mock d
 ### Task 5: Global Header, App Shell & `Ctrl + K` Instant Search
 
 **Files:**
+
 - Create: `js/modules/search.js`
 - Create: `js/app.js`
 
 **Interfaces:**
+
 - Produces:
   - `SearchModule`: `{ open(), close(), query(searchTerm), init() }`
   - Global `initApp()` in `js/app.js`
@@ -695,10 +708,12 @@ git commit -m "feat(shell): implement global navigation, search module and app b
 ### Task 6: Authentication Page (`auth.html` & `js/pages/auth.js`)
 
 **Files:**
+
 - Create: `auth.html`
 - Create: `js/pages/auth.js`
 
 **Interfaces:**
+
 - Produces: Clean interactive authentication interface supporting tab switching (Login / Register), 3-role selector (Chef, Enthusiast, Supplier), password reveal toggles, validation states, and session persistence to `localStorage`.
 
 - [ ] **Step 1: Build `auth.html` with solid surfaces and anti-FOUC script**
@@ -716,10 +731,12 @@ git commit -m "feat(pages): build complete authentication page with role selecto
 ### Task 7: Main Discovery Feed (`index.html` & `js/pages/feed.js`)
 
 **Files:**
+
 - Create: `index.html`
 - Create: `js/pages/feed.js`
 
 **Interfaces:**
+
 - Produces: 3-column responsive feed with Story reels, interactive "Share Post" composer, rich recipe cards with like/save/share actions, Creator Hub side rail, and trending culinary highlights.
 
 - [ ] **Step 1: Build `index.html` with semantic 3-column layout and solid cards**
@@ -737,10 +754,12 @@ git commit -m "feat(pages): build main discovery feed with 3-column layout and i
 ### Task 8: Explore & Trends Page (`explore.html` & `js/pages/explore.js`)
 
 **Files:**
+
 - Create: `explore.html`
 - Create: `js/pages/explore.js`
 
 **Interfaces:**
+
 - Produces: Explore view with instant category chips (Trending Recipes, Top Chefs, Seasonal Ingredients, Equipment), search bar filter, and dynamic grid cards with hover actions.
 
 - [ ] **Step 1: Build `explore.html` with hero filter bar and responsive grid**
@@ -758,11 +777,13 @@ git commit -m "feat(pages): build explore and trends page with dynamic filters"
 ### Task 9: Recipe Detail & Dynamic Serving Scaler (`recipe.html`, `js/modules/scaler.js`, `js/pages/recipe-page.js`)
 
 **Files:**
+
 - Create: `recipe.html`
 - Create: `js/modules/scaler.js`
 - Create: `js/pages/recipe-page.js`
 
 **Interfaces:**
+
 - Produces:
   - `RecipeScaler`: `{ init(baseServings, ingredients), scale(targetServings), render() }`
   - Interactive recipe page with dynamic multiplier widget, cooking mode checklist with step completion, chef notes, pairings, and nutritional breakdown.
@@ -861,10 +882,12 @@ git commit -m "feat(pages): build recipe detail page with dynamic live serving s
 ### Task 10: Create & Publish Recipe Studio (`create-recipe.html` & `js/pages/create-recipe.js`)
 
 **Files:**
+
 - Create: `create-recipe.html`
 - Create: `js/pages/create-recipe.js`
 
 **Interfaces:**
+
 - Produces: 4-step accordion / wizard recipe builder with dynamic ingredient addition/removal, media drag-and-drop simulation, step reordering, draft saving, and publishing.
 
 - [ ] **Step 1: Build `create-recipe.html` with clean multi-step form panels**
@@ -882,10 +905,12 @@ git commit -m "feat(pages): build recipe creation studio with dynamic ingredient
 ### Task 11: Chef Profile & Portfolio (`chef.html` & `js/pages/chef.js`)
 
 **Files:**
+
 - Create: `chef.html`
 - Create: `js/pages/chef.js`
 
 **Interfaces:**
+
 - Produces: Chef profile header with verification badge, awards, follower stats, bio, and 6 active functional tabs (Recipes, Portfolio / Signature Dishes, Saved, Courses, Activity, About).
 
 - [ ] **Step 1: Build `chef.html` with cover header, stat badges, and tab bar**
@@ -903,10 +928,12 @@ git commit -m "feat(pages): build chef profile and portfolio with 6 functional t
 ### Task 12: Creator & Supplier Dashboard (`dashboard.html` & `js/pages/dashboard.js`)
 
 **Files:**
+
 - Create: `dashboard.html`
 - Create: `js/pages/dashboard.js`
 
 **Interfaces:**
+
 - Produces: KPI analytics cards, SVG performance charts, and tabbed management tables (Published Recipes, B2B Listings, Pending RFQ Quotes) with status badges and action menus.
 
 - [ ] **Step 1: Build `dashboard.html` with metrics grid, chart canvas/SVG, and management tables**
@@ -924,11 +951,13 @@ git commit -m "feat(pages): build creator and supplier analytics dashboard with 
 ### Task 13: B2B Marketplace & RFQ Drawer (`supplies.html`, `js/modules/rfq.js`, `js/pages/supplies.js`)
 
 **Files:**
+
 - Create: `supplies.html`
 - Create: `js/modules/rfq.js`
 - Create: `js/pages/supplies.js`
 
 **Interfaces:**
+
 - Produces: Commercial culinary supplies catalog, category & MOQ filters, stock availability badges, and a sliding RFQ Drawer/Modal for quote submission that persists to state.
 
 - [ ] **Step 1: Implement `js/modules/rfq.js` for handling Request for Quotation submissions and sync**
@@ -946,10 +975,12 @@ git commit -m "feat(pages): build B2B marketplace and Request for Quotation (RFQ
 ### Task 14: Culinary Courses & Workshops (`courses.html` & `js/pages/courses.js`)
 
 **Files:**
+
 - Create: `courses.html`
 - Create: `js/pages/courses.js`
 
 **Interfaces:**
+
 - Produces: Masterclasses catalog with instructor badges, skill levels, duration, and interactive 1-click enrollment modal with curriculum preview.
 
 - [ ] **Step 1: Build `courses.html` with masterclasses grid and modal template**
@@ -967,11 +998,13 @@ git commit -m "feat(pages): build culinary courses catalog and enrollment system
 ### Task 15: Direct Chat & RFQ Negotiation (`chat.html`, `js/modules/chat-module.js`, `js/pages/chat.js`)
 
 **Files:**
+
 - Create: `chat.html`
 - Create: `js/modules/chat-module.js`
 - Create: `js/pages/chat.js`
 
 **Interfaces:**
+
 - Produces: Two-column split messaging interface with contact search, category tabs (All, Chefs, Suppliers), interactive message bubbles, embedded RFQ quote preview cards, and simulated live chat responses.
 
 - [ ] **Step 1: Implement `js/modules/chat-module.js` managing conversation switching and message sending**
@@ -989,12 +1022,14 @@ git commit -m "feat(pages): build direct messaging and RFQ negotiation chat inte
 ### Task 16: Notifications Center & Settings (`notifications.html`, `settings.html`, `js/pages/notifications.js`, `js/pages/settings.js`)
 
 **Files:**
+
 - Create: `notifications.html`
 - Create: `settings.html`
 - Create: `js/pages/notifications.js`
 - Create: `js/pages/settings.js`
 
 **Interfaces:**
+
 - Produces:
   - Categorized Notifications feed with filter pills and "Mark All as Read".
   - Comprehensive Settings page (Profile, Security, Language, Theme, Notifications, B2B Commercial Details) with live syncing to `localStorage`.
@@ -1014,10 +1049,12 @@ git commit -m "feat(pages): build notifications center and multi-section account
 ### Task 17: Comprehensive End-to-End Verification & Bidirectional Polish
 
 **Files:**
+
 - Verify all 12 HTML pages and JavaScript modules
 - Final build of `css/output.css`
 
 **Interfaces:**
+
 - Verifies:
   - All 12 pages navigate seamlessly without broken links.
   - Zero console errors across all pages.
@@ -1034,6 +1071,7 @@ Expected: Production `css/output.css` compiled cleanly.
 - [ ] **Step 2: Launch local static server and execute browser tests across all 12 pages**
 
 Run browser verification tests on:
+
 - `http://localhost:3000/index.html`
 - `http://localhost:3000/auth.html`
 - `http://localhost:3000/explore.html`

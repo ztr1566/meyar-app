@@ -417,6 +417,21 @@ export class FeedPage {
   }
 
   /**
+   * Escape HTML entities in user input strings
+   * @param {string} str 
+   * @returns {string}
+   */
+  static escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  /**
    * Render Main Stream Feed Posts
    * @param {HTMLElement} [container] 
    */
@@ -452,17 +467,17 @@ export class FeedPage {
         <article class="bg-surface-1 border border-border-subtle rounded-2xl p-5 shadow-sm space-y-4 text-start">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <img src="${post.avatar}" alt="${post.author}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle">
+              <img src="${this.escapeHtml(post.avatar)}" alt="${this.escapeHtml(post.author)}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle">
               <div>
-                <h4 class="text-xs sm:text-sm font-bold text-text-main">${post.author}</h4>
-                <p class="text-[11px] text-text-muted">${post.timeAgo} • <span class="text-brand-gold font-semibold">${post.handle}</span></p>
+                <h4 class="text-xs sm:text-sm font-bold text-text-main">${this.escapeHtml(post.author)}</h4>
+                <p class="text-[11px] text-text-muted">${this.escapeHtml(post.timeAgo)} • <span class="text-brand-gold font-semibold">${this.escapeHtml(post.handle)}</span></p>
               </div>
             </div>
             <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle">
               ${lang === 'ar' ? 'منشور جديد' : 'New Post'}
             </span>
           </div>
-          <p class="text-xs sm:text-sm text-text-main leading-relaxed whitespace-pre-line">${post.content}</p>
+          <p class="text-xs sm:text-sm text-text-main leading-relaxed whitespace-pre-line">${this.escapeHtml(post.content)}</p>
         </article>
       `;
     });

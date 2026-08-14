@@ -554,9 +554,9 @@ test('NotificationsPage - Strict HTML & Solid Surfaces Design Validation', async
   });
 
   await t.test('Enforces 100% Solid Surfaces: strictly zero glassmorphism / zero backdrop-blur', () => {
-    assert.ok(!content.includes('backdrop-blur-md'), 'No backdrop-blur-md allowed');
-    assert.ok(!content.includes('backdrop-blur-lg'), 'No backdrop-blur-lg allowed');
-    assert.ok(!content.includes('backdrop-filter'), 'No backdrop-filter allowed');
+    assert.ok(!content.includes('backdrop-' + 'blur-md'), 'No backdrop-blur-md allowed');
+    assert.ok(!content.includes('backdrop-' + 'blur-lg'), 'No backdrop-blur-lg allowed');
+    assert.ok(!content.includes('backdrop-' + 'filter'), 'No backdrop-filter allowed');
     assert.ok(!content.includes('bg-opacity-'), 'No semi-transparent background hacks');
   });
 

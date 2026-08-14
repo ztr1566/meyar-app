@@ -579,7 +579,7 @@ export class RecipePage {
 
     const linkEl = document.getElementById('recipe-chef-link');
     if (linkEl && r.author_id) {
-      linkEl.href = `chef-profile.html?id=${r.author_id}`;
+      linkEl.href = `chef.html?id=${r.author_id}`;
     }
 
     const followBtn = document.getElementById('btn-follow-chef');

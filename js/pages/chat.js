@@ -331,6 +331,21 @@ export class ChatPage {
   }
 
   /**
+   * Escape HTML utility
+   * @param {string} str 
+   * @returns {string}
+   */
+  static escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  /**
    * Render message stream bubbles and embedded RFQ negotiation cards
    * @param {Object} chat 
    */
@@ -356,7 +371,7 @@ export class ChatPage {
       const attachmentHTML = msg.attachment ? `
         <div class="mt-2 p-2 rounded-xl bg-surface-1 border border-border-subtle flex items-center gap-2 text-xs">
           <svg class="w-4 h-4 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
-          <span class="font-medium text-text-main truncate">${msg.attachment.name || 'document.pdf'}</span>
+          <span class="font-medium text-text-main truncate">${this.escapeHtml(msg.attachment.name || 'document.pdf')}</span>
         </div>
       ` : '';
 
@@ -365,7 +380,7 @@ export class ChatPage {
           <div class="flex flex-col items-end gap-1.5">
             ${rfqCardHTML}
             <div class="bg-brand-emerald text-white rounded-2xl rounded-ee-none p-3.5 max-w-[85%] sm:max-w-[75%] shadow-sm text-start space-y-1">
-              <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">${text}</p>
+              <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">${this.escapeHtml(text)}</p>
               ${attachmentHTML}
               <div class="flex items-center justify-end gap-1 text-[10px] text-white/80 pt-0.5">
                 <span>${msg.timestamp || 'Just now'}</span>
@@ -381,7 +396,7 @@ export class ChatPage {
           <div class="flex flex-col items-start gap-1.5">
             ${rfqCardHTML}
             <div class="bg-surface-2 text-text-main border border-border-subtle rounded-2xl rounded-es-none p-3.5 max-w-[85%] sm:max-w-[75%] shadow-sm text-start space-y-1">
-              <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">${text}</p>
+              <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">${this.escapeHtml(text)}</p>
               ${attachmentHTML}
               <div class="flex items-center justify-start gap-1 text-[10px] text-text-muted pt-0.5">
                 <span>${msg.timestamp || 'Just now'}</span>
