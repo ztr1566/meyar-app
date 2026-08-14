@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --font-arabic: 'Cairo', system-ui, -apple-system, sans-serif;
+  --font-english: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --color-canvas: var(--color-canvas-val);
+  --color-surface-1: var(--color-surface-1-val);
+  --color-surface-2: var(--color-surface-2-val);
+  --color-border-subtle: var(--color-border-subtle-val);
+  --color-text-main: var(--color-text-main-val);
+  --color-text-muted: var(--color-text-muted-val);
+  --color-brand-gold: var(--color-brand-gold-val);
+  --color-brand-gold-hover: var(--color-brand-gold-hover-val);
+  --color-brand-emerald: var(--color-brand-emerald-val);
+  --color-brand-emerald-hover: var(--color-brand-emerald-hover-val);
+}
+
+:root {
+  /* Light Mode (Crisp Editorial Luxury) */
+  --color-canvas-val: #F8F9F8;
+  --color-surface-1-val: #FFFFFF;
+  --color-surface-2-val: #EFF2F0;
+  --color-border-subtle-val: #E2E8E4;
+  --color-text-main-val: #111814;
+  --color-text-muted-val: #5A6B61;
+  --color-brand-gold-val: #A68238;
+  --color-brand-gold-hover-val: #B89242;
+  --color-brand-emerald-val: #047857;
+  --color-brand-emerald-hover-val: #065F46;
+}
+
+html.dark {
+  /* Dark Mode (Forest Obsidian Luxury) */
+  --color-canvas-val: #080C0A;
+  --color-surface-1-val: #101713;
+  --color-surface-2-val: #17221C;
+  --color-border-subtle-val: #223129;
+  --color-text-main-val: #F2F5F3;
+  --color-text-muted-val: #8E9E94;
+  --color-brand-gold-val: #C5A059;
+  --color-brand-gold-hover-val: #D4AF37;
+  --color-brand-emerald-val: #10B981;
+  --color-brand-emerald-hover-val: #059669;
+}
+
+html[dir="rtl"] {
+  font-family: var(--font-arabic);
+}
+
+html[dir="ltr"] {
+  font-family: var(--font-english);
+}
+
+/* Custom hairline border utility */
+.border-hairline {
+  border-width: 1px;
+}
+
+/* Solid custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-1-val);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-subtle-val);
+  border-radius: 3px;
+}
