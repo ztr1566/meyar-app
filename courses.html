@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="courses.title">دورات الطهي الاحترافية وورش العمل - معيار | Meyar</title>
+
+  <!-- Anti-FOUC Early Theme & Language Execution -->
+  <script>
+    (function() {
+      try {
+        const theme = localStorage.getItem('meyar_theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        const lang = localStorage.getItem('meyar_lang') || 'ar';
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Typography & Compiled Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/output.css">
+</head>
+<body class="bg-canvas text-text-main min-h-screen flex flex-col antialiased selection:bg-brand-gold selection:text-white transition-colors duration-200 pb-16 lg:pb-0">
+
+  <!-- ================= GLOBAL TOPBAR ================= -->
+  <header class="sticky top-0 w-full border-b border-border-subtle bg-surface-1 z-30 shrink-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-4">
+      
+      <!-- Brand Identity -->
+      <a href="index.html" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-xl p-1 shrink-0" aria-label="Meyar Home">
+        <div class="w-10 h-10 rounded-xl bg-brand-gold flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="flex flex-col text-start">
+          <span class="font-extrabold text-lg sm:text-xl tracking-tight text-text-main flex items-center gap-1.5 leading-none">
+            معيار <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle uppercase">Meyar</span>
+          </span>
+          <span class="text-[10px] text-text-muted hidden md:inline-block mt-0.5" data-i18n="auth.brand_tagline">منصة الطهي الاحترافية وشبكة تجارة المستلزمات والمطاعم</span>
+        </div>
+      </a>
+
+      <!-- Global Search Bar Button Trigger -->
+      <button type="button" data-action="open-search" data-modal-target="search-modal"
+              class="hidden md:flex items-center justify-between w-60 lg:w-72 xl:w-80 px-3.5 py-2 text-xs sm:text-sm bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-muted transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+              aria-label="Search">
+        <span class="flex items-center gap-2.5 min-w-0">
+          <svg class="w-4 h-4 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+          <span class="truncate" data-i18n="search.placeholder">ابحث في الوصفات، الطهاة، التوريدات...</span>
+        </span>
+        <kbd class="hidden xl:inline-flex items-center px-2 py-0.5 text-[10px] font-mono font-semibold bg-surface-1 border border-border-subtle rounded text-text-muted shrink-0">Ctrl K</kbd>
+      </button>
+
+      <!-- Desktop Center Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5" aria-label="Main Navigation">
+        <a href="index.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.feed">خلاصة الاستكشاف</a>
+        <a href="explore.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.explore">استكشف وتصفح</a>
+        <a href="supplies.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.supplies">توريدات المطاعم</a>
+        <a href="courses.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-bold bg-surface-2 text-brand-gold border border-border-subtle transition-colors" data-i18n="nav.courses">دورات وورش عمل</a>
+        <a href="dashboard.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.dashboard">لوحة التحكم</a>
+      </nav>
+
+      <!-- Topbar Action Controls -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5">
+        
+        <!-- Mobile Search Button -->
+        <button type="button" data-action="open-search" data-modal-target="search-modal"
+                class="md:hidden p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                aria-label="Open Search">
+          <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+        </button>
+
+        <!-- Create Recipe Quick CTA Button -->
+        <a href="create-recipe.html" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 sm:px-3.5 sm:py-2 text-xs sm:text-sm font-semibold bg-brand-gold hover:bg-brand-gold-hover text-white rounded-xl shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+          <span data-i18n="nav.create_recipe">ابتكار وصفة</span>
+        </a>
+
+        <!-- Direct Chat Messages Link -->
+        <a href="chat.html" class="p-2 sm:p-2.5 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold relative" aria-label="Messages">
+          <svg class="w-4 h-4 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          <span class="absolute top-1.5 end-1.5 w-2 h-2 rounded-full bg-brand-gold"></span>
+        </a>
+
+        <!-- Notifications Link -->
+        <a href="notifications.html" class="p-2 sm:p-2.5 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold relative" aria-label="Notifications">
+          <svg class="w-4 h-4 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+          </svg>
+          <span class="absolute top-1.5 end-1.5 w-2 h-2 rounded-full bg-brand-emerald"></span>
+        </a>
+
+        <!-- Language Switcher Button -->
+        <button type="button" data-action="toggle-lang" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-medium text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Toggle language">
+          <svg class="w-4 h-4 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+            <path d="M2 12h20"/>
+          </svg>
+          <span class="lang-label font-semibold">English</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button type="button" data-action="toggle-theme" class="p-2 sm:p-2.5 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Toggle theme">
+          <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+        </button>
+
+        <!-- User Profile Dropdown Menu Trigger -->
+        <div class="relative">
+          <button type="button" data-dropdown-trigger="user-dropdown-menu"
+                  class="flex items-center gap-2 p-1 rounded-xl hover:bg-surface-2 border border-transparent hover:border-border-subtle transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                  aria-label="User profile options" aria-haspopup="true">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=100&q=80"
+                 alt="Chef Faisal Al-Hashemi"
+                 class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl object-cover border border-border-subtle shrink-0">
+            <div class="hidden xl:flex flex-col text-start pe-1">
+              <span class="text-xs font-bold text-text-main line-clamp-1">الشيف فيصل</span>
+              <span class="text-[10px] text-brand-gold font-medium">@chef_faisal</span>
+            </div>
+            <svg class="w-3.5 h-3.5 text-text-muted hidden sm:block shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </button>
+
+          <!-- Floating Solid Dropdown Menu -->
+          <div id="user-dropdown-menu" data-dropdown class="hidden absolute end-0 mt-2 w-56 bg-surface-1 border border-border-subtle rounded-xl shadow-xl p-1.5 z-50 space-y-1">
+            <div class="px-3 py-2 border-b border-border-subtle mb-1 text-start">
+              <p class="text-xs font-bold text-text-main">الشيف فيصل الهاشمي</p>
+              <p class="text-[11px] text-text-muted truncate">faisal@meyar.sa</p>
+            </div>
+            <a href="chef.html?id=chef-1" class="flex items-center gap-2 px-3 py-2 text-xs text-text-muted hover:text-text-main hover:bg-surface-2 rounded-lg transition-colors text-start">
+              <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>الملف الشخصي</span>
+            </a>
+            <a href="dashboard.html" class="flex items-center gap-2 px-3 py-2 text-xs text-text-muted hover:text-text-main hover:bg-surface-2 rounded-lg transition-colors text-start">
+              <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+              <span>لوحة التحكم</span>
+            </a>
+            <a href="auth.html" class="flex items-center gap-2 px-3 py-2 text-xs text-red-500 hover:bg-red-500/10 rounded-lg transition-colors text-start">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              <span>تسجيل الخروج</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Drawer Toggle Button -->
+        <button type="button" data-action="toggle-mobile-menu" class="lg:hidden p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Open mobile menu">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN VIEW CONTAINER ================= -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-8">
+    
+    <!-- 1. ACADEMY HERO & SPOTLIGHT BANNER -->
+    <section class="bg-surface-1 border border-border-subtle rounded-3xl p-6 sm:p-8 lg:p-10 relative overflow-hidden shadow-sm text-start space-y-6">
+      
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative z-10">
+        <div class="max-w-2xl space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-2 border border-border-subtle rounded-xl text-brand-gold text-xs font-extrabold uppercase tracking-wider">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <span data-i18n="courses.academy_badge">أكاديمية معيار للطهي الاحترافي</span>
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-main tracking-tight leading-tight" data-i18n="courses.title">
+            دورات الطهي الاحترافية وورش العمل
+          </h1>
+          
+          <p class="text-xs sm:text-sm text-text-muted leading-relaxed" data-i18n="courses.subtitle">
+            تعلّم أسرار فنون الطهي الراقي وأحدث التقنيات مباشرة من كبار الطهاة المعتمدين، واكتسب مهارات متقدمة تؤهلك لقيادة المطابخ الفاخرة.
+          </p>
+        </div>
+
+        <!-- Quick Stats Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 w-full lg:w-auto shrink-0">
+          <div class="p-3.5 bg-surface-2 border border-border-subtle rounded-2xl text-start">
+            <span class="text-lg sm:text-xl font-extrabold text-brand-gold block">4+</span>
+            <span class="text-[11px] text-text-muted font-medium">ورش احترافية مكثفة</span>
+          </div>
+          <div class="p-3.5 bg-surface-2 border border-border-subtle rounded-2xl text-start">
+            <span class="text-lg sm:text-xl font-extrabold text-brand-gold block">100%</span>
+            <span class="text-[11px] text-text-muted font-medium">طهاة معتمدون دولياً</span>
+          </div>
+          <div class="p-3.5 bg-surface-2 border border-border-subtle rounded-2xl text-start">
+            <span class="text-lg sm:text-xl font-extrabold text-brand-gold block">≤20</span>
+            <span class="text-[11px] text-text-muted font-medium">مقعد كحد أقصى للفوج</span>
+          </div>
+          <div class="p-3.5 bg-surface-2 border border-border-subtle rounded-2xl text-start">
+            <span class="text-lg sm:text-xl font-extrabold text-brand-emerald block">معتمد</span>
+            <span class="text-[11px] text-text-muted font-medium">شهادات إتمام مهنية</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guarantee / Pillar Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-6 border-t border-border-subtle text-xs">
+        <div class="flex items-center gap-3 p-3 bg-surface-2/60 border border-border-subtle rounded-xl text-start">
+          <div class="w-8 h-8 rounded-lg bg-surface-1 text-brand-gold flex items-center justify-center shrink-0 border border-border-subtle">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <span class="font-bold text-text-main block">مناهج تطبيقية حية</span>
+            <span class="text-[11px] text-text-muted">جلسات تفاعلية مباشرة مع شيف الورشة</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-3 bg-surface-2/60 border border-border-subtle rounded-xl text-start">
+          <div class="w-8 h-8 rounded-lg bg-surface-1 text-brand-gold flex items-center justify-center shrink-0 border border-border-subtle">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <span class="font-bold text-text-main block">جداول مرنة مسائية</span>
+            <span class="text-[11px] text-text-muted">مواعيد تناسب ساعات عمل المطابخ والمحترفين</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-3 bg-surface-2/60 border border-border-subtle rounded-xl text-start">
+          <div class="w-8 h-8 rounded-lg bg-surface-1 text-brand-gold flex items-center justify-center shrink-0 border border-border-subtle">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <span class="font-bold text-text-main block">شبكة مجتمع الطهاة</span>
+            <span class="text-[11px] text-text-muted">نقاشات مغلقة ومراجعات مع خبراء الصناعة</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 2. SEARCH & FILTER CONTROL BAR -->
+    <section class="space-y-4">
+      
+      <!-- Top Filters Grid: Search Input + Selects -->
+      <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 bg-surface-1 border border-border-subtle p-3.5 rounded-2xl shadow-sm">
+        
+        <!-- Live Search Field -->
+        <div class="relative flex-1">
+          <div class="absolute inset-y-0 start-0 ps-3.5 flex items-center pointer-events-none text-text-muted">
+            <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <input type="text" 
+                 id="courses-search-input" 
+                 placeholder="ابحث في الدورات، أسماء الشيف، المناهج والتقنيات..." 
+                 data-i18n-placeholder="courses.search_placeholder"
+                 class="w-full ps-10 pe-9 py-2 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold transition-colors">
+          <button type="button" 
+                  id="courses-search-clear" 
+                  class="hidden absolute inset-y-0 end-0 pe-3 flex items-center text-text-muted hover:text-text-main"
+                  aria-label="Clear Search">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <!-- Level & Sort Controls -->
+        <div class="flex items-center gap-2 shrink-0">
+          
+          <!-- Skill Level Select -->
+          <div class="relative">
+            <select id="courses-level-select" 
+                    class="appearance-none px-3.5 py-2 pe-8 text-xs font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold cursor-pointer transition-colors"
+                    aria-label="Filter by skill level">
+              <option value="all" data-i18n="courses.level_all">جميع المستويات</option>
+              <option value="masterclass" data-i18n="courses.level_masterclass">احترافي متقدم (Masterclass)</option>
+              <option value="intermediate" data-i18n="courses.level_intermediate">متوسط (Intermediate)</option>
+              <option value="beginner" data-i18n="courses.level_beginner">مبتدئ (Beginner)</option>
+            </select>
+            <div class="absolute inset-y-0 end-0 pe-2.5 flex items-center pointer-events-none text-text-muted">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+
+          <!-- Sort Select -->
+          <div class="relative">
+            <select id="courses-sort-select" 
+                    class="appearance-none px-3.5 py-2 pe-8 text-xs font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold cursor-pointer transition-colors"
+                    aria-label="Sort masterclasses">
+              <option value="popular" data-i18n="courses.sort_featured">الأبرز والموصى به</option>
+              <option value="price_asc" data-i18n="courses.sort_price_asc">السعر: من الأقل للأعلى</option>
+              <option value="price_desc" data-i18n="courses.sort_price_desc">السعر: من الأعلى للأقل</option>
+              <option value="seats_asc" data-i18n="courses.sort_seats_asc">المقاعد المتبقية الأقل</option>
+              <option value="date_asc" data-i18n="courses.sort_date_asc">تاريخ الانطلاق الأقرب</option>
+            </select>
+            <div class="absolute inset-y-0 end-0 pe-2.5 flex items-center pointer-events-none text-text-muted">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Category Filter Pills Bar -->
+      <div class="flex items-center justify-between gap-3 overflow-x-auto pb-1">
+        <div class="flex items-center gap-2 shrink-0" role="tablist" aria-label="Course Categories">
+          <button type="button" 
+                  data-course-filter="all" 
+                  class="px-4 py-2 rounded-xl text-xs font-bold bg-brand-gold text-white border border-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                  data-i18n="courses.filter_all">
+            جميع الدورات
+          </button>
+          
+          <button type="button" 
+                  data-course-filter="fermentation" 
+                  class="px-4 py-2 rounded-xl text-xs font-semibold bg-surface-1 hover:bg-surface-2 text-text-muted hover:text-text-main border border-border-subtle transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                  data-i18n="courses.filter_fermentation">
+            التخمير والتعتيق
+          </button>
+
+          <button type="button" 
+                  data-course-filter="pastry" 
+                  class="px-4 py-2 rounded-xl text-xs font-semibold bg-surface-1 hover:bg-surface-2 text-text-muted hover:text-text-main border border-border-subtle transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                  data-i18n="courses.filter_pastry">
+            المخبوزات والحلويات
+          </button>
+
+          <button type="button" 
+                  data-course-filter="smoke" 
+                  class="px-4 py-2 rounded-xl text-xs font-semibold bg-surface-1 hover:bg-surface-2 text-text-muted hover:text-text-main border border-border-subtle transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                  data-i18n="courses.filter_smoke">
+            الطهي بالنار والتدخين
+          </button>
+
+          <button type="button" 
+                  data-course-filter="seafood" 
+                  class="px-4 py-2 rounded-xl text-xs font-semibold bg-surface-1 hover:bg-surface-2 text-text-muted hover:text-text-main border border-border-subtle transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                  data-i18n="courses.filter_seafood">
+            الكايسيكي والمأكولات البحرية
+          </button>
+        </div>
+
+        <span id="courses-count-label" class="text-xs font-semibold text-text-muted shrink-0 hidden sm:inline-block">
+          عرض 4 ورش عمل معتمدة
+        </span>
+      </div>
+
+    </section>
+
+    <!-- 3. MASTERCLASSES & COURSES GRID -->
+    <section aria-label="Masterclasses Catalog">
+      <div id="courses-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+        <!-- Dynamically rendered by CoursesPage.render() -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= COURSE CURRICULUM / SYLLABUS MODAL ================= -->
+  <div id="course-curriculum-modal" 
+       role="dialog" 
+       aria-modal="true" 
+       aria-hidden="true" 
+       class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80">
+    <div class="fixed inset-0" data-modal-backdrop></div>
+    
+    <div class="relative bg-surface-1 border border-border-subtle rounded-3xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl z-10 overflow-hidden text-start">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between p-4 sm:p-5 border-b border-border-subtle bg-surface-2/40">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-brand-gold flex items-center justify-center text-white">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-extrabold text-text-main" data-i18n="courses.curriculum">محاور ومنهج الدورة</h3>
+            <p class="text-[11px] text-text-muted" data-i18n="courses.syllabus_desc">خطة تدريبية مكثفة تشمل التطبيق العملي، التقنيات الحرفية، وجلسات التقييم المباشر</p>
+          </div>
+        </div>
+
+        <button type="button" 
+                data-modal-close 
+                class="p-2 text-text-muted hover:text-text-main bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl transition-colors"
+                aria-label="Close dialog">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Modal Dynamic Body Content -->
+      <div data-modal-body class="p-5 sm:p-6 overflow-y-auto flex-1 space-y-6">
+        <!-- Injected dynamically by CoursesPage.renderCurriculumModal -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= 1-CLICK ENROLLMENT MODAL ================= -->
+  <div id="course-enroll-modal" 
+       role="dialog" 
+       aria-modal="true" 
+       aria-hidden="true" 
+       class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80">
+    <div class="fixed inset-0" data-modal-backdrop></div>
+    
+    <div class="relative bg-surface-1 border border-border-subtle rounded-3xl w-full max-w-xl max-h-[90vh] flex flex-col shadow-2xl z-10 overflow-hidden text-start">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between p-4 sm:p-5 border-b border-border-subtle bg-surface-2/40">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-brand-gold flex items-center justify-center text-white">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-extrabold text-text-main" data-i18n="courses.enroll_modal_title">التسجيل في ورشة العمل</h3>
+            <p class="text-[11px] text-text-muted" data-i18n="courses.enroll_modal_subtitle">احجز مقعدك في الفوج القادم مع نخبة الطهاة المعتمدين</p>
+          </div>
+        </div>
+
+        <button type="button" 
+                data-modal-close 
+                class="p-2 text-text-muted hover:text-text-main bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl transition-colors"
+                aria-label="Close dialog">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Modal Dynamic Body Form -->
+      <div data-modal-body class="p-5 sm:p-6 overflow-y-auto flex-1">
+        <!-- Injected dynamically by CoursesPage.renderEnrollModal -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= GLOBAL COMMAND PALETTE SEARCH MODAL ================= -->
+  <div id="search-modal" role="dialog" aria-modal="true" aria-hidden="true" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-20 p-4 bg-black/80">
+    <div class="fixed inset-0" data-modal-backdrop></div>
+    <div class="relative bg-surface-1 border border-border-subtle rounded-2xl w-full max-w-xl shadow-2xl z-10 overflow-hidden text-start">
+      
+      <!-- Search Input Header -->
+      <div class="flex items-center gap-3 p-4 border-b border-border-subtle bg-surface-2">
+        <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text"
+               id="global-search-input"
+               class="flex-1 bg-transparent text-sm text-text-main placeholder:text-text-muted focus:outline-none"
+               placeholder="ابحث في الوصفات، الطهاة، التوريدات، والدورات..."
+               data-i18n-placeholder="search.placeholder"
+               autocomplete="off">
+        <button type="button" data-modal-close class="p-1.5 text-text-muted hover:text-text-main rounded-lg bg-surface-1 border border-border-subtle text-xs font-semibold">
+          Esc
+        </button>
+      </div>
+
+      <!-- Live Search Results Container -->
+      <div id="search-results-container" class="p-4 max-h-96 overflow-y-auto space-y-2">
+        <div class="py-8 text-center text-xs text-text-muted" data-i18n="search.type_to_search">
+          اكتب كلمة البحث للاستكشاف الفوري...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MOBILE NAVIGATION DRAWER ================= -->
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 lg:hidden bg-black/80">
+    <div class="fixed inset-0" data-action="close-mobile-menu"></div>
+    <div class="fixed top-0 bottom-0 start-0 w-72 bg-surface-1 border-e border-border-subtle p-5 flex flex-col justify-between shadow-2xl z-10 overflow-y-auto">
+      
+      <!-- Drawer Top Brand -->
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-border-subtle">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-brand-gold flex items-center justify-center text-white font-bold">
+              م
+            </div>
+            <span class="font-extrabold text-base text-text-main">معيار Meyar</span>
+          </div>
+          <button type="button" data-action="close-mobile-menu" class="p-2 text-text-muted hover:text-text-main bg-surface-2 rounded-lg" aria-label="Close menu">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <!-- Drawer Links -->
+        <nav class="mt-4 space-y-1" aria-label="Mobile Navigation Drawer Links">
+          <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-medium text-text-muted hover:text-text-main hover:bg-surface-2">
+            <svg class="w-4 h-4 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span data-i18n="nav.feed">خلاصة الاستكشاف</span>
+          </a>
+          <a href="explore.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-medium text-text-muted hover:text-text-main hover:bg-surface-2">
+            <svg class="w-4 h-4 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            <span data-i18n="nav.explore">استكشف وتصفح</span>
+          </a>
+          <a href="supplies.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-medium text-text-muted hover:text-text-main hover:bg-surface-2">
+            <svg class="w-4 h-4 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+            <span data-i18n="nav.supplies">توريدات المطاعم</span>
+          </a>
+          <a href="courses.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold bg-surface-2 text-brand-gold border border-border-subtle">
+            <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <span data-i18n="nav.courses">دورات وورش عمل</span>
+          </a>
+          <a href="dashboard.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-medium text-text-muted hover:text-text-main hover:bg-surface-2">
+            <svg class="w-4 h-4 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+            <span data-i18n="nav.dashboard">لوحة التحكم</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Drawer Bottom Actions -->
+      <div class="pt-4 border-t border-border-subtle space-y-3">
+        <button type="button" data-action="toggle-lang" class="w-full py-2 px-3 text-xs font-bold bg-surface-2 text-text-main rounded-xl border border-border-subtle flex items-center justify-center gap-2">
+          <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <span class="lang-label">English</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= MOBILE FIXED BOTTOM NAVIGATION BAR ================= -->
+  <nav class="fixed bottom-0 start-0 end-0 bg-surface-1 border-t border-border-subtle z-40 lg:hidden flex items-center justify-around py-2 px-3 shadow-lg" aria-label="Mobile Bottom Navigation">
+    <a href="index.html" class="flex flex-col items-center gap-1 text-text-muted hover:text-text-main p-1" aria-label="Home Feed">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="text-[10px] font-medium" data-i18n="nav.feed">الرئيسية</span>
+    </a>
+
+    <a href="explore.html" class="flex flex-col items-center gap-1 text-text-muted hover:text-text-main p-1" aria-label="Explore">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      <span class="text-[10px] font-medium" data-i18n="nav.explore">استكشف</span>
+    </a>
+
+    <a href="create-recipe.html" class="flex items-center justify-center w-11 h-11 -mt-4 rounded-2xl bg-brand-gold hover:bg-brand-gold-hover text-white shadow-lg border-2 border-surface-1 transition-transform active:scale-95" aria-label="Create Recipe">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+    </a>
+
+    <a href="courses.html" class="flex flex-col items-center gap-1 text-brand-gold p-1" aria-label="Courses">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <span class="text-[10px] font-bold" data-i18n="nav.courses">دورات</span>
+    </a>
+
+    <a href="dashboard.html" class="flex flex-col items-center gap-1 text-text-muted hover:text-text-main p-1" aria-label="Dashboard">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+      <span class="text-[10px] font-medium" data-i18n="nav.dashboard">لوحتي</span>
+    </a>
+  </nav>
+
+  <!-- ================= GLOBAL FOOTER ================= -->
+  <footer class="bg-surface-1 border-t border-border-subtle py-12 mt-16 text-start">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <!-- Brand Summary -->
+        <div class="space-y-3 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-brand-gold flex items-center justify-center text-white font-extrabold shadow-sm">
+              م
+            </div>
+            <span class="font-extrabold text-lg text-text-main">معيار Meyar</span>
+          </div>
+          <p class="text-xs text-text-muted leading-relaxed max-w-md" data-i18n="auth.brand_tagline">
+            منصة الطهي الاحترافية وشبكة تجارة المستلزمات والمطاعم الأولى في المملكة والشرق الأوسط.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold text-text-main">أقسام المنصة</h4>
+          <ul class="space-y-1.5 text-xs text-text-muted">
+            <li><a href="explore.html" class="hover:text-brand-gold transition-colors">استكشاف الأطباق والوصفات</a></li>
+            <li><a href="supplies.html" class="hover:text-brand-gold transition-colors">سوق التوريدات والمعدات</a></li>
+            <li><a href="courses.html" class="hover:text-brand-gold transition-colors">ورش العمل والدورات</a></li>
+            <li><a href="dashboard.html" class="hover:text-brand-gold transition-colors">لوحة إدارة الأعمال</a></li>
+          </ul>
+        </div>
+
+        <!-- Supplier Info -->
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold text-text-main">الموردون والشركات</h4>
+          <ul class="space-y-1.5 text-xs text-text-muted">
+            <li><a href="dashboard.html" class="hover:text-brand-gold transition-colors">تسجيل مورد تجاري</a></li>
+            <li><a href="chat.html" class="hover:text-brand-gold transition-colors">إدارة طلبات الأسعار (RFQ)</a></li>
+            <li><a href="supplies.html" class="hover:text-brand-gold transition-colors">شهادات ومعايير التوريد</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="border-t border-border-subtle pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-text-muted">
+        <p>© 2026 معيار | Meyar Culinary Social Platform. جميع الحقوق محفوظة.</p>
+        <div class="flex items-center gap-4">
+          <span>الرياض، المملكة العربية السعودية</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Scripts -->
+  <script type="module" src="./js/app.js"></script>
+  <script type="module" src="./js/pages/courses.js"></script>
+</body>
+</html>
