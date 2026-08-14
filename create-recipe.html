@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="recipe.create_heading">استوديو ابتكار الوصفات - معيار | Meyar</title>
+
+  <!-- Anti-FOUC Early Theme & Language Execution -->
+  <script>
+    (function() {
+      try {
+        const theme = localStorage.getItem('meyar_theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        const lang = localStorage.getItem('meyar_lang') || 'ar';
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Typography & Compiled Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/output.css">
+</head>
+<body class="bg-canvas text-text-main min-h-screen flex flex-col antialiased selection:bg-brand-gold selection:text-white transition-colors duration-200 pb-28 lg:pb-20">
+
+  <!-- ================= GLOBAL TOPBAR ================= -->
+  <header class="sticky top-0 w-full border-b border-border-subtle bg-surface-1 z-30 shrink-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-4">
+      
+      <!-- Brand Identity -->
+      <a href="index.html" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-xl p-1 shrink-0" aria-label="Meyar Home">
+        <div class="w-10 h-10 rounded-xl bg-brand-gold flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="flex flex-col text-start">
+          <span class="font-extrabold text-lg sm:text-xl tracking-tight text-text-main flex items-center gap-1.5 leading-none">
+            معيار <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle uppercase">Meyar</span>
+          </span>
+          <span class="text-[10px] text-text-muted hidden md:inline-block mt-0.5" data-i18n="auth.brand_tagline">منصة الطهي الاحترافية وشبكة تجارة المستلزمات والمطاعم</span>
+        </div>
+      </a>
+
+      <!-- Global Search Bar Button Trigger -->
+      <button type="button" data-action="open-search" data-modal-target="search-modal"
+              class="hidden md:flex items-center justify-between w-60 lg:w-72 xl:w-80 px-3.5 py-2 text-xs sm:text-sm bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-muted transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+              aria-label="Search">
+        <span class="flex items-center gap-2.5 min-w-0">
+          <svg class="w-4 h-4 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+          <span class="truncate" data-i18n="search.placeholder">ابحث في الوصفات، الطهاة، التوريدات...</span>
+        </span>
+        <kbd class="hidden xl:inline-flex items-center px-2 py-0.5 text-[10px] font-mono font-semibold bg-surface-1 border border-border-subtle rounded text-text-muted shrink-0">Ctrl K</kbd>
+      </button>
+
+      <!-- Desktop Center Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5" aria-label="Main Navigation">
+        <a href="index.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.feed">خلاصة الاستكشاف</a>
+        <a href="explore.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.explore">استكشف وتصفح</a>
+        <a href="supplies.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.supplies">توريدات المطاعم</a>
+        <a href="courses.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.courses">دورات وورش عمل</a>
+        <a href="dashboard.html" class="px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors" data-i18n="nav.dashboard">لوحة التحكم</a>
+      </nav>
+
+      <!-- Topbar Action Controls -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5">
+        
+        <!-- Mobile Search Button -->
+        <button type="button" data-action="open-search" data-modal-target="search-modal"
+                class="md:hidden p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                aria-label="Open Search">
+          <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+        </button>
+
+        <!-- Active Create Recipe CTA Button -->
+        <a href="create-recipe.html" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 sm:px-3.5 sm:py-2 text-xs sm:text-sm font-bold bg-surface-2 text-brand-gold border border-brand-gold/40 rounded-xl shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+          <span data-i18n="nav.create_recipe">ابتكار وصفة</span>
+        </a>
+
+        <!-- Direct Chat Messages Link -->
+        <a href="chat.html" class="p-2 sm:p-2.5 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold relative" aria-label="Messages">
+          <svg class="w-4 h-4 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          <span class="absolute top-1.5 end-1.5 w-2 h-2 rounded-full bg-brand-gold"></span>
+        </a>
+
+        <!-- Notifications Link -->
+        <a href="notifications.html" class="p-2 sm:p-2.5 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold relative" aria-label="Notifications">
+          <svg class="w-4 h-4 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+          </svg>
+          <span class="absolute top-1.5 end-1.5 w-2 h-2 rounded-full bg-brand-emerald"></span>
+        </a>
+
+        <!-- Language Switcher Button -->
+        <button type="button" data-action="toggle-lang" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-medium text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Toggle language">
+          <svg class="w-4 h-4 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+            <path d="M2 12h20"/>
+          </svg>
+          <span class="lang-label font-semibold">English</span>
+        </button>
+
+        <!-- Theme Switcher Button -->
+        <button type="button" data-action="toggle-theme" class="p-2 sm:p-2.5 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Toggle theme">
+          <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Trigger -->
+        <button type="button" data-action="toggle-mobile-menu" data-target="mobile-drawer" class="lg:hidden p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors" aria-label="Open Mobile Menu">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= STUDIO MAIN CONTAINER ================= -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6 sm:space-y-8">
+    
+    <!-- Studio Header & Toolbar -->
+    <div class="bg-surface-1 border border-border-subtle rounded-2xl p-5 sm:p-7 space-y-4">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div class="space-y-1.5 text-start">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-surface-2 border border-border-subtle text-xs font-bold text-brand-gold">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <span data-i18n="recipe.create_heading">استوديو ابتكار الوصفات</span>
+          </div>
+          <h1 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-text-main tracking-tight" data-i18n="recipe.create_heading">استوديو ابتكار ونشر الوصفات</h1>
+          <p class="text-xs sm:text-sm text-text-muted leading-relaxed max-w-2xl">
+            صمم وصفتك الاحترافية بدقة معيار، أضف المكونات القابلة للتحجيم الحسابي التلقائي، واشرح مراحل الطهي للمجتمع والمطاعم.
+          </p>
+        </div>
+
+        <!-- Quick Toolbar Controls -->
+        <div class="flex items-center flex-wrap gap-2.5 shrink-0">
+          <button type="button" id="load-sample-recipe-btn" class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-main transition-colors">
+            <svg class="w-3.5 h-3.5 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+            <span>تحميل نموذج فاخر</span>
+          </button>
+          <button type="button" id="clear-recipe-form-btn" class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold bg-surface-2 hover:bg-red-500/10 hover:text-red-500 border border-border-subtle rounded-xl text-text-muted transition-colors">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+            <span>إعادة تعيين</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Draft Status Info Banner -->
+      <div class="flex items-center justify-between p-3 bg-surface-2 border border-border-subtle rounded-xl text-xs">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brand-emerald shrink-0"></span>
+          <span id="draft-status-indicator" class="text-text-muted font-medium">مسودة جديدة قيد التحرير</span>
+        </div>
+        <span class="text-[11px] text-text-muted font-mono" id="autosave-timestamp">الحفظ التلقائي مفعّل</span>
+      </div>
+    </div>
+
+    <!-- ================= 4-STEP WIZARD STEPPER BAR ================= -->
+    <nav class="bg-surface-1 border border-border-subtle rounded-2xl p-3 sm:p-4" aria-label="Creation Progress">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3" id="wizard-stepper-container">
+        
+        <!-- Step 1 Trigger -->
+        <button type="button" class="wizard-step-btn active group flex items-center gap-3 p-3 rounded-xl border border-brand-gold bg-surface-2 text-start transition-all" data-step="1">
+          <div class="step-badge w-8 h-8 rounded-lg bg-brand-gold text-white font-bold text-xs flex items-center justify-center shrink-0">
+            1
+          </div>
+          <div class="min-w-0">
+            <span class="block text-[10px] text-text-muted font-semibold uppercase tracking-wider">المرحلة 1</span>
+            <span class="block text-xs sm:text-sm font-bold text-text-main truncate" data-i18n="recipe.step1_title">المعلومات الأساسية</span>
+          </div>
+        </button>
+
+        <!-- Step 2 Trigger -->
+        <button type="button" class="wizard-step-btn group flex items-center gap-3 p-3 rounded-xl border border-border-subtle bg-surface-1 hover:bg-surface-2 text-start transition-all" data-step="2">
+          <div class="step-badge w-8 h-8 rounded-lg bg-surface-2 text-text-muted group-hover:text-text-main font-bold text-xs flex items-center justify-center shrink-0 border border-border-subtle">
+            2
+          </div>
+          <div class="min-w-0">
+            <span class="block text-[10px] text-text-muted font-semibold uppercase tracking-wider">المرحلة 2</span>
+            <span class="block text-xs sm:text-sm font-bold text-text-main truncate" data-i18n="recipe.step2_title">الصور والوسائط</span>
+          </div>
+        </button>
+
+        <!-- Step 3 Trigger -->
+        <button type="button" class="wizard-step-btn group flex items-center gap-3 p-3 rounded-xl border border-border-subtle bg-surface-1 hover:bg-surface-2 text-start transition-all" data-step="3">
+          <div class="step-badge w-8 h-8 rounded-lg bg-surface-2 text-text-muted group-hover:text-text-main font-bold text-xs flex items-center justify-center shrink-0 border border-border-subtle">
+            3
+          </div>
+          <div class="min-w-0">
+            <span class="block text-[10px] text-text-muted font-semibold uppercase tracking-wider">المرحلة 3</span>
+            <span class="block text-xs sm:text-sm font-bold text-text-main truncate" data-i18n="recipe.step3_title">المكونات الديناميكية</span>
+          </div>
+        </button>
+
+        <!-- Step 4 Trigger -->
+        <button type="button" class="wizard-step-btn group flex items-center gap-3 p-3 rounded-xl border border-border-subtle bg-surface-1 hover:bg-surface-2 text-start transition-all" data-step="4">
+          <div class="step-badge w-8 h-8 rounded-lg bg-surface-2 text-text-muted group-hover:text-text-main font-bold text-xs flex items-center justify-center shrink-0 border border-border-subtle">
+            4
+          </div>
+          <div class="min-w-0">
+            <span class="block text-[10px] text-text-muted font-semibold uppercase tracking-wider">المرحلة 4</span>
+            <span class="block text-xs sm:text-sm font-bold text-text-main truncate" data-i18n="recipe.step4_title">خطوات الإعداد والطهي</span>
+          </div>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- ================= FORM VALIDATION FEEDBACK SUMMARY ================= -->
+    <div id="form-validation-summary" class="hidden p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-start text-xs space-y-2">
+      <div class="flex items-center gap-2 font-bold text-red-500">
+        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>يرجى استكمال الحقول الإلزامية التالية لمتابعة النشر:</span>
+      </div>
+      <ul id="validation-errors-list" class="list-disc list-inside space-y-1 text-red-400 ps-2"></ul>
+    </div>
+
+    <!-- ================= MULTI-STEP PANELS CONTAINER ================= -->
+    <form id="create-recipe-form" novalidate>
+
+      <!-- ================= STEP 1 PANEL: BASIC INFORMATION ================= -->
+      <section id="step-1-panel" class="wizard-panel space-y-6" data-panel="1">
+        <div class="bg-surface-1 border border-border-subtle rounded-2xl p-5 sm:p-7 space-y-6">
+          
+          <div class="border-b border-border-subtle pb-4">
+            <h2 class="text-base sm:text-lg font-bold text-text-main flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+              <span data-i18n="recipe.step1_title">المعلومات الأساسية</span>
+            </h2>
+            <p class="text-xs text-text-muted mt-1">حدد هوية الطبق، التوصيف الفاخر، والتصنيف المناسب في معيار.</p>
+          </div>
+
+          <!-- Recipe Titles (Bilingual) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div class="space-y-2 text-start">
+              <label for="recipe-title-ar" class="block text-xs font-bold text-text-main">
+                اسم الوصفة بالعربية <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="recipe-title-ar" name="title_ar" required
+                     placeholder="مثال: ستيك واغيو ريب آي مع غليز التمر والثوم الأسود"
+                     class="w-full px-3.5 py-2.5 text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all">
+            </div>
+
+            <div class="space-y-2 text-start">
+              <label for="recipe-title-en" class="block text-xs font-bold text-text-main">
+                Recipe Title (English) <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="recipe-title-en" name="title_en" required dir="ltr"
+                     placeholder="e.g. Wagyu Ribeye with Black Garlic Date Glaze"
+                     class="w-full px-3.5 py-2.5 text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all">
+            </div>
+          </div>
+
+          <!-- Descriptions (Bilingual) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div class="space-y-2 text-start">
+              <label for="recipe-desc-ar" class="block text-xs font-bold text-text-main">
+                قصة ووصف الطبق بالعربية <span class="text-red-500">*</span>
+              </label>
+              <textarea id="recipe-desc-ar" name="description_ar" rows="3" required
+                        placeholder="اشرح فلسفة الطبق، المكونات الخاصة، وتجربة التذوق الفاخرة..."
+                        class="w-full px-3.5 py-2.5 text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all resize-y"></textarea>
+            </div>
+
+            <div class="space-y-2 text-start">
+              <label for="recipe-desc-en" class="block text-xs font-bold text-text-main">
+                Dish Story & Description (English) <span class="text-red-500">*</span>
+              </label>
+              <textarea id="recipe-desc-en" name="description_en" rows="3" required dir="ltr"
+                        placeholder="Describe the dish philosophy, flavor notes, and culinary inspiration..."
+                        class="w-full px-3.5 py-2.5 text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all resize-y"></textarea>
+            </div>
+          </div>
+
+          <!-- Cuisine, Category, Difficulty -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+            
+            <div class="space-y-2 text-start">
+              <label for="recipe-cuisine" class="block text-xs font-bold text-text-main" data-i18n="recipe.cuisine">المطبخ</label>
+              <select id="recipe-cuisine" name="cuisine" class="w-full px-3.5 py-2.5 text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                <option value="Saudi" selected>سعودي معاصر (Contemporary Saudi)</option>
+                <option value="Khaleeji">خليجي تراثي (Khaleeji Heritage)</option>
+                <option value="Levantine">شامي وبلاد الشام (Levantine)</option>
+                <option value="Italian">إيطالي فاخر (Italian Fine Dining)</option>
+                <option value="French">فرنسي كلاسيكي (French Haute Cuisine)</option>
+                <option value="Japanese">ياباني كايسيكي (Japanese Kaiseki)</option>
+                <option value="Mediterranean">متوسطي معاصر (Modern Mediterranean)</option>
+                <option value="Fusion">طهي جزيئي ودمج مبتكر (Progressive Fusion)</option>
+              </select>
+            </div>
+
+            <div class="space-y-2 text-start">
+              <label for="recipe-category" class="block text-xs font-bold text-text-main" data-i18n="recipe.category">التصنيف</label>
+              <select id="recipe-category" name="category" class="w-full px-3.5 py-2.5 text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                <option value="Main Course" selected>أطباق رئيسية (Main Course)</option>
+                <option value="Appetizers">مقبلات ومشهيات (Appetizers)</option>
+                <option value="Desserts">حلويات ومعجنات (Desserts & Pastry)</option>
+                <option value="Seafood">مأكولات بحرية (Seafood)</option>
+                <option value="Soups & Stews">شوربات ويخنات (Soups & Stews)</option>
+                <option value="Beverages">مشروبات وموكتيلات (Beverages)</option>
+              </select>
+            </div>
+
+            <div class="space-y-2 text-start">
+              <label for="recipe-difficulty" class="block text-xs font-bold text-text-main" data-i18n="recipe.difficulty">مستوى الصعوبة</label>
+              <select id="recipe-difficulty" name="difficulty" class="w-full px-3.5 py-2.5 text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                <option value="Easy">سهل (Easy)</option>
+                <option value="Medium" selected>متوسط (Medium)</option>
+                <option value="Hard">متقدم / احترافي (Hard)</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Quantitative Metrics (Servings, Prep, Cook, Calories) -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-2">
+            
+            <div class="space-y-2 text-start">
+              <label for="recipe-servings" class="block text-xs font-bold text-text-main" data-i18n="recipe.base_servings">الحصص الأساسية</label>
+              <div class="flex items-center">
+                <button type="button" id="dec-servings-btn" class="w-9 h-10 rounded-s-xl bg-surface-2 border border-e-0 border-border-subtle hover:bg-surface-1 flex items-center justify-center text-text-muted hover:text-text-main text-base font-bold">-</button>
+                <input type="number" id="recipe-servings" name="base_servings" value="4" min="1" max="100" required
+                       class="w-full h-10 text-center font-bold text-sm bg-surface-2 border-y border-border-subtle text-text-main focus:outline-none focus:ring-1 focus:ring-brand-gold">
+                <button type="button" id="inc-servings-btn" class="w-9 h-10 rounded-e-xl bg-surface-2 border border-s-0 border-border-subtle hover:bg-surface-1 flex items-center justify-center text-text-muted hover:text-text-main text-base font-bold">+</button>
+              </div>
+            </div>
+
+            <div class="space-y-2 text-start">
+              <label for="recipe-prep-time" class="block text-xs font-bold text-text-main">
+                <span data-i18n="recipe.prep_time">وقت التحضير</span> <span class="text-[10px] text-text-muted font-normal">(دقيقة)</span>
+              </label>
+              <input type="number" id="recipe-prep-time" name="prep_time" value="25" min="0" required
+                     class="w-full px-3.5 py-2.5 text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            </div>
+
+            <div class="space-y-2 text-start">
+              <label for="recipe-cook-time" class="block text-xs font-bold text-text-main">
+                <span data-i18n="recipe.cook_time">وقت الطهي</span> <span class="text-[10px] text-text-muted font-normal">(دقيقة)</span>
+              </label>
+              <input type="number" id="recipe-cook-time" name="cook_time" value="35" min="0" required
+                     class="w-full px-3.5 py-2.5 text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            </div>
+
+            <div class="space-y-2 text-start">
+              <label for="recipe-calories" class="block text-xs font-bold text-text-main">
+                <span data-i18n="recipe.calories">السعرات</span> <span class="text-[10px] text-text-muted font-normal">(لكل حصة)</span>
+              </label>
+              <input type="number" id="recipe-calories" name="calories" value="520" min="0"
+                     class="w-full px-3.5 py-2.5 text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            </div>
+
+          </div>
+
+          <!-- Dietary & Professional Badges -->
+          <div class="space-y-2.5 text-start pt-2">
+            <label class="block text-xs font-bold text-text-main">الوسوم والسمات الغذائية (اختر ما ينطبق)</label>
+            <div class="flex flex-wrap gap-2" id="recipe-tags-container">
+              <label class="tag-checkbox-label inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-2 border border-border-subtle hover:border-brand-gold text-xs cursor-pointer select-none transition-colors">
+                <input type="checkbox" name="tags" value="Halal" checked class="rounded border-border-subtle text-brand-gold focus:ring-brand-gold">
+                <span>حلال (100% Halal)</span>
+              </label>
+              <label class="tag-checkbox-label inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-2 border border-border-subtle hover:border-brand-gold text-xs cursor-pointer select-none transition-colors">
+                <input type="checkbox" name="tags" value="FineDining" checked class="rounded border-border-subtle text-brand-gold focus:ring-brand-gold">
+                <span>فاخر (Fine Dining)</span>
+              </label>
+              <label class="tag-checkbox-label inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-2 border border-border-subtle hover:border-brand-gold text-xs cursor-pointer select-none transition-colors">
+                <input type="checkbox" name="tags" value="GlutenFree" class="rounded border-border-subtle text-brand-gold focus:ring-brand-gold">
+                <span>خالٍ من الجلوتين (Gluten-Free)</span>
+              </label>
+              <label class="tag-checkbox-label inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-2 border border-border-subtle hover:border-brand-gold text-xs cursor-pointer select-none transition-colors">
+                <input type="checkbox" name="tags" value="DairyFree" class="rounded border-border-subtle text-brand-gold focus:ring-brand-gold">
+                <span>خالٍ من اللاكتوز (Dairy-Free)</span>
+              </label>
+              <label class="tag-checkbox-label inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-2 border border-border-subtle hover:border-brand-gold text-xs cursor-pointer select-none transition-colors">
+                <input type="checkbox" name="tags" value="DryAged" class="rounded border-border-subtle text-brand-gold focus:ring-brand-gold">
+                <span>معتق بالإنضاج (Dry-Aged)</span>
+              </label>
+              <label class="tag-checkbox-label inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-2 border border-border-subtle hover:border-brand-gold text-xs cursor-pointer select-none transition-colors">
+                <input type="checkbox" name="tags" value="Organic" class="rounded border-border-subtle text-brand-gold focus:ring-brand-gold">
+                <span>عضوي محلي (Organic Terroir)</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= STEP 2 PANEL: MEDIA & PHOTOGRAPHY ================= -->
+      <section id="step-2-panel" class="wizard-panel hidden space-y-6" data-panel="2">
+        <div class="bg-surface-1 border border-border-subtle rounded-2xl p-5 sm:p-7 space-y-6">
+          
+          <div class="border-b border-border-subtle pb-4">
+            <h2 class="text-base sm:text-lg font-bold text-text-main flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+              <span data-i18n="recipe.step2_title">الصور والوسائط</span>
+            </h2>
+            <p class="text-xs text-text-muted mt-1">ارفع صورة الغلاف عالية الدقة، وأضف صور المعرض وملاحظات أسلوب التقديم.</p>
+          </div>
+
+          <!-- Cover Image Drag & Drop Upload Zone -->
+          <div class="space-y-3 text-start">
+            <label class="block text-xs font-bold text-text-main">
+              صورة الغلاف الرئيسية للطبق <span class="text-red-500">*</span>
+            </label>
+
+            <!-- Dropzone Area -->
+            <div id="cover-dropzone" class="border-2 border-dashed border-border-subtle hover:border-brand-gold rounded-2xl p-6 sm:p-8 bg-surface-2 transition-colors cursor-pointer text-center space-y-3">
+              <div class="w-12 h-12 rounded-xl bg-surface-1 border border-border-subtle mx-auto flex items-center justify-center text-brand-gold shadow-sm">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+              </div>
+              <div class="space-y-1">
+                <p class="text-xs sm:text-sm font-semibold text-text-main" data-i18n="recipe.drag_drop_image">اسحب صورة الطبق الرئيسية هنا أو استعرض الملفات</p>
+                <p class="text-[11px] text-text-muted">يدعم JPG, PNG, WEBP بدقة فائقة (الحد الأقصى 10 ميغابايت)</p>
+              </div>
+              <input type="file" id="cover-image-file-input" accept="image/*" class="hidden">
+              <button type="button" id="browse-cover-btn" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold bg-brand-gold hover:bg-brand-gold-hover text-white rounded-xl shadow-sm transition-colors">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span data-i18n="btn.upload_image">رفع صورة</span>
+              </button>
+            </div>
+
+            <!-- Alternative Direct URL Input -->
+            <div class="flex items-center gap-2 pt-1">
+              <span class="text-[11px] text-text-muted shrink-0 font-medium">أو أدخل رابط الصورة مباشرة:</span>
+              <input type="url" id="cover-image-url-input" placeholder="https://images.unsplash.com/..."
+                     class="flex-1 px-3 py-1.5 text-xs bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-1 focus:ring-brand-gold" dir="ltr">
+              <button type="button" id="apply-cover-url-btn" class="px-3 py-1.5 text-xs font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-main">تطبيق</button>
+            </div>
+
+            <!-- Cover Image Preview Card -->
+            <div id="cover-preview-card" class="hidden bg-surface-2 border border-border-subtle rounded-xl p-3 flex items-center justify-between gap-4">
+              <div class="flex items-center gap-3 min-w-0">
+                <img id="cover-preview-img" src="" alt="Cover Preview" class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover bg-surface-1 border border-border-subtle shrink-0">
+                <div class="min-w-0 space-y-1">
+                  <span class="inline-block text-[10px] font-bold px-2 py-0.5 rounded bg-brand-gold/10 text-brand-gold border border-brand-gold/30">الغلاف المعتمد</span>
+                  <p id="cover-filename-label" class="text-xs font-semibold text-text-main truncate">cover-image.jpg</p>
+                  <p class="text-[10px] text-text-muted">جاهزة للنشر في بطاقة الوصفة وخلاصة الاستكشاف</p>
+                </div>
+              </div>
+              <button type="button" id="remove-cover-btn" class="p-2 text-text-muted hover:text-red-500 bg-surface-1 border border-border-subtle rounded-lg transition-colors shrink-0" aria-label="Remove image">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Secondary Gallery Images -->
+          <div class="space-y-3 text-start pt-2 border-t border-border-subtle">
+            <div class="flex items-center justify-between">
+              <div>
+                <label class="block text-xs font-bold text-text-main">معرض صور مراحل التحضير والتقديم (اختياري)</label>
+                <p class="text-[11px] text-text-muted">أضف لقطات قريبة لملمس الطبق أو مراحل الطهي</p>
+              </div>
+              <button type="button" id="add-gallery-photo-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-main">
+                <svg class="w-3.5 h-3.5 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                <span>إضافة لقطة</span>
+              </button>
+            </div>
+
+            <!-- Gallery Previews Grid -->
+            <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Video & Plating Advice -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-2 border-t border-border-subtle">
+            <div class="space-y-2 text-start">
+              <label for="recipe-video-url" class="block text-xs font-bold text-text-main">رابط فيديو الشرح السريع (YouTube / Vimeo / MP4)</label>
+              <input type="url" id="recipe-video-url" name="video_url" dir="ltr" placeholder="https://youtube.com/watch?v=..."
+                     class="w-full px-3.5 py-2.5 text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            </div>
+
+            <div class="space-y-2 text-start">
+              <label for="recipe-plating-notes" class="block text-xs font-bold text-text-main">توصيات التقديم والسكب الفندقي (Plating & Pairing)</label>
+              <input type="text" id="recipe-plating-notes" name="plating_notes" placeholder="مثال: يقدم على أطباق سيراميك دافئة مع رشة خفيفة من الزعتر البري"
+                     class="w-full px-3.5 py-2.5 text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= STEP 3 PANEL: DYNAMIC INGREDIENTS ================= -->
+      <section id="step-3-panel" class="wizard-panel hidden space-y-6" data-panel="3">
+        <div class="bg-surface-1 border border-border-subtle rounded-2xl p-5 sm:p-7 space-y-6">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-border-subtle pb-4">
+            <div>
+              <h2 class="text-base sm:text-lg font-bold text-text-main flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+                <span data-i18n="recipe.step3_title">المكونات الديناميكية ومقادير الحصص</span>
+              </h2>
+              <p class="text-xs text-text-muted mt-1" data-i18n="recipe.scale_hint">
+                المقادير المضافة هنا تتفاعل مع حاسبة الحصص الرياضية (Serving Scaler) لتتيح للزوار مضاعفة أو تقليص الكميات بدقة كيميائية.
+              </p>
+            </div>
+
+            <div class="flex items-center gap-2 shrink-0">
+              <button type="button" id="load-sample-ingredients-btn" class="px-3 py-1.5 text-xs font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-main">
+                تحميل مكونات تجريبية
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Ingredients List Builder Container -->
+          <div class="space-y-3">
+            
+            <!-- Table Header Labels (Desktop) -->
+            <div class="hidden md:grid grid-cols-12 gap-3 px-3 py-2 text-[11px] font-bold text-text-muted bg-surface-2 rounded-xl text-start">
+              <span class="col-span-4" data-i18n="recipe.ingredient_name">اسم المكون (عربي / English)</span>
+              <span class="col-span-2" data-i18n="recipe.ingredient_qty">الكمية</span>
+              <span class="col-span-2" data-i18n="recipe.ingredient_unit">الوحدة</span>
+              <span class="col-span-3" data-i18n="recipe.ingredient_notes">ملاحظات التحضير / القسم</span>
+              <span class="col-span-1 text-center">حذف</span>
+            </div>
+
+            <!-- Dynamic Rows List -->
+            <div id="ingredients-list" class="space-y-3">
+              <!-- Dynamically populated ingredient rows -->
+            </div>
+
+            <!-- Add Row Action Button -->
+            <div class="pt-2">
+              <button type="button" id="add-ingredient-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-bold bg-surface-2 hover:bg-surface-1 hover:border-brand-gold text-brand-gold border border-border-subtle rounded-xl transition-all shadow-sm">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                <span data-i18n="btn.add_ingredient">إضافة مكون جديد</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= STEP 4 PANEL: STEP-BY-STEP METHOD ================= -->
+      <section id="step-4-panel" class="wizard-panel hidden space-y-6" data-panel="4">
+        <div class="bg-surface-1 border border-border-subtle rounded-2xl p-5 sm:p-7 space-y-6">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-border-subtle pb-4">
+            <div>
+              <h2 class="text-base sm:text-lg font-bold text-text-main flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+                <span data-i18n="recipe.step4_title">خطوات الإعداد وطريقة الطهي المتسلسلة</span>
+              </h2>
+              <p class="text-xs text-text-muted mt-1">
+                قسم خطواتك إلى مراحل متسلسلة لتفعيل وضع الطهي التفاعلي المباشر (Cooking Mode) مع المؤقتات اللحظية.
+              </p>
+            </div>
+
+            <div class="flex items-center gap-2 shrink-0">
+              <button type="button" id="load-sample-steps-btn" class="px-3 py-1.5 text-xs font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-main">
+                تحميل خطوات تجريبية
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Instructions List -->
+          <div class="space-y-4">
+            <div id="instructions-list" class="space-y-4">
+              <!-- Dynamically populated instruction step cards -->
+            </div>
+
+            <!-- Add Step Action Button -->
+            <div class="pt-2">
+              <button type="button" id="add-step-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-bold bg-surface-2 hover:bg-surface-1 hover:border-brand-gold text-brand-gold border border-border-subtle rounded-xl transition-all shadow-sm">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                <span data-i18n="btn.add_step">إضافة خطوة تحضير جديدة</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </form>
+
+  </main>
+
+  <!-- ================= STICKY BOTTOM ACTION BAR ================= -->
+  <aside id="sticky-actions-bar" class="fixed bottom-0 start-0 end-0 bg-surface-1 border-t border-border-subtle z-40 p-3 sm:p-4 shadow-2xl">
+    <div class="max-w-5xl mx-auto flex items-center justify-between gap-3">
+      
+      <!-- Start: Progress Status & Save Draft Button -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button type="button" id="save-draft-btn" class="inline-flex items-center gap-1.5 px-3 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-main transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          <svg class="w-4 h-4 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          <span data-i18n="btn.draft">حفظ كمسودة</span>
+        </button>
+        
+        <span id="step-indicator-text" class="hidden sm:inline-block text-xs font-bold text-text-muted">
+          المرحلة 1 من 4
+        </span>
+      </div>
+
+      <!-- End: Previous, Next & Publish Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Previous Button -->
+        <button type="button" id="prev-step-btn" class="hidden inline-flex items-center gap-1.5 px-3.5 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-text-main transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          <svg class="w-4 h-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          <span data-i18n="btn.prev_step">السابق</span>
+        </button>
+
+        <!-- Next Button -->
+        <button type="button" id="next-step-btn" class="inline-flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold bg-brand-gold hover:bg-brand-gold-hover text-white rounded-xl shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          <span data-i18n="btn.next_step">الخطوة التالية</span>
+          <svg class="w-4 h-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+
+        <!-- Publish Recipe Final Button (shown on Step 4) -->
+        <button type="button" id="publish-recipe-btn" class="hidden inline-flex items-center gap-2 px-5 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-sm font-extrabold bg-brand-emerald hover:bg-brand-emerald-hover text-white rounded-xl shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-brand-emerald">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="btn.publish">نشر الوصفة في مجتمع معيار</span>
+        </button>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ================= GLOBAL SEARCH MODAL ================= -->
+  <div id="search-modal" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-16 px-4 bg-canvas/80" role="dialog" aria-modal="true">
+    <div class="bg-surface-1 border border-border-subtle rounded-2xl max-w-2xl w-full max-h-[80vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="p-4 border-b border-border-subtle flex items-center gap-3">
+        <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="global-search-input" class="w-full bg-transparent border-none text-text-main placeholder-text-muted focus:outline-none text-sm" placeholder="ابحث في الوصفات، الطهاة، ومستلزمات المطاعم..." data-i18n-placeholder="search.placeholder">
+        <button type="button" data-modal-close="search-modal" class="p-1 text-text-muted hover:text-text-main rounded-lg" aria-label="Close search">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div id="global-search-results" class="p-4 overflow-y-auto space-y-2 flex-1 divide-y divide-border-subtle">
+        <!-- Live Instant Search results -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MOBILE NAVIGATION DRAWER ================= -->
+  <div id="mobile-drawer" data-mobile-drawer class="hidden fixed inset-y-0 start-0 w-72 bg-surface-1 border-e border-border-subtle z-50 p-5 flex flex-col justify-between shadow-2xl overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between pb-4 border-b border-border-subtle">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-brand-gold flex items-center justify-center text-white font-bold">M</div>
+          <span class="font-extrabold text-base text-text-main">معيار Meyar</span>
+        </div>
+        <button type="button" data-action="close-mobile-menu" data-target="mobile-drawer" class="p-1.5 text-text-muted hover:text-text-main rounded-lg" aria-label="Close drawer">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <nav class="py-4 space-y-1.5" aria-label="Mobile Navigation">
+        <a href="index.html" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium text-text-main hover:bg-surface-2">
+          <svg class="w-5 h-5 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span data-i18n="nav.feed">خلاصة الاستكشاف</span>
+        </a>
+        <a href="explore.html" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium text-text-main hover:bg-surface-2">
+          <svg class="w-5 h-5 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          <span data-i18n="nav.explore">استكشف وتصفح</span>
+        </a>
+        <a href="create-recipe.html" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-bold bg-surface-2 text-brand-gold border border-border-subtle">
+          <svg class="w-5 h-5 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          <span data-i18n="nav.create_recipe">ابتكار وصفة</span>
+        </a>
+        <a href="supplies.html" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium text-text-main hover:bg-surface-2">
+          <svg class="w-5 h-5 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+          <span data-i18n="nav.supplies">توريدات المطاعم</span>
+        </a>
+        <a href="courses.html" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium text-text-main hover:bg-surface-2">
+          <svg class="w-5 h-5 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span data-i18n="nav.courses">دورات وورش عمل</span>
+        </a>
+        <a href="dashboard.html" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium text-text-main hover:bg-surface-2">
+          <svg class="w-5 h-5 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+          <span data-i18n="nav.dashboard">لوحة التحكم</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="pt-4 border-t border-border-subtle space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" data-action="toggle-lang" class="px-3 py-2 text-xs font-semibold bg-surface-2 text-text-main border border-border-subtle rounded-xl flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <span class="lang-label">English</span>
+        </button>
+        <button type="button" data-action="toggle-theme" class="p-2 bg-surface-2 text-brand-gold border border-border-subtle rounded-xl">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+      </div>
+      <a href="auth.html" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 text-xs font-bold text-red-500 bg-surface-2 border border-border-subtle rounded-xl">
+        <span data-i18n="nav.logout">تسجيل الخروج</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ================= MOBILE FIXED BOTTOM NAVIGATION BAR ================= -->
+  <nav class="fixed bottom-0 start-0 end-0 bg-surface-1 border-t border-border-subtle z-40 lg:hidden flex items-center justify-around py-2 px-3 shadow-lg" aria-label="Mobile Bottom Navigation">
+    <a href="index.html" class="flex flex-col items-center gap-1 text-text-muted hover:text-text-main p-1" aria-label="Home Feed">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <span class="text-[10px] font-medium" data-i18n="nav.feed">الرئيسية</span>
+    </a>
+
+    <a href="explore.html" class="flex flex-col items-center gap-1 text-text-muted hover:text-text-main p-1" aria-label="Explore">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      <span class="text-[10px] font-medium" data-i18n="nav.explore">استكشف</span>
+    </a>
+
+    <a href="create-recipe.html" class="flex items-center justify-center w-11 h-11 -mt-4 rounded-2xl bg-brand-gold hover:bg-brand-gold-hover text-white shadow-lg border-2 border-surface-1 transition-transform active:scale-95" aria-label="Create Recipe">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+    </a>
+
+    <a href="supplies.html" class="flex flex-col items-center gap-1 text-text-muted hover:text-text-main p-1" aria-label="Supplies">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+      <span class="text-[10px] font-medium" data-i18n="nav.supplies">توريدات</span>
+    </a>
+
+    <a href="dashboard.html" class="flex flex-col items-center gap-1 text-text-muted hover:text-text-main p-1" aria-label="Dashboard">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+      <span class="text-[10px] font-medium" data-i18n="nav.dashboard">لوحتي</span>
+    </a>
+  </nav>
+
+  <!-- Application Scripts -->
+  <script type="module" src="./js/app.js"></script>
+  <script type="module" src="./js/pages/create-recipe.js"></script>
+</body>
+</html>
