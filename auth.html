@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="nav.auth_login">تسجيل الدخول - معيار | Meyar</title>
+  
+  <!-- Anti-FOUC Early Theme & Language Execution -->
+  <script>
+    (function() {
+      try {
+        const theme = localStorage.getItem('meyar_theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        const lang = localStorage.getItem('meyar_lang') || 'ar';
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Typography & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/output.css">
+</head>
+<body class="bg-canvas text-text-main min-h-screen flex flex-col antialiased selection:bg-brand-gold selection:text-white transition-colors duration-200">
+
+  <!-- Header / Navigation Bar -->
+  <header class="w-full border-b border-border-subtle bg-surface-1 shrink-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Identity -->
+      <a href="index.html" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-lg p-1" aria-label="Meyar Home">
+        <div class="w-10 h-10 rounded-xl bg-brand-gold flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+          <!-- Meyar Gold Brand Emblem SVG -->
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-extrabold text-xl tracking-tight text-text-main flex items-center gap-1.5">
+            معيار <span class="text-xs font-semibold px-1.5 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle uppercase">Meyar</span>
+          </span>
+          <span class="text-[10px] text-text-muted hidden sm:inline-block" data-i18n="auth.brand_tagline">منصة الطهي الاحترافية وشبكة تجارة المستلزمات والمطاعم</span>
+        </div>
+      </a>
+
+      <!-- Header Controls: Back to Home, Language Switcher, Theme Switcher -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Back to Home Link -->
+        <a href="index.html" class="inline-flex items-center gap-1.5 px-3 py-2 text-xs sm:text-sm font-medium text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          <svg class="w-4 h-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+          <span data-i18n="nav.feed">الرئيسية</span>
+        </a>
+
+        <!-- Language Switcher Button -->
+        <button type="button" data-action="toggle-lang" class="inline-flex items-center gap-1.5 px-3 py-2 text-xs sm:text-sm font-medium text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Toggle language">
+          <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+            <path d="M2 12h20"/>
+          </svg>
+          <span class="lang-label font-semibold">English</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button type="button" data-action="toggle-theme" class="p-2 sm:p-2.5 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Toggle dark/light theme">
+          <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/>
+            <path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/>
+            <path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/>
+            <path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/>
+            <path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Authentication Body -->
+  <main class="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-12">
+    <div class="w-full max-w-xl bg-surface-1 border border-border-subtle rounded-2xl shadow-xl p-6 sm:p-8 md:p-10 my-auto">
+      
+      <!-- Card Header: Emblem & Dynamic Title / Subtitle -->
+      <div class="text-center flex flex-col items-center">
+        <div class="w-14 h-14 rounded-2xl bg-surface-2 border border-border-subtle flex items-center justify-center text-brand-gold mb-4 shadow-sm">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h1 id="auth-title" data-i18n="auth.welcome_back" class="text-2xl sm:text-3xl font-extrabold text-text-main tracking-tight">
+          مرحباً بعودتك إلى معيار
+        </h1>
+        <p id="auth-subtitle" data-i18n="auth.subtitle_login" class="text-xs sm:text-sm text-text-muted mt-2 max-w-md leading-relaxed">
+          أدخل بيانات اعتمادك للوصول إلى مساحتك المطبخية وإدارة أعمالك
+        </p>
+      </div>
+
+      <!-- Segmented Tab Control (Login vs Register) -->
+      <div class="mt-6 mb-8 bg-surface-2 p-1 rounded-xl border border-border-subtle flex gap-1" role="tablist" aria-label="Authentication Options">
+        <button type="button" id="tab-login-btn" data-auth-tab="login" role="tab" aria-selected="true" class="flex-1 py-2.5 px-4 text-xs sm:text-sm font-bold rounded-lg transition-all bg-surface-1 text-text-main shadow-sm border border-border-subtle focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          <span data-i18n="auth.tab_login">تسجيل الدخول</span>
+        </button>
+        <button type="button" id="tab-register-btn" data-auth-tab="register" role="tab" aria-selected="false" class="flex-1 py-2.5 px-4 text-xs sm:text-sm font-medium rounded-lg transition-all text-text-muted hover:text-text-main border border-transparent focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          <span data-i18n="auth.tab_register">إنشاء حساب جديد</span>
+        </button>
+      </div>
+
+      <!-- ================= LOGIN FORM ================= -->
+      <form id="login-form" data-auth-form="login" class="space-y-5" novalidate>
+        <!-- Email Input -->
+        <div class="space-y-1.5 text-start">
+          <label for="login-email" class="block text-xs sm:text-sm font-semibold text-text-main" data-i18n="auth.email">
+            البريد الإلكتروني
+          </label>
+          <div class="relative flex items-center">
+            <span class="absolute start-3.5 text-text-muted pointer-events-none">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </span>
+            <input type="email" id="login-email" name="email" required autocomplete="email"
+                   class="w-full ps-10 pe-4 py-3 bg-surface-2 border border-border-subtle rounded-xl text-sm text-text-main placeholder:text-text-muted focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                   placeholder="name@domain.com" data-i18n-placeholder="auth.email_placeholder" value="faisal@meyar.sa">
+          </div>
+        </div>
+
+        <!-- Password Input with Show/Hide Toggle -->
+        <div class="space-y-1.5 text-start password-wrapper">
+          <div class="flex items-center justify-between">
+            <label for="login-password" class="block text-xs sm:text-sm font-semibold text-text-main" data-i18n="auth.password">
+              كلمة المرور
+            </label>
+            <a href="#" class="text-xs text-brand-gold hover:underline font-medium" data-i18n="auth.forgot_pwd">
+              هل نسيت كلمة المرور؟
+            </a>
+          </div>
+          <div class="relative flex items-center">
+            <span class="absolute start-3.5 text-text-muted pointer-events-none">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </span>
+            <input type="password" id="login-password" name="password" required autocomplete="current-password"
+                   class="w-full ps-10 pe-11 py-3 bg-surface-2 border border-border-subtle rounded-xl text-sm text-text-main placeholder:text-text-muted focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                   placeholder="••••••••" data-i18n-placeholder="auth.password_placeholder" value="Secret123!">
+            <button type="button" data-action="toggle-password" data-target="login-password" class="absolute end-3 p-1.5 text-text-muted hover:text-text-main rounded-md transition-colors" aria-label="Toggle password visibility">
+              <svg class="w-4 h-4 icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <svg class="w-4 h-4 icon-eye-off hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+                <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+                <line x1="2" x2="22" y1="2" y2="22"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Remember Me Checkbox -->
+        <div class="flex items-center gap-2 pt-1 text-start">
+          <input type="checkbox" id="login-remember" name="remember" checked
+                 class="w-4 h-4 rounded border-border-subtle text-brand-emerald bg-surface-2 focus:ring-brand-emerald">
+          <label for="login-remember" class="text-xs sm:text-sm text-text-muted select-none cursor-pointer" data-i18n="auth.remember_me">
+            تذكر بيانات الدخول
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-brand-emerald hover:bg-brand-emerald-hover text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-brand-emerald">
+          <span data-i18n="auth.submit_login">دخول إلى الحساب</span>
+          <svg class="w-4 h-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+          </svg>
+        </button>
+
+        <!-- Or Continue With Divider -->
+        <div class="relative flex items-center justify-center my-6">
+          <div class="border-t border-border-subtle w-full"></div>
+          <span class="bg-surface-1 px-3 text-xs text-text-muted shrink-0" data-i18n="auth.or_continue_with">
+            أو تابع عبر
+          </span>
+          <div class="border-t border-border-subtle w-full"></div>
+        </div>
+
+        <!-- Social Auth Grid -->
+        <div class="grid grid-cols-2 gap-3">
+          <button type="button" data-social="google" class="flex items-center justify-center gap-2 py-2.5 px-4 bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-xs sm:text-sm font-semibold text-text-main transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+            </svg>
+            <span data-i18n="auth.google_login">Google</span>
+          </button>
+
+          <button type="button" data-social="apple" class="flex items-center justify-center gap-2 py-2.5 px-4 bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-xs sm:text-sm font-semibold text-text-main transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 1.01-2.87-.96.04-2.08.64-2.73 1.4-.57.65-1.07 1.72-.94 2.76 1.07.08 2.06-.54 2.66-1.29z"/>
+            </svg>
+            <span data-i18n="auth.apple_login">Apple</span>
+          </button>
+        </div>
+
+        <!-- Switch Tab Footer Link -->
+        <p class="text-center text-xs sm:text-sm text-text-muted pt-2">
+          <span data-i18n="auth.no_account">ليس لديك حساب حتى الآن؟</span>
+          <button type="button" data-action="switch-to-register" class="text-brand-gold hover:underline font-bold ms-1 focus:outline-none">
+            <span data-i18n="auth.tab_register">إنشاء حساب جديد</span>
+          </button>
+        </p>
+      </form>
+
+
+      <!-- ================= REGISTER FORM ================= -->
+      <form id="register-form" data-auth-form="register" class="space-y-6 hidden" novalidate>
+        
+        <!-- 3-Role Archetype Selector -->
+        <div class="space-y-2 text-start">
+          <label class="block text-xs sm:text-sm font-semibold text-text-main" data-i18n="auth.choose_role">
+            اختر هويتك الأساسية في المنصة
+          </label>
+          <input type="hidden" name="role" id="register-role" value="chef">
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" role="radiogroup" aria-label="Select your role in Meyar">
+            
+            <!-- 1. Chef / Creator Card -->
+            <div data-role="chef" tabindex="0" role="radio" aria-checked="true"
+                 class="group relative p-3.5 rounded-xl border border-brand-gold bg-surface-1 ring-2 ring-brand-gold cursor-pointer transition-all hover:scale-[1.02] select-none flex flex-col justify-between focus:outline-none">
+              <div class="role-check-indicator absolute top-2.5 end-2.5 w-5 h-5 rounded-full bg-brand-gold text-white flex items-center justify-center shadow-sm">
+                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+              </div>
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-surface-2 text-brand-gold flex items-center justify-center mb-2.5">
+                  <!-- Chef Hat Icon -->
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+                    <line x1="6" y1="17" x2="18" y2="17"/>
+                  </svg>
+                </div>
+                <h3 class="text-xs sm:text-sm font-bold text-text-main" data-i18n="role.chef">شيف محترف</h3>
+                <p class="text-[11px] text-text-muted mt-1 leading-snug" data-i18n="role.chef_desc">
+                  انشر وصفاتك الاحترافية، ابنِ معرض أطباقك الفاخرة، وقدّم دورات وورش عمل تخصصية.
+                </p>
+              </div>
+            </div>
+
+            <!-- 2. Culinary Enthusiast / Home Cook Card -->
+            <div data-role="enthusiast" tabindex="0" role="radio" aria-checked="false"
+                 class="group relative p-3.5 rounded-xl border border-border-subtle bg-surface-2 cursor-pointer transition-all hover:scale-[1.02] select-none flex flex-col justify-between focus:outline-none">
+              <div class="role-check-indicator absolute top-2.5 end-2.5 w-5 h-5 rounded-full bg-brand-gold text-white flex items-center justify-center shadow-sm hidden">
+                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+              </div>
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-surface-1 text-brand-gold flex items-center justify-center mb-2.5">
+                  <!-- Flame / Heart Icon -->
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/>
+                  </svg>
+                </div>
+                <h3 class="text-xs sm:text-sm font-bold text-text-main" data-i18n="role.enthusiast">هاوي طهي</h3>
+                <p class="text-[11px] text-text-muted mt-1 leading-snug" data-i18n="role.enthusiast_desc">
+                  استكشف أحدث ابتكارات الطهي، عدّل مقادير الحصص تلقائياً، وانضم لأقوى الورش.
+                </p>
+              </div>
+            </div>
+
+            <!-- 3. Supplier / B2B Vendor Card -->
+            <div data-role="supplier" tabindex="0" role="radio" aria-checked="false"
+                 class="group relative p-3.5 rounded-xl border border-border-subtle bg-surface-2 cursor-pointer transition-all hover:scale-[1.02] select-none flex flex-col justify-between focus:outline-none">
+              <div class="role-check-indicator absolute top-2.5 end-2.5 w-5 h-5 rounded-full bg-brand-gold text-white flex items-center justify-center shadow-sm hidden">
+                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+              </div>
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-surface-1 text-brand-gold flex items-center justify-center mb-2.5">
+                  <!-- Package / Store Icon -->
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m7.5 4.27 9 5.15"/>
+                    <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                    <path d="m3.3 7 8.7 5 8.7-5"/>
+                    <path d="M12 22V12"/>
+                  </svg>
+                </div>
+                <h3 class="text-xs sm:text-sm font-bold text-text-main" data-i18n="role.supplier">مورد مستلزمات</h3>
+                <p class="text-[11px] text-text-muted mt-1 leading-snug" data-i18n="role.supplier_desc">
+                  اعرض معدات المطابخ التجارية، المكونات الخام بالجملة، واستقبل طلبات عروض الأسعار (RFQ).
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Full Name Input -->
+        <div class="space-y-1.5 text-start">
+          <label for="register-fullname" class="block text-xs sm:text-sm font-semibold text-text-main" data-i18n="auth.fullname">
+            الاسم الكامل
+          </label>
+          <div class="relative flex items-center">
+            <span class="absolute start-3.5 text-text-muted pointer-events-none">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+            <input type="text" id="register-fullname" name="fullname" required autocomplete="name"
+                   class="w-full ps-10 pe-4 py-3 bg-surface-2 border border-border-subtle rounded-xl text-sm text-text-main placeholder:text-text-muted focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                   placeholder="مثال: الشيف فيصل الهاشمي" data-i18n-placeholder="auth.fullname_placeholder">
+          </div>
+        </div>
+
+        <!-- Email Input -->
+        <div class="space-y-1.5 text-start">
+          <label for="register-email" class="block text-xs sm:text-sm font-semibold text-text-main" data-i18n="auth.email">
+            البريد الإلكتروني
+          </label>
+          <div class="relative flex items-center">
+            <span class="absolute start-3.5 text-text-muted pointer-events-none">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </span>
+            <input type="email" id="register-email" name="email" required autocomplete="email"
+                   class="w-full ps-10 pe-4 py-3 bg-surface-2 border border-border-subtle rounded-xl text-sm text-text-main placeholder:text-text-muted focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                   placeholder="name@domain.com" data-i18n-placeholder="auth.email_placeholder">
+          </div>
+        </div>
+
+        <!-- Optional Business / Brand Name Input (dynamic for Chef/Supplier) -->
+        <div id="business-name-group" class="space-y-1.5 text-start">
+          <div class="flex items-center justify-between">
+            <label for="register-business" class="block text-xs sm:text-sm font-semibold text-text-main" data-i18n="auth.business_name">
+              اسم المؤسسة / العلامة التجارية
+            </label>
+            <span class="text-[11px] text-text-muted bg-surface-2 px-2 py-0.5 rounded border border-border-subtle" data-i18n="common.optional">
+              اختياري
+            </span>
+          </div>
+          <div class="relative flex items-center">
+            <span class="absolute start-3.5 text-text-muted pointer-events-none">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            </span>
+            <input type="text" id="register-business" name="business" autocomplete="organization"
+                   class="w-full ps-10 pe-4 py-3 bg-surface-2 border border-border-subtle rounded-xl text-sm text-text-main placeholder:text-text-muted focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                   placeholder="مثال: استوديو نجد للطهي" data-i18n-placeholder="auth.business_placeholder">
+          </div>
+        </div>
+
+        <!-- Password Grid (Password & Confirm Password) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Password Input -->
+          <div class="space-y-1.5 text-start password-wrapper">
+            <label for="register-password" class="block text-xs sm:text-sm font-semibold text-text-main" data-i18n="auth.password">
+              كلمة المرور
+            </label>
+            <div class="relative flex items-center">
+              <span class="absolute start-3.5 text-text-muted pointer-events-none">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </span>
+              <input type="password" id="register-password" name="password" required autocomplete="new-password"
+                     class="w-full ps-10 pe-11 py-3 bg-surface-2 border border-border-subtle rounded-xl text-sm text-text-main placeholder:text-text-muted focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                     placeholder="••••••••" data-i18n-placeholder="auth.password_placeholder">
+              <button type="button" data-action="toggle-password" data-target="register-password" class="absolute end-3 p-1.5 text-text-muted hover:text-text-main rounded-md transition-colors" aria-label="Toggle password visibility">
+                <svg class="w-4 h-4 icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg class="w-4 h-4 icon-eye-off hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                  <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+                  <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+                  <line x1="2" x2="22" y1="2" y2="22"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Confirm Password Input -->
+          <div class="space-y-1.5 text-start password-wrapper">
+            <label for="register-confirm-password" class="block text-xs sm:text-sm font-semibold text-text-main" data-i18n="auth.confirm_password">
+              تأكيد كلمة المرور
+            </label>
+            <div class="relative flex items-center">
+              <span class="absolute start-3.5 text-text-muted pointer-events-none">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </span>
+              <input type="password" id="register-confirm-password" name="confirm_password" required autocomplete="new-password"
+                     class="w-full ps-10 pe-11 py-3 bg-surface-2 border border-border-subtle rounded-xl text-sm text-text-main placeholder:text-text-muted focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                     placeholder="••••••••" data-i18n-placeholder="auth.password_placeholder">
+              <button type="button" data-action="toggle-password" data-target="register-confirm-password" class="absolute end-3 p-1.5 text-text-muted hover:text-text-main rounded-md transition-colors" aria-label="Toggle password visibility">
+                <svg class="w-4 h-4 icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg class="w-4 h-4 icon-eye-off hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                  <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+                  <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+                  <line x1="2" x2="22" y1="2" y2="22"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terms Agreement Checkbox -->
+        <div class="flex items-start gap-2.5 pt-1 text-start">
+          <input type="checkbox" id="register-terms" name="terms" checked required
+                 class="w-4 h-4 mt-0.5 rounded border-border-subtle text-brand-emerald bg-surface-2 focus:ring-brand-emerald">
+          <label for="register-terms" class="text-xs text-text-muted leading-relaxed select-none cursor-pointer" data-i18n="auth.terms_agreement">
+            أوافق على شروط الاستخدام وسياسة الخصوصية الخاصة بمعيار
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-brand-emerald hover:bg-brand-emerald-hover text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-brand-emerald">
+          <span data-i18n="auth.submit_register">إتمام التسجيل والبدء</span>
+          <svg class="w-4 h-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+          </svg>
+        </button>
+
+        <!-- Or Continue With Divider -->
+        <div class="relative flex items-center justify-center my-6">
+          <div class="border-t border-border-subtle w-full"></div>
+          <span class="bg-surface-1 px-3 text-xs text-text-muted shrink-0" data-i18n="auth.or_continue_with">
+            أو تابع عبر
+          </span>
+          <div class="border-t border-border-subtle w-full"></div>
+        </div>
+
+        <!-- Social Auth Grid -->
+        <div class="grid grid-cols-2 gap-3">
+          <button type="button" data-social="google" class="flex items-center justify-center gap-2 py-2.5 px-4 bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-xs sm:text-sm font-semibold text-text-main transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+            </svg>
+            <span data-i18n="auth.google_login">Google</span>
+          </button>
+
+          <button type="button" data-social="apple" class="flex items-center justify-center gap-2 py-2.5 px-4 bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-xs sm:text-sm font-semibold text-text-main transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 1.01-2.87-.96.04-2.08.64-2.73 1.4-.57.65-1.07 1.72-.94 2.76 1.07.08 2.06-.54 2.66-1.29z"/>
+            </svg>
+            <span data-i18n="auth.apple_login">Apple</span>
+          </button>
+        </div>
+
+        <!-- Switch Tab Footer Link -->
+        <p class="text-center text-xs sm:text-sm text-text-muted pt-2">
+          <span data-i18n="auth.have_account">هل لديك حساب بالفعل؟</span>
+          <button type="button" data-action="switch-to-login" class="text-brand-gold hover:underline font-bold ms-1 focus:outline-none">
+            <span data-i18n="auth.tab_login">تسجيل الدخول</span>
+          </button>
+        </p>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- Solid Surface Minimal Footer -->
+  <footer class="w-full border-t border-border-subtle bg-surface-1 py-6 shrink-0">
+    <div class="max-w-7xl mx-auto px-4 text-center text-xs text-text-muted">
+      <span data-i18n="common.all_rights">جميع الحقوق محفوظة © معيار للطهي</span>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script type="module" src="./js/app.js"></script>
+  <script type="module" src="./js/pages/auth.js"></script>
+</body>
+</html>
