@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "Meyar (معيار) Culinary Social Network & B2B Supplies Marketplace",
+  "type": "module",
   "scripts": {
     "build:css": "tailwindcss -i ./css/input.css -o ./css/output.css --minify",
-    "dev:css": "tailwindcss -i ./css/input.css -o ./css/output.css --watch"
+    "dev:css": "tailwindcss -i ./css/input.css -o ./css/output.css --watch",
+    "test": "node --test tests/*.test.mjs"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.0",
