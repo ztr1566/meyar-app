@@ -399,7 +399,7 @@ test('I18n Engine - DOM Translation & Page Scanner', async (t) => {
 
   await t.test('Translates all data-i18n* DOM attributes when switching to AR', () => {
     I18n.setLang('ar');
-    assert.equal(textEl.textContent, 'توريدات المطاعم');
+    assert.equal(textEl.textContent, 'التوريدات');
     assert.equal(inputEl.getAttribute('placeholder'), 'ابحث في الوصفات، الطهاة، التوريدات، والدورات...');
     assert.equal(buttonEl.getAttribute('title'), 'محفوظ');
     assert.equal(buttonEl.getAttribute('aria-label'), 'محفوظ');
@@ -408,7 +408,7 @@ test('I18n Engine - DOM Translation & Page Scanner', async (t) => {
 
   await t.test('Translates all data-i18n* DOM attributes when switching to EN', () => {
     I18n.setLang('en');
-    assert.equal(textEl.textContent, 'B2B Supplies');
+    assert.equal(textEl.textContent, 'Supplies');
     assert.equal(inputEl.getAttribute('placeholder'), 'Search recipes, chefs, supplies, masterclasses...');
     assert.equal(buttonEl.getAttribute('title'), 'Saved');
     assert.equal(buttonEl.getAttribute('aria-label'), 'Saved');

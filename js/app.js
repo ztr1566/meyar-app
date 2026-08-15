@@ -90,6 +90,29 @@ export function initApp() {
       }
     }
   });
+
+  // 6. Active nav link highlighter based on current URL path
+  try {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const pathToNav = {
+      '': 'feed',
+      'index.html': 'feed',
+      'explore.html': 'explore',
+      'supplies.html': 'supplies',
+      'courses.html': 'courses',
+      'dashboard.html': 'dashboard'
+    };
+    const activeNavKey = pathToNav[currentPath];
+    if (activeNavKey) {
+      document.querySelectorAll('nav [data-nav]').forEach(link => {
+        if (link.getAttribute('data-nav') === activeNavKey) {
+          link.className = 'px-2.5 py-1.5 rounded-lg text-xs xl:text-sm font-bold whitespace-nowrap bg-surface-2 text-brand-gold border border-border-subtle shadow-sm transition-colors';
+        } else {
+          link.className = 'px-2.5 py-1.5 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap text-text-muted hover:text-text-main hover:bg-surface-2 transition-colors';
+        }
+      });
+    }
+  } catch {}
 }
 
 // Auto-bootstrap when running in browser
