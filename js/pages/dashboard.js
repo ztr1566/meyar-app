@@ -575,14 +575,14 @@ export class DashboardPage {
         btn.classList.add('bg-brand-gold', 'text-white', 'shadow-md', 'font-bold');
         btn.classList.remove('text-text-muted', 'hover:bg-surface-2', 'font-semibold');
         if (counter) {
-          counter.classList.add('bg-white/20', 'text-white');
+          counter.classList.add('bg-surface-2', 'text-white');
           counter.classList.remove('bg-surface-2', 'text-text-muted');
         }
       } else {
         btn.classList.remove('bg-brand-gold', 'text-white', 'shadow-md', 'font-bold');
         btn.classList.add('text-text-muted', 'hover:bg-surface-2', 'font-semibold');
         if (counter) {
-          counter.classList.remove('bg-white/20', 'text-white');
+          counter.classList.remove('bg-surface-2', 'text-white');
           counter.classList.add('bg-surface-2', 'text-text-muted');
         }
       }
@@ -1109,7 +1109,7 @@ export class DashboardPage {
     container.innerHTML = `
       <table class="w-full text-start text-xs border-collapse min-w-[700px]">
         <thead>
-          <tr class="border-b border-border-subtle bg-surface-2/60 text-text-muted font-bold">
+          <tr class="border-b border-border-subtle bg-surface-2 text-text-muted font-bold">
             <th class="py-3.5 px-4 text-start">${isAr ? 'الوصفة والطبق' : 'Recipe & Dish'}</th>
             <th class="py-3.5 px-4 text-start">${isAr ? 'التصنيف' : 'Category'}</th>
             <th class="py-3.5 px-4 text-start">${isAr ? 'التفاعل' : 'Engagement'}</th>
@@ -1120,7 +1120,7 @@ export class DashboardPage {
         </thead>
         <tbody class="divide-y divide-border-subtle">
           ${items.map(r => `
-            <tr class="hover:bg-surface-2/40 transition-colors">
+            <tr class="hover:bg-surface-2 transition-colors">
               <td class="py-3 px-4">
                 <div class="flex items-center gap-3">
                   <img src="${r.image}" alt="${isAr ? r.title_ar : r.title_en}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle bg-surface-2 shrink-0">
@@ -1145,8 +1145,8 @@ export class DashboardPage {
               </td>
               <td class="py-3 px-4 text-start">
                 ${r.status === 'published'
-                  ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-brand-emerald/15 text-brand-emerald border border-brand-emerald/30"><span class="w-1.5 h-1.5 rounded-full bg-brand-emerald"></span> ${isAr ? 'منشورة' : 'Published'}</span>`
-                  : `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-500/15 text-amber-500 border border-amber-500/30"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> ${isAr ? 'مسودة' : 'Draft'}</span>`
+                  ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-surface-2 text-brand-emerald border border-border-subtle"><span class="w-1.5 h-1.5 rounded-full bg-brand-emerald"></span> ${isAr ? 'منشورة' : 'Published'}</span>`
+                  : `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-surface-2 text-amber-500 border border-amber-500"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> ${isAr ? 'مسودة' : 'Draft'}</span>`
                 }
               </td>
               <td class="py-3 px-4 text-start font-mono text-text-muted text-[11px]">
@@ -1163,7 +1163,7 @@ export class DashboardPage {
                   <button type="button" data-action="duplicate-item" data-type="recipes" data-id="${r.id}" class="p-1.5 rounded-lg bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-muted hover:text-text-main transition-colors" title="${isAr ? 'نسخ مكرر' : 'Duplicate'}">
                     <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="13" height="13" x="9" y="9" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                   </button>
-                  <button type="button" data-action="delete-item" data-type="recipes" data-id="${r.id}" data-name="${isAr ? r.title_ar : r.title_en}" class="p-1.5 rounded-lg bg-surface-2 hover:bg-red-500/15 border border-border-subtle text-text-muted hover:text-red-500 transition-colors" title="${isAr ? 'حذف' : 'Delete'}">
+                  <button type="button" data-action="delete-item" data-type="recipes" data-id="${r.id}" data-name="${isAr ? r.title_ar : r.title_en}" class="p-1.5 rounded-lg bg-surface-2 hover:bg-surface-2 border border-border-subtle text-text-muted hover:text-red-500 transition-colors" title="${isAr ? 'حذف' : 'Delete'}">
                     <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                   </button>
                 </div>
@@ -1182,7 +1182,7 @@ export class DashboardPage {
     container.innerHTML = `
       <table class="w-full text-start text-xs border-collapse min-w-[700px]">
         <thead>
-          <tr class="border-b border-border-subtle bg-surface-2/60 text-text-muted font-bold">
+          <tr class="border-b border-border-subtle bg-surface-2 text-text-muted font-bold">
             <th class="py-3.5 px-4 text-start">${isAr ? 'المنتج والمعدّة' : 'Product & Equipment'}</th>
             <th class="py-3.5 px-4 text-start">${isAr ? 'السعر و MOQ' : 'Price & MOQ'}</th>
             <th class="py-3.5 px-4 text-start">${isAr ? 'المخزون' : 'Stock'}</th>
@@ -1193,7 +1193,7 @@ export class DashboardPage {
         </thead>
         <tbody class="divide-y divide-border-subtle">
           ${items.map(s => `
-            <tr class="hover:bg-surface-2/40 transition-colors">
+            <tr class="hover:bg-surface-2 transition-colors">
               <td class="py-3 px-4">
                 <div class="flex items-center gap-3">
                   <img src="${s.image}" alt="${isAr ? s.name_ar : s.name_en}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle bg-surface-2 shrink-0">
@@ -1209,10 +1209,10 @@ export class DashboardPage {
               </td>
               <td class="py-3 px-4 text-start">
                 ${s.stock_status === 'low_stock'
-                  ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-500/15 text-amber-500 border border-amber-500/30">${isAr ? `مخزون منخفض (${s.stock_count})` : `Low Stock (${s.stock_count})`}</span>`
+                  ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-surface-2 text-amber-500 border border-amber-500">${isAr ? `مخزون منخفض (${s.stock_count})` : `Low Stock (${s.stock_count})`}</span>`
                   : s.stock_status === 'out_of_stock'
-                    ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-red-500/15 text-red-500 border border-red-500/30">${isAr ? 'نفد المخزون' : 'Out of Stock'}</span>`
-                    : `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-brand-emerald/15 text-brand-emerald border border-brand-emerald/30">${isAr ? `متوفر (${s.stock_count})` : `In Stock (${s.stock_count})`}</span>`
+                    ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-surface-2 text-red-500 border border-red-500">${isAr ? 'نفد المخزون' : 'Out of Stock'}</span>`
+                    : `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-surface-2 text-brand-emerald border border-border-subtle">${isAr ? `متوفر (${s.stock_count})` : `In Stock (${s.stock_count})`}</span>`
                 }
               </td>
               <td class="py-3 px-4 text-start font-mono font-bold text-text-main">
@@ -1220,7 +1220,7 @@ export class DashboardPage {
               </td>
               <td class="py-3 px-4 text-start">
                 ${s.status === 'active'
-                  ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-brand-emerald/15 text-brand-emerald border border-brand-emerald/30"><span class="w-1.5 h-1.5 rounded-full bg-brand-emerald"></span> ${isAr ? 'نشط' : 'Active'}</span>`
+                  ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-surface-2 text-brand-emerald border border-border-subtle"><span class="w-1.5 h-1.5 rounded-full bg-brand-emerald"></span> ${isAr ? 'نشط' : 'Active'}</span>`
                   : `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-surface-2 text-text-muted border border-border-subtle"><span class="w-1.5 h-1.5 rounded-full bg-text-muted"></span> ${isAr ? 'متوقف' : 'Paused'}</span>`
                 }
               </td>
@@ -1232,7 +1232,7 @@ export class DashboardPage {
                   <button type="button" data-action="duplicate-item" data-type="supplies" data-id="${s.id}" class="p-1.5 rounded-lg bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-muted hover:text-text-main transition-colors" title="${isAr ? 'نسخ مكرر' : 'Duplicate'}">
                     <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="13" height="13" x="9" y="9" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                   </button>
-                  <button type="button" data-action="delete-item" data-type="supplies" data-id="${s.id}" data-name="${isAr ? s.name_ar : s.name_en}" class="p-1.5 rounded-lg bg-surface-2 hover:bg-red-500/15 border border-border-subtle text-text-muted hover:text-red-500 transition-colors" title="${isAr ? 'حذف' : 'Delete'}">
+                  <button type="button" data-action="delete-item" data-type="supplies" data-id="${s.id}" data-name="${isAr ? s.name_ar : s.name_en}" class="p-1.5 rounded-lg bg-surface-2 hover:bg-surface-2 border border-border-subtle text-text-muted hover:text-red-500 transition-colors" title="${isAr ? 'حذف' : 'Delete'}">
                     <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                   </button>
                 </div>
@@ -1251,7 +1251,7 @@ export class DashboardPage {
     container.innerHTML = `
       <table class="w-full text-start text-xs border-collapse min-w-[700px]">
         <thead>
-          <tr class="border-b border-border-subtle bg-surface-2/60 text-text-muted font-bold">
+          <tr class="border-b border-border-subtle bg-surface-2 text-text-muted font-bold">
             <th class="py-3.5 px-4 text-start">${isAr ? 'رقم الطلب والعميل' : 'RFQ ID & Client'}</th>
             <th class="py-3.5 px-4 text-start">${isAr ? 'الصنف المطلوب' : 'Item Requested'}</th>
             <th class="py-3.5 px-4 text-start">${isAr ? 'الكمية والمدينة' : 'Qty & Destination'}</th>
@@ -1262,7 +1262,7 @@ export class DashboardPage {
         </thead>
         <tbody class="divide-y divide-border-subtle">
           ${items.map(rfq => `
-            <tr class="hover:bg-surface-2/40 transition-colors">
+            <tr class="hover:bg-surface-2 transition-colors">
               <td class="py-3 px-4 text-start">
                 <div class="font-bold text-text-main">${isAr ? rfq.client_name_ar : rfq.client_name_en}</div>
                 <div class="text-[10px] text-text-muted font-mono"><span class="text-brand-gold font-bold">${rfq.id}</span> • ${rfq.buyer_name}</div>
@@ -1282,12 +1282,12 @@ export class DashboardPage {
               </td>
               <td class="py-3 px-4 text-start">
                 ${rfq.status === 'pending'
-                  ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-500/15 text-amber-500 border border-amber-500/30">${isAr ? 'قيد المراجعة' : 'Pending Review'}</span>`
+                  ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-surface-2 text-amber-500 border border-amber-500">${isAr ? 'قيد المراجعة' : 'Pending Review'}</span>`
                   : rfq.status === 'quoted'
-                    ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-blue-500/15 text-blue-500 border border-blue-500/30">${isAr ? 'تم تقديم العرض' : 'Quotation Sent'}</span>`
+                    ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-surface-2 text-blue-500 border border-blue-500">${isAr ? 'تم تقديم العرض' : 'Quotation Sent'}</span>`
                     : rfq.status === 'accepted'
-                      ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-brand-emerald/15 text-brand-emerald border border-brand-emerald/30">${isAr ? 'مقبول ومؤكد' : 'Accepted'}</span>`
-                      : `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-red-500/15 text-red-500 border border-red-500/30">${isAr ? 'مرفوض' : 'Declined'}</span>`
+                      ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-surface-2 text-brand-emerald border border-border-subtle">${isAr ? 'مقبول ومؤكد' : 'Accepted'}</span>`
+                      : `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-surface-2 text-red-500 border border-red-500">${isAr ? 'مرفوض' : 'Declined'}</span>`
                 }
               </td>
               <td class="py-3 px-4 text-end">
@@ -1296,7 +1296,7 @@ export class DashboardPage {
                     <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                     <span>${isAr ? 'تسعير' : 'Quote'}</span>
                   </button>
-                  <button type="button" data-action="delete-item" data-type="rfqs" data-id="${rfq.id}" data-name="${rfq.id}" class="p-1.5 rounded-lg bg-surface-2 hover:bg-red-500/15 border border-border-subtle text-text-muted hover:text-red-500 transition-colors" title="${isAr ? 'حذف' : 'Delete'}">
+                  <button type="button" data-action="delete-item" data-type="rfqs" data-id="${rfq.id}" data-name="${rfq.id}" class="p-1.5 rounded-lg bg-surface-2 hover:bg-surface-2 border border-border-subtle text-text-muted hover:text-red-500 transition-colors" title="${isAr ? 'حذف' : 'Delete'}">
                     <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                   </button>
                 </div>
@@ -1315,7 +1315,7 @@ export class DashboardPage {
     container.innerHTML = `
       <table class="w-full text-start text-xs border-collapse min-w-[700px]">
         <thead>
-          <tr class="border-b border-border-subtle bg-surface-2/60 text-text-muted font-bold">
+          <tr class="border-b border-border-subtle bg-surface-2 text-text-muted font-bold">
             <th class="py-3.5 px-4 text-start">${isAr ? 'الطالب المسجل' : 'Student'}</th>
             <th class="py-3.5 px-4 text-start">${isAr ? 'الورشة والدورة' : 'Workshop Course'}</th>
             <th class="py-3.5 px-4 text-start">${isAr ? 'الرسوم والحالة' : 'Fee & Payment'}</th>
@@ -1326,7 +1326,7 @@ export class DashboardPage {
         </thead>
         <tbody class="divide-y divide-border-subtle">
           ${items.map(enr => `
-            <tr class="hover:bg-surface-2/40 transition-colors">
+            <tr class="hover:bg-surface-2 transition-colors">
               <td class="py-3 px-4">
                 <div class="flex items-center gap-3">
                   <img src="${enr.student_avatar}" alt="${isAr ? enr.student_name_ar : enr.student_name_en}" class="w-10 h-10 rounded-full object-cover border border-border-subtle bg-surface-2 shrink-0">
@@ -1358,7 +1358,7 @@ export class DashboardPage {
                   <a href="chat.html" class="p-1.5 rounded-lg bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-muted hover:text-text-main transition-colors" title="${isAr ? 'مراسلة' : 'Message'}">
                     <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
                   </a>
-                  <button type="button" data-action="delete-item" data-type="enrollments" data-id="${enr.id}" data-name="${isAr ? enr.student_name_ar : enr.student_name_en}" class="p-1.5 rounded-lg bg-surface-2 hover:bg-red-500/15 border border-border-subtle text-text-muted hover:text-red-500 transition-colors" title="${isAr ? 'إلغاء التسجيل' : 'Cancel Registration'}">
+                  <button type="button" data-action="delete-item" data-type="enrollments" data-id="${enr.id}" data-name="${isAr ? enr.student_name_ar : enr.student_name_en}" class="p-1.5 rounded-lg bg-surface-2 hover:bg-surface-2 border border-border-subtle text-text-muted hover:text-red-500 transition-colors" title="${isAr ? 'إلغاء التسجيل' : 'Cancel Registration'}">
                     <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
                   </button>
                 </div>

@@ -203,12 +203,12 @@ export class FeedPage {
       if (countEl) countEl.textContent = newCount.toLocaleString();
 
       if (isLiked) {
-        btn.classList.add('text-red-500', 'bg-red-500/10', 'border-red-500/30');
+        btn.classList.add('text-red-500', 'bg-surface-2', 'border-red-500');
         btn.classList.remove('text-text-muted', 'bg-surface-2');
         const icon = btn.querySelector('svg');
         if (icon) icon.setAttribute('fill', 'currentColor');
       } else {
-        btn.classList.remove('text-red-500', 'bg-red-500/10', 'border-red-500/30');
+        btn.classList.remove('text-red-500', 'bg-surface-2', 'border-red-500');
         btn.classList.add('text-text-muted', 'bg-surface-2');
         const icon = btn.querySelector('svg');
         if (icon) icon.setAttribute('fill', 'none');
@@ -228,12 +228,12 @@ export class FeedPage {
       }
 
       if (isSaved) {
-        btn.classList.add('text-brand-gold', 'bg-brand-gold/10', 'border-brand-gold/30');
+        btn.classList.add('text-brand-gold', 'bg-surface-2', 'border-border-subtle');
         btn.classList.remove('text-text-muted', 'bg-surface-2');
         const icon = btn.querySelector('svg');
         if (icon) icon.setAttribute('fill', 'currentColor');
       } else {
-        btn.classList.remove('text-brand-gold', 'bg-brand-gold/10', 'border-brand-gold/30');
+        btn.classList.remove('text-brand-gold', 'bg-surface-2', 'border-border-subtle');
         btn.classList.add('text-text-muted', 'bg-surface-2');
         const icon = btn.querySelector('svg');
         if (icon) icon.setAttribute('fill', 'none');
@@ -403,7 +403,7 @@ export class FeedPage {
           <a href="courses.html" class="block text-xs font-bold text-text-main hover:text-brand-gold line-clamp-1">
             ${title}
           </a>
-          <div class="flex items-center justify-between text-[11px] pt-1 border-t border-border-subtle/50">
+          <div class="flex items-center justify-between text-[11px] pt-1 border-t border-border-subtle">
             <span class="text-text-muted truncate">${instructor}</span>
             <a href="courses.html" class="font-semibold text-brand-gold hover:underline shrink-0">
               ${I18n.t('btn.enroll')}
@@ -498,12 +498,12 @@ export class FeedPage {
       const totalSaves = (recipe.saves_count || 0) + (isSaved ? 1 : 0);
 
       const likeClass = isLiked 
-        ? 'text-red-500 bg-red-500/10 border-red-500/30' 
+        ? 'text-red-500 bg-surface-2 border-red-500' 
         : 'text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle';
       const likeFill = isLiked ? 'currentColor' : 'none';
 
       const saveClass = isSaved 
-        ? 'text-brand-gold bg-brand-gold/10 border-brand-gold/30' 
+        ? 'text-brand-gold bg-surface-2 border-border-subtle' 
         : 'text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle';
       const saveFill = isSaved ? 'currentColor' : 'none';
 
@@ -519,7 +519,7 @@ export class FeedPage {
       }).join(' ');
 
       html += `
-        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm space-y-4 text-start transition-all hover:border-border-subtle/80" data-card-recipe-id="${recipe.id}">
+        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm space-y-4 text-start transition-all hover:border-border-subtle" data-card-recipe-id="${recipe.id}">
           
           <!-- Post Author Header -->
           <div class="px-4 sm:px-5 pt-4 sm:pt-5 flex items-center justify-between gap-3">

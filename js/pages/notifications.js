@@ -305,7 +305,7 @@ export class NotificationsPage {
 
     if (notif.type === 'rfq' || notif.category === 'rfqs') {
       categoryBadgeText = isAr ? 'طلب تسعير B2B' : 'B2B RFQ';
-      categoryBadgeClass = 'bg-brand-gold/15 text-brand-gold border-brand-gold/30';
+      categoryBadgeClass = 'bg-surface-2 text-brand-gold border-border-subtle';
       typeIcon = `
         <svg class="w-4 h-4 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
@@ -313,7 +313,7 @@ export class NotificationsPage {
       `;
     } else if (notif.type === 'course' || notif.category === 'courses') {
       categoryBadgeText = isAr ? 'دورة تدريبية' : 'Masterclass';
-      categoryBadgeClass = 'bg-brand-emerald/15 text-brand-emerald border-brand-emerald/30';
+      categoryBadgeClass = 'bg-surface-2 text-brand-emerald border-border-subtle';
       typeIcon = `
         <svg class="w-4 h-4 text-brand-emerald shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
@@ -321,7 +321,7 @@ export class NotificationsPage {
       `;
     } else if (notif.type === 'like' || notif.category === 'likes') {
       categoryBadgeText = isAr ? 'تفاعل وإعجاب' : 'Like & Save';
-      categoryBadgeClass = 'bg-red-500/15 text-red-500 border-red-500/30';
+      categoryBadgeClass = 'bg-surface-2 text-red-500 border-red-500';
       typeIcon = `
         <svg class="w-4 h-4 text-red-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
@@ -329,7 +329,7 @@ export class NotificationsPage {
       `;
     } else if (notif.type === 'comment') {
       categoryBadgeText = isAr ? 'تعليق' : 'Comment';
-      categoryBadgeClass = 'bg-blue-500/15 text-blue-500 border-blue-500/30';
+      categoryBadgeClass = 'bg-surface-2 text-blue-500 border-blue-500';
       typeIcon = `
         <svg class="w-4 h-4 text-blue-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -337,7 +337,7 @@ export class NotificationsPage {
       `;
     } else {
       categoryBadgeText = isAr ? 'متابعة' : 'Follow';
-      categoryBadgeClass = 'bg-purple-500/15 text-purple-500 border-purple-500/30';
+      categoryBadgeClass = 'bg-surface-2 text-purple-500 border-purple-500';
       typeIcon = `
         <svg class="w-4 h-4 text-purple-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/>
@@ -352,7 +352,7 @@ export class NotificationsPage {
     const avatarUrl = notif.avatar || 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=100&q=80';
 
     return `
-      <article class="notification-card group relative bg-surface-1 hover:bg-surface-2/60 border ${isUnread ? 'border-brand-gold/60 bg-surface-1 shadow-sm' : 'border-border-subtle'} rounded-2xl p-4 sm:p-5 transition-all duration-200" data-id="${notif.id}" data-read="${notif.read}">
+      <article class="notification-card group relative bg-surface-1 hover:bg-surface-2 border ${isUnread ? 'border-brand-gold bg-surface-1 shadow-sm' : 'border-border-subtle'} rounded-2xl p-4 sm:p-5 transition-all duration-200" data-id="${notif.id}" data-read="${notif.read}">
         <div class="flex flex-col sm:flex-row items-start gap-3.5 sm:gap-4">
           
           <!-- Avatar & Type Icon Container -->

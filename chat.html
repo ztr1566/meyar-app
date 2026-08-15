@@ -158,7 +158,7 @@
               <svg class="w-3.5 h-3.5 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
               <span>لوحة التحكم B2B</span>
             </a>
-            <a href="auth.html" class="flex items-center gap-2 px-3 py-2 text-xs text-red-500 hover:bg-red-500/10 rounded-lg transition-colors text-start">
+            <a href="auth.html" class="flex items-center gap-2 px-3 py-2 text-xs text-red-500 hover:bg-surface-2 rounded-lg transition-colors text-start">
               <svg class="w-3.5 h-3.5 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
               <span>تسجيل الخروج</span>
             </a>
@@ -192,7 +192,7 @@
         <!-- Sidebar Header & Title -->
         <div class="p-3.5 sm:p-4 border-b border-border-subtle bg-surface-1 flex items-center justify-between gap-2 shrink-0">
           <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center font-bold">
+            <div class="w-8 h-8 rounded-xl bg-surface-2 text-brand-gold flex items-center justify-center font-bold">
               <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
@@ -234,7 +234,7 @@
                   role="tab" 
                   aria-selected="false"
                   data-chat-tab="chef" 
-                  class="py-1.5 px-2 text-[11px] font-medium rounded-lg transition-colors text-center bg-surface-2 text-text-muted hover:text-text-main hover:bg-surface-2/80" 
+                  class="py-1.5 px-2 text-[11px] font-medium rounded-lg transition-colors text-center bg-surface-2 text-text-muted hover:text-text-main hover:bg-surface-2" 
                   data-i18n="chat.tab_chefs">
             الطهاة
           </button>
@@ -242,7 +242,7 @@
                   role="tab" 
                   aria-selected="false"
                   data-chat-tab="supplier" 
-                  class="py-1.5 px-2 text-[11px] font-medium rounded-lg transition-colors text-center bg-surface-2 text-text-muted hover:text-text-main hover:bg-surface-2/80" 
+                  class="py-1.5 px-2 text-[11px] font-medium rounded-lg transition-colors text-center bg-surface-2 text-text-muted hover:text-text-main hover:bg-surface-2" 
                   data-i18n="chat.tab_suppliers">
             الموردون
           </button>
@@ -340,7 +340,7 @@
         </header>
 
         <!-- Messages Stream -->
-        <div id="messages-stream" class="flex-1 p-3 sm:p-5 overflow-y-auto space-y-4 bg-canvas/30 flex flex-col">
+        <div id="messages-stream" class="flex-1 p-3 sm:p-5 overflow-y-auto space-y-4 bg-canvas flex flex-col">
           
           <!-- Date Separator Pill -->
           <div class="flex items-center justify-center my-1">
@@ -369,16 +369,16 @@
         <!-- Quick Reply Suggestions Bar -->
         <div id="quick-replies-bar" class="p-2 border-t border-border-subtle bg-surface-1 overflow-x-auto flex items-center gap-2 shrink-0 no-scrollbar">
           <span class="text-[10px] font-bold text-text-muted shrink-0 ps-2">مقترحات:</span>
-          <button type="button" data-quick-reply="quick_1" class="whitespace-nowrap px-3 py-1 text-[11px] font-medium bg-surface-2 hover:bg-brand-gold/10 hover:text-brand-gold hover:border-brand-gold/40 border border-border-subtle rounded-full text-text-main transition-colors shrink-0" data-i18n="chat.quick_reply_1">
+          <button type="button" data-quick-reply="quick_1" class="whitespace-nowrap px-3 py-1 text-[11px] font-medium bg-surface-2 hover:bg-surface-2 hover:text-brand-gold hover:border-border-subtle border border-border-subtle rounded-full text-text-main transition-colors shrink-0" data-i18n="chat.quick_reply_1">
             هل يتوفر شحن فوري ومجاني للرياض؟
           </button>
-          <button type="button" data-quick-reply="quick_2" class="whitespace-nowrap px-3 py-1 text-[11px] font-medium bg-surface-2 hover:bg-brand-gold/10 hover:text-brand-gold hover:border-brand-gold/40 border border-border-subtle rounded-full text-text-main transition-colors shrink-0" data-i18n="chat.quick_reply_2">
+          <button type="button" data-quick-reply="quick_2" class="whitespace-nowrap px-3 py-1 text-[11px] font-medium bg-surface-2 hover:bg-surface-2 hover:text-brand-gold hover:border-border-subtle border border-border-subtle rounded-full text-text-main transition-colors shrink-0" data-i18n="chat.quick_reply_2">
             يسعدنا اعتماد العرض والبدء في إجراءات التوريد.
           </button>
-          <button type="button" data-quick-reply="quick_3" class="whitespace-nowrap px-3 py-1 text-[11px] font-medium bg-surface-2 hover:bg-brand-gold/10 hover:text-brand-gold hover:border-brand-gold/40 border border-border-subtle rounded-full text-text-main transition-colors shrink-0" data-i18n="chat.quick_reply_3">
+          <button type="button" data-quick-reply="quick_3" class="whitespace-nowrap px-3 py-1 text-[11px] font-medium bg-surface-2 hover:bg-surface-2 hover:text-brand-gold hover:border-border-subtle border border-border-subtle rounded-full text-text-main transition-colors shrink-0" data-i18n="chat.quick_reply_3">
             هل يوجد خصم إضافي للكميات الكبيرة الدورية؟
           </button>
-          <button type="button" data-quick-reply="quick_4" class="whitespace-nowrap px-3 py-1 text-[11px] font-medium bg-surface-2 hover:bg-brand-gold/10 hover:text-brand-gold hover:border-brand-gold/40 border border-border-subtle rounded-full text-text-main transition-colors shrink-0" data-i18n="chat.quick_reply_4">
+          <button type="button" data-quick-reply="quick_4" class="whitespace-nowrap px-3 py-1 text-[11px] font-medium bg-surface-2 hover:bg-surface-2 hover:text-brand-gold hover:border-border-subtle border border-border-subtle rounded-full text-text-main transition-colors shrink-0" data-i18n="chat.quick_reply_4">
             يسعدني التنسيق لورشة عمل مشتركة قريباً.
           </button>
         </div>
@@ -456,7 +456,7 @@
        role="dialog" 
        aria-modal="true" 
        aria-hidden="true" 
-       class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80">
+       class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-canvas">
     <div class="fixed inset-0" data-modal-backdrop></div>
     
     <div class="relative bg-surface-1 border border-border-subtle rounded-3xl w-full max-w-lg shadow-2xl z-10 overflow-hidden text-start">
@@ -464,7 +464,7 @@
       <!-- Modal Header -->
       <div class="flex items-center justify-between p-4 sm:p-5 border-b border-border-subtle bg-surface-1">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center font-bold">
+          <div class="w-9 h-9 rounded-xl bg-surface-2 text-brand-gold flex items-center justify-center font-bold">
             <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
               <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
             </svg>
@@ -562,7 +562,7 @@
   </div>
 
   <!-- ================= GLOBAL COMMAND PALETTE SEARCH MODAL ================= -->
-  <div id="search-modal" role="dialog" aria-modal="true" aria-hidden="true" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-20 p-4 bg-black/80">
+  <div id="search-modal" role="dialog" aria-modal="true" aria-hidden="true" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-20 p-4 bg-canvas">
     <div class="fixed inset-0" data-modal-backdrop></div>
     <div class="relative bg-surface-1 border border-border-subtle rounded-2xl w-full max-w-xl shadow-2xl z-10 overflow-hidden text-start">
       
@@ -590,7 +590,7 @@
   </div>
 
   <!-- ================= MOBILE NAVIGATION DRAWER ================= -->
-  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 lg:hidden bg-black/80">
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 lg:hidden bg-canvas">
     <div class="fixed inset-0" data-action="close-mobile-menu"></div>
     <div class="fixed top-0 bottom-0 start-0 w-72 bg-surface-1 border-e border-border-subtle p-5 flex flex-col justify-between shadow-2xl z-10 overflow-y-auto">
       

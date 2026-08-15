@@ -192,7 +192,7 @@ export class ChatPage {
 
       const activeClasses = isActive 
         ? 'bg-surface-2 border-s-4 border-s-brand-gold text-text-main shadow-xs' 
-        : 'bg-surface-1 hover:bg-surface-2/60 text-text-muted hover:text-text-main border-s-4 border-s-transparent';
+        : 'bg-surface-1 hover:bg-surface-2 text-text-muted hover:text-text-main border-s-4 border-s-transparent';
 
       return `
         <div data-chat-id="${chat.id}"
@@ -237,7 +237,7 @@ export class ChatPage {
                   ${roleLabel}
                 </span>
                 ${hasRFQ ? `
-                  <span class="inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.2 rounded bg-brand-gold/15 text-brand-gold border border-brand-gold/30">
+                  <span class="inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.2 rounded bg-surface-2 text-brand-gold border border-border-subtle">
                     <svg class="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                     <span>RFQ</span>
                   </span>
@@ -382,7 +382,7 @@ export class ChatPage {
             <div class="bg-brand-emerald text-white rounded-2xl rounded-ee-none p-3.5 max-w-[85%] sm:max-w-[75%] shadow-sm text-start space-y-1">
               <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">${this.escapeHtml(text)}</p>
               ${attachmentHTML}
-              <div class="flex items-center justify-end gap-1 text-[10px] text-white/80 pt-0.5">
+              <div class="flex items-center justify-end gap-1 text-[10px] text-text-muted pt-0.5">
                 <span>${msg.timestamp || 'Just now'}</span>
                 <svg class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <polyline points="20 6 9 17 4 12"/>
@@ -442,7 +442,7 @@ export class ChatPage {
         </span>
       `;
       actionControls = `
-        <div class="p-2.5 rounded-xl bg-brand-emerald/10 border border-brand-emerald/30 text-start flex items-center gap-2">
+        <div class="p-2.5 rounded-xl bg-surface-2 border border-border-subtle text-start flex items-center gap-2">
           <svg class="w-4 h-4 text-brand-emerald shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           <span class="text-xs font-bold text-brand-emerald">
             ${isAr ? 'تم اعتماد هذا العرض والبدء في التجهيز اللوجستي' : 'Quote accepted and sent for fulfillment'}
@@ -498,7 +498,7 @@ export class ChatPage {
                   data-action="open-counter-offer" 
                   data-chat-id="${chatId}" 
                   data-rfq-id="${rfq.rfq_id}"
-                  class="flex-1 py-2 px-3 text-xs font-bold bg-surface-1 hover:bg-surface-2 text-brand-gold border border-brand-gold/40 rounded-xl transition-colors flex items-center justify-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                  class="flex-1 py-2 px-3 text-xs font-bold bg-surface-1 hover:bg-surface-2 text-brand-gold border border-border-subtle rounded-xl transition-colors flex items-center justify-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-brand-gold">
             <svg class="w-3.5 h-3.5 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
             <span data-i18n="rfq.counter_offer">${isAr ? 'تقديم عرض مالي مقابل' : 'Submit Counter Offer'}</span>
           </button>
@@ -515,7 +515,7 @@ export class ChatPage {
         <!-- Card Top: Badge & RFQ Number -->
         <div class="flex items-center justify-between gap-2 border-b border-border-subtle pb-3">
           <div class="flex items-center gap-2 min-w-0">
-            <div class="w-7 h-7 rounded-lg bg-brand-gold/15 text-brand-gold flex items-center justify-center font-bold shrink-0">
+            <div class="w-7 h-7 rounded-lg bg-surface-2 text-brand-gold flex items-center justify-center font-bold shrink-0">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             </div>
             <div class="truncate">
@@ -573,7 +573,7 @@ export class ChatPage {
         </div>
 
         ${rfq.counter_notes ? `
-          <div class="p-2.5 rounded-xl bg-brand-gold/10 border border-brand-gold/30 text-xs text-text-main">
+          <div class="p-2.5 rounded-xl bg-surface-2 border border-border-subtle text-xs text-text-main">
             <span class="font-bold text-brand-gold block mb-0.5">${isAr ? 'ملاحظات العرض المقابل:' : 'Counter-Offer Notes:'}</span>
             <p class="text-[11px] text-text-muted leading-relaxed">${rfq.counter_notes}</p>
           </div>

@@ -102,7 +102,7 @@
         </a>
 
         <!-- Notifications Link (Active) -->
-        <a href="notifications.html" class="p-2 sm:p-2.5 text-brand-gold bg-surface-2 border border-brand-gold/40 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold relative" aria-label="Notifications">
+        <a href="notifications.html" class="p-2 sm:p-2.5 text-brand-gold bg-surface-2 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold relative" aria-label="Notifications">
           <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
             <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
@@ -233,7 +233,7 @@
         <button type="button" data-filter-notif="all" role="tab" aria-selected="true"
                 class="px-4 py-2 rounded-xl bg-brand-gold text-white font-bold text-xs shadow-sm transition-colors shrink-0 flex items-center gap-2">
           <span data-i18n="notifications.filter_all">الكل</span>
-          <span class="filter-count px-1.5 py-0.5 rounded-md bg-white/20 text-[10px] font-mono">0</span>
+          <span class="filter-count px-1.5 py-0.5 rounded-md bg-surface-2 text-[10px] font-mono">0</span>
         </button>
 
         <button type="button" data-filter-notif="rfqs" role="tab" aria-selected="false"
@@ -268,7 +268,7 @@
   </main>
 
   <!-- ================= SEARCH MODAL PALETTE ================= -->
-  <div id="search-modal" data-modal class="hidden fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-black/75" role="dialog" aria-modal="true">
+  <div id="search-modal" data-modal class="hidden fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-canvas" role="dialog" aria-modal="true">
     <div class="w-full max-w-2xl bg-surface-1 border border-border-subtle rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]">
       <div class="p-4 border-b border-border-subtle flex items-center gap-3">
         <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>

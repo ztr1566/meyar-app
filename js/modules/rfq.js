@@ -473,10 +473,10 @@ export class RFQManager {
 
     container.innerHTML = rfqs.map(rfq => {
       const statusBg = {
-        pending: 'bg-amber-500/10 text-amber-500 border-amber-500/20',
-        quoted: 'bg-brand-gold/10 text-brand-gold border-brand-gold/20',
-        accepted: 'bg-brand-emerald/10 text-brand-emerald border-brand-emerald/20',
-        rejected: 'bg-red-500/10 text-red-500 border-red-500/20'
+        pending: 'bg-surface-2 text-amber-500 border-amber-500',
+        quoted: 'bg-surface-2 text-brand-gold border-brand-gold',
+        accepted: 'bg-surface-2 text-brand-emerald border-brand-emerald',
+        rejected: 'bg-surface-2 text-red-500 border-red-500'
       }[rfq.status] || 'bg-surface-2 text-text-muted border-border-subtle';
 
       const statusLabel = {

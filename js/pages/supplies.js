@@ -78,11 +78,11 @@ export class SuppliesPage {
       const icon = btn.querySelector('svg');
       if (icon) {
         if (isSaved) {
-          btn.classList.add('text-brand-gold', 'bg-brand-gold/10');
+          btn.classList.add('text-brand-gold', 'bg-surface-2');
           btn.classList.remove('text-text-muted', 'bg-surface-1');
           icon.setAttribute('fill', 'currentColor');
         } else {
-          btn.classList.remove('text-brand-gold', 'bg-brand-gold/10');
+          btn.classList.remove('text-brand-gold', 'bg-surface-2');
           btn.classList.add('text-text-muted', 'bg-surface-1');
           icon.setAttribute('fill', 'none');
         }
@@ -225,24 +225,24 @@ export class SuppliesPage {
     }).join('');
 
     const certBadges = (item.certifications || []).slice(0, 3).map(cert => `
-      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
+      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-surface-2 text-brand-emerald border border-brand-emerald">
         <svg class="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
         ${cert}
       </span>
     `).join('');
 
     const stockBadge = item.in_stock
-      ? `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-brand-emerald/15 text-brand-emerald border border-brand-emerald/30 shadow-sm">
+      ? `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-surface-2 text-brand-emerald border border-border-subtle shadow-sm">
            <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald animate-pulse"></span>
            ${I18n.t('supplies.in_stock')} (${item.stock_count} ${unit})
          </span>`
-      : `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-red-500/15 text-red-500 border border-red-500/30">
+      : `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-surface-2 text-red-500 border border-red-500">
            <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
            ${I18n.t('supplies.out_of_stock')}
          </span>`;
 
     return `
-      <article class="group bg-surface-1 border border-border-subtle hover:border-brand-gold/50 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between transition-all duration-200" data-supply-id="${item.id}">
+      <article class="group bg-surface-1 border border-border-subtle hover:border-border-subtle rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between transition-all duration-200" data-supply-id="${item.id}">
         
         <!-- Top Image & Badges Container -->
         <div class="relative w-full h-52 sm:h-56 bg-surface-2 overflow-hidden shrink-0">
@@ -259,7 +259,7 @@ export class SuppliesPage {
 
           <!-- Bookmark / Save Button -->
           <button type="button" data-action="toggle-save-supply" data-supply-id="${item.id}"
-                  class="absolute top-3 end-3 p-2.5 rounded-xl ${isSaved ? 'text-brand-gold bg-brand-gold/10' : 'text-text-muted bg-surface-1 hover:text-text-main'} border border-border-subtle shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                  class="absolute top-3 end-3 p-2.5 rounded-xl ${isSaved ? 'text-brand-gold bg-surface-2' : 'text-text-muted bg-surface-1 hover:text-text-main'} border border-border-subtle shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
                   aria-label="Save supply item">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
               <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/>
@@ -519,7 +519,7 @@ export class SuppliesPage {
         const val = isAr ? s.value_ar : s.value_en;
         return `
           <tr class="border-b border-border-subtle">
-            <td class="py-2.5 px-4 text-xs font-bold text-text-muted bg-surface-2/50 w-1/3">${label}</td>
+            <td class="py-2.5 px-4 text-xs font-bold text-text-muted bg-surface-2 w-1/3">${label}</td>
             <td class="py-2.5 px-4 text-xs font-semibold text-text-main">${val}</td>
           </tr>
         `;
@@ -530,7 +530,7 @@ export class SuppliesPage {
     const certsContainer = modal.querySelector('#specs-modal-certs');
     if (certsContainer) {
       certsContainer.innerHTML = (item.certifications || []).map(c => `
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-surface-2 text-brand-emerald border border-brand-emerald">
           <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
           ${c}
         </span>

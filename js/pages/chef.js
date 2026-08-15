@@ -502,7 +502,7 @@ export class ChefPage {
       const isLiked = likedSet.has(recipe.id);
 
       return `
-        <article class="group bg-surface-1 border border-border-subtle rounded-3xl overflow-hidden shadow-sm hover:border-brand-gold/40 transition-all flex flex-col justify-between text-start" data-recipe-id="${recipe.id}">
+        <article class="group bg-surface-1 border border-border-subtle rounded-3xl overflow-hidden shadow-sm hover:border-border-subtle transition-all flex flex-col justify-between text-start" data-recipe-id="${recipe.id}">
           <div>
             <!-- Recipe Image Container -->
             <div class="relative h-48 sm:h-52 w-full overflow-hidden bg-surface-2">
@@ -593,7 +593,7 @@ export class ChefPage {
       const hasRecipe = Boolean(dish.recipe_id);
 
       return `
-        <article class="bg-surface-1 border border-border-subtle rounded-3xl overflow-hidden shadow-sm hover:border-brand-gold/40 transition-all flex flex-col justify-between text-start">
+        <article class="bg-surface-1 border border-border-subtle rounded-3xl overflow-hidden shadow-sm hover:border-border-subtle transition-all flex flex-col justify-between text-start">
           <div class="space-y-4">
             <!-- Dish Photo Showcase -->
             <div class="relative h-64 sm:h-72 w-full overflow-hidden bg-surface-2">
@@ -702,7 +702,7 @@ export class ChefPage {
       const tag = isAr ? col.tag_ar : col.tag_en;
 
       return `
-        <article class="group bg-surface-1 border border-border-subtle rounded-3xl overflow-hidden shadow-sm hover:border-brand-gold/40 transition-all flex flex-col justify-between text-start">
+        <article class="group bg-surface-1 border border-border-subtle rounded-3xl overflow-hidden shadow-sm hover:border-border-subtle transition-all flex flex-col justify-between text-start">
           <div>
             <div class="relative h-44 w-full overflow-hidden bg-surface-2">
               <img src="${col.image}" alt="${title}"
@@ -771,7 +771,7 @@ export class ChefPage {
       const isEnrolled = enrolledSet.has(course.id);
 
       return `
-        <article class="bg-surface-1 border border-border-subtle rounded-3xl overflow-hidden shadow-sm hover:border-brand-gold/40 transition-all flex flex-col justify-between text-start" data-course-id="${course.id}">
+        <article class="bg-surface-1 border border-border-subtle rounded-3xl overflow-hidden shadow-sm hover:border-border-subtle transition-all flex flex-col justify-between text-start" data-course-id="${course.id}">
           <div class="space-y-4">
             <!-- Cover & Badges -->
             <div class="relative h-56 sm:h-64 w-full overflow-hidden bg-surface-2">
@@ -785,7 +785,7 @@ export class ChefPage {
                 </span>
               </div>
               <div class="absolute top-4 end-4">
-                <span class="px-3 py-1.5 rounded-xl bg-red-500/90 text-white text-xs font-bold shadow-md">
+                <span class="px-3 py-1.5 rounded-xl bg-surface-2 text-white text-xs font-bold shadow-md">
                   ${isAr ? `متبقي ${course.seats_left} مقاعد فقط` : `Only ${course.seats_left} seats left`}
                 </span>
               </div>
@@ -1007,7 +1007,7 @@ export class ChefPage {
         const orgName = isAr ? award.organization_ar : award.organization_en;
         return `
           <div class="p-3.5 rounded-2xl bg-surface-2 border border-border-subtle flex items-start gap-3 text-start">
-            <div class="w-8 h-8 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center shrink-0 mt-0.5">
+            <div class="w-8 h-8 rounded-xl bg-surface-2 text-brand-gold flex items-center justify-center shrink-0 mt-0.5">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
             </div>
             <div class="space-y-0.5 min-w-0">
@@ -1029,7 +1029,7 @@ export class ChefPage {
       equipList.innerHTML = supplies.map(sup => {
         const title = isAr ? sup.title_ar : sup.title_en;
         return `
-          <a href="supplies.html?id=${sup.id}" class="group p-3 rounded-2xl bg-surface-2 border border-border-subtle hover:border-brand-gold/40 flex items-center gap-3 transition-colors text-start">
+          <a href="supplies.html?id=${sup.id}" class="group p-3 rounded-2xl bg-surface-2 border border-border-subtle hover:border-border-subtle flex items-center gap-3 transition-colors text-start">
             <img src="${sup.image}" alt="${title}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle shrink-0">
             <div class="min-w-0 flex-1">
               <h4 class="text-xs font-bold text-text-main group-hover:text-brand-gold transition-colors truncate">${title}</h4>

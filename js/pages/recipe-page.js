@@ -368,9 +368,9 @@ export class RecipePage {
 
     if (container) {
       if (timer.isRunning) {
-        container.classList.add('border-brand-gold', 'bg-brand-gold/5');
+        container.classList.add('border-brand-gold', 'bg-surface-2');
       } else {
-        container.classList.remove('border-brand-gold', 'bg-brand-gold/5');
+        container.classList.remove('border-brand-gold', 'bg-surface-2');
       }
     }
   }
@@ -700,7 +700,7 @@ export class RecipePage {
       const timerFormatted = this.formatTimerSeconds(remainingSecs);
 
       html += `
-        <div id="step-card-${stepNum}" class="p-4 sm:p-5 rounded-2xl border ${isDone ? 'border-brand-emerald/40 bg-brand-emerald/5' : 'border-border-subtle bg-surface-2'} transition-all space-y-3.5" data-step-card="${stepNum}">
+        <div id="step-card-${stepNum}" class="p-4 sm:p-5 rounded-2xl border ${isDone ? 'border-border-subtle bg-surface-2' : 'border-border-subtle bg-surface-2'} transition-all space-y-3.5" data-step-card="${stepNum}">
           <!-- Step Header -->
           <div class="flex items-center justify-between gap-3">
             <div class="flex items-center gap-3">
@@ -725,7 +725,7 @@ export class RecipePage {
 
           <!-- Step Interactive Timer (if duration exists) -->
           ${timerMins > 0 ? `
-            <div id="step-timer-box-${stepNum}" class="p-3 rounded-xl bg-surface-1 border ${isRunning ? 'border-brand-gold bg-brand-gold/5' : 'border-border-subtle'} flex flex-wrap items-center justify-between gap-3 transition-colors">
+            <div id="step-timer-box-${stepNum}" class="p-3 rounded-xl bg-surface-1 border ${isRunning ? 'border-brand-gold bg-surface-2' : 'border-border-subtle'} flex flex-wrap items-center justify-between gap-3 transition-colors">
               <div class="flex items-center gap-2.5">
                 <svg class="w-4 h-4 text-brand-gold shrink-0 ${isRunning ? 'animate-spin' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 <span class="text-xs font-semibold text-text-muted">${lang === 'ar' ? 'مؤقت الخطوة:' : 'Step Timer:'}</span>
@@ -747,7 +747,7 @@ export class RecipePage {
 
           <!-- Chef Pro Secret Tip Box -->
           ${tip ? `
-            <div class="p-3 rounded-xl bg-brand-gold/10 border border-brand-gold/20 flex items-start gap-2.5 text-xs text-text-muted leading-relaxed">
+            <div class="p-3 rounded-xl bg-surface-2 border border-brand-gold flex items-start gap-2.5 text-xs text-text-muted leading-relaxed">
               <svg class="w-4 h-4 text-brand-gold shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
               <div>
                 <span class="font-bold text-brand-gold block mb-0.5">${I18n.t('recipe.chef_tip')}</span>
@@ -778,10 +778,10 @@ export class RecipePage {
     const lang = I18n.getLang();
 
     if (isDone) {
-      card.classList.add('border-brand-emerald/40', 'bg-brand-emerald/5');
+      card.classList.add('border-border-subtle', 'bg-surface-2');
       card.classList.remove('border-border-subtle', 'bg-surface-2');
     } else {
-      card.classList.remove('border-brand-emerald/40', 'bg-brand-emerald/5');
+      card.classList.remove('border-border-subtle', 'bg-surface-2');
       card.classList.add('border-border-subtle', 'bg-surface-2');
     }
 
@@ -850,12 +850,12 @@ export class RecipePage {
       const chefName = lang === 'ar' ? r.author_name_ar : r.author_name_en;
 
       html += `
-        <article class="group rounded-3xl bg-surface-1 border border-border-subtle overflow-hidden shadow-sm hover:shadow-md hover:border-brand-gold/40 transition-all flex flex-col justify-between">
+        <article class="group rounded-3xl bg-surface-1 border border-border-subtle overflow-hidden shadow-sm hover:shadow-md hover:border-border-subtle transition-all flex flex-col justify-between">
           <div class="relative aspect-16/10 overflow-hidden bg-surface-2">
             <img src="${r.image}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-            <span class="absolute top-3 start-3 px-2.5 py-1 text-[11px] font-bold rounded-lg bg-surface-1/90 text-brand-gold border border-border-subtle uppercase">${cuisine}</span>
+            <span class="absolute top-3 start-3 px-2.5 py-1 text-[11px] font-bold rounded-lg bg-surface-1 text-brand-gold border border-border-subtle uppercase">${cuisine}</span>
             <button type="button" data-action="save-recipe" data-recipe-id="${r.id}"
-                    class="absolute top-3 end-3 p-2 rounded-xl bg-surface-1/90 text-text-muted hover:text-brand-gold border border-border-subtle transition-colors focus:outline-none"
+                    class="absolute top-3 end-3 p-2 rounded-xl bg-surface-1 text-text-muted hover:text-brand-gold border border-border-subtle transition-colors focus:outline-none"
                     aria-label="Bookmark ${title}">
               <svg class="w-4 h-4 ${isSaved ? 'text-brand-gold fill-current' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
             </button>
@@ -908,11 +908,11 @@ export class RecipePage {
       const icon = saveBtn.querySelector('.bookmark-icon');
       const label = saveBtn.querySelector('.save-label');
       if (isSaved) {
-        saveBtn.classList.add('text-brand-gold', 'bg-brand-gold/10');
+        saveBtn.classList.add('text-brand-gold', 'bg-surface-2');
         if (icon) icon.classList.add('fill-current');
         if (label) label.textContent = I18n.getLang() === 'ar' ? 'محفوظة' : 'Saved';
       } else {
-        saveBtn.classList.remove('text-brand-gold', 'bg-brand-gold/10');
+        saveBtn.classList.remove('text-brand-gold', 'bg-surface-2');
         if (icon) icon.classList.remove('fill-current');
         if (label) label.textContent = I18n.t('btn.save');
       }
@@ -926,11 +926,11 @@ export class RecipePage {
       const icon = likeBtn.querySelector('.heart-icon');
       const baseLikes = Number(r.likes_count) || 1400;
       if (isLiked) {
-        likeBtn.classList.add('text-red-500', 'bg-red-500/10');
+        likeBtn.classList.add('text-red-500', 'bg-surface-2');
         if (icon) icon.classList.add('fill-current');
         if (likesCountEl) likesCountEl.textContent = (baseLikes + 1).toString();
       } else {
-        likeBtn.classList.remove('text-red-500', 'bg-red-500/10');
+        likeBtn.classList.remove('text-red-500', 'bg-surface-2');
         if (icon) icon.classList.remove('fill-current');
         if (likesCountEl) likesCountEl.textContent = baseLikes.toString();
       }

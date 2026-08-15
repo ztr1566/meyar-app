@@ -75,7 +75,7 @@ export class CreateRecipeStudio {
         btn.classList.add('active', 'border-brand-gold', 'bg-surface-2');
         if (badge) badge.classList.add('bg-brand-gold', 'text-white');
       } else if (btnStep < targetStep) {
-        btn.classList.add('completed', 'border-brand-emerald/40', 'bg-surface-1');
+        btn.classList.add('completed', 'border-border-subtle', 'bg-surface-1');
         if (badge) badge.classList.add('bg-brand-emerald', 'text-white');
       } else {
         btn.classList.add('border-border-subtle', 'bg-surface-1');
@@ -214,7 +214,7 @@ export class CreateRecipeStudio {
 
       <!-- Remove Row Button -->
       <div class="md:col-span-1 flex items-center justify-end md:justify-center pt-2 md:pt-0">
-        <button type="button" class="remove-ingredient-btn p-1.5 text-text-muted hover:text-red-500 bg-surface-1 hover:bg-red-500/10 border border-border-subtle rounded-lg transition-colors"
+        <button type="button" class="remove-ingredient-btn p-1.5 text-text-muted hover:text-red-500 bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-lg transition-colors"
                 title="حذف هذا المكون" aria-label="Delete Ingredient">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
         </button>
@@ -345,7 +345,7 @@ export class CreateRecipeStudio {
           <button type="button" class="move-step-down-btn p-1.5 text-text-muted hover:text-text-main bg-surface-1 border border-border-subtle rounded-lg transition-colors" title="تحريك لأسفل">
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <button type="button" class="remove-step-btn p-1.5 text-text-muted hover:text-red-500 bg-surface-1 hover:bg-red-500/10 border border-border-subtle rounded-lg transition-colors" title="حذف الخطوة">
+          <button type="button" class="remove-step-btn p-1.5 text-text-muted hover:text-red-500 bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-lg transition-colors" title="حذف الخطوة">
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
           </button>
         </div>
@@ -643,7 +643,7 @@ export class CreateRecipeStudio {
     galleryGrid.innerHTML = this.galleryImages.map((imgUrl, idx) => `
       <div class="relative group rounded-xl overflow-hidden bg-surface-2 border border-border-subtle aspect-video">
         <img src="${this.escapeHtml(imgUrl)}" alt="Gallery ${idx + 1}" class="w-full h-full object-cover">
-        <button type="button" data-gallery-index="${idx}" class="remove-gallery-item-btn absolute top-1.5 end-1.5 p-1 bg-surface-1/90 hover:bg-red-500 hover:text-white text-text-muted rounded-md transition-colors shadow-md">
+        <button type="button" data-gallery-index="${idx}" class="remove-gallery-item-btn absolute top-1.5 end-1.5 p-1 bg-surface-1 hover:bg-red-500 hover:text-white text-text-muted rounded-md transition-colors shadow-md">
           <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/></svg>
         </button>
       </div>

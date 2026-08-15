@@ -454,7 +454,7 @@ export class ExplorePage {
         </div>
 
         <!-- Card Footer Actions -->
-        <div class="px-4 py-3 sm:px-5 sm:py-3.5 border-t border-border-subtle bg-surface-2/40 flex items-center justify-between gap-2">
+        <div class="px-4 py-3 sm:px-5 sm:py-3.5 border-t border-border-subtle bg-surface-2 flex items-center justify-between gap-2">
           <div class="flex items-center gap-1 text-xs font-bold text-brand-gold">
             <svg class="w-3.5 h-3.5 fill-brand-gold text-brand-gold" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <span>${recipe.rating}</span>
@@ -463,12 +463,12 @@ export class ExplorePage {
 
           <div class="flex items-center gap-1.5">
             <button type="button" data-action="toggle-like" data-recipe-id="${recipe.id}"
-                    class="p-2 rounded-xl border border-border-subtle transition-colors ${isLiked ? 'bg-red-500/10 text-red-500 border-red-500/30' : 'bg-surface-1 text-text-muted hover:text-red-500'}"
+                    class="p-2 rounded-xl border border-border-subtle transition-colors ${isLiked ? 'bg-surface-2 text-red-500 border-red-500' : 'bg-surface-1 text-text-muted hover:text-red-500'}"
                     aria-label="Like recipe">
               <svg class="w-4 h-4 ${isLiked ? 'fill-current' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
             <button type="button" data-action="toggle-save" data-recipe-id="${recipe.id}"
-                    class="p-2 rounded-xl border border-border-subtle transition-colors ${isSaved ? 'bg-brand-gold/10 text-brand-gold border-brand-gold/30' : 'bg-surface-1 text-text-muted hover:text-brand-gold'}"
+                    class="p-2 rounded-xl border border-border-subtle transition-colors ${isSaved ? 'bg-surface-2 text-brand-gold border-border-subtle' : 'bg-surface-1 text-text-muted hover:text-brand-gold'}"
                     aria-label="Save recipe">
               <svg class="w-4 h-4 ${isSaved ? 'fill-current' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
             </button>
@@ -561,7 +561,7 @@ export class ExplorePage {
         </div>
 
         <!-- Footer Actions -->
-        <div class="px-5 py-3.5 mt-4 border-t border-border-subtle bg-surface-2/40 flex items-center justify-between gap-2">
+        <div class="px-5 py-3.5 mt-4 border-t border-border-subtle bg-surface-2 flex items-center justify-between gap-2">
           <button type="button" data-action="toggle-follow" data-chef-id="${chef.id}"
                   class="flex-1 py-2 px-3 text-xs font-semibold rounded-xl border transition-colors flex items-center justify-center gap-1.5 ${isFollowing ? 'bg-surface-2 text-text-main border-border-subtle' : 'bg-brand-gold hover:bg-brand-gold-hover text-white border-transparent shadow-sm'}">
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
@@ -598,7 +598,7 @@ export class ExplorePage {
               </span>
             </div>
             <div class="absolute top-3 end-3">
-              <span class="px-2 py-0.5 text-[10px] font-semibold rounded-md ${supply.in_stock ? 'bg-emerald-500/10 text-emerald-600 border border-emerald-500/30' : 'bg-red-500/10 text-red-600 border border-red-500/30'} bg-surface-1">
+              <span class="px-2 py-0.5 text-[10px] font-semibold rounded-md ${supply.in_stock ? 'bg-surface-2 text-emerald-600 border border-emerald-500' : 'bg-surface-2 text-red-600 border border-red-500'} bg-surface-1">
                 ${supply.in_stock ? I18n.t('supplies.in_stock') : I18n.t('supplies.out_of_stock')}
               </span>
             </div>
@@ -635,7 +635,7 @@ export class ExplorePage {
         </div>
 
         <!-- Footer Actions -->
-        <div class="px-4 py-3 sm:px-5 sm:py-3.5 border-t border-border-subtle bg-surface-2/40 flex items-center justify-between gap-2">
+        <div class="px-4 py-3 sm:px-5 sm:py-3.5 border-t border-border-subtle bg-surface-2 flex items-center justify-between gap-2">
           <div class="flex items-center gap-1 text-xs font-bold text-brand-gold">
             <svg class="w-3.5 h-3.5 fill-brand-gold text-brand-gold" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <span>${supply.rating}</span>
@@ -714,7 +714,7 @@ export class ExplorePage {
         </div>
 
         <!-- Footer Actions -->
-        <div class="px-4 py-3 sm:px-5 sm:py-3.5 border-t border-border-subtle bg-surface-2/40 flex items-center justify-between gap-2">
+        <div class="px-4 py-3 sm:px-5 sm:py-3.5 border-t border-border-subtle bg-surface-2 flex items-center justify-between gap-2">
           <div class="flex items-center gap-1 text-xs font-bold text-brand-gold">
             <svg class="w-3.5 h-3.5 fill-brand-gold text-brand-gold" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <span>${course.rating}</span>
@@ -972,11 +972,11 @@ export class ExplorePage {
       const isSaved = savedIds.has(id);
       const svg = btn.querySelector('svg');
       if (isSaved) {
-        btn.classList.add('bg-brand-gold/10', 'text-brand-gold', 'border-brand-gold/30');
+        btn.classList.add('bg-surface-2', 'text-brand-gold', 'border-border-subtle');
         btn.classList.remove('bg-surface-1', 'text-text-muted');
         if (svg) svg.classList.add('fill-current');
       } else {
-        btn.classList.remove('bg-brand-gold/10', 'text-brand-gold', 'border-brand-gold/30');
+        btn.classList.remove('bg-surface-2', 'text-brand-gold', 'border-border-subtle');
         btn.classList.add('bg-surface-1', 'text-text-muted');
         if (svg) svg.classList.remove('fill-current');
       }
@@ -988,11 +988,11 @@ export class ExplorePage {
       const isLiked = likedIds.has(id);
       const svg = btn.querySelector('svg');
       if (isLiked) {
-        btn.classList.add('bg-red-500/10', 'text-red-500', 'border-red-500/30');
+        btn.classList.add('bg-surface-2', 'text-red-500', 'border-red-500');
         btn.classList.remove('bg-surface-1', 'text-text-muted');
         if (svg) svg.classList.add('fill-current');
       } else {
-        btn.classList.remove('bg-red-500/10', 'text-red-500', 'border-red-500/30');
+        btn.classList.remove('bg-surface-2', 'text-red-500', 'border-red-500');
         btn.classList.add('bg-surface-1', 'text-text-muted');
         if (svg) svg.classList.remove('fill-current');
       }

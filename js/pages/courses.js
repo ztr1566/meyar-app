@@ -312,7 +312,7 @@ export class CoursesPage {
     // Urgency styling for low seats
     const isUrgent = (course.seats_left || 0) <= 3;
     const seatsBadgeClass = isUrgent
-      ? 'bg-red-500/10 text-red-500 border-red-500/20'
+      ? 'bg-surface-2 text-red-500 border-red-500'
       : 'bg-surface-2 text-text-muted border-border-subtle';
 
     const seatsText = isUrgent
@@ -328,7 +328,7 @@ export class CoursesPage {
       : 'bg-brand-gold text-white hover:bg-brand-gold-hover';
 
     return `
-      <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-brand-gold/50 shadow-sm"
+      <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-border-subtle shadow-sm"
                data-course-card="${course.id}"
                data-category="${course.level}">
         
@@ -364,7 +364,7 @@ export class CoursesPage {
 
           <!-- Certificate Included Strip -->
           ${course.includes_certificate ? `
-            <div class="absolute bottom-2 start-3 end-3 flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium bg-surface-1/95 border border-border-subtle rounded-lg text-text-main">
+            <div class="absolute bottom-2 start-3 end-3 flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium bg-surface-1 border border-border-subtle rounded-lg text-text-main">
               <svg class="w-3.5 h-3.5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               <span class="truncate">${isAr ? 'شهادة معتمدة مشمولة من أكاديمية معيار' : 'Accredited Certificate Included'}</span>
             </div>
@@ -534,7 +534,7 @@ export class CoursesPage {
       }).join('');
 
       return `
-        <div class="border border-border-subtle rounded-xl p-4 bg-surface-2/50 space-y-3 text-start">
+        <div class="border border-border-subtle rounded-xl p-4 bg-surface-2 space-y-3 text-start">
           <div class="flex items-center justify-between gap-2 border-b border-border-subtle pb-2.5">
             <div class="flex items-center gap-2">
               <span class="px-2 py-0.5 rounded text-[10px] font-extrabold bg-brand-gold text-white uppercase tracking-wider">
@@ -717,13 +717,13 @@ export class CoursesPage {
                     <span class="text-[11px] text-text-muted">${scheduleLabel}</span>
                   </div>
                 </div>
-                <span class="text-[10px] font-bold text-brand-emerald px-2 py-0.5 bg-brand-emerald/10 rounded-md border border-brand-emerald/20">
+                <span class="text-[10px] font-bold text-brand-emerald px-2 py-0.5 bg-surface-2 rounded-md border border-brand-emerald">
                   ${course.seats_left} ${isAr ? 'مقاعد شاغرة' : 'seats left'}
                 </span>
               </label>
 
               <!-- Secondary Alternate Weekend Cohort -->
-              <label class="flex items-center justify-between p-3 bg-surface-1 border border-border-subtle rounded-xl cursor-pointer hover:border-brand-gold/50">
+              <label class="flex items-center justify-between p-3 bg-surface-1 border border-border-subtle rounded-xl cursor-pointer hover:border-border-subtle">
                 <div class="flex items-center gap-2.5">
                   <input type="radio" name="enroll_cohort" value="cohort-2" class="text-brand-gold focus:ring-brand-gold">
                   <div>
@@ -818,7 +818,7 @@ export class CoursesPage {
               <button type="button" 
                       data-action="cancel-enroll" 
                       data-course-id="${course.id}"
-                      class="w-full sm:w-auto px-4 py-2.5 text-xs font-semibold text-red-500 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 rounded-xl transition-colors">
+                      class="w-full sm:w-auto px-4 py-2.5 text-xs font-semibold text-red-500 bg-surface-2 hover:bg-surface-2 border border-red-500 rounded-xl transition-colors">
                 ${isAr ? 'إلغاء التسجيل في هذه الدورة' : 'Cancel My Enrollment'}
               </button>
             ` : '<div></div>'}

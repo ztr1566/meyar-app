@@ -207,7 +207,7 @@
         <div class="flex flex-wrap items-center gap-2">
           <span id="recipe-badge-cuisine" class="px-3 py-1 text-xs font-bold rounded-lg bg-surface-2 text-brand-gold border border-border-subtle uppercase tracking-wider">سعودي معاصر</span>
           <span id="recipe-badge-category" class="px-3 py-1 text-xs font-semibold rounded-lg bg-surface-2 text-text-muted border border-border-subtle">أطباق رئيسية</span>
-          <span id="recipe-badge-difficulty" class="px-3 py-1 text-xs font-bold rounded-lg bg-red-500/10 text-red-500 border border-red-500/20">متقدم</span>
+          <span id="recipe-badge-difficulty" class="px-3 py-1 text-xs font-bold rounded-lg bg-surface-2 text-red-500 border border-red-500">متقدم</span>
           
           <div class="ms-auto flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-2 border border-border-subtle text-xs font-bold text-text-main">
             <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -344,7 +344,7 @@
                alt="Recipe Cover"
                class="w-full h-full object-cover">
           <div class="absolute top-3 end-3 flex items-center gap-2">
-            <span class="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-surface-1/95 text-brand-gold border border-border-subtle shadow-sm uppercase">A5 Wagyu</span>
+            <span class="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-surface-1 text-brand-gold border border-border-subtle shadow-sm uppercase">A5 Wagyu</span>
           </div>
         </div>
 
@@ -376,7 +376,7 @@
                 <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                 <span data-i18n="recipe.ingredients">المكونات والمقادير</span>
               </h2>
-              <span data-scaler-factor class="hidden px-2 py-0.5 text-xs font-bold rounded bg-brand-gold/15 text-brand-gold border border-brand-gold/30">1x</span>
+              <span data-scaler-factor class="hidden px-2 py-0.5 text-xs font-bold rounded bg-surface-2 text-brand-gold border border-border-subtle">1x</span>
             </div>
             
             <p class="text-xs text-text-muted" data-i18n="recipe.scale_hint">عدّل عدد الحصص لحساب مقادير المكونات تلقائياً</p>
@@ -461,7 +461,7 @@
             </div>
 
             <!-- Sommelier / Pairing Notes -->
-            <div class="p-3.5 rounded-2xl bg-brand-gold/10 border border-brand-gold/20 space-y-1">
+            <div class="p-3.5 rounded-2xl bg-surface-2 border border-brand-gold space-y-1">
               <span class="text-[11px] font-bold text-brand-gold uppercase tracking-wider" data-i18n="recipe.pairing_sommelier">ملاحظات التناغم والتذوق</span>
               <p id="pairing-notes" class="text-xs text-text-muted leading-relaxed font-normal">حموضة الرمان الطبيعية تكسر دسم الواغيو العالي وتبرز نكهة تمر الخلاص المعتق.</p>
             </div>
@@ -580,7 +580,7 @@
   <!-- ================= SHARE RECIPE MODAL ================= -->
   <div id="share-recipe-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="share-modal-title">
     <!-- Solid Dark Backdrop -->
-    <div class="fixed inset-0 bg-black/70" data-modal-close="share-recipe-modal"></div>
+    <div class="fixed inset-0 bg-canvas" data-modal-close="share-recipe-modal"></div>
 
     <!-- Solid Content Card -->
     <div class="relative w-full max-w-md bg-surface-1 border border-border-subtle rounded-3xl shadow-2xl p-6 space-y-5 text-start z-10">
@@ -610,7 +610,7 @@
 
   <!-- ================= GLOBAL SEARCH MODAL ================= -->
   <div id="search-modal" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 p-4" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
-    <div class="fixed inset-0 bg-black/70" data-modal-close="search-modal"></div>
+    <div class="fixed inset-0 bg-canvas" data-modal-close="search-modal"></div>
     <div class="relative w-full max-w-2xl bg-surface-1 border border-border-subtle rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[80vh]">
       <div class="p-4 border-b border-border-subtle flex items-center gap-3">
         <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
