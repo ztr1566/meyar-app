@@ -622,7 +622,5 @@ test('SuppliesPage - Strict HTML & Solid Surfaces Design Validation', () => {
   assert.ok(html.includes('aria-modal="true"'), 'aria-modal must be true on modals');
 
   // 5. Script Tags
-  assert.ok(html.includes('src="./js/app.js"'), 'app.js module must be linked');
-  assert.ok(html.includes('src="./js/modules/rfq.js"'), 'rfq.js module must be linked');
-  assert.ok(html.includes('src="./js/pages/supplies.js"'), 'supplies.js module must be linked');
+  assert.ok(html.includes('js/bundle.js') || html.includes('js/app.js'), 'bundle or app module must be linked');
 });

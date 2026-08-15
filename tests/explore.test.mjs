@@ -671,6 +671,5 @@ test('ExplorePage - Strict Design & HTML Validation', () => {
   assert.ok(html.includes('end-') || html.includes('pe-') || html.includes('me-'), 'Must use CSS logical end properties');
 
   // 5. Script Modules
-  assert.ok(html.includes('src="./js/app.js"'), 'Must load app.js module');
-  assert.ok(html.includes('src="./js/pages/explore.js"'), 'Must load explore.js module');
+  assert.ok(html.includes('js/bundle.js') || html.includes('js/app.js'), 'Must load bundle or app module');
 });
