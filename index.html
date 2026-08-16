@@ -6,10 +6,10 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="favicon.svg">
   <title data-i18n="landing.title">معيار | منصة الطهي الاحترافية</title>
-  <meta name="description" content="معيار تجمع اكتشاف الوصفات والطهاة والتوريدات والتعليم في مساحة واحدة لمحترفي الطهي.">
+  <meta name="description" content="معيار تجمع الوصفات الدقيقة والتعلم العملي وفرص التوريد في مساحة واحدة لمحترفي الطهي.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="معيار | منصة الطهي الاحترافية">
-  <meta property="og:description" content="اكتشف وابتكر ونمِّ عالمك الطهوي مع معيار.">
+  <meta property="og:description" content="اكتشف وصفات دقيقة، تعلّم من طهاة محترفين، وابنِ علاقات العمل التي تحوّل شغفك إلى مسار واضح.">
   <meta property="og:url" content="/">
 
   <!-- Anti-FOUC Early Theme & Language Execution -->
@@ -28,69 +28,253 @@
       } catch (e) {}
     })();
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/output.css">
 </head>
-<body class="bg-canvas text-text-main min-h-screen antialiased selection:bg-brand-gold selection:text-white">
-  <header class="border-b border-border-subtle bg-surface-1">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
-      <a href="index.html" class="font-extrabold text-lg tracking-tight">معيار <span class="text-brand-gold">Meyar</span></a>
-      <nav class="flex items-center gap-2 sm:gap-4" aria-label="Public navigation">
-        <a href="feeds.html" data-i18n="nav.feed" class="text-sm font-semibold text-text-muted hover:text-text-main">الخلاصة</a>
-        <a href="auth.html?tab=login" data-i18n="nav.auth_login" class="text-sm font-semibold text-text-muted hover:text-text-main">تسجيل الدخول</a>
-        <a href="auth.html?tab=register" data-i18n="auth.tab_register" class="px-3 py-2 rounded-xl bg-brand-gold text-white text-sm font-bold">إنشاء حساب</a>
+<body class="bg-canvas text-text-main min-h-screen overflow-x-hidden antialiased selection:bg-brand-gold selection:text-white transition-colors duration-200">
+  <header id="public-header" class="sticky top-0 z-40 border-b border-border-subtle bg-surface-1">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 h-[4.5rem] grid grid-cols-[1fr_auto_1fr] items-center gap-3 lg:gap-8">
+      <a href="index.html" aria-current="page" class="justify-self-start inline-flex min-w-0 items-center gap-2.5 rounded-xl p-1 text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border-subtle bg-surface-2 p-1.5">
+          <img src="favicon.svg" alt="" class="h-full w-full object-contain">
+        </span>
+        <span class="truncate text-base font-extrabold tracking-tight sm:text-lg">
+          معيار <span class="font-english text-brand-gold">Meyar</span>
+        </span>
+      </a>
+
+      <nav class="hidden items-center gap-1 md:flex" aria-label="Public navigation">
+        <a href="index.html" data-i18n="nav.home" class="rounded-lg bg-surface-2 px-3 py-2 text-sm font-bold text-brand-gold transition-colors hover:text-brand-gold-hover" aria-current="page">الرئيسية</a>
+        <a href="feeds.html" data-i18n="landing.nav_feed" class="rounded-lg px-3 py-2 text-sm font-semibold text-text-muted transition-colors hover:bg-surface-2 hover:text-text-main">الخلاصة</a>
+        <a href="explore.html" data-i18n="nav.explore" class="rounded-lg px-3 py-2 text-sm font-semibold text-text-muted transition-colors hover:bg-surface-2 hover:text-text-main">استكشف</a>
+        <a href="courses.html" data-i18n="nav.courses" class="rounded-lg px-3 py-2 text-sm font-semibold text-text-muted transition-colors hover:bg-surface-2 hover:text-text-main">الدورات</a>
+        <a href="supplies.html" data-i18n="nav.supplies" class="rounded-lg px-3 py-2 text-sm font-semibold text-text-muted transition-colors hover:bg-surface-2 hover:text-text-main">التوريدات</a>
       </nav>
-      <div class="flex items-center gap-2">
-        <button type="button" data-action="toggle-lang" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold text-text-main bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl" aria-label="Toggle language">
+
+      <div class="justify-self-end flex items-center gap-1.5 sm:gap-2">
+        <a href="auth.html?tab=login" data-i18n="nav.auth_login" class="hidden rounded-lg px-2.5 py-2 text-sm font-semibold text-text-muted transition-colors hover:bg-surface-2 hover:text-text-main sm:inline-flex">تسجيل الدخول</a>
+        <a href="auth.html?tab=register" data-i18n="nav.auth_register" class="hidden rounded-lg bg-brand-gold px-3 py-2 text-sm font-bold text-white shadow-sm transition-colors hover:bg-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold sm:inline-flex">إنشاء حساب</a>
+        <button type="button" data-action="toggle-lang" data-i18n-aria-label="nav.switch_lang" class="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border-subtle bg-surface-2 px-2.5 text-xs font-semibold text-text-main transition-colors hover:bg-surface-1 focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="التحويل إلى الإنجليزية">
+          <svg class="h-3.5 w-3.5 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3a14 14 0 0 1 0 18"></path>
+            <path d="M12 3a14 14 0 0 0 0 18"></path>
+          </svg>
           <span class="lang-label">English</span>
         </button>
-        <button type="button" data-action="toggle-theme" class="p-1.5 text-text-muted hover:text-text-main bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl" aria-label="Toggle theme">
-          <span aria-hidden="true">◐</span>
+        <button type="button" data-action="toggle-theme" aria-label="Toggle theme" class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border-subtle bg-surface-2 text-text-muted transition-colors hover:bg-surface-1 hover:text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          <svg class="h-4 w-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
         </button>
+        <details id="public-mobile-menu" class="relative md:hidden">
+          <summary data-i18n="landing.menu" data-i18n-aria-label="landing.menu" aria-label="القائمة" class="flex h-9 cursor-pointer list-none items-center gap-2 rounded-lg border border-border-subtle bg-surface-2 px-2.5 text-xs font-bold text-text-main transition-colors hover:bg-surface-1 focus:outline-none focus:ring-2 focus:ring-brand-gold [&::-webkit-details-marker]:hidden">
+            <svg class="h-4 w-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+            <span>القائمة</span>
+          </summary>
+          <div id="public-mobile-panel" class="fixed start-4 end-4 top-[5.25rem] z-50 w-auto rounded-2xl border border-border-subtle bg-surface-1 p-2 shadow-2xl">
+            <nav class="grid gap-1" aria-label="Mobile public navigation">
+              <a href="index.html" data-i18n="nav.home" aria-current="page" class="rounded-xl bg-surface-2 px-3 py-2.5 text-sm font-bold text-brand-gold">الرئيسية</a>
+              <a href="feeds.html" data-i18n="landing.nav_feed" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-text-muted hover:bg-surface-2 hover:text-text-main">الخلاصة</a>
+              <a href="explore.html" data-i18n="nav.explore" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-text-muted hover:bg-surface-2 hover:text-text-main">استكشف</a>
+              <a href="courses.html" data-i18n="nav.courses" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-text-muted hover:bg-surface-2 hover:text-text-main">الدورات</a>
+              <a href="supplies.html" data-i18n="nav.supplies" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-text-muted hover:bg-surface-2 hover:text-text-main">التوريدات</a>
+            </nav>
+            <div class="mt-2 grid gap-1 border-t border-border-subtle pt-2">
+              <a href="auth.html?tab=login" data-i18n="nav.auth_login" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-text-muted hover:bg-surface-2 hover:text-text-main">تسجيل الدخول</a>
+              <a href="auth.html?tab=register" data-i18n="nav.auth_register" class="rounded-xl bg-brand-gold px-3 py-2.5 text-center text-sm font-bold text-white hover:bg-brand-gold-hover">إنشاء حساب</a>
+            </div>
+          </div>
+        </details>
       </div>
     </div>
   </header>
+
   <main>
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28 grid lg:grid-cols-[1.1fr_.9fr] gap-12 items-center">
-      <div>
-        <p data-i18n="landing.eyebrow" class="text-sm font-bold text-brand-gold mb-4">مساحتك المهنية في عالم الطهي</p>
-        <h1 data-i18n="landing.title" class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">اكتشف، ابتكر، ونمِّ عالمك الطهوي</h1>
-        <p data-i18n="landing.description" class="mt-6 max-w-2xl text-base sm:text-lg leading-8 text-text-muted">منصة واحدة تجمع الإلهام والمعرفة والفرص المهنية لمحترفي الطهي.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="feeds.html" data-i18n="landing.feed_cta" class="px-5 py-3 rounded-xl bg-brand-gold text-white font-bold shadow-sm hover:bg-brand-gold-hover">استكشف الخلاصة</a>
-          <a href="auth.html?tab=register" data-i18n="landing.register_cta" class="px-5 py-3 rounded-xl border border-border-subtle bg-surface-1 text-text-main font-bold hover:bg-surface-2">ابدأ الآن</a>
+    <section id="landing-hero" class="border-b border-border-subtle">
+      <div class="max-w-[1440px] mx-auto grid items-center gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20 lg:px-10 lg:py-24">
+        <div class="min-w-0">
+          <h1 data-i18n="landing.hero_title" class="max-w-3xl text-4xl font-extrabold leading-[1.12] tracking-[-0.035em] text-text-main sm:text-6xl lg:text-7xl">ارفع مستوى كل ما يخرج من مطبخك</h1>
+          <p data-i18n="landing.hero_description" class="mt-6 max-w-2xl text-base leading-8 text-text-muted sm:text-lg">اكتشف وصفات دقيقة، تعلّم من طهاة محترفين، وابنِ علاقات العمل التي تحوّل شغفك إلى مسار واضح.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="feeds.html" data-i18n="landing.hero_primary" class="inline-flex items-center justify-center rounded-xl bg-brand-gold px-5 py-3 text-sm font-extrabold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2 focus:ring-offset-canvas">استكشف الخلاصة</a>
+            <a href="auth.html?tab=register" data-i18n="landing.hero_secondary" class="inline-flex items-center justify-center rounded-xl border border-border-subtle bg-surface-1 px-5 py-3 text-sm font-extrabold text-text-main transition-colors hover:bg-surface-2 focus:outline-none focus:ring-2 focus:ring-brand-gold">أنشئ حسابك</a>
+          </div>
+          <dl class="mt-12 grid max-w-2xl grid-cols-3 border-y border-border-subtle">
+            <div class="py-4 pe-4 sm:pe-6">
+              <dd class="font-english text-2xl font-extrabold text-brand-gold">06+</dd>
+              <dt data-i18n="landing.hero_stat_chefs" class="mt-1 text-xs leading-5 text-text-muted">طهاة ومبدعون</dt>
+            </div>
+            <div class="border-s border-border-subtle px-4 py-4 sm:px-6">
+              <dd class="font-english text-2xl font-extrabold text-brand-gold">08+</dd>
+              <dt data-i18n="landing.hero_stat_recipes" class="mt-1 text-xs leading-5 text-text-muted">وصفات قابلة للتطبيق</dt>
+            </div>
+            <div class="border-s border-border-subtle ps-4 py-4 sm:ps-6">
+              <dd class="font-english text-2xl font-extrabold text-brand-gold">04</dd>
+              <dt data-i18n="landing.hero_stat_workshops" class="mt-1 text-xs leading-5 text-text-muted">دورات وورش عملية</dt>
+            </div>
+          </dl>
+        </div>
+
+        <div id="landing-hero-visual" class="relative min-w-0">
+          <div class="absolute -inset-3 rounded-[2rem] border border-brand-gold"></div>
+          <figure data-i18n-aria-label="landing.hero_image_alt" aria-label="طبق فاخر يُحضّر في مطبخ احترافي" class="relative min-h-[25rem] overflow-hidden rounded-[1.75rem] border border-border-subtle bg-surface-2 sm:min-h-[35rem]">
+            <img id="landing-hero-image" src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1400&q=85" alt="" class="absolute inset-0 h-full w-full object-cover" loading="eager">
+            <div class="absolute inset-x-0 top-0 flex items-center justify-between border-b border-border-subtle bg-[#101713] px-4 py-3 text-[10px] font-bold tracking-[0.16em] text-brand-gold sm:px-6">
+              <span class="font-english">MEYAR / CRAFT</span>
+              <span data-i18n="landing.hero_kicker">منصة الطهي التي تعمل معك</span>
+            </div>
+            <figcaption class="absolute inset-x-4 bottom-4 rounded-xl border border-border-subtle bg-[#101713] p-4 sm:inset-x-6 sm:bottom-6 sm:p-5">
+              <p data-i18n="landing.card_label" class="text-xs font-bold text-brand-gold">من الفكرة إلى الطبق</p>
+              <p data-i18n="landing.card_title" class="mt-2 max-w-md text-xl font-extrabold leading-tight text-text-main sm:text-2xl">معايير أعلى لكل تجربة طهو</p>
+            </figcaption>
+          </figure>
         </div>
       </div>
-      <div class="rounded-3xl border border-border-subtle bg-surface-1 p-6 sm:p-8 shadow-xl">
-        <div class="aspect-[4/3] rounded-2xl bg-surface-2 border border-border-subtle p-5 flex flex-col justify-between">
-          <span class="text-xs font-bold text-brand-gold">Meyar / 01</span>
-          <div>
-            <p data-i18n="landing.card_label" class="text-sm text-text-muted">من الفكرة إلى الطبق</p>
-            <p data-i18n="landing.card_title" class="mt-2 text-2xl font-extrabold">معايير أعلى لكل تجربة طهو</p>
+    </section>
+
+    <section id="landing-paths" class="border-b border-border-subtle bg-surface-1">
+      <div class="max-w-[1440px] mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-10">
+        <div class="max-w-2xl">
+          <h2 data-i18n="landing.paths_title" class="text-3xl font-extrabold leading-tight tracking-[-0.025em] sm:text-5xl">مساحتك تبدأ من هدفك</h2>
+          <p data-i18n="landing.paths_description" class="mt-5 text-base leading-8 text-text-muted sm:text-lg">معيار تجمع الأدوات والمجتمع والمعرفة حول الطريقة التي تعمل بها فعلاً.</p>
+        </div>
+        <div class="mt-12 divide-y divide-border-subtle border-y border-border-subtle">
+          <article class="grid gap-5 py-8 sm:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)_auto] sm:items-center sm:gap-10">
+            <h3 data-i18n="landing.path_chef_title" class="text-xl font-extrabold text-text-main sm:text-2xl">للشيف الذي يبني اسمه</h3>
+            <p data-i18n="landing.path_chef_text" class="max-w-xl text-sm leading-7 text-text-muted">انشر وصفاتك، اعرض أطباقك المميزة، وشارك خبرتك مع جمهور يقدّر التفاصيل.</p>
+            <a href="auth.html?tab=register&role=chef" data-i18n="landing.path_chef_cta" class="inline-flex items-center gap-2 text-sm font-extrabold text-brand-gold hover:text-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold">ابنِ ملفك المهني
+              <svg class="h-4 w-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+            </a>
+          </article>
+          <article class="grid gap-5 py-8 sm:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)_auto] sm:items-center sm:gap-10">
+            <h3 data-i18n="landing.path_enthusiast_title" class="text-xl font-extrabold text-text-main sm:text-2xl">لمن يطارد الطبق الأفضل</h3>
+            <p data-i18n="landing.path_enthusiast_text" class="max-w-xl text-sm leading-7 text-text-muted">استكشف أفكاراً جديدة، اضبط المقادير، وتعلّم من تجارب الطهاة في كل مستوى.</p>
+            <a href="feeds.html" data-i18n="landing.path_enthusiast_cta" class="inline-flex items-center gap-2 text-sm font-extrabold text-brand-gold hover:text-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold">ابدأ بالاكتشاف
+              <svg class="h-4 w-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+            </a>
+          </article>
+          <article class="grid gap-5 py-8 sm:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)_auto] sm:items-center sm:gap-10">
+            <h3 data-i18n="landing.path_supplier_title" class="text-xl font-extrabold text-text-main sm:text-2xl">للمورد الذي يفهم المطبخ</h3>
+            <p data-i18n="landing.path_supplier_text" class="max-w-xl text-sm leading-7 text-text-muted">اعرض معداتك ومكوناتك، وابنِ علاقات توريد مباشرة مع أصحاب القرار.</p>
+            <a href="auth.html?tab=register&role=supplier" data-i18n="landing.path_supplier_cta" class="inline-flex items-center gap-2 text-sm font-extrabold text-brand-gold hover:text-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold">اعرض منتجاتك
+              <svg class="h-4 w-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="landing-toolkit" class="border-b border-border-subtle">
+      <div class="max-w-[1440px] mx-auto grid gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-center lg:gap-20 lg:px-10">
+        <div class="relative min-h-[25rem] overflow-hidden rounded-[1.75rem] border border-border-subtle bg-surface-2 sm:min-h-[31rem]">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=85" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy">
+          <div class="absolute inset-x-4 bottom-4 border border-border-subtle bg-[#101713] p-4 sm:inset-x-6 sm:bottom-6 sm:p-5">
+            <p data-i18n="landing.hero_kicker" class="text-xl font-extrabold leading-tight text-text-main">منصة الطهي التي تعمل معك</p>
+          </div>
+        </div>
+        <div>
+          <h2 data-i18n="landing.toolkit_title" class="max-w-2xl text-3xl font-extrabold leading-tight tracking-[-0.025em] sm:text-5xl">كل ما تحتاجه، في سير عمل واحد</h2>
+          <p data-i18n="landing.toolkit_description" class="mt-5 max-w-2xl text-base leading-8 text-text-muted sm:text-lg">من أول فكرة إلى آخر طلب توريد، صُممت معيار لتقليل المسافة بين المعرفة والتنفيذ.</p>
+          <div class="mt-10 grid gap-8 border-t border-border-subtle pt-8 sm:grid-cols-3 sm:gap-6">
+            <article>
+              <svg class="h-7 w-7 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path><path d="M11 8v6M8 11h6"></path></svg>
+              <h3 data-i18n="landing.toolkit_discover_title" class="mt-4 text-base font-extrabold">اكتشاف يفتح شهيتك</h3>
+              <p data-i18n="landing.toolkit_discover_text" class="mt-2 text-sm leading-7 text-text-muted">خلاصة حية من وصفات وقصص وتجارب مجتمع الطهي.</p>
+            </article>
+            <article>
+              <svg class="h-7 w-7 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path><path d="M8 6h8M8 10h7"></path></svg>
+              <h3 data-i18n="landing.toolkit_learn_title" class="mt-4 text-base font-extrabold">تعلّم يغيّر طريقتك</h3>
+              <p data-i18n="landing.toolkit_learn_text" class="mt-2 text-sm leading-7 text-text-muted">دورات وورش عملية يقودها أصحاب خبرة حقيقية.</p>
+            </article>
+            <article>
+              <svg class="h-7 w-7 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"></path><path d="M7 7V4h10v3M7 12h10M7 16h6"></path></svg>
+              <h3 data-i18n="landing.toolkit_supply_title" class="mt-4 text-base font-extrabold">توريد بلا تخمين</h3>
+              <p data-i18n="landing.toolkit_supply_text" class="mt-2 text-sm leading-7 text-text-muted">سوق متخصص للمعدات والمكونات والطلبات التجارية.</p>
+            </article>
           </div>
         </div>
       </div>
     </section>
-    <section class="border-y border-border-subtle bg-surface-1">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid md:grid-cols-3 gap-5">
-        <article class="p-5 rounded-2xl border border-border-subtle bg-surface-2">
-          <h2 data-i18n="landing.discovery_title" class="font-extrabold text-lg">اكتشاف ملهم</h2>
-          <p data-i18n="landing.discovery_text" class="mt-2 text-sm leading-7 text-text-muted">وصفات وأفكار من مجتمع طهو يتطور باستمرار.</p>
-        </article>
-        <article class="p-5 rounded-2xl border border-border-subtle bg-surface-2">
-          <h2 data-i18n="landing.learning_title" class="font-extrabold text-lg">تعلم عملي</h2>
-          <p data-i18n="landing.learning_text" class="mt-2 text-sm leading-7 text-text-muted">دورات وورش تساعدك على تحويل الشغف إلى مهارة.</p>
-        </article>
-        <article class="p-5 rounded-2xl border border-border-subtle bg-surface-2">
-          <h2 data-i18n="landing.opportunity_title" class="font-extrabold text-lg">فرص أفضل</h2>
-          <p data-i18n="landing.opportunity_text" class="mt-2 text-sm leading-7 text-text-muted">أدوات ومجتمع يدعمان نمو أعمال الطهي.</p>
-        </article>
+
+    <section id="landing-preview" class="bg-surface-1">
+      <div class="max-w-[1440px] mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-10">
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div class="max-w-2xl">
+            <h2 data-i18n="landing.preview_title" class="text-3xl font-extrabold leading-tight tracking-[-0.025em] sm:text-5xl">خذ جولة داخل معيار</h2>
+            <p data-i18n="landing.preview_description" class="mt-5 text-base leading-8 text-text-muted sm:text-lg">ثلاث نقاط بداية واضحة، وكل واحدة منها تقودك إلى تجربة كاملة.</p>
+          </div>
+          <a href="feeds.html" data-i18n="landing.preview_open" class="inline-flex shrink-0 items-center gap-2 text-sm font-extrabold text-brand-gold hover:text-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold">افتح المساحة
+            <svg class="h-4 w-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </a>
+        </div>
+        <div id="landing-preview-grid" class="mt-12 grid gap-5 md:grid-cols-3">
+          <a href="feeds.html" class="group overflow-hidden rounded-2xl border border-border-subtle bg-surface-2 focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85" alt="" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+            <div class="p-5">
+              <h3 data-i18n="landing.preview_feed" class="text-xl font-extrabold">الخلاصة</h3>
+              <p data-i18n="landing.preview_feed_text" class="mt-2 text-sm leading-7 text-text-muted">وصفات واتجاهات من مجتمع يتحرك كل يوم.</p>
+            </div>
+          </a>
+          <a href="courses.html" class="group overflow-hidden rounded-2xl border border-border-subtle bg-surface-2 focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=85" alt="" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+            <div class="p-5">
+              <h3 data-i18n="landing.preview_courses" class="text-xl font-extrabold">الدورات</h3>
+              <p data-i18n="landing.preview_courses_text" class="mt-2 text-sm leading-7 text-text-muted">تعلم مكثف يساعدك على تحويل المعرفة إلى مهارة.</p>
+            </div>
+          </a>
+          <a href="supplies.html" class="group overflow-hidden rounded-2xl border border-border-subtle bg-surface-2 focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            <img src="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=900&q=85" alt="" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+            <div class="p-5">
+              <h3 data-i18n="landing.preview_supplies" class="text-xl font-extrabold">التوريدات</h3>
+              <p data-i18n="landing.preview_supplies_text" class="mt-2 text-sm leading-7 text-text-muted">مصادر احترافية لمطبخ يعمل بكفاءة.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="landing-cta" class="border-t border-border-subtle">
+      <div class="max-w-[1440px] mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-10">
+        <div class="flex flex-col gap-8 rounded-[1.75rem] border border-brand-gold bg-surface-2 px-6 py-10 sm:px-10 lg:flex-row lg:items-end lg:justify-between lg:gap-12 lg:px-14 lg:py-14">
+          <div class="max-w-2xl">
+            <h2 data-i18n="landing.cta_title" class="text-3xl font-extrabold leading-tight tracking-[-0.025em] sm:text-5xl">المطبخ الأفضل يبدأ بخطوة واضحة</h2>
+            <p data-i18n="landing.cta_description" class="mt-5 max-w-xl text-base leading-8 text-text-muted sm:text-lg">انضم إلى معيار، واكتشف مساحة صُممت للطهاة ومن يعملون معهم.</p>
+          </div>
+          <a href="auth.html?tab=register" data-i18n="landing.cta_button" class="inline-flex shrink-0 items-center justify-center rounded-xl bg-brand-gold px-5 py-3 text-sm font-extrabold text-white transition-colors hover:bg-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2 focus:ring-offset-surface-2">ابدأ رحلتك</a>
+        </div>
       </div>
     </section>
   </main>
-  <footer class="max-w-7xl mx-auto w-full px-4 sm:px-6 py-8 text-sm text-text-muted flex flex-wrap justify-between gap-3">
-    <span>معيار / Meyar</span>
-    <a href="feeds.html" data-i18n="landing.footer_cta" class="font-semibold hover:text-text-main">ابدأ باستكشاف معيار</a>
+
+  <footer class="border-t border-border-subtle bg-surface-1">
+    <div class="max-w-[1440px] mx-auto grid gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr] lg:px-10">
+      <div>
+        <a href="index.html" class="inline-flex items-center gap-2 text-lg font-extrabold text-text-main focus:outline-none focus:ring-2 focus:ring-brand-gold">
+          <span class="font-english text-brand-gold">Meyar</span> معيار
+        </a>
+        <p data-i18n="landing.footer_note" class="mt-3 max-w-xs text-sm leading-7 text-text-muted">لأهل المطبخ، من أهل المطبخ.</p>
+      </div>
+      <nav class="grid content-start gap-2 text-sm" aria-label="Footer navigation">
+        <a href="feeds.html" data-i18n="landing.nav_feed" class="font-semibold text-text-muted hover:text-text-main">الخلاصة</a>
+        <a href="explore.html" data-i18n="nav.explore" class="font-semibold text-text-muted hover:text-text-main">استكشف</a>
+        <a href="courses.html" data-i18n="nav.courses" class="font-semibold text-text-muted hover:text-text-main">الدورات</a>
+        <a href="supplies.html" data-i18n="nav.supplies" class="font-semibold text-text-muted hover:text-text-main">التوريدات</a>
+      </nav>
+      <div class="flex flex-col items-start gap-3 text-sm">
+        <a href="auth.html?tab=login" data-i18n="nav.auth_login" class="font-semibold text-text-muted hover:text-text-main">تسجيل الدخول</a>
+        <a href="auth.html?tab=register" data-i18n="nav.auth_register" class="font-semibold text-brand-gold hover:text-brand-gold-hover">إنشاء حساب</a>
+        <span class="pt-3 text-xs text-text-muted">© Meyar</span>
+      </div>
+    </div>
   </footer>
+
   <script src="./js/bundle.js"></script>
 </body>
 </html>

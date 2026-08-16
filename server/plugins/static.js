@@ -28,6 +28,7 @@ function isAllowedPath(pathName) {
   if (decodedPath.includes('\0') || decodedPath.includes('\\')) return false;
 
   const relativePath = decodedPath.replace(/^\/+/, '');
+  if (relativePath === 'favicon.svg') return true;
   const segments = relativePath.split('/');
   if (segments.some(segment => !segment || segment === '.' || segment === '..' || segment.startsWith('.'))) {
     return false;

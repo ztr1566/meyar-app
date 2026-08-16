@@ -45,6 +45,7 @@ test('frontend entrypoint and built assets are served', async () => {
     const page = await app.inject({ method: 'GET', url: '/auth.html' });
     const bundle = await app.inject({ method: 'GET', url: '/js/bundle.js' });
     const styles = await app.inject({ method: 'GET', url: '/css/output.css' });
+    const favicon = await app.inject({ method: 'GET', url: '/favicon.svg' });
 
     assert.equal(root.statusCode, 200);
     assert.match(root.headers['content-type'], /^text\/html/);
@@ -62,6 +63,8 @@ test('frontend entrypoint and built assets are served', async () => {
     assert.match(bundle.headers['content-type'], /javascript/);
     assert.equal(styles.statusCode, 200);
     assert.match(styles.headers['content-type'], /^text\/css/);
+    assert.equal(favicon.statusCode, 200);
+    assert.match(favicon.headers['content-type'], /image\/svg/);
   });
 });
 
