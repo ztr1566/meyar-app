@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { spawn } from 'node:child_process';
+import { once } from 'node:events';
 import { buildApp } from '../server/app.js';
 
 async function withApp(run) {
@@ -101,4 +103,47 @@ test('API failures hide internal error details', async () => {
     });
     assert.doesNotMatch(response.body, /secret internal failure|stack/i);
   });
+});
+
+async function waitForListening(child) {
+  return new Promise((resolve, reject) => {
+    let output = '';
+    const timeout = setTimeout(() => reject(new Error(`server did not start: ${output}`)), 5000);
+    const onData = (chunk) => {
+      output += chunk.toString();
+      if (/listening/i.test(output)) {
+        clearTimeout(timeout);
+        resolve();
+      }
+    };
+    child.stdout.on('data', onData);
+    child.stderr.on('data', onData);
+    child.once('error', (error) => {
+      clearTimeout(timeout);
+      reject(error);
+    });
+    child.once('exit', (code, signal) => {
+      if (code !== null || signal !== null) {
+        clearTimeout(timeout);
+        reject(new Error(`server exited before listening: ${code ?? signal}`));
+      }
+    });
+  });
+}
+
+test('server exits cleanly after SIGTERM', async (t) => {
+  const child = spawn(process.execPath, ['server/server.js'], {
+    cwd: process.cwd(),
+    env: { ...process.env, HOST: '127.0.0.1', PORT: '0' }
+  });
+
+  t.after(() => {
+    if (child.exitCode === null) child.kill('SIGKILL');
+  });
+
+  await waitForListening(child);
+  child.kill('SIGTERM');
+  const [code, signal] = await once(child, 'exit');
+  assert.equal(code, 0);
+  assert.equal(signal, null);
 });
