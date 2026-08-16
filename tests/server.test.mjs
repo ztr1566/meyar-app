@@ -65,7 +65,8 @@ test('static serving blocks sensitive files and traversal attempts', async () =>
       '/tests/e2e.test.mjs',
       '/js/main.js',
       '/%2e%2e/package.json',
-      '/..%2Fpackage.json'
+      '/..%2Fpackage.json',
+      '/../package.json'
     ];
 
     for (const url of blockedPaths) {

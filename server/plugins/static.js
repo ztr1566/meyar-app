@@ -6,6 +6,17 @@ export const PROJECT_ROOT = fileURLToPath(new URL('../..', import.meta.url));
 
 const OPTIONAL_ASSET_DIRECTORIES = new Set(['images', 'icons', 'fonts']);
 
+function hasLiteralTraversal(pathName) {
+  let decodedPath;
+  try {
+    decodedPath = decodeURIComponent(pathName.split('?', 1)[0]);
+  } catch {
+    return false;
+  }
+
+  return decodedPath.split('/').some(segment => segment === '.' || segment === '..');
+}
+
 function isAllowedPath(pathName) {
   let decodedPath;
   try {
@@ -28,6 +39,10 @@ function isAllowedPath(pathName) {
 }
 
 export async function staticPlugin(app, { root = PROJECT_ROOT } = {}) {
+  app.addHook('onRequest', async (request, reply) => {
+    if (hasLiteralTraversal(request.raw.url ?? '')) return reply.callNotFound();
+  });
+
   await app.register(fastifyStatic, {
     root: path.resolve(root),
     index: false,

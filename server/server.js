@@ -10,7 +10,7 @@ export async function startServer({ port = defaultPort, host = defaultHost } = {
 
   const shutdown = async (signal) => {
     closePromise ??= app.close();
-    app.log.info({ signal }, 'Server shut down');
+    app.log.info({ signal }, 'Server shutting down');
     await closePromise;
   };
 

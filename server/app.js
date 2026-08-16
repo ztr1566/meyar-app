@@ -31,6 +31,7 @@ export function buildApp({ logger = true, staticRoot = PROJECT_ROOT } = {}) {
     return reply.status(404).send(errorBody('NOT_FOUND', 'Route not found'));
   });
 
+  // ponytail: root scope is intentional because nested registration encapsulates CORS.
   corsPlugin(app);
   app.register(staticPlugin, { root: staticRoot });
   app.register(healthRoutes, { prefix: '/api' });
