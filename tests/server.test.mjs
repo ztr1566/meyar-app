@@ -41,6 +41,7 @@ test('API responses include the public CORS header', async () => {
 test('frontend entrypoint and built assets are served', async () => {
   await withApp(async (app) => {
     const root = await app.inject({ method: 'GET', url: '/' });
+    const feeds = await app.inject({ method: 'GET', url: '/feeds?filter=trending' });
     const page = await app.inject({ method: 'GET', url: '/auth.html' });
     const bundle = await app.inject({ method: 'GET', url: '/js/bundle.js' });
     const styles = await app.inject({ method: 'GET', url: '/css/output.css' });
@@ -48,6 +49,14 @@ test('frontend entrypoint and built assets are served', async () => {
     assert.equal(root.statusCode, 200);
     assert.match(root.headers['content-type'], /^text\/html/);
     assert.match(root.body, /<!DOCTYPE html>/i);
+    assert.match(root.body, /landing\.title/);
+    assert.doesNotMatch(root.body, /feed-posts-container/);
+
+    assert.equal(feeds.statusCode, 200);
+    assert.match(feeds.headers['content-type'], /^text\/html/);
+    assert.match(feeds.body, /id="feed-posts-container"/);
+    assert.match(feeds.body, /<title[^>]*>.*خلاصة الاستكشاف/i);
+
     assert.equal(page.statusCode, 200);
     assert.equal(bundle.statusCode, 200);
     assert.match(bundle.headers['content-type'], /javascript/);
