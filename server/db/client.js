@@ -19,8 +19,11 @@ let disconnectPromise;
 
 export function disconnectDatabase() {
   disconnectPromise ??= (async () => {
-    await prisma.$disconnect();
-    await pool.end();
+    try {
+      await prisma.$disconnect();
+    } finally {
+      await pool.end();
+    }
   })();
   return disconnectPromise;
 }
