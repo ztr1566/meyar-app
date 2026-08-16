@@ -629,3 +629,28 @@ test('FeedPage - Post Actions and Dropdown Menus', () => {
   reportBtn.click();
   assert.ok(dropdownMenu.classList.contains('hidden'), 'Dropdown should be hidden after reporting');
 });
+
+test('FeedPage - Post Cards Word Breaking and Overflow Containment', () => {
+  const { doc, Element } = setupDOM();
+  FeedPage.isInitialized = false;
+  FeedPage.userPosts = [{
+    id: 'long-post-1',
+    author_id: 'chef-1',
+    author: 'Chef Faisal',
+    content: 'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww',
+    likes_count: 0,
+    saves_count: 0
+  }];
+
+  const feedCont = new Element('div');
+  feedCont.id = 'feed-posts-container';
+  doc.body.appendChild(feedCont);
+
+  FeedPage.renderFeedPosts(feedCont);
+
+  assert.ok(feedCont.innerHTML.includes('overflow-hidden'), 'Post card article must have overflow-hidden');
+  assert.ok(feedCont.innerHTML.includes('break-words'), 'Post content paragraph must have break-words');
+  assert.ok(feedCont.innerHTML.includes('[overflow-wrap:anywhere]'), 'Post content paragraph must have [overflow-wrap:anywhere]');
+  assert.ok(feedCont.innerHTML.includes('min-w-0'), 'Post card must contain min-w-0 for flex layout containment');
+});
+

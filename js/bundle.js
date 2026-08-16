@@ -555,8 +555,8 @@
       "auth.submit_login": "\u062F\u062E\u0648\u0644 \u0625\u0644\u0649 \u0627\u0644\u062D\u0633\u0627\u0628",
       "auth.submit_register": "\u0625\u062A\u0645\u0627\u0645 \u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0648\u0627\u0644\u0628\u062F\u0621",
       "auth.terms_agreement": "\u0623\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0634\u0631\u0648\u0637 \u0627\u0644\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0648\u0633\u064A\u0627\u0633\u0629 \u0627\u0644\u062E\u0635\u0648\u0635\u064A\u0629 \u0627\u0644\u062E\u0627\u0635\u0629 \u0628\u0645\u0639\u064A\u0627\u0631",
-      "auth.google_login": "\u0627\u0644\u0645\u062A\u0627\u0628\u0639\u0629 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 Google",
-      "auth.apple_login": "\u0627\u0644\u0645\u062A\u0627\u0628\u0639\u0629 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 Apple",
+      "auth.google_login": "Google",
+      "auth.apple_login": "Apple",
       "auth.login_success": "\u062A\u0645 \u062A\u0633\u062C\u064A\u0644 \u0627\u0644\u062F\u062E\u0648\u0644 \u0628\u0646\u062C\u0627\u062D\u060C \u062C\u0627\u0631\u064A \u0646\u0642\u0644\u0643...",
       "auth.register_success": "\u062A\u0645 \u0625\u0646\u0634\u0627\u0621 \u0627\u0644\u062D\u0633\u0627\u0628 \u0628\u0646\u062C\u0627\u062D! \u0645\u0631\u062D\u0628\u0627\u064B \u0628\u0643 \u0641\u064A \u0645\u0639\u064A\u0627\u0631",
       "auth.invalid_email": "\u064A\u0631\u062C\u0649 \u0625\u062F\u062E\u0627\u0644 \u0639\u0646\u0648\u0627\u0646 \u0628\u0631\u064A\u062F \u0625\u0644\u0643\u062A\u0631\u0648\u0646\u064A \u0635\u0627\u0644\u062D",
@@ -1151,8 +1151,8 @@
       "auth.submit_login": "Sign In to Account",
       "auth.submit_register": "Complete Registration",
       "auth.terms_agreement": "I agree to Meyar Terms of Service and Privacy Policy",
-      "auth.google_login": "Continue with Google",
-      "auth.apple_login": "Continue with Apple",
+      "auth.google_login": "Google",
+      "auth.apple_login": "Apple",
       "auth.login_success": "Login successful, redirecting...",
       "auth.register_success": "Account created successfully! Welcome to Meyar",
       "auth.invalid_email": "Please enter a valid email address",
@@ -6545,17 +6545,17 @@
         const saveFill = isSaved ? "currentColor" : "none";
         const isOwner = post.author_id === activeUser.id;
         html += `
-        <article class="bg-surface-1 border border-border-subtle rounded-2xl p-5 shadow-sm space-y-4 text-start relative" data-card-post-id="${post.id}">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <img src="${this.escapeHtml(post.avatar)}" alt="${this.escapeHtml(post.author)}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle">
-              <div>
-                <h4 class="text-xs sm:text-sm font-bold text-text-main">${this.escapeHtml(post.author)}</h4>
-                <p class="text-[11px] text-text-muted">${this.escapeHtml(post.timeAgo)} \u2022 <span class="text-brand-gold font-semibold">${this.escapeHtml(post.handle)}</span></p>
+        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden p-5 shadow-sm space-y-4 text-start relative min-w-0" data-card-post-id="${post.id}">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-3 min-w-0">
+              <img src="${this.escapeHtml(post.avatar)}" alt="${this.escapeHtml(post.author)}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle shrink-0">
+              <div class="min-w-0">
+                <h4 class="text-xs sm:text-sm font-bold text-text-main truncate">${this.escapeHtml(post.author)}</h4>
+                <p class="text-[11px] text-text-muted truncate">${this.escapeHtml(post.timeAgo)} \u2022 <span class="text-brand-gold font-semibold">${this.escapeHtml(post.handle)}</span></p>
               </div>
             </div>
-            <div class="flex items-center gap-2 relative">
-              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle">
+            <div class="flex items-center gap-2 relative shrink-0">
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle shrink-0">
                 ${lang === "ar" ? "\u0645\u0646\u0634\u0648\u0631 \u062C\u062F\u064A\u062F" : "New Post"}
               </span>
 
@@ -6592,7 +6592,7 @@
               </div>
             </div>
           </div>
-          <p class="text-xs sm:text-sm text-text-main leading-relaxed whitespace-pre-line">${this.escapeHtml(post.content)}</p>
+          <p class="text-xs sm:text-sm text-text-main leading-relaxed whitespace-pre-line break-words [overflow-wrap:anywhere]">${this.escapeHtml(post.content)}</p>
 
           <!-- Interactive Actions Bar -->
           <div class="pb-1 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
@@ -6654,7 +6654,7 @@
           return `<span class="inline-flex items-center text-[10px] font-medium px-2 py-0.5 rounded-lg bg-surface-2 border border-border-subtle text-text-muted">${name}</span>`;
         }).join(" ");
         html += `
-        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm space-y-4 text-start transition-all hover:border-border-subtle relative" data-card-recipe-id="${recipe.id}">
+        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm space-y-4 text-start transition-all hover:border-border-subtle relative min-w-0" data-card-recipe-id="${recipe.id}">
           
           <!-- Post Author Header -->
           <div class="px-4 sm:px-5 pt-4 sm:pt-5 flex items-center justify-between gap-3">
@@ -6717,12 +6717,12 @@
 
           <!-- Recipe Body: Title & Teaser -->
           <div class="px-4 sm:px-5 space-y-2">
-            <h3 class="text-sm sm:text-base font-extrabold text-text-main leading-snug">
+            <h3 class="text-sm sm:text-base font-extrabold text-text-main leading-snug break-words">
               <a href="recipe.html?id=${recipe.id}" class="hover:text-brand-gold transition-colors">
                 ${title}
               </a>
             </h3>
-            <p class="text-xs text-text-muted leading-relaxed line-clamp-2">
+            <p class="text-xs text-text-muted leading-relaxed line-clamp-2 break-words [overflow-wrap:anywhere]">
               ${this.escapeHtml(description)}
             </p>
           </div>
@@ -7058,7 +7058,7 @@
           const postId = this.pendingEditPostId;
           const textarea = document.getElementById("feed-edit-textarea");
           if (postId && textarea) {
-            const newContent = this.escapeHtml(textarea.value.trim());
+            const newContent = textarea.value.trim();
             if (this.pendingEditIsUserPost) {
               const userPost = this.userPosts.find((p) => p.id === postId);
               if (userPost) {
@@ -11207,7 +11207,7 @@
         const body = isAr ? act.body_ar : act.body_en;
         const time = isAr ? act.time_ar : act.time_en;
         return `
-        <article class="p-5 sm:p-6 bg-surface-1 border border-border-subtle rounded-3xl space-y-3.5 shadow-sm text-start">
+        <article class="p-5 sm:p-6 bg-surface-1 border border-border-subtle rounded-3xl space-y-3.5 shadow-sm text-start overflow-hidden min-w-0">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-3">
               <img src="${this.currentChef.avatar}" alt="${chefName}" class="w-10 h-10 rounded-2xl object-cover border border-border-subtle">
@@ -11224,7 +11224,7 @@
             </span>
           </div>
 
-          <p class="text-xs sm:text-sm text-text-main leading-relaxed font-normal">
+          <p class="text-xs sm:text-sm text-text-main leading-relaxed font-normal break-words [overflow-wrap:anywhere]">
             ${body}
           </p>
 
@@ -14946,7 +14946,7 @@
           <div class="flex flex-col items-end gap-1.5">
             ${rfqCardHTML}
             <div class="bg-brand-emerald text-white rounded-2xl rounded-ee-none p-3.5 max-w-[85%] sm:max-w-[75%] shadow-sm text-start space-y-1">
-              <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">${this.escapeHtml(text)}</p>
+              <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere]">${this.escapeHtml(text)}</p>
               ${attachmentHTML}
               <div class="flex items-center justify-end gap-1 text-[10px] text-text-muted pt-0.5">
                 <span>${msg.timestamp || "Just now"}</span>
@@ -14962,7 +14962,7 @@
           <div class="flex flex-col items-start gap-1.5">
             ${rfqCardHTML}
             <div class="bg-surface-2 text-text-main border border-border-subtle rounded-2xl rounded-es-none p-3.5 max-w-[85%] sm:max-w-[75%] shadow-sm text-start space-y-1">
-              <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">${this.escapeHtml(text)}</p>
+              <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere]">${this.escapeHtml(text)}</p>
               ${attachmentHTML}
               <div class="flex items-center justify-start gap-1 text-[10px] text-text-muted pt-0.5">
                 <span>${msg.timestamp || "Just now"}</span>

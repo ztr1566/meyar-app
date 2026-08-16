@@ -476,17 +476,17 @@ export class FeedPage {
       const isOwner = post.author_id === activeUser.id;
 
       html += `
-        <article class="bg-surface-1 border border-border-subtle rounded-2xl p-5 shadow-sm space-y-4 text-start relative" data-card-post-id="${post.id}">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <img src="${this.escapeHtml(post.avatar)}" alt="${this.escapeHtml(post.author)}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle">
-              <div>
-                <h4 class="text-xs sm:text-sm font-bold text-text-main">${this.escapeHtml(post.author)}</h4>
-                <p class="text-[11px] text-text-muted">${this.escapeHtml(post.timeAgo)} • <span class="text-brand-gold font-semibold">${this.escapeHtml(post.handle)}</span></p>
+        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden p-5 shadow-sm space-y-4 text-start relative min-w-0" data-card-post-id="${post.id}">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-3 min-w-0">
+              <img src="${this.escapeHtml(post.avatar)}" alt="${this.escapeHtml(post.author)}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle shrink-0">
+              <div class="min-w-0">
+                <h4 class="text-xs sm:text-sm font-bold text-text-main truncate">${this.escapeHtml(post.author)}</h4>
+                <p class="text-[11px] text-text-muted truncate">${this.escapeHtml(post.timeAgo)} • <span class="text-brand-gold font-semibold">${this.escapeHtml(post.handle)}</span></p>
               </div>
             </div>
-            <div class="flex items-center gap-2 relative">
-              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle">
+            <div class="flex items-center gap-2 relative shrink-0">
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle shrink-0">
                 ${lang === 'ar' ? 'منشور جديد' : 'New Post'}
               </span>
 
@@ -523,7 +523,7 @@ export class FeedPage {
               </div>
             </div>
           </div>
-          <p class="text-xs sm:text-sm text-text-main leading-relaxed whitespace-pre-line">${this.escapeHtml(post.content)}</p>
+          <p class="text-xs sm:text-sm text-text-main leading-relaxed whitespace-pre-line break-words [overflow-wrap:anywhere]">${this.escapeHtml(post.content)}</p>
 
           <!-- Interactive Actions Bar -->
           <div class="pb-1 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
@@ -602,7 +602,7 @@ export class FeedPage {
       }).join(' ');
 
       html += `
-        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm space-y-4 text-start transition-all hover:border-border-subtle relative" data-card-recipe-id="${recipe.id}">
+        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm space-y-4 text-start transition-all hover:border-border-subtle relative min-w-0" data-card-recipe-id="${recipe.id}">
           
           <!-- Post Author Header -->
           <div class="px-4 sm:px-5 pt-4 sm:pt-5 flex items-center justify-between gap-3">
@@ -665,12 +665,12 @@ export class FeedPage {
 
           <!-- Recipe Body: Title & Teaser -->
           <div class="px-4 sm:px-5 space-y-2">
-            <h3 class="text-sm sm:text-base font-extrabold text-text-main leading-snug">
+            <h3 class="text-sm sm:text-base font-extrabold text-text-main leading-snug break-words">
               <a href="recipe.html?id=${recipe.id}" class="hover:text-brand-gold transition-colors">
                 ${title}
               </a>
             </h3>
-            <p class="text-xs text-text-muted leading-relaxed line-clamp-2">
+            <p class="text-xs text-text-muted leading-relaxed line-clamp-2 break-words [overflow-wrap:anywhere]">
               ${this.escapeHtml(description) /* Escape description to prevent XSS */}
             </p>
           </div>
@@ -1065,7 +1065,7 @@ export class FeedPage {
         const postId = this.pendingEditPostId;
         const textarea = document.getElementById('feed-edit-textarea');
         if (postId && textarea) {
-          const newContent = this.escapeHtml(textarea.value.trim());
+          const newContent = textarea.value.trim();
           if (this.pendingEditIsUserPost) {
             const userPost = this.userPosts.find(p => p.id === postId);
             if (userPost) {

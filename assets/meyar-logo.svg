@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 90" width="280" height="90" fill="none">
+  <defs>
+    <!-- Meyar Amber-Gold Gradient matching the luxury dark theme -->
+    <linearGradient id="logo-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF4D6"/>
+      <stop offset="25%" stop-color="#F5C04E"/>
+      <stop offset="65%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#8C5E16"/>
+    </linearGradient>
+    <filter id="logo-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#F5C04E" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(6, 6)">
+    <!-- ================= CHEF HAT CALLIGRAPHIC ARTWORK ================= -->
+    <g transform="translate(0, 0)">
+      <!-- Main Crown with 3 Undulating Domes and Signature Downward Hook -->
+      <path d="M 28 62 
+               C 18 52, 12 43, 12 32 
+               C 12 19, 23 12, 35 12 
+               C 41 12, 47 15, 51 19 
+               C 58 9, 72 6, 83 12 
+               C 92 16, 97 24, 97 32 
+               C 97 39, 93 45, 90 44 
+               C 88 43, 90 37, 89 31 
+               C 86 21, 76 17, 65 20 
+               C 57 23, 52 30, 47 31 
+               C 42 32, 37 24, 31 24 
+               C 25 24, 19 30, 20 37 
+               C 22 46, 27 54, 34 60 Z" 
+            fill="url(#logo-gold)" filter="url(#logo-glow)"/>
+
+      <!-- Inner Dynamic Shadow Swoop -->
+      <path d="M 32 41 
+               C 32 41, 39 49, 49 55 
+               C 43 57, 36 52, 34 46 Z" 
+            fill="url(#logo-gold)"/>
+
+      <!-- Upper Brim Stroke -->
+      <path d="M 34 63 C 42 63, 53 62, 58 60 C 56 63, 45 65, 34 65 Z" 
+            fill="url(#logo-gold)"/>
+
+      <!-- Bottom Rounded Folded Band -->
+      <path d="M 27 70 
+               C 27 67, 69 67, 73 70 
+               C 77 72, 76 78, 71 78 
+               C 59 78, 31 78, 28 78 
+               C 25 78, 27 73, 27 70 Z" 
+            fill="url(#logo-gold)"/>
+    </g>
+
+    <!-- ================= TYPOGRAPHY "MEYAR" ================= -->
+    <text x="82" y="63" 
+          font-family="'Playfair Display', 'Cinzel', 'Times New Roman', 'Georgia', serif" 
+          font-weight="800" 
+          font-size="44" 
+          letter-spacing="0.04em" 
+          fill="url(#logo-gold)" filter="url(#logo-glow)">MEYAR</text>
+  </g>
+</svg>

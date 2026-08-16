@@ -389,7 +389,7 @@ export class ChatPage {
           <div class="flex flex-col items-end gap-1.5">
             ${rfqCardHTML}
             <div class="bg-brand-emerald text-white rounded-2xl rounded-ee-none p-3.5 max-w-[85%] sm:max-w-[75%] shadow-sm text-start space-y-1">
-              <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">${this.escapeHtml(text)}</p>
+              <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere]">${this.escapeHtml(text)}</p>
               ${attachmentHTML}
               <div class="flex items-center justify-end gap-1 text-[10px] text-text-muted pt-0.5">
                 <span>${msg.timestamp || 'Just now'}</span>
@@ -405,7 +405,7 @@ export class ChatPage {
           <div class="flex flex-col items-start gap-1.5">
             ${rfqCardHTML}
             <div class="bg-surface-2 text-text-main border border-border-subtle rounded-2xl rounded-es-none p-3.5 max-w-[85%] sm:max-w-[75%] shadow-sm text-start space-y-1">
-              <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">${this.escapeHtml(text)}</p>
+              <p class="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere]">${this.escapeHtml(text)}</p>
               ${attachmentHTML}
               <div class="flex items-center justify-start gap-1 text-[10px] text-text-muted pt-0.5">
                 <span>${msg.timestamp || 'Just now'}</span>

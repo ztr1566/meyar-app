@@ -858,7 +858,7 @@ export class ChefPage {
       const time = isAr ? act.time_ar : act.time_en;
 
       return `
-        <article class="p-5 sm:p-6 bg-surface-1 border border-border-subtle rounded-3xl space-y-3.5 shadow-sm text-start">
+        <article class="p-5 sm:p-6 bg-surface-1 border border-border-subtle rounded-3xl space-y-3.5 shadow-sm text-start overflow-hidden min-w-0">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-3">
               <img src="${this.currentChef.avatar}" alt="${chefName}" class="w-10 h-10 rounded-2xl object-cover border border-border-subtle">
@@ -875,7 +875,7 @@ export class ChefPage {
             </span>
           </div>
 
-          <p class="text-xs sm:text-sm text-text-main leading-relaxed font-normal">
+          <p class="text-xs sm:text-sm text-text-main leading-relaxed font-normal break-words [overflow-wrap:anywhere]">
             ${body}
           </p>
 
