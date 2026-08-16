@@ -49,5 +49,6 @@ export async function staticPlugin(app, { root = PROJECT_ROOT } = {}) {
     allowedPath: isAllowedPath
   });
 
+  app.get('/feeds', (_request, reply) => reply.sendFile('feeds.html'));
   app.get('/', (_request, reply) => reply.sendFile('index.html'));
 }
