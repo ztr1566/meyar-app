@@ -1,0 +1,154 @@
+generator client {
+  provider               = "prisma-client"
+  output                 = "../generated/prisma"
+  moduleFormat           = "esm"
+  generatedFileExtension = "ts"
+  importFileExtension    = "ts"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  CHEF
+  SUPPLIER
+  USER
+}
+
+model User {
+  id                    String             @id @default(cuid())
+  email                 String             @unique
+  passwordHash          String
+  name                  String
+  handle                String             @unique
+  role                  Role               @default(USER)
+  avatar                String?
+  bio                   String?
+  location              String?
+  verified              Boolean            @default(false)
+  createdAt             DateTime           @default(now())
+  recipes               Recipe[]
+  comments              Comment[]          @relation("CommentAuthor")
+  supplyItems           SupplyItem[]
+  rfqs                  Rfq[]              @relation("RfqRequester")
+  sentConversations     ChatConversation[] @relation("ConversationSender")
+  receivedConversations ChatConversation[] @relation("ConversationReceiver")
+  sentMessages          ChatMessage[]      @relation("MessageSender")
+  receivedMessages      ChatMessage[]      @relation("MessageReceiver")
+  notifications         Notification[]
+
+  @@index([role])
+  @@map("users")
+}
+
+model Recipe {
+  id          String    @id @default(cuid())
+  title       String
+  description String
+  prepTime    Int
+  cookTime    Int
+  servings    Int
+  difficulty  String
+  ingredients Json
+  steps       Json
+  tags        String[]
+  authorId    String
+  likesCount  Int       @default(0)
+  createdAt   DateTime  @default(now())
+  author      User      @relation(fields: [authorId], references: [id])
+  comments    Comment[]
+
+  @@index([authorId, createdAt])
+  @@map("recipes")
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  content   String
+  authorId  String
+  recipeId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  author    User     @relation("CommentAuthor", fields: [authorId], references: [id])
+  recipe    Recipe   @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  @@index([authorId])
+  @@index([recipeId, createdAt], map: "comment_recipe_created_at_idx")
+  @@map("comments")
+}
+
+model SupplyItem {
+  id         String @id @default(cuid())
+  title      String
+  category   String
+  price      Float
+  unit       String
+  supplierId String
+  stock      Int
+  status     String
+  supplier   User   @relation(fields: [supplierId], references: [id])
+
+  @@index([supplierId])
+  @@map("supply_items")
+}
+
+model Rfq {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  budget      Float
+  deadline    DateTime
+  status      String
+  requesterId String
+  requester   User     @relation("RfqRequester", fields: [requesterId], references: [id])
+
+  @@index([requesterId, deadline])
+  @@map("rfqs")
+}
+
+model ChatConversation {
+  id         String        @id @default(cuid())
+  senderId   String
+  receiverId String
+  createdAt  DateTime      @default(now())
+  sender     User          @relation("ConversationSender", fields: [senderId], references: [id])
+  receiver   User          @relation("ConversationReceiver", fields: [receiverId], references: [id])
+  messages   ChatMessage[]
+
+  @@unique([senderId, receiverId])
+  @@index([senderId])
+  @@index([receiverId])
+  @@map("chat_conversations")
+}
+
+model ChatMessage {
+  id             String           @id @default(cuid())
+  conversationId String
+  senderId       String
+  receiverId     String
+  content        String
+  isRead         Boolean          @default(false)
+  createdAt      DateTime         @default(now())
+  conversation   ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender         User             @relation("MessageSender", fields: [senderId], references: [id])
+  receiver       User             @relation("MessageReceiver", fields: [receiverId], references: [id])
+
+  @@index([conversationId, createdAt])
+  @@index([senderId])
+  @@index([receiverId])
+  @@map("chat_messages")
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String
+  content   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@index([userId, createdAt])
+  @@map("notifications")
+}
