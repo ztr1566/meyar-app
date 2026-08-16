@@ -478,17 +478,17 @@ function buildChatDOM(doc) {
 
 // ---------------------- TEST SUITE ----------------------
 
-test('ChatModule - Initial Seeding, Storage Persistence, and Lookup', () => {
+test('ChatModule - Initial Fixtures, Session State, and Lookup', () => {
   setupDOM();
-  localStorage.clear();
+  ChatModule.reset();
 
   const initialChats = ChatModule.getInitialChats();
   assert.ok(Array.isArray(initialChats) && initialChats.length >= 3, 'Initial chats should be populated');
 
-  // getChats seeds localStorage
+  // getChats seeds in-memory store
   const chats = ChatModule.getChats();
   assert.strictEqual(chats.length, initialChats.length);
-  assert.ok(localStorage.getItem(ChatModule.STORAGE_KEY), 'Chats must be saved to localStorage');
+  assert.ok(ChatModule.chatsStore !== null, 'Chats must be saved to in-memory store');
 
   // Lookup by ID
   const chat1 = ChatModule.getChatById('chat-1');
@@ -542,7 +542,7 @@ test('ChatModule - Conversation Creation and Idempotency', () => {
   assert.strictEqual(created.messages.length, 1);
 
   const freshChats = ChatModule.getChats();
-  assert.strictEqual(freshChats[0].id, created.id, 'New chat must be prepended to storage');
+    assert.strictEqual(freshChats[0].id, created.id, 'New chat must be prepended to session state');
 });
 
 test('ChatModule - Message Sending, Read Receipts, and Event Dispatch', () => {
@@ -676,16 +676,19 @@ test('ChatPage - URL Query Parameter Binding', () => {
 
   // 2. Direct Chef ID
   windowMock.location.search = '?chef=chef-2';
+  ChatPage.isInitialized = false;
   ChatPage.init();
   assert.strictEqual(ChatPage.activeChatId, 'chat-2');
 
   // 3. Direct Supplier ID
   windowMock.location.search = '?supplier=supplier-1';
+  ChatPage.isInitialized = false;
   ChatPage.init();
   assert.strictEqual(ChatPage.activeChatId, 'chat-1');
 
   // 4. Direct RFQ ID
   windowMock.location.search = '?rfq=rfq-9801';
+  ChatPage.isInitialized = false;
   ChatPage.init();
   assert.strictEqual(ChatPage.activeChatId, 'chat-1');
 });

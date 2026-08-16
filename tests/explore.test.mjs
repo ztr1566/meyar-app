@@ -297,11 +297,12 @@ function setupDOM() {
   globalThis.window = windowMock;
   globalThis.localStorage = localStorageMock;
   globalThis.requestAnimationFrame = (cb) => { if (typeof cb === 'function') cb(); };
+  ExplorePage.reset();
 
   return { doc, localStorage: localStorageMock };
 }
 
-test('ExplorePage - Bookmark / Save Recipe Toggle and Persistence', () => {
+test('ExplorePage - Bookmark / Save Recipe Toggle and Session State', () => {
   const { localStorage } = setupDOM();
   I18n.init();
 
@@ -311,7 +312,7 @@ test('ExplorePage - Bookmark / Save Recipe Toggle and Persistence', () => {
   const state1 = ExplorePage.toggleSave('recipe-1');
   assert.strictEqual(state1, true);
   assert.deepStrictEqual(ExplorePage.getSavedRecipeIds(), ['recipe-1']);
-  assert.strictEqual(localStorage.getItem(ExplorePage.STORAGE_SAVED), JSON.stringify(['recipe-1']));
+  assert.strictEqual(localStorage.getItem('meyar_saved_recipes'), null);
 
   // Save recipe-2
   const state2 = ExplorePage.toggleSave('recipe-2');
@@ -324,7 +325,7 @@ test('ExplorePage - Bookmark / Save Recipe Toggle and Persistence', () => {
   assert.deepStrictEqual(ExplorePage.getSavedRecipeIds(), ['recipe-2']);
 });
 
-test('ExplorePage - Like Recipe Toggle and Persistence', () => {
+test('ExplorePage - Like Recipe Toggle and Session State', () => {
   const { localStorage } = setupDOM();
   I18n.init();
 
@@ -334,7 +335,7 @@ test('ExplorePage - Like Recipe Toggle and Persistence', () => {
   const state1 = ExplorePage.toggleLike('recipe-3');
   assert.strictEqual(state1, true);
   assert.deepStrictEqual(ExplorePage.getLikedRecipeIds(), ['recipe-3']);
-  assert.strictEqual(localStorage.getItem(ExplorePage.STORAGE_LIKED), JSON.stringify(['recipe-3']));
+  assert.strictEqual(localStorage.getItem('meyar_liked_recipes'), null);
 
   // Unlike recipe-3
   const state2 = ExplorePage.toggleLike('recipe-3');
@@ -342,38 +343,48 @@ test('ExplorePage - Like Recipe Toggle and Persistence', () => {
   assert.deepStrictEqual(ExplorePage.getLikedRecipeIds(), []);
 });
 
-test('ExplorePage - Follow Chef Toggle and Persistence', () => {
+test('ExplorePage - Follow Chef Toggle and Session State', () => {
   const { localStorage } = setupDOM();
   I18n.init();
 
   assert.deepStrictEqual(ExplorePage.getFollowingChefIds(), []);
 
-  // Follow chef-1
-  const state1 = ExplorePage.toggleFollow('chef-1');
-  assert.strictEqual(state1, true);
-  assert.deepStrictEqual(ExplorePage.getFollowingChefIds(), ['chef-1']);
-  assert.strictEqual(localStorage.getItem(ExplorePage.STORAGE_FOLLOWING), JSON.stringify(['chef-1']));
+  // The active user is chef-1 and cannot follow their own profile.
+  const selfState = ExplorePage.toggleFollow('chef-1');
+  assert.strictEqual(selfState, false);
+  assert.deepStrictEqual(ExplorePage.getFollowingChefIds(), []);
 
-  // Unfollow chef-1
-  const state2 = ExplorePage.toggleFollow('chef-1');
+  // Follow chef-2
+  const state1 = ExplorePage.toggleFollow('chef-2');
+  assert.strictEqual(state1, true);
+  assert.deepStrictEqual(ExplorePage.getFollowingChefIds(), ['chef-2']);
+  assert.strictEqual(localStorage.getItem('meyar_following_chefs'), null);
+
+  // Unfollow chef-2
+  const state2 = ExplorePage.toggleFollow('chef-2');
   assert.strictEqual(state2, false);
   assert.deepStrictEqual(ExplorePage.getFollowingChefIds(), []);
 });
 
-test('ExplorePage - Workshop / Course Enrollment Toggle and Persistence', () => {
+test('ExplorePage - Workshop / Course Enrollment Toggle and Session State', () => {
   const { localStorage } = setupDOM();
   I18n.init();
 
   assert.deepStrictEqual(ExplorePage.getEnrolledCourseIds(), []);
 
-  // Enroll course-1
-  const state1 = ExplorePage.toggleEnroll('course-1');
+  // The active user teaches course-1 and cannot enroll in it.
+  const selfState = ExplorePage.toggleEnroll('course-1');
+  assert.strictEqual(selfState, false);
+  assert.deepStrictEqual(ExplorePage.getEnrolledCourseIds(), []);
+
+  // Enroll course-2
+  const state1 = ExplorePage.toggleEnroll('course-2');
   assert.strictEqual(state1, true);
-  assert.deepStrictEqual(ExplorePage.getEnrolledCourseIds(), ['course-1']);
-  assert.strictEqual(localStorage.getItem(ExplorePage.STORAGE_ENROLLED), JSON.stringify(['course-1']));
+  assert.deepStrictEqual(ExplorePage.getEnrolledCourseIds(), ['course-2']);
+  assert.strictEqual(localStorage.getItem('meyar_enrolled_courses'), null);
 
   // Cancel enrollment
-  const state2 = ExplorePage.toggleEnroll('course-1');
+  const state2 = ExplorePage.toggleEnroll('course-2');
   assert.strictEqual(state2, false);
   assert.deepStrictEqual(ExplorePage.getEnrolledCourseIds(), []);
 });
@@ -483,17 +494,19 @@ test('ExplorePage - Bilingual Multi-Category Card Rendering', () => {
   const recipe = MOCK_DATA.recipes[0];
   const recipeHtmlAr = ExplorePage.renderRecipeCard(recipe, 'ar');
   assert.ok(recipeHtmlAr.includes(recipe.title_ar), 'AR recipe card must contain Arabic title');
-  assert.ok(recipeHtmlAr.includes(recipe.chef_name_ar), 'AR recipe card must contain Arabic chef name');
+  assert.ok(recipeHtmlAr.includes(recipe.author_name_ar), 'AR recipe card must contain Arabic author name');
+  assert.ok(recipeHtmlAr.includes(`chef.html?id=${recipe.author_id}`), 'Recipe card must link to the author profile');
 
   const recipeHtmlEn = ExplorePage.renderRecipeCard(recipe, 'en');
   assert.ok(recipeHtmlEn.includes(recipe.title_en), 'EN recipe card must contain English title');
-  assert.ok(recipeHtmlEn.includes(recipe.chef_name_en), 'EN recipe card must contain English chef name');
+  assert.ok(recipeHtmlEn.includes(recipe.author_name_en), 'EN recipe card must contain English author name');
 
   // 2. Chef Card in AR and EN
   const chef = MOCK_DATA.chefs[0];
   const chefHtmlAr = ExplorePage.renderChefCard(chef, 'ar');
   assert.ok(chefHtmlAr.includes(chef.name_ar), 'AR chef card must contain Arabic name');
   assert.ok(chefHtmlAr.includes(chef.specialty_ar), 'AR chef card must contain Arabic specialty');
+  assert.equal(chefHtmlAr.includes('data-action="toggle-follow"'), false, 'Self-follow button must not render');
 
   const chefHtmlEn = ExplorePage.renderChefCard(chef, 'en');
   assert.ok(chefHtmlEn.includes(chef.name_en), 'EN chef card must contain English name');
@@ -502,18 +515,21 @@ test('ExplorePage - Bilingual Multi-Category Card Rendering', () => {
   // 3. Supply Card in AR and EN
   const supply = MOCK_DATA.supplies[0];
   const supplyHtmlAr = ExplorePage.renderSupplyCard(supply, 'ar');
-  assert.ok(supplyHtmlAr.includes(supply.title_ar), 'AR supply card must contain Arabic title');
-  assert.ok(supplyHtmlAr.includes(supply.price_range_ar), 'AR supply card must contain Arabic price');
+  assert.ok(supplyHtmlAr.includes(supply.name_ar), 'AR supply card must contain Arabic name');
+  assert.ok(supplyHtmlAr.includes(supply.price_formatted), 'AR supply card must contain formatted price');
+  assert.equal(supplyHtmlAr.includes('undefined'), false, 'Supply card must not render missing fixture fields');
 
   const supplyHtmlEn = ExplorePage.renderSupplyCard(supply, 'en');
-  assert.ok(supplyHtmlEn.includes(supply.title_en), 'EN supply card must contain English title');
-  assert.ok(supplyHtmlEn.includes(supply.price_range_en), 'EN supply card must contain English price');
+  assert.ok(supplyHtmlEn.includes(supply.name_en), 'EN supply card must contain English name');
+  assert.ok(supplyHtmlEn.includes(supply.price_formatted), 'EN supply card must contain formatted price');
 
   // 4. Course Card in AR and EN
   const course = MOCK_DATA.courses[0];
   const courseHtmlAr = ExplorePage.renderCourseCard(course, 'ar');
   assert.ok(courseHtmlAr.includes(course.title_ar), 'AR course card must contain Arabic title');
   assert.ok(courseHtmlAr.includes(course.instructor_name_ar), 'AR course card must contain Arabic instructor');
+  assert.ok(courseHtmlAr.includes(course.image), 'Course card must use the fixture image field');
+  assert.equal(courseHtmlAr.includes('undefined'), false, 'Course card must not render missing fixture fields');
 
   const courseHtmlEn = ExplorePage.renderCourseCard(course, 'en');
   assert.ok(courseHtmlEn.includes(course.title_en), 'EN course card must contain English title');

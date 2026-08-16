@@ -1,0 +1,460 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - generic [ref=f1e4]:
+        - link "Meyar Home" [ref=f1e5] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=f1e9]:
+            - text: معيار
+            - generic [ref=f1e10]: Meyar
+        - button "Search" [ref=f1e11]:
+          - generic [ref=f1e12]: ابحث في الوصفات، الطهاة، التوريدات، والدورات...
+      - generic [ref=f1e17]:
+        - link "ابتكار وصفة" [ref=f1e18] [cursor=pointer]:
+          - /url: create-recipe.html
+        - link "Messages" [ref=f1e22] [cursor=pointer]:
+          - /url: chat.html
+        - link "Notifications" [ref=f1e26] [cursor=pointer]:
+          - /url: notifications.html
+        - button "Switch to English" [ref=f1e31]:
+          - generic [ref=f1e35]: English
+        - button "Toggle theme" [ref=f1e36]
+        - button "User profile options" [ref=f1e41]:
+          - img "Chef Faisal Al-Hashemi" [ref=f1e42]
+        - button "Open mobile menu" [ref=f1e45]
+  - main [ref=f1e48]:
+    - region "Chef Stories" [ref=f1e49]:
+      - generic [ref=f1e50]:
+        - heading "نخبة الطهاة المتميزين" [level=3] [ref=f1e51]
+        - generic [ref=f1e52]:
+          - button "Previous Stories" [ref=f1e53]
+          - button "Next Stories" [ref=f1e56]
+      - generic [ref=f1e59]:
+        - generic [ref=f1e60] [cursor=pointer]:
+          - generic [ref=f1e61]:
+            - img "الشيف فيصل الهاشمي" [ref=f1e62]
+            - generic [ref=f1e63]: +
+          - generic [ref=f1e64]: قصتك
+        - generic [ref=f1e65] [cursor=pointer]:
+          - img "فيصل الهاشمي" [ref=f1e67]
+          - generic [ref=f1e68]: فيصل الهاشمي
+        - generic [ref=f1e69] [cursor=pointer]:
+          - img "إيلينا روستوفا" [ref=f1e71]
+          - generic [ref=f1e72]: إيلينا روستوفا
+        - generic [ref=f1e73] [cursor=pointer]:
+          - img "طارق منصور" [ref=f1e75]
+          - generic [ref=f1e76]: طارق منصور
+        - generic [ref=f1e77] [cursor=pointer]:
+          - img "كينجي تاكاهاشي" [ref=f1e79]
+          - generic [ref=f1e80]: كينجي تاكاهاشي
+        - generic [ref=f1e81] [cursor=pointer]:
+          - img "ليلى بن جلون" [ref=f1e83]
+          - generic [ref=f1e84]: ليلى بن جلون
+        - generic [ref=f1e85] [cursor=pointer]:
+          - img "ماركو بيليني" [ref=f1e87]
+          - generic [ref=f1e88]: ماركو بيليني
+    - region "Post Composer" [ref=f1e89]:
+      - generic [ref=f1e90]:
+        - img "Chef Faisal" [ref=f1e91]
+        - textbox "شارك وصفة جديدة، فكرة في فنون الطهي، أو تجربة تود توثيقها..." [ref=f1e93]
+      - generic [ref=f1e94]:
+        - generic [ref=f1e95]:
+          - link "ابتكار وصفة" [ref=f1e96] [cursor=pointer]:
+            - /url: create-recipe.html
+          - link "الدورات" [ref=f1e100] [cursor=pointer]:
+            - /url: courses.html
+          - link "التوريدات" [ref=f1e105] [cursor=pointer]:
+            - /url: supplies.html
+        - button "مشاركة" [ref=f1e109]
+    - region "Feed Filters" [ref=f1e114]:
+      - button "الكل" [ref=f1e115]
+      - button "أطباق رائجة" [ref=f1e116]
+      - button "الوصفات" [ref=f1e117]
+      - button "نخبة الطهاة" [ref=f1e118]
+      - button "التوريدات" [ref=f1e119]
+      - button "دورات تدريبية" [ref=f1e120]
+    - region "Feed Posts Stream" [ref=f1e121]:
+      - article [ref=f1e122]:
+        - generic [ref=f1e123]:
+          - generic [ref=f1e124]:
+            - link [ref=f1e125] [cursor=pointer]:
+              - /url: chef.html?id=chef-1
+              - img "الشيف فيصل الهاشمي" [ref=f1e126]
+            - generic [ref=f1e127]:
+              - link "الشيف فيصل الهاشمي" [ref=f1e129] [cursor=pointer]:
+                - /url: chef.html?id=chef-1
+              - paragraph [ref=f1e132]:
+                - generic [ref=f1e133]: سعودي معاصر
+                - generic [ref=f1e134]: •
+                - generic [ref=f1e135]: 2026-08-01
+          - button "Options" [ref=f1e137]
+        - generic [ref=f1e142]:
+          - heading [level=3] [ref=f1e143]:
+            - link "ستيك واغيو ريب آي مع غليز التمر والثوم الأسود المعتق" [ref=f1e144] [cursor=pointer]:
+              - /url: recipe.html?id=recipe-1
+          - paragraph [ref=f1e145]: قطعة لحم واغيو A5 معتقة ومطهوة لدرجة متوسطة، مغطاة بغليز مركز من دبس تمر الخلاص النجد والكمأة السوداء وثوم الحبة السوداء المخمر.
+        - generic [ref=f1e146]:
+          - link [ref=f1e147] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-1
+            - img "ستيك واغيو ريب آي مع غليز التمر والثوم الأسود المعتق" [ref=f1e148]
+          - generic [ref=f1e149]:
+            - generic [ref=f1e150]: متقدم
+            - generic [ref=f1e151]: "4.96"
+          - generic [ref=f1e154]:
+            - generic [ref=f1e155]: 80 دقيقة
+            - generic [ref=f1e159]: 4 حصص
+        - generic [ref=f1e160]:
+          - generic [ref=f1e161]: "أبرز المكونات:"
+          - generic [ref=f1e162]: لحم واغيو A5 ريب آي معتق
+          - generic [ref=f1e163]: معجون الثوم الأسود المخمر
+          - generic [ref=f1e164]: دبس تمر خلاص فاخر
+        - generic [ref=f1e165]:
+          - generic [ref=f1e166]:
+            - button "Like recipe" [ref=f1e167]:
+              - generic [ref=f1e170]: 1,420
+            - button "Save recipe" [ref=f1e171]:
+              - generic [ref=f1e174]: حفظ
+              - generic [ref=f1e175]: "890"
+            - button "Share recipe" [ref=f1e176]
+          - link "عرض الوصفة والمقادير" [ref=f1e183] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-1
+      - article [ref=f1e187]:
+        - generic [ref=f1e188]:
+          - generic [ref=f1e189]:
+            - link [ref=f1e190] [cursor=pointer]:
+              - /url: chef.html?id=chef-5
+              - img "شيف ليلى بن جلون" [ref=f1e191]
+            - generic [ref=f1e192]:
+              - link "شيف ليلى بن جلون" [ref=f1e194] [cursor=pointer]:
+                - /url: chef.html?id=chef-5
+              - paragraph [ref=f1e197]:
+                - generic [ref=f1e198]: بحر متوسطي مغاربي
+                - generic [ref=f1e199]: •
+                - generic [ref=f1e200]: 2026-08-03
+          - generic [ref=f1e201]:
+            - button "متابعة" [ref=f1e202]
+            - button "Options" [ref=f1e203]
+        - generic [ref=f1e208]:
+          - heading [level=3] [ref=f1e209]:
+            - link "قاروص البحر بالزعفران الملكي ومستحلب الهيل الأخضر" [ref=f1e210] [cursor=pointer]:
+              - /url: recipe.html?id=recipe-2
+          - paragraph [ref=f1e211]: فيليه قاروص البحر البري المحمر بجلد مقرمش ذهبي، يقدم فوق بيوريه الشمر الحريري مع مستحلب كريمي منقوع بالزعفران السوبر نقين والهيل الأخضر.
+        - generic [ref=f1e212]:
+          - link [ref=f1e213] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-2
+            - img "قاروص البحر بالزعفران الملكي ومستحلب الهيل الأخضر" [ref=f1e214]
+          - generic [ref=f1e215]:
+            - generic [ref=f1e216]: متوسط
+            - generic [ref=f1e217]: "4.93"
+          - generic [ref=f1e220]:
+            - generic [ref=f1e221]: 45 دقيقة
+            - generic [ref=f1e225]: 4 حصص
+        - generic [ref=f1e226]:
+          - generic [ref=f1e227]: "أبرز المكونات:"
+          - generic [ref=f1e228]: فيليه قاروص بحر طازج بجلده
+          - generic [ref=f1e229]: خيوط زعفران ملكي سوبر نقين
+          - generic [ref=f1e230]: حبوب هيل أخضر مطحونة طازجة
+        - generic [ref=f1e231]:
+          - generic [ref=f1e232]:
+            - button "Like recipe" [ref=f1e233]:
+              - generic [ref=f1e236]: "980"
+            - button "Save recipe" [ref=f1e237]:
+              - generic [ref=f1e240]: حفظ
+              - generic [ref=f1e241]: "640"
+            - button "Share recipe" [ref=f1e242]
+          - link "عرض الوصفة والمقادير" [ref=f1e249] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-2
+      - article [ref=f1e253]:
+        - generic [ref=f1e254]:
+          - generic [ref=f1e255]:
+            - link [ref=f1e256] [cursor=pointer]:
+              - /url: chef.html?id=chef-6
+              - img "شيف ماركو بيليني" [ref=f1e257]
+            - generic [ref=f1e258]:
+              - link "شيف ماركو بيليني" [ref=f1e260] [cursor=pointer]:
+                - /url: chef.html?id=chef-6
+              - paragraph [ref=f1e263]:
+                - generic [ref=f1e264]: إيطالي حرفي
+                - generic [ref=f1e265]: •
+                - generic [ref=f1e266]: 2026-08-04
+          - generic [ref=f1e267]:
+            - button "متابعة" [ref=f1e268]
+            - button "Options" [ref=f1e269]
+        - generic [ref=f1e274]:
+          - heading [level=3] [ref=f1e275]:
+            - link "أنولوتي الباستا اليدوية بالريكوتا المدخنة والكمأة السوداء" [ref=f1e276] [cursor=pointer]:
+              - /url: recipe.html?id=recipe-3
+          - paragraph [ref=f1e277]: جيوب باستا أنولوتي حريرية محضرة يدوياً من صفار البيض العضوي، محشوة بجبنة الريكوتا المدخنة والبارميجيانو 36 شهراً، مغلفة بصلصة زبدة الكمأة وشرائح الترافل الطازج.
+        - generic [ref=f1e278]:
+          - link [ref=f1e279] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-3
+            - img "أنولوتي الباستا اليدوية بالريكوتا المدخنة والكمأة السوداء" [ref=f1e280]
+          - generic [ref=f1e281]:
+            - generic [ref=f1e282]: متقدم
+            - generic [ref=f1e283]: "4.98"
+          - generic [ref=f1e286]:
+            - generic [ref=f1e287]: 65 دقيقة
+            - generic [ref=f1e291]: 4 حصص
+        - generic [ref=f1e292]:
+          - generic [ref=f1e293]: "أبرز المكونات:"
+          - generic [ref=f1e294]: دقيق قمح إيطالي ناعم نخب تيبو 00
+          - generic [ref=f1e295]: صفار بيض دجاج عضوي حر
+          - generic [ref=f1e296]: جبنة ريكوتا أغنام مدخنة حرفية
+        - generic [ref=f1e297]:
+          - generic [ref=f1e298]:
+            - button "Like recipe" [ref=f1e299]:
+              - generic [ref=f1e302]: 1,680
+            - button "Save recipe" [ref=f1e303]:
+              - generic [ref=f1e306]: حفظ
+              - generic [ref=f1e307]: 1,120
+            - button "Share recipe" [ref=f1e308]
+          - link "عرض الوصفة والمقادير" [ref=f1e315] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-3
+      - article [ref=f1e319]:
+        - generic [ref=f1e320]:
+          - generic [ref=f1e321]:
+            - link [ref=f1e322] [cursor=pointer]:
+              - /url: chef.html?id=chef-3
+              - img "شيف طارق منصور" [ref=f1e323]
+            - generic [ref=f1e324]:
+              - link "شيف طارق منصور" [ref=f1e326] [cursor=pointer]:
+                - /url: chef.html?id=chef-3
+              - paragraph [ref=f1e329]:
+                - generic [ref=f1e330]: شامي تراثي بالنار
+                - generic [ref=f1e331]: •
+                - generic [ref=f1e332]: 2026-08-05
+          - generic [ref=f1e333]:
+            - button "متابعة" [ref=f1e334]
+            - button "Options" [ref=f1e335]
+        - generic [ref=f1e340]:
+          - heading [level=3] [ref=f1e341]:
+            - link "ريش غنم نعيمي متبلة بإكليل الجبل المدخن والدبس" [ref=f1e342] [cursor=pointer]:
+              - /url: recipe.html?id=recipe-4
+          - paragraph [ref=f1e343]: ريش غنم نعيمي محلية طرية متبلة بخليط إكليل الجبل المدخن ودبس الرمان والفلفل الحلبي، مشوية على جمر الحطب حتى الوصول لقرمشة خارجية وعصارة داخلية وردية.
+        - generic [ref=f1e344]:
+          - link [ref=f1e345] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-4
+            - img "ريش غنم نعيمي متبلة بإكليل الجبل المدخن والدبس" [ref=f1e346]
+          - generic [ref=f1e347]:
+            - generic [ref=f1e348]: متوسط
+            - generic [ref=f1e349]: "4.94"
+          - generic [ref=f1e352]:
+            - generic [ref=f1e353]: 55 دقيقة
+            - generic [ref=f1e357]: 4 حصص
+        - generic [ref=f1e358]:
+          - generic [ref=f1e359]: "أبرز المكونات:"
+          - generic [ref=f1e360]: ريش غنم نعيمي بلدي طازجة
+          - generic [ref=f1e361]: أغصان إكليل الجبل (روزماري) طازجة
+          - generic [ref=f1e362]: دبس رمان جبلي حامض
+        - generic [ref=f1e363]:
+          - generic [ref=f1e364]:
+            - button "Like recipe" [ref=f1e365]:
+              - generic [ref=f1e368]: 1,190
+            - button "Save recipe" [ref=f1e369]:
+              - generic [ref=f1e372]: حفظ
+              - generic [ref=f1e373]: "730"
+            - button "Share recipe" [ref=f1e374]
+          - link "عرض الوصفة والمقادير" [ref=f1e381] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-4
+      - article [ref=f1e385]:
+        - generic [ref=f1e386]:
+          - generic [ref=f1e387]:
+            - link [ref=f1e388] [cursor=pointer]:
+              - /url: chef.html?id=chef-2
+              - img "شيف إيلينا روستوفا" [ref=f1e389]
+            - generic [ref=f1e390]:
+              - link "شيف إيلينا روستوفا" [ref=f1e392] [cursor=pointer]:
+                - /url: chef.html?id=chef-2
+              - paragraph [ref=f1e395]:
+                - generic [ref=f1e396]: حلويات فرنسية فاخرة
+                - generic [ref=f1e397]: •
+                - generic [ref=f1e398]: 2026-08-06
+          - generic [ref=f1e399]:
+            - button "متابعة" [ref=f1e400]
+            - button "Options" [ref=f1e401]
+        - generic [ref=f1e406]:
+          - heading [level=3] [ref=f1e407]:
+            - link "إنتريميه الفستق وماء الورد مع غليز المرآة بالمستكة" [ref=f1e408] [cursor=pointer]:
+              - /url: recipe.html?id=recipe-5
+          - paragraph [ref=f1e409]: حلوى كعكة إنتريميه فرنسية راقية بطبقات موس الفستق الصقلي، وبسكويت الجاكوند الخفيف، وحشوة هلام ماء الورد الجبلي، مغلفة بغليز مرآة لامع بنكهة المستكة اليونانية.
+        - generic [ref=f1e410]:
+          - link [ref=f1e411] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-5
+            - img "إنتريميه الفستق وماء الورد مع غليز المرآة بالمستكة" [ref=f1e412]
+          - generic [ref=f1e413]:
+            - generic [ref=f1e414]: متقدم
+            - generic [ref=f1e415]: "4.99"
+          - generic [ref=f1e418]:
+            - generic [ref=f1e419]: 90 دقيقة
+            - generic [ref=f1e423]: 6 حصص
+        - generic [ref=f1e424]:
+          - generic [ref=f1e425]: "أبرز المكونات:"
+          - generic [ref=f1e426]: معجون فستق برونتي صقلي نقي 100%
+          - generic [ref=f1e427]: شوكولاتة بيضاء فاخرة 34% زبدة كاكاو
+          - generic [ref=f1e428]: كريمة خفق طازجة 36% دسم
+        - generic [ref=f1e429]:
+          - generic [ref=f1e430]:
+            - button "Like recipe" [ref=f1e431]:
+              - generic [ref=f1e434]: 2,150
+            - button "Save recipe" [ref=f1e435]:
+              - generic [ref=f1e438]: حفظ
+              - generic [ref=f1e439]: 1,480
+            - button "Share recipe" [ref=f1e440]
+          - link "عرض الوصفة والمقادير" [ref=f1e447] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-5
+      - article [ref=f1e451]:
+        - generic [ref=f1e452]:
+          - generic [ref=f1e453]:
+            - link [ref=f1e454] [cursor=pointer]:
+              - /url: chef.html?id=chef-4
+              - img "شيف كينجي تاكاهاشي" [ref=f1e455]
+            - generic [ref=f1e456]:
+              - link "شيف كينجي تاكاهاشي" [ref=f1e458] [cursor=pointer]:
+                - /url: chef.html?id=chef-4
+              - paragraph [ref=f1e461]:
+                - generic [ref=f1e462]: ياباني معاصر كايسيكي
+                - generic [ref=f1e463]: •
+                - generic [ref=f1e464]: 2026-08-07
+          - generic [ref=f1e465]:
+            - button "متابعة" [ref=f1e466]
+            - button "Options" [ref=f1e467]
+        - generic [ref=f1e472]:
+          - heading [level=3] [ref=f1e473]:
+            - link "كروودو سمك الهاماتشي مع اليوزو وبونزو الكافيار الليموني" [ref=f1e474] [cursor=pointer]:
+              - /url: recipe.html?id=recipe-6
+          - paragraph [ref=f1e475]: شرائح سمك هاماتشي ياباني طازج بدرجة ساشيمي، متبلة بصلصة بونزو بيضاء بنكهة فاكهة اليوزو العطرية، مغطاة بكافيار الليمون الأسترالي وزيت الكمأة البيضاء والأعشاب المجهرية.
+        - generic [ref=f1e476]:
+          - link [ref=f1e477] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-6
+            - img "كروودو سمك الهاماتشي مع اليوزو وبونزو الكافيار الليموني" [ref=f1e478]
+          - generic [ref=f1e479]:
+            - generic [ref=f1e480]: متوسط
+            - generic [ref=f1e481]: "4.97"
+          - generic [ref=f1e484]:
+            - generic [ref=f1e485]: 20 دقيقة
+            - generic [ref=f1e489]: 4 حصص
+        - generic [ref=f1e490]:
+          - generic [ref=f1e491]: "أبرز المكونات:"
+          - generic [ref=f1e492]: فيليه سمك هاماتشي ياباني بدرجة ساشيمي
+          - generic [ref=f1e493]: عصير يوزو ياباني طبيعي 100%
+          - generic [ref=f1e494]: صلصة صويا بيضاء (شيرو شيو)
+        - generic [ref=f1e495]:
+          - generic [ref=f1e496]:
+            - button "Like recipe" [ref=f1e497]:
+              - generic [ref=f1e500]: 1,350
+            - button "Save recipe" [ref=f1e501]:
+              - generic [ref=f1e504]: حفظ
+              - generic [ref=f1e505]: "820"
+            - button "Share recipe" [ref=f1e506]
+          - link "عرض الوصفة والمقادير" [ref=f1e513] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-6
+      - article [ref=f1e517]:
+        - generic [ref=f1e518]:
+          - generic [ref=f1e519]:
+            - link [ref=f1e520] [cursor=pointer]:
+              - /url: chef.html?id=chef-3
+              - img "شيف طارق منصور" [ref=f1e521]
+            - generic [ref=f1e522]:
+              - link "شيف طارق منصور" [ref=f1e524] [cursor=pointer]:
+                - /url: chef.html?id=chef-3
+              - paragraph [ref=f1e527]:
+                - generic [ref=f1e528]: شامي معاصر
+                - generic [ref=f1e529]: •
+                - generic [ref=f1e530]: 2026-08-08
+          - generic [ref=f1e531]:
+            - button "متابعة" [ref=f1e532]
+            - button "Options" [ref=f1e533]
+        - generic [ref=f1e538]:
+          - heading [level=3] [ref=f1e539]:
+            - link "ريزوتو الفريكة الخضراء المدخنة مع فطر الموريل البري" [ref=f1e540] [cursor=pointer]:
+              - /url: recipe.html?id=recipe-7
+          - paragraph [ref=f1e541]: حبوب الفريكة الشامية الخضراء المحمصة على الحطب، مطهوة بأسلوب الريزوتو الإيطالي في مرق الفطر البري المعتق، مع جبنة القشقوان القديمة وفطر الموريل المكرمل.
+        - generic [ref=f1e542]:
+          - link [ref=f1e543] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-7
+            - img "ريزوتو الفريكة الخضراء المدخنة مع فطر الموريل البري" [ref=f1e544]
+          - generic [ref=f1e545]:
+            - generic [ref=f1e546]: متوسط
+            - generic [ref=f1e547]: "4.9"
+          - generic [ref=f1e550]:
+            - generic [ref=f1e551]: 55 دقيقة
+            - generic [ref=f1e555]: 4 حصص
+        - generic [ref=f1e556]:
+          - generic [ref=f1e557]: "أبرز المكونات:"
+          - generic [ref=f1e558]: حبوب فريكة خضراء مدخنة بلدية
+          - generic [ref=f1e559]: فطر موريل بري مجفف فاخر
+          - generic [ref=f1e560]: بصل شالوت فرنسي مفروم ناعماً
+        - generic [ref=f1e561]:
+          - generic [ref=f1e562]:
+            - button "Like recipe" [ref=f1e563]:
+              - generic [ref=f1e566]: "870"
+            - button "Save recipe" [ref=f1e567]:
+              - generic [ref=f1e570]: حفظ
+              - generic [ref=f1e571]: "590"
+            - button "Share recipe" [ref=f1e572]
+          - link "عرض الوصفة والمقادير" [ref=f1e579] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-7
+      - article [ref=f1e583]:
+        - generic [ref=f1e584]:
+          - generic [ref=f1e585]:
+            - link [ref=f1e586] [cursor=pointer]:
+              - /url: chef.html?id=chef-2
+              - img "شيف إيلينا روستوفا" [ref=f1e587]
+            - generic [ref=f1e588]:
+              - link "شيف إيلينا روستوفا" [ref=f1e590] [cursor=pointer]:
+                - /url: chef.html?id=chef-2
+              - paragraph [ref=f1e593]:
+                - generic [ref=f1e594]: حلويات معاصرة
+                - generic [ref=f1e595]: •
+                - generic [ref=f1e596]: 2026-08-09
+          - generic [ref=f1e597]:
+            - button "متابعة" [ref=f1e598]
+            - button "Options" [ref=f1e599]
+        - generic [ref=f1e604]:
+          - heading [level=3] [ref=f1e605]:
+            - link "تارت الشوكولاتة الداكنة بالهيل المدخن والملح الصخري" [ref=f1e606] [cursor=pointer]:
+              - /url: recipe.html?id=recipe-8
+          - paragraph [ref=f1e607]: قاعدة تارت بسكويت الشوكولاتة الهش المقرمش (Pâte Sablée)، محشوة بغاناش حريري غني من شوكولاتة فالرونا 70% المنقوعة بحبات الهيل المدخن وعسل النحل العضوي.
+        - generic [ref=f1e608]:
+          - link [ref=f1e609] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-8
+            - img "تارت الشوكولاتة الداكنة بالهيل المدخن والملح الصخري" [ref=f1e610]
+          - generic [ref=f1e611]:
+            - generic [ref=f1e612]: متقدم
+            - generic [ref=f1e613]: "4.96"
+          - generic [ref=f1e616]:
+            - generic [ref=f1e617]: 70 دقيقة
+            - generic [ref=f1e621]: 8 حصص
+        - generic [ref=f1e622]:
+          - generic [ref=f1e623]: "أبرز المكونات:"
+          - generic [ref=f1e624]: شوكولاتة داكنة فالرونا غواناخا 70%
+          - generic [ref=f1e625]: كريمة خفق طازجة 36% دسم
+          - generic [ref=f1e626]: حبوب هيل أخضر مدخنة ومطحونة
+        - generic [ref=f1e627]:
+          - generic [ref=f1e628]:
+            - button "Like recipe" [ref=f1e629]:
+              - generic [ref=f1e632]: 1,540
+            - button "Save recipe" [ref=f1e633]:
+              - generic [ref=f1e636]: حفظ
+              - generic [ref=f1e637]: 1,040
+            - button "Share recipe" [ref=f1e638]
+          - link "عرض الوصفة والمقادير" [ref=f1e645] [cursor=pointer]:
+            - /url: recipe.html?id=recipe-8
+    - generic [ref=f1e649]:
+      - paragraph [ref=f1e654]: لقد اطلعت على جميع التحديثات الحالية
+      - paragraph [ref=f1e655]: تابع المزيد من الطهاة والموردين لتوسيع خلاصة استكشافك اليومية
+  - navigation "Mobile Bottom Navigation" [ref=f1e656]:
+    - link "Home Feed" [ref=f1e657] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f1e661]: الرئيسية
+    - link "Explore" [ref=f1e662] [cursor=pointer]:
+      - /url: explore.html
+      - generic [ref=f1e666]: استكشف
+    - link "Create Recipe" [ref=f1e667] [cursor=pointer]:
+      - /url: create-recipe.html
+    - link "Supplies" [ref=f1e670] [cursor=pointer]:
+      - /url: supplies.html
+      - generic [ref=f1e673]: التوريدات
+    - link "Dashboard" [ref=f1e674] [cursor=pointer]:
+      - /url: dashboard.html
+      - generic [ref=f1e680]: لوحة التحكم

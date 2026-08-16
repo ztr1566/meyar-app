@@ -5,7 +5,7 @@
  * and Request for Quotation (RFQ) integration.
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import { SUPPLY_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Modal } from '../core/modal.js';
 import { Toast } from '../core/toast.js';
@@ -13,8 +13,6 @@ import { normalizeSearchQuery } from '../modules/search.js';
 import { RFQManager } from '../modules/rfq.js';
 
 export class SuppliesPage {
-  static STORAGE_SAVED = 'meyar_saved_supplies';
-
   static currentCategory = 'all';
   static searchQuery = '';
   static selectedMOQ = 'all'; // all | 1 | 2 | 5 | 10+
@@ -25,17 +23,30 @@ export class SuppliesPage {
   static sortBy = 'popular'; // popular | price_asc | price_desc | moq_asc | rating
   static isInitialized = false;
 
+  static savedSupplyIds = new Set();
+
   /**
-   * Get bookmarked supply IDs from localStorage
+   * Reset in-memory supplies state (for test isolation)
+   */
+  static reset() {
+    this.savedSupplyIds = new Set();
+    this.currentCategory = 'all';
+    this.searchQuery = '';
+    this.selectedMOQ = 'all';
+    this.stockFilter = 'all';
+    this.selectedCertifications = new Set();
+    this.minPrice = null;
+    this.maxPrice = null;
+    this.sortBy = 'popular';
+    this.isInitialized = false;
+  }
+
+  /**
+   * Get bookmarked supply IDs from in-memory set
    * @returns {string[]}
    */
   static getSavedSupplyIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_SAVED);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.savedSupplyIds);
   }
 
   /**
@@ -45,22 +56,15 @@ export class SuppliesPage {
    */
   static toggleSaveSupply(supplyId) {
     if (!supplyId) return false;
-    const saved = new Set(this.getSavedSupplyIds());
-    const isSaved = saved.has(supplyId);
+    const isSaved = this.savedSupplyIds.has(supplyId);
     const isAr = I18n.getLang() === 'ar';
 
     if (isSaved) {
-      saved.delete(supplyId);
+      this.savedSupplyIds.delete(supplyId);
       Toast.info(isAr ? 'تمت إزالة المنتج من التوريدات المحفوظة' : 'Removed from saved supplies');
     } else {
-      saved.add(supplyId);
+      this.savedSupplyIds.add(supplyId);
       Toast.success(isAr ? 'تم حفظ المنتج في قائمتك التجارية' : 'Saved to your supplies list');
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_SAVED, JSON.stringify(Array.from(saved)));
-    } catch (e) {
-      console.error('Failed to update saved supplies in localStorage', e);
     }
 
     this.updateSaveButtonStates();
@@ -95,7 +99,7 @@ export class SuppliesPage {
    * @returns {Array<Object>}
    */
   static filterSupplies() {
-    const items = MOCK_DATA.supplies || [];
+    const items = SUPPLY_FIXTURES || [];
     const normQuery = normalizeSearchQuery(this.searchQuery);
 
     return items.filter(item => {
@@ -408,7 +412,7 @@ export class SuppliesPage {
     const isAr = I18n.getLang() === 'ar';
 
     if (this.currentCategory !== 'all') {
-      const catObj = MOCK_DATA.supplies?.find(s => s.category === this.currentCategory);
+    const catObj = SUPPLY_FIXTURES?.find(s => s.category === this.currentCategory);
       const catLabel = catObj ? (isAr ? catObj.category_ar : catObj.category_en) : this.currentCategory;
       chips.push({ type: 'category', label: catLabel });
     }
@@ -459,7 +463,7 @@ export class SuppliesPage {
    * @param {string} supplyId 
    */
   static openSpecsModal(supplyId) {
-    const item = MOCK_DATA.supplies?.find(s => s.id === supplyId);
+    const item = SUPPLY_FIXTURES?.find(s => s.id === supplyId);
     if (!item) return;
 
     const isAr = I18n.getLang() === 'ar';
@@ -772,14 +776,5 @@ export class SuppliesPage {
     });
 
     this.isInitialized = true;
-  }
-}
-
-// Auto bootstrap on DOM load
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => SuppliesPage.init());
-  } else {
-    SuppliesPage.init();
   }
 }

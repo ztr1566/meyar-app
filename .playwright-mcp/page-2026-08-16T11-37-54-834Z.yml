@@ -1,0 +1,416 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Meyar Home" [ref=e5] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=e9]:
+            - text: معيار
+            - generic [ref=e10]: Meyar
+        - button "Search" [ref=e11]:
+          - generic [ref=e12]: ابحث في الوصفات، الطهاة، التوريدات، والدورات...
+      - generic [ref=e17]:
+        - link "ابتكار وصفة" [ref=e18] [cursor=pointer]:
+          - /url: create-recipe.html
+        - link "Messages" [ref=e22] [cursor=pointer]:
+          - /url: chat.html
+        - link "Notifications" [ref=e26] [cursor=pointer]:
+          - /url: notifications.html
+        - button "Switch to English" [ref=e31]:
+          - generic [ref=e35]: English
+        - button "Toggle theme" [ref=e36]
+        - button "User profile options" [ref=e41]:
+          - img "Chef Faisal Al-Hashemi" [ref=e42]
+        - button "Open mobile menu" [ref=e45]
+  - main [ref=e47]:
+    - navigation "Breadcrumb" [ref=e48]:
+      - link "الرئيسية" [ref=e49] [cursor=pointer]:
+        - /url: index.html
+      - link "استكشف" [ref=e52] [cursor=pointer]:
+        - /url: explore.html
+      - generic [ref=e55]: ستيك واغيو ريب آي مع غليز التمر والثوم الأسود المعتق
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]: سعودي معاصر
+          - generic [ref=e60]: أطباق رئيسية
+          - generic [ref=e61]: متقدم
+          - generic [ref=e62]:
+            - generic [ref=e65]: "4.96"
+            - generic [ref=e66]: (114)
+        - generic [ref=e67]:
+          - heading "ستيك واغيو ريب آي مع غليز التمر والثوم الأسود المعتق" [level=1] [ref=e68]
+          - paragraph [ref=e69]: قطعة لحم واغيو A5 معتقة ومطهوة لدرجة متوسطة، مغطاة بغليز مركز من دبس تمر الخلاص النجد والكمأة السوداء وثوم الحبة السوداء المخمر.
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: وقت التحضير
+            - generic [ref=e77]: 35 دقيقة
+          - generic [ref=e78]:
+            - generic [ref=e79]: وقت الطهي
+            - generic [ref=e84]: 45 دقيقة
+          - generic [ref=e85]:
+            - generic [ref=e86]: الوقت الإجمالي
+            - generic [ref=e91]: 80 دقيقة
+          - generic [ref=e92]:
+            - generic [ref=e93]: السعرات الحرارية
+            - generic [ref=e97]: 680 سعرة
+        - link [ref=e99] [cursor=pointer]:
+          - /url: chef.html?id=chef-1
+          - img "الشيف فيصل الهاشمي" [ref=e100]
+          - generic [ref=e101]:
+            - heading "الشيف فيصل الهاشمي" [level=3] [ref=e103]
+            - paragraph [ref=e106]: المدير التنفيذي للطهي ومستشار فنون الطهي المعاصر
+            - text: "@chef_faisal"
+        - generic [ref=e107]:
+          - link "بدء الطهي التفاعلي" [ref=e108] [cursor=pointer]:
+            - /url: "#card-cooking-mode"
+          - button "Bookmark Recipe" [ref=e112]:
+            - generic [ref=e115]: حفظ
+          - button "Like Recipe" [ref=e116]:
+            - generic [ref=e119]: "1420"
+          - button "Share Recipe" [ref=e120]
+          - button "Print Recipe" [ref=e127]
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - img "Wagyu Ribeye with Black Garlic Date Glaze" [ref=e134]
+          - generic [ref=e135]: A5 Wagyu
+        - generic [ref=e137]:
+          - button [ref=e138]:
+            - img "Gallery preview 1" [ref=e139]
+          - button [ref=e140]:
+            - img "Gallery preview 2" [ref=e141]
+          - button [ref=e142]:
+            - img "Gallery preview 3" [ref=e143]
+    - generic [ref=e144]:
+      - complementary [ref=e145]:
+        - generic [ref=e146]:
+          - generic [ref=e147]:
+            - heading "المكونات والمقادير" [level=2] [ref=e149]
+            - paragraph [ref=e153]: عدّل عدد الحصص لحساب مقادير المكونات تلقائياً
+            - generic [ref=e154]:
+              - generic [ref=e155]:
+                - generic [ref=e156]: الحصص
+                - generic [ref=e157]: "4"
+                - generic [ref=e158]: "(الحصص الأساسية: 4)"
+              - generic [ref=e159]:
+                - button "Decrease servings" [ref=e160]: −
+                - button "Increase servings" [ref=e161]: +
+                - button "Reset servings" [ref=e162]
+          - list [ref=e168]:
+            - listitem [ref=e169]:
+              - generic [ref=e170]:
+                - generic [ref=e171] [cursor=pointer]:
+                  - checkbox "لحم واغيو A5 ريب آي معتق" [ref=e172]
+                  - generic [ref=e174]: لحم واغيو A5 ريب آي معتق
+                - generic [ref=e175]: (مقطعة بسماكة 3.5 سم)
+              - generic [ref=e176]:
+                - generic [ref=e177]: "800"
+                - generic [ref=e178]: جرام
+            - listitem [ref=e179]:
+              - generic [ref=e180]:
+                - generic [ref=e181] [cursor=pointer]:
+                  - checkbox "معجون الثوم الأسود المخمر" [ref=e182]
+                  - generic [ref=e184]: معجون الثوم الأسود المخمر
+                - generic [ref=e185]: (مهروس ناعماً)
+              - generic [ref=e186]:
+                - generic [ref=e187]: "45"
+                - generic [ref=e188]: جرام
+            - listitem [ref=e189]:
+              - generic [ref=e190]:
+                - generic [ref=e191] [cursor=pointer]:
+                  - checkbox "دبس تمر خلاص فاخر" [ref=e192]
+                  - generic [ref=e194]: دبس تمر خلاص فاخر
+                - generic [ref=e195]: (طبيعي بدون سكر مضاف)
+              - generic [ref=e196]:
+                - generic [ref=e197]: "60"
+                - generic [ref=e198]: مل
+            - listitem [ref=e199]:
+              - generic [ref=e200]:
+                - generic [ref=e201] [cursor=pointer]:
+                  - checkbox "مرق لحم مركز (ديمي غلاس)" [ref=e202]
+                  - generic [ref=e204]: مرق لحم مركز (ديمي غلاس)
+                - generic [ref=e205]: (مختزل لمدة 24 ساعة)
+              - generic [ref=e206]:
+                - generic [ref=e207]: "120"
+                - generic [ref=e208]: مل
+            - listitem [ref=e209]:
+              - generic [ref=e210]:
+                - generic [ref=e211] [cursor=pointer]:
+                  - checkbox "زبدة فرنسية غير مملحة" [ref=e212]
+                  - generic [ref=e214]: زبدة فرنسية غير مملحة
+                - generic [ref=e215]: (لدهن الستيك أثناء التحمير)
+              - generic [ref=e216]:
+                - generic [ref=e217]: "50"
+                - generic [ref=e218]: جرام
+            - listitem [ref=e219]:
+              - generic [ref=e220]:
+                - generic [ref=e221] [cursor=pointer]:
+                  - checkbox "أغصان زعتر بري طازج" [ref=e222]
+                  - generic [ref=e224]: أغصان زعتر بري طازج
+                - generic [ref=e225]: (مغسولة ومجففة)
+              - generic [ref=e226]:
+                - generic [ref=e227]: "4"
+                - generic [ref=e228]: حبة
+            - listitem [ref=e229]:
+              - generic [ref=e230]:
+                - generic [ref=e231] [cursor=pointer]:
+                  - checkbox "خل بلسمي معتق 12 عاماً" [ref=e232]
+                  - generic [ref=e234]: خل بلسمي معتق 12 عاماً
+                - generic [ref=e235]: (لموازنة الحموضة)
+              - generic [ref=e236]:
+                - generic [ref=e237]: "20"
+                - generic [ref=e238]: مل
+            - listitem [ref=e239]:
+              - generic [ref=e240]:
+                - generic [ref=e241] [cursor=pointer]:
+                  - checkbox "ملح بحري مدخن ناعم" [ref=e242]
+                  - generic [ref=e244]: ملح بحري مدخن ناعم
+                - generic [ref=e245]: (للتلميع النهائي عند التقديم)
+              - generic [ref=e246]:
+                - generic [ref=e247]: "10"
+                - generic [ref=e248]: جرام
+          - generic [ref=e249]:
+            - button "نسخ المقادير" [ref=e250]
+            - link "التوريدات" [ref=e255] [cursor=pointer]:
+              - /url: supplies.html
+        - generic [ref=e259]:
+          - heading "اقتراحات التقديم والمشروبات" [level=3] [ref=e260]
+          - generic [ref=e264]:
+            - generic [ref=e265]:
+              - generic [ref=e266]: المشروب المقترح
+              - paragraph [ref=e270]: إكسير الرمان المركز مع النعناع والماء الفوار المبرد
+            - generic [ref=e271]:
+              - generic [ref=e272]: الطبق الجانبي المقترح
+              - paragraph [ref=e277]: بطاطس البافيه المكرملة مع فطر الموريل البري والكمأة
+            - generic [ref=e278]:
+              - text: ملاحظات التناغم والتذوق
+              - paragraph [ref=e279]: حموضة الرمان الطبيعية تكسر دسم الواغيو العالي وتبرز نكهة تمر الخلاص المعتق.
+        - generic [ref=e280]:
+          - heading "القيم الغذائية التقديرية" [level=3] [ref=e281]
+          - generic [ref=e285]:
+            - generic [ref=e286]:
+              - generic [ref=e287]: السعرات
+              - text: "680"
+            - generic [ref=e288]:
+              - generic [ref=e289]: البروتين
+              - text: 52g
+            - generic [ref=e290]:
+              - generic [ref=e291]: الكربوهيدرات
+              - text: 18g
+            - generic [ref=e292]:
+              - generic [ref=e293]: الدهون
+              - text: 46g
+            - generic [ref=e294]:
+              - generic [ref=e295]: الألياف
+              - text: 2.5g
+            - generic [ref=e296]:
+              - generic [ref=e297]: الصوديوم
+              - text: 620mg
+      - generic [ref=e298]:
+        - generic [ref=e299]:
+          - generic [ref=e300]:
+            - generic [ref=e301]:
+              - generic [ref=e302]:
+                - heading "وضع الطهي التفاعلي" [level=2] [ref=e303]
+                - paragraph [ref=e306]: 0 من 5 خطوات مكتملة (0%)
+              - button "إعادة ضبط الخطوات" [ref=e307]
+            - progressbar [ref=e308]
+          - generic [ref=e309]:
+            - generic [ref=e310]:
+              - generic [ref=e311]:
+                - generic [ref=e312]:
+                  - generic [ref=e313]: "01"
+                  - heading "تحضير لحم الواغيو والتتبيل الأولي" [level=3] [ref=e314]
+                - button "Toggle step 1 completion" [ref=e315]:
+                  - generic [ref=e316]: إتمام
+              - paragraph [ref=e317]: أخرج شرائح الواغيو من الثلاجة قبل الطهي بـ 45 دقيقة لتصل لحرارة الغرفة. جفف السطح بورق المطبخ ثم رش نصف كمية الملح البحري المدخن على كلا الوجهين بالتساوي.
+              - generic [ref=e318]:
+                - generic [ref=e319]:
+                  - generic [ref=e323]: "مؤقت الخطوة:"
+                  - generic [ref=e324]: 45:00
+                - generic [ref=e325]:
+                  - button "بدء المؤقت" [ref=e326]
+                  - button "إعادة ضبط" [ref=e327]
+              - generic [ref=e334]:
+                - generic [ref=e335]: نصيحة الشيف الاحترافية
+                - text: لا تضع اللحم بارداً أبداً في المقلاة لتفادي انخفاض حرارة سطح التحمير وفقدان العصارة.
+            - generic [ref=e336]:
+              - generic [ref=e337]:
+                - generic [ref=e338]:
+                  - generic [ref=e339]: "02"
+                  - heading "إعداد غليز التمر والثوم الأسود المخمر" [level=3] [ref=e340]
+                - button "Toggle step 2 completion" [ref=e341]:
+                  - generic [ref=e342]: إتمام
+              - paragraph [ref=e343]: في قدر نحاسي صغير على نار هادئة، اخلط معجون الثوم الأسود مع دبس التمر والخل البلسمي والديمي غلاس. قلّب باستمرار حتى يتكاثف المزيج ليغطي ظهر الملعقة، ثم ارفعه عن النار واتركه دافئاً.
+              - generic [ref=e344]:
+                - generic [ref=e345]:
+                  - generic [ref=e349]: "مؤقت الخطوة:"
+                  - generic [ref=e350]: 10:00
+                - generic [ref=e351]:
+                  - button "بدء المؤقت" [ref=e352]
+                  - button "إعادة ضبط" [ref=e353]
+              - generic [ref=e360]:
+                - generic [ref=e361]: نصيحة الشيف الاحترافية
+                - text: تجنب غليان الغليز الشديد حتى لا يحترق السكر الطبيعي في دبس التمر ويصبح مراً.
+            - generic [ref=e362]:
+              - generic [ref=e363]:
+                - generic [ref=e364]:
+                  - generic [ref=e365]: "03"
+                  - heading "التحمير العالي والدهن بالزبدة (Arrosé)" [level=3] [ref=e366]
+                - button "Toggle step 3 completion" [ref=e367]:
+                  - generic [ref=e368]: إتمام
+              - paragraph [ref=e369]: سخّن مقلاة حديد زهر (Cast Iron) حتى تصاعد دخان خفيف. ضع قطع الواغيو واطهها لمدة دقيقتين لكل جانب حتى تتكون طبقة كراميل ذهبية بنية. أضف الزبدة والزعتر البري وقم بدهن الستيك بملعقة لمدة دقيقة إضافية.
+              - generic [ref=e370]:
+                - generic [ref=e371]:
+                  - generic [ref=e375]: "مؤقت الخطوة:"
+                  - generic [ref=e376]: 06:00
+                - generic [ref=e377]:
+                  - button "بدء المؤقت" [ref=e378]
+                  - button "إعادة ضبط" [ref=e379]
+              - generic [ref=e386]:
+                - generic [ref=e387]: نصيحة الشيف الاحترافية
+                - text: الواغيو A5 يحتوي على دهون رخامية غنية تذوب بسرعة؛ لا تحتاج لإضافة زيت إضافي للمقلاة.
+            - generic [ref=e388]:
+              - generic [ref=e389]:
+                - generic [ref=e390]:
+                  - generic [ref=e391]: "04"
+                  - heading "التشريب بالغليز وإراحة اللحم" [level=3] [ref=e392]
+                - button "Toggle step 4 completion" [ref=e393]:
+                  - generic [ref=e394]: إتمام
+              - paragraph [ref=e395]: ارفع الستيك إلى لوح التقطيع الخشبي، وادهن الوجهين بسخاء بغليز التمر الدافئ باستخدام فرشاة سيليكون. اترك اللحم ليرتاح لمدة 8 إلى 10 دقائق لتعيد الألياف امتصاص السوائل.
+              - generic [ref=e396]:
+                - generic [ref=e397]:
+                  - generic [ref=e401]: "مؤقت الخطوة:"
+                  - generic [ref=e402]: 10:00
+                - generic [ref=e403]:
+                  - button "بدء المؤقت" [ref=e404]
+                  - button "إعادة ضبط" [ref=e405]
+              - generic [ref=e412]:
+                - generic [ref=e413]: نصيحة الشيف الاحترافية
+                - text: فترة الراحة أساسية لجعل اللحم طرياً جداً وذا عصارة متوازنة.
+            - generic [ref=e414]:
+              - generic [ref=e415]:
+                - generic [ref=e416]:
+                  - generic [ref=e417]: "05"
+                  - heading "التقطيع والتقديم الفاخر" [level=3] [ref=e418]
+                - button "Toggle step 5 completion" [ref=e419]:
+                  - generic [ref=e420]: إتمام
+              - paragraph [ref=e421]: اقطع شرائح الستيك بزاوية 45 درجة بسماكة 1 سم. رتبها في طبق التقديم الدافئ، ورش الملح المدخن المتبقي وأضف قطرات من زيت الأعشاب بجانب بطاطس البافيه المقرمشة.
+              - generic [ref=e422]:
+                - generic [ref=e423]:
+                  - generic [ref=e427]: "مؤقت الخطوة:"
+                  - generic [ref=e428]: 05:00
+                - generic [ref=e429]:
+                  - button "بدء المؤقت" [ref=e430]
+                  - button "إعادة ضبط" [ref=e431]
+              - generic [ref=e438]:
+                - generic [ref=e439]: نصيحة الشيف الاحترافية
+                - text: قدّم الطبق دائماً على أوانٍ مسخنة مسبقاً للحفاظ على دفء دهن الواغيو الحريري.
+        - generic [ref=e440]:
+          - heading "ملاحظات وتوصيات الشيف" [level=3] [ref=e441]
+          - generic [ref=e447]:
+            - paragraph [ref=e448]:
+              - generic [ref=e449]: •
+              - generic [ref=e450]: لا تضع اللحم بارداً أبداً في المقلاة لتفادي انخفاض حرارة سطح التحمير وفقدان العصارة.
+            - paragraph [ref=e451]:
+              - generic [ref=e452]: •
+              - generic [ref=e453]: تجنب غليان الغليز الشديد حتى لا يحترق السكر الطبيعي في دبس التمر ويصبح مراً.
+            - paragraph [ref=e454]:
+              - generic [ref=e455]: •
+              - generic [ref=e456]: الواغيو A5 يحتوي على دهون رخامية غنية تذوب بسرعة؛ لا تحتاج لإضافة زيت إضافي للمقلاة.
+            - paragraph [ref=e457]:
+              - generic [ref=e458]: •
+              - generic [ref=e459]: فترة الراحة أساسية لجعل اللحم طرياً جداً وذا عصارة متوازنة.
+            - paragraph [ref=e460]:
+              - generic [ref=e461]: •
+              - generic [ref=e462]: قدّم الطبق دائماً على أوانٍ مسخنة مسبقاً للحفاظ على دفء دهن الواغيو الحريري.
+    - generic [ref=e463]:
+      - generic [ref=e464]:
+        - generic [ref=e465]:
+          - heading "وصفات فاخرة ذات صلة" [level=2] [ref=e466]
+          - paragraph [ref=e467]: أطباق وتجارب ذواقة مختارة بعناية من كبار الطهاة
+        - link "عرض جميع الوصفات" [ref=e468] [cursor=pointer]:
+          - /url: explore.html
+      - generic [ref=e472]:
+        - article [ref=e473]:
+          - generic [ref=e474]:
+            - img "قاروص البحر بالزعفران الملكي ومستحلب الهيل الأخضر" [ref=e475]
+            - generic [ref=e476]: بحر متوسطي مغاربي
+            - button "Bookmark قاروص البحر بالزعفران الملكي ومستحلب الهيل الأخضر" [ref=e477]
+          - generic [ref=e480]:
+            - generic [ref=e481]:
+              - generic [ref=e482]:
+                - generic [ref=e483]: شيف ليلى بن جلون
+                - generic [ref=e484]: •
+                - generic [ref=e485]: 20 دقيقة
+              - heading [level=3] [ref=e486]:
+                - link "قاروص البحر بالزعفران الملكي ومستحلب الهيل الأخضر" [ref=e487] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-2
+            - generic [ref=e488]:
+              - generic [ref=e489]: "4.93"
+              - link "عرض الوصفة" [ref=e493] [cursor=pointer]:
+                - /url: recipe.html?id=recipe-2
+        - article [ref=e497]:
+          - generic [ref=e498]:
+            - img "أنولوتي الباستا اليدوية بالريكوتا المدخنة والكمأة السوداء" [ref=e499]
+            - generic [ref=e500]: إيطالي حرفي
+            - button "Bookmark أنولوتي الباستا اليدوية بالريكوتا المدخنة والكمأة السوداء" [ref=e501]
+          - generic [ref=e504]:
+            - generic [ref=e505]:
+              - generic [ref=e506]:
+                - generic [ref=e507]: شيف ماركو بيليني
+                - generic [ref=e508]: •
+                - generic [ref=e509]: 15 دقيقة
+              - heading [level=3] [ref=e510]:
+                - link "أنولوتي الباستا اليدوية بالريكوتا المدخنة والكمأة السوداء" [ref=e511] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-3
+            - generic [ref=e512]:
+              - generic [ref=e513]: "4.98"
+              - link "عرض الوصفة" [ref=e517] [cursor=pointer]:
+                - /url: recipe.html?id=recipe-3
+        - article [ref=e521]:
+          - generic [ref=e522]:
+            - img "ريش غنم نعيمي متبلة بإكليل الجبل المدخن والدبس" [ref=e523]
+            - generic [ref=e524]: شامي تراثي بالنار
+            - button "Bookmark ريش غنم نعيمي متبلة بإكليل الجبل المدخن والدبس" [ref=e525]
+          - generic [ref=e528]:
+            - generic [ref=e529]:
+              - generic [ref=e530]:
+                - generic [ref=e531]: شيف طارق منصور
+                - generic [ref=e532]: •
+                - generic [ref=e533]: 25 دقيقة
+              - heading [level=3] [ref=e534]:
+                - link "ريش غنم نعيمي متبلة بإكليل الجبل المدخن والدبس" [ref=e535] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-4
+            - generic [ref=e536]:
+              - generic [ref=e537]: "4.94"
+              - link "عرض الوصفة" [ref=e541] [cursor=pointer]:
+                - /url: recipe.html?id=recipe-4
+  - navigation "Mobile Bottom Navigation" [ref=e545]:
+    - link "Home Feed" [ref=e546] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e549]: الرئيسية
+    - link "Explore" [ref=e550] [cursor=pointer]:
+      - /url: explore.html
+      - generic [ref=e554]: استكشف
+    - link "Create Recipe" [ref=e555] [cursor=pointer]:
+      - /url: create-recipe.html
+    - link "Supplies" [ref=e558] [cursor=pointer]:
+      - /url: supplies.html
+      - generic [ref=e561]: التوريدات
+    - link "Dashboard" [ref=e562] [cursor=pointer]:
+      - /url: dashboard.html
+      - generic [ref=e568]: لوحة التحكم
+  - contentinfo [ref=e569]:
+    - generic [ref=e570]:
+      - generic [ref=e571]:
+        - generic [ref=e572]: M
+        - generic [ref=e573]: معيار Meyar © 2026
+      - paragraph [ref=e574]: منصة الطهي الاحترافية وشبكة تجارة المستلزمات والمطاعم
+      - generic [ref=e575]:
+        - link "الرئيسية" [ref=e576] [cursor=pointer]:
+          - /url: index.html
+        - link "استكشف" [ref=e577] [cursor=pointer]:
+          - /url: explore.html
+        - link "التوريدات" [ref=e578] [cursor=pointer]:
+          - /url: supplies.html

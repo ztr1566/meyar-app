@@ -1,0 +1,184 @@
+- generic [active] [ref=f4e1]:
+  - banner [ref=f4e2]:
+    - generic [ref=f4e3]:
+      - generic [ref=f4e4]:
+        - link "Meyar Home" [ref=f4e5] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=f4e9]:
+            - text: معيار
+            - generic [ref=f4e10]: Meyar
+        - button "Search" [ref=f4e11]:
+          - generic [ref=f4e12]: ابحث في الوصفات، الطهاة، التوريدات، والدورات...
+      - generic [ref=f4e17]:
+        - link "ابتكار وصفة" [ref=f4e18] [cursor=pointer]:
+          - /url: create-recipe.html
+        - link "Messages" [ref=f4e22] [cursor=pointer]:
+          - /url: chat.html
+        - link "Notifications" [ref=f4e26] [cursor=pointer]:
+          - /url: notifications.html
+        - button "Switch to English" [ref=f4e31]:
+          - generic [ref=f4e35]: English
+        - button "Toggle theme" [ref=f4e36]
+        - button "User profile options" [ref=f4e41]:
+          - img "Chef Faisal Al-Hashemi" [ref=f4e42]
+        - button "Open mobile menu" [ref=f4e45]
+  - main [ref=f4e47]:
+    - navigation "Breadcrumb" [ref=f4e48]:
+      - link "الرئيسية" [ref=f4e49] [cursor=pointer]:
+        - /url: index.html
+      - link "الطهاة" [ref=f4e52] [cursor=pointer]:
+        - /url: explore.html?category=chefs
+      - generic [ref=f4e55]: شيف طارق منصور
+    - region "Chef Profile Overview" [ref=f4e56]:
+      - generic [ref=f4e57]:
+        - img "شيف طارق منصور" [ref=f4e58]
+        - generic [ref=f4e59]: المشاوي الشامية التراثية والتدخين الحرفي
+      - generic [ref=f4e64]:
+        - generic [ref=f4e65]:
+          - generic [ref=f4e66]:
+            - generic [ref=f4e67]:
+              - img "شيف طارق منصور" [ref=f4e68]
+              - generic "Verified Master Chef" [ref=f4e69]
+            - generic [ref=f4e72]:
+              - generic [ref=f4e73]:
+                - heading "شيف طارق منصور" [level=1] [ref=f4e74]
+                - generic [ref=f4e75]: شيف معتمد
+              - paragraph [ref=f4e76]: "@tariq_firecraft"
+              - paragraph [ref=f4e77]: خبير الطهي بالنار المباشرة والتدخين التراثي
+          - generic [ref=f4e78]:
+            - generic [ref=f4e79]:
+              - button "متابعة" [ref=f4e80]
+              - link "إرسال رسالة" [ref=f4e85] [cursor=pointer]:
+                - /url: chat.html?chef=chef-3
+              - button "تعاقد مع الشيف" [ref=f4e89]
+            - button "Share Chef Profile" [ref=f4e94]
+        - generic [ref=f4e101]:
+          - paragraph [ref=f4e102]: متخصص في تقنيات التدخين البطيء على حطب الزيتون والسنديان وإنضاج اللحوم التراثية، مع دمج الأعشاب البرية الشامية والمكسرات المحمصة.
+          - paragraph [ref=f4e106]: "\"النار الحية هي أقدم معلم للإنسان في الطهي؛ احترام اللهب والوقت يمنح المكونات عمقاً لا يضاهيه أي جهاز حديث.\""
+        - generic [ref=f4e107]:
+          - generic [ref=f4e108]: الجوائز والتكريمات الدولية
+          - generic "رابطة طهاة الشرق الأوسط" [ref=f4e114]:
+            - generic [ref=f4e118]: جائزة الشيف الحرفي المتميز للمشاوي
+            - generic [ref=f4e119]: "2023"
+        - generic [ref=f4e120]:
+          - generic [ref=f4e121]:
+            - generic [ref=f4e122]: 51.2k
+            - text: متابع
+          - generic [ref=f4e123]:
+            - generic [ref=f4e124]: "195"
+            - text: يتابع
+          - generic [ref=f4e125]:
+            - generic [ref=f4e126]: "2"
+            - text: وصفة مبتكرة
+          - generic [ref=f4e127]:
+            - generic [ref=f4e128]: "18"
+            - text: سنوات الخبرة
+          - generic [ref=f4e129]:
+            - generic [ref=f4e130]:
+              - generic [ref=f4e131]: "4.92"
+              - generic [ref=f4e132]: ★
+            - text: (420 تقييم)
+    - tablist "Chef Profile Sections" [ref=f4e134]:
+      - tab "الوصفات المنشورة 2" [selected] [ref=f4e135]:
+        - generic [ref=f4e138]: الوصفات المنشورة
+        - generic [ref=f4e139]: "2"
+      - tab "معرض الأطباق (Portfolio) 2" [ref=f4e140]:
+        - generic [ref=f4e143]: معرض الأطباق (Portfolio)
+        - generic [ref=f4e144]: "2"
+      - tab "الوصفات المحفوظة 3" [ref=f4e145]:
+        - generic [ref=f4e148]: الوصفات المحفوظة
+        - generic [ref=f4e149]: "3"
+      - tab "الدورات والورش 1" [ref=f4e150]:
+        - generic [ref=f4e154]: الدورات والورش
+        - generic [ref=f4e155]: "1"
+      - tab "النشاط والمجتمع 5" [ref=f4e156]:
+        - generic [ref=f4e159]: النشاط والمجتمع
+        - generic [ref=f4e160]: "5"
+      - tab "عن الشيف" [ref=f4e161]
+    - tabpanel "الوصفات المنشورة 2" [ref=f4e167]:
+      - generic [ref=f4e168]:
+        - textbox "ابحث في وصفات الشيف..." [ref=f4e170]
+        - generic [ref=f4e171]: 2 وصفة متاحة
+      - generic [ref=f4e173]:
+        - article [ref=f4e174]:
+          - generic [ref=f4e175]:
+            - generic [ref=f4e176]:
+              - link [ref=f4e177] [cursor=pointer]:
+                - /url: recipe.html?id=recipe-4
+                - img "ريش غنم نعيمي متبلة بإكليل الجبل المدخن والدبس" [ref=f4e178]
+              - generic [ref=f4e179]:
+                - generic [ref=f4e180]: متوسط
+                - generic [ref=f4e181]: undefined د
+              - button "Save Recipe" [ref=f4e186]
+            - generic [ref=f4e189]:
+              - generic [ref=f4e190]:
+                - generic [ref=f4e191]: Levantine Fire & Smoke
+                - generic [ref=f4e192]:
+                  - generic [ref=f4e193]: ★
+                  - generic [ref=f4e194]: "4.94"
+              - link [ref=f4e195] [cursor=pointer]:
+                - /url: recipe.html?id=recipe-4
+                - heading "ريش غنم نعيمي متبلة بإكليل الجبل المدخن والدبس" [level=3] [ref=f4e196]
+              - paragraph [ref=f4e197]: ريش غنم نعيمي محلية طرية متبلة بخليط إكليل الجبل المدخن ودبس الرمان والفلفل الحلبي، مشوية على جمر الحطب حتى الوصول لقرمشة خارجية وعصارة داخلية وردية.
+          - generic [ref=f4e198]:
+            - generic [ref=f4e199]:
+              - button "Like Recipe" [ref=f4e200]:
+                - generic [ref=f4e203]: "1190"
+              - generic [ref=f4e204]: 610 سعرة
+            - link "عرض الوصفة" [ref=f4e205] [cursor=pointer]:
+              - /url: recipe.html?id=recipe-4
+        - article [ref=f4e209]:
+          - generic [ref=f4e210]:
+            - generic [ref=f4e211]:
+              - link [ref=f4e212] [cursor=pointer]:
+                - /url: recipe.html?id=recipe-7
+                - img "ريزوتو الفريكة الخضراء المدخنة مع فطر الموريل البري" [ref=f4e213]
+              - generic [ref=f4e214]:
+                - generic [ref=f4e215]: متوسط
+                - generic [ref=f4e216]: undefined د
+              - button "Save Recipe" [ref=f4e221]
+            - generic [ref=f4e224]:
+              - generic [ref=f4e225]:
+                - generic [ref=f4e226]: Modern Levantine Fusion
+                - generic [ref=f4e227]:
+                  - generic [ref=f4e228]: ★
+                  - generic [ref=f4e229]: "4.9"
+              - link [ref=f4e230] [cursor=pointer]:
+                - /url: recipe.html?id=recipe-7
+                - heading "ريزوتو الفريكة الخضراء المدخنة مع فطر الموريل البري" [level=3] [ref=f4e231]
+              - paragraph [ref=f4e232]: حبوب الفريكة الشامية الخضراء المحمصة على الحطب، مطهوة بأسلوب الريزوتو الإيطالي في مرق الفطر البري المعتق، مع جبنة القشقوان القديمة وفطر الموريل المكرمل.
+          - generic [ref=f4e233]:
+            - generic [ref=f4e234]:
+              - button "Like Recipe" [ref=f4e235]:
+                - generic [ref=f4e238]: "870"
+              - generic [ref=f4e239]: 440 سعرة
+            - link "عرض الوصفة" [ref=f4e240] [cursor=pointer]:
+              - /url: recipe.html?id=recipe-7
+  - navigation "Mobile Bottom Navigation" [ref=f4e244]:
+    - link "Home Feed" [ref=f4e245] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f4e248]: الرئيسية
+    - link "Explore" [ref=f4e249] [cursor=pointer]:
+      - /url: explore.html
+      - generic [ref=f4e253]: استكشف
+    - link "Create Recipe" [ref=f4e254] [cursor=pointer]:
+      - /url: create-recipe.html
+    - link "Supplies" [ref=f4e257] [cursor=pointer]:
+      - /url: supplies.html
+      - generic [ref=f4e260]: التوريدات
+    - link "Dashboard" [ref=f4e261] [cursor=pointer]:
+      - /url: dashboard.html
+      - generic [ref=f4e267]: لوحة التحكم
+  - contentinfo [ref=f4e268]:
+    - generic [ref=f4e269]:
+      - generic [ref=f4e270]:
+        - generic [ref=f4e271]: M
+        - generic [ref=f4e272]: معيار Meyar © 2026
+      - paragraph [ref=f4e273]: منصة الطهي الاحترافية وشبكة تجارة المستلزمات والمطاعم
+      - generic [ref=f4e274]:
+        - link "الرئيسية" [ref=f4e275] [cursor=pointer]:
+          - /url: index.html
+        - link "استكشف" [ref=f4e276] [cursor=pointer]:
+          - /url: explore.html
+        - link "التوريدات" [ref=f4e277] [cursor=pointer]:
+          - /url: supplies.html

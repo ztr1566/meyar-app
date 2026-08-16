@@ -30,7 +30,7 @@
 </head>
 <body class="bg-canvas text-text-main min-h-screen flex flex-col antialiased selection:bg-brand-gold selection:text-white transition-colors duration-200 pb-16 lg:pb-0">
 
-    <!-- ================= GLOBAL TOPBAR ================= -->
+      <!-- ================= GLOBAL TOPBAR ================= -->
   <header class="sticky top-0 w-full border-b border-border-subtle bg-surface-1 z-30 shrink-0">
     <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 h-14 sm:h-16 flex items-center justify-between gap-2 lg:gap-3">
       
@@ -247,26 +247,53 @@
 
           <!-- Action Buttons Group -->
           <div class="flex flex-wrap items-center gap-2.5 pt-2 md:pt-0">
-            <!-- Follow Button -->
-            <button type="button" id="btn-follow-chef" data-action="toggle-follow-chef"
-                    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-gold hover:bg-brand-gold-hover text-white shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-gold">
-              <svg class="w-4 h-4 follow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
-              <span class="follow-label" data-i18n="btn.follow">متابعة</span>
-            </button>
+            <!-- Viewer Action Buttons (Follow, Message, Hire) -->
+            <div id="viewer-actions-group" class="flex flex-wrap items-center gap-2.5">
+              <!-- Follow Button -->
+              <button type="button" id="btn-follow-chef" data-action="toggle-follow-chef"
+                      class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-gold hover:bg-brand-gold-hover text-white shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                <svg class="w-4 h-4 follow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                <span class="follow-label" data-i18n="btn.follow">متابعة</span>
+              </button>
 
-            <!-- Message Direct Link -->
-            <a id="btn-message-chef" href="chat.html?id=chat-2"
-               class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-main transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
-              <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              <span data-i18n="btn.send_message">إرسال رسالة</span>
-            </a>
+              <!-- Message Direct Link -->
+              <a id="btn-message-chef" href="chat.html?id=chat-2"
+                 class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-main transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span data-i18n="btn.send_message">إرسال رسالة</span>
+              </a>
 
-            <!-- Hire Chef Button -->
-            <button type="button" id="btn-hire-chef" data-action="open-hire-modal" data-modal-target="hire-modal"
-                    class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-main transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
-              <svg class="w-4 h-4 text-brand-emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-              <span data-i18n="btn.hire_chef">تعاقد مع الشيف</span>
-            </button>
+              <!-- Hire Chef Button -->
+              <button type="button" id="btn-hire-chef" data-action="open-hire-modal" data-modal-target="hire-modal"
+                      class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-main transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                <svg class="w-4 h-4 text-brand-emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span data-i18n="btn.hire_chef">تعاقد مع الشيف</span>
+              </button>
+            </div>
+
+            <!-- Owner Action Buttons (Hidden by default) -->
+            <div id="owner-actions-group" class="hidden flex-wrap items-center gap-2.5">
+              <!-- Edit Profile -->
+              <a href="settings.html?tab=profile" id="btn-edit-profile"
+                 class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-gold hover:bg-brand-gold-hover text-white shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                <span data-i18n="btn.edit_profile">تعديل الملف الشخصي</span>
+              </a>
+
+              <!-- Dashboard -->
+              <a href="dashboard.html" id="btn-view-dashboard"
+                 class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-main transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                <span data-i18n="nav.dashboard">لوحة التحكم</span>
+              </a>
+
+              <!-- Create Recipe -->
+              <a href="create-recipe.html" id="btn-create-recipe-owner"
+                 class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-main transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                <span data-i18n="nav.create_recipe">ابتكار وصفة</span>
+              </a>
+            </div>
 
             <!-- Share Profile Button -->
             <button type="button" id="btn-share-chef" data-action="open-share-modal" data-modal-target="share-modal"
@@ -748,22 +775,46 @@
     </div>
   </div>
 
-  <!-- ================= GLOBAL SEARCH MODAL ================= -->
-  <div id="search-modal" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 p-4" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
-    <div class="fixed inset-0 bg-canvas" data-modal-close="search-modal"></div>
-    <div class="relative w-full max-w-2xl bg-surface-1 border border-border-subtle rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[80vh]">
-      <div class="p-4 border-b border-border-subtle flex items-center gap-3">
-        <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+  <!-- ================= SEARCH MODAL PALETTE ================= -->
+  <div id="search-modal" role="dialog" aria-modal="true" aria-hidden="true" class="hidden fixed inset-0 z-50 items-center justify-center p-4 sm:p-6">
+    <!-- Solid Backdrop overlay -->
+    <div class="fixed inset-0 bg-canvas" data-modal-backdrop></div>
+
+    <!-- Solid Dialog Container -->
+    <div class="relative bg-surface-1 border border-border-subtle rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden z-10 flex flex-col max-h-[85vh] text-start">
+
+      <!-- Input Header -->
+      <div class="p-4 border-b border-border-subtle flex items-center gap-3 shrink-0">
+        <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.3-4.3"/>
+        </svg>
         <input type="text" id="global-search-input"
-               placeholder="ابحث في معيار (وصفات، طهاة، توريدات، دورات)..."
-               class="w-full bg-transparent text-sm sm:text-base text-text-main placeholder-text-muted outline-none border-none">
-        <button type="button" data-modal-close="search-modal" class="p-1 text-text-muted hover:text-text-main rounded-lg" aria-label="Close search">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+               class="flex-1 bg-transparent border-0 text-sm sm:text-base text-text-main placeholder:text-text-muted focus:outline-none"
+               placeholder="ابحث في الوصفات، الطهاة، التوريدات، والدورات..."
+               data-i18n-placeholder="search.placeholder"
+               autocomplete="off">
+        <button type="button" data-modal-close class="p-1.5 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-lg transition-colors" aria-label="Close Search">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-      <div id="global-search-results" class="p-4 overflow-y-auto space-y-2 flex-1 divide-y divide-border-subtle">
-        <!-- Live Instant Search results -->
+
+      <!-- Live Search Results Container -->
+      <div id="search-results-container" class="overflow-y-auto p-4 flex-1 divide-y divide-border-subtle min-h-[160px]">
+        <div class="p-8 text-center text-xs text-text-muted" data-i18n="search.type_prompt">
+          اكتب حرفين على الأقل للبحث الفوري...
+        </div>
       </div>
+
+      <!-- Footer Hints -->
+      <div class="p-3 bg-surface-2 border-t border-border-subtle flex items-center justify-between text-[11px] text-text-muted shrink-0">
+        <div class="flex items-center gap-3">
+          <span class="flex items-center gap-1"><kbd class="px-1.5 py-0.5 bg-surface-1 border border-border-subtle rounded text-[10px]">↑↓</kbd> للتنقل</span>
+          <span class="flex items-center gap-1"><kbd class="px-1.5 py-0.5 bg-surface-1 border border-border-subtle rounded text-[10px]">Enter</kbd> للاختيار</span>
+        </div>
+        <span class="flex items-center gap-1" data-i18n="search.hint"><kbd class="px-1.5 py-0.5 bg-surface-1 border border-border-subtle rounded text-[10px]">ESC</kbd> للإغلاق</span>
+      </div>
+
     </div>
   </div>
 

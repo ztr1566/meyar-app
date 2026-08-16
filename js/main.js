@@ -19,7 +19,7 @@ import { SettingsPage } from './pages/settings.js';
 import { AuthPage } from './pages/auth.js';
 import { RecipeScaler } from './modules/scaler.js';
 import { RFQManager } from './modules/rfq.js';
-import { MOCK_DATA } from './data/mock-data.js';
+import { MOCK_DATA } from './data/fixtures/index.js';
 import { translations } from './data/translations.js';
 import { escapeHtml, formatQuantity } from './core/utils.js';
 

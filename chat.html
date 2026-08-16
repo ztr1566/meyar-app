@@ -30,7 +30,7 @@
 </head>
 <body class="bg-canvas text-text-main min-h-screen flex flex-col antialiased selection:bg-brand-gold selection:text-white transition-colors duration-200 pb-16 lg:pb-0">
 
-    <!-- ================= GLOBAL TOPBAR ================= -->
+      <!-- ================= GLOBAL TOPBAR ================= -->
   <header class="sticky top-0 w-full border-b border-border-subtle bg-surface-1 z-30 shrink-0">
     <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 h-14 sm:h-16 flex items-center justify-between gap-2 lg:gap-3">
       
@@ -564,31 +564,46 @@
     </div>
   </div>
 
-  <!-- ================= GLOBAL COMMAND PALETTE SEARCH MODAL ================= -->
-  <div id="search-modal" role="dialog" aria-modal="true" aria-hidden="true" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-20 p-4 bg-canvas">
-    <div class="fixed inset-0" data-modal-backdrop></div>
-    <div class="relative bg-surface-1 border border-border-subtle rounded-2xl w-full max-w-xl shadow-2xl z-10 overflow-hidden text-start">
-      
-      <!-- Search Input Header -->
-      <div class="flex items-center gap-3 p-4 border-b border-border-subtle bg-surface-2">
-        <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input type="text"
-               id="global-search-input"
-               class="flex-1 bg-transparent text-sm text-text-main placeholder:text-text-muted focus:outline-none"
+  <!-- ================= SEARCH MODAL PALETTE ================= -->
+  <div id="search-modal" role="dialog" aria-modal="true" aria-hidden="true" class="hidden fixed inset-0 z-50 items-center justify-center p-4 sm:p-6">
+    <!-- Solid Backdrop overlay -->
+    <div class="fixed inset-0 bg-canvas" data-modal-backdrop></div>
+
+    <!-- Solid Dialog Container -->
+    <div class="relative bg-surface-1 border border-border-subtle rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden z-10 flex flex-col max-h-[85vh] text-start">
+
+      <!-- Input Header -->
+      <div class="p-4 border-b border-border-subtle flex items-center gap-3 shrink-0">
+        <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="global-search-input"
+               class="flex-1 bg-transparent border-0 text-sm sm:text-base text-text-main placeholder:text-text-muted focus:outline-none"
                placeholder="ابحث في الوصفات، الطهاة، التوريدات، والدورات..."
                data-i18n-placeholder="search.placeholder"
                autocomplete="off">
-        <button type="button" data-modal-close class="p-1.5 text-text-muted hover:text-text-main rounded-lg bg-surface-1 border border-border-subtle text-xs font-semibold">
-          Esc
+        <button type="button" data-modal-close class="p-1.5 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-lg transition-colors" aria-label="Close Search">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
 
       <!-- Live Search Results Container -->
-      <div id="search-results-container" class="p-4 max-h-96 overflow-y-auto space-y-2">
-        <div class="py-8 text-center text-xs text-text-muted" data-i18n="search.type_to_search">
-          اكتب كلمة البحث للاستكشاف الفوري...
+      <div id="search-results-container" class="overflow-y-auto p-4 flex-1 divide-y divide-border-subtle min-h-[160px]">
+        <div class="p-8 text-center text-xs text-text-muted" data-i18n="search.type_prompt">
+          اكتب حرفين على الأقل للبحث الفوري...
         </div>
       </div>
+
+      <!-- Footer Hints -->
+      <div class="p-3 bg-surface-2 border-t border-border-subtle flex items-center justify-between text-[11px] text-text-muted shrink-0">
+        <div class="flex items-center gap-3">
+          <span class="flex items-center gap-1"><kbd class="px-1.5 py-0.5 bg-surface-1 border border-border-subtle rounded text-[10px]">↑↓</kbd> للتنقل</span>
+          <span class="flex items-center gap-1"><kbd class="px-1.5 py-0.5 bg-surface-1 border border-border-subtle rounded text-[10px]">Enter</kbd> للاختيار</span>
+        </div>
+        <span class="flex items-center gap-1" data-i18n="search.hint"><kbd class="px-1.5 py-0.5 bg-surface-1 border border-border-subtle rounded text-[10px]">ESC</kbd> للإغلاق</span>
+      </div>
+
     </div>
   </div>
 

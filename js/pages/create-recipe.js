@@ -2,17 +2,14 @@
  * Meyar (معيار) Recipe Creator Studio Controller
  * Comprehensive 4-step wizard interface for crafting gourmet recipes with
  * dynamic ingredient list builder, step-by-step cooking method builder,
- * drag-and-drop media upload simulation, draft persistence, and publishing pipeline.
+ * drag-and-drop media upload simulation, transient draft state, and publishing pipeline.
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import { RECIPE_FIXTURES, USER_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Toast } from '../core/toast.js';
 
 export class CreateRecipeStudio {
-  static STORAGE_DRAFT = 'meyar_recipe_draft';
-  static STORAGE_CUSTOM_RECIPES = 'meyar_custom_recipes';
-
   static UNITS = [
     { value: 'g', label_ar: 'جرام (g)', label_en: 'g (grams)' },
     { value: 'kg', label_ar: 'كغ (kg)', label_en: 'kg (kilograms)' },
@@ -821,15 +818,30 @@ export class CreateRecipeStudio {
     if (summaryBox) summaryBox.classList.add('hidden');
   }
 
+  static currentDraft = null;
+  static customRecipes = [];
+
   /**
-   * Save current recipe data to localStorage draft
+   * Reset in-memory studio state (for test isolation)
+   */
+  static reset() {
+    this.currentDraft = null;
+    this.customRecipes = [];
+    this.coverImage = '';
+    this.galleryImages = [];
+    this.currentStep = 1;
+    this.isInitialized = false;
+  }
+
+  /**
+   * Save current recipe data to the current page session
    * @param {boolean} manual 
    * @returns {boolean}
    */
   static saveDraft(manual = true) {
     try {
       const formData = this.getFormData();
-      localStorage.setItem(this.STORAGE_DRAFT, JSON.stringify(formData));
+      this.currentDraft = formData;
 
       const timeStr = new Date().toLocaleTimeString((I18n?.currentLang || 'ar') === 'ar' ? 'ar-SA' : 'en-US', {
         hour: '2-digit',
@@ -858,16 +870,14 @@ export class CreateRecipeStudio {
   }
 
   /**
-   * Load existing draft from localStorage and populate inputs
+   * Load the current session draft and populate inputs
    * @returns {boolean}
    */
   static loadDraft() {
     try {
-      const draftJson = localStorage.getItem(this.STORAGE_DRAFT);
-      if (!draftJson) return false;
+      if (!this.currentDraft) return false;
 
-      const data = JSON.parse(draftJson);
-      this.populateForm(data);
+      this.populateForm(this.currentDraft);
 
       const draftStatus = document.getElementById('draft-status-indicator');
       if (draftStatus) {
@@ -941,12 +951,10 @@ export class CreateRecipeStudio {
   }
 
   /**
-   * Reset form and clear draft from localStorage
+   * Reset form and clear the current session draft
    */
   static clearDraft() {
-    try {
-      localStorage.removeItem(this.STORAGE_DRAFT);
-    } catch {}
+    this.currentDraft = null;
 
     const form = document.getElementById('create-recipe-form');
     if (form) form.reset();
@@ -997,31 +1005,19 @@ export class CreateRecipeStudio {
       ...formData,
       id: recipeId,
       created_at: new Date().toISOString().split('T')[0],
-      author_id: 'chef-1',
-      author_name_ar: 'الشيف فيصل الهاشمي',
-      author_name_en: 'Chef Faisal Al-Hashemi',
-      author_avatar: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=200&q=80',
+      author_id: USER_FIXTURES.id,
+      author_name_ar: USER_FIXTURES.name_ar,
+      author_name_en: USER_FIXTURES.name_en,
+      author_avatar: USER_FIXTURES.avatar,
       rating: 5.0,
       reviews_count: 0,
       likes_count: 0,
       saves_count: 0
     };
 
-    // Save to custom recipes localStorage list
-    try {
-      const stored = localStorage.getItem(this.STORAGE_CUSTOM_RECIPES);
-      const list = stored ? JSON.parse(stored) : [];
-      list.unshift(newRecipe);
-      localStorage.setItem(this.STORAGE_CUSTOM_RECIPES, JSON.stringify(list));
-      localStorage.removeItem(this.STORAGE_DRAFT);
-    } catch (e) {
-      console.error('Failed to persist published recipe', e);
-    }
-
-    // In-memory sync with MOCK_DATA.recipes if available
-    if (MOCK_DATA && Array.isArray(MOCK_DATA.recipes)) {
-      MOCK_DATA.recipes.unshift(newRecipe);
-    }
+    // Add to in-memory custom recipes list and clear draft
+    this.customRecipes.unshift(newRecipe);
+    this.currentDraft = null;
 
     Toast.success(I18n?.t('recipe.published_success') || 'تم نشر الوصفة بنجاح في مجتمع معيار!');
 
@@ -1039,94 +1035,11 @@ export class CreateRecipeStudio {
    * Load rich gourmet sample data into the form
    */
   static loadSampleData() {
-    const sample = {
-      title_ar: 'ستيك واغيو ريب آي مع غليز التمر والثوم الأسود المعتق',
-      title_en: 'Wagyu Ribeye with Black Garlic Date Glaze',
-      description_ar: 'قطعة لحم واغيو A5 معتقة ومطهوة لدرجة متوسطة، مغطاة بغليز مركز من دبس تمر الخلاص النجد والكمأة السوداء وثوم الحبة السوداء المخمر.',
-      description_en: 'Seared A5 Wagyu Ribeye brushed with a rich reduction of artisanal Najdi date molasses, fermented black garlic paste, and winter truffle jus.',
-      cuisine: 'Saudi',
-      category: 'Main Course',
-      difficulty: 'Hard',
-      base_servings: 4,
-      prep_time: 35,
-      cook_time: 45,
-      calories: 680,
-      tags: ['Halal', 'FineDining', 'DryAged', 'Organic'],
-      image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80',
-      gallery: [
-        'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80'
-      ],
-      video_url: 'https://youtube.com/watch?v=sample-wagyu',
-      plating_notes: 'يسكب في صحن فخاري رمادي ساخن مع التزيين بالزعتر البري وزهر الملح المدخن',
-      ingredients: [
-        {
-          name_ar: 'لحم واغيو A5 ريب آي معتق',
-          name_en: 'A5 Wagyu Ribeye Steaks',
-          baseAmount: 800,
-          unit_ar: 'جرام',
-          unit_en: 'g',
-          section: 'Main',
-          notes_ar: 'مقطعة بسماكة 3.5 سم'
-        },
-        {
-          name_ar: 'معجون الثوم الأسود المخمر',
-          name_en: 'Fermented Black Garlic Paste',
-          baseAmount: 45,
-          unit_ar: 'جرام',
-          unit_en: 'g',
-          section: 'Sauce',
-          notes_ar: 'مهروس ناعماً'
-        },
-        {
-          name_ar: 'دبس تمر خلاص فاخر',
-          name_en: 'Artisanal Kholas Date Molasses',
-          baseAmount: 60,
-          unit_ar: 'مل',
-          unit_en: 'ml',
-          section: 'Sauce',
-          notes_ar: 'طبيعي بدون سكر مضاف'
-        },
-        {
-          name_ar: 'زبدة فرنسية غير مملحة',
-          name_en: 'Unsalted Cultured French Butter',
-          baseAmount: 50,
-          unit_ar: 'جرام',
-          unit_en: 'g',
-          section: 'Marinade',
-          notes_ar: 'للدهن أثناء التحمير'
-        }
-      ],
-      steps: [
-        {
-          step_number: 1,
-          title_ar: 'تحضير لحم الواغيو والتتبيل الأولي',
-          title_en: 'Wagyu Tempering & Seasoning',
-          instruction_ar: 'أخرج شرائح الواغيو من الثلاجة قبل الطهي بـ 45 دقيقة لتصل لحرارة الغرفة. جفف السطح بورق المطبخ ثم رش الملح البحري المدخن بالتساوي.',
-          instruction_en: 'Temper the Wagyu steaks at room temperature for 45 minutes. Pat dry with culinary towels and season evenly with smoked sea salt.',
-          timer_minutes: 45,
-          tip_ar: 'لا تضع اللحم بارداً أبداً في المقلاة لتفادي انخفاض حرارة سطح التحمير وفقدان العصارة.'
-        },
-        {
-          step_number: 2,
-          title_ar: 'إعداد غليز التمر والثوم الأسود المخمر',
-          title_en: 'Preparing Black Garlic Date Glaze',
-          instruction_ar: 'في قدر نحاسي صغير على نار هادئة، اخلط معجون الثوم الأسود مع دبس التمر والخل البلسمي والديمي غلاس. قلّب باستمرار حتى يتكاثف المزيج.',
-          instruction_en: 'In a copper saucepan over low heat, whisk together black garlic paste, date molasses, balsamic, and demi-glace until reduced.',
-          timer_minutes: 10,
-          tip_ar: 'تجنب غليان الغليز الشديد حتى لا يحترق السكر الطبيعي في دبس التمر.'
-        },
-        {
-          step_number: 3,
-          title_ar: 'التحمير العالي والدهن بالزبدة (Arrosé)',
-          title_en: 'High-Heat Sear & Butter Basting',
-          instruction_ar: 'سخّن مقلاة حديد زهر حتى تصاعد دخان خفيف. اطه الواغيو لدقيقتين لكل جانب، ثم أضف الزبدة والزعتر وادهن اللحم باستمرار.',
-          instruction_en: 'Heat cast iron skillet until smoking hot. Sear Wagyu 2 min per side. Add butter and thyme, basting steaks with foaming butter.',
-          timer_minutes: 6,
-          tip_ar: 'الواغيو A5 يحتوي على دهون كافية تذوب بسرعة؛ لا تحتاج لإضافة زيت إضافي للمقلاة.'
-        }
-      ]
-    };
+    const sample = JSON.parse(JSON.stringify(RECIPE_FIXTURES[0] || {}));
+    sample.ingredients = (sample.ingredients || []).map((ingredient, index) => ({
+      ...ingredient,
+      section: index === 0 ? 'Main' : 'Sauce'
+    }));
 
     this.populateForm(sample);
     Toast.success('تم تحميل نموذج الوصفة الفاخرة بنجاح!');
@@ -1136,6 +1049,11 @@ export class CreateRecipeStudio {
    * Initialize all studio event bindings, buttons, and state
    */
   static init() {
+    if (typeof document !== 'undefined' && this.lastDocument !== document) {
+      this.isInitialized = false;
+      this.lastDocument = document;
+    }
+    if (this.isInitialized) return;
     if (typeof document === 'undefined') return;
 
     // 1. Wizard Stepper Buttons
@@ -1190,12 +1108,10 @@ export class CreateRecipeStudio {
     if (addIngBtn) addIngBtn.addEventListener('click', () => this.addIngredientRow());
     if (loadSampleIngBtn) {
       loadSampleIngBtn.addEventListener('click', () => {
-        this.setIngredients([
-          { name_ar: 'لحم واغيو A5 ريب آي', name_en: 'A5 Wagyu Ribeye', baseAmount: 800, unit_en: 'g', unit_ar: 'جرام', section: 'Main' },
-          { name_ar: 'دبس تمر خلاص نجد', name_en: 'Najdi Date Molasses', baseAmount: 60, unit_en: 'ml', unit_ar: 'مل', section: 'Sauce' },
-          { name_ar: 'معجون الثوم الأسود', name_en: 'Black Garlic Paste', baseAmount: 45, unit_en: 'g', unit_ar: 'جرام', section: 'Sauce' },
-          { name_ar: 'زبدة فرنسية غير مملحة', name_en: 'French Butter', baseAmount: 50, unit_en: 'g', unit_ar: 'جرام', section: 'Marinade' }
-        ]);
+        this.setIngredients((RECIPE_FIXTURES[0]?.ingredients || []).map((ingredient, index) => ({
+          ...ingredient,
+          section: index === 0 ? 'Main' : 'Sauce'
+        })));
         Toast.success('تمت إضافة المكونات التجريبية بنجاح');
       });
     }
@@ -1207,11 +1123,7 @@ export class CreateRecipeStudio {
     if (addStepBtn) addStepBtn.addEventListener('click', () => this.addInstructionStep());
     if (loadSampleStepsBtn) {
       loadSampleStepsBtn.addEventListener('click', () => {
-        this.setInstructions([
-          { step_number: 1, title_ar: 'التتبيل والتحضير', instruction_ar: 'أخرج اللحم من الثلاجة ليصبح بحرارة الغرفة ثم رشه بالملح البحري.', timer_minutes: 30, tip_ar: 'لا تضع اللحم بارداً في المقلاة.' },
-          { step_number: 2, title_ar: 'التحمير العالي', instruction_ar: 'سخن المقلاة واطه اللحم لدقيقتين لكل جانب مع دهنه بالزبدة والزعتر.', timer_minutes: 6, tip_ar: 'استخدم مقلاة حديد زهر ثقيلة.' },
-          { step_number: 3, title_ar: 'الراحة والسكب', instruction_ar: 'اترك اللحم ليرتاح 10 دقائق ثم ادهنه بغليز التمر الدافئ قبل التقطيع.', timer_minutes: 10, tip_ar: 'الراحة تحفظ العصارة داخل الأنسجة.' }
-        ]);
+        this.setInstructions(JSON.parse(JSON.stringify(RECIPE_FIXTURES[0]?.steps || [])));
         Toast.success('تمت إضافة خطوات التحضير التجريبية بنجاح');
       });
     }
@@ -1370,14 +1282,5 @@ export class CreateRecipeStudio {
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
-  }
-}
-
-// Auto-bootstrap when loaded in browser
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => CreateRecipeStudio.init());
-  } else {
-    CreateRecipeStudio.init();
   }
 }

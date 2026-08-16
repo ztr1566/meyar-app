@@ -91,6 +91,7 @@
       "btn.share": "\u0645\u0634\u0627\u0631\u0643\u0629",
       "btn.follow": "\u0645\u062A\u0627\u0628\u0639\u0629",
       "btn.following": "\u0645\u062A\u0627\u0628\u0639",
+      "btn.edit_profile": "\u062A\u0639\u062F\u064A\u0644 \u0627\u0644\u0645\u0644\u0641 \u0627\u0644\u0634\u062E\u0635\u064A",
       "btn.rfq_request": "\u0637\u0644\u0628 \u062A\u0633\u0639\u064A\u0631",
       "btn.enroll": "\u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0627\u0644\u0622\u0646",
       "btn.enrolled": "\u0645\u0633\u062C\u0644",
@@ -117,6 +118,8 @@
       "btn.next_step": "\u0627\u0644\u062E\u0637\u0648\u0629 \u0627\u0644\u062A\u0627\u0644\u064A\u0629",
       "btn.prev_step": "\u0627\u0644\u062E\u0637\u0648\u0629 \u0627\u0644\u0633\u0627\u0628\u0642\u0629",
       "btn.filter": "\u062A\u0635\u0641\u064A\u0629",
+      "btn.report": "\u0625\u0628\u0644\u0627\u063A \u0639\u0646 \u0627\u0644\u0645\u0646\u0634\u0648\u0631",
+      "btn.hide": "\u0625\u062E\u0641\u0627\u0621 \u0627\u0644\u0645\u0646\u0634\u0648\u0631",
       // Recipe Details & Serving Scaler
       "recipe.title": "\u0627\u0633\u0645 \u0627\u0644\u0648\u0635\u0641\u0629",
       "recipe.servings": "\u0627\u0644\u062D\u0635\u0635",
@@ -493,6 +496,40 @@
       "settings.save_success": "\u062A\u0645 \u062D\u0641\u0638 \u0648\u062A\u062D\u062F\u064A\u062B \u0627\u0644\u0625\u0639\u062F\u0627\u062F\u0627\u062A \u0628\u0646\u062C\u0627\u062D!",
       "settings.passwords_mismatch": "\u0643\u0644\u0645\u062A\u0627 \u0627\u0644\u0645\u0631\u0648\u0631 \u063A\u064A\u0631 \u0645\u062A\u0637\u0627\u0628\u0642\u062A\u064A\u0646",
       "settings.discard_changes": "\u062A\u0631\u0627\u062C\u0639 \u0639\u0646 \u0627\u0644\u062A\u0639\u062F\u064A\u0644\u0627\u062A",
+      "settings.profile_media": "\u0627\u0644\u0635\u0648\u0631 \u0648\u0627\u0644\u0647\u0648\u064A\u0629 \u0627\u0644\u0628\u0635\u0631\u064A\u0629",
+      "settings.profile_media_desc": "\u0627\u0636\u0628\u0637 \u0635\u0648\u0631\u0629 \u0627\u0644\u0645\u0644\u0641 \u0648\u0627\u0644\u063A\u0644\u0627\u0641 \u0643\u0645\u0627 \u0633\u064A\u0638\u0647\u0631\u0627\u0646 \u0641\u064A \u0635\u0641\u062D\u062A\u0643 \u0627\u0644\u0639\u0627\u0645\u0629.",
+      "settings.avatar": "\u0635\u0648\u0631\u0629 \u0627\u0644\u0645\u0644\u0641 \u0627\u0644\u0634\u062E\u0635\u064A",
+      "settings.avatar_hint": "\u0645\u0631\u0628\u0639 400\xD7400 \u0628\u0643\u0633\u0644 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644. JPG \u0623\u0648 PNG \u0623\u0648 WebP.",
+      "settings.change_avatar": "\u062A\u063A\u064A\u064A\u0631 \u0627\u0644\u0635\u0648\u0631\u0629",
+      "settings.cover": "\u0635\u0648\u0631\u0629 \u0627\u0644\u063A\u0644\u0627\u0641",
+      "settings.cover_hint": "\u0646\u0633\u0628\u0629 \u0639\u0631\u064A\u0636\u0629 1600\xD7500 \u0628\u0643\u0633\u0644 \u062A\u0642\u0631\u064A\u0628\u0627\u064B. JPG \u0623\u0648 PNG \u0623\u0648 WebP.",
+      "settings.change_cover": "\u062A\u063A\u064A\u064A\u0631 \u0627\u0644\u063A\u0644\u0627\u0641",
+      "settings.location_en": "\u0627\u0644\u0645\u062F\u064A\u0646\u0629 / \u0627\u0644\u0645\u0648\u0642\u0639 (\u0628\u0627\u0644\u0625\u0646\u062C\u0644\u064A\u0632\u064A\u0629)",
+      "settings.title_en": "\u0627\u0644\u0645\u0633\u0645\u0649 \u0627\u0644\u0645\u0647\u0646\u064A (\u0628\u0627\u0644\u0625\u0646\u062C\u0644\u064A\u0632\u064A\u0629)",
+      "settings.bio_en": "\u0646\u0628\u0630\u0629 \u0645\u0647\u0646\u064A\u0629 (\u0628\u0627\u0644\u0625\u0646\u062C\u0644\u064A\u0632\u064A\u0629)",
+      "settings.profile_details": "\u062A\u0641\u0627\u0635\u064A\u0644 \u0645\u0647\u0646\u064A\u0629 \u0625\u0636\u0627\u0641\u064A\u0629",
+      "settings.profile_details_desc": "\u0623\u0636\u0641 \u0645\u0639\u0644\u0648\u0645\u0627\u062A \u062A\u0633\u0627\u0639\u062F \u0627\u0644\u0639\u0645\u0644\u0627\u0621 \u0648\u0627\u0644\u062C\u0647\u0627\u062A \u0627\u0644\u0645\u0647\u0646\u064A\u0629 \u0639\u0644\u0649 \u0641\u0647\u0645 \u062E\u0628\u0631\u062A\u0643 \u0648\u0627\u0644\u062A\u0648\u0627\u0635\u0644 \u0645\u0639\u0643.",
+      "settings.experience": "\u0633\u0646\u0648\u0627\u062A \u0627\u0644\u062E\u0628\u0631\u0629",
+      "settings.specialties": "\u0645\u062C\u0627\u0644\u0627\u062A \u0627\u0644\u062A\u062E\u0635\u0635",
+      "settings.website": "\u0627\u0644\u0645\u0648\u0642\u0639 \u0623\u0648 \u0645\u0639\u0631\u0636 \u0627\u0644\u0623\u0639\u0645\u0627\u0644",
+      "settings.cv": "\u0627\u0644\u0633\u064A\u0631\u0629 \u0627\u0644\u0630\u0627\u062A\u064A\u0629",
+      "settings.upload_cv": "\u0631\u0641\u0639 CV",
+      "settings.no_cv": "\u0644\u0645 \u064A\u062A\u0645 \u0631\u0641\u0639 \u0645\u0644\u0641",
+      "settings.view_cv": "\u0639\u0631\u0636 \u0627\u0644\u0645\u0644\u0641",
+      "settings.cv_hint": "PDF \u0623\u0648 DOC \u0623\u0648 DOCX\u060C \u0628\u062D\u062F \u0623\u0642\u0635\u0649 5 \u0645\u064A\u063A\u0627\u0628\u0627\u064A\u062A.",
+      "settings.edit_avatar": "\u062A\u062D\u0631\u064A\u0631 \u0635\u0648\u0631\u0629 \u0627\u0644\u0645\u0644\u0641 \u0627\u0644\u0634\u062E\u0635\u064A",
+      "settings.edit_cover": "\u062A\u062D\u0631\u064A\u0631 \u0635\u0648\u0631\u0629 \u0627\u0644\u063A\u0644\u0627\u0641",
+      "settings.image_editor_desc": "\u0627\u0633\u062D\u0628 \u0627\u0644\u0635\u0648\u0631\u0629 \u062F\u0627\u062E\u0644 \u0627\u0644\u0625\u0637\u0627\u0631\u060C \u062B\u0645 \u0627\u0636\u0628\u0637 \u0627\u0644\u062A\u0643\u0628\u064A\u0631 \u0642\u0628\u0644 \u0627\u0644\u062A\u0637\u0628\u064A\u0642.",
+      "settings.image_zoom": "\u0627\u0644\u062A\u0643\u0628\u064A\u0631",
+      "settings.apply_image": "\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0635\u0648\u0631\u0629",
+      "settings.image_saved": "\u062A\u0645 \u062A\u062D\u062F\u064A\u062B \u0627\u0644\u0635\u0648\u0631\u0629. \u0627\u0636\u063A\u0637 \u062D\u0641\u0638 \u0627\u0644\u062A\u0639\u062F\u064A\u0644\u0627\u062A \u0644\u062A\u062B\u0628\u064A\u062A \u0627\u0644\u062A\u063A\u064A\u064A\u0631.",
+      "settings.image_type_error": "\u064A\u0631\u062C\u0649 \u0627\u062E\u062A\u064A\u0627\u0631 \u0635\u0648\u0631\u0629 \u0628\u0635\u064A\u063A\u0629 JPG \u0623\u0648 PNG \u0623\u0648 WebP.",
+      "settings.image_size_error": "\u064A\u062C\u0628 \u0623\u0644\u0627 \u064A\u062A\u062C\u0627\u0648\u0632 \u062D\u062C\u0645 \u0627\u0644\u0635\u0648\u0631\u0629 10 \u0645\u064A\u063A\u0627\u0628\u0627\u064A\u062A.",
+      "settings.image_read_error": "\u062A\u0639\u0630\u0631 \u0642\u0631\u0627\u0621\u0629 \u0627\u0644\u0645\u0644\u0641. \u064A\u0631\u062C\u0649 \u0627\u062E\u062A\u064A\u0627\u0631 \u0645\u0644\u0641 \u0622\u062E\u0631.",
+      "settings.cv_selected": "\u062A\u0645 \u0625\u0631\u0641\u0627\u0642 \u0627\u0644\u0633\u064A\u0631\u0629 \u0627\u0644\u0630\u0627\u062A\u064A\u0629. \u0627\u0636\u063A\u0637 \u062D\u0641\u0638 \u0627\u0644\u062A\u0639\u062F\u064A\u0644\u0627\u062A \u0644\u062A\u062B\u0628\u064A\u062A\u0647\u0627.",
+      "settings.cv_type_error": "\u064A\u0631\u062C\u0649 \u0627\u062E\u062A\u064A\u0627\u0631 \u0645\u0644\u0641 PDF \u0623\u0648 DOC \u0623\u0648 DOCX.",
+      "settings.cv_size_error": "\u064A\u062C\u0628 \u0623\u0644\u0627 \u064A\u062A\u062C\u0627\u0648\u0632 \u062D\u062C\u0645 \u0627\u0644\u0633\u064A\u0631\u0629 \u0627\u0644\u0630\u0627\u062A\u064A\u0629 5 \u0645\u064A\u063A\u0627\u0628\u0627\u064A\u062A.",
+      "settings.cv_read_error": "\u062A\u0639\u0630\u0631 \u0642\u0631\u0627\u0621\u0629 \u0627\u0644\u0633\u064A\u0631\u0629 \u0627\u0644\u0630\u0627\u062A\u064A\u0629. \u064A\u0631\u062C\u0649 \u0627\u062E\u062A\u064A\u0627\u0631 \u0645\u0644\u0641 \u0622\u062E\u0631.",
       // Unified Auth
       "auth.welcome_back": "\u0645\u0631\u062D\u0628\u0627\u064B \u0628\u0639\u0648\u062F\u062A\u0643 \u0625\u0644\u0649 \u0645\u0639\u064A\u0627\u0631",
       "auth.create_account": "\u0625\u0646\u0634\u0627\u0621 \u062D\u0633\u0627\u0628 \u062C\u062F\u064A\u062F \u0641\u064A \u0645\u0639\u064A\u0627\u0631",
@@ -532,6 +569,11 @@
       // Discovery Feed & Explore
       "feed.stories_title": "\u0646\u062E\u0628\u0629 \u0627\u0644\u0637\u0647\u0627\u0629 \u0627\u0644\u0645\u062A\u0645\u064A\u0632\u064A\u0646",
       "feed.create_post_prompt": "\u0634\u0627\u0631\u0643 \u0648\u0635\u0641\u0629 \u062C\u062F\u064A\u062F\u0629\u060C \u0641\u0643\u0631\u0629 \u0641\u064A \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A\u060C \u0623\u0648 \u062A\u062C\u0631\u0628\u0629 \u062A\u0648\u062F \u062A\u0648\u062B\u064A\u0642\u0647\u0627...",
+      "feed.edit_post_prompt": "\u062A\u0639\u062F\u064A\u0644 \u0645\u062D\u062A\u0648\u0649 \u0627\u0644\u0645\u0646\u0634\u0648\u0631:",
+      "feed.edit_recipe_prompt": "\u062A\u0639\u062F\u064A\u0644 \u0648\u0635\u0641 \u0627\u0644\u0648\u0635\u0641\u0629:",
+      "feed.edit_modal_title": "\u062A\u0639\u062F\u064A\u0644 \u0627\u0644\u0645\u062D\u062A\u0648\u0649",
+      "feed.edit_post_title": "\u062A\u0639\u062F\u064A\u0644 \u0627\u0644\u0645\u0646\u0634\u0648\u0631",
+      "feed.edit_recipe_title": "\u062A\u0639\u062F\u064A\u0644 \u0627\u0644\u0648\u0635\u0641\u0629",
       "feed.trending_topics": "\u0645\u0648\u0627\u0636\u064A\u0639 \u0637\u0647\u064A \u0631\u0627\u0626\u062C\u0629 \u0647\u0630\u0627 \u0627\u0644\u0623\u0633\u0628\u0648\u0639",
       "feed.top_suppliers": "\u0623\u0628\u0631\u0632 \u0627\u0644\u0645\u0648\u0631\u062F\u064A\u0646 \u0627\u0644\u062A\u062C\u0627\u0631\u064A\u064A\u0646 \u0627\u0644\u0645\u0639\u062A\u0645\u062F\u064A\u0646",
       "feed.upcoming_workshops": "\u0623\u0642\u0631\u0628 \u0648\u0631\u0634 \u0627\u0644\u0639\u0645\u0644 \u0627\u0644\u0645\u0628\u0627\u0634\u0631\u0629",
@@ -581,6 +623,11 @@
       "toast.settings_saved": "\u062A\u0645 \u062D\u0641\u0638 \u0648\u062A\u062D\u062F\u064A\u062B \u0627\u0644\u0625\u0639\u062F\u0627\u062F\u0627\u062A \u0628\u0646\u062C\u0627\u062D!",
       "toast.message_sent": "\u062A\u0645 \u0625\u0631\u0633\u0627\u0644 \u0627\u0644\u0631\u0633\u0627\u0644\u0629 \u0628\u0646\u062C\u0627\u062D!",
       "toast.recipe_published": "\u062A\u0645 \u0646\u0634\u0631 \u0627\u0644\u0648\u0635\u0641\u0629 \u0628\u0646\u062C\u0627\u062D \u0641\u064A \u0645\u062C\u062A\u0645\u0639 \u0645\u0639\u064A\u0627\u0631!",
+      "toast.post_reported": "\u062A\u0645 \u0627\u0644\u0625\u0628\u0644\u0627\u063A \u0639\u0646 \u0627\u0644\u0645\u0646\u0634\u0648\u0631 \u0628\u0646\u062C\u0627\u062D \u0648\u0633\u064A\u062A\u0645 \u0645\u0631\u0627\u062C\u0639\u062A\u0647",
+      "toast.post_hidden": "\u062A\u0645 \u0625\u062E\u0641\u0627\u0621 \u0627\u0644\u0645\u0646\u0634\u0648\u0631 \u0628\u0646\u062C\u0627\u062D",
+      "toast.post_deleted": "\u062A\u0645 \u062D\u0630\u0641 \u0627\u0644\u0645\u0646\u0634\u0648\u0631 \u0628\u0646\u062C\u0627\u062D",
+      "toast.post_updated": "\u062A\u0645 \u062A\u0639\u062F\u064A\u0644 \u0627\u0644\u0645\u0646\u0634\u0648\u0631 \u0628\u0646\u062C\u0627\u062D",
+      "toast.recipe_updated": "\u062A\u0645 \u062A\u0639\u062F\u064A\u0644 \u0627\u0644\u0648\u0635\u0641\u0629 \u0628\u0646\u062C\u0627\u062D",
       // Common Generic
       "common.mins": "\u062F\u0642\u064A\u0642\u0629",
       "common.hours": "\u0633\u0627\u0639\u0627\u062A",
@@ -640,6 +687,7 @@
       "btn.share": "Share",
       "btn.follow": "Follow",
       "btn.following": "Following",
+      "btn.edit_profile": "Edit Profile",
       "btn.rfq_request": "Request Quote",
       "btn.enroll": "Enroll Now",
       "btn.enrolled": "Enrolled",
@@ -666,6 +714,8 @@
       "btn.next_step": "Next Step",
       "btn.prev_step": "Previous Step",
       "btn.filter": "Filter",
+      "btn.report": "Report Post",
+      "btn.hide": "Hide Post",
       // Recipe Details & Serving Scaler
       "recipe.title": "Recipe Title",
       "recipe.servings": "Servings",
@@ -1042,6 +1092,40 @@
       "settings.save_success": "Settings updated successfully!",
       "settings.passwords_mismatch": "Passwords do not match",
       "settings.discard_changes": "Discard Changes",
+      "settings.profile_media": "Profile Media",
+      "settings.profile_media_desc": "Set the profile and cover images shown on your public page.",
+      "settings.avatar": "Profile Picture",
+      "settings.avatar_hint": "Square, at least 400\xD7400 pixels. JPG, PNG, or WebP.",
+      "settings.change_avatar": "Change Picture",
+      "settings.cover": "Cover Image",
+      "settings.cover_hint": "Wide format, about 1600\xD7500 pixels. JPG, PNG, or WebP.",
+      "settings.change_cover": "Change Cover",
+      "settings.location_en": "City / Location (English)",
+      "settings.title_en": "Professional Title (English)",
+      "settings.bio_en": "Professional Bio (English)",
+      "settings.profile_details": "Additional Professional Details",
+      "settings.profile_details_desc": "Help clients and professional partners understand your experience and contact you.",
+      "settings.experience": "Years of Experience",
+      "settings.specialties": "Areas of Specialty",
+      "settings.website": "Website or Portfolio",
+      "settings.cv": "Curriculum Vitae",
+      "settings.upload_cv": "Upload CV",
+      "settings.no_cv": "No file uploaded",
+      "settings.view_cv": "View File",
+      "settings.cv_hint": "PDF, DOC, or DOCX, up to 5 MB.",
+      "settings.edit_avatar": "Edit Profile Picture",
+      "settings.edit_cover": "Edit Cover Image",
+      "settings.image_editor_desc": "Drag the image inside the frame, then adjust the zoom before applying.",
+      "settings.image_zoom": "Zoom",
+      "settings.apply_image": "Apply Image",
+      "settings.image_saved": "Image updated. Save changes to keep it.",
+      "settings.image_type_error": "Choose a JPG, PNG, or WebP image.",
+      "settings.image_size_error": "The image must be no larger than 10 MB.",
+      "settings.image_read_error": "The file could not be read. Choose another file.",
+      "settings.cv_selected": "CV attached. Save changes to keep it.",
+      "settings.cv_type_error": "Choose a PDF, DOC, or DOCX file.",
+      "settings.cv_size_error": "The CV must be no larger than 5 MB.",
+      "settings.cv_read_error": "The CV could not be read. Choose another file.",
       // Unified Auth
       "auth.welcome_back": "Welcome Back to Meyar",
       "auth.create_account": "Create Your Meyar Account",
@@ -1081,6 +1165,11 @@
       // Discovery Feed & Explore
       "feed.stories_title": "Featured Master Chefs",
       "feed.create_post_prompt": "Share a recipe, culinary insight, or cooking technique...",
+      "feed.edit_post_prompt": "Edit post content:",
+      "feed.edit_recipe_prompt": "Edit recipe description:",
+      "feed.edit_modal_title": "Edit Content",
+      "feed.edit_post_title": "Edit Post",
+      "feed.edit_recipe_title": "Edit Recipe",
       "feed.trending_topics": "Trending Culinary Topics",
       "feed.top_suppliers": "Top Verified Suppliers",
       "feed.upcoming_workshops": "Upcoming Live Masterclasses",
@@ -1130,6 +1219,11 @@
       "toast.settings_saved": "Settings updated successfully!",
       "toast.message_sent": "Message sent successfully!",
       "toast.recipe_published": "Recipe published successfully to the Meyar community!",
+      "toast.post_reported": "Post reported successfully and will be reviewed",
+      "toast.post_hidden": "Post hidden successfully",
+      "toast.post_deleted": "Post deleted successfully",
+      "toast.post_updated": "Post updated successfully",
+      "toast.recipe_updated": "Recipe updated successfully",
       // Common Generic
       "common.mins": "mins",
       "common.hours": "hrs",
@@ -1423,2874 +1517,3752 @@
   };
   __publicField(Toast, "container", null);
 
-  // js/data/mock-data.js
-  var MOCK_DATA = {
-    // 1. CHEFS (6 Verified World-Class Chefs)
-    chefs: [
-      {
-        id: "chef-1",
-        name_ar: "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
-        name_en: "Chef Faisal Al-Hashemi",
-        handle: "@chef_faisal",
-        title: "Executive Culinary Director & Gastronomy Consultant",
-        title_ar: "\u0627\u0644\u0645\u062F\u064A\u0631 \u0627\u0644\u062A\u0646\u0641\u064A\u0630\u064A \u0644\u0644\u0637\u0647\u064A \u0648\u0645\u0633\u062A\u0634\u0627\u0631 \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631",
-        title_en: "Executive Culinary Director & Gastronomy Consultant",
-        avatar: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80",
-        cover: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
-        verified: true,
-        followers: 42800,
-        followers_formatted: "42.8k",
-        following: 310,
-        recipes_count: 24,
-        experience_years: 16,
-        rating: 4.95,
-        reviews_count: 318,
-        specialty: "Modern Saudi Fine Dining & Smoke Fermentation",
-        specialty_ar: "\u0627\u0644\u0645\u0637\u0628\u062E \u0627\u0644\u0633\u0639\u0648\u062F\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631 \u0648\u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u062A\u062F\u062E\u064A\u0646",
-        specialty_en: "Modern Saudi Fine Dining & Smoke Fermentation",
-        bio_ar: "\u0631\u0627\u0626\u062F \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0633\u0639\u0648\u062F\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631. \u064A\u0639\u064A\u062F \u0627\u0628\u062A\u0643\u0627\u0631 \u0627\u0644\u0648\u0635\u0641\u0627\u062A \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0627\u0644\u0646\u062C\u062F\u064A\u0629 \u0648\u0627\u0644\u062D\u062C\u0627\u0632\u064A\u0629 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0623\u062D\u062F\u062B \u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0648\u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0648\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062C\u0632\u064A\u0626\u064A.",
-        bio_en: "Pioneer of modern Saudi fine dining. Reinventing heritage Najdi and Hejazi recipes through precision dry-aging, wild fermentation, and progressive molecular gastronomy.",
-        philosophy_ar: "\u0627\u0644\u0637\u0647\u064A \u0644\u064A\u0633 \u0645\u062C\u0631\u062F \u0625\u0639\u062F\u0627\u062F \u0637\u0639\u0627\u0645\u060C \u0628\u0644 \u0647\u0648 \u062A\u062F\u0648\u064A\u0646 \u062A\u0627\u0631\u064A\u062E\u064A \u062D\u064A \u0644\u0644\u0623\u0631\u0636 \u0648\u0627\u0644\u0645\u0648\u0627\u0633\u0645 \u0648\u0627\u0644\u0646\u0643\u0647\u0627\u062A \u0627\u0644\u0623\u0635\u064A\u0644\u0629 \u0627\u0644\u062A\u064A \u062A\u062A\u0648\u0627\u0631\u062B\u0647\u0627 \u0627\u0644\u0623\u062C\u064A\u0627\u0644.",
-        philosophy_en: "Culinary craft is living historical storytelling\u2014capturing terroir, seasons, and ancient flavor wisdom into modern masterpieces.",
-        awards: [
-          {
-            name_ar: "\u0627\u0644\u0645\u0631\u0634\u062D \u0627\u0644\u0646\u0647\u0627\u0626\u064A \u0644\u062C\u0627\u0626\u0632\u0629 \u0627\u0644\u0628\u0648\u0643\u0648\u0632 \u062F\u0648\u0631 \u0644\u0644\u0634\u0631\u0642 \u0627\u0644\u0623\u0648\u0633\u0637",
-            name_en: "Bocuse d'Or Middle East Finalist",
-            year: 2024,
-            organization_ar: "\u0623\u0643\u0627\u062F\u064A\u0645\u064A\u0629 \u0627\u0644\u0628\u0648\u0643\u0648\u0632 \u062F\u0648\u0631 \u0627\u0644\u0639\u0627\u0644\u0645\u064A\u0629",
-            organization_en: "Bocuse d'Or World Academy",
-            badge: "Gold"
-          },
-          {
-            name_ar: "\u0634\u064A\u0641 \u0627\u0644\u0639\u0627\u0645 \u0644\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062A\u0631\u0627\u062B\u064A \u0627\u0644\u062D\u062F\u064A\u062B",
-            name_en: "Heritage Innovation Chef of the Year",
-            year: 2023,
-            organization_ar: "\u0642\u0645\u0629 \u0627\u0644\u0630\u0648\u0627\u0642\u0629 \u0627\u0644\u0639\u0627\u0644\u0645\u064A\u0629",
-            organization_en: "World Gourmet Summit",
-            badge: "Master"
-          },
-          {
-            name_ar: "\u0646\u062C\u0645\u0629 \u062F\u0644\u064A\u0644 \u0627\u0644\u0630\u0648\u0627\u0642\u0629 \u0644\u0644\u062A\u0645\u064A\u0632 \u0627\u0644\u0627\u0628\u062A\u0643\u0627\u0631\u064A",
-            name_en: "Culinary Distinction Star",
-            year: 2022,
-            organization_ar: "\u062F\u0644\u064A\u0644 \u0645\u064A\u0634\u0644\u0627\u0646 \u0627\u0644\u0627\u0633\u062A\u0634\u0627\u0631\u064A",
-            organization_en: "Gastronomy Excellence Guild",
-            badge: "Distinction"
-          }
-        ],
-        signature_dishes: [
-          {
-            id: "dish-1",
-            name_ar: "\u0633\u062A\u064A\u0643 \u0648\u0627\u063A\u064A\u0648 \u0628\u0631\u064A\u0628 \u0622\u064A \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0648\u062B\u0648\u0645 \u0623\u0633\u0648\u062F",
-            name_en: "Wagyu Ribeye with Black Garlic Date Glaze",
-            image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
-            recipe_id: "recipe-1"
-          },
-          {
-            id: "dish-2",
-            name_ar: "\u0642\u0631\u064A\u062F\u0633 \u0627\u0644\u0628\u062D\u0631 \u0627\u0644\u0623\u062D\u0645\u0631 \u0627\u0644\u0645\u0646\u0642\u0648\u0639 \u0628\u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0627\u0644\u0623\u0633\u0648\u062F",
-            name_en: "Red Sea Tiger Prawns with Dried Black Lime",
-            image: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=600&q=80",
-            recipe_id: null
-          }
-        ],
-        restaurants: [
-          {
-            name_ar: "\u0645\u0637\u0639\u0645 \u0645\u0631\u062E \u0627\u0644\u0641\u0627\u062E\u0631 - \u0627\u0644\u0631\u064A\u0627\u0636",
-            name_en: "Marakh Fine Dining - Riyadh",
-            role_ar: "\u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u062A\u0646\u0641\u064A\u0630\u064A \u0648\u0627\u0644\u0634\u0631\u064A\u0643 \u0627\u0644\u0645\u0624\u0633\u0633",
-            role_en: "Executive Chef & Co-Founder",
-            years: "2021 - Present"
-          },
-          {
-            name_ar: "\u0644\u0627 \u0631\u064A\u0632\u064A\u0631\u0641 - \u0628\u0627\u0631\u064A\u0633",
-            name_en: "La R\xE9serve - Paris",
-            role_ar: "\u0634\u064A\u0641 \u062F\u064A \u0628\u0627\u0631\u062A\u064A \u0623\u0648\u0644",
-            role_en: "Senior Chef de Partie",
-            years: "2016 - 2020"
-          }
-        ]
-      },
-      {
-        id: "chef-2",
-        name_ar: "\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
-        name_en: "Chef Elena Rostova",
-        handle: "@elena_pastry",
-        title: "Master Pastry Chef & Sugar Sculptor",
-        title_ar: "\u0645\u0627\u0633\u062A\u0631 \u0634\u064A\u0641 \u0627\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0648\u0641\u0646\u0648\u0646 \u0627\u0644\u062A\u0634\u0643\u064A\u0644 \u0628\u0627\u0644\u0633\u0643\u0631",
-        title_en: "Master Pastry Chef & Sugar Sculptor",
-        avatar: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=400&q=80",
-        cover: "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1200&q=80",
-        verified: true,
-        followers: 68500,
-        followers_formatted: "68.5k",
-        following: 240,
-        recipes_count: 31,
-        experience_years: 14,
-        rating: 4.98,
-        reviews_count: 512,
-        specialty: "French Haute P\xE2tisserie & Sugar Art",
-        specialty_ar: "\u0641\u0646\u0648\u0646 \u0627\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0627\u0644\u0641\u0631\u0646\u0633\u064A\u0629 \u0627\u0644\u0631\u0627\u0642\u064A\u0629 \u0648\u0627\u0644\u0633\u0643\u0631\u064A\u0627\u062A \u0627\u0644\u0641\u0646\u064A\u0629",
-        specialty_en: "French Haute P\xE2tisserie & Sugar Art",
-        bio_ar: "\u062E\u0631\u064A\u062C\u0629 \u0645\u0639\u0647\u062F \u0644\u0648 \u0643\u0648\u0631\u062F\u0648\u0646 \u0628\u0644\u0648 \u0628\u0627\u0631\u064A\u0633. \u062A\u062A\u062E\u0635\u0635 \u0641\u064A \u0627\u0628\u062A\u0643\u0627\u0631 \u0623\u0631\u0642\u0649 \u0643\u064A\u0643\u0627\u062A \u0627\u0644\u0625\u0646\u062A\u0631\u064A\u0645\u064A\u0647 \u0648\u0627\u0644\u0645\u0639\u062C\u0646\u0627\u062A \u0627\u0644\u0645\u0648\u0631\u0642\u0629 \u0627\u0644\u062A\u064A \u062A\u0645\u0632\u062C \u0627\u0644\u0646\u0643\u0647\u0627\u062A \u0627\u0644\u0632\u0647\u0631\u064A\u0629 \u0627\u0644\u0634\u0631\u0642\u064A\u0629 \u0645\u0639 \u0627\u0644\u062F\u0642\u0629 \u0627\u0644\u0647\u0646\u062F\u0633\u064A\u0629 \u0627\u0644\u0643\u0644\u0627\u0633\u064A\u0643\u064A\u0629.",
-        bio_en: "Le Cordon Bleu Paris Grand Dipl\xF4me alumna. Specializes in architectural entremets and laminated viennoiserie blending delicate Middle Eastern floral essences with French classical precision.",
-        philosophy_ar: "\u0635\u0646\u0627\u0639\u0629 \u0627\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0647\u064A \u0644\u0642\u0627\u0621 \u0639\u0644\u0645 \u0627\u0644\u0643\u064A\u0645\u064A\u0627\u0621 \u0627\u0644\u062F\u0642\u064A\u0642 \u0645\u0639 \u0627\u0644\u0647\u0646\u062F\u0633\u0629 \u0627\u0644\u0645\u0639\u0645\u0627\u0631\u064A\u0629 \u0627\u0644\u062A\u0634\u0643\u064A\u0644\u064A\u0629 \u0644\u0625\u0633\u0639\u0627\u062F \u0627\u0644\u062D\u0648\u0627\u0633.",
-        philosophy_en: "Pastry making is the harmonious convergence of exact chemical sciences and architectural aesthetics designed to evoke sublime joy.",
-        awards: [
-          {
-            name_ar: "\u0627\u0644\u0645\u064A\u062F\u0627\u0644\u064A\u0629 \u0627\u0644\u0641\u0636\u064A\u0629 \u0641\u064A \u0643\u0623\u0633 \u0627\u0644\u0639\u0627\u0644\u0645 \u0644\u0644\u062D\u0644\u0648\u064A\u0627\u062A",
-            name_en: "Coupe du Monde de la P\xE2tisserie Silver Medal",
-            year: 2022,
-            organization_ar: "\u0627\u0644\u0627\u062A\u062D\u0627\u062F \u0627\u0644\u062F\u0648\u0644\u064A \u0644\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0628\u0641\u0631\u0646\u0633\u0627",
-            organization_en: "International Pastry Union France",
-            badge: "Silver"
-          },
-          {
-            name_ar: "\u0623\u0641\u0636\u0644 \u0634\u064A\u0641 \u062D\u0644\u0648\u064A\u0627\u062A \u0641\u064A \u0627\u0644\u0634\u0631\u0642 \u0627\u0644\u0623\u0648\u0633\u0637",
-            name_en: "Pastry Chef of the Year MEA",
-            year: 2025,
-            organization_ar: "\u062C\u0648\u0627\u0626\u0632 \u0627\u0644\u0636\u064A\u0627\u0641\u0629 \u0627\u0644\u0639\u0627\u0644\u0645\u064A\u0629",
-            organization_en: "Global Hospitality Awards",
-            badge: "Master"
-          }
-        ],
-        signature_dishes: [
-          {
-            id: "dish-3",
-            name_ar: "\u0625\u0646\u062A\u0631\u064A\u0645\u064A\u0647 \u0627\u0644\u0641\u0633\u062A\u0642 \u0648\u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u0645\u0633\u062A\u0643\u0629",
-            name_en: "Pistachio & Rosewater Entremet with Mastic Glaze",
-            image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80",
-            recipe_id: "recipe-5"
-          },
-          {
-            id: "dish-4",
-            name_ar: "\u062A\u0627\u0631\u062A \u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u062F\u0627\u0643\u0646\u0629 \u0628\u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0645\u062F\u062E\u0646",
-            name_en: "Smoked Cardamom Dark Chocolate Tart",
-            image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80",
-            recipe_id: "recipe-8"
-          }
-        ],
-        restaurants: [
-          {
-            name_ar: "\u0623\u062A\u064A\u0644\u064A\u0647 \u0631\u0648\u0633\u062A\u0648\u0641\u0627 \u0644\u0644\u062D\u0644\u0648\u064A\u0627\u062A - \u062F\u0628\u064A",
-            name_en: "Atelier Rostova P\xE2tisserie - Dubai",
-            role_ar: "\u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u0645\u0624\u0633\u0633 \u0648\u0627\u0644\u0645\u062F\u064A\u0631 \u0627\u0644\u0625\u0628\u062F\u0627\u0639\u064A",
-            role_en: "Founder & Creative Director",
-            years: "2022 - Present"
-          }
-        ]
-      },
-      {
-        id: "chef-3",
-        name_ar: "\u0634\u064A\u0641 \u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631",
-        name_en: "Chef Tariq Mansour",
-        handle: "@tariq_firecraft",
-        title: "Master of Live Fire & Artisanal Smokehouse",
-        title_ar: "\u062E\u0628\u064A\u0631 \u0627\u0644\u0637\u0647\u064A \u0628\u0627\u0644\u0646\u0627\u0631 \u0627\u0644\u0645\u0628\u0627\u0634\u0631\u0629 \u0648\u0627\u0644\u062A\u062F\u062E\u064A\u0646 \u0627\u0644\u062A\u0631\u0627\u062B\u064A",
-        title_en: "Master of Live Fire & Artisanal Smokehouse",
-        avatar: "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=400&q=80",
-        cover: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
-        verified: true,
-        followers: 51200,
-        followers_formatted: "51.2k",
-        following: 195,
-        recipes_count: 19,
-        experience_years: 18,
-        rating: 4.92,
-        reviews_count: 420,
-        specialty: "Levantine Heritage Charcoal Grill & Smokehouse",
-        specialty_ar: "\u0627\u0644\u0645\u0634\u0627\u0648\u064A \u0627\u0644\u0634\u0627\u0645\u064A\u0629 \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0648\u0627\u0644\u062A\u062F\u062E\u064A\u0646 \u0627\u0644\u062D\u0631\u0641\u064A",
-        specialty_en: "Levantine Heritage Charcoal Grill & Smokehouse",
-        bio_ar: "\u0645\u062A\u062E\u0635\u0635 \u0641\u064A \u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u062A\u062F\u062E\u064A\u0646 \u0627\u0644\u0628\u0637\u064A\u0621 \u0639\u0644\u0649 \u062D\u0637\u0628 \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0648\u0627\u0644\u0633\u0646\u062F\u064A\u0627\u0646 \u0648\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u0644\u062D\u0648\u0645 \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629\u060C \u0645\u0639 \u062F\u0645\u062C \u0627\u0644\u0623\u0639\u0634\u0627\u0628 \u0627\u0644\u0628\u0631\u064A\u0629 \u0627\u0644\u0634\u0627\u0645\u064A\u0629 \u0648\u0627\u0644\u0645\u0643\u0633\u0631\u0627\u062A \u0627\u0644\u0645\u062D\u0645\u0635\u0629.",
-        bio_en: "Master of slow olive-wood and oak ember smoking, ancestral meat aging, and wild Levantine botanicals harmonized with ancient grain dishes.",
-        philosophy_ar: "\u0627\u0644\u0646\u0627\u0631 \u0627\u0644\u062D\u064A\u0629 \u0647\u064A \u0623\u0642\u062F\u0645 \u0645\u0639\u0644\u0645 \u0644\u0644\u0625\u0646\u0633\u0627\u0646 \u0641\u064A \u0627\u0644\u0637\u0647\u064A\u061B \u0627\u062D\u062A\u0631\u0627\u0645 \u0627\u0644\u0644\u0647\u0628 \u0648\u0627\u0644\u0648\u0642\u062A \u064A\u0645\u0646\u062D \u0627\u0644\u0645\u0643\u0648\u0646\u0627\u062A \u0639\u0645\u0642\u0627\u064B \u0644\u0627 \u064A\u0636\u0627\u0647\u064A\u0647 \u0623\u064A \u062C\u0647\u0627\u0632 \u062D\u062F\u064A\u062B.",
-        philosophy_en: "Live fire is humanity\u2019s oldest culinary mentor; respecting flames and patient time unlocks an unmatchable terroir.",
-        awards: [
-          {
-            name_ar: "\u062C\u0627\u0626\u0632\u0629 \u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u062D\u0631\u0641\u064A \u0627\u0644\u0645\u062A\u0645\u064A\u0632 \u0644\u0644\u0645\u0634\u0627\u0648\u064A",
-            name_en: "Artisanal Fire & Grill Champion",
-            year: 2023,
-            organization_ar: "\u0631\u0627\u0628\u0637\u0629 \u0637\u0647\u0627\u0629 \u0627\u0644\u0634\u0631\u0642 \u0627\u0644\u0623\u0648\u0633\u0637",
-            organization_en: "Middle East Chefs Guild",
-            badge: "Gold"
-          }
-        ],
-        signature_dishes: [
-          {
-            id: "dish-5",
-            name_ar: "\u0631\u064A\u0634 \u063A\u0646\u0645 \u0645\u062A\u0628\u0644\u0629 \u0628\u0625\u0643\u0644\u064A\u0644 \u0627\u0644\u062C\u0628\u0644 \u0627\u0644\u0645\u062F\u062E\u0646 \u0648\u0627\u0644\u062F\u0628\u0633",
-            name_en: "Smoked Rosemary Crusted Lamb Chops",
-            image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
-            recipe_id: "recipe-4"
-          },
-          {
-            id: "dish-6",
-            name_ar: "\u0631\u064A\u0632\u0648\u062A\u0648 \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0645\u0639 \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0628\u0631\u064A",
-            name_en: "Smoked Freekeh Risotto with Wild Morels",
-            image: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=600&q=80",
-            recipe_id: "recipe-7"
-          }
-        ],
-        restaurants: [
-          {
-            name_ar: "\u0645\u0637\u0639\u0645 \u0627\u0644\u062D\u0637\u0628 \u0648\u0627\u0644\u0631\u0645\u0627\u062F - \u0639\u0645\u0651\u0627\u0646 / \u0627\u0644\u0631\u064A\u0627\u0636",
-            name_en: "Ember & Oak Smokehouse - Amman / Riyadh",
-            role_ar: "\u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u062A\u0646\u0641\u064A\u0630\u064A \u0648\u0627\u0644\u0634\u0631\u064A\u0643",
-            role_en: "Executive Chef & Partner",
-            years: "2019 - Present"
-          }
-        ]
-      },
-      {
-        id: "chef-4",
-        name_ar: "\u0634\u064A\u0641 \u0643\u064A\u0646\u062C\u064A \u062A\u0627\u0643\u0627\u0647\u0627\u0634\u064A",
-        name_en: "Chef Kenji Takahashi",
-        handle: "@kenji_kaiseki",
-        title: "Two-Michelin Star Veteran & Omakase Master",
-        title_ar: "\u062D\u0627\u0635\u0644 \u0639\u0644\u0649 \u0646\u062C\u0645\u062A\u064A \u0645\u064A\u0634\u0644\u0627\u0646 \u0648\u0623\u0633\u062A\u0627\u0630 \u0641\u0646\u0648\u0646 \u0627\u0644\u0623\u0648\u0645\u0627\u0643\u0627\u0633\u064A \u0648\u0627\u0644\u0643\u0627\u064A\u0633\u064A\u0643\u064A",
-        title_en: "Two-Michelin Star Veteran & Omakase Master",
-        avatar: "https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?auto=format&fit=crop&w=400&q=80",
-        cover: "https://images.unsplash.com/photo-1579027989536-b7b1f875659b?auto=format&fit=crop&w=1200&q=80",
-        verified: true,
-        followers: 89e3,
-        followers_formatted: "89.0k",
-        following: 180,
-        recipes_count: 22,
-        experience_years: 25,
-        rating: 4.99,
-        reviews_count: 640,
-        specialty: "Contemporary Japanese Kaiseki & Omakase",
-        specialty_ar: "\u0627\u0644\u0643\u0627\u064A\u0633\u064A\u0643\u064A \u0627\u0644\u064A\u0627\u0628\u0627\u0646\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631 \u0648\u0627\u0644\u0623\u0648\u0645\u0627\u0643\u0627\u0633\u064A",
-        specialty_en: "Contemporary Japanese Kaiseki & Omakase",
-        bio_ar: "\u0642\u0636\u0649 25 \u0639\u0627\u0645\u0627\u064B \u0641\u064A \u0623\u0631\u0642\u0649 \u0645\u0637\u0627\u0639\u0645 \u0637\u0648\u0643\u064A\u0648 \u0648\u0643\u064A\u0648\u062A\u0648 \u0627\u0644\u062D\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u0646\u062C\u0648\u0645 \u0645\u064A\u0634\u0644\u0627\u0646. \u064A\u0631\u0643\u0632 \u0639\u0644\u0649 \u0646\u0642\u0627\u0621 \u0627\u0644\u0646\u0643\u0647\u0627\u062A \u0648\u062A\u0642\u0646\u064A\u0627\u062A \u062A\u0642\u0637\u064A\u0639 \u0627\u0644\u0633\u0627\u0634\u064A\u0645\u064A \u0627\u0644\u062D\u0631\u0641\u064A\u0629 \u0648\u0627\u0644\u0645\u0648\u0627\u0632\u0646\u0629 \u0627\u0644\u062F\u0642\u064A\u0642\u0629 \u0644\u0644\u0623\u0648\u0645\u0627\u0645\u064A.",
-        bio_en: "Two decades in Tokyo and Kyoto Michelin-starred institutions. Devoted to seasonal micro-harvests, master blade knife crafts, and precise umami extraction.",
-        philosophy_ar: "\u0627\u0644\u0625\u062A\u0642\u0627\u0646 \u0627\u0644\u062D\u0642\u064A\u0642\u064A \u064A\u0643\u0645\u0646 \u0641\u064A \u0627\u0644\u0628\u0633\u0627\u0637\u0629 \u0627\u0644\u062E\u0627\u0644\u0635\u0629\u061B \u0625\u0632\u0627\u0644\u0629 \u0643\u0644 \u0645\u0627 \u0647\u0648 \u0632\u0627\u0626\u062F \u0644\u0625\u0638\u0647\u0627\u0631 \u0627\u0644\u062C\u0648\u0647\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0644\u0644\u0646\u0642\u0627\u0621.",
-        philosophy_en: "True mastery lives in sublime restraint; stripping away excess until only pristine natural essence remains.",
-        awards: [
-          {
-            name_ar: "\u0646\u062C\u0645\u062A\u0627 \u0645\u064A\u0634\u0644\u0627\u0646 \u0644\u0644\u062A\u0645\u064A\u0632 \u0641\u064A \u0627\u0644\u0637\u0647\u064A",
-            name_en: "Two Michelin Stars",
-            year: 2021,
-            organization_ar: "\u062F\u0644\u064A\u0644 \u0645\u064A\u0634\u0644\u0627\u0646 \u0637\u0648\u0643\u064A\u0648",
-            organization_en: "Michelin Guide Tokyo",
-            badge: "Michelin"
-          },
-          {
-            name_ar: "\u0645\u0627\u0633\u062A\u0631 \u0627\u0644\u0623\u0648\u0645\u0627\u0645\u064A \u0627\u0644\u0639\u0627\u0644\u0645\u064A",
-            name_en: "Global Umami Master",
-            year: 2020,
-            organization_ar: "\u062C\u0645\u0639\u064A\u0629 \u0627\u0644\u0637\u0647\u0627\u0629 \u0627\u0644\u064A\u0627\u0628\u0627\u0646\u064A\u0629",
-            organization_en: "Japanese Culinary Society",
-            badge: "Master"
-          }
-        ],
-        signature_dishes: [
-          {
-            id: "dish-7",
-            name_ar: "\u0643\u0631\u0648\u0648\u062F\u0648 \u0633\u0645\u0643 \u0627\u0644\u0647\u0627\u0645\u0627\u062A\u0634\u064A \u0645\u0639 \u0627\u0644\u064A\u0648\u0632\u0648 \u0648\u0628\u0648\u0646\u0632\u0648 \u0627\u0644\u0643\u0627\u0641\u064A\u0627\u0631",
-            name_en: "Hamachi Crudo with Yuzu White Ponzu & Finger Lime",
-            image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80",
-            recipe_id: "recipe-6"
-          }
-        ],
-        restaurants: [
-          {
-            name_ar: "\u0645\u0637\u0639\u0645 \u062A\u0627\u0643\u0627\u0647\u0627\u0634\u064A \u0623\u0648\u0645\u0627\u0643\u0627\u0633\u064A - \u0637\u0648\u0643\u064A\u0648",
-            name_en: "Takahashi Omakase - Tokyo",
-            role_ar: "\u0627\u0644\u0645\u0627\u0644\u0643 \u0648\u0631\u0626\u064A\u0633 \u0627\u0644\u0637\u0647\u0627\u0629",
-            role_en: "Chef Patron",
-            years: "2015 - Present"
-          }
-        ]
-      },
-      {
-        id: "chef-5",
-        name_ar: "\u0634\u064A\u0641 \u0644\u064A\u0644\u0649 \u0628\u0646 \u062C\u0644\u0648\u0646",
-        name_en: "Chef Layla Benjelloun",
-        handle: "@layla_gastronomie",
-        title: "Contemporary Maghrebi & Mediterranean Gastronomist",
-        title_ar: "\u062E\u0628\u064A\u0631\u0629 \u0641\u0646\u0648\u0646 \u0627\u0644\u0645\u0637\u0628\u062E \u0627\u0644\u0645\u063A\u0627\u0631\u0628\u064A \u0648\u0627\u0644\u0645\u062A\u0648\u0633\u0637\u064A \u0627\u0644\u062D\u062F\u064A\u062B",
-        title_en: "Contemporary Maghrebi & Mediterranean Gastronomist",
-        avatar: "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=400&q=80",
-        cover: "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=1200&q=80",
-        verified: true,
-        followers: 37400,
-        followers_formatted: "37.4k",
-        following: 340,
-        recipes_count: 18,
-        experience_years: 13,
-        rating: 4.91,
-        reviews_count: 280,
-        specialty: "North African Haute Cuisine & Spice Geometries",
-        specialty_ar: "\u0627\u0644\u0645\u0637\u0628\u062E \u0627\u0644\u0645\u063A\u0627\u0631\u0628\u064A \u0627\u0644\u0631\u0641\u064A\u0639 \u0648\u0647\u0646\u062F\u0633\u0629 \u0627\u0644\u062A\u0648\u0627\u0628\u0644",
-        specialty_en: "North African Haute Cuisine & Spice Geometries",
-        bio_ar: "\u0628\u0627\u062D\u062B\u0629 \u0641\u064A \u062A\u0627\u0631\u064A\u062E \u0627\u0644\u0645\u0623\u0643\u0648\u0644\u0627\u062A \u0627\u0644\u0623\u0646\u062F\u0644\u0633\u064A\u0629 \u0648\u0627\u0644\u0645\u063A\u0631\u0628\u064A\u0629. \u062A\u062F\u0645\u062C \u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0637\u0647\u064A \u0628\u0627\u0644\u0628\u062E\u0627\u0631 \u0648\u0627\u0644\u062A\u062D\u0645\u064A\u0631 \u0627\u0644\u0628\u0637\u064A\u0621 \u0641\u064A \u0627\u0644\u0637\u0648\u0627\u062C\u0646 \u0627\u0644\u0641\u062E\u0627\u0631\u064A\u0629 \u0645\u0639 \u0639\u0646\u0627\u0635\u0631 \u0627\u0644\u062A\u0642\u062F\u064A\u0645 \u0627\u0644\u0641\u0646\u062F\u0642\u064A\u0629 \u0627\u0644\u062D\u062F\u064A\u062B\u0629.",
-        bio_en: "Culinary researcher exploring Andalusian and Moroccan gastronomic heritage. Modernizing slow-simmered clay tagines with delicate herb oils and fine dining plating.",
-        philosophy_ar: "\u0627\u0644\u062A\u0648\u0627\u0628\u0644 \u0644\u064A\u0633\u062A \u0646\u0643\u0647\u0629 \u0625\u0636\u0627\u0641\u064A\u0629\u060C \u0628\u0644 \u0647\u064A \u0646\u063A\u0645\u0627\u062A \u0645\u0648\u0633\u064A\u0642\u064A\u0629 \u0645\u062A\u0646\u0627\u063A\u0645\u0629 \u062A\u0639\u0632\u0641 \u0644\u062D\u0646 \u0627\u0644\u0623\u0631\u0636 \u0648\u062B\u0642\u0627\u0641\u062A\u0647\u0627.",
-        philosophy_en: "Spices are not mere seasonings; they are tonal symphonies that echo the earth and cultural memory.",
-        awards: [
-          {
-            name_ar: "\u062C\u0627\u0626\u0632\u0629 \u0627\u0644\u062A\u0645\u064A\u0632 \u0627\u0644\u0645\u0637\u0628\u062E\u064A \u0627\u0644\u0623\u0641\u0631\u064A\u0642\u064A",
-            name_en: "African Culinary Excellence Award",
-            year: 2024,
-            organization_ar: "\u0645\u0646\u0638\u0645\u0629 \u0627\u0644\u0630\u0648\u0627\u0642\u0629 \u0627\u0644\u0623\u0641\u0631\u064A\u0642\u064A\u0629",
-            organization_en: "African Gastronomy Guild",
-            badge: "Gold"
-          }
-        ],
-        signature_dishes: [
-          {
-            id: "dish-8",
-            name_ar: "\u0642\u0627\u0631\u0648\u0635 \u0627\u0644\u0628\u062D\u0631 \u0628\u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0645\u0639 \u0645\u0633\u062A\u062D\u0644\u0628 \u0627\u0644\u0647\u064A\u0644",
-            name_en: "Saffron Infused Sea Bass with Cardamom Emulsion",
-            image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
-            recipe_id: "recipe-2"
-          }
-        ],
-        restaurants: [
-          {
-            name_ar: "\u0645\u0637\u0639\u0645 \u0644\u0627\u0631\u062C\u0627\u0646\u064A\u064A\u0647 - \u0645\u0631\u0627\u0643\u0634 / \u0627\u0644\u062F\u0627\u0631 \u0627\u0644\u0628\u064A\u0636\u0627\u0621",
-            name_en: "L'Arganier Haute Table - Marrakech",
-            role_ar: "\u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u062A\u0646\u0641\u064A\u0630\u064A",
-            role_en: "Executive Chef",
-            years: "2020 - Present"
-          }
-        ]
-      },
-      {
-        id: "chef-6",
-        name_ar: "\u0634\u064A\u0641 \u0645\u0627\u0631\u0643\u0648 \u0628\u064A\u0644\u064A\u0646\u064A",
-        name_en: "Chef Marco Bellini",
-        handle: "@marco_pastaio",
-        title: "Master Pastaio & Piedmont Truffle Specialist",
-        title_ar: "\u0645\u0627\u0633\u062A\u0631 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u062D\u0631\u0641\u064A\u0629 \u0648\u062E\u0628\u064A\u0631 \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0625\u064A\u0637\u0627\u0644\u064A\u0629",
-        title_en: "Master Pastaio & Piedmont Truffle Specialist",
-        avatar: "https://images.unsplash.com/photo-1574966740793-953ad375ded5?auto=format&fit=crop&w=400&q=80",
-        cover: "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?auto=format&fit=crop&w=1200&q=80",
-        verified: true,
-        followers: 73100,
-        followers_formatted: "73.1k",
-        following: 220,
-        recipes_count: 27,
-        experience_years: 21,
-        rating: 4.97,
-        reviews_count: 580,
-        specialty: "Artisanal Italian Pasta & Mycological Gastronomy",
-        specialty_ar: "\u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u0625\u064A\u0637\u0627\u0644\u064A\u0629 \u0627\u0644\u062D\u0631\u0641\u064A\u0629 \u0648\u0641\u0646\u0648\u0646 \u0627\u0644\u0641\u0637\u0631 \u0627\u0644\u0628\u0631\u064A \u0648\u0627\u0644\u0643\u0645\u0623\u0629",
-        specialty_en: "Artisanal Italian Pasta & Mycological Gastronomy",
-        bio_ar: "\u0645\u0646 \u0633\u0644\u0627\u0644\u0629 \u0635\u0627\u0646\u0639\u064A \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0641\u064A \u0628\u0648\u0644\u0648\u0646\u064A\u0627. \u064A\u0643\u0631\u0633 \u0641\u0646\u0647 \u0644\u0635\u0646\u0627\u0639\u0629 \u0627\u0644\u0645\u0639\u0643\u0631\u0648\u0646\u0629 \u0627\u0644\u064A\u062F\u0648\u064A\u0629 \u0645\u0646 \u0642\u0645\u062D \u0627\u0644\u062F\u064A\u0648\u0631\u0645 \u0627\u0644\u0639\u0636\u0648\u064A \u0648\u0623\u0646\u062F\u0631 \u0623\u0646\u0648\u0627\u0639 \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u0648\u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0645\u0646 \u063A\u0627\u0628\u0627\u062A \u0628\u064A\u064A\u0645\u0648\u0646\u062A\u064A.",
-        bio_en: "Third-generation master pastaio from Bologna. Dedicated to hand-shaped heirloom durum pasta, artisanal bronze extrusions, and Piedmont wild truffles.",
-        philosophy_ar: "\u0627\u0644\u0639\u062C\u064A\u0646 \u0643\u0627\u0626\u0646 \u062D\u064A \u064A\u062A\u0646\u0641\u0633\u061B \u064A\u062C\u0628 \u0623\u0646 \u062A\u0634\u0639\u0631 \u0628\u0631\u0637\u0648\u0628\u062A\u0647 \u0648\u062D\u0631\u0627\u0631\u0629 \u064A\u062F\u064A\u0643 \u0644\u062A\u0635\u0644 \u0625\u0644\u0649 \u0627\u0644\u0642\u0648\u0627\u0645 \u0627\u0644\u062D\u0631\u064A\u0631\u064A \u0627\u0644\u0645\u062B\u0627\u0644\u064A.",
-        philosophy_en: "Pasta dough is a living canvas; you must feel its moisture, tension, and soul to achieve ethereal al dente perfection.",
-        awards: [
-          {
-            name_ar: "\u0627\u0644\u0634\u0648\u0643\u0627\u062A \u0627\u0644\u062B\u0644\u0627\u062B \u0644\u062F\u0644\u064A\u0644 \u063A\u0627\u0645\u0628\u064A\u0631\u0648 \u0631\u0648\u0633\u0648",
-            name_en: "Gambero Rosso 3 Tre Forchette",
-            year: 2023,
-            organization_ar: "\u062F\u0644\u064A\u0644 \u063A\u0627\u0645\u0628\u064A\u0631\u0648 \u0631\u0648\u0633\u0648 \u0627\u0644\u0625\u064A\u0637\u0627\u0644\u064A",
-            organization_en: "Gambero Rosso Guide",
-            badge: "Gold"
-          },
-          {
-            name_ar: "\u0628\u0637\u0644 \u0627\u0644\u0639\u0627\u0644\u0645 \u0644\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u062D\u0631\u0641\u064A\u0629",
-            name_en: "World Artisanal Pasta Champion",
-            year: 2021,
-            organization_ar: "\u0623\u0643\u0627\u062F\u064A\u0645\u064A\u0629 \u0628\u0627\u0631\u064A\u0644\u0627 \u0644\u0644\u0637\u0647\u064A \u0627\u0644\u062D\u0631\u0641\u064A",
-            organization_en: "Barilla Culinary Academy",
-            badge: "Master"
-          }
-        ],
-        signature_dishes: [
-          {
-            id: "dish-9",
-            name_ar: "\u0623\u0646\u0648\u0644\u0648\u062A\u064A \u0628\u0627\u0644\u0631\u064A\u0643\u0648\u062A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0648\u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621",
-            name_en: "Wild Truffle & Smoked Ricotta Agnolotti",
-            image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80",
-            recipe_id: "recipe-3"
-          }
-        ],
-        restaurants: [
-          {
-            name_ar: "\u0623\u0648\u0633\u062A\u064A\u0631\u064A\u0627 \u0628\u064A\u0644\u064A\u0646\u064A - \u0641\u0644\u0648\u0631\u0646\u0633\u0627",
-            name_en: "Osteria Bellini - Florence",
-            role_ar: "\u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u0645\u0627\u0644\u0643",
-            role_en: "Chef Patron",
-            years: "2017 - Present"
-          }
-        ]
-      }
-    ],
-    // 2. RECIPES (8 Structured Gourmet Masterpieces)
-    recipes: [
-      {
-        id: "recipe-1",
-        title: "Wagyu Ribeye with Black Garlic Date Glaze",
-        title_ar: "\u0633\u062A\u064A\u0643 \u0648\u0627\u063A\u064A\u0648 \u0631\u064A\u0628 \u0622\u064A \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0648\u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0644\u0645\u0639\u062A\u0642",
-        title_en: "Wagyu Ribeye with Black Garlic Date Glaze",
-        description_ar: "\u0642\u0637\u0639\u0629 \u0644\u062D\u0645 \u0648\u0627\u063A\u064A\u0648 A5 \u0645\u0639\u062A\u0642\u0629 \u0648\u0645\u0637\u0647\u0648\u0629 \u0644\u062F\u0631\u062C\u0629 \u0645\u062A\u0648\u0633\u0637\u0629\u060C \u0645\u063A\u0637\u0627\u0629 \u0628\u063A\u0644\u064A\u0632 \u0645\u0631\u0643\u0632 \u0645\u0646 \u062F\u0628\u0633 \u062A\u0645\u0631 \u0627\u0644\u062E\u0644\u0627\u0635 \u0627\u0644\u0646\u062C\u062F \u0648\u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0648\u062B\u0648\u0645 \u0627\u0644\u062D\u0628\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0627\u0644\u0645\u062E\u0645\u0631.",
-        description_en: "Seared A5 Wagyu Ribeye brushed with a rich reduction of artisanal Najdi date molasses, fermented black garlic paste, and winter truffle jus.",
-        author_id: "chef-1",
-        author_name_ar: "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
-        author_name_en: "Chef Faisal Al-Hashemi",
-        author_avatar: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=200&q=80",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80",
-          "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
-        ],
-        cuisine: "Contemporary Saudi Fusion",
-        cuisine_ar: "\u0633\u0639\u0648\u062F\u064A \u0645\u0639\u0627\u0635\u0631",
-        cuisine_en: "Contemporary Saudi",
-        category: "Main Course",
-        category_ar: "\u0623\u0637\u0628\u0627\u0642 \u0631\u0626\u064A\u0633\u064A\u0629",
-        category_en: "Main Course",
-        difficulty: "Hard",
-        difficulty_ar: "\u0645\u062A\u0642\u062F\u0645",
-        difficulty_en: "Hard",
-        base_servings: 4,
-        prep_time: 35,
-        cook_time: 45,
-        total_time: 80,
-        calories: 680,
-        likes_count: 1420,
-        saves_count: 890,
-        rating: 4.96,
-        reviews_count: 114,
-        created_at: "2026-08-01",
-        tags: ["Wagyu", "FineDining", "SaudiFlavors", "BlackGarlic", "Glaze"],
-        ingredients: [
-          {
-            id: "ing-1",
-            name_ar: "\u0644\u062D\u0645 \u0648\u0627\u063A\u064A\u0648 A5 \u0631\u064A\u0628 \u0622\u064A \u0645\u0639\u062A\u0642",
-            name_en: "A5 Wagyu Ribeye Steaks",
-            baseAmount: 800,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u0642\u0637\u0639\u0629 \u0628\u0633\u0645\u0627\u0643\u0629 3.5 \u0633\u0645",
-            notes_en: "Cut to 3.5cm thickness"
-          },
-          {
-            id: "ing-2",
-            name_ar: "\u0645\u0639\u062C\u0648\u0646 \u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0644\u0645\u062E\u0645\u0631",
-            name_en: "Fermented Black Garlic Paste",
-            baseAmount: 45,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u0647\u0631\u0648\u0633 \u0646\u0627\u0639\u0645\u0627\u064B",
-            notes_en: "Smoothly pureed"
-          },
-          {
-            id: "ing-3",
-            name_ar: "\u062F\u0628\u0633 \u062A\u0645\u0631 \u062E\u0644\u0627\u0635 \u0641\u0627\u062E\u0631",
-            name_en: "Artisanal Kholas Date Molasses",
-            baseAmount: 60,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0637\u0628\u064A\u0639\u064A \u0628\u062F\u0648\u0646 \u0633\u0643\u0631 \u0645\u0636\u0627\u0641",
-            notes_en: "100% pure organic"
-          },
-          {
-            id: "ing-4",
-            name_ar: "\u0645\u0631\u0642 \u0644\u062D\u0645 \u0645\u0631\u0643\u0632 (\u062F\u064A\u0645\u064A \u063A\u0644\u0627\u0633)",
-            name_en: "Veal Bone Marrow Demi-Glace",
-            baseAmount: 120,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0645\u062E\u062A\u0632\u0644 \u0644\u0645\u062F\u0629 24 \u0633\u0627\u0639\u0629",
-            notes_en: "24-hour reduction"
-          },
-          {
-            id: "ing-5",
-            name_ar: "\u0632\u0628\u062F\u0629 \u0641\u0631\u0646\u0633\u064A\u0629 \u063A\u064A\u0631 \u0645\u0645\u0644\u062D\u0629",
-            name_en: "Unsalted Cultured French Butter",
-            baseAmount: 50,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u062F\u0647\u0646 \u0627\u0644\u0633\u062A\u064A\u0643 \u0623\u062B\u0646\u0627\u0621 \u0627\u0644\u062A\u062D\u0645\u064A\u0631",
-            notes_en: "For basting"
-          },
-          {
-            id: "ing-6",
-            name_ar: "\u0623\u063A\u0635\u0627\u0646 \u0632\u0639\u062A\u0631 \u0628\u0631\u064A \u0637\u0627\u0632\u062C",
-            name_en: "Fresh Wild Thyme Sprigs",
-            baseAmount: 4,
-            unit_ar: "\u062D\u0628\u0629",
-            unit_en: "pcs",
-            notes_ar: "\u0645\u063A\u0633\u0648\u0644\u0629 \u0648\u0645\u062C\u0641\u0641\u0629",
-            notes_en: "Freshly bruised"
-          },
-          {
-            id: "ing-7",
-            name_ar: "\u062E\u0644 \u0628\u0644\u0633\u0645\u064A \u0645\u0639\u062A\u0642 12 \u0639\u0627\u0645\u0627\u064B",
-            name_en: "12-Year Aged Balsamic Vinegar",
-            baseAmount: 20,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0644\u0645\u0648\u0627\u0632\u0646\u0629 \u0627\u0644\u062D\u0645\u0648\u0636\u0629",
-            notes_en: "For acidity balance"
-          },
-          {
-            id: "ing-8",
-            name_ar: "\u0645\u0644\u062D \u0628\u062D\u0631\u064A \u0645\u062F\u062E\u0646 \u0646\u0627\u0639\u0645",
-            name_en: "Flaky Smoked Sea Salt",
-            baseAmount: 10,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0644\u062A\u0644\u0645\u064A\u0639 \u0627\u0644\u0646\u0647\u0627\u0626\u064A \u0639\u0646\u062F \u0627\u0644\u062A\u0642\u062F\u064A\u0645",
-            notes_en: "For final finishing"
-          }
-        ],
-        steps: [
-          {
-            step_number: 1,
-            title_ar: "\u062A\u062D\u0636\u064A\u0631 \u0644\u062D\u0645 \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0648\u0627\u0644\u062A\u062A\u0628\u064A\u0644 \u0627\u0644\u0623\u0648\u0644\u064A",
-            title_en: "Wagyu Tempering & Seasoning",
-            instruction_ar: "\u0623\u062E\u0631\u062C \u0634\u0631\u0627\u0626\u062D \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0645\u0646 \u0627\u0644\u062B\u0644\u0627\u062C\u0629 \u0642\u0628\u0644 \u0627\u0644\u0637\u0647\u064A \u0628\u0640 45 \u062F\u0642\u064A\u0642\u0629 \u0644\u062A\u0635\u0644 \u0644\u062D\u0631\u0627\u0631\u0629 \u0627\u0644\u063A\u0631\u0641\u0629. \u062C\u0641\u0641 \u0627\u0644\u0633\u0637\u062D \u0628\u0648\u0631\u0642 \u0627\u0644\u0645\u0637\u0628\u062E \u062B\u0645 \u0631\u0634 \u0646\u0635\u0641 \u0643\u0645\u064A\u0629 \u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0628\u062D\u0631\u064A \u0627\u0644\u0645\u062F\u062E\u0646 \u0639\u0644\u0649 \u0643\u0644\u0627 \u0627\u0644\u0648\u062C\u0647\u064A\u0646 \u0628\u0627\u0644\u062A\u0633\u0627\u0648\u064A.",
-            instruction_en: "Temper the Wagyu steaks at room temperature for 45 minutes. Pat dry with culinary towels and season evenly with half of the smoked flaky sea salt.",
-            timer_minutes: 45,
-            tip_ar: "\u0644\u0627 \u062A\u0636\u0639 \u0627\u0644\u0644\u062D\u0645 \u0628\u0627\u0631\u062F\u0627\u064B \u0623\u0628\u062F\u0627\u064B \u0641\u064A \u0627\u0644\u0645\u0642\u0644\u0627\u0629 \u0644\u062A\u0641\u0627\u062F\u064A \u0627\u0646\u062E\u0641\u0627\u0636 \u062D\u0631\u0627\u0631\u0629 \u0633\u0637\u062D \u0627\u0644\u062A\u062D\u0645\u064A\u0631 \u0648\u0641\u0642\u062F\u0627\u0646 \u0627\u0644\u0639\u0635\u0627\u0631\u0629.",
-            tip_en: "Never sear cold Wagyu directly from the fridge as it causes sudden temperature drop and juice loss."
-          },
-          {
-            step_number: 2,
-            title_ar: "\u0625\u0639\u062F\u0627\u062F \u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0648\u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0644\u0645\u062E\u0645\u0631",
-            title_en: "Preparing Black Garlic Date Glaze",
-            instruction_ar: "\u0641\u064A \u0642\u062F\u0631 \u0646\u062D\u0627\u0633\u064A \u0635\u063A\u064A\u0631 \u0639\u0644\u0649 \u0646\u0627\u0631 \u0647\u0627\u062F\u0626\u0629\u060C \u0627\u062E\u0644\u0637 \u0645\u0639\u062C\u0648\u0646 \u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0645\u0639 \u062F\u0628\u0633 \u0627\u0644\u062A\u0645\u0631 \u0648\u0627\u0644\u062E\u0644 \u0627\u0644\u0628\u0644\u0633\u0645\u064A \u0648\u0627\u0644\u062F\u064A\u0645\u064A \u063A\u0644\u0627\u0633. \u0642\u0644\u0651\u0628 \u0628\u0627\u0633\u062A\u0645\u0631\u0627\u0631 \u062D\u062A\u0649 \u064A\u062A\u0643\u0627\u062B\u0641 \u0627\u0644\u0645\u0632\u064A\u062C \u0644\u064A\u063A\u0637\u064A \u0638\u0647\u0631 \u0627\u0644\u0645\u0644\u0639\u0642\u0629\u060C \u062B\u0645 \u0627\u0631\u0641\u0639\u0647 \u0639\u0646 \u0627\u0644\u0646\u0627\u0631 \u0648\u0627\u062A\u0631\u0643\u0647 \u062F\u0627\u0641\u0626\u0627\u064B.",
-            instruction_en: "In a heavy copper saucepan over low heat, whisk together black garlic paste, date molasses, aged balsamic, and demi-glace. Simmer until it coats the back of a spoon smoothly.",
-            timer_minutes: 10,
-            tip_ar: "\u062A\u062C\u0646\u0628 \u063A\u0644\u064A\u0627\u0646 \u0627\u0644\u063A\u0644\u064A\u0632 \u0627\u0644\u0634\u062F\u064A\u062F \u062D\u062A\u0649 \u0644\u0627 \u064A\u062D\u062A\u0631\u0642 \u0627\u0644\u0633\u0643\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0641\u064A \u062F\u0628\u0633 \u0627\u0644\u062A\u0645\u0631 \u0648\u064A\u0635\u0628\u062D \u0645\u0631\u0627\u064B.",
-            tip_en: "Avoid rapid boiling to preserve the nuanced natural sweetness of the dates."
-          },
-          {
-            step_number: 3,
-            title_ar: "\u0627\u0644\u062A\u062D\u0645\u064A\u0631 \u0627\u0644\u0639\u0627\u0644\u064A \u0648\u0627\u0644\u062F\u0647\u0646 \u0628\u0627\u0644\u0632\u0628\u062F\u0629 (Arros\xE9)",
-            title_en: "High-Heat Sear & Butter Basting",
-            instruction_ar: "\u0633\u062E\u0651\u0646 \u0645\u0642\u0644\u0627\u0629 \u062D\u062F\u064A\u062F \u0632\u0647\u0631 (Cast Iron) \u062D\u062A\u0649 \u062A\u0635\u0627\u0639\u062F \u062F\u062E\u0627\u0646 \u062E\u0641\u064A\u0641. \u0636\u0639 \u0642\u0637\u0639 \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0648\u0627\u0637\u0647\u0647\u0627 \u0644\u0645\u062F\u0629 \u062F\u0642\u064A\u0642\u062A\u064A\u0646 \u0644\u0643\u0644 \u062C\u0627\u0646\u0628 \u062D\u062A\u0649 \u062A\u062A\u0643\u0648\u0646 \u0637\u0628\u0642\u0629 \u0643\u0631\u0627\u0645\u064A\u0644 \u0630\u0647\u0628\u064A\u0629 \u0628\u0646\u064A\u0629. \u0623\u0636\u0641 \u0627\u0644\u0632\u0628\u062F\u0629 \u0648\u0627\u0644\u0632\u0639\u062A\u0631 \u0627\u0644\u0628\u0631\u064A \u0648\u0642\u0645 \u0628\u062F\u0647\u0646 \u0627\u0644\u0633\u062A\u064A\u0643 \u0628\u0645\u0644\u0639\u0642\u0629 \u0644\u0645\u062F\u0629 \u062F\u0642\u064A\u0642\u0629 \u0625\u0636\u0627\u0641\u064A\u0629.",
-            instruction_en: "Heat a cast iron skillet until smoking hot. Sear Wagyu for 2 minutes per side to form a deep crust. Add butter and thyme, vigorously spooning foaming butter over steaks for 1 minute.",
-            timer_minutes: 6,
-            tip_ar: "\u0627\u0644\u0648\u0627\u063A\u064A\u0648 A5 \u064A\u062D\u062A\u0648\u064A \u0639\u0644\u0649 \u062F\u0647\u0648\u0646 \u0631\u062E\u0627\u0645\u064A\u0629 \u063A\u0646\u064A\u0629 \u062A\u0630\u0648\u0628 \u0628\u0633\u0631\u0639\u0629\u061B \u0644\u0627 \u062A\u062D\u062A\u0627\u062C \u0644\u0625\u0636\u0627\u0641\u0629 \u0632\u064A\u062A \u0625\u0636\u0627\u0641\u064A \u0644\u0644\u0645\u0642\u0644\u0627\u0629.",
-            tip_en: "A5 Wagyu renders its own pristine fat; no supplementary oil is needed in the pan."
-          },
-          {
-            step_number: 4,
-            title_ar: "\u0627\u0644\u062A\u0634\u0631\u064A\u0628 \u0628\u0627\u0644\u063A\u0644\u064A\u0632 \u0648\u0625\u0631\u0627\u062D\u0629 \u0627\u0644\u0644\u062D\u0645",
-            title_en: "Glazing & Resting the Meat",
-            instruction_ar: "\u0627\u0631\u0641\u0639 \u0627\u0644\u0633\u062A\u064A\u0643 \u0625\u0644\u0649 \u0644\u0648\u062D \u0627\u0644\u062A\u0642\u0637\u064A\u0639 \u0627\u0644\u062E\u0634\u0628\u064A\u060C \u0648\u0627\u062F\u0647\u0646 \u0627\u0644\u0648\u062C\u0647\u064A\u0646 \u0628\u0633\u062E\u0627\u0621 \u0628\u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0627\u0644\u062F\u0627\u0641\u0626 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0641\u0631\u0634\u0627\u0629 \u0633\u064A\u0644\u064A\u0643\u0648\u0646. \u0627\u062A\u0631\u0643 \u0627\u0644\u0644\u062D\u0645 \u0644\u064A\u0631\u062A\u0627\u062D \u0644\u0645\u062F\u0629 8 \u0625\u0644\u0649 10 \u062F\u0642\u0627\u0626\u0642 \u0644\u062A\u0639\u064A\u062F \u0627\u0644\u0623\u0644\u064A\u0627\u0641 \u0627\u0645\u062A\u0635\u0627\u0635 \u0627\u0644\u0633\u0648\u0627\u0626\u0644.",
-            instruction_en: "Transfer steaks to a warm carving board and brush generously with warm black garlic glaze. Rest for 8-10 minutes allowing intramuscular juices to settle.",
-            timer_minutes: 10,
-            tip_ar: "\u0641\u062A\u0631\u0629 \u0627\u0644\u0631\u0627\u062D\u0629 \u0623\u0633\u0627\u0633\u064A\u0629 \u0644\u062C\u0639\u0644 \u0627\u0644\u0644\u062D\u0645 \u0637\u0631\u064A\u0627\u064B \u062C\u062F\u0627\u064B \u0648\u0630\u0627 \u0639\u0635\u0627\u0631\u0629 \u0645\u062A\u0648\u0627\u0632\u0646\u0629.",
-            tip_en: "Resting allows internal fibers to reabsorb flavor juices evenly throughout the steak."
-          },
-          {
-            step_number: 5,
-            title_ar: "\u0627\u0644\u062A\u0642\u0637\u064A\u0639 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645 \u0627\u0644\u0641\u0627\u062E\u0631",
-            title_en: "Carving & Plating Presentation",
-            instruction_ar: "\u0627\u0642\u0637\u0639 \u0634\u0631\u0627\u0626\u062D \u0627\u0644\u0633\u062A\u064A\u0643 \u0628\u0632\u0627\u0648\u064A\u0629 45 \u062F\u0631\u062C\u0629 \u0628\u0633\u0645\u0627\u0643\u0629 1 \u0633\u0645. \u0631\u062A\u0628\u0647\u0627 \u0641\u064A \u0637\u0628\u0642 \u0627\u0644\u062A\u0642\u062F\u064A\u0645 \u0627\u0644\u062F\u0627\u0641\u0626\u060C \u0648\u0631\u0634 \u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0645\u062F\u062E\u0646 \u0627\u0644\u0645\u062A\u0628\u0642\u064A \u0648\u0623\u0636\u0641 \u0642\u0637\u0631\u0627\u062A \u0645\u0646 \u0632\u064A\u062A \u0627\u0644\u0623\u0639\u0634\u0627\u0628 \u0628\u062C\u0627\u0646\u0628 \u0628\u0637\u0627\u0637\u0633 \u0627\u0644\u0628\u0627\u0641\u064A\u0647 \u0627\u0644\u0645\u0642\u0631\u0645\u0634\u0629.",
-            instruction_en: "Carve steaks against the grain into 1cm slices. Fan out on warm plates, finish with smoked salt flakes, and drizzle residual glaze alongside potato pav\xE9.",
-            timer_minutes: 5,
-            tip_ar: "\u0642\u062F\u0651\u0645 \u0627\u0644\u0637\u0628\u0642 \u062F\u0627\u0626\u0645\u0627\u064B \u0639\u0644\u0649 \u0623\u0648\u0627\u0646\u064D \u0645\u0633\u062E\u0646\u0629 \u0645\u0633\u0628\u0642\u0627\u064B \u0644\u0644\u062D\u0641\u0627\u0638 \u0639\u0644\u0649 \u062F\u0641\u0621 \u062F\u0647\u0646 \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0627\u0644\u062D\u0631\u064A\u0631\u064A.",
-            tip_en: "Always serve on pre-warmed plates so the luscious Wagyu fat maintains its velvety texture."
-          }
-        ],
-        nutrition: {
-          calories: 680,
-          protein: "52g",
-          carbs: "18g",
-          fats: "46g",
-          fiber: "2.5g",
-          sodium: "620mg"
-        },
-        pairings: {
-          drink_ar: "\u0625\u0643\u0633\u064A\u0631 \u0627\u0644\u0631\u0645\u0627\u0646 \u0627\u0644\u0645\u0631\u0643\u0632 \u0645\u0639 \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0648\u0627\u0644\u0645\u0627\u0621 \u0627\u0644\u0641\u0648\u0627\u0631 \u0627\u0644\u0645\u0628\u0631\u062F",
-          drink_en: "Sparkling Pomegranate & Fresh Mint Botanical Elixir",
-          side_ar: "\u0628\u0637\u0627\u0637\u0633 \u0627\u0644\u0628\u0627\u0641\u064A\u0647 \u0627\u0644\u0645\u0643\u0631\u0645\u0644\u0629 \u0645\u0639 \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0628\u0631\u064A \u0648\u0627\u0644\u0643\u0645\u0623\u0629",
-          side_en: "Crispy Truffled Potato Pav\xE9 with Saut\xE9ed Morel Mushrooms",
-          notes_ar: "\u062D\u0645\u0648\u0636\u0629 \u0627\u0644\u0631\u0645\u0627\u0646 \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u0629 \u062A\u0643\u0633\u0631 \u062F\u0633\u0645 \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0627\u0644\u0639\u0627\u0644\u064A \u0648\u062A\u0628\u0631\u0632 \u0646\u0643\u0647\u0629 \u062A\u0645\u0631 \u0627\u0644\u062E\u0644\u0627\u0635 \u0627\u0644\u0645\u0639\u062A\u0642.",
-          notes_en: "The natural tartness of pomegranate cuts through the rich marbling while elevating the date glaze."
-        }
-      },
-      {
-        id: "recipe-2",
-        title: "Saffron Infused Sea Bass with Cardamom Emulsion",
-        title_ar: "\u0642\u0627\u0631\u0648\u0635 \u0627\u0644\u0628\u062D\u0631 \u0628\u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0627\u0644\u0645\u0644\u0643\u064A \u0648\u0645\u0633\u062A\u062D\u0644\u0628 \u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0623\u062E\u0636\u0631",
-        title_en: "Saffron Infused Sea Bass with Cardamom Emulsion",
-        description_ar: "\u0641\u064A\u0644\u064A\u0647 \u0642\u0627\u0631\u0648\u0635 \u0627\u0644\u0628\u062D\u0631 \u0627\u0644\u0628\u0631\u064A \u0627\u0644\u0645\u062D\u0645\u0631 \u0628\u062C\u0644\u062F \u0645\u0642\u0631\u0645\u0634 \u0630\u0647\u0628\u064A\u060C \u064A\u0642\u062F\u0645 \u0641\u0648\u0642 \u0628\u064A\u0648\u0631\u064A\u0647 \u0627\u0644\u0634\u0645\u0631 \u0627\u0644\u062D\u0631\u064A\u0631\u064A \u0645\u0639 \u0645\u0633\u062A\u062D\u0644\u0628 \u0643\u0631\u064A\u0645\u064A \u0645\u0646\u0642\u0648\u0639 \u0628\u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0627\u0644\u0633\u0648\u0628\u0631 \u0646\u0642\u064A\u0646 \u0648\u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0623\u062E\u0636\u0631.",
-        description_en: "Pan-seared wild Mediterranean Sea Bass with golden crackling skin, rested over silk fennel puree and drizzled with a rich saffron-cardamom emulsion.",
-        author_id: "chef-5",
-        author_name_ar: "\u0634\u064A\u0641 \u0644\u064A\u0644\u0649 \u0628\u0646 \u062C\u0644\u0648\u0646",
-        author_name_en: "Chef Layla Benjelloun",
-        author_avatar: "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=200&q=80",
-        image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1200&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80"
-        ],
-        cuisine: "Mediterranean Maghrebi Haute",
-        cuisine_ar: "\u0628\u062D\u0631 \u0645\u062A\u0648\u0633\u0637\u064A \u0645\u063A\u0627\u0631\u0628\u064A",
-        cuisine_en: "Mediterranean Maghrebi",
-        category: "Seafood",
-        category_ar: "\u0645\u0623\u0643\u0648\u0644\u0627\u062A \u0628\u062D\u0631\u064A\u0629",
-        category_en: "Seafood",
-        difficulty: "Medium",
-        difficulty_ar: "\u0645\u062A\u0648\u0633\u0637",
-        difficulty_en: "Medium",
-        base_servings: 4,
-        prep_time: 25,
-        cook_time: 20,
-        total_time: 45,
-        calories: 420,
-        likes_count: 980,
-        saves_count: 640,
-        rating: 4.93,
-        reviews_count: 88,
-        created_at: "2026-08-03",
-        tags: ["SeaBass", "Saffron", "Cardamom", "Seafood", "FineDining"],
-        ingredients: [
-          {
-            id: "ing-201",
-            name_ar: "\u0641\u064A\u0644\u064A\u0647 \u0642\u0627\u0631\u0648\u0635 \u0628\u062D\u0631 \u0637\u0627\u0632\u062C \u0628\u062C\u0644\u062F\u0647",
-            name_en: "Fresh Wild Sea Bass Fillets (Skin-on)",
-            baseAmount: 700,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u0646\u0632\u0648\u0639 \u0627\u0644\u0634\u0648\u0643 \u0648\u0645\u062C\u0641\u0641 \u062C\u064A\u062F\u0627\u064B",
-            notes_en: "Pin-boned and thoroughly dried"
-          },
-          {
-            id: "ing-202",
-            name_ar: "\u062E\u064A\u0648\u0637 \u0632\u0639\u0641\u0631\u0627\u0646 \u0645\u0644\u0643\u064A \u0633\u0648\u0628\u0631 \u0646\u0642\u064A\u0646",
-            name_en: "Royal Super Negin Saffron Threads",
-            baseAmount: 1,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u0646\u0642\u0648\u0639 \u0641\u064A \u0645\u0644\u0639\u0642\u062A\u064A\u0646 \u0645\u0627\u0621 \u062F\u0627\u0641\u0626",
-            notes_en: "Bloomed in 2 tbsp warm water"
-          },
-          {
-            id: "ing-203",
-            name_ar: "\u062D\u0628\u0648\u0628 \u0647\u064A\u0644 \u0623\u062E\u0636\u0631 \u0645\u0637\u062D\u0648\u0646\u0629 \u0637\u0627\u0632\u062C\u0629",
-            name_en: "Crushed Green Cardamom Pods",
-            baseAmount: 6,
-            unit_ar: "\u062D\u0628\u0629",
-            unit_en: "pcs",
-            notes_ar: "\u0645\u0641\u062A\u0648\u062D\u0629 \u0648\u0645\u062D\u0645\u0635\u0629 \u062E\u0641\u064A\u0641\u0627\u064B",
-            notes_en: "Lightly toasted"
-          },
-          {
-            id: "ing-204",
-            name_ar: "\u0628\u0635\u064A\u0644\u0627\u062A \u0634\u0645\u0631 \u0637\u0627\u0632\u062C\u0629 \u0645\u0641\u0631\u0648\u0645\u0629",
-            name_en: "Fresh Fennel Bulbs",
-            baseAmount: 2,
-            unit_ar: "\u062D\u0628\u0629",
-            unit_en: "pcs",
-            notes_ar: "\u0644\u0644\u0628\u064A\u0648\u0631\u064A\u0647 \u0627\u0644\u062D\u0631\u064A\u0631\u064A",
-            notes_en: "For velvet puree"
-          },
-          {
-            id: "ing-205",
-            name_ar: "\u0643\u0631\u064A\u0645\u0629 \u0637\u0628\u062E \u0637\u0627\u0632\u062C\u0629 35%",
-            name_en: "Heavy Whipping Cream (35%)",
-            baseAmount: 150,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0644\u0642\u0627\u0639\u062F\u0629 \u0627\u0644\u0645\u0633\u062A\u062D\u0644\u0628",
-            notes_en: "For emulsion base"
-          },
-          {
-            id: "ing-206",
-            name_ar: "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0628\u0643\u0631 \u0645\u0645\u062A\u0627\u0632 \u0646\u062E\u0628 \u0623\u0648\u0644",
-            name_en: "Extra Virgin Cold Pressed Olive Oil",
-            baseAmount: 40,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0644\u0644\u062A\u062D\u0645\u064A\u0631 \u0648\u0627\u0644\u062A\u0644\u0645\u064A\u0639",
-            notes_en: "For searing"
-          },
-          {
-            id: "ing-207",
-            name_ar: "\u0639\u0635\u064A\u0631 \u0644\u064A\u0645\u0648\u0646 \u0623\u0635\u0641\u0631 \u0637\u0627\u0632\u062C",
-            name_en: "Fresh Lemon Juice",
-            baseAmount: 20,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0644\u0645\u0633\u0629 \u062D\u0645\u0648\u0636\u0629 \u0623\u062E\u064A\u0631\u0629",
-            notes_en: "For citrus finish"
-          }
-        ],
-        steps: [
-          {
-            step_number: 1,
-            title_ar: "\u062A\u062D\u0636\u064A\u0631 \u0628\u064A\u0648\u0631\u064A\u0647 \u0627\u0644\u0634\u0645\u0631 \u0627\u0644\u062D\u0631\u064A\u0631\u064A",
-            title_en: "Velvety Fennel Puree Preparation",
-            instruction_ar: "\u0627\u0633\u0644\u0642 \u0642\u0637\u0639 \u0627\u0644\u0634\u0645\u0631 \u0641\u064A \u0645\u0627\u0621 \u0645\u0645\u0644\u062D \u062D\u062A\u0649 \u062A\u0635\u0628\u062D \u0637\u0631\u064A\u0629 \u062C\u062F\u0627\u064B\u060C \u062B\u0645 \u0635\u0641\u0647\u0627 \u0648\u0627\u062E\u0644\u0637\u0647\u0627 \u0641\u064A \u0627\u0644\u062E\u0644\u0627\u0637 \u0639\u0627\u0644\u064A \u0627\u0644\u0633\u0631\u0639\u0629 \u0645\u0639 \u0645\u0644\u0639\u0642\u0629 \u0632\u0628\u062F\u0629 \u0648\u0642\u0644\u064A\u0644 \u0645\u0646 \u0627\u0644\u0643\u0631\u064A\u0645\u0629 \u062D\u062A\u0649 \u062A\u0635\u0628\u062D \u062D\u0631\u064A\u0631\u064A\u0629 \u0648\u0646\u0627\u0639\u0645\u0629.",
-            instruction_en: "Blanch chopped fennel until tender, then blitz in a high-speed blender with a knob of butter and splash of cream until completely silky.",
-            timer_minutes: 15,
-            tip_ar: "\u0645\u0631\u0631 \u0627\u0644\u0628\u064A\u0648\u0631\u064A\u0647 \u0639\u0628\u0631 \u0645\u0635\u0641\u0627\u0629 \u0634\u0628\u0643\u064A\u0629 \u0646\u0627\u0639\u0645\u0629 \u0644\u0644\u062D\u0635\u0648\u0644 \u0639\u0644\u0649 \u0645\u0644\u0645\u0633 \u0646\u0627\u0639\u0645 \u0643\u0627\u0644\u0645\u062E\u0645\u0644.",
-            tip_en: "Pass puree through a fine tamis sieve for absolute hotel-grade smoothness."
-          },
-          {
-            step_number: 2,
-            title_ar: "\u0635\u0646\u0639 \u0645\u0633\u062A\u062D\u0644\u0628 \u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0648\u0627\u0644\u0647\u064A\u0644",
-            title_en: "Saffron-Cardamom Emulsion",
-            instruction_ar: "\u0641\u064A \u0645\u0642\u0644\u0627\u0629 \u0635\u063A\u064A\u0631\u0629\u060C \u0633\u062E\u0651\u0646 \u0627\u0644\u0643\u0631\u064A\u0645\u0629 \u0645\u0639 \u0645\u0646\u0642\u0648\u0639 \u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0648\u062D\u0628\u0648\u0628 \u0627\u0644\u0647\u064A\u0644 \u0639\u0644\u0649 \u0646\u0627\u0631 \u0647\u0627\u062F\u0626\u0629 \u0644\u0645\u062F\u0629 8 \u062F\u0642\u0627\u0626\u0642\u060C \u062B\u0645 \u0623\u0636\u0641 \u0639\u0635\u064A\u0631 \u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0648\u0627\u062E\u0641\u0642 \u0628\u0627\u0644\u0628\u0644\u0646\u062F\u0631 \u0627\u0644\u064A\u062F\u0648\u064A \u062D\u062A\u0649 \u062A\u062A\u0643\u0648\u0646 \u0631\u063A\u0648\u0629 \u0630\u0647\u0628\u064A\u0629 \u0647\u0648\u0627\u0626\u064A\u0629.",
-            instruction_en: "Gently infuse cream with bloomed saffron and crushed cardamom over low heat for 8 mins, finish with lemon juice and aerate using an immersion blender.",
-            timer_minutes: 8,
-            tip_ar: "\u0627\u0644\u062E\u0641\u0642 \u0627\u0644\u0647\u0648\u0627\u0626\u064A \u0627\u0644\u0633\u0631\u064A\u0639 \u064A\u0645\u0646\u062D \u0627\u0644\u0645\u0633\u062A\u062D\u0644\u0628 \u0642\u0648\u0627\u0645\u0627\u064B \u062E\u0641\u064A\u0641\u0627\u064B \u0644\u0627 \u064A\u062B\u0642\u0644 \u0639\u0644\u0649 \u0627\u0644\u0633\u0645\u0643.",
-            tip_en: "Immersion blending creates a delicate aromatic foam that lifts the dish."
-          },
-          {
-            step_number: 3,
-            title_ar: "\u062A\u062D\u0645\u064A\u0631 \u0641\u064A\u0644\u064A\u0647 \u0627\u0644\u0642\u0627\u0631\u0648\u0635 \u0628\u0642\u0634\u0631\u0629 \u0645\u0642\u0631\u0645\u0634\u0629",
-            title_en: "Crispy Skin Fish Searing",
-            instruction_ar: "\u0633\u062E\u0651\u0646 \u0632\u064A\u062A \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0641\u064A \u0645\u0642\u0644\u0627\u0629 \u063A\u064A\u0631 \u0644\u0627\u0635\u0642\u0629\u060C \u0648\u0636\u0639 \u0627\u0644\u0641\u064A\u0644\u064A\u0647 \u0628\u062D\u064A\u062B \u064A\u0643\u0648\u0646 \u0627\u0644\u062C\u0644\u062F \u0644\u0644\u0623\u0633\u0641\u0644 \u0645\u0639 \u0627\u0644\u0636\u063A\u0637 \u0627\u0644\u062E\u0641\u064A\u0641 \u0628\u0645\u0644\u0639\u0642\u0629 \u0645\u0633\u0637\u062D\u0629 \u0644\u0645\u062F\u0629 4 \u062F\u0642\u0627\u0626\u0642\u060C \u062B\u0645 \u0627\u0642\u0644\u0628\u0647 \u0644\u062F\u0642\u064A\u0642\u0629 \u0648\u0627\u062D\u062F\u0629 \u062D\u062A\u0649 \u064A\u0646\u0636\u062C \u0627\u0644\u0644\u062D\u0645 \u0648\u064A\u0638\u0644 \u0637\u0631\u064A\u0627\u064B.",
-            instruction_en: "Heat olive oil in a stainless pan, press fish skin-side down firmly for 4 minutes until ultra-crisp, then flip for 1 minute to finish gently.",
-            timer_minutes: 5,
-            tip_ar: "\u0627\u0644\u0636\u063A\u0637 \u0627\u0644\u0623\u0648\u0644\u064A \u064A\u0645\u0646\u0639 \u062A\u0642\u0648\u0633 \u0627\u0644\u0641\u064A\u0644\u064A\u0647 \u0648\u064A\u0636\u0645\u0646 \u0642\u0631\u0645\u0634\u0629 \u0645\u062A\u0633\u0627\u0648\u064A\u0629 \u0644\u0643\u0627\u0645\u0644 \u0633\u0637\u062D \u0627\u0644\u062C\u0644\u062F.",
-            tip_en: "Gentle pressure during the first 30 seconds ensures uniform skin contact and crispness."
-          },
-          {
-            step_number: 4,
-            title_ar: "\u0627\u0644\u062A\u0631\u0643\u064A\u0628 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645 \u0627\u0644\u0646\u0647\u0627\u0626\u064A",
-            title_en: "Assembly & Finishing",
-            instruction_ar: "\u0627\u0633\u0643\u0628 \u0645\u0644\u0639\u0642\u062A\u064A\u0646 \u0645\u0646 \u0628\u064A\u0648\u0631\u064A\u0647 \u0627\u0644\u0634\u0645\u0631 \u0641\u064A \u0648\u0633\u0637 \u0627\u0644\u0637\u0628\u0642\u060C \u0636\u0639 \u0642\u0637\u0639\u0629 \u0627\u0644\u0642\u0627\u0631\u0648\u0635 \u0641\u0648\u0642\u0647\u060C \u0648\u0627\u0633\u0643\u0628 \u0631\u063A\u0648\u0629 \u0645\u0633\u062A\u062D\u0644\u0628 \u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0648\u0627\u0644\u0647\u064A\u0644 \u062D\u0648\u0644 \u0627\u0644\u0637\u0628\u0642 \u0648\u0632\u064A\u0651\u0646 \u0628\u0623\u0648\u0631\u0627\u0642 \u0627\u0644\u0634\u0645\u0631 \u0627\u0644\u062E\u0636\u0631\u0627\u0621.",
-            instruction_en: "Spoon warm fennel puree in the plate center, nestle sea bass fillet on top, spoon vibrant saffron foam around, and garnish with delicate fennel fronds.",
-            timer_minutes: 3,
-            tip_ar: "\u0644\u0627 \u062A\u063A\u0637\u0650 \u062C\u0644\u062F \u0627\u0644\u0633\u0645\u0643 \u0627\u0644\u0645\u0642\u0631\u0645\u0634 \u0628\u0627\u0644\u0635\u0644\u0635\u0629 \u062D\u062A\u0649 \u0644\u0627 \u064A\u0641\u0642\u062F \u0642\u0631\u0645\u0634\u062A\u0647 \u0627\u0644\u0645\u0645\u064A\u0632\u0629.",
-            tip_en: "Never pour emulsion over the crispy skin; keep sauce beneath and around."
-          }
-        ],
-        nutrition: {
-          calories: 420,
-          protein: "44g",
-          carbs: "8g",
-          fats: "22g",
-          fiber: "3g",
-          sodium: "410mg"
-        },
-        pairings: {
-          drink_ar: "\u0634\u0627\u064A \u0623\u0628\u064A\u0636 \u0645\u0639\u0637\u0631 \u0628\u0632\u0647\u0648\u0631 \u0627\u0644\u0628\u0631\u062A\u0642\u0627\u0644 \u0648\u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0627\u0644\u0645\u0639\u062A\u0642",
-          drink_en: "Chilled White Tea Infused with Orange Blossom & Citrus",
-          side_ar: "\u0633\u0644\u0637\u0629 \u0646\u0628\u0627\u062A \u0627\u0644\u0647\u0644\u064A\u0648\u0646 \u0627\u0644\u0645\u0634\u0648\u064A \u0645\u0639 \u0632\u064A\u062A \u0627\u0644\u0635\u0646\u0648\u0628\u0631 \u0627\u0644\u0645\u062D\u0645\u0635",
-          side_en: "Charred Asparagus Spears with Roasted Pine Nut Dressing",
-          notes_ar: "\u0627\u0644\u0646\u0643\u0647\u0629 \u0627\u0644\u0639\u0637\u0631\u064A\u0629 \u0644\u0644\u0647\u064A\u0644 \u0648\u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u062A\u062A\u0646\u0627\u063A\u0645 \u0628\u0627\u0645\u062A\u064A\u0627\u0632 \u0645\u0639 \u062D\u0644\u0627\u0648\u0629 \u0627\u0644\u0633\u0645\u0643 \u0627\u0644\u0623\u0628\u064A\u0636 \u0648\u0627\u0644\u0634\u0645\u0631.",
-          notes_en: "Cardamom notes enhance the natural sweet salinity of fresh sea bass."
-        }
-      },
-      {
-        id: "recipe-3",
-        title: "Wild Truffle & Smoked Ricotta Handcrafted Agnolotti",
-        title_ar: "\u0623\u0646\u0648\u0644\u0648\u062A\u064A \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u064A\u062F\u0648\u064A\u0629 \u0628\u0627\u0644\u0631\u064A\u0643\u0648\u062A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0648\u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621",
-        title_en: "Wild Truffle & Smoked Ricotta Handcrafted Agnolotti",
-        description_ar: "\u062C\u064A\u0648\u0628 \u0628\u0627\u0633\u062A\u0627 \u0623\u0646\u0648\u0644\u0648\u062A\u064A \u062D\u0631\u064A\u0631\u064A\u0629 \u0645\u062D\u0636\u0631\u0629 \u064A\u062F\u0648\u064A\u0627\u064B \u0645\u0646 \u0635\u0641\u0627\u0631 \u0627\u0644\u0628\u064A\u0636 \u0627\u0644\u0639\u0636\u0648\u064A\u060C \u0645\u062D\u0634\u0648\u0629 \u0628\u062C\u0628\u0646\u0629 \u0627\u0644\u0631\u064A\u0643\u0648\u062A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0648\u0627\u0644\u0628\u0627\u0631\u0645\u064A\u062C\u064A\u0627\u0646\u0648 36 \u0634\u0647\u0631\u0627\u064B\u060C \u0645\u063A\u0644\u0641\u0629 \u0628\u0635\u0644\u0635\u0629 \u0632\u0628\u062F\u0629 \u0627\u0644\u0643\u0645\u0623\u0629 \u0648\u0634\u0631\u0627\u0626\u062D \u0627\u0644\u062A\u0631\u0627\u0641\u0644 \u0627\u0644\u0637\u0627\u0632\u062C.",
-        description_en: "Delicate hand-pinched egg pasta pillows stuffed with artisanal smoked sheep ricotta and 36-month Parmigiano, glazed in emulsion of cultured truffle butter.",
-        author_id: "chef-6",
-        author_name_ar: "\u0634\u064A\u0641 \u0645\u0627\u0631\u0643\u0648 \u0628\u064A\u0644\u064A\u0646\u064A",
-        author_name_en: "Chef Marco Bellini",
-        author_avatar: "https://images.unsplash.com/photo-1574966740793-953ad375ded5?auto=format&fit=crop&w=200&q=80",
-        image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80"
-        ],
-        cuisine: "Artisanal Italian Haute",
-        cuisine_ar: "\u0625\u064A\u0637\u0627\u0644\u064A \u062D\u0631\u0641\u064A",
-        cuisine_en: "Artisanal Italian",
-        category: "Pasta & Grains",
-        category_ar: "\u0628\u0627\u0633\u062A\u0627 \u0648\u062D\u0628\u0648\u0628",
-        category_en: "Pasta & Grains",
-        difficulty: "Hard",
-        difficulty_ar: "\u0645\u062A\u0642\u062F\u0645",
-        difficulty_en: "Hard",
-        base_servings: 4,
-        prep_time: 50,
-        cook_time: 15,
-        total_time: 65,
-        calories: 540,
-        likes_count: 1680,
-        saves_count: 1120,
-        rating: 4.98,
-        reviews_count: 145,
-        created_at: "2026-08-04",
-        tags: ["Agnolotti", "HandmadePasta", "Truffle", "Ricotta", "Italian"],
-        ingredients: [
-          {
-            id: "ing-301",
-            name_ar: "\u062F\u0642\u064A\u0642 \u0642\u0645\u062D \u0625\u064A\u0637\u0627\u0644\u064A \u0646\u0627\u0639\u0645 \u0646\u062E\u0628 \u062A\u064A\u0628\u0648 00",
-            name_en: "Italian Tipo 00 Pasta Flour",
-            baseAmount: 300,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u0646\u062E\u0648\u0644 \u0645\u0631\u062A\u064A\u0646",
-            notes_en: "Double sifted"
-          },
-          {
-            id: "ing-302",
-            name_ar: "\u0635\u0641\u0627\u0631 \u0628\u064A\u0636 \u062F\u062C\u0627\u062C \u0639\u0636\u0648\u064A \u062D\u0631",
-            name_en: "Organic Free-Range Egg Yolks",
-            baseAmount: 8,
-            unit_ar: "\u062D\u0628\u0629",
-            unit_en: "pcs",
-            notes_ar: "\u0628\u062D\u0631\u0627\u0631\u0629 \u0627\u0644\u063A\u0631\u0641\u0629",
-            notes_en: "Room temperature"
-          },
-          {
-            id: "ing-303",
-            name_ar: "\u062C\u0628\u0646\u0629 \u0631\u064A\u0643\u0648\u062A\u0627 \u0623\u063A\u0646\u0627\u0645 \u0645\u062F\u062E\u0646\u0629 \u062D\u0631\u0641\u064A\u0629",
-            name_en: "Artisanal Smoked Sheep Ricotta",
-            baseAmount: 250,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u0635\u0641\u0627\u0629 \u0645\u0646 \u0627\u0644\u0633\u0648\u0627\u0626\u0644 \u0627\u0644\u0632\u0627\u0626\u062F\u0629",
-            notes_en: "Well drained"
-          },
-          {
-            id: "ing-304",
-            name_ar: "\u062C\u0628\u0646\u0629 \u0628\u0627\u0631\u0645\u064A\u062C\u064A\u0627\u0646\u0648 \u0631\u064A\u062C\u064A\u0627\u0646\u0648 \u0645\u0639\u062A\u0642\u0629 36 \u0634\u0647\u0631\u0627\u064B",
-            name_en: "36-Month Aged Parmigiano-Reggiano",
-            baseAmount: 80,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u0628\u0634\u0648\u0631\u0629 \u0646\u0627\u0639\u0645\u0627\u064B \u062C\u062F\u0627\u064B",
-            notes_en: "Microplaned finely"
-          },
-          {
-            id: "ing-305",
-            name_ar: "\u0643\u0645\u0623\u0629 \u0633\u0648\u062F\u0627\u0621 \u0637\u0627\u0632\u062C\u0629 (Piedmont)",
-            name_en: "Fresh Black Winter Truffle",
-            baseAmount: 25,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0644\u0628\u0634\u0631 \u0627\u0644\u0645\u0628\u0627\u0634\u0631 \u0639\u0646\u062F \u0627\u0644\u062A\u0642\u062F\u064A\u0645",
-            notes_en: "For tableside shaving"
-          },
-          {
-            id: "ing-306",
-            name_ar: "\u0632\u0628\u062F\u0629 \u0646\u0642\u064A\u0629 \u0641\u0627\u062E\u0631\u0629 \u063A\u064A\u0631 \u0645\u0645\u0644\u062D\u0629",
-            name_en: "Cultured Unsalted Mountain Butter",
-            baseAmount: 75,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0635\u0644\u0635\u0629 \u0627\u0644\u0645\u0633\u062A\u062D\u0644\u0628",
-            notes_en: "For emulsion gloss"
-          },
-          {
-            id: "ing-307",
-            name_ar: "\u062C\u0648\u0632\u0629 \u0627\u0644\u0637\u064A\u0628 \u0627\u0644\u0645\u0628\u0634\u0648\u0631\u0629 \u0637\u0627\u0632\u062C\u0627\u064B",
-            name_en: "Freshly Grated Whole Nutmeg",
-            baseAmount: 2,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0631\u0634\u0629 \u062E\u0641\u064A\u0641\u0629 \u0644\u0644\u062D\u0634\u0648\u0629",
-            notes_en: "Pinch for filling"
-          },
-          {
-            id: "ing-308",
-            name_ar: "\u0645\u0644\u062D \u0628\u062D\u0631\u064A \u062E\u0634\u0646 \u0644\u0633\u0644\u0642 \u0627\u0644\u0628\u0627\u0633\u062A\u0627",
-            name_en: "Coarse Sea Salt for Boiling",
-            baseAmount: 20,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0645\u064A\u0627\u0647 \u0627\u0644\u0633\u0644\u0642",
-            notes_en: "For pasta water"
-          }
-        ],
-        steps: [
-          {
-            step_number: 1,
-            title_ar: "\u0639\u062C\u0646 \u0648\u062A\u0634\u0643\u064A\u0644 \u0639\u062C\u064A\u0646\u0629 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u0630\u0647\u0628\u064A\u0629",
-            title_en: "Kneading & Resting Egg Dough",
-            instruction_ar: "\u0627\u0635\u0646\u0639 \u0641\u0648\u0647\u0629 \u0628\u0631\u0643\u0627\u0646\u064A\u0629 \u0645\u0646 \u0627\u0644\u062F\u0642\u064A\u0642\u060C \u0623\u0636\u0641 \u0635\u0641\u0627\u0631 \u0627\u0644\u0628\u064A\u0636 \u0648\u0631\u0634\u0629 \u0645\u0644\u062D \u0641\u064A \u0627\u0644\u0648\u0633\u0637. \u0627\u062F\u0645\u062C \u0628\u0627\u0644\u0634\u0648\u0643\u0629 \u062A\u062F\u0631\u064A\u062C\u064A\u0627\u064B \u062B\u0645 \u0627\u0639\u062C\u0646 \u0628\u0627\u0644\u064A\u062F \u0644\u0645\u062F\u0629 10 \u062F\u0642\u0627\u0626\u0642 \u062D\u062A\u0649 \u062A\u0635\u0628\u062D \u0627\u0644\u0639\u062C\u064A\u0646\u0629 \u0646\u0627\u0639\u0645\u0629 \u0648\u0645\u0637\u0627\u0637\u064A\u0629. \u063A\u0644\u0641\u0647\u0627 \u0628\u0646\u0627\u064A\u0644\u0648\u0646 \u0648\u0627\u062A\u0631\u0643\u0647\u0627 \u062A\u0631\u062A\u0627\u062D 30 \u062F\u0642\u064A\u0642\u0629.",
-            instruction_en: "Form a flour well, add egg yolks and salt. Incorporate with a fork then knead vigorously for 10 mins until silky smooth. Wrap tightly and rest for 30 minutes.",
-            timer_minutes: 30,
-            tip_ar: "\u0641\u062A\u0631\u0629 \u0627\u0644\u0631\u0627\u062D\u0629 \u062A\u0641\u0643\u0643 \u0634\u0628\u0643\u0629 \u0627\u0644\u062C\u0644\u0648\u062A\u064A\u0646 \u0645\u0645\u0627 \u064A\u0633\u0647\u0644 \u0641\u0631\u062F \u0627\u0644\u0639\u062C\u064A\u0646\u0629 \u0644\u0633\u0645\u0643 \u0631\u0642\u064A\u0642 \u062C\u062F\u0627\u064B \u0648\u0634\u0641\u0627\u0641.",
-            tip_en: "Resting relaxes gluten strands, essential for rolling paper-thin translucent sheets."
-          },
-          {
-            step_number: 2,
-            title_ar: "\u062A\u062D\u0636\u064A\u0631 \u062D\u0634\u0648\u0629 \u0627\u0644\u0631\u064A\u0643\u0648\u062A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0648\u0627\u0644\u0643\u0645\u0623\u0629",
-            title_en: "Smoked Ricotta & Truffle Filling",
-            instruction_ar: "\u0641\u064A \u0648\u0639\u0627\u0621 \u0632\u062C\u0627\u062C\u064A\u060C \u0627\u062E\u0644\u0637 \u0627\u0644\u0631\u064A\u0643\u0648\u062A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0645\u0639 \u0627\u0644\u0628\u0627\u0631\u0645\u064A\u062C\u064A\u0627\u0646\u0648 \u0627\u0644\u0645\u0628\u0634\u0648\u0631 \u0648\u062C\u0648\u0632\u0629 \u0627\u0644\u0637\u064A\u0628 \u0648\u0642\u0644\u064A\u0644 \u0645\u0646 \u0632\u064A\u062A \u0627\u0644\u0643\u0645\u0623\u0629. \u0636\u0639 \u0627\u0644\u062E\u0644\u064A\u0637 \u0641\u064A \u0643\u064A\u0633 \u062D\u0644\u0648\u0627\u0646\u064A \u0628\u0631\u0623\u0633 \u062F\u0627\u0626\u0631\u064A \u0635\u063A\u064A\u0631.",
-            instruction_en: "Whisk smoked ricotta with microplaned Parmigiano, nutmeg, and a few drops of truffle oil. Transfer into a piping bag with a round nozzle.",
-            timer_minutes: 10,
-            tip_ar: "\u0627\u062D\u0631\u0635 \u0639\u0644\u0649 \u0623\u0646 \u062A\u0643\u0648\u0646 \u0627\u0644\u062D\u0634\u0648\u0629 \u0628\u0627\u0631\u062F\u0629 \u062D\u062A\u0649 \u0644\u0627 \u062A\u0631\u0637\u0628 \u0627\u0644\u0639\u062C\u064A\u0646 \u0648\u062A\u062C\u0639\u0644\u0647 \u0644\u0632\u062C\u0627\u064B.",
-            tip_en: "Keep the filling chilled to maintain piping structure without softening pasta dough."
-          },
-          {
-            step_number: 3,
-            title_ar: "\u0641\u0631\u062F \u0627\u0644\u0639\u062C\u064A\u0646 \u0648\u062A\u0634\u0643\u064A\u0644 \u062D\u0628\u0627\u062A \u0627\u0644\u0623\u0646\u0648\u0644\u0648\u062A\u064A",
-            title_en: "Rolling & Hand-Pinching Agnolotti",
-            instruction_ar: "\u0627\u0641\u0631\u062F \u0627\u0644\u0639\u062C\u064A\u0646 \u0628\u0622\u0644\u0629 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u062D\u062A\u0649 \u0627\u0644\u062F\u0631\u062C\u0629 \u0627\u0644\u0623\u0631\u0641\u0639. \u0636\u0639 \u0646\u0642\u0627\u0637 \u062D\u0634\u0648\u0629 \u0645\u062A\u0628\u0627\u0639\u062F\u0629 \u0628\u0640 2 \u0633\u0645\u060C \u0627\u062B\u0646\u0650 \u0627\u0644\u0639\u062C\u064A\u0646 \u0641\u0648\u0642 \u0627\u0644\u062D\u0634\u0648\u0629 \u0648\u0627\u0636\u063A\u0637 \u0628\u0623\u0637\u0631\u0627\u0641 \u0623\u0635\u0627\u0628\u0639\u0643 \u0644\u0625\u062E\u0631\u0627\u062C \u0627\u0644\u0647\u0648\u0627\u0621 \u062B\u0645 \u0627\u0642\u0637\u0639\u0647\u0627 \u0628\u0639\u062C\u0644\u0629 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u0645\u0633\u0646\u0646\u0629.",
-            instruction_en: "Roll pasta to the thinnest setting. Pipe filling dots 2cm apart, fold sheet over, pinch tightly to seal pockets, and cut with a fluted pasta wheel.",
-            timer_minutes: 15,
-            tip_ar: "\u062A\u0641\u0631\u064A\u063A \u0627\u0644\u0647\u0648\u0627\u0621 \u064A\u0645\u0646\u0639 \u0627\u0646\u0641\u062C\u0627\u0631 \u062D\u0628\u0627\u062A \u0627\u0644\u0623\u0646\u0648\u0644\u0648\u062A\u064A \u0623\u062B\u0646\u0627\u0621 \u0627\u0644\u0633\u0644\u0642 \u0641\u064A \u0627\u0644\u0645\u0627\u0621 \u0627\u0644\u0645\u063A\u0644\u064A.",
-            tip_en: "Eliminating trapped air pockets prevents burst agnolotti during boiling."
-          },
-          {
-            step_number: 4,
-            title_ar: "\u0627\u0644\u0633\u0644\u0642 \u0627\u0644\u0633\u0631\u064A\u0639 \u0648\u0627\u0644\u0627\u0633\u062A\u062D\u0644\u0627\u0628 \u0628\u0627\u0644\u0632\u0628\u062F\u0629",
-            title_en: "Flash Boiling & Butter Emulsion",
-            instruction_ar: "\u0627\u0633\u0644\u0642 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0641\u064A \u0645\u0627\u0621 \u0645\u0645\u0644\u062D \u0645\u063A\u0644\u064A \u0644\u0645\u062F\u0629 \u062F\u0642\u064A\u0642\u062A\u064A\u0646 \u0648\u0646\u0635\u0641 \u0641\u0642\u0637. \u0627\u0646\u0642\u0644\u0647\u0627 \u0645\u0628\u0627\u0634\u0631\u0629 \u0625\u0644\u0649 \u0645\u0642\u0644\u0627\u0629 \u0648\u0627\u0633\u0639\u0629 \u062A\u062D\u062A\u0648\u064A \u0639\u0644\u0649 \u0627\u0644\u0632\u0628\u062F\u0629 \u0627\u0644\u0645\u0630\u0627\u0628\u0629 \u0648\u0645\u063A\u0631\u0641\u0629 \u0645\u0646 \u0645\u0627\u0621 \u0633\u0644\u0642 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u0646\u0634\u0648\u064A\u060C \u0648\u062D\u0631\u0643 \u0628\u062D\u0631\u0643\u0629 \u062F\u0627\u0626\u0631\u064A\u0629 \u0644\u062A\u0643\u0648\u064A\u0646 \u0635\u0644\u0635\u0629 \u0644\u0627\u0645\u0639\u0629.",
-            instruction_en: "Boil agnolotti in salted water for 2.5 minutes. Transfer directly to a warm skillet with melted butter and a ladle of starchy pasta water, tossing to create a glossy coat.",
-            timer_minutes: 4,
-            tip_ar: "\u0627\u0644\u0646\u0634\u0627 \u0627\u0644\u0645\u0648\u062C\u0648\u062F \u0641\u064A \u0645\u0627\u0621 \u0627\u0644\u0633\u0644\u0642 \u0647\u0648 \u0627\u0644\u0639\u0627\u0645\u0644 \u0627\u0644\u0633\u0631\u064A \u0627\u0644\u0630\u064A \u064A\u0631\u0628\u0637 \u0627\u0644\u0632\u0628\u062F\u0629 \u0628\u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0628\u0625\u062A\u0642\u0627\u0646.",
-            tip_en: "Starchy pasta cooking water is the emulsifying key to a velvety glossy glaze."
-          },
-          {
-            step_number: 5,
-            title_ar: "\u0627\u0644\u0628\u0634\u0631 \u0627\u0644\u0641\u0627\u062E\u0631 \u0644\u0644\u0643\u0645\u0623\u0629 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645",
-            title_en: "Truffle Shaving & Plating",
-            instruction_ar: "\u0631\u062A\u0628 \u062D\u0628\u0627\u062A \u0627\u0644\u0623\u0646\u0648\u0644\u0648\u062A\u064A \u0641\u064A \u0637\u0628\u0642 \u063A\u0627\u0626\u0631 \u062F\u0627\u0641\u0626\u060C \u0627\u0633\u0643\u0628 \u0627\u0644\u0635\u0644\u0635\u0629 \u0627\u0644\u0644\u0627\u0645\u0639\u0629\u060C \u062B\u0645 \u0627\u0628\u0634\u0631 \u0634\u0631\u0627\u0626\u062D \u0631\u0642\u064A\u0642\u0629 \u0645\u0646 \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0627\u0644\u0637\u0627\u0632\u062C\u0629 \u0623\u0645\u0627\u0645 \u0627\u0644\u0636\u064A\u0648\u0641 \u0645\u0639 \u0631\u0634 \u0628\u0627\u0631\u0645\u064A\u062C\u064A\u0627\u0646\u0648 \u0625\u0636\u0627\u0641\u064A.",
-            instruction_en: "Plate agnolotti in warmed pasta bowls, coat with glossy truffle butter, and shave fresh black winter truffles generously over the top.",
-            timer_minutes: 3,
-            tip_ar: "\u062D\u0631\u0627\u0631\u0629 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u062F\u0627\u0641\u0626\u0629 \u0633\u062A\u0637\u0644\u0642 \u0627\u0644\u0632\u064A\u0648\u062A \u0627\u0644\u0639\u0637\u0631\u064A\u0629 \u0627\u0644\u0641\u0648\u0627\u062D\u0629 \u0641\u064A \u0634\u0631\u0627\u0626\u062D \u0627\u0644\u0643\u0645\u0623\u0629 \u0641\u0648\u0631 \u0645\u0644\u0627\u0645\u0633\u062A\u0647\u0627.",
-            tip_en: "Residual pasta heat immediately activates the intense volatile aromas of shaved truffle."
-          }
-        ],
-        nutrition: {
-          calories: 540,
-          protein: "24g",
-          carbs: "58g",
-          fats: "26g",
-          fiber: "3.2g",
-          sodium: "490mg"
-        },
-        pairings: {
-          drink_ar: "\u0645\u0634\u0631\u0648\u0628 \u0627\u0644\u0639\u0646\u0628 \u0627\u0644\u0623\u0628\u064A\u0636 \u063A\u064A\u0631 \u0627\u0644\u0643\u062D\u0648\u0644\u064A \u0627\u0644\u0641\u0648\u0627\u0631 \u0628\u0627\u0644\u0643\u0645\u062B\u0631\u0649",
-          drink_en: "Sparkling White Grape & Crisp Winter Pear Mocktail",
-          side_ar: "\u0633\u0644\u0637\u0629 \u0627\u0644\u062C\u0631\u062C\u064A\u0631 \u0627\u0644\u0628\u0631\u064A \u0645\u0639 \u0634\u0631\u0627\u0626\u062D \u0627\u0644\u0643\u0645\u062B\u0631\u0649 \u0648\u0627\u0644\u062C\u0648\u0632 \u0627\u0644\u0645\u062D\u0645\u0635",
-          side_en: "Wild Arugula Salad with Shaved Pears and Toasted Walnuts",
-          notes_ar: "\u0637\u0639\u0645 \u0627\u0644\u0631\u064A\u0643\u0648\u062A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0648\u0627\u0644\u0643\u0645\u0623\u0629 \u064A\u0643\u062A\u0645\u0644 \u0628\u0644\u0645\u0633\u0629 \u0645\u0646\u0639\u0634\u0629 \u0648\u0641\u0627\u0643\u0647\u064A\u0629 \u062E\u0641\u064A\u0641\u0629.",
-          notes_en: "Earthy black truffle pairs magnificently with subtle toasted nut notes."
-        }
-      },
-      {
-        id: "recipe-4",
-        title: "Smoked Rosemary Crusted Lamb Chops",
-        title_ar: "\u0631\u064A\u0634 \u063A\u0646\u0645 \u0646\u0639\u064A\u0645\u064A \u0645\u062A\u0628\u0644\u0629 \u0628\u0625\u0643\u0644\u064A\u0644 \u0627\u0644\u062C\u0628\u0644 \u0627\u0644\u0645\u062F\u062E\u0646 \u0648\u0627\u0644\u062F\u0628\u0633",
-        title_en: "Smoked Rosemary Crusted Lamb Chops",
-        description_ar: "\u0631\u064A\u0634 \u063A\u0646\u0645 \u0646\u0639\u064A\u0645\u064A \u0645\u062D\u0644\u064A\u0629 \u0637\u0631\u064A\u0629 \u0645\u062A\u0628\u0644\u0629 \u0628\u062E\u0644\u064A\u0637 \u0625\u0643\u0644\u064A\u0644 \u0627\u0644\u062C\u0628\u0644 \u0627\u0644\u0645\u062F\u062E\u0646 \u0648\u062F\u0628\u0633 \u0627\u0644\u0631\u0645\u0627\u0646 \u0648\u0627\u0644\u0641\u0644\u0641\u0644 \u0627\u0644\u062D\u0644\u0628\u064A\u060C \u0645\u0634\u0648\u064A\u0629 \u0639\u0644\u0649 \u062C\u0645\u0631 \u0627\u0644\u062D\u0637\u0628 \u062D\u062A\u0649 \u0627\u0644\u0648\u0635\u0648\u0644 \u0644\u0642\u0631\u0645\u0634\u0629 \u062E\u0627\u0631\u062C\u064A\u0629 \u0648\u0639\u0635\u0627\u0631\u0629 \u062F\u0627\u062E\u0644\u064A\u0629 \u0648\u0631\u062F\u064A\u0629.",
-        description_en: "Local prime Naemi lamb cutlets marinated in wild smoked rosemary, artisanal pomegranate molasses, and crushed Aleppo pepper, charred over live oak embers.",
-        author_id: "chef-3",
-        author_name_ar: "\u0634\u064A\u0641 \u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631",
-        author_name_en: "Chef Tariq Mansour",
-        author_avatar: "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=200&q=80",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
-        ],
-        cuisine: "Levantine Fire & Smoke",
-        cuisine_ar: "\u0634\u0627\u0645\u064A \u062A\u0631\u0627\u062B\u064A \u0628\u0627\u0644\u0646\u0627\u0631",
-        cuisine_en: "Levantine Live Fire",
-        category: "Grills & Roasts",
-        category_ar: "\u0645\u0634\u0627\u0648\u064A \u0648\u0644\u062D\u0648\u0645",
-        category_en: "Grills & Roasts",
-        difficulty: "Medium",
-        difficulty_ar: "\u0645\u062A\u0648\u0633\u0637",
-        difficulty_en: "Medium",
-        base_servings: 4,
-        prep_time: 30,
-        cook_time: 25,
-        total_time: 55,
-        calories: 610,
-        likes_count: 1190,
-        saves_count: 730,
-        rating: 4.94,
-        reviews_count: 96,
-        created_at: "2026-08-05",
-        tags: ["LambChops", "LiveFire", "Rosemary", "Levantine", "Grills"],
-        ingredients: [
-          {
-            id: "ing-401",
-            name_ar: "\u0631\u064A\u0634 \u063A\u0646\u0645 \u0646\u0639\u064A\u0645\u064A \u0628\u0644\u062F\u064A \u0637\u0627\u0632\u062C\u0629",
-            name_en: "Fresh Prime Local Lamb Chops (French Trimmed)",
-            baseAmount: 8,
-            unit_ar: "\u062D\u0628\u0629",
-            unit_en: "pcs",
-            notes_ar: "\u0645\u0646\u0638\u0641\u0629 \u0639\u0638\u0627\u0645\u0647\u0627 \u0628\u0625\u062A\u0642\u0627\u0646",
-            notes_en: "Approx 800g total"
-          },
-          {
-            id: "ing-402",
-            name_ar: "\u0623\u063A\u0635\u0627\u0646 \u0625\u0643\u0644\u064A\u0644 \u0627\u0644\u062C\u0628\u0644 (\u0631\u0648\u0632\u0645\u0627\u0631\u064A) \u0637\u0627\u0632\u062C\u0629",
-            name_en: "Fresh Rosemary Leaves",
-            baseAmount: 20,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u0641\u0631\u0648\u0645\u0629 \u0646\u0627\u0639\u0645\u0627\u064B \u0645\u0639 \u0627\u0644\u062D\u0637\u0628",
-            notes_en: "Finely minced"
-          },
-          {
-            id: "ing-403",
-            name_ar: "\u062F\u0628\u0633 \u0631\u0645\u0627\u0646 \u062C\u0628\u0644\u064A \u062D\u0627\u0645\u0636",
-            name_en: "Mountain Pomegranate Molasses",
-            baseAmount: 40,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0645\u0631\u0643\u0632 \u0637\u0628\u064A\u0639\u064A",
-            notes_en: "Unsweetened reduction"
-          },
-          {
-            id: "ing-404",
-            name_ar: "\u0631\u0642\u0627\u0626\u0642 \u0641\u0644\u0641\u0644 \u062D\u0644\u0628\u064A \u0623\u062D\u0645\u0631 \u0645\u062C\u0631\u0648\u0634",
-            name_en: "Crushed Aleppo Silk Chili Flakes",
-            baseAmount: 10,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u062D\u0631\u0627\u0631\u0629 \u0645\u0639\u062A\u062F\u0644\u0629 \u0648\u0632\u064A\u062A\u064A\u0629",
-            notes_en: "Mild oily warmth"
-          },
-          {
-            id: "ing-405",
-            name_ar: "\u0641\u0635\u0648\u0635 \u062B\u0648\u0645 \u0628\u0644\u062F\u064A \u0645\u0647\u0631\u0648\u0633\u0629",
-            name_en: "Crushed Fresh Garlic Cloves",
-            baseAmount: 5,
-            unit_ar: "\u062D\u0628\u0629",
-            unit_en: "pcs",
-            notes_ar: "\u0646\u0627\u0639\u0645 \u062C\u062F\u0627\u064B",
-            notes_en: "Finely minced paste"
-          },
-          {
-            id: "ing-406",
-            name_ar: "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0645\u0639\u0635\u0648\u0631 \u0639\u0644\u0649 \u0627\u0644\u0628\u0627\u0631\u062F",
-            name_en: "Cold-Pressed Virgin Olive Oil",
-            baseAmount: 50,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0644\u0644\u062A\u062A\u0628\u064A\u0644 \u0648\u0627\u0644\u062F\u0647\u0646",
-            notes_en: "For marinade"
-          },
-          {
-            id: "ing-407",
-            name_ar: "\u0645\u0644\u062D \u0635\u062E\u0631\u064A \u0645\u062C\u0631\u0648\u0634 \u062E\u0634\u0646",
-            name_en: "Coarse Desert Rock Salt",
-            baseAmount: 12,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0644\u062A\u0645\u0644\u064A\u062D",
-            notes_en: "For crust seasoning"
-          }
-        ],
-        steps: [
-          {
-            step_number: 1,
-            title_ar: "\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u062A\u062A\u0628\u064A\u0644\u0629 \u0627\u0644\u0639\u0637\u0631\u064A\u0629 \u0648\u0627\u0644\u062A\u062F\u0644\u064A\u0643",
-            title_en: "Marinade Emulsion & Rub",
-            instruction_ar: "\u0627\u062E\u0644\u0637 \u0625\u0643\u0644\u064A\u0644 \u0627\u0644\u062C\u0628\u0644 \u0627\u0644\u0645\u0641\u0631\u0648\u0645 \u0645\u0639 \u0627\u0644\u062B\u0648\u0645 \u0648\u062F\u0628\u0633 \u0627\u0644\u0631\u0645\u0627\u0646 \u0648\u0627\u0644\u0641\u0644\u0641\u0644 \u0627\u0644\u062D\u0644\u0628\u064A \u0648\u0632\u064A\u062A \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0648\u0627\u0644\u0645\u0644\u062D. \u0627\u062F\u0639\u0643 \u0631\u064A\u0634 \u0627\u0644\u063A\u0646\u0645 \u062C\u064A\u062F\u0627\u064B \u0628\u0627\u0644\u062A\u062A\u0628\u064A\u0644\u0629 \u0648\u0627\u062A\u0631\u0643\u0647\u0627 \u0641\u064A \u0627\u0644\u0628\u0631\u0627\u062F \u0644\u0645\u062F\u0629 30 \u062F\u0642\u064A\u0642\u0629 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644.",
-            instruction_en: "Combine rosemary, garlic, pomegranate molasses, Aleppo chili, olive oil, and coarse salt. Massage thoroughly over chops and chill for 30 minutes.",
-            timer_minutes: 30,
-            tip_ar: "\u062D\u0645\u0648\u0636\u0629 \u062F\u0628\u0633 \u0627\u0644\u0631\u0645\u0627\u0646 \u062A\u0633\u0627\u0639\u062F \u0639\u0644\u0649 \u062A\u0644\u064A\u064A\u0646 \u0623\u0644\u064A\u0627\u0641 \u0627\u0644\u0644\u062D\u0645 \u0648\u062A\u0645\u0646\u062D\u0647 \u0644\u0648\u0646\u0627\u064B \u062F\u0627\u0643\u0646\u0627\u064B \u0645\u0643\u0631\u0627\u0645\u0644\u0627\u064B \u0639\u0646\u062F \u0627\u0644\u0634\u0648\u0627\u0621.",
-            tip_en: "Pomegranate acidity tenderizes lamb fibers while promoting deep mahogany caramelization."
-          },
-          {
-            step_number: 2,
-            title_ar: "\u0625\u0634\u0639\u0627\u0644 \u0627\u0644\u062C\u0645\u0631 \u0648\u0627\u0644\u062A\u062F\u062E\u064A\u0646 \u0627\u0644\u0623\u0648\u0644\u064A",
-            title_en: "Live Embers & Smoke Preparation",
-            instruction_ar: "\u0623\u0634\u0639\u0644 \u062D\u0637\u0628 \u0627\u0644\u0633\u0646\u062F\u064A\u0627\u0646 \u0623\u0648 \u0627\u0644\u0641\u062D\u0645 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u062D\u062A\u0649 \u064A\u062A\u062D\u0648\u0644 \u0625\u0644\u0649 \u062C\u0645\u0631 \u0623\u0628\u064A\u0636 \u0645\u063A\u0637\u0649 \u0628\u0627\u0644\u0631\u0645\u0627\u062F \u0627\u0644\u062E\u0641\u064A\u0641. \u0636\u0639 \u0623\u063A\u0635\u0627\u0646 \u0631\u0648\u0632\u0645\u0627\u0631\u064A \u0637\u0627\u0632\u062C\u0629 \u0645\u0628\u0627\u0634\u0631\u0629 \u0641\u0648\u0642 \u0627\u0644\u062C\u0645\u0631 \u0644\u0625\u0637\u0644\u0627\u0642 \u0633\u062D\u0627\u0628\u0629 \u062F\u062E\u0627\u0646\u064A\u0629 \u0639\u0637\u0631\u064A\u0629.",
-            instruction_en: "Ignite natural hardwood charcoal to white embers. Scatter fresh rosemary sprigs over embers to produce an intensely fragrant botanical smoke canopy.",
-            timer_minutes: 15,
-            tip_ar: "\u0627\u0644\u062A\u062F\u062E\u064A\u0646 \u0628\u0627\u0644\u0623\u0639\u0634\u0627\u0628 \u0627\u0644\u0637\u0627\u0632\u062C\u0629 \u064A\u0639\u0637\u064A \u0646\u0643\u0647\u0629 \u0641\u0648\u0631\u064A\u0629 \u0644\u0627 \u0645\u062B\u064A\u0644 \u0644\u0647\u0627 \u062F\u0648\u0646 \u0627\u062D\u062A\u0631\u0627\u0642 \u0645\u0631.",
-            tip_en: "Botanical smoking over coals infuses delicate forest notes directly into the crust."
-          },
-          {
-            step_number: 3,
-            title_ar: "\u0627\u0644\u0634\u0648\u0627\u0621 \u0627\u0644\u0645\u0628\u0627\u0634\u0631 \u0639\u0644\u0649 \u0627\u0644\u0634\u0628\u0643",
-            title_en: "High Direct Grilling",
-            instruction_ar: "\u0636\u0639 \u0627\u0644\u0631\u064A\u0634 \u0641\u0648\u0642 \u0627\u0644\u0634\u0628\u0643 \u0627\u0644\u0633\u0627\u062E\u0646 \u0648\u0627\u0634\u0648\u0647\u0627 \u0644\u0645\u062F\u0629 3 \u0625\u0644\u0649 4 \u062F\u0642\u0627\u0626\u0642 \u0644\u0643\u0644 \u062C\u0627\u0646\u0628\u060C \u0645\u0639 \u062F\u0647\u0646\u0647\u0627 \u0628\u0627\u0644\u062A\u062A\u0628\u064A\u0644\u0629 \u0627\u0644\u0645\u062A\u0628\u0642\u064A\u0629 \u0645\u0631\u0629 \u0648\u0627\u062D\u062F\u0629 \u062D\u062A\u0649 \u062A\u0643\u062A\u0633\u0628 \u0639\u0644\u0627\u0645\u0627\u062A \u0634\u0648\u0627\u0621 \u062F\u0627\u0643\u0646\u0629 \u0648\u062D\u0631\u0627\u0631\u0629 \u062F\u0627\u062E\u0644\u064A\u0629 56 \u0645\u0626\u0648\u064A\u0629.",
-            instruction_en: "Grill chops over high heat for 3-4 mins per side, basting once with residual marinade until reaching an internal core temp of 56\xB0C (Medium).",
-            timer_minutes: 8,
-            tip_ar: "\u0644\u0627 \u062A\u0641\u0631\u0637 \u0641\u064A \u0637\u0647\u064A \u0631\u064A\u0634 \u0627\u0644\u0646\u0639\u064A\u0645\u064A \u062D\u062A\u0649 \u0644\u0627 \u062A\u0641\u0642\u062F \u0637\u0631\u0627\u0648\u062A\u0647\u0627 \u0627\u0644\u0641\u0627\u0626\u0642\u0629.",
-            tip_en: "Do not overcook premium lamb; medium-rare to medium preserves optimum succulence."
-          },
-          {
-            step_number: 4,
-            title_ar: "\u0627\u0644\u0631\u0627\u062D\u0629 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645",
-            title_en: "Resting & Plating",
-            instruction_ar: "\u062F\u0639 \u0627\u0644\u0631\u064A\u0634 \u062A\u0631\u062A\u0627\u062D 5 \u062F\u0642\u0627\u0626\u0642 \u0642\u0628\u0644 \u0627\u0644\u062A\u0642\u062F\u064A\u0645\u060C \u062B\u0645 \u0642\u062F\u0645\u0647\u0627 \u0645\u0639 \u0628\u0630\u0648\u0631 \u0627\u0644\u0631\u0645\u0627\u0646 \u0627\u0644\u0637\u0627\u0632\u062C\u0629 \u0648\u062E\u0628\u0632 \u0627\u0644\u0635\u0627\u062C \u0627\u0644\u0645\u062D\u0645\u0635 \u0639\u0644\u0649 \u0627\u0644\u0641\u062D\u0645.",
-            instruction_en: "Rest for 5 minutes, garnish with vibrant fresh pomegranate arils and serve with charred flatbread.",
-            timer_minutes: 5,
-            tip_ar: "\u0642\u062F\u0651\u0645\u0647\u0627 \u0641\u0648\u0631\u0627\u064B \u0633\u0627\u062E\u0646\u0629 \u0645\u0639 \u063A\u0645\u0648\u0633 \u0627\u0644\u062B\u0648\u0645\u064A\u0629 \u0627\u0644\u062D\u0631\u0641\u064A\u0629 \u0623\u0648 \u0627\u0644\u0644\u0628\u0646\u0629 \u0627\u0644\u0645\u0634\u0648\u064A\u0629.",
-            tip_en: "Serve sizzling hot alongside whipped artisanal labneh and charred garlic sauce."
-          }
-        ],
-        nutrition: {
-          calories: 610,
-          protein: "48g",
-          carbs: "12g",
-          fats: "42g",
-          fiber: "1.8g",
-          sodium: "580mg"
-        },
-        pairings: {
-          drink_ar: "\u0634\u0631\u0627\u0628 \u0627\u0644\u0643\u0631\u0643\u062F\u064A\u0647 \u0627\u0644\u0645\u0631\u0643\u0632 \u0628\u0627\u0644\u0647\u064A\u0644 \u0648\u0642\u0637\u0639 \u0627\u0644\u062B\u0644\u062C \u0627\u0644\u0645\u0646\u0639\u0634\u0629",
-          drink_en: "Chilled Cardamom Infused Hibiscus Cordial",
-          side_ar: "\u063A\u0645\u0648\u0633 \u0627\u0644\u0644\u0628\u0646\u0629 \u0627\u0644\u0628\u0644\u062F\u064A\u0629 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0628\u0632\u064A\u062A \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0627\u0644\u0628\u0643\u0631",
-          side_en: "Smoked Artisanal Labneh Dip with Zaatar and EVOO",
-          notes_ar: "\u0646\u0643\u0647\u0629 \u0627\u0644\u062F\u062E\u0627\u0646 \u0648\u0625\u0643\u0644\u064A\u0644 \u0627\u0644\u062C\u0628\u0644 \u062A\u0628\u0631\u0632 \u063A\u0646\u0649 \u062F\u0647\u0646 \u0644\u062D\u0645 \u0627\u0644\u0646\u0639\u064A\u0645\u064A \u0627\u0644\u0628\u0644\u062F\u064A.",
-          notes_en: "Earthy herbs and tang perfectly balance the rich profile of local lamb."
-        }
-      },
-      {
-        id: "recipe-5",
-        title: "Pistachio & Rosewater Entremet with Mastic Glaze",
-        title_ar: "\u0625\u0646\u062A\u0631\u064A\u0645\u064A\u0647 \u0627\u0644\u0641\u0633\u062A\u0642 \u0648\u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u0645\u0631\u0622\u0629 \u0628\u0627\u0644\u0645\u0633\u062A\u0643\u0629",
-        title_en: "Pistachio & Rosewater Entremet with Mastic Glaze",
-        description_ar: "\u062D\u0644\u0648\u0649 \u0643\u0639\u0643\u0629 \u0625\u0646\u062A\u0631\u064A\u0645\u064A\u0647 \u0641\u0631\u0646\u0633\u064A\u0629 \u0631\u0627\u0642\u064A\u0629 \u0628\u0637\u0628\u0642\u0627\u062A \u0645\u0648\u0633 \u0627\u0644\u0641\u0633\u062A\u0642 \u0627\u0644\u0635\u0642\u0644\u064A\u060C \u0648\u0628\u0633\u0643\u0648\u064A\u062A \u0627\u0644\u062C\u0627\u0643\u0648\u0646\u062F \u0627\u0644\u062E\u0641\u064A\u0641\u060C \u0648\u062D\u0634\u0648\u0629 \u0647\u0644\u0627\u0645 \u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F \u0627\u0644\u062C\u0628\u0644\u064A\u060C \u0645\u063A\u0644\u0641\u0629 \u0628\u063A\u0644\u064A\u0632 \u0645\u0631\u0622\u0629 \u0644\u0627\u0645\u0639 \u0628\u0646\u0643\u0647\u0629 \u0627\u0644\u0645\u0633\u062A\u0643\u0629 \u0627\u0644\u064A\u0648\u0646\u0627\u0646\u064A\u0629.",
-        description_en: "Haute French entremet layering Sicilian Bronte pistachio mousse, almond joconde sponge, and wild rosewater compote, encased in a high-gloss mastic mirror glaze.",
-        author_id: "chef-2",
-        author_name_ar: "\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
-        author_name_en: "Chef Elena Rostova",
-        author_avatar: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=200&q=80",
-        image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=1200&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80"
-        ],
-        cuisine: "French Haute P\xE2tisserie",
-        cuisine_ar: "\u062D\u0644\u0648\u064A\u0627\u062A \u0641\u0631\u0646\u0633\u064A\u0629 \u0641\u0627\u062E\u0631\u0629",
-        cuisine_en: "French Haute P\xE2tisserie",
-        category: "Desserts & Pastry",
-        category_ar: "\u062D\u0644\u0648\u064A\u0627\u062A \u0648\u0645\u0639\u062C\u0646\u0627\u062A",
-        category_en: "Desserts & Pastry",
-        difficulty: "Hard",
-        difficulty_ar: "\u0645\u062A\u0642\u062F\u0645",
-        difficulty_en: "Hard",
-        base_servings: 6,
-        prep_time: 60,
-        cook_time: 30,
-        total_time: 90,
-        calories: 460,
-        likes_count: 2150,
-        saves_count: 1480,
-        rating: 4.99,
-        reviews_count: 210,
-        created_at: "2026-08-06",
-        tags: ["Entremet", "Pistachio", "Mastic", "Rosewater", "FrenchPastry"],
-        ingredients: [
-          {
-            id: "ing-501",
-            name_ar: "\u0645\u0639\u062C\u0648\u0646 \u0641\u0633\u062A\u0642 \u0628\u0631\u0648\u0646\u062A\u064A \u0635\u0642\u0644\u064A \u0646\u0642\u064A 100%",
-            name_en: "100% Pure Bronte Pistachio Paste",
-            baseAmount: 120,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0628\u062F\u0648\u0646 \u0625\u0636\u0627\u0641\u0627\u062A \u0623\u0648 \u0645\u0644\u0648\u0646\u0627\u062A",
-            notes_en: "Unsweetened vibrant green"
-          },
-          {
-            id: "ing-502",
-            name_ar: "\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0628\u064A\u0636\u0627\u0621 \u0641\u0627\u062E\u0631\u0629 34% \u0632\u0628\u062F\u0629 \u0643\u0627\u0643\u0627\u0648",
-            name_en: "Valrhona 34% White Chocolate Couverture",
-            baseAmount: 200,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0644\u0645\u0648\u0633 \u0648\u0627\u0644\u063A\u0644\u064A\u0632",
-            notes_en: "For mousse and glaze"
-          },
-          {
-            id: "ing-503",
-            name_ar: "\u0643\u0631\u064A\u0645\u0629 \u062E\u0641\u0642 \u0637\u0627\u0632\u062C\u0629 36% \u062F\u0633\u0645",
-            name_en: "Heavy Whipping Cream (36% fat)",
-            baseAmount: 350,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0645\u062E\u0641\u0648\u0642\u0629 \u0644\u0646\u0635\u0641 \u0642\u0648\u0627\u0645 (Soft Peaks)",
-            notes_en: "Whipped to soft peaks"
-          },
-          {
-            id: "ing-504",
-            name_ar: "\u0645\u0627\u0621 \u0648\u0631\u062F \u062C\u0628\u0644\u064A \u0637\u0628\u064A\u0639\u064A \u0645\u0642\u0637\u0631",
-            name_en: "Distilled Wild Mountain Rosewater",
-            baseAmount: 30,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0644\u0644\u062D\u0634\u0648\u0629 \u0627\u0644\u0647\u0644\u0627\u0645\u064A\u0629",
-            notes_en: "For jelly insert"
-          },
-          {
-            id: "ing-505",
-            name_ar: "\u062F\u0645\u0648\u0639 \u0645\u0633\u062A\u0643\u0629 \u064A\u0648\u0646\u0627\u0646\u064A\u0629 \u0623\u0635\u0644\u064A\u0629 (\u062E\u064A\u0648\u0633)",
-            name_en: "Chios Mastic Tears",
-            baseAmount: 4,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u0637\u062D\u0648\u0646\u0629 \u0645\u0639 \u0642\u0644\u064A\u0644 \u0645\u0646 \u0627\u0644\u0633\u0643\u0631",
-            notes_en: "Ground finely with sugar"
-          },
-          {
-            id: "ing-506",
-            name_ar: "\u0634\u0631\u0627\u0626\u062D \u062C\u064A\u0644\u0627\u062A\u064A\u0646 \u0628\u0642\u0631\u064A \u062D\u0644\u0627\u0644 (Gold)",
-            name_en: "Halal Beef Gelatin Sheets (Gold Grade)",
-            baseAmount: 6,
-            unit_ar: "\u062D\u0628\u0629",
-            unit_en: "pcs",
-            notes_ar: "\u0645\u0646\u0642\u0648\u0639\u0629 \u0641\u064A \u0645\u0627\u0621 \u0645\u062B\u0644\u062C",
-            notes_en: "Bloomed in ice water"
-          },
-          {
-            id: "ing-507",
-            name_ar: "\u062F\u0642\u064A\u0642 \u0644\u0648\u0632 \u0623\u0628\u064A\u0636 \u0645\u0637\u062D\u0648\u0646 \u0641\u0627\u0626\u0642 \u0627\u0644\u0646\u0639\u0648\u0645\u0629",
-            name_en: "Ultra-Fine Blanched Almond Flour",
-            baseAmount: 90,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0628\u0633\u0643\u0648\u064A\u062A \u0627\u0644\u062C\u0627\u0643\u0648\u0646\u062F",
-            notes_en: "For joconde sponge"
-          },
-          {
-            id: "ing-508",
-            name_ar: "\u0633\u0643\u0631 \u0628\u0648\u062F\u0631\u0629 \u0641\u0627\u0626\u0642 \u0627\u0644\u0646\u0639\u0648\u0645\u0629",
-            name_en: "Confectioners Powdered Sugar",
-            baseAmount: 80,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0644\u0628\u0633\u0643\u0648\u064A\u062A \u0648\u0627\u0644\u0645\u0648\u0633",
-            notes_en: "For sponge base"
-          }
-        ],
-        steps: [
-          {
-            step_number: 1,
-            title_ar: "\u062E\u0628\u0632 \u0628\u0633\u0643\u0648\u064A\u062A \u0627\u0644\u062C\u0627\u0643\u0648\u0646\u062F \u0628\u0627\u0644\u0644\u0648\u0632",
-            title_en: "Almond Joconde Sponge Baking",
-            instruction_ar: "\u0627\u062E\u0641\u0642 \u0627\u0644\u0628\u064A\u0636 \u0645\u0639 \u0633\u0643\u0631 \u0627\u0644\u0628\u0648\u062F\u0631\u0629 \u0648\u062F\u0642\u064A\u0642 \u0627\u0644\u0644\u0648\u0632 \u062D\u062A\u0649 \u064A\u062A\u0636\u0627\u0639\u0641 \u062D\u062C\u0645\u0647. \u0627\u062F\u0645\u062C \u0628\u064A\u0627\u0636 \u0627\u0644\u0628\u064A\u0636 \u0627\u0644\u0645\u062E\u0641\u0648\u0642 \u0628\u0644\u0637\u0641 \u0648\u0627\u062E\u0628\u0632 \u0639\u0644\u0649 \u0635\u064A\u0646\u064A\u0629 \u0631\u0642\u064A\u0642\u0629 \u0628\u062D\u0631\u0627\u0631\u0629 200 \u0645\u0626\u0648\u064A\u0629 \u0644\u0645\u062F\u0629 8 \u062F\u0642\u0627\u0626\u0642\u060C \u062B\u0645 \u0627\u062A\u0631\u0643\u0647 \u064A\u0628\u0631\u062F \u0648\u0627\u0642\u0637\u0639\u0647 \u0628\u062D\u062C\u0645 \u0627\u0644\u0642\u0627\u0644\u0628.",
-            instruction_en: "Whip eggs, icing sugar, and almond flour. Fold in gentle meringue, spread thinly on parchment, and bake at 200\xB0C for 8 mins. Cool and cut to ring size.",
-            timer_minutes: 15,
-            tip_ar: "\u0627\u0644\u062E\u0628\u0632 \u0627\u0644\u0633\u0631\u064A\u0639 \u0641\u064A \u062D\u0631\u0627\u0631\u0629 \u0639\u0627\u0644\u064A\u0629 \u064A\u062D\u0627\u0641\u0638 \u0639\u0644\u0649 \u0637\u0631\u0627\u0648\u0629 \u0627\u0644\u0628\u0633\u0643\u0648\u064A\u062A \u062F\u0648\u0646 \u062C\u0641\u0627\u0641.",
-            tip_en: "High-heat flash baking keeps joconde tender and supple for layering."
-          },
-          {
-            step_number: 2,
-            title_ar: "\u062A\u062D\u0636\u064A\u0631 \u062D\u0634\u0648\u0629 \u0647\u0644\u0627\u0645 \u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F \u0648\u062A\u062C\u0645\u064A\u062F\u0647\u0627",
-            title_en: "Rosewater Insert Preparation",
-            instruction_ar: "\u0633\u062E\u0651\u0646 \u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F \u0645\u0639 \u0642\u0644\u064A\u0644 \u0645\u0646 \u0639\u0635\u064A\u0631 \u0627\u0644\u062A\u0648\u062A \u0648\u0627\u0644\u062C\u064A\u0644\u0627\u062A\u064A\u0646 \u0627\u0644\u0645\u0635\u0641\u0649. \u0627\u0633\u0643\u0628 \u0627\u0644\u0647\u0644\u0627\u0645 \u0641\u064A \u0642\u0648\u0627\u0644\u0628 \u062F\u0627\u0626\u0631\u064A\u0629 \u0623\u0635\u063A\u0631 \u0628\u0640 2 \u0633\u0645 \u0645\u0646 \u0627\u0644\u0642\u0627\u0644\u0628 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u060C \u0648\u062C\u0645\u062F\u0647\u0627 \u062A\u0645\u0627\u0645\u0627\u064B \u0641\u064A \u0627\u0644\u0641\u0631\u064A\u0632\u0631 \u0644\u0645\u062F\u0629 \u0633\u0627\u0639\u062A\u064A\u0646.",
-            instruction_en: "Warm rosewater with raspberry essence and bloomed gelatin. Pour into insert silicone molds (2cm smaller than cake ring) and freeze solid for 2 hours.",
-            timer_minutes: 120,
-            tip_ar: "\u062A\u062C\u0645\u064A\u062F \u0627\u0644\u062D\u0634\u0648\u0629 \u0627\u0644\u062F\u0627\u062E\u0644\u064A\u0629 \u062E\u0637\u0648\u0629 \u0623\u0633\u0627\u0633\u064A\u0629 \u0644\u0636\u0645\u0627\u0646 \u062B\u0628\u0627\u062A\u0647\u0627 \u0641\u064A \u0645\u0646\u062A\u0635\u0641 \u0627\u0644\u0645\u0648\u0633 \u0639\u0646\u062F \u0627\u0644\u062A\u0631\u0643\u064A\u0628.",
-            tip_en: "Freezing inserts rock-solid prevents them from sinking or bleeding into the mousse."
-          },
-          {
-            step_number: 3,
-            title_ar: "\u0635\u0646\u0639 \u0645\u0648\u0633 \u0627\u0644\u0641\u0633\u062A\u0642 \u0627\u0644\u0628\u0627\u0641\u0627\u0631\u0648\u0627\u0632",
-            title_en: "Pistachio Bavarois Mousse",
-            instruction_ar: "\u0627\u0635\u0646\u0639 \u0643\u0627\u0633\u062A\u0631\u062F \u0625\u0646\u062C\u0644\u064A\u0632\u064A \u0633\u0627\u062E\u0646 \u0645\u0639 \u0645\u0639\u062C\u0648\u0646 \u0627\u0644\u0641\u0633\u062A\u0642 \u0648\u0627\u0644\u062C\u064A\u0644\u0627\u062A\u064A\u0646 \u0648\u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u0628\u064A\u0636\u0627\u0621. \u0639\u0646\u062F\u0645\u0627 \u062A\u0628\u0631\u062F \u0625\u0644\u0649 30 \u0645\u0626\u0648\u064A\u0629\u060C \u0627\u062F\u0645\u062C \u0643\u0631\u064A\u0645\u0629 \u0627\u0644\u062E\u0641\u0642 \u0627\u0644\u0645\u062E\u0641\u0648\u0642\u0629 \u0628\u062E\u0641\u0629 \u0628\u062D\u0631\u0643\u0627\u062A \u062F\u0627\u0626\u0631\u064A\u0629.",
-            instruction_en: "Make an anglaise base with pistachio paste, white chocolate, and gelatin. When cooled to 30\xB0C, fold in soft-whipped cream gently until homogenous.",
-            timer_minutes: 20,
-            tip_ar: "\u062F\u0631\u062C\u0629 \u062D\u0631\u0627\u0631\u0629 \u062F\u0645\u062C \u0627\u0644\u0643\u0631\u064A\u0645\u0629 \u062D\u0627\u0633\u0645\u0629\u061B \u0625\u0630\u0627 \u0643\u0627\u0646\u062A \u0633\u0627\u062E\u0646\u0629 \u0633\u062A\u0630\u0648\u0628 \u0627\u0644\u0643\u0631\u064A\u0645\u0629\u060C \u0648\u0625\u0630\u0627 \u0643\u0627\u0646\u062A \u0628\u0627\u0631\u062F\u0629 \u0633\u064A\u062A\u0643\u062A\u0644 \u0627\u0644\u062C\u064A\u0644\u0627\u062A\u064A\u0646.",
-            tip_en: "Temperature control (30\xB0C) is crucial to avoid deflating the whipped cream."
-          },
-          {
-            step_number: 4,
-            title_ar: "\u0627\u0644\u062A\u0631\u0643\u064A\u0628 \u0627\u0644\u0639\u0643\u0633\u064A \u0648\u0627\u0644\u062A\u062C\u0645\u064A\u062F \u0627\u0644\u0635\u0627\u062F\u0645",
-            title_en: "Inverse Assembly & Blast Freezing",
-            instruction_ar: "\u0627\u0633\u0643\u0628 \u0646\u0635\u0641 \u0643\u0645\u064A\u0629 \u0645\u0648\u0633 \u0627\u0644\u0641\u0633\u062A\u0642 \u0641\u064A \u0642\u0627\u0644\u0628 \u0633\u064A\u0644\u064A\u0643\u0648\u0646 \u0641\u0627\u062E\u0631\u060C \u0636\u0639 \u0642\u0631\u0635 \u0647\u0644\u0627\u0645 \u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F \u0627\u0644\u0645\u062C\u0645\u062F \u0641\u064A \u0627\u0644\u0648\u0633\u0637\u060C \u0623\u0636\u0641 \u0628\u0642\u064A\u0629 \u0627\u0644\u0645\u0648\u0633 \u062B\u0645 \u0627\u063A\u0644\u0642 \u0628\u0637\u0628\u0642\u0629 \u0628\u0633\u0643\u0648\u064A\u062A \u0627\u0644\u062C\u0627\u0643\u0648\u0646\u062F. \u062C\u0645\u062F \u0627\u0644\u0642\u0627\u0644\u0628 \u0644\u064A\u0644\u0629 \u0643\u0627\u0645\u0644\u0629.",
-            instruction_en: "Pipe half the pistachio mousse into silicone mold, insert frozen rose disc in center, top with remaining mousse, and cap with joconde sponge. Freeze overnight.",
-            timer_minutes: 360,
-            tip_ar: "\u0627\u0644\u062A\u0631\u0643\u064A\u0628 \u0627\u0644\u0639\u0643\u0633\u064A \u064A\u0636\u0645\u0646 \u0633\u0637\u062D\u0627\u064B \u0623\u0645\u0644\u0633\u0627\u064B \u062E\u0627\u0644\u064A\u0627\u064B \u0645\u0646 \u0627\u0644\u0639\u064A\u0648\u0628 \u0639\u0646\u062F \u0646\u0632\u0639 \u0627\u0644\u0633\u064A\u0644\u064A\u0643\u0648\u0646.",
-            tip_en: "Inverse molding produces pristine glass-smooth geometry upon demolding."
-          },
-          {
-            step_number: 5,
-            title_ar: "\u0633\u0643\u0628 \u063A\u0644\u064A\u0632 \u0627\u0644\u0645\u0631\u0622\u0629 \u0628\u0627\u0644\u0645\u0633\u062A\u0643\u0629 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645",
-            title_en: "Mirror Glazing & Gold Leaf Finishing",
-            instruction_ar: "\u0633\u062E\u0651\u0646 \u063A\u0644\u064A\u0632 \u0627\u0644\u0645\u0631\u0622\u0629 \u0627\u0644\u0645\u062D\u0636\u0631 \u0628\u0627\u0644\u0645\u0633\u062A\u0643\u0629 \u0648\u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u0625\u0644\u0649 \u062F\u0631\u062C\u0629 \u062D\u0631\u0627\u0631\u0629 32 \u0645\u0626\u0648\u064A\u0629. \u0627\u0646\u0632\u0639 \u0627\u0644\u0625\u0646\u062A\u0631\u064A\u0645\u064A\u0647 \u0627\u0644\u0645\u062C\u0645\u062F \u0645\u0646 \u0627\u0644\u0642\u0627\u0644\u0628\u060C \u0648\u0636\u0639\u0647 \u0641\u0648\u0642 \u0634\u0628\u0643 \u0648\u0627\u0633\u0643\u0628 \u0627\u0644\u063A\u0644\u064A\u0632 \u062F\u0641\u0639\u0629 \u0648\u0627\u062D\u062F\u0629 \u0648\u0628\u0634\u0643\u0644 \u0645\u062A\u0648\u0627\u0635\u0644 \u0644\u064A\u063A\u0637\u064A \u0627\u0644\u0642\u0628\u0629 \u0628\u0627\u0644\u0643\u0627\u0645\u0644.",
-            instruction_en: "Warm mastic mirror glaze to exactly 32\xB0C. Demold frozen entremet onto a glazing rack, pour glaze in one fluid motion to coat seamlessly, and garnish with gold leaf and crushed pistachios.",
-            timer_minutes: 10,
-            tip_ar: "\u0635\u0628 \u0627\u0644\u063A\u0644\u064A\u0632 \u0628\u062D\u0631\u0643\u0629 \u0648\u0627\u062D\u062F\u0629 \u0645\u0633\u062A\u0645\u0631\u0629 \u064A\u0645\u0646\u0639 \u062A\u0643\u0648\u0646 \u062E\u0637\u0648\u0637 \u0623\u0648 \u062A\u062C\u0627\u0639\u064A\u062F \u0639\u0644\u0649 \u0633\u0637\u062D \u0627\u0644\u0645\u0631\u0622\u0629.",
-            tip_en: "One uninterrupted pouring cascade guarantees a mirror reflection with zero streaks."
-          }
-        ],
-        nutrition: {
-          calories: 460,
-          protein: "9g",
-          carbs: "42g",
-          fats: "30g",
-          fiber: "2.8g",
-          sodium: "110mg"
-        },
-        pairings: {
-          drink_ar: "\u0642\u0647\u0648\u0629 \u0633\u0639\u0648\u062F\u064A\u0629 \u0634\u0642\u0631\u0627\u0621 \u0628\u0627\u0644\u0647\u064A\u0644 \u0648\u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0627\u0644\u0641\u0627\u062E\u0631",
-          drink_en: "Aromatic Saudi Light Roast Coffee with Cardamom",
-          side_ar: "\u062D\u0628\u0627\u062A \u062A\u0648\u062A \u0627\u0644\u0639\u0644\u064A\u0642 \u0627\u0644\u0637\u0627\u0632\u062C \u0645\u0639 \u0644\u0645\u0633\u0627\u062A \u0648\u0631\u0642 \u0627\u0644\u0630\u0647\u0628 \u0627\u0644\u063A\u0630\u0627\u0626\u064A",
-          side_en: "Fresh Raspberries with 24k Edible Gold Leaf",
-          notes_ar: "\u0645\u0631\u0627\u0631\u0629 \u0627\u0644\u0642\u0647\u0648\u0629 \u0627\u0644\u062E\u0641\u064A\u0641\u0629 \u062A\u0648\u0627\u0632\u0646 \u062D\u0644\u0627\u0648\u0629 \u0627\u0644\u063A\u0644\u064A\u0632 \u0648\u062A\u0628\u0631\u0632 \u0639\u0637\u0631\u064A\u0629 \u0627\u0644\u0645\u0633\u062A\u0643\u0629 \u0648\u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F.",
-          notes_en: "Lightly spiced coffee cuts through the luscious richness of pistachio bavarois."
-        }
-      },
-      {
-        id: "recipe-6",
-        title: "Hamachi Crudo with Yuzu White Ponzu & Finger Lime",
-        title_ar: "\u0643\u0631\u0648\u0648\u062F\u0648 \u0633\u0645\u0643 \u0627\u0644\u0647\u0627\u0645\u0627\u062A\u0634\u064A \u0645\u0639 \u0627\u0644\u064A\u0648\u0632\u0648 \u0648\u0628\u0648\u0646\u0632\u0648 \u0627\u0644\u0643\u0627\u0641\u064A\u0627\u0631 \u0627\u0644\u0644\u064A\u0645\u0648\u0646\u064A",
-        title_en: "Hamachi Crudo with Yuzu White Ponzu & Finger Lime",
-        description_ar: "\u0634\u0631\u0627\u0626\u062D \u0633\u0645\u0643 \u0647\u0627\u0645\u0627\u062A\u0634\u064A \u064A\u0627\u0628\u0627\u0646\u064A \u0637\u0627\u0632\u062C \u0628\u062F\u0631\u062C\u0629 \u0633\u0627\u0634\u064A\u0645\u064A\u060C \u0645\u062A\u0628\u0644\u0629 \u0628\u0635\u0644\u0635\u0629 \u0628\u0648\u0646\u0632\u0648 \u0628\u064A\u0636\u0627\u0621 \u0628\u0646\u0643\u0647\u0629 \u0641\u0627\u0643\u0647\u0629 \u0627\u0644\u064A\u0648\u0632\u0648 \u0627\u0644\u0639\u0637\u0631\u064A\u0629\u060C \u0645\u063A\u0637\u0627\u0629 \u0628\u0643\u0627\u0641\u064A\u0627\u0631 \u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0627\u0644\u0623\u0633\u062A\u0631\u0627\u0644\u064A \u0648\u0632\u064A\u062A \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u0648\u0627\u0644\u0623\u0639\u0634\u0627\u0628 \u0627\u0644\u0645\u062C\u0647\u0631\u064A\u0629.",
-        description_en: "Sashimi-grade Japanese Yellowtail thinly shaved, dressed in citrusy white yuzu shoyu ponzu, crowned with bursting Australian finger lime pearls and micro greens.",
-        author_id: "chef-4",
-        author_name_ar: "\u0634\u064A\u0641 \u0643\u064A\u0646\u062C\u064A \u062A\u0627\u0643\u0627\u0647\u0627\u0634\u064A",
-        author_name_en: "Chef Kenji Takahashi",
-        author_avatar: "https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?auto=format&fit=crop&w=200&q=80",
-        image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=1200&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80"
-        ],
-        cuisine: "Contemporary Japanese Kaiseki",
-        cuisine_ar: "\u064A\u0627\u0628\u0627\u0646\u064A \u0645\u0639\u0627\u0635\u0631 \u0643\u0627\u064A\u0633\u064A\u0643\u064A",
-        cuisine_en: "Contemporary Japanese",
-        category: "Appetizers & Raw",
-        category_ar: "\u0645\u0642\u0628\u0644\u0627\u062A \u0648\u0623\u0637\u0628\u0627\u0642 \u0628\u0627\u0631\u062F\u0629",
-        category_en: "Appetizers & Raw",
-        difficulty: "Medium",
-        difficulty_ar: "\u0645\u062A\u0648\u0633\u0637",
-        difficulty_en: "Medium",
-        base_servings: 4,
-        prep_time: 20,
-        cook_time: 0,
-        total_time: 20,
-        calories: 280,
-        likes_count: 1350,
-        saves_count: 820,
-        rating: 4.97,
-        reviews_count: 102,
-        created_at: "2026-08-07",
-        tags: ["Hamachi", "Crudo", "Sashimi", "Yuzu", "Japanese"],
-        ingredients: [
-          {
-            id: "ing-601",
-            name_ar: "\u0641\u064A\u0644\u064A\u0647 \u0633\u0645\u0643 \u0647\u0627\u0645\u0627\u062A\u0634\u064A \u064A\u0627\u0628\u0627\u0646\u064A \u0628\u062F\u0631\u062C\u0629 \u0633\u0627\u0634\u064A\u0645\u064A",
-            name_en: "Sashimi-Grade Hamachi (Yellowtail) Loin",
-            baseAmount: 360,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u0628\u0631\u062F \u0648\u0645\u062D\u0641\u0648\u0638 \u0639\u0644\u0649 \u062B\u0644\u062C \u062C\u0627\u0641",
-            notes_en: "Ultra-fresh chilled sashimi grade"
-          },
-          {
-            id: "ing-602",
-            name_ar: "\u0639\u0635\u064A\u0631 \u064A\u0648\u0632\u0648 \u064A\u0627\u0628\u0627\u0646\u064A \u0637\u0628\u064A\u0639\u064A 100%",
-            name_en: "Pure Japanese Yuzu Juice",
-            baseAmount: 30,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u063A\u064A\u0631 \u0645\u062D\u0644\u0649",
-            notes_en: "Unsweetened cold extracted"
-          },
-          {
-            id: "ing-603",
-            name_ar: "\u0635\u0644\u0635\u0629 \u0635\u0648\u064A\u0627 \u0628\u064A\u0636\u0627\u0621 (\u0634\u064A\u0631\u0648 \u0634\u064A\u0648)",
-            name_en: "Artisanal White Soy Sauce (Shiro Shoyu)",
-            baseAmount: 40,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0644\u062D\u0641\u0638 \u0644\u0648\u0646 \u0627\u0644\u0633\u0645\u0643 \u0627\u0644\u0648\u0631\u062F\u064A \u0627\u0644\u0641\u0627\u062A\u062D",
-            notes_en: "Preserves pristine meat color"
-          },
-          {
-            id: "ing-604",
-            name_ar: "\u062D\u0628\u0627\u062A \u0643\u0627\u0641\u064A\u0627\u0631 \u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0627\u0644\u0623\u0633\u062A\u0631\u0627\u0644\u064A (Finger Lime)",
-            name_en: "Fresh Finger Lime Pearls",
-            baseAmount: 2,
-            unit_ar: "\u062D\u0628\u0629",
-            unit_en: "pcs",
-            notes_ar: "\u062D\u0628\u064A\u0628\u0627\u062A \u062A\u0646\u0641\u062C\u0631 \u0628\u0627\u0644\u062D\u0645\u0648\u0636\u0629 \u0641\u064A \u0627\u0644\u0641\u0645",
-            notes_en: "Caviar-like citrus pearls"
-          },
-          {
-            id: "ing-605",
-            name_ar: "\u0632\u064A\u062A \u0643\u0645\u0623\u0629 \u0628\u064A\u0636\u0627\u0621 \u0625\u064A\u0637\u0627\u0644\u064A \u0641\u0627\u062E\u0631",
-            name_en: "White Truffle Infused Olive Oil",
-            baseAmount: 15,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0642\u0637\u0631\u0627\u062A \u0644\u0644\u062A\u0644\u0645\u064A\u0639 \u0648\u0627\u0644\u0646\u0643\u0647\u0629",
-            notes_en: "Aromatic finishing drops"
-          },
-          {
-            id: "ing-606",
-            name_ar: "\u0623\u0648\u0631\u0627\u0642 \u0643\u0632\u0628\u0631\u0629 \u0645\u062C\u0647\u0631\u064A\u0629 \u0648\u0632\u0647\u0648\u0631 \u0634\u064A\u0633\u0648 \u0628\u0646\u0641\u0633\u062C\u064A\u0629",
-            name_en: "Micro Shiso Leaves & Edible Flowers",
-            baseAmount: 10,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0644\u062A\u0632\u064A\u064A\u0646 \u0627\u0644\u062C\u0645\u0627\u0644\u064A",
-            notes_en: "For visual elegance"
-          }
-        ],
-        steps: [
-          {
-            step_number: 1,
-            title_ar: "\u062A\u0642\u0637\u064A\u0639 \u0627\u0644\u0647\u0627\u0645\u0627\u062A\u0634\u064A \u0628\u0633\u0643\u064A\u0646 \u0627\u0644\u0633\u0627\u0634\u064A\u0645\u064A \u0627\u0644\u062D\u0631\u0641\u064A\u0629",
-            title_en: "Precision Sashimi Slicing",
-            instruction_ar: "\u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0633\u0643\u064A\u0646 \u064A\u0627\u0646\u0627\u063A\u064A\u0628\u0627 \u064A\u0627\u0628\u0627\u0646\u064A \u062D\u0627\u062F \u0644\u0644\u063A\u0627\u064A\u0629\u060C \u0627\u0642\u0637\u0639 \u0641\u064A\u0644\u064A\u0647 \u0627\u0644\u0647\u0627\u0645\u0627\u062A\u0634\u064A \u0628\u062D\u0631\u0643\u0629 \u0633\u062D\u0628 \u0648\u0627\u062D\u062F\u0629 \u0648\u0628\u0632\u0627\u0648\u064A\u0629 45 \u062F\u0631\u062C\u0629 \u0625\u0644\u0649 \u0634\u0631\u0627\u0626\u062D \u0631\u0642\u064A\u0642\u0629 \u0645\u062A\u0633\u0627\u0648\u064A\u0629 \u0628\u0633\u0645\u0627\u0643\u0629 3 \u0645\u0644\u0645.",
-            instruction_en: "Using a razor-sharp Japanese Yanagiba blade, slice hamachi against the grain in one single pulling motion into 3mm delicate sashimi ribbons.",
-            timer_minutes: 10,
-            tip_ar: "\u062D\u0631\u0643\u0629 \u0627\u0644\u0633\u062D\u0628 \u0627\u0644\u0648\u0627\u062D\u062F\u0629 \u062A\u062D\u0627\u0641\u0638 \u0639\u0644\u0649 \u062E\u0644\u0627\u064A\u0627 \u0627\u0644\u0644\u062D\u0645 \u0645\u0644\u0633\u0627\u0621 \u0648\u0644\u0627\u0645\u0639\u0629 \u0648\u062A\u0645\u0646\u0639 \u062A\u0645\u0632\u0642 \u0627\u0644\u0623\u0646\u0633\u062C\u0629.",
-            tip_en: "A single clean pull stroke preserves cellular integrity for a glossy sheen."
-          },
-          {
-            step_number: 2,
-            title_ar: "\u062A\u0631\u0643\u064A\u0628 \u0635\u0648\u0635 \u0627\u0644\u0628\u0648\u0646\u0632\u0648 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u0628\u0627\u0644\u064A\u0648\u0632\u0648",
-            title_en: "White Yuzu Ponzu Dressing",
-            instruction_ar: "\u0627\u062E\u0644\u0637 \u0639\u0635\u064A\u0631 \u0627\u0644\u064A\u0648\u0632\u0648 \u0645\u0639 \u0635\u0644\u0635\u0629 \u0627\u0644\u0635\u0648\u064A\u0627 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u0648\u0642\u0644\u064A\u0644 \u0645\u0646 \u0632\u064A\u062A \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u0641\u064A \u0648\u0639\u0627\u0621 \u0632\u062C\u0627\u062C\u064A \u0635\u063A\u064A\u0631 \u0645\u0628\u0631\u062F.",
-            instruction_en: "Whisk yuzu juice with white shoyu and drops of white truffle oil in a chilled glass vessel.",
-            timer_minutes: 5,
-            tip_ar: "\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0627\u0644\u0635\u0648\u064A\u0627 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u064A\u0645\u0646\u0639 \u0627\u0633\u0648\u062F\u0627\u062F \u0644\u0648\u0646 \u0627\u0644\u0633\u0645\u0643 \u0627\u0644\u0623\u0628\u064A\u0636 \u0627\u0644\u0634\u0641\u0627\u0641.",
-            tip_en: "White soy preserves the pearl-pink translucency of fresh yellowtail."
-          },
-          {
-            step_number: 3,
-            title_ar: "\u0627\u0644\u062A\u0631\u062A\u064A\u0628 \u0648\u0627\u0644\u062A\u0632\u064A\u064A\u0646 \u0628\u0627\u0644\u062D\u0645\u0636\u064A\u0627\u062A \u0648\u0627\u0644\u0632\u0647\u0648\u0631",
-            title_en: "Arranging, Dressing & Serving",
-            instruction_ar: "\u0631\u062A\u0628 \u0634\u0631\u0627\u0626\u062D \u0627\u0644\u0647\u0627\u0645\u0627\u062A\u0634\u064A \u0628\u0634\u0643\u0644 \u062F\u0627\u0626\u0631\u064A \u0623\u0646\u064A\u0642 \u0639\u0644\u0649 \u0637\u0628\u0642 \u0633\u064A\u0631\u0627\u0645\u064A\u0643 \u062D\u062C\u0631\u064A \u0628\u0627\u0631\u062F. \u0627\u0633\u0643\u0628 \u0627\u0644\u0628\u0648\u0646\u0632\u0648 \u0628\u0631\u0642\u0629 \u062D\u0648\u0644 \u0627\u0644\u0633\u0645\u0643\u060C \u0648\u0632\u0639 \u0644\u0622\u0644\u0626 \u0643\u0627\u0641\u064A\u0627\u0631 \u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0648\u0632\u0647\u0648\u0631 \u0627\u0644\u0634\u064A\u0633\u0648 \u0648\u0642\u062F\u0645\u0647 \u0641\u0648\u0631\u0627\u064B.",
-            instruction_en: "Arrange sashimi slices harmoniously on chilled slate ceramic plates. Spoon chilled ponzu around, dot with finger lime pearls, and finish with micro shiso.",
-            timer_minutes: 5,
-            tip_ar: "\u0642\u062F\u0645 \u0627\u0644\u0637\u0628\u0642 \u0628\u0627\u0631\u062F\u0627\u064B \u0641\u0648\u0631 \u062A\u062D\u0636\u064A\u0631\u0647 \u0644\u0644\u0627\u0633\u062A\u0645\u062A\u0627\u0639 \u0628\u0627\u0646\u0641\u062C\u0627\u0631 \u062D\u0645\u0648\u0636\u0629 \u0643\u0627\u0641\u064A\u0627\u0631 \u0627\u0644\u0644\u064A\u0645\u0648\u0646.",
-            tip_en: "Serve immediately on iced plates to capture the popping citrus crunch."
-          }
-        ],
-        nutrition: {
-          calories: 280,
-          protein: "32g",
-          carbs: "4g",
-          fats: "15g",
-          fiber: "0.8g",
-          sodium: "460mg"
-        },
-        pairings: {
-          drink_ar: "\u0634\u0627\u064A \u0627\u0644\u0645\u0627\u062A\u0634\u0627 \u0627\u0644\u0623\u062E\u0636\u0631 \u0627\u0644\u0628\u0627\u0631\u062F \u0628\u0627\u0644\u062E\u064A\u0627\u0631 \u0648\u0627\u0644\u0632\u0646\u062C\u0628\u064A\u0644",
-          drink_en: "Cold Brew Ceremonial Matcha with Cucumber & Ginger",
-          side_ar: "\u0633\u0644\u0637\u0629 \u0623\u0639\u0634\u0627\u0628 \u0627\u0644\u0628\u062D\u0631 \u0627\u0644\u0648\u0643\u0627\u0645\u064A \u0627\u0644\u0645\u062E\u0644\u0644\u0629 \u0628\u0632\u064A\u062A \u0627\u0644\u0633\u0645\u0633\u0645 \u0627\u0644\u0645\u062D\u0645\u0635",
-          side_en: "Pickled Wakame Seaweed with Toasted Sesame Oil",
-          notes_ar: "\u062D\u0645\u0648\u0636\u0629 \u0627\u0644\u064A\u0648\u0632\u0648 \u062A\u0630\u064A\u0628 \u062F\u0647\u0648\u0646 \u0627\u0644\u0647\u0627\u0645\u0627\u062A\u0634\u064A \u0627\u0644\u063A\u0646\u064A\u0629 \u0644\u062A\u0645\u0646\u062D \u0627\u0646\u062A\u0639\u0627\u0634\u0627\u064B \u0641\u0648\u0631\u064A\u0627\u064B.",
-          notes_en: "Yuzu brightness beautifully lifts the lush, rich oil content of sashimi yellowtail."
-        }
-      },
-      {
-        id: "recipe-7",
-        title: "Smoked Freekeh Risotto with Wild Morels",
-        title_ar: "\u0631\u064A\u0632\u0648\u062A\u0648 \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0627\u0644\u062E\u0636\u0631\u0627\u0621 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0645\u0639 \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0628\u0631\u064A",
-        title_en: "Smoked Freekeh Risotto with Wild Morels",
-        description_ar: "\u062D\u0628\u0648\u0628 \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0627\u0644\u0634\u0627\u0645\u064A\u0629 \u0627\u0644\u062E\u0636\u0631\u0627\u0621 \u0627\u0644\u0645\u062D\u0645\u0635\u0629 \u0639\u0644\u0649 \u0627\u0644\u062D\u0637\u0628\u060C \u0645\u0637\u0647\u0648\u0629 \u0628\u0623\u0633\u0644\u0648\u0628 \u0627\u0644\u0631\u064A\u0632\u0648\u062A\u0648 \u0627\u0644\u0625\u064A\u0637\u0627\u0644\u064A \u0641\u064A \u0645\u0631\u0642 \u0627\u0644\u0641\u0637\u0631 \u0627\u0644\u0628\u0631\u064A \u0627\u0644\u0645\u0639\u062A\u0642\u060C \u0645\u0639 \u062C\u0628\u0646\u0629 \u0627\u0644\u0642\u0634\u0642\u0648\u0627\u0646 \u0627\u0644\u0642\u062F\u064A\u0645\u0629 \u0648\u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0645\u0643\u0631\u0645\u0644.",
-        description_en: "Artisanal green fire-roasted smoked freekeh prepared risotto-style in rich wild mushroom broth, folded with aged Kashkaval cheese and pan-glazed wild morels.",
-        author_id: "chef-3",
-        author_name_ar: "\u0634\u064A\u0641 \u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631",
-        author_name_en: "Chef Tariq Mansour",
-        author_avatar: "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=200&q=80",
-        image: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=1200&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=800&q=80"
-        ],
-        cuisine: "Modern Levantine Fusion",
-        cuisine_ar: "\u0634\u0627\u0645\u064A \u0645\u0639\u0627\u0635\u0631",
-        cuisine_en: "Modern Levantine",
-        category: "Vegetarian & Grains",
-        category_ar: "\u0646\u0628\u0627\u062A\u064A \u0648\u062D\u0628\u0648\u0628",
-        category_en: "Vegetarian & Grains",
-        difficulty: "Medium",
-        difficulty_ar: "\u0645\u062A\u0648\u0633\u0637",
-        difficulty_en: "Medium",
-        base_servings: 4,
-        prep_time: 20,
-        cook_time: 35,
-        total_time: 55,
-        calories: 440,
-        likes_count: 870,
-        saves_count: 590,
-        rating: 4.9,
-        reviews_count: 74,
-        created_at: "2026-08-08",
-        tags: ["Freekeh", "Morels", "Risotto", "Vegetarian", "SmokedGrains"],
-        ingredients: [
-          {
-            id: "ing-701",
-            name_ar: "\u062D\u0628\u0648\u0628 \u0641\u0631\u064A\u0643\u0629 \u062E\u0636\u0631\u0627\u0621 \u0645\u062F\u062E\u0646\u0629 \u0628\u0644\u062F\u064A\u0629",
-            name_en: "Green Fire-Smoked Whole Freekeh",
-            baseAmount: 250,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u063A\u0633\u0648\u0644\u0629 \u0648\u0645\u0646\u0642\u0648\u0639\u0629 15 \u062F\u0642\u064A\u0642\u0629",
-            notes_en: "Rinsed and soaked for 15 mins"
-          },
-          {
-            id: "ing-702",
-            name_ar: "\u0641\u0637\u0631 \u0645\u0648\u0631\u064A\u0644 \u0628\u0631\u064A \u0645\u062C\u0641\u0641 \u0641\u0627\u062E\u0631",
-            name_en: "Premium Dried Wild Morel Mushrooms",
-            baseAmount: 40,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u0646\u0642\u0648\u0639 \u0641\u064A \u0645\u0627\u0621 \u062F\u0627\u0641\u0626 \u0648\u0645\u0635\u0641\u0649",
-            notes_en: "Rehydrated in warm broth"
-          },
-          {
-            id: "ing-703",
-            name_ar: "\u0628\u0635\u0644 \u0634\u0627\u0644\u0648\u062A \u0641\u0631\u0646\u0633\u064A \u0645\u0641\u0631\u0648\u0645 \u0646\u0627\u0639\u0645\u0627\u064B",
-            name_en: "Minced French Shallots",
-            baseAmount: 3,
-            unit_ar: "\u062D\u0628\u0629",
-            unit_en: "pcs",
-            notes_ar: "\u0644\u0642\u0627\u0639\u062F\u0629 \u0627\u0644\u0637\u0647\u064A",
-            notes_en: "For aromatic base"
-          },
-          {
-            id: "ing-704",
-            name_ar: "\u0645\u0631\u0642 \u062E\u0636\u0627\u0631 \u0648\u0641\u0637\u0631 \u0628\u0631\u064A \u063A\u0646\u064A",
-            name_en: "Rich Wild Mushroom Vegetable Stock",
-            baseAmount: 800,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0645\u062D\u0641\u0648\u0638 \u0633\u0627\u062E\u0646\u0627\u064B \u0639\u0644\u0649 \u0646\u0627\u0631 \u0647\u0627\u062F\u0626\u0629",
-            notes_en: "Kept simmering"
-          },
-          {
-            id: "ing-705",
-            name_ar: "\u0633\u0645\u0646 \u0628\u0644\u062F\u064A \u0628\u0642\u0631\u064A \u0645\u0639\u062A\u0642",
-            name_en: "Artisanal Cultured Grass-Fed Ghee",
-            baseAmount: 45,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0644\u062A\u062D\u0645\u064A\u0631 \u0648\u0625\u0636\u0641\u0627\u0621 \u0644\u0645\u0639\u0627\u0646",
-            notes_en: "For saut\xE9ing"
-          },
-          {
-            id: "ing-706",
-            name_ar: "\u062C\u0628\u0646\u0629 \u0642\u0634\u0642\u0648\u0627\u0646 \u062C\u0628\u0644\u064A\u0629 \u0645\u0639\u062A\u0642\u0629 \u0645\u0628\u0634\u0648\u0631\u0629",
-            name_en: "Aged Mountain Kashkaval Cheese",
-            baseAmount: 60,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0644\u062F\u0645\u062C \u0627\u0644\u0646\u0647\u0627\u0626\u064A",
-            notes_en: "For mantecatura finish"
-          },
-          {
-            id: "ing-707",
-            name_ar: "\u0623\u0648\u0631\u0627\u0642 \u0632\u0639\u062A\u0631 \u0628\u0631\u064A \u062C\u0627\u0641 \u0648\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646",
-            name_en: "Wild Mountain Zaatar & EVOO",
-            baseAmount: 10,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0644\u062A\u0632\u064A\u064A\u0646 \u0627\u0644\u0639\u0637\u0631\u064A",
-            notes_en: "For finishing drizzle"
-          }
-        ],
-        steps: [
-          {
-            step_number: 1,
-            title_ar: "\u062A\u062D\u0645\u064A\u0635 \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0648\u0627\u0644\u0634\u0627\u0644\u0648\u062A \u0628\u0627\u0644\u0633\u0645\u0646",
-            title_en: "Toasting Freekeh & Shallots",
-            instruction_ar: "\u0641\u064A \u0642\u062F\u0631 \u0630\u064A \u0642\u0627\u0639\u062F\u0629 \u0633\u0645\u064A\u0643\u0629\u060C \u0630\u0648\u0628 \u0646\u0635\u0641 \u0643\u0645\u064A\u0629 \u0627\u0644\u0633\u0645\u0646 \u0648\u0634\u0648\u0651\u062D \u0627\u0644\u0634\u0627\u0644\u0648\u062A \u062D\u062A\u0649 \u064A\u0630\u0628\u0644. \u0623\u0636\u0641 \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0648\u062D\u0645\u0635\u0647\u0627 \u0644\u0645\u062F\u0629 4 \u062F\u0642\u0627\u0626\u0642 \u062D\u062A\u0649 \u062A\u0637\u0644\u0642 \u0631\u0627\u0626\u062D\u0629 \u0627\u0644\u062D\u0637\u0628 \u0648\u0627\u0644\u0645\u0643\u0633\u0631\u0627\u062A \u0627\u0644\u0645\u062D\u0645\u0635\u0629.",
-            instruction_en: "Melt half the ghee in a heavy pot, sweat shallots, and toast freekeh for 4 minutes until deeply nutty and fragrant.",
-            timer_minutes: 6,
-            tip_ar: "\u0627\u0644\u062A\u062D\u0645\u064A\u0635 \u0628\u0627\u0644\u0633\u0645\u0646 \u064A\u063A\u0644\u0641 \u062D\u0628\u0627\u062A \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0628\u0637\u0628\u0642\u0629 \u062F\u0647\u0646\u064A\u0629 \u062A\u0645\u0646\u0639 \u062A\u0639\u062C\u0646\u0647\u0627 \u0648\u062A\u0628\u0631\u0632 \u0646\u0643\u0647\u0629 \u0627\u0644\u062F\u062E\u0627\u0646 \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629.",
-            tip_en: "Toasting creates a protective fat barrier that preserves individual grain texture."
-          },
-          {
-            step_number: 2,
-            title_ar: "\u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062A\u062F\u0631\u064A\u062C\u064A \u0628\u0627\u0644\u0645\u0631\u0642 \u0627\u0644\u0633\u0627\u062E\u0646 (\u0627\u0644\u0631\u064A\u0632\u0648\u062A\u0648)",
-            title_en: "Simmering with Mushroom Broth",
-            instruction_ar: "\u0623\u0636\u0641 \u0645\u0631\u0642 \u0627\u0644\u0641\u0637\u0631 \u0627\u0644\u0633\u0627\u062E\u0646 \u0628\u0645\u0639\u062F\u0644 \u0645\u063A\u0631\u0641\u0629 \u0641\u064A \u0643\u0644 \u0645\u0631\u0629 \u0645\u0639 \u0627\u0644\u062A\u0642\u0644\u064A\u0628 \u0627\u0644\u0645\u0633\u062A\u0645\u0631 \u0639\u0644\u0649 \u0646\u0627\u0631 \u0645\u062A\u0648\u0633\u0637\u0629. \u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0628\u0648\u0628 \u062A\u0645\u062A\u0635 \u0627\u0644\u0633\u0627\u0626\u0644 \u0642\u0628\u0644 \u0625\u0636\u0627\u0641\u0629 \u0627\u0644\u0645\u063A\u0631\u0641\u0629 \u0627\u0644\u062A\u0627\u0644\u064A\u0629\u060C \u0648\u0643\u0631\u0631 \u0627\u0644\u0639\u0645\u0644\u064A\u0629 \u0644\u0645\u062F\u0629 25 \u062F\u0642\u064A\u0642\u0629.",
-            instruction_en: "Add simmering mushroom stock one ladle at a time, stirring steadily. Allow grains to absorb liquid before adding the next ladle over 25 mins.",
-            timer_minutes: 25,
-            tip_ar: "\u0627\u0644\u062A\u0642\u0644\u064A\u0628 \u0627\u0644\u0645\u0633\u062A\u0645\u0631 \u064A\u0637\u0644\u0642 \u0627\u0644\u0646\u0634\u0627 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0644\u064A\u0639\u0637\u064A \u0642\u0648\u0627\u0645\u0627\u064B \u0643\u0631\u064A\u0645\u064A\u0627\u064B \u0644\u0632\u062C\u0627\u064B \u062F\u0648\u0646 \u0627\u0644\u062D\u0627\u062C\u0629 \u0644\u0644\u0643\u0631\u064A\u0645\u0629 \u0627\u0644\u0635\u0646\u0627\u0639\u064A\u0629.",
-            tip_en: "Constant agitation releases natural starch to create a velvety creaminess."
-          },
-          {
-            step_number: 3,
-            title_ar: "\u0643\u0631\u0645\u0644\u0629 \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0628\u0631\u064A",
-            title_en: "Caramelizing Wild Morels",
-            instruction_ar: "\u0641\u064A \u0645\u0642\u0644\u0627\u0629 \u0645\u0646\u0641\u0635\u0644\u0629\u060C \u0634\u0648\u0651\u062D \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0645\u0646\u0642\u0648\u0639 \u0645\u0639 \u0645\u0644\u0639\u0642\u0629 \u0633\u0645\u0646 \u0648\u0631\u0634\u0629 \u0645\u0644\u062D \u0648\u0641\u0644\u0641\u0644 \u0623\u0633\u0648\u062F \u0644\u0645\u062F\u0629 4 \u062F\u0642\u0627\u0626\u0642 \u062D\u062A\u0649 \u064A\u0635\u0628\u062D \u0630\u0647\u0628\u064A\u0627\u064B \u0648\u0645\u0642\u0631\u0645\u0634 \u0627\u0644\u062D\u0648\u0627\u0641.",
-            instruction_en: "In a separate skillet, sear rehydrated morel mushrooms in ghee for 4 minutes until golden and deeply aromatic.",
-            timer_minutes: 5,
-            tip_ar: "\u062A\u0623\u0643\u062F \u0645\u0646 \u062A\u062C\u0641\u064A\u0641 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u062C\u064A\u062F\u0627\u064B \u0642\u0628\u0644 \u0627\u0644\u062A\u062D\u0645\u064A\u0631 \u0644\u0636\u0645\u0627\u0646 \u0627\u0643\u062A\u0633\u0627\u0628\u0647 \u0644\u0648\u0646 \u0627\u0644\u0643\u0631\u0645\u0644\u0629 \u0627\u0644\u0630\u0647\u0628\u064A.",
-            tip_en: "Thoroughly pat morels dry to achieve a crisp, golden saut\xE9 crust."
-          },
-          {
-            step_number: 4,
-            title_ar: "\u0627\u0644\u062F\u0645\u062C \u0627\u0644\u0646\u0647\u0627\u0626\u064A (Mantecatura) \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645",
-            title_en: "Mantecatura & Plating",
-            instruction_ar: "\u0627\u0631\u0641\u0639 \u0627\u0644\u0642\u062F\u0631 \u0639\u0646 \u0627\u0644\u0646\u0627\u0631\u060C \u0623\u0636\u0641 \u062C\u0628\u0646\u0629 \u0627\u0644\u0642\u0634\u0642\u0648\u0627\u0646 \u0648\u0628\u0642\u064A\u0629 \u0627\u0644\u0633\u0645\u0646 \u0648\u062D\u0631\u0643 \u0628\u0642\u0648\u0629 \u0644\u062A\u0643\u0648\u064A\u0646 \u0642\u0648\u0627\u0645 \u0645\u0648\u062C\u064A \u0643\u0631\u064A\u0645\u064A. \u0627\u0633\u0643\u0628 \u0627\u0644\u0631\u064A\u0632\u0648\u062A\u0648 \u0641\u064A \u0623\u0637\u0628\u0627\u0642 \u062F\u0627\u0641\u0626\u0629 \u0648\u0636\u0639 \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0645\u0643\u0631\u0645\u0644 \u0639\u0644\u0649 \u0627\u0644\u0648\u062C\u0647 \u0645\u0639 \u0631\u0634\u0629 \u0632\u0639\u062A\u0631 \u0628\u0631\u064A.",
-            instruction_en: "Remove from heat, vigorously beat in grated Kashkaval and remaining ghee for the mantecatura wave. Spoon into warm bowls, crown with morels, and dust with wild zaatar.",
-            timer_minutes: 4,
-            tip_ar: "\u0625\u062C\u0631\u0627\u0621 \u0627\u0644\u0645\u0627\u0646\u062A\u064A\u0643\u0627\u062A\u0648\u0631\u0627 \u0628\u0639\u064A\u062F\u0627\u064B \u0639\u0646 \u0627\u0644\u0646\u0627\u0631 \u064A\u0636\u0645\u0646 \u0625\u0630\u0627\u0628\u0629 \u0627\u0644\u062C\u0628\u0646 \u062F\u0648\u0646 \u0627\u0646\u0641\u0635\u0627\u0644 \u0632\u064A\u0648\u062A\u0647.",
-            tip_en: "Off-heat mantecatura emulsifies cheese and fat smoothly without splitting."
-          }
-        ],
-        nutrition: {
-          calories: 440,
-          protein: "16g",
-          carbs: "62g",
-          fats: "16g",
-          fiber: "9.5g",
-          sodium: "480mg"
-        },
-        pairings: {
-          drink_ar: "\u0639\u0635\u064A\u0631 \u0627\u0644\u062A\u0641\u0627\u062D \u0627\u0644\u0623\u062E\u0636\u0631 \u0627\u0644\u0641\u0648\u0627\u0631 \u0628\u0627\u0644\u0632\u0646\u062C\u0628\u064A\u0644 \u0648\u0627\u0644\u0632\u0639\u062A\u0631 \u0627\u0644\u0628\u0631\u064A",
-          drink_en: "Sparkling Green Apple Cider with Fresh Thyme & Ginger",
-          side_ar: "\u0633\u0644\u0637\u0629 \u0627\u0644\u0634\u0645\u0646\u062F\u0631 \u0627\u0644\u0645\u0634\u0648\u064A \u0645\u0639 \u0627\u0644\u062C\u0648\u0632 \u0648\u062C\u0628\u0646\u0629 \u0627\u0644\u0645\u0627\u0639\u0632",
-          side_en: "Roasted Beetroot Salad with Crumbled Goat Cheese",
-          notes_ar: "\u0646\u0643\u0647\u0629 \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0627\u0644\u062E\u0636\u0631\u0627\u0621 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u062A\u062A\u0643\u0627\u0645\u0644 \u0628\u0628\u0631\u0627\u0639\u0629 \u0645\u0639 \u063A\u0646\u0649 \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0628\u0631\u064A \u0648\u0627\u0644\u0623\u062C\u0628\u0627\u0646 \u0627\u0644\u062C\u0628\u0644\u064A\u0629.",
-          notes_en: "Smoky earthy grain notes marry seamlessly with the umami profile of wild morels."
-        }
-      },
-      {
-        id: "recipe-8",
-        title: "Smoked Cardamom Dark Chocolate Ganache Tart",
-        title_ar: "\u062A\u0627\u0631\u062A \u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u062F\u0627\u0643\u0646\u0629 \u0628\u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0645\u062F\u062E\u0646 \u0648\u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0635\u062E\u0631\u064A",
-        title_en: "Smoked Cardamom Dark Chocolate Ganache Tart",
-        description_ar: "\u0642\u0627\u0639\u062F\u0629 \u062A\u0627\u0631\u062A \u0628\u0633\u0643\u0648\u064A\u062A \u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u0647\u0634 \u0627\u0644\u0645\u0642\u0631\u0645\u0634 (P\xE2te Sabl\xE9e)\u060C \u0645\u062D\u0634\u0648\u0629 \u0628\u063A\u0627\u0646\u0627\u0634 \u062D\u0631\u064A\u0631\u064A \u063A\u0646\u064A \u0645\u0646 \u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0641\u0627\u0644\u0631\u0648\u0646\u0627 70% \u0627\u0644\u0645\u0646\u0642\u0648\u0639\u0629 \u0628\u062D\u0628\u0627\u062A \u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0645\u062F\u062E\u0646 \u0648\u0639\u0633\u0644 \u0627\u0644\u0646\u062D\u0644 \u0627\u0644\u0639\u0636\u0648\u064A.",
-        description_en: "Crisp chocolate p\xE2te sabl\xE9e tart shell filled with a glossy silk ganache of 70% Valrhona dark chocolate infused with crushed smoked cardamom and raw honey.",
-        author_id: "chef-2",
-        author_name_ar: "\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
-        author_name_en: "Chef Elena Rostova",
-        author_avatar: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=200&q=80",
-        image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"
-        ],
-        cuisine: "Contemporary Fusion P\xE2tisserie",
-        cuisine_ar: "\u062D\u0644\u0648\u064A\u0627\u062A \u0645\u0639\u0627\u0635\u0631\u0629",
-        cuisine_en: "Contemporary P\xE2tisserie",
-        category: "Desserts & Pastry",
-        category_ar: "\u062D\u0644\u0648\u064A\u0627\u062A \u0648\u0645\u0639\u062C\u0646\u0627\u062A",
-        category_en: "Desserts & Pastry",
-        difficulty: "Hard",
-        difficulty_ar: "\u0645\u062A\u0642\u062F\u0645",
-        difficulty_en: "Hard",
-        base_servings: 8,
-        prep_time: 45,
-        cook_time: 25,
-        total_time: 70,
-        calories: 490,
-        likes_count: 1540,
-        saves_count: 1040,
-        rating: 4.96,
-        reviews_count: 165,
-        created_at: "2026-08-09",
-        tags: ["ChocolateTart", "Ganache", "Cardamom", "Valrhona", "FineDesserts"],
-        ingredients: [
-          {
-            id: "ing-801",
-            name_ar: "\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u062F\u0627\u0643\u0646\u0629 \u0641\u0627\u0644\u0631\u0648\u0646\u0627 \u063A\u0648\u0627\u0646\u0627\u062E\u0627 70%",
-            name_en: "Valrhona Guanaja 70% Dark Chocolate",
-            baseAmount: 250,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0645\u0641\u0631\u0648\u0645\u0629 \u0646\u0627\u0639\u0645\u0627\u064B",
-            notes_en: "Finely chopped callets"
-          },
-          {
-            id: "ing-802",
-            name_ar: "\u0643\u0631\u064A\u0645\u0629 \u062E\u0641\u0642 \u0637\u0627\u0632\u062C\u0629 36% \u062F\u0633\u0645",
-            name_en: "Fresh Heavy Cream (36%)",
-            baseAmount: 220,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            notes_ar: "\u0644\u0646\u0642\u0639 \u0627\u0644\u0647\u064A\u0644 \u0648\u0627\u0644\u063A\u0627\u0646\u0627\u0634",
-            notes_en: "For cardamom infusion"
-          },
-          {
-            id: "ing-803",
-            name_ar: "\u062D\u0628\u0648\u0628 \u0647\u064A\u0644 \u0623\u062E\u0636\u0631 \u0645\u062F\u062E\u0646\u0629 \u0648\u0645\u0637\u062D\u0648\u0646\u0629",
-            name_en: "Smoked Green Cardamom Pods",
-            baseAmount: 8,
-            unit_ar: "\u062D\u0628\u0629",
-            unit_en: "pcs",
-            notes_ar: "\u0645\u062C\u0631\u0648\u0634\u0629 \u062C\u0632\u0626\u064A\u0627\u064B",
-            notes_en: "Lightly crushed"
-          },
-          {
-            id: "ing-804",
-            name_ar: "\u0639\u0633\u0644 \u0633\u062F\u0631 \u0628\u0631\u064A \u0646\u0642\u064A",
-            name_en: "Pure Wild Sidr Honey",
-            baseAmount: 30,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0625\u0636\u0641\u0627\u0621 \u0644\u0645\u0639\u0627\u0646 \u0648\u0645\u0631\u0648\u0646\u0629 \u0644\u0644\u063A\u0627\u0646\u0627\u0634",
-            notes_en: "Invert sugar for ganache shine"
-          },
-          {
-            id: "ing-805",
-            name_ar: "\u0632\u0628\u062F\u0629 \u0641\u0631\u0646\u0633\u064A\u0629 \u063A\u064A\u0631 \u0645\u0645\u0644\u062D\u0629",
-            name_en: "Unsalted French Normandy Butter",
-            baseAmount: 110,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0644\u0639\u062C\u064A\u0646\u0629 \u0648\u0627\u0644\u063A\u0627\u0646\u0627\u0634",
-            notes_en: "Softened for emulsification"
-          },
-          {
-            id: "ing-806",
-            name_ar: "\u062F\u0642\u064A\u0642 \u0643\u0627\u0643\u0627\u0648 \u0647\u0648\u0644\u0646\u062F\u064A \u062F\u0627\u0643\u0646 \u0645\u0639\u0627\u0644\u062C",
-            name_en: "Dutch Processed Dark Cocoa Powder",
-            baseAmount: 35,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0642\u0627\u0639\u062F\u0629 \u0639\u062C\u064A\u0646\u0629 \u0627\u0644\u062A\u0627\u0631\u062A",
-            notes_en: "For sable crust"
-          },
-          {
-            id: "ing-807",
-            name_ar: "\u062F\u0642\u064A\u0642 \u0642\u0645\u062D \u062D\u0644\u0648\u064A\u0627\u062A \u0641\u0627\u062E\u0631",
-            name_en: "Pastry Flour",
-            baseAmount: 180,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0639\u062C\u064A\u0646\u0629 \u0627\u0644\u0633\u0627\u0628\u0644\u064A\u0647",
-            notes_en: "For tart shell"
-          },
-          {
-            id: "ing-808",
-            name_ar: "\u0645\u0644\u062D \u0628\u062D\u0631\u064A \u0645\u0642\u0631\u0645\u0634 \u0645\u062F\u062E\u0646 (Maldon)",
-            name_en: "Maldon Smoked Sea Salt Flakes",
-            baseAmount: 5,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            notes_ar: "\u0644\u0644\u062A\u0632\u064A\u064A\u0646 \u0627\u0644\u0646\u0647\u0627\u0626\u064A",
-            notes_en: "For finishing crystals"
-          }
-        ],
-        steps: [
-          {
-            step_number: 1,
-            title_ar: "\u062A\u062D\u0636\u064A\u0631 \u0639\u062C\u064A\u0646\u0629 \u0627\u0644\u0633\u0627\u0628\u0644\u064A\u0647 \u0628\u0627\u0644\u0643\u0627\u0643\u0627\u0648 \u0648\u0627\u0644\u062E\u0628\u0632 \u0627\u0644\u0623\u0639\u0645\u0649",
-            title_en: "Chocolate P\xE2te Sabl\xE9e Blind Baking",
-            instruction_ar: "\u0627\u0641\u0631\u0643 \u0627\u0644\u0632\u0628\u062F\u0629 \u0645\u0639 \u0627\u0644\u062F\u0642\u064A\u0642 \u0648\u0627\u0644\u0643\u0627\u0643\u0627\u0648 \u0648\u0633\u0643\u0631 \u0627\u0644\u0628\u0648\u062F\u0631\u0629 \u062D\u062A\u0649 \u064A\u0635\u0628\u062D \u0643\u0641\u062A\u0627\u062A \u0627\u0644\u062E\u0628\u0632\u060C \u0627\u062C\u0645\u0639 \u0627\u0644\u0639\u062C\u064A\u0646 \u0628\u0627\u0644\u0628\u064A\u0636 \u0648\u0627\u0641\u0631\u062F\u0647 \u0641\u064A \u0642\u0648\u0627\u0644\u0628 \u0627\u0644\u062A\u0627\u0631\u062A \u0627\u0644\u0645\u0641\u0631\u063A\u0629. \u0627\u062E\u0628\u0632 \u0639\u0644\u0649 \u062D\u0631\u0627\u0631\u0629 170 \u0645\u0626\u0648\u064A\u0629 \u0645\u0639 \u0623\u062B\u0642\u0627\u0644 \u0627\u0644\u062E\u0628\u0632 \u0644\u0645\u062F\u0629 18 \u062F\u0642\u064A\u0642\u0629.",
-            instruction_en: "Rub butter into flour, cocoa, and icing sugar. Bind with egg, line perforated tart rings, and blind bake with weights at 170\xB0C for 18 mins until crisp.",
-            timer_minutes: 25,
-            tip_ar: "\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0627\u0644\u0642\u0648\u0627\u0644\u0628 \u0627\u0644\u062F\u0627\u0626\u0631\u064A\u0629 \u0627\u0644\u0645\u062B\u0642\u0628\u0629 \u064A\u0645\u0646\u062D \u0623\u0637\u0631\u0627\u0641 \u0627\u0644\u062A\u0627\u0631\u062A \u0627\u0633\u062A\u0642\u0627\u0645\u0629 \u0647\u0646\u062F\u0633\u064A\u0629 \u062D\u0627\u062F\u0629 \u0643\u0627\u0644\u0645\u062D\u062A\u0631\u0641\u064A\u0646.",
-            tip_en: "Perforated tart rings allow even steam escape, yielding crisp razor-sharp edges."
-          },
-          {
-            step_number: 2,
-            title_ar: "\u0646\u0642\u0639 \u0627\u0644\u0643\u0631\u064A\u0645\u0629 \u0628\u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0645\u062F\u062E\u0646",
-            title_en: "Smoked Cardamom Infusion",
-            instruction_ar: "\u0627\u063A\u0644\u0650 \u0627\u0644\u0643\u0631\u064A\u0645\u0629 \u0645\u0639 \u062D\u0628\u0648\u0628 \u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0645\u062F\u062E\u0646 \u0627\u0644\u0645\u062C\u0631\u0648\u0634\u0629 \u0648\u0639\u0633\u0644 \u0627\u0644\u0633\u062F\u0631\u060C \u0627\u0631\u0641\u0639\u0647\u0627 \u0639\u0646 \u0627\u0644\u0646\u0627\u0631 \u0648\u063A\u0637\u0647\u0627 \u0648\u0627\u062A\u0631\u0643\u0647\u0627 \u0644\u062A\u0646\u0642\u0639 \u0644\u0645\u062F\u0629 15 \u062F\u0642\u064A\u0642\u0629\u060C \u062B\u0645 \u0635\u0641\u0647\u0627 \u0648\u0623\u0639\u062F \u062A\u0633\u062E\u064A\u0646\u0647\u0627 \u0642\u0628\u0644 \u0633\u0643\u0628\u0647\u0627 \u0639\u0644\u0649 \u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629.",
-            instruction_en: "Bring cream, crushed smoked cardamom, and raw honey to a simmer. Cover and steep for 15 mins, then strain and reheat.",
-            timer_minutes: 15,
-            tip_ar: "\u0627\u0644\u0646\u0642\u0639 \u0628\u0627\u0644\u063A\u0637\u0627\u0621 \u064A\u062D\u0628\u0633 \u0627\u0644\u0632\u064A\u0648\u062A \u0627\u0644\u0639\u0637\u0631\u064A\u0629 \u0627\u0644\u0637\u064A\u0627\u0631\u0629 \u0644\u0644\u0647\u064A\u0644 \u062F\u0627\u062E\u0644 \u0627\u0644\u0643\u0631\u064A\u0645\u0629.",
-            tip_en: "Covering during steeping preserves volatile aromatic cardamom oils."
-          },
-          {
-            step_number: 3,
-            title_ar: "\u0627\u0633\u062A\u062D\u0644\u0627\u0628 \u0627\u0644\u063A\u0627\u0646\u0627\u0634 \u0627\u0644\u062D\u0631\u064A\u0631\u064A \u0648\u0627\u0644\u0635\u0628",
-            title_en: "Ganache Emulsion & Pouring",
-            instruction_ar: "\u0627\u0633\u0643\u0628 \u0627\u0644\u0643\u0631\u064A\u0645\u0629 \u0627\u0644\u0633\u0627\u062E\u0646\u0629 \u0639\u0644\u0649 \u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u0645\u0641\u0631\u0648\u0645\u0629 \u0639\u0644\u0649 3 \u062F\u0641\u0639\u0627\u062A\u060C \u0648\u0627\u062E\u0641\u0642 \u0628\u0627\u0644\u0628\u0644\u0646\u062F\u0631 \u0627\u0644\u064A\u062F\u0648\u064A \u062F\u0648\u0646 \u0625\u062F\u062E\u0627\u0644 \u0641\u0642\u0627\u0639\u0627\u062A \u0647\u0648\u0627\u0621 \u062D\u062A\u0649 \u062A\u062D\u0635\u0644 \u0639\u0644\u0649 \u0645\u0633\u062A\u062D\u0644\u0628 \u0644\u0627\u0645\u0639 \u0648\u0646\u0627\u0639\u0645. \u0623\u0636\u0641 \u0627\u0644\u0632\u0628\u062F\u0629 \u0627\u0644\u0645\u062A\u0628\u0642\u064A\u0629 \u0648\u0627\u0633\u0643\u0628 \u0627\u0644\u063A\u0627\u0646\u0627\u0634 \u0641\u064A \u0642\u0648\u0627\u0644\u0628 \u0627\u0644\u062A\u0627\u0631\u062A.",
-            instruction_en: "Pour hot infused cream over chopped chocolate in 3 additions. Emulsify with an immersion blender held beneath surface, blend in butter, and pour into baked shells.",
-            timer_minutes: 10,
-            tip_ar: "\u0625\u0628\u0642\u0627\u0621 \u0631\u0623\u0633 \u0627\u0644\u062E\u0644\u0627\u0637 \u0627\u0644\u064A\u062F\u0648\u064A \u0645\u063A\u0645\u0648\u0631\u0627\u064B \u0641\u064A \u0627\u0644\u0642\u0627\u0639 \u064A\u0645\u0646\u0639 \u062F\u062E\u0648\u0644 \u0641\u0642\u0627\u0639\u0627\u062A \u0627\u0644\u0647\u0648\u0627\u0621 \u0627\u0644\u0645\u0632\u0639\u062C\u0629 \u0625\u0644\u0649 \u0633\u0637\u062D \u0627\u0644\u063A\u0627\u0646\u0627\u0634.",
-            tip_en: "Keep immersion blender submerged flat to avoid air bubbles on the glossy surface."
-          },
-          {
-            step_number: 4,
-            title_ar: "\u0627\u0644\u062A\u0645\u0627\u0633\u0643 \u0648\u0627\u0644\u062A\u0632\u064A\u064A\u0646 \u0628\u0627\u0644\u0645\u0644\u062D \u0648\u0627\u0644\u0630\u0647\u0628",
-            title_en: "Setting & Maldon Salt Finishing",
-            instruction_ar: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062A\u0627\u0631\u062A \u0644\u064A\u062A\u0645\u0627\u0633\u0643 \u0641\u064A \u062F\u0631\u062C\u0629 \u062D\u0631\u0627\u0631\u0629 \u0627\u0644\u063A\u0631\u0641\u0629 (18-20 \u0645\u0626\u0648\u064A\u0629) \u0644\u0645\u062F\u0629 \u0633\u0627\u0639\u062A\u064A\u0646. \u0642\u0628\u0644 \u0627\u0644\u062A\u0642\u062F\u064A\u0645 \u0645\u0628\u0627\u0634\u0631\u0629\u060C \u0648\u0632\u0639 \u0628\u0644\u0648\u0631\u0627\u062A \u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0645\u062F\u062E\u0646 \u0648\u0631\u0642\u0627\u0626\u0642 \u0627\u0644\u0630\u0647\u0628 \u0627\u0644\u063A\u0630\u0627\u0626\u064A \u0639\u0644\u0649 \u0627\u0644\u0633\u0637\u062D \u0627\u0644\u0644\u0627\u0645\u0639.",
-            instruction_en: "Let set at room temperature (18-20\xB0C) for 2 hours. Just before serving, crown with smoked Maldon sea salt crystals and edible gold leaf.",
-            timer_minutes: 120,
-            tip_ar: "\u0627\u0644\u062A\u0628\u0631\u064A\u062F \u0641\u064A \u0627\u0644\u062B\u0644\u0627\u062C\u0629 \u0642\u062F \u064A\u0641\u0642\u062F \u0627\u0644\u063A\u0627\u0646\u0627\u0634 \u0628\u0631\u064A\u0642\u0647 \u0627\u0644\u0644\u0627\u0645\u0639 \u0648\u064A\u062C\u0639\u0644\u0647 \u0628\u0627\u0647\u062A\u0627\u064B\u061B \u064A\u0641\u0636\u0644 \u0627\u0644\u062A\u0645\u0627\u0633\u0643 \u0627\u0644\u0628\u0637\u064A\u0621 \u0641\u064A \u063A\u0631\u0641\u0629 \u0645\u0643\u064A\u0641\u0629.",
-            tip_en: "Avoid fridge condensation which dulls ganache gloss; allow setting in a cool room."
-          }
-        ],
-        nutrition: {
-          calories: 490,
-          protein: "7g",
-          carbs: "46g",
-          fats: "32g",
-          fiber: "5.4g",
-          sodium: "190mg"
-        },
-        pairings: {
-          drink_ar: "\u0625\u0633\u0628\u0631\u064A\u0633\u0648 \u0633\u064A\u0646\u063A\u0644 \u0623\u0648\u0631\u064A\u062C\u064A\u0646 \u0625\u062B\u064A\u0648\u0628\u064A \u0628\u0646\u0641\u062D\u0627\u062A \u0627\u0644\u064A\u0627\u0633\u0645\u064A\u0646 \u0648\u0627\u0644\u062A\u0648\u062A",
-          drink_en: "Single-Origin Ethiopian Espresso with Floral Berry Notes",
-          side_ar: "\u0622\u064A\u0633 \u0643\u0631\u064A\u0645 \u0627\u0644\u0641\u0627\u0646\u064A\u0644\u064A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0627\u0644\u0645\u0635\u0646\u0648\u0639\u0629 \u0645\u0646\u0632\u0644\u064A\u0627\u064B",
-          side_en: "Artisanal Smoked Tahitian Vanilla Gelato",
-          notes_ar: "\u0645\u0631\u0627\u0631\u0629 \u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u062F\u0627\u0643\u0646\u0629 \u0648\u062A\u0648\u0627\u0628\u0644 \u0627\u0644\u0647\u064A\u0644 \u062A\u062A\u0623\u0644\u0642 \u0628\u0648\u062C\u0648\u062F \u0628\u0644\u0648\u0631\u0627\u062A \u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0645\u062F\u062E\u0646 \u0627\u0644\u0645\u0628\u0627\u063A\u062A.",
-          notes_en: "Crunchy smoked sea salt crystals heighten the intense aromatics of cocoa and spice."
-        }
-      }
-    ],
-    // 3. B2B SUPPLIES MARKETPLACE (8 Commercial Items)
-    supplies: [
-      {
-        id: "supply-1",
-        name_ar: "\u0639\u062C\u0627\u0646\u0629 \u0644\u0648\u0644\u0628\u064A\u0629 \u062A\u062C\u0627\u0631\u064A\u0629 \u0644\u0644\u0645\u062E\u0627\u0628\u0632 \u0648\u0627\u0644\u0645\u0637\u0627\u0639\u0645 50 \u0644\u062A\u0631",
-        name_en: "Commercial Heavy-Duty Spiral Dough Mixer 50L",
-        category: "heavy_equipment",
-        category_ar: "\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u062B\u0642\u064A\u0644\u0629",
-        category_en: "Heavy Kitchen Equipment",
-        price: 14500,
-        price_formatted: "14,500 \u0631.\u0633",
-        currency: "SAR",
-        moq: 1,
-        unit_ar: "\u0648\u062D\u062F\u0629",
-        unit_en: "Unit",
-        in_stock: true,
-        stock_count: 8,
-        image: "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=800&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=800&q=80"
-        ],
-        description_ar: "\u0639\u062C\u0627\u0646\u0629 \u062D\u0644\u0632\u0648\u0646\u064A\u0629 \u0635\u0646\u0627\u0639\u064A\u0629 \u0639\u0627\u0644\u064A\u0629 \u0627\u0644\u062A\u062D\u0645\u0644 \u0628\u0647\u064A\u0643\u0644 \u0645\u062A\u064A\u0646 \u0645\u0646 \u0627\u0644\u0641\u0648\u0644\u0627\u0630 \u0627\u0644\u0645\u0642\u0627\u0648\u0645 \u0644\u0644\u0635\u062F\u0623 AISI 304\u060C \u0645\u0632\u0648\u062F\u0629 \u0628\u0645\u062D\u0631\u0643 \u0645\u0632\u062F\u0648\u062C \u0627\u0644\u0633\u0631\u0639\u0629 \u0648\u0645\u0624\u0642\u062A \u0631\u0642\u0645\u064A \u0648\u062D\u0627\u062C\u0632 \u0623\u0645\u0627\u0646 \u0630\u0643\u064A \u0645\u0646\u0627\u0633\u0628\u0629 \u0644\u0644\u062A\u0634\u063A\u064A\u0644 \u0627\u0644\u0645\u0633\u062A\u0645\u0631 \u0641\u064A \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0648\u0627\u0644\u0645\u062E\u0627\u0628\u0632 \u0627\u0644\u0631\u0627\u0642\u064A\u0629.",
-        description_en: "Industrial-grade spiral mixer with AISI 304 food-grade stainless steel bowl. Equipped with dual-speed high-torque motor, digital programmable timer, and auto-shutoff safety guard for continuous bakery operation.",
-        supplier: {
-          id: "supplier-1",
-          name_ar: "\u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0644\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u062A\u062C\u0627\u0631\u064A\u0629",
-          name_en: "Al-Fannar Commercial Kitchens Co.",
-          avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&q=80",
-          verified: true,
-          rating: 4.96,
-          reviews_count: 184,
-          response_rate: "98%",
-          response_time: "< 1 hour",
-          location_ar: "\u0627\u0644\u0631\u064A\u0627\u0636\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
-          location_en: "Riyadh, Saudi Arabia"
-        },
-        specs: [
-          { label_ar: "\u0633\u0639\u0629 \u0627\u0644\u0648\u0639\u0627\u0621", label_en: "Bowl Capacity", value_ar: "50 \u0644\u062A\u0631 (30 \u0643\u063A \u0639\u062C\u064A\u0646)", value_en: "50 Liters (30kg Dough)" },
-          { label_ar: "\u0642\u0648\u0629 \u0627\u0644\u0645\u062D\u0631\u0643", label_en: "Motor Power", value_ar: "3.0 \u0643\u064A\u0644\u0648\u0648\u0627\u0637 - 380 \u0641\u0648\u0644\u062A", value_en: "3.0 kW - 380V Three Phase" },
-          { label_ar: "\u0627\u0644\u0633\u0631\u0639\u0627\u062A", label_en: "Speed Levels", value_ar: "\u0633\u0631\u0639\u062A\u0627\u0646 (125 / 250 \u062F\u0648\u0631\u0629/\u062F\u0642\u064A\u0642\u0629)", value_en: "2 Speeds (125 / 250 RPM)" },
-          { label_ar: "\u0645\u0627\u062F\u0629 \u0627\u0644\u0635\u0646\u0639", label_en: "Build Material", value_ar: "\u0633\u062A\u0627\u0646\u0644\u0633 \u0633\u062A\u064A\u0644 AISI 304 \u0635\u062D\u064A", value_en: "Food-Grade AISI 304 Stainless Steel" }
-        ],
-        certifications: ["CE Certified", "ISO 9001:2015", "SASO Approved", "NSF Listed"],
-        lead_time_ar: "3 \u0625\u0644\u0649 5 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
-        lead_time_en: "3 to 5 Business Days",
-        warranty_ar: "\u0636\u0645\u0627\u0646 \u0634\u0627\u0645\u0644 \u0644\u0645\u062F\u0629 24 \u0634\u0647\u0631\u0627\u064B \u0645\u0639 \u0627\u0644\u0635\u064A\u0627\u0646\u0629 \u0627\u0644\u0645\u0648\u0642\u0639\u064A\u0629",
-        warranty_en: "24 Months Full Warranty with On-Site Maintenance"
-      },
-      {
-        id: "supply-2",
-        name_ar: "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0628\u0643\u0631 \u0645\u0645\u062A\u0627\u0632 \u0646\u062E\u0628 \u0623\u0648\u0644 \u0628\u0627\u0644\u062C\u0645\u0644\u0629 50 \u0644\u062A\u0631 - \u0627\u0644\u062C\u0648\u0641",
-        name_en: "Extra Virgin Olive Oil Bulk Drum 50L - Al-Jouf Reserve",
-        category: "bulk_ingredients",
-        category_ar: "\u0645\u0643\u0648\u0646\u0627\u062A \u062E\u0627\u0645 \u0628\u0627\u0644\u062C\u0645\u0644\u0629",
-        category_en: "Wholesale Bulk Ingredients",
-        price: 1850,
-        price_formatted: "1,850 \u0631.\u0633",
-        currency: "SAR",
-        moq: 2,
-        unit_ar: "\u0628\u0631\u0645\u064A\u0644 (50 \u0644\u062A\u0631)",
-        unit_en: "Drum (50L)",
-        in_stock: true,
-        stock_count: 45,
-        image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80"
-        ],
-        description_ar: "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0628\u0643\u0631 \u0645\u0645\u062A\u0627\u0632 \u0645\u0639\u0635\u0648\u0631 \u0639\u0644\u0649 \u0627\u0644\u0628\u0627\u0631\u062F \u0645\u0646 \u0645\u0632\u0627\u0631\u0639 \u0627\u0644\u062C\u0648\u0641 \u0627\u0644\u0634\u0645\u0627\u0644\u064A\u0629\u060C \u0646\u0633\u0628\u0629 \u062D\u0645\u0648\u0636\u0629 \u0623\u0642\u0644 \u0645\u0646 0.2% \u0645\u0639 \u0646\u0643\u0647\u0629 \u0641\u0627\u0643\u0647\u064A\u0629 \u0639\u0634\u0628\u064A\u0629 \u0645\u0645\u064A\u0632\u0629\u060C \u0645\u0639\u0628\u0623 \u0641\u064A \u0628\u0631\u0627\u0645\u064A\u0644 \u0633\u062A\u0627\u0646\u0644\u0633 \u0633\u062A\u064A\u0644 \u0645\u0639\u0632\u0648\u0644\u0629 \u0648\u0645\u062D\u0643\u0645\u0629 \u0627\u0644\u0625\u063A\u0644\u0627\u0642 \u0644\u0644\u0637\u0647\u0627\u0629 \u0648\u0627\u0644\u0645\u0637\u0627\u0639\u0645.",
-        description_en: "First cold-pressed extra virgin olive oil from the fertile groves of Al-Jouf. Acidity below 0.2% with intense herbaceous notes, packaged in nitrogen-sealed food-safe drums for culinary enterprises.",
-        supplier: {
-          id: "supplier-2",
-          name_ar: "\u0645\u0639\u0627\u0635\u0631 \u0627\u0644\u062C\u0648\u0641 \u0627\u0644\u0630\u0647\u0628\u064A\u0629 \u0627\u0644\u0632\u0631\u0627\u0639\u064A\u0629",
-          name_en: "Al-Jouf Golden Olive Mills Ltd.",
-          avatar: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=200&q=80",
-          verified: true,
-          rating: 4.98,
-          reviews_count: 310,
-          response_rate: "99%",
-          response_time: "< 30 mins",
-          location_ar: "\u0633\u0643\u0627\u0643\u0627 - \u0627\u0644\u062C\u0648\u0641\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
-          location_en: "Al-Jouf, Saudi Arabia"
-        },
-        specs: [
-          { label_ar: "\u0646\u0633\u0628\u0629 \u0627\u0644\u062D\u0645\u0648\u0636\u0629", label_en: "Acidity Level", value_ar: "< 0.18% (\u0641\u0627\u0626\u0642 \u0627\u0644\u062C\u0648\u062F\u0629)", value_en: "< 0.18% Ultra-Premium" },
-          { label_ar: "\u0637\u0631\u064A\u0642\u0629 \u0627\u0644\u0639\u0635\u0631", label_en: "Extraction Method", value_ar: "\u0639\u0635\u0631\u0629 \u0623\u0648\u0644\u0649 \u0639\u0644\u0649 \u0627\u0644\u0628\u0627\u0631\u062F (22\xB0C)", value_en: "First Cold Pressed (22\xB0C)" },
-          { label_ar: "\u0645\u0648\u0633\u0645 \u0627\u0644\u062D\u0635\u0627\u062F", label_en: "Harvest Season", value_ar: "\u062D\u0635\u0627\u062F \u0634\u062A\u0627\u0621 2026", value_en: "Winter 2026 Reserve Harvest" },
-          { label_ar: "\u0627\u0644\u062A\u063A\u0644\u064A\u0641", label_en: "Packaging", value_ar: "\u0628\u0631\u0645\u064A\u0644 \u0633\u062A\u0627\u0646\u0644\u0633 \u0633\u062A\u064A\u0644 \u063A\u0630\u0627\u0626\u064A \u0645\u062D\u0643\u0645", value_en: "Nitrogen-Flushed Stainless Steel Drum" }
-        ],
-        certifications: ["Saudi Organic Certified", "SFDA Approved", "Global G.A.P.", "ISO 22000"],
-        lead_time_ar: "2 \u0625\u0644\u0649 4 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
-        lead_time_en: "2 to 4 Business Days",
-        warranty_ar: "\u0636\u0645\u0627\u0646 \u0627\u0644\u062C\u0648\u062F\u0629 \u0648\u0627\u0644\u0646\u0642\u0627\u0621 100% \u0645\u0639 \u0634\u0647\u0627\u062F\u0629 \u0627\u0644\u062A\u062D\u0644\u064A\u0644 \u0627\u0644\u0645\u062E\u0628\u0631\u064A",
-        warranty_en: "100% Purity Guarantee with Certificate of Analysis (COA)"
-      },
-      {
-        id: "supply-3",
-        name_ar: "\u0633\u0643\u064A\u0646 \u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u0627\u062D\u062A\u0631\u0627\u0641\u064A \u062F\u0645\u0634\u0642\u064A 67 \u0637\u0628\u0642\u0629 240 \u0645\u0644\u0645",
-        name_en: "67-Layer Damascus Japanese Chef Knife 240mm (Gyuto)",
-        category: "knives_cutlery",
-        category_ar: "\u0633\u0643\u0627\u0643\u064A\u0646 \u0648\u0623\u062F\u0648\u0627\u062A \u0627\u0644\u0642\u0637\u0639",
-        category_en: "Knives & Cutlery",
-        price: 890,
-        price_formatted: "890 \u0631.\u0633",
-        currency: "SAR",
-        moq: 5,
-        unit_ar: "\u0642\u0637\u0639\u0629",
-        unit_en: "Pcs",
-        in_stock: true,
-        stock_count: 32,
-        image: "https://images.unsplash.com/photo-1593618998160-e34014e67546?auto=format&fit=crop&w=800&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1593618998160-e34014e67546?auto=format&fit=crop&w=800&q=80"
-        ],
-        description_ar: "\u0633\u0643\u064A\u0646 \u063A\u064A\u0648\u062A\u0648 \u064A\u0627\u0628\u0627\u0646\u064A \u0645\u0635\u0646\u0648\u0639 \u064A\u062F\u0648\u064A\u0627\u064B \u0645\u0646 \u0627\u0644\u0641\u0648\u0644\u0627\u0630 \u0627\u0644\u062F\u0645\u0634\u0642\u064A \u0628\u0642\u0644\u0628 \u0645\u0646 \u0635\u0644\u0628 VG-10 \u0641\u0627\u0626\u0642 \u0627\u0644\u0635\u0644\u0627\u0628\u0629 (60\xB12 HRC)\u060C \u0645\u0639 \u0645\u0642\u0628\u0636 \u062E\u0634\u0628\u064A \u062B\u0645\u0627\u0646\u064A \u0627\u0644\u0623\u0636\u0644\u0627\u0639 \u0645\u0646 \u062E\u0634\u0628 \u0627\u0644\u0635\u062D\u0631\u0627\u0621 \u0627\u0644\u0635\u0644\u0628 \u0644\u062A\u0648\u0627\u0632\u0646 \u0645\u062B\u0627\u0644\u064A \u0623\u062B\u0646\u0627\u0621 \u0627\u0644\u0639\u0645\u0644 \u0627\u0644\u064A\u0648\u0645\u064A \u0627\u0644\u0634\u0627\u0642.",
-        description_en: "Hand-forged Japanese Gyuto chef knife with 67 layers of Damascus cladding over a VG-10 high-carbon super steel core (60\xB12 HRC). Octagonal desert ironwood handle engineered for professional balance.",
-        supplier: {
-          id: "supplier-3",
-          name_ar: "\u0634\u0631\u0643\u0629 \u0643\u0627\u064A\u0632\u0646 \u0644\u0623\u062F\u0648\u0627\u062A \u0627\u0644\u0637\u0647\u0627\u0629 \u0627\u0644\u0645\u062D\u062A\u0631\u0641\u064A\u0646",
-          name_en: "Kaizen Culinary Cutlery ME",
-          avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
-          verified: true,
-          rating: 4.94,
-          reviews_count: 142,
-          response_rate: "96%",
-          response_time: "< 2 hours",
-          location_ar: "\u062F\u0628\u064A\u060C \u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062A \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0645\u062A\u062D\u062F\u0629",
-          location_en: "Dubai, United Arab Emirates"
-        },
-        specs: [
-          { label_ar: "\u0637\u0648\u0644 \u0627\u0644\u0646\u0635\u0644", label_en: "Blade Length", value_ar: "240 \u0645\u0644\u0645 (9.5 \u0625\u0646\u0634)", value_en: "240mm (9.5 Inches)" },
-          { label_ar: "\u0635\u0644\u0627\u0628\u0629 \u0627\u0644\u0641\u0648\u0644\u0627\u0630", label_en: "Rockwell Hardness", value_ar: "60\xB12 HRC (VG-10 Core)", value_en: "60\xB12 HRC (VG-10 Core)" },
-          { label_ar: "\u0632\u0627\u0648\u064A\u0629 \u0627\u0644\u0634\u062D\u0630", label_en: "Edge Angle", value_ar: "15 \u062F\u0631\u062C\u0629 \u0644\u0643\u0644 \u062C\u0627\u0646\u0628 (\u0634\u062F\u064A\u062F \u0627\u0644\u062D\u062F\u0629)", value_en: "15\xB0 per side (Razor Sharp)" },
-          { label_ar: "\u0645\u0627\u062F\u0629 \u0627\u0644\u0645\u0642\u0628\u0636", label_en: "Handle Material", value_ar: "\u062E\u0634\u0628 \u0637\u0628\u064A\u0639\u064A \u062B\u0645\u0627\u0646\u064A \u0627\u0644\u0623\u0636\u0644\u0627\u0639", value_en: "Octagonal Natural Ironwood" }
-        ],
-        certifications: ["Artisanal Forged Japan", "NSF Listed", "SGS Food Contact Safe"],
-        lead_time_ar: "1 \u0625\u0644\u0649 3 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
-        lead_time_en: "1 to 3 Business Days",
-        warranty_ar: "\u0636\u0645\u0627\u0646 \u0645\u062F\u0649 \u0627\u0644\u062D\u064A\u0627\u0629 \u0636\u062F \u0639\u064A\u0648\u0628 \u0627\u0644\u062A\u0635\u0646\u064A\u0639 \u0648\u0633\u0648\u0621 \u0627\u0644\u0641\u0648\u0644\u0627\u0630",
-        warranty_en: "Lifetime Warranty against Manufacturing Defects"
-      },
-      {
-        id: "supply-4",
-        name_ar: "\u062C\u0647\u0627\u0632 \u0633\u062D\u0628 \u0627\u0644\u0647\u0648\u0627\u0621 \u0648\u0627\u0644\u062A\u063A\u0644\u064A\u0641 \u0627\u0644\u0645\u0641\u0631\u063A \u0627\u0644\u062A\u062C\u0627\u0631\u064A \u0628\u0631\u0648 400",
-        name_en: "Commercial Chamber Vacuum Sealer Pro 400",
-        category: "heavy_equipment",
-        category_ar: "\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u062B\u0642\u064A\u0644\u0629",
-        category_en: "Heavy Kitchen Equipment",
-        price: 6200,
-        price_formatted: "6,200 \u0631.\u0633",
-        currency: "SAR",
-        moq: 1,
-        unit_ar: "\u0648\u062D\u062F\u0629",
-        unit_en: "Unit",
-        in_stock: true,
-        stock_count: 12,
-        image: "https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=800&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=800&q=80"
-        ],
-        description_ar: "\u062C\u0647\u0627\u0632 \u062A\u063A\u0644\u064A\u0641 \u0628\u0627\u0644\u062A\u0641\u0631\u064A\u063A \u0627\u0644\u0647\u0648\u0627\u0626\u064A \u0628\u063A\u0631\u0641\u0629 \u0645\u062D\u0643\u0645\u0629 \u0645\u0646 \u0627\u0644\u0641\u0648\u0644\u0627\u0630 \u0627\u0644\u0645\u0642\u0627\u0648\u0645 \u0644\u0644\u0635\u062F\u0623 \u0648\u0645\u0636\u062E\u0629 \u0628\u0648\u0634 \u0627\u0644\u0623\u0644\u0645\u0627\u0646\u064A\u0629 \u0627\u0644\u0642\u0648\u064A\u0629\u060C \u0645\u0632\u0648\u062F \u0628\u0645\u0633\u062A\u0634\u0639\u0631 \u0630\u0643\u064A \u0644\u062A\u063A\u0644\u064A\u0641 \u0627\u0644\u0633\u0648\u0627\u0626\u0644 \u0648\u0627\u0644\u0635\u0644\u0635\u0627\u062A \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0628\u0627\u0644\u062A\u0641\u0631\u064A\u063A.",
-        description_en: "Commercial chamber vacuum sealer featuring heavy-duty German Busch rotary pump and digital sensor cycle. Capable of packaging delicate marinades, liquids, and large meat subprimals for sous-vide.",
-        supplier: {
-          id: "supplier-1",
-          name_ar: "\u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0644\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u062A\u062C\u0627\u0631\u064A\u0629",
-          name_en: "Al-Fannar Commercial Kitchens Co.",
-          avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&q=80",
-          verified: true,
-          rating: 4.96,
-          reviews_count: 184,
-          response_rate: "98%",
-          response_time: "< 1 hour",
-          location_ar: "\u0627\u0644\u0631\u064A\u0627\u0636\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
-          location_en: "Riyadh, Saudi Arabia"
-        },
-        specs: [
-          { label_ar: "\u0642\u0648\u0629 \u0627\u0644\u0645\u0636\u062E\u0629", label_en: "Pump Capacity", value_ar: "20 \u0645\u062A\u0631 \u0645\u0643\u0639\u0628/\u0633\u0627\u0639\u0629 (Busch)", value_en: "20 m\xB3/h German Busch Pump" },
-          { label_ar: "\u0637\u0648\u0644 \u0634\u0631\u064A\u0637 \u0627\u0644\u0644\u062D\u0627\u0645", label_en: "Sealing Bar Length", value_ar: "420 \u0645\u0644\u0645 \u0645\u0632\u062F\u0648\u062C \u0627\u0644\u0644\u062D\u0627\u0645", value_en: "420mm Double Seal Bar" },
-          { label_ar: "\u0623\u0628\u0639\u0627\u062F \u0627\u0644\u063A\u0631\u0641\u0629", label_en: "Chamber Dimensions", value_ar: "440 \xD7 420 \xD7 170 \u0645\u0644\u0645", value_en: "440 \xD7 420 \xD7 170 mm" },
-          { label_ar: "\u0627\u0644\u062A\u062D\u0643\u0645", label_en: "Control System", value_ar: "\u0634\u0627\u0634\u0629 \u0631\u0642\u0645\u064A\u0629 \u0645\u0639 \u0630\u0627\u0643\u0631\u0629 10 \u0628\u0631\u0627\u0645\u062C", value_en: "Digital Display with 10 Programs" }
-        ],
-        certifications: ["CE Certified", "SASO Approved", "NSF Listed"],
-        lead_time_ar: "2 \u0625\u0644\u0649 5 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
-        lead_time_en: "2 to 5 Business Days",
-        warranty_ar: "\u0636\u0645\u0627\u0646 24 \u0634\u0647\u0631\u0627\u064B \u0645\u0639 \u0642\u0637\u0639 \u063A\u064A\u0627\u0631 \u0623\u0635\u0644\u064A\u0629 \u0645\u062A\u0648\u0641\u0631\u0629",
-        warranty_en: "24 Months Warranty with Stocked Original Spare Parts"
-      },
-      {
-        id: "supply-5",
-        name_ar: "\u0632\u064A\u062A \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0627\u0644\u0634\u062A\u0648\u064A\u0629 \u0627\u0644\u0637\u0628\u064A\u0639\u064A 5 \u0644\u062A\u0631",
-        name_en: "Artisanal Black Winter Truffle Infused Olive Oil 5L",
-        category: "bulk_ingredients",
-        category_ar: "\u0645\u0643\u0648\u0646\u0627\u062A \u062E\u0627\u0645 \u0628\u0627\u0644\u062C\u0645\u0644\u0629",
-        category_en: "Wholesale Bulk Ingredients",
-        price: 1250,
-        price_formatted: "1,250 \u0631.\u0633",
-        currency: "SAR",
-        moq: 2,
-        unit_ar: "\u0635\u0641\u064A\u062D\u0629 (5 \u0644\u062A\u0631)",
-        unit_en: "Tin (5L)",
-        in_stock: true,
-        stock_count: 28,
-        image: "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80"
-        ],
-        description_ar: "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0628\u0643\u0631 \u0625\u064A\u0637\u0627\u0644\u064A \u0646\u0642\u064A \u0645\u0646\u0642\u0648\u0639 \u0628\u0642\u0637\u0639 \u0648\u062E\u0644\u0627\u0635\u0627\u062A \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0627\u0644\u0634\u062A\u0648\u064A\u0629 \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u0629 (Tuber melanosporum) \u0628\u062F\u0648\u0646 \u0646\u0643\u0647\u0627\u062A \u0643\u064A\u0645\u064A\u0627\u0626\u064A\u0629 \u0645\u0635\u0646\u0639\u0629\u060C \u0645\u062E\u0635\u0635 \u0644\u0644\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0627\u0644\u0641\u0646\u062F\u0642\u064A \u0627\u0644\u0641\u0627\u062E\u0631.",
-        description_en: "Pure Italian extra virgin olive oil naturally infused with real black winter truffle extract (Tuber melanosporum). Zero synthetic aromas or chemical 2,4-dithiapentane additives.",
-        supplier: {
-          id: "supplier-4",
-          name_ar: "\u0623\u0648\u0645\u0628\u0631\u064A\u0627 \u0644\u062A\u0648\u0631\u064A\u062F \u0627\u0644\u0645\u0643\u0648\u0646\u0627\u062A \u0627\u0644\u0630\u0648\u0627\u0642\u0629 \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
-          name_en: "Umbria Gourmet Specialty Imports",
-          avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80",
-          verified: true,
-          rating: 4.97,
-          reviews_count: 220,
-          response_rate: "97%",
-          response_time: "< 1 hour",
-          location_ar: "\u062C\u062F\u0629\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
-          location_en: "Jeddah, Saudi Arabia"
-        },
-        specs: [
-          { label_ar: "\u0646\u0648\u0639 \u0627\u0644\u0643\u0645\u0623\u0629", label_en: "Truffle Species", value_ar: "\u0643\u0645\u0623\u0629 \u0633\u0648\u062F\u0627\u0621 \u0634\u062A\u0648\u064A\u0629 \u0646\u0631\u0648\u064A\u062C\u064A\u0629 \u0625\u064A\u0637\u0627\u0644\u064A\u0629", value_en: "Tuber Melanosporum Vitt." },
-          { label_ar: "\u0646\u0633\u0628\u0629 \u0627\u0644\u0646\u0643\u0647\u0629 \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u0629", label_en: "Natural Aroma", value_ar: "100% \u062E\u0644\u0627\u0635\u0629 \u0637\u0628\u064A\u0639\u064A\u0629 \u062E\u0627\u0644\u064A\u0629 \u0645\u0646 \u0627\u0644\u0643\u064A\u0645\u0627\u0648\u064A\u0627\u062A", value_en: "100% Pure Natural Extract" },
-          { label_ar: "\u062D\u062C\u0645 \u0627\u0644\u0639\u0628\u0648\u0629", label_en: "Volume", value_ar: "5 \u0644\u062A\u0631 \u0635\u0641\u064A\u062D\u0629 \u0645\u0639\u062F\u0646\u064A\u0629 \u0648\u0627\u0642\u064A\u0629 \u0645\u0646 \u0627\u0644\u0636\u0648\u0621", value_en: "5 Liter UV-Shielded Metal Tin" }
-        ],
-        certifications: ["HACCP Certified", "EU Organic", "SFDA Approved"],
-        lead_time_ar: "2 \u0625\u0644\u0649 4 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
-        lead_time_en: "2 to 4 Business Days",
-        warranty_ar: "\u0634\u0647\u0627\u062F\u0629 \u0627\u0644\u0645\u0646\u0634\u0623 \u0627\u0644\u0625\u064A\u0637\u0627\u0644\u064A\u0629 \u0645\u0639 \u0627\u0644\u062A\u062D\u0644\u064A\u0644 \u0627\u0644\u0639\u0636\u0648\u064A",
-        warranty_en: "Italian Certificate of Origin & Organic Authentication"
-      },
-      {
-        id: "supply-6",
-        name_ar: "\u0639\u0644\u0628 \u062D\u0641\u0638 \u0648\u062A\u063A\u0644\u064A\u0641 \u0627\u0644\u0648\u062C\u0628\u0627\u062A \u0627\u0644\u0641\u0627\u062E\u0631\u0629 \u0645\u0646 \u0642\u0635\u0628 \u0627\u0644\u0633\u0643\u0631 1000 \u062D\u0628\u0629",
-        name_en: "Biodegradable Sugarcane Bagasse Takeaway Containers 1000 Pcs",
-        category: "eco_packaging",
-        category_ar: "\u062D\u0644\u0648\u0644 \u0627\u0644\u062A\u063A\u0644\u064A\u0641 \u0627\u0644\u0645\u0633\u062A\u062F\u0627\u0645",
-        category_en: "Eco-Friendly Packaging",
-        price: 520,
-        price_formatted: "520 \u0631.\u0633",
-        currency: "SAR",
-        moq: 5,
-        unit_ar: "\u0643\u0631\u062A\u0648\u0646 (1000 \u062D\u0628\u0629)",
-        unit_en: "Carton (1000 Pcs)",
-        in_stock: true,
-        stock_count: 120,
-        image: "https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=800&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=800&q=80"
-        ],
-        description_ar: "\u0639\u0644\u0628 \u0637\u0639\u0627\u0645 \u0635\u062F\u064A\u0642\u0629 \u0644\u0644\u0628\u064A\u0626\u0629 \u0642\u0627\u0628\u0644\u0629 \u0644\u0644\u062A\u062D\u0644\u0644 \u0627\u0644\u062D\u064A\u0648\u064A \u0628\u0627\u0644\u0643\u0627\u0645\u0644 \u0645\u0635\u0646\u0648\u0639\u0629 \u0645\u0646 \u0623\u0644\u064A\u0627\u0641 \u0642\u0635\u0628 \u0627\u0644\u0633\u0643\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u0629\u060C \u0645\u0642\u0627\u0648\u0645\u0629 \u0644\u0644\u0632\u064A\u0648\u062A \u0648\u0627\u0644\u0633\u0648\u0627\u0626\u0644 \u0627\u0644\u0633\u0627\u062E\u0646\u0629 \u0648\u062A\u062A\u062D\u0645\u0644 \u0627\u0644\u0645\u064A\u0643\u0631\u0648\u0648\u064A\u0641 \u0648\u0627\u0644\u062A\u062C\u0645\u064A\u062F \u0645\u0646 -20 \u0625\u0644\u0649 120 \u0645\u0626\u0648\u064A\u0629.",
-        description_en: "100% biodegradable, compostable food containers crafted from natural unbleached sugarcane bagasse fiber. Oil-resistant, leak-proof, microwave and freezer safe from -20\xB0C to 120\xB0C.",
-        supplier: {
-          id: "supplier-5",
-          name_ar: "\u0625\u064A\u0643\u0648\u0628\u0627\u0643 \u0644\u062D\u0644\u0648\u0644 \u0627\u0644\u062A\u063A\u0644\u064A\u0641 \u0627\u0644\u0645\u0633\u062A\u062F\u0627\u0645 \u0644\u0644\u0636\u064A\u0627\u0641\u0629",
-          name_en: "EcoPack Sustainable Solutions ME",
-          avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
-          verified: true,
-          rating: 4.89,
-          reviews_count: 95,
-          response_rate: "95%",
-          response_time: "< 3 hours",
-          location_ar: "\u0627\u0644\u062F\u0645\u0627\u0645\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
-          location_en: "Dammam, Saudi Arabia"
-        },
-        specs: [
-          { label_ar: "\u0627\u0644\u0633\u0639\u0629 \u0648\u0627\u0644\u062A\u0642\u0633\u064A\u0645", label_en: "Capacity & Style", value_ar: "850 \u0645\u0644 - \u062E\u0627\u0646\u0629 \u0648\u0627\u062D\u062F\u0629 \u0623\u0648 \u062E\u0627\u0646\u062A\u0627\u0646", value_en: "850ml Single/Dual Compartment" },
-          { label_ar: "\u0646\u0637\u0627\u0642 \u0627\u0644\u062D\u0631\u0627\u0631\u0629", label_en: "Temperature Range", value_ar: "\u0645\u0646 -20\xB0C \u0625\u0644\u0649 +120\xB0C", value_en: "-20\xB0C to +120\xB0C" },
-          { label_ar: "\u0627\u0644\u062A\u062D\u0644\u0644 \u0627\u0644\u0628\u064A\u0626\u064A", label_en: "Biodegradability", value_ar: "\u062A\u062D\u0644\u0644 \u0643\u0627\u0645\u0644 \u062E\u0644\u0627\u0644 90 \u064A\u0648\u0645\u0627\u064B \u0641\u064A \u0627\u0644\u062A\u0631\u0628\u0629", value_en: "100% Composted in 90 Days" }
-        ],
-        certifications: ["BPI Certified Compostable", "EN 13432", "SASO Green Badge", "FDA Food Grade"],
-        lead_time_ar: "1 \u0625\u0644\u0649 2 \u064A\u0648\u0645 \u0639\u0645\u0644",
-        lead_time_en: "1 to 2 Business Days",
-        warranty_ar: "\u0636\u0645\u0627\u0646 \u0627\u0644\u062C\u0648\u062F\u0629 \u0648\u0645\u0642\u0627\u0648\u0645\u0629 \u0627\u0644\u062A\u0633\u0631\u064A\u0628 \u0628\u0646\u0633\u0628\u0629 100%",
-        warranty_en: "100% Leak-Proof & Structural Integrity Guarantee"
-      },
-      {
-        id: "supply-7",
-        name_ar: "\u062C\u0647\u0627\u0632 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062F\u0642\u064A\u0642 \u0628\u0627\u0644\u0633\u0648\u0633 \u0641\u064A\u062F 30 \u0644\u062A\u0631 \u0628\u0631\u0648",
-        name_en: "Commercial Precision Sous-Vide Immersion Circulator 30L",
-        category: "heavy_equipment",
-        category_ar: "\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u062B\u0642\u064A\u0644\u0629",
-        category_en: "Heavy Kitchen Equipment",
-        price: 2400,
-        price_formatted: "2,400 \u0631.\u0633",
-        currency: "SAR",
-        moq: 1,
-        unit_ar: "\u0648\u062D\u062F\u0629",
-        unit_en: "Unit",
-        in_stock: true,
-        stock_count: 18,
-        image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80"
-        ],
-        description_ar: "\u062C\u0647\u0627\u0632 \u062A\u062F\u0648\u064A\u0631 \u062D\u0631\u0627\u0631\u064A \u0645\u062D\u062A\u0631\u0641 \u0644\u0644\u0637\u0647\u064A \u0627\u0644\u0645\u0627\u0626\u064A \u0627\u0644\u0628\u0637\u064A\u0621 \u0628\u062F\u0642\u0629 \u062D\u0631\u0627\u0631\u064A\u0629 \u062A\u0635\u0644 \u0625\u0644\u0649 \xB10.05 \u062F\u0631\u062C\u0629 \u0645\u0626\u0648\u064A\u0629\u060C \u0648\u0645\u0636\u062E\u0629 \u062A\u062F\u0648\u064A\u0631 \u0642\u0648\u064A\u0629 \u062A\u0643\u0641\u064A \u0644\u0623\u062D\u0648\u0627\u0636 \u0645\u0627\u0626\u064A\u0629 \u062D\u062A\u0649 30 \u0644\u062A\u0631\u0627\u064B \u0645\u0639 \u0634\u0627\u0634\u0629 \u0644\u0645\u0633 \u0645\u0644\u0648\u0646\u0629.",
-        description_en: "Heavy-duty professional immersion circulator for precision low-temperature sous-vide bath. Delivers \xB10.05\xB0C temperature stability with high-volume 30L bath circulation pump.",
-        supplier: {
-          id: "supplier-1",
-          name_ar: "\u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0644\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u062A\u062C\u0627\u0631\u064A\u0629",
-          name_en: "Al-Fannar Commercial Kitchens Co.",
-          avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&q=80",
-          verified: true,
-          rating: 4.96,
-          reviews_count: 184,
-          response_rate: "98%",
-          response_time: "< 1 hour",
-          location_ar: "\u0627\u0644\u0631\u064A\u0627\u0636\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
-          location_en: "Riyadh, Saudi Arabia"
-        },
-        specs: [
-          { label_ar: "\u0627\u0644\u062F\u0642\u0629 \u0627\u0644\u062D\u0631\u0627\u0631\u064A\u0629", label_en: "Temperature Accuracy", value_ar: "\xB10.05\xB0C (\u062A\u062D\u0643\u0645 \u0631\u0642\u0645\u064A PID)", value_en: "\xB10.05\xB0C Digital PID Control" },
-          { label_ar: "\u0642\u0648\u0629 \u0627\u0644\u0633\u062E\u0627\u0646", label_en: "Heating Power", value_ar: "1800 \u0648\u0627\u0637 \u062A\u0633\u062E\u064A\u0646 \u0633\u0631\u064A\u0639", value_en: "1800W Rapid Heating Element" },
-          { label_ar: "\u0633\u0639\u0629 \u0627\u0644\u062D\u0648\u0636 \u0627\u0644\u0642\u0635\u0648\u0649", label_en: "Max Bath Capacity", value_ar: "30 \u0644\u062A\u0631 \u0645\u0627\u0621 \u0645\u062A\u062F\u0627\u0648\u0644", value_en: "30 Liters Continuous Circulation" }
-        ],
-        certifications: ["CE Certified", "IPX7 Waterproof", "SASO Approved"],
-        lead_time_ar: "2 \u0625\u0644\u0649 3 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
-        lead_time_en: "2 to 3 Business Days",
-        warranty_ar: "\u0636\u0645\u0627\u0646 24 \u0634\u0647\u0631\u0627\u064B \u0645\u0639 \u0627\u0633\u062A\u0628\u062F\u0627\u0644 \u0641\u0648\u0631\u064A \u0639\u0646\u062F \u0627\u0644\u0639\u0637\u0644",
-        warranty_en: "24 Months Warranty with Instant Replacement Support"
-      },
-      {
-        id: "supply-8",
-        name_ar: "\u0632\u0639\u0641\u0631\u0627\u0646 \u0633\u0648\u0628\u0631 \u0646\u0642\u064A\u0646 \u0645\u0644\u0643\u064A \u0641\u0627\u062E\u0631 \u0646\u062E\u0628 \u0623\u0648\u0644 500 \u062C\u0631\u0627\u0645",
-        name_en: "Grade 1 Royal Super Negin Saffron Bulk Tin 500g",
-        category: "bulk_ingredients",
-        category_ar: "\u0645\u0643\u0648\u0646\u0627\u062A \u062E\u0627\u0645 \u0628\u0627\u0644\u062C\u0645\u0644\u0629",
-        category_en: "Wholesale Bulk Ingredients",
-        price: 5400,
-        price_formatted: "5,400 \u0631.\u0633",
-        currency: "SAR",
-        moq: 1,
-        unit_ar: "\u0639\u0644\u0628\u0629 \u0645\u0639\u062F\u0646\u064A\u0629 (500 \u062C\u0631\u0627\u0645)",
-        unit_en: "Tin (500g)",
-        in_stock: true,
-        stock_count: 15,
-        image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80"
-        ],
-        description_ar: "\u0632\u0639\u0641\u0631\u0627\u0646 \u0633\u0648\u0628\u0631 \u0646\u0642\u064A\u0646 \u0623\u062D\u0645\u0631 \u0645\u0644\u0643\u064A \u0646\u0642\u064A 100% \u0628\u0623\u0639\u0644\u0649 \u062F\u0631\u062C\u0627\u062A \u0642\u0648\u0629 \u0627\u0644\u0644\u0648\u0646 (\u0643\u0631\u0648\u0633\u064A\u0646 > 260)\u060C \u062E\u064A\u0648\u0637 \u0643\u0627\u0645\u0644\u0629 \u0637\u0648\u064A\u0644\u0629 \u0628\u062F\u0648\u0646 \u0623\u064A \u0634\u0648\u0627\u0626\u0628 \u0635\u0641\u0631\u0627\u0621\u060C \u0645\u0639\u0628\u0623 \u0641\u064A \u0639\u0644\u0628 \u0645\u0639\u062F\u0646\u064A\u0629 \u0645\u0641\u0631\u063A\u0629 \u0645\u0646 \u0627\u0644\u0623\u0643\u0633\u062C\u064A\u0646 \u0644\u0644\u062D\u0641\u0627\u0638 \u0639\u0644\u0649 \u0627\u0644\u0631\u0627\u0626\u062D\u0629 \u0627\u0644\u0632\u0643\u064A\u0629.",
-        description_en: "100% pure Grade-1 Royal Super Negin saffron with supreme coloring power (Crocin rating > 260). Long all-red stigmas with zero yellow style waste, hermetically vacuum-sealed in bulk culinary tins.",
-        supplier: {
-          id: "supplier-4",
-          name_ar: "\u0623\u0648\u0645\u0628\u0631\u064A\u0627 \u0644\u062A\u0648\u0631\u064A\u062F \u0627\u0644\u0645\u0643\u0648\u0646\u0627\u062A \u0627\u0644\u0630\u0648\u0627\u0642\u0629 \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
-          name_en: "Umbria Gourmet Specialty Imports",
-          avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80",
-          verified: true,
-          rating: 4.97,
-          reviews_count: 220,
-          response_rate: "97%",
-          response_time: "< 1 hour",
-          location_ar: "\u062C\u062F\u0629\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
-          location_en: "Jeddah, Saudi Arabia"
-        },
-        specs: [
-          { label_ar: "\u062F\u0631\u062C\u0629 \u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646", label_en: "Grading Category", value_ar: "\u0633\u0648\u0628\u0631 \u0646\u0642\u064A\u0646 \u0645\u0644\u0643\u064A - \u0641\u0626\u0629 \u0623\u0648\u0644\u0649 ISO", value_en: "Royal Super Negin - ISO Cat I" },
-          { label_ar: "\u0642\u0648\u0629 \u0627\u0644\u0644\u0648\u0646 (Crocin)", label_en: "Color Reading", value_ar: "> 265 (\u0623\u0639\u0644\u0649 \u062A\u0631\u0643\u064A\u0632 \u0639\u0627\u0644\u0645\u064A)", value_en: "> 265 Supreme Pigmentation" },
-          { label_ar: "\u0627\u0644\u0648\u0632\u0646 \u0627\u0644\u0635\u0627\u0641\u064A", label_en: "Net Weight", value_ar: "500 \u062C\u0631\u0627\u0645 \u062E\u064A\u0648\u0637 \u0646\u0642\u064A\u0629", value_en: "500g Pure Red Stigmas" }
-        ],
-        certifications: ["ISO 3632-1 Certified", "SFDA Food Safety Approved", "Halal Certified"],
-        lead_time_ar: "2 \u0625\u0644\u0649 4 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
-        lead_time_en: "2 to 4 Business Days",
-        warranty_ar: "\u0634\u0647\u0627\u062F\u0629 \u0627\u0644\u062A\u062D\u0644\u064A\u0644 \u0627\u0644\u0637\u064A\u0641\u064A \u0644\u0644\u0645\u062E\u062A\u0628\u0631 \u0627\u0644\u0645\u0639\u062A\u0645\u062F \u0645\u0639 \u0643\u0644 \u0639\u0628\u0648\u0629",
-        warranty_en: "Spectrophotometric Lab Analysis Certificate with Each Tin"
-      }
-    ],
-    // 4. MASTERCLASSES & COURSES (4 Intensive Workshops)
-    courses: [
-      {
-        id: "course-1",
-        title: "Modern Fermentation & Dry Aging Masterclass",
-        title_ar: "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0641\u064A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
-        title_en: "Modern Fermentation & Dry Aging Masterclass",
-        subtitle_ar: "\u062A\u0642\u0646\u064A\u0627\u062A \u0645\u062A\u0642\u062F\u0645\u0629 \u0641\u064A \u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0643\u0648\u062C\u064A\u060C \u0648\u0645\u062E\u0644\u0644\u0627\u062A \u0627\u0644\u0644\u0627\u0643\u062A\u0648\u060C \u0648\u0625\u0646\u0636\u0627\u062C \u0644\u062D\u0648\u0645 \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0644\u0644\u0645\u062D\u062A\u0631\u0641\u064A\u0646",
-        subtitle_en: "Advanced koji fermentation, lacto-pickling chemistry, and precision dry-aging for culinary leaders",
-        instructor_id: "chef-1",
-        instructor_name_ar: "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
-        instructor_name_en: "Chef Faisal Al-Hashemi",
-        instructor_avatar: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=200&q=80",
-        instructor_title_ar: "\u0634\u064A\u0641 \u062A\u0646\u0641\u064A\u0630\u064A \u0648\u062E\u0628\u064A\u0631 \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631",
-        instructor_title_en: "Executive Chef & Modern Gastronomy Consultant",
-        level: "masterclass",
-        level_ar: "\u0627\u062D\u062A\u0631\u0627\u0641\u064A \u0645\u062A\u0642\u062F\u0645 (Masterclass)",
-        level_en: "Masterclass",
-        duration_ar: "6 \u0623\u0633\u0627\u0628\u064A\u0639 (24 \u0633\u0627\u0639\u0629 \u062A\u062F\u0631\u064A\u0628\u064A\u0629 \u0645\u0628\u0627\u0634\u0631\u0629)",
-        duration_en: "6 Weeks (24 Live Hours)",
-        price: 3200,
-        price_formatted: "3,200 \u0631.\u0633",
-        currency: "SAR",
-        total_seats: 15,
-        seats_left: 3,
-        start_date: "2026-09-10",
-        schedule_ar: "\u0643\u0644 \u062B\u0644\u0627\u062B\u0627\u0621 \u0648\u062E\u0645\u064A\u0633 (6:00 \u0645 - 8:00 \u0645 \u0628\u062A\u0648\u0642\u064A\u062A \u0645\u0643\u0629)",
-        schedule_en: "Every Tue & Thu (6:00 PM - 8:00 PM AST)",
-        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
-        includes_certificate: true,
-        enrolled_count: 12,
-        syllabus: [
-          {
-            module_number: 1,
-            title_ar: "\u0645\u0642\u062F\u0645\u0629 \u0641\u064A \u0643\u064A\u0645\u064A\u0627\u0621 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0628\u0643\u062A\u064A\u0631\u064A\u0627 \u0627\u0644\u0646\u0627\u0641\u0639\u0629",
-            title_en: "Microbiology of Wild Fermentation & Safety",
-            duration_ar: "4 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "4 Hours",
-            lessons: [
-              { title_ar: "\u0641\u0647\u0645 \u0628\u0643\u062A\u064A\u0631\u064A\u0627 \u062D\u0645\u0636 \u0627\u0644\u0644\u0627\u0643\u062A\u064A\u0643 \u0648\u0623\u0633\u0633 \u0627\u0644\u062A\u0645\u0644\u064A\u062D \u0627\u0644\u062F\u0642\u064A\u0642", title_en: "Lactic Acid Bacteria & Salt Calculations", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" },
-              { title_ar: "\u0632\u0631\u0627\u0639\u0629 \u0641\u0637\u0631 \u0627\u0644\u0643\u0648\u062C\u064A (Aspergillus oryzae) \u0639\u0644\u0649 \u0627\u0644\u062D\u0628\u0648\u0628", title_en: "Inoculating Koji Spores on Ancient Grains", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" }
-            ]
-          },
-          {
-            module_number: 2,
-            title_ar: "\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u0644\u062D\u0648\u0645 \u0627\u0644\u062C\u0627\u0641 \u0648\u0628\u0646\u0627\u0621 \u063A\u0631\u0641 \u0627\u0644\u062A\u0639\u062A\u064A\u0642",
-            title_en: "Dry-Aging Chambers & Mycology Dynamics",
-            duration_ar: "6 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "6 Hours",
-            lessons: [
-              { title_ar: "\u0627\u0644\u062A\u062D\u0643\u0645 \u0641\u064A \u0627\u0644\u0631\u0637\u0648\u0628\u0629 \u0648\u0627\u0644\u062D\u0631\u0627\u0631\u0629 \u0648\u062A\u062F\u0641\u0642 \u0627\u0644\u0647\u0648\u0627\u0621 \u0644\u063A\u0631\u0641 \u0627\u0644\u0625\u0646\u0636\u0627\u062C", title_en: "Humidity, Airflow & Thermal Engineering", duration_ar: "3 \u0633\u0627\u0639\u0627\u062A", duration_en: "3 Hours" },
-              { title_ar: "\u062A\u0637\u0648\u0631 \u0627\u0644\u0646\u0643\u0647\u0627\u062A \u0627\u0644\u0625\u0646\u0632\u064A\u0645\u064A\u0629 \u0648\u062A\u0642\u0644\u064A\u0645 \u0637\u0628\u0642\u0627\u062A \u0627\u0644\u062A\u0639\u062A\u064A\u0642", title_en: "Enzymatic Breakdown & Yield Trimming", duration_ar: "3 \u0633\u0627\u0639\u0627\u062A", duration_en: "3 Hours" }
-            ]
-          },
-          {
-            module_number: 3,
-            title_ar: "\u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u062A\u0645\u0648\u0631 \u0648\u0627\u0644\u0635\u0644\u0635\u0627\u062A \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0627\u0644\u0645\u0639\u0627\u0635\u0631\u0629",
-            title_en: "Artisanal Date Garums & Heritage Ferments",
-            duration_ar: "8 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "8 Hours",
-            lessons: [
-              { title_ar: "\u0635\u0646\u0627\u0639\u0629 \u0627\u0644\u063A\u0627\u0631\u0648\u0645 \u0627\u0644\u062D\u062F\u064A\u062B \u0645\u0646 \u0628\u0631\u0648\u062A\u064A\u0646\u0627\u062A \u0627\u0644\u0644\u062D\u0648\u0645 \u0648\u0627\u0644\u062A\u0645\u0631", title_en: "Modern Meat & Date Garum Alchemy", duration_ar: "4 \u0633\u0627\u0639\u0627\u062A", duration_en: "4 Hours" },
-              { title_ar: "\u062E\u0644\u0648\u0644 \u0627\u0644\u0641\u0648\u0627\u0643\u0647 \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u0629 \u0648\u062A\u0639\u062A\u064A\u0642\u0647\u0627 \u0641\u064A \u0628\u0631\u0627\u0645\u064A\u0644 \u062E\u0634\u0628\u064A\u0629", title_en: "Live Vinegar Brewing in Casks", duration_ar: "4 \u0633\u0627\u0639\u0627\u062A", duration_en: "4 Hours" }
-            ]
-          },
-          {
-            module_number: 4,
-            title_ar: "\u0627\u0644\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062E\u062A\u0627\u0645\u064A \u0648\u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u062A\u0630\u0648\u0642 \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
-            title_en: "Capstone Project & Tasting Menu Design",
-            duration_ar: "6 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "6 Hours",
-            lessons: [
-              { title_ar: "\u062A\u0635\u0645\u064A\u0645 \u0637\u0628\u0642 \u062A\u0648\u0642\u064A\u0639 \u064A\u062F\u0645\u062C 3 \u0639\u0646\u0627\u0635\u0631 \u0645\u062E\u0645\u0631\u0629 \u0645\u0639\u062A\u0642\u0629", title_en: "Crafting a 3-Ferment Signature Plate", duration_ar: "3 \u0633\u0627\u0639\u0627\u062A", duration_en: "3 Hours" },
-              { title_ar: "\u062C\u0644\u0633\u0629 \u0627\u0644\u062A\u0642\u064A\u064A\u0645 \u0648\u0627\u0644\u0627\u0639\u062A\u0645\u0627\u062F \u0627\u0644\u0645\u0647\u0646\u064A \u0627\u0644\u062F\u0648\u0644\u064A", title_en: "Masterclass Jury & Certification Evaluation", duration_ar: "3 \u0633\u0627\u0639\u0627\u062A", duration_en: "3 Hours" }
-            ]
-          }
-        ]
-      },
-      {
-        id: "course-2",
-        title: "Haute Viennoiserie & Modern Laminated Dough",
-        title_ar: "\u0641\u0646\u0648\u0646 \u0627\u0644\u0645\u062E\u0628\u0648\u0632\u0627\u062A \u0627\u0644\u0641\u0631\u0646\u0633\u064A\u0629 \u0627\u0644\u0641\u0627\u062E\u0631\u0629 \u0648\u0639\u062C\u0627\u0626\u0646 \u0627\u0644\u062A\u0648\u0631\u064A\u0642 \u0627\u0644\u062D\u062F\u064A\u062B\u0629",
-        title_en: "Haute Viennoiserie & Modern Laminated Dough",
-        subtitle_ar: "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u0643\u0631\u0648\u0627\u0633\u0648\u0646 \u062B\u0646\u0627\u0626\u064A \u0627\u0644\u0644\u0648\u0646\u060C \u0627\u0644\u0639\u062C\u0627\u0626\u0646 \u0627\u0644\u0645\u062E\u0645\u0631\u0629 \u0628\u0627\u0644\u0628\u0627\u0646\u064A\u062A\u0648\u0646\u060C \u0648\u0627\u0644\u062A\u0648\u0631\u064A\u0642 \u0627\u0644\u0647\u0646\u062F\u0633\u064A \u0644\u0644\u062D\u0644\u0648\u064A\u0627\u062A",
-        subtitle_en: "Bicolor laminations, artisanal panettone sourdough, and architectural pastry shapes",
-        instructor_id: "chef-2",
-        instructor_name_ar: "\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
-        instructor_name_en: "Chef Elena Rostova",
-        instructor_avatar: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=200&q=80",
-        instructor_title_ar: "\u0645\u0627\u0633\u062A\u0631 \u0634\u064A\u0641 \u062D\u0644\u0648\u064A\u0627\u062A \u0648\u0641\u0627\u0626\u0632\u0629 \u0628\u062C\u0648\u0627\u0626\u0632 \u062F\u0648\u0644\u064A\u0629",
-        instructor_title_en: "Master Pastry Chef & International Awardee",
-        level: "intermediate",
-        level_ar: "\u0645\u062A\u0648\u0633\u0637 (Intermediate)",
-        level_en: "Intermediate",
-        duration_ar: "4 \u0623\u0633\u0627\u0628\u064A\u0639 (16 \u0633\u0627\u0639\u0629 \u062A\u062F\u0631\u064A\u0628\u064A\u0629)",
-        duration_en: "4 Weeks (16 Live Hours)",
-        price: 2600,
-        price_formatted: "2,600 \u0631.\u0633",
-        currency: "SAR",
-        total_seats: 18,
-        seats_left: 5,
-        start_date: "2026-09-18",
-        schedule_ar: "\u0643\u0644 \u0633\u0628\u062A \u0648\u0627\u062B\u0646\u064A\u0646 (5:00 \u0645 - 7:00 \u0645 \u0628\u062A\u0648\u0642\u064A\u062A \u0645\u0643\u0629)",
-        schedule_en: "Every Sat & Mon (5:00 PM - 7:00 PM AST)",
-        image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
-        includes_certificate: true,
-        enrolled_count: 13,
-        syllabus: [
-          {
-            module_number: 1,
-            title_ar: "\u0647\u0646\u062F\u0633\u0629 \u0627\u0644\u062A\u0648\u0631\u064A\u0642 \u0648\u0627\u062E\u062A\u064A\u0627\u0631 \u0627\u0644\u0632\u0628\u062F\u0629 \u0627\u0644\u0646\u0642\u064A\u0629",
-            title_en: "Lamination Physics & Tournage Butter Standards",
-            duration_ar: "4 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "4 Hours",
-            lessons: [
-              { title_ar: "\u0627\u062E\u062A\u064A\u0627\u0631 \u0627\u0644\u062F\u0642\u064A\u0642 \u0648\u0646\u0633\u0628 \u062A\u0645\u062F\u062F \u0627\u0644\u062C\u0644\u0648\u062A\u064A\u0646", title_en: "Flour Selection & Gluten Elasticity", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" },
-              { title_ar: "\u0627\u0644\u0637\u064A\u0627\u062A \u0627\u0644\u0641\u0631\u062F\u064A\u0629 \u0648\u0627\u0644\u0645\u0632\u062F\u0648\u062C\u0629 \u0648\u0627\u0644\u062A\u062D\u0643\u0645 \u0628\u0627\u0644\u062D\u0631\u0627\u0631\u0629", title_en: "Single & Double Envelope Folds", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" }
-            ]
-          },
-          {
-            module_number: 2,
-            title_ar: "\u0627\u0644\u0643\u0631\u0648\u0627\u0633\u0648\u0646 \u062B\u0646\u0627\u0626\u064A \u0627\u0644\u0644\u0648\u0646 \u0648\u062A\u0634\u0643\u064A\u0644 \u0627\u0644\u0642\u0648\u0627\u0644\u0628 \u0627\u0644\u062D\u062F\u064A\u062B\u0629",
-            title_en: "Bicolor Croissants & Modern Geo-Shapes",
-            duration_ar: "6 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "6 Hours",
-            lessons: [
-              { title_ar: "\u062A\u062D\u0636\u064A\u0631 \u0639\u062C\u0627\u0626\u0646 \u0627\u0644\u0643\u0627\u0643\u0627\u0648 \u0648\u0627\u0644\u062A\u0648\u062A \u0627\u0644\u0645\u0644\u0648\u0646\u0629", title_en: "Cocoa & Berry Laminate Skins", duration_ar: "3 \u0633\u0627\u0639\u0627\u062A", duration_en: "3 Hours" },
-              { title_ar: "\u0627\u0644\u0644\u0641 \u0641\u064A \u0627\u0644\u0642\u0648\u0627\u0644\u0628 \u0627\u0644\u0623\u0633\u0637\u0648\u0627\u0646\u064A\u0629 \u0648\u0627\u0644\u0645\u0643\u0639\u0628\u0629", title_en: "Rolls, Cubes & Architectural Coils", duration_ar: "3 \u0633\u0627\u0639\u0627\u062A", duration_en: "3 Hours" }
-            ]
-          },
-          {
-            module_number: 3,
-            title_ar: "\u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0628\u0637\u064A\u0621 \u0648\u0627\u0644\u062E\u0628\u0632 \u0641\u064A \u0623\u0641\u0631\u0627\u0646 \u0627\u0644\u0628\u062E\u0627\u0631",
-            title_en: "Proofing Dynamics & Deck Oven Steam Baking",
-            duration_ar: "6 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "6 Hours",
-            lessons: [
-              { title_ar: "\u0625\u062F\u0627\u0631\u0629 \u062F\u0631\u062C\u0627\u062A \u0631\u0637\u0648\u0628\u0629 \u0648\u062D\u0631\u0627\u0631\u0629 \u063A\u0631\u0641 \u0627\u0644\u062A\u062E\u0645\u064A\u0631", title_en: "Proofer Humidity & Temperature Curves", duration_ar: "3 \u0633\u0627\u0639\u0627\u062A", duration_en: "3 Hours" },
-              { title_ar: "\u0627\u0644\u062A\u0644\u0645\u064A\u0639 \u0628\u0627\u0644\u0634\u0631\u0627\u0628 \u0627\u0644\u0644\u0627\u0645\u0639 \u0648\u062A\u062B\u0628\u064A\u062A \u0627\u0644\u0647\u0634\u0627\u0634\u0629", title_en: "Gloss Glazing & Crust Preservation", duration_ar: "3 \u0633\u0627\u0639\u0627\u062A", duration_en: "3 Hours" }
-            ]
-          }
-        ]
-      },
-      {
-        id: "course-3",
-        title: "Traditional Live Fire & Smoke Gastronomy",
-        title_ar: "\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0645\u0628\u0627\u0634\u0631 \u0639\u0644\u0649 \u0627\u0644\u062D\u0637\u0628 \u0648\u0627\u0644\u062A\u062F\u062E\u064A\u0646 \u0627\u0644\u062D\u0631\u0641\u064A",
-        title_en: "Traditional Live Fire & Smoke Gastronomy",
-        subtitle_ar: "\u0625\u062F\u0627\u0631\u0629 \u0628\u064A\u0648\u062A \u0627\u0644\u062A\u062F\u062E\u064A\u0646\u060C \u062A\u062D\u0636\u064A\u0631 \u0628\u0647\u0627\u0631\u0627\u062A \u0627\u0644\u0631\u0651\u0628 \u0627\u0644\u062C\u0627\u0641\u0629\u060C \u0648\u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0634\u0648\u0627\u0621 \u0627\u0644\u0628\u0637\u064A\u0621 \u0639\u0644\u0649 \u062D\u0637\u0628 \u0627\u0644\u0632\u064A\u062A\u0648\u0646",
-        subtitle_en: "Smokehouse management, artisanal dry rubs, and ultra-slow low-and-slow wood pitmastery",
-        instructor_id: "chef-3",
-        instructor_name_ar: "\u0634\u064A\u0641 \u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631",
-        instructor_name_en: "Chef Tariq Mansour",
-        instructor_avatar: "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=200&q=80",
-        instructor_title_ar: "\u062E\u0628\u064A\u0631 \u0627\u0644\u0645\u0634\u0627\u0648\u064A \u0627\u0644\u062D\u0631\u0641\u064A\u0629 \u0648\u0627\u0644\u0637\u0647\u064A \u0628\u0627\u0644\u0646\u0627\u0631 \u0627\u0644\u062D\u064A\u0629",
-        instructor_title_en: "Master Pitmaster & Live Fire Pioneer",
-        level: "intermediate",
-        level_ar: "\u0645\u062A\u0648\u0633\u0637 (Intermediate)",
-        level_en: "Intermediate",
-        duration_ar: "3 \u0623\u0633\u0627\u0628\u064A\u0639 (12 \u0633\u0627\u0639\u0629 \u062A\u062F\u0631\u064A\u0628\u064A\u0629)",
-        duration_en: "3 Weeks (12 Live Hours)",
-        price: 1950,
-        price_formatted: "1,950 \u0631.\u0633",
-        currency: "SAR",
-        total_seats: 20,
-        seats_left: 8,
-        start_date: "2026-09-25",
-        schedule_ar: "\u0643\u0644 \u062C\u0645\u0639\u0629 \u0648\u0633\u0628\u062A (4:00 \u0645 - 6:00 \u0645 \u0628\u062A\u0648\u0642\u064A\u062A \u0645\u0643\u0629)",
-        schedule_en: "Every Fri & Sat (4:00 PM - 6:00 PM AST)",
-        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
-        includes_certificate: true,
-        enrolled_count: 12,
-        syllabus: [
-          {
-            module_number: 1,
-            title_ar: "\u0623\u0646\u0648\u0627\u0639 \u0627\u0644\u0623\u062E\u0634\u0627\u0628 \u0648\u062E\u0635\u0627\u0626\u0635 \u0627\u0644\u062F\u062E\u0627\u0646 \u0627\u0644\u0639\u0637\u0631\u064A",
-            title_en: "Wood Profiling & Clean Smoke Physics",
-            duration_ar: "4 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "4 Hours",
-            lessons: [
-              { title_ar: "\u0627\u0644\u062A\u0645\u064A\u064A\u0632 \u0628\u064A\u0646 \u062E\u0634\u0628 \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0648\u0627\u0644\u0633\u0646\u062F\u064A\u0627\u0646 \u0648\u0623\u0634\u062C\u0627\u0631 \u0627\u0644\u0641\u0627\u0643\u0647\u0629", title_en: "Olive vs Oak vs Fruitwood Flavor Notes", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" },
-              { title_ar: "\u062A\u062C\u0646\u0628 \u0627\u0644\u062F\u062E\u0627\u0646 \u0627\u0644\u0623\u0628\u064A\u0636 \u0627\u0644\u0645\u0631 \u0648\u062A\u062D\u0642\u064A\u0642 \u0627\u0644\u062F\u062E\u0627\u0646 \u0627\u0644\u0623\u0632\u0631\u0642 \u0627\u0644\u0646\u0638\u064A\u0641", title_en: "Eliminating Creosote & Thin Blue Smoke", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" }
-            ]
-          },
-          {
-            module_number: 2,
-            title_ar: "\u062A\u0642\u0637\u064A\u0639 \u0627\u0644\u0644\u062D\u0648\u0645 \u0627\u0644\u0643\u0628\u064A\u0631\u0629 \u0648\u062A\u0648\u0627\u0632\u0646 \u0627\u0644\u0628\u0647\u0627\u0631\u0627\u062A",
-            title_en: "Subprimal Butchery & Spice Geometry",
-            duration_ar: "4 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "4 Hours",
-            lessons: [
-              { title_ar: "\u062A\u0634\u0631\u064A\u062D \u0627\u0644\u0623\u0636\u0644\u0627\u0639 \u0648\u0642\u0637\u0639 \u0627\u0644\u0628\u0631\u064A\u0633\u0643\u062A \u0648\u0627\u0644\u0643\u062A\u0641", title_en: "Trimming Brisket, Ribs & Whole Shoulders", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" },
-              { title_ar: "\u062A\u0631\u0643\u064A\u0628 \u0628\u0647\u0627\u0631\u0627\u062A \u0627\u0644\u0631\u0651\u0628 \u0627\u0644\u062C\u0627\u0641\u0629 \u0648\u0627\u0644\u062A\u0645\u0644\u064A\u062D \u0627\u0644\u0625\u0633\u0645\u0648\u0632\u064A", title_en: "Crafting Dry Rubs & Osmotic Equilibrium", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" }
-            ]
-          },
-          {
-            module_number: 3,
-            title_ar: "\u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0628\u0637\u064A\u0621 (Low & Slow) \u0644\u0640 14 \u0633\u0627\u0639\u0629",
-            title_en: "The 14-Hour Low & Slow Session",
-            duration_ar: "4 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "4 Hours",
-            lessons: [
-              { title_ar: "\u062A\u062C\u0627\u0648\u0632 \u0646\u0642\u0637\u0629 \u062B\u0628\u0627\u062A \u0627\u0644\u062D\u0631\u0627\u0631\u0629 (The Stall) \u0648\u0627\u0644\u0644\u0641", title_en: "Managing The Stall with Peach Butcher Paper", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" },
-              { title_ar: "\u0641\u062A\u0631\u0629 \u0627\u0644\u0631\u0627\u062D\u0629 \u0627\u0644\u062D\u0631\u0627\u0631\u064A\u0629 \u0648\u0627\u0644\u062A\u0642\u0637\u064A\u0639 \u0627\u0644\u062D\u0631\u064A\u0631\u064A", title_en: "Thermal Resting in Warmers & Slicing", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" }
-            ]
-          }
-        ]
-      },
-      {
-        id: "course-4",
-        title: "The Kaiseki Philosophy & Seafood Precision",
-        title_ar: "\u0641\u0644\u0633\u0641\u0629 \u0627\u0644\u0643\u0627\u064A\u0633\u064A\u0643\u064A \u0648\u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u062A\u0639\u0627\u0645\u0644 \u0645\u0639 \u0627\u0644\u0645\u0623\u0643\u0648\u0644\u0627\u062A \u0627\u0644\u0628\u062D\u0631\u064A\u0629",
-        title_en: "The Kaiseki Philosophy & Seafood Precision",
-        subtitle_ar: "\u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0625\u064A\u0643\u064A \u062C\u064A\u0645\u064A \u0644\u0644\u0630\u0628\u062D \u0627\u0644\u0631\u062D\u064A\u0645\u060C \u062A\u0642\u0637\u064A\u0639 \u0627\u0644\u0633\u0627\u0634\u064A\u0645\u064A \u0627\u0644\u062D\u0631\u0641\u064A\u060C \u0648\u0627\u0633\u062A\u062E\u0644\u0627\u0635 \u0627\u0644\u062F\u0627\u0634\u064A \u0627\u0644\u0641\u0627\u062E\u0631",
-        subtitle_en: "Ikejime human harvesting, master yanagiba knife arts, and supreme ichiban dashi extraction",
-        instructor_id: "chef-4",
-        instructor_name_ar: "\u0634\u064A\u0641 \u0643\u064A\u0646\u062C\u064A \u062A\u0627\u0643\u0627\u0647\u0627\u0634\u064A",
-        instructor_name_en: "Chef Kenji Takahashi",
-        instructor_avatar: "https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?auto=format&fit=crop&w=200&q=80",
-        instructor_title_ar: "\u062D\u0627\u0635\u0644 \u0639\u0644\u0649 \u0646\u062C\u0645\u062A\u064A \u0645\u064A\u0634\u0644\u0627\u0646 \u0648\u0623\u0633\u062A\u0627\u0630 \u0627\u0644\u0643\u0627\u064A\u0633\u064A\u0643\u064A",
-        instructor_title_en: "Two Michelin-Starred Master Chef",
-        level: "masterclass",
-        level_ar: "\u0627\u062D\u062A\u0631\u0627\u0641\u064A \u0645\u062A\u0642\u062F\u0645 (Masterclass)",
-        level_en: "Masterclass",
-        duration_ar: "5 \u0623\u0633\u0627\u0628\u064A\u0639 (20 \u0633\u0627\u0639\u0629 \u062A\u062F\u0631\u064A\u0628\u064A\u0629)",
-        duration_en: "5 Weeks (20 Live Hours)",
-        price: 3800,
-        price_formatted: "3,800 \u0631.\u0633",
-        currency: "SAR",
-        total_seats: 12,
-        seats_left: 2,
-        start_date: "2026-10-02",
-        schedule_ar: "\u0643\u0644 \u0623\u0631\u0628\u0639\u0627\u0621 \u0648\u0633\u0628\u062A (6:00 \u0645 - 8:00 \u0645 \u0628\u062A\u0648\u0642\u064A\u062A \u0645\u0643\u0629)",
-        schedule_en: "Every Wed & Sat (6:00 PM - 8:00 PM AST)",
-        image: "https://images.unsplash.com/photo-1579027989536-b7b1f875659b?auto=format&fit=crop&w=800&q=80",
-        includes_certificate: true,
-        enrolled_count: 10,
-        syllabus: [
-          {
-            module_number: 1,
-            title_ar: "\u0639\u0644\u0645 \u0627\u0644\u0625\u064A\u0643\u064A \u062C\u064A\u0645\u064A \u0648\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u0623\u0633\u0645\u0627\u0643",
-            title_en: "Ikejime Science & Seafood Curing",
-            duration_ar: "4 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "4 Hours",
-            lessons: [
-              { title_ar: "\u0641\u064A\u0632\u064A\u0627\u0621 \u0634\u0644\u0644 \u0627\u0644\u0646\u062E\u0627\u0639 \u0648\u062A\u0641\u0631\u064A\u063A \u0627\u0644\u062F\u0645 \u0644\u062D\u0641\u0638 \u0627\u0644\u0646\u0636\u0627\u0631\u0629", title_en: "Neurological Dispatch & Blood Line Draining", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" },
-              { title_ar: "\u0627\u0644\u062A\u0645\u0644\u064A\u062D \u0648\u0627\u0644\u062A\u0639\u062A\u064A\u0642 \u0627\u0644\u0631\u0637\u0628 \u0644\u0644\u0623\u0633\u0645\u0627\u0643 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 (Shime)", title_en: "Shime Curing with Kombu (Kobujime)", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" }
-            ]
-          },
-          {
-            module_number: 2,
-            title_ar: "\u0627\u0633\u062A\u062E\u0644\u0627\u0635 \u0627\u0644\u062F\u0627\u0634\u064A \u0627\u0644\u0623\u0648\u0644 \u0648\u0645\u0631\u0643\u0628\u0627\u062A \u0627\u0644\u0623\u0648\u0645\u0627\u0645\u064A",
-            title_en: "Ichiban Dashi & Umami Synergies",
-            duration_ar: "6 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "6 Hours",
-            lessons: [
-              { title_ar: "\u062F\u0631\u062C\u0627\u062A \u062D\u0631\u0627\u0631\u0629 \u0646\u0642\u0639 \u0639\u0634\u0628 \u0627\u0644\u0643\u0648\u0645\u0628\u0648 \u0644\u062A\u0639\u0638\u064A\u0645 \u0627\u0644\u062C\u0644\u0648\u062A\u0627\u0645\u0627\u062A", title_en: "Kombu Extraction Chemistry at 60\xB0C", duration_ar: "3 \u0633\u0627\u0639\u0627\u062A", duration_en: "3 Hours" },
-              { title_ar: "\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0627\u0626\u0642 \u0627\u0644\u0643\u0627\u062A\u0633\u0648\u0628\u0648\u0634\u064A \u0648\u0627\u0644\u062A\u0635\u0641\u064A\u0629 \u0627\u0644\u062D\u0631\u064A\u0631\u064A\u0629", title_en: "Katsuobushi Infusion & Paper Clarification", duration_ar: "3 \u0633\u0627\u0639\u0627\u062A", duration_en: "3 Hours" }
-            ]
-          },
-          {
-            module_number: 3,
-            title_ar: "\u0641\u0646\u0648\u0646 \u0627\u0644\u062A\u0642\u0637\u064A\u0639 \u0628\u0627\u0644\u0633\u0643\u0627\u0643\u064A\u0646 \u0627\u0644\u064A\u0627\u0628\u0627\u0646\u064A\u0629 \u0627\u0644\u062A\u0642\u0644\u064A\u062F\u064A\u0629",
-            title_en: "Master Blade Cuts (Sogi-Giri & Hira-Zukuri)",
-            duration_ar: "6 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "6 Hours",
-            lessons: [
-              { title_ar: "\u0642\u0637\u0639 \u0627\u0644\u0633\u0627\u0634\u064A\u0645\u064A \u0627\u0644\u0645\u0627\u0626\u0644 \u0648\u0627\u0644\u0645\u0633\u062A\u0642\u064A\u0645 \u0648\u0641\u0642 \u0646\u0633\u064A\u062C \u0627\u0644\u0623\u0644\u064A\u0627\u0641", title_en: "Cutting Angles Relative to Muscle Grain", duration_ar: "3 \u0633\u0627\u0639\u0627\u062A", duration_en: "3 Hours" },
-              { title_ar: "\u062A\u0642\u0634\u064A\u0631 \u0648\u062A\u0634\u0643\u064A\u0644 \u0627\u0644\u062E\u0636\u0631\u0648\u0627\u062A \u0627\u0644\u0643\u0627\u064A\u0633\u064A\u0643\u064A\u0629 (Katsuramuki)", title_en: "Paper-Thin Daikon Katsuramuki Sheeting", duration_ar: "3 \u0633\u0627\u0639\u0627\u062A", duration_en: "3 Hours" }
-            ]
-          },
-          {
-            module_number: 4,
-            title_ar: "\u0641\u0644\u0633\u0641\u0629 \u0627\u0644\u0645\u0648\u0627\u0633\u0645 \u0648\u062A\u0635\u0645\u064A\u0645 \u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0643\u0627\u064A\u0633\u064A\u0643\u064A",
-            title_en: "Shun Seasonality & Kaiseki Course Architecture",
-            duration_ar: "4 \u0633\u0627\u0639\u0627\u062A",
-            duration_en: "4 Hours",
-            lessons: [
-              { title_ar: "\u0627\u0644\u0645\u0648\u0627\u0632\u0646\u0629 \u0628\u064A\u0646 \u0627\u0644\u0623\u0637\u0628\u0627\u0642 \u0627\u0644\u062B\u0645\u0627\u0646\u064A\u0629 (Sakizuke \u0625\u0644\u0649 Hassun)", title_en: "Harmonizing the 8 Classical Kaiseki Courses", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" },
-              { title_ar: "\u0627\u062E\u062A\u064A\u0627\u0631 \u0627\u0644\u0623\u0648\u0627\u0646\u064A \u0627\u0644\u062E\u0632\u0641\u064A\u0629 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645 \u0627\u0644\u062C\u0645\u0627\u0644\u064A", title_en: "Ceramic Selection & Seasonal Geometry", duration_ar: "2 \u0633\u0627\u0639\u0629", duration_en: "2 Hours" }
-            ]
-          }
-        ]
-      }
-    ],
-    // 5. DIRECT CHATS & RFQ NEGOTIATIONS (Initial Threads)
-    chats: [
-      {
-        id: "chat-1",
-        partner: {
-          id: "supplier-1",
-          name_ar: "\u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0644\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E",
-          name_en: "Al-Fannar Commercial Kitchens",
-          avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&q=80",
-          role: "supplier",
-          verified: true,
-          online: true
-        },
-        last_message_ar: "\u0645\u0631\u062D\u0628\u0627\u064B \u0634\u064A\u0641 \u0641\u064A\u0635\u0644\u060C \u0642\u0645\u0646\u0627 \u0628\u0645\u0631\u0627\u062C\u0639\u0629 \u0637\u0644\u0628 \u0627\u0644\u062A\u0633\u0639\u064A\u0631 \u0644\u0644\u0639\u062C\u0627\u0646\u0629 \u0627\u0644\u0644\u0648\u0644\u0628\u064A\u0629 50 \u0644\u062A\u0631 \u0648\u064A\u0633\u0639\u062F\u0646\u0627 \u062A\u0642\u062F\u064A\u0645 \u062E\u0635\u0645 \u0625\u0636\u0627\u0641\u064A \u0644\u0644\u062F\u0641\u0639\u0629 \u0627\u0644\u0623\u0648\u0644\u0649.",
-        last_message_en: "Hello Chef Faisal, we reviewed your RFQ for the 50L Spiral Mixer and are pleased to offer an exclusive commercial batch discount.",
-        last_message_time: "10:45 AM",
-        unread_count: 1,
-        category: "supplier",
-        rfq_card: {
-          rfq_id: "rfq-9801",
-          item_id: "supply-1",
-          item_name_ar: "\u0639\u062C\u0627\u0646\u0629 \u0644\u0648\u0644\u0628\u064A\u0629 \u062A\u062C\u0627\u0631\u064A\u0629 \u0644\u0644\u0645\u062E\u0627\u0628\u0632 50 \u0644\u062A\u0631",
-          item_name_en: "Commercial Spiral Dough Mixer 50L",
-          item_image: "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=200&q=80",
-          quantity: 2,
-          unit_ar: "\u0648\u062D\u062F\u0629",
-          unit_en: "Units",
-          target_price: 27e3,
-          unit_price: 13500,
-          total_price: 27e3,
-          currency: "SAR",
-          status: "quoted",
-          // pending | quoted | accepted | rejected
-          destination_ar: "\u0627\u0644\u0631\u064A\u0627\u0636 - \u062D\u064A \u062D\u0637\u064A\u0646",
-          destination_en: "Riyadh - Hittin District",
-          target_date: "2026-09-01"
-        },
-        messages: [
-          {
-            id: "msg-101",
-            sender: "me",
-            text_ar: "\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064A\u0643\u0645\u060C \u0623\u0648\u062F \u0627\u0644\u0627\u0633\u062A\u0641\u0633\u0627\u0631 \u0639\u0646 \u062A\u0648\u0641\u0631 \u0639\u062C\u0627\u0646\u0629 50 \u0644\u062A\u0631 \u0627\u0644\u0641\u0648\u0644\u0627\u0630\u064A\u0629 \u0648\u0625\u0645\u0643\u0627\u0646\u064A\u0629 \u062A\u0648\u0631\u064A\u062F \u0648\u062D\u062F\u062A\u064A\u0646 \u0644\u0645\u0637\u0639\u0645\u0646\u0627 \u0627\u0644\u062C\u062F\u064A\u062F \u0628\u0627\u0644\u0631\u064A\u0627\u0636 \u062E\u0644\u0627\u0644 \u0623\u0633\u0628\u0648\u0639\u064A\u0646.",
-            text_en: "Greetings, I would like to inquire about stock availability for 2 units of the 50L Spiral Mixer for our new restaurant opening in 2 weeks.",
-            timestamp: "09:30 AM",
-            has_rfq: true
-          },
-          {
-            id: "msg-102",
-            sender: "partner",
-            text_ar: "\u0648\u0639\u0644\u064A\u0643\u0645 \u0627\u0644\u0633\u0644\u0627\u0645 \u0648\u0627\u0644\u0631\u062D\u0645\u0629 \u0634\u064A\u0641 \u0641\u064A\u0635\u0644. \u0627\u0644\u0648\u062D\u062F\u0627\u062A \u0645\u062A\u0648\u0641\u0631\u0629 \u0641\u064A \u0645\u0633\u062A\u0648\u062F\u0639\u0627\u062A\u0646\u0627 \u0627\u0644\u0645\u0631\u0643\u0632\u064A\u0629 \u0628\u0627\u0644\u0631\u064A\u0627\u0636 \u0648\u062C\u0627\u0647\u0632\u0629 \u0644\u0644\u0634\u062D\u0646 \u0627\u0644\u0641\u0648\u0631\u064A \u0645\u0639 \u0627\u0644\u062A\u0648\u0635\u064A\u0644 \u0648\u0627\u0644\u062A\u0631\u0643\u064A\u0628 \u0627\u0644\u0645\u062C\u0627\u0646\u064A.",
-            text_en: "Welcome Chef Faisal. Both units are in stock at our central Riyadh warehouse, ready for immediate dispatch with complimentary installation.",
-            timestamp: "10:15 AM"
-          },
-          {
-            id: "msg-103",
-            sender: "partner",
-            text_ar: "\u0645\u0631\u062D\u0628\u0627\u064B \u0634\u064A\u0641 \u0641\u064A\u0635\u0644\u060C \u0642\u0645\u0646\u0627 \u0628\u0645\u0631\u0627\u062C\u0639\u0629 \u0637\u0644\u0628 \u0627\u0644\u062A\u0633\u0639\u064A\u0631 \u0644\u0644\u0639\u062C\u0627\u0646\u0629 \u0627\u0644\u0644\u0648\u0644\u0628\u064A\u0629 50 \u0644\u062A\u0631 \u0648\u064A\u0633\u0639\u062F\u0646\u0627 \u062A\u0642\u062F\u064A\u0645 \u062E\u0635\u0645 \u0625\u0636\u0627\u0641\u064A \u0644\u0644\u062F\u0641\u0639\u0629 \u0627\u0644\u0623\u0648\u0644\u0649.",
-            text_en: "Hello Chef Faisal, we reviewed your RFQ for the 50L Spiral Mixer and are pleased to offer an exclusive commercial batch discount.",
-            timestamp: "10:45 AM"
-          }
-        ]
-      },
-      {
-        id: "chat-2",
-        partner: {
-          id: "chef-2",
-          name_ar: "\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
-          name_en: "Chef Elena Rostova",
-          avatar: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=200&q=80",
-          role: "chef",
-          verified: true,
-          online: false
-        },
-        last_message_ar: "\u0623\u0647\u0644\u0627\u064B \u0634\u064A\u0641 \u0641\u064A\u0635\u0644\u060C \u0648\u0635\u0641\u062A\u0643 \u0627\u0644\u062C\u062F\u064A\u062F\u0629 \u0644\u0644\u0648\u0627\u063A\u064A\u0648 \u0628\u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0643\u0627\u0646\u062A \u0645\u0628\u0647\u0631\u0629! \u0647\u0644 \u064A\u0645\u0643\u0646\u0646\u0627 \u0627\u0644\u062A\u0646\u0633\u064A\u0642 \u0644\u0648\u0631\u0634\u0629 \u0639\u0645\u0644 \u0645\u0634\u062A\u0631\u0643\u0629\u061F",
-        last_message_en: "Hello Chef Faisal, your new Wagyu with date glaze recipe was phenomenal! Can we collaborate on a joint masterclass?",
-        last_message_time: "Yesterday",
-        unread_count: 0,
-        category: "chef",
-        rfq_card: null,
-        messages: [
-          {
-            id: "msg-201",
-            sender: "partner",
-            text_ar: "\u0623\u0647\u0644\u0627\u064B \u0634\u064A\u0641 \u0641\u064A\u0635\u0644\u060C \u0648\u0635\u0641\u062A\u0643 \u0627\u0644\u062C\u062F\u064A\u062F\u0629 \u0644\u0644\u0648\u0627\u063A\u064A\u0648 \u0628\u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0643\u0627\u0646\u062A \u0645\u0628\u0647\u0631\u0629! \u0647\u0644 \u064A\u0645\u0643\u0646\u0646\u0627 \u0627\u0644\u062A\u0646\u0633\u064A\u0642 \u0644\u0648\u0631\u0634\u0629 \u0639\u0645\u0644 \u0645\u0634\u062A\u0631\u0643\u0629\u061F",
-            text_en: "Hello Chef Faisal, your new Wagyu with date glaze recipe was phenomenal! Can we collaborate on a joint masterclass?",
-            timestamp: "Yesterday 04:20 PM"
-          },
-          {
-            id: "msg-202",
-            sender: "me",
-            text_ar: "\u0623\u0647\u0644\u0627\u064B \u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627\u060C \u064A\u0633\u0639\u062F\u0646\u064A \u062C\u062F\u0627\u064B \u0630\u0644\u0643! \u064A\u0633\u0639\u062F\u0646\u064A \u062F\u0645\u062C \u0627\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0627\u0644\u0645\u0628\u062A\u0643\u0631\u0629 \u0645\u0639 \u0627\u0644\u0623\u0637\u0628\u0627\u0642 \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0641\u064A \u0648\u0631\u0634\u0629 \u0627\u0644\u0634\u0647\u0631 \u0627\u0644\u0642\u0627\u062F\u0645.",
-            text_en: "Hello Chef Elena, I would be honored! Let us plan a fusion pastry-gastronomy workshop next month.",
-            timestamp: "Yesterday 05:00 PM"
-          }
-        ]
-      },
-      {
-        id: "chat-3",
-        partner: {
-          id: "supplier-2",
-          name_ar: "\u0645\u0639\u0627\u0635\u0631 \u0627\u0644\u062C\u0648\u0641 \u0627\u0644\u0630\u0647\u0628\u064A\u0629",
-          name_en: "Al-Jouf Golden Olive Mills",
-          avatar: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=200&q=80",
-          role: "supplier",
-          verified: true,
-          online: true
-        },
-        last_message_ar: "\u062A\u0645 \u062A\u0623\u0643\u064A\u062F \u0634\u062D\u0646 4 \u0628\u0631\u0627\u0645\u064A\u0644 \u0645\u0646 \u0632\u064A\u062A \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0627\u0644\u0628\u0643\u0631 \u0627\u0644\u0645\u0645\u062A\u0627\u0632\u060C \u0631\u0642\u0645 \u0627\u0644\u062A\u062A\u0628\u0639 \u0645\u0631\u0641\u0642 \u0628\u0637\u0644\u0628\u0643.",
-        last_message_en: "Dispatched 4 drums of extra virgin olive oil reserve, tracking number attached to your RFQ order.",
-        last_message_time: "Aug 12",
-        unread_count: 0,
-        category: "supplier",
-        rfq_card: {
-          rfq_id: "rfq-9802",
-          item_id: "supply-2",
-          item_name_ar: "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0628\u0643\u0631 \u0645\u0645\u062A\u0627\u0632 50 \u0644\u062A\u0631 - \u0627\u0644\u062C\u0648\u0641",
-          item_name_en: "Extra Virgin Olive Oil Bulk Drum 50L",
-          item_image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&q=80",
-          quantity: 4,
-          unit_ar: "\u0628\u0631\u0645\u064A\u0644",
-          unit_en: "Drums",
-          target_price: 7400,
-          unit_price: 1850,
-          total_price: 7400,
-          currency: "SAR",
-          status: "accepted",
-          destination_ar: "\u0627\u0644\u062F\u0631\u0639\u064A\u0629 - \u0627\u0644\u0631\u064A\u0627\u0636",
-          destination_en: "Diriyah - Riyadh",
-          target_date: "2026-08-20"
-        },
-        messages: [
-          {
-            id: "msg-301",
-            sender: "partner",
-            text_ar: "\u062A\u0645 \u062A\u0623\u0643\u064A\u062F \u0634\u062D\u0646 4 \u0628\u0631\u0627\u0645\u064A\u0644 \u0645\u0646 \u0632\u064A\u062A \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0627\u0644\u0628\u0643\u0631 \u0627\u0644\u0645\u0645\u062A\u0627\u0632\u060C \u0631\u0642\u0645 \u0627\u0644\u062A\u062A\u0628\u0639 \u0645\u0631\u0641\u0642 \u0628\u0637\u0644\u0628\u0643.",
-            text_en: "Dispatched 4 drums of extra virgin olive oil reserve, tracking number attached to your RFQ order.",
-            timestamp: "Aug 12 11:15 AM"
-          }
-        ]
-      }
-    ],
-    // 6. NOTIFICATIONS CENTER (Grouped Feed Items)
-    notifications: [
-      {
-        id: "notif-1",
-        type: "rfq",
-        category: "rfqs",
-        title_ar: "\u0639\u0631\u0636 \u0633\u0639\u0631 \u062C\u062F\u064A\u062F \u062C\u0627\u0647\u0632 \u0644\u0644\u0645\u0631\u0627\u062C\u0639\u0629",
-        title_en: "New RFQ Quotation Ready",
-        message_ar: "\u0642\u062F\u0645\u062A \u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0639\u0631\u0636 \u0633\u0639\u0631 \u0631\u0633\u0645\u064A \u0644\u0637\u0644\u0628\u0643 \u0627\u0644\u062E\u0627\u0635 \u0628\u0627\u0644\u0639\u062C\u0627\u0646\u0629 \u0627\u0644\u0644\u0648\u0644\u0628\u064A\u0629 50 \u0644\u062A\u0631.",
-        message_en: "Al-Fannar Kitchens submitted an official quotation for your 50L Spiral Mixer RFQ.",
-        time_ar: "\u0645\u0646\u0630 15 \u062F\u0642\u064A\u0642\u0629",
-        time_en: "15 mins ago",
-        timestamp: "2026-08-15T01:20:00Z",
-        read: false,
-        avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=100&q=80",
-        target_url: "chat.html?id=chat-1"
-      },
-      {
-        id: "notif-2",
-        type: "like",
-        category: "likes",
-        title_ar: "\u0625\u0639\u062C\u0627\u0628\u0627\u062A \u062C\u062F\u064A\u062F\u0629 \u0628\u0648\u0635\u0641\u0629 \u0627\u0644\u0633\u062A\u064A\u0643",
-        title_en: "New Recipe Likes",
-        message_ar: '\u0623\u0628\u062F\u0649 45 \u0634\u064A\u0641\u0627\u064B \u0625\u0639\u062C\u0627\u0628\u0647\u0645 \u0628\u0648\u0635\u0641\u0629 "\u0633\u062A\u064A\u0643 \u0648\u0627\u063A\u064A\u0648 \u0628\u0631\u064A\u0628 \u0622\u064A \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631".',
-        message_en: '45 chefs liked your "Wagyu Ribeye with Black Garlic Date Glaze" recipe.',
-        time_ar: "\u0645\u0646\u0630 \u0633\u0627\u0639\u062A\u064A\u0646",
-        time_en: "2 hours ago",
-        timestamp: "2026-08-14T23:30:00Z",
-        read: false,
-        avatar: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=100&q=80",
-        target_url: "recipe.html?id=recipe-1"
-      },
-      {
-        id: "notif-3",
-        type: "course",
-        category: "courses",
-        title_ar: "\u062A\u0633\u062C\u064A\u0644 \u062C\u062F\u064A\u062F \u0641\u064A \u0648\u0631\u0634\u0629 \u0627\u0644\u062A\u062E\u0645\u064A\u0631",
-        title_en: "New Masterclass Enrollment",
-        message_ar: '\u0627\u0646\u0636\u0645 \u0627\u0644\u0634\u064A\u0641 \u0645\u0627\u0631\u0643\u0648 \u0628\u064A\u0644\u064A\u0646\u064A \u0625\u0644\u0649 \u062F\u0648\u0631\u0629 "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641". \u062A\u0628\u0642\u0649 3 \u0645\u0642\u0627\u0639\u062F \u0641\u0642\u0637!',
-        message_en: 'Chef Marco Bellini enrolled in "Modern Fermentation Masterclass". Only 3 seats left!',
-        time_ar: "\u0645\u0646\u0630 4 \u0633\u0627\u0639\u0627\u062A",
-        time_en: "4 hours ago",
-        timestamp: "2026-08-14T21:30:00Z",
-        read: true,
-        avatar: "https://images.unsplash.com/photo-1574966740793-953ad375ded5?auto=format&fit=crop&w=100&q=80",
-        target_url: "courses.html?id=course-1"
-      },
-      {
-        id: "notif-4",
-        type: "comment",
-        category: "likes",
-        title_ar: "\u062A\u0639\u0644\u064A\u0642 \u062C\u062F\u064A\u062F \u0645\u0646 \u0627\u0644\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627",
-        title_en: "New Comment on Recipe",
-        message_ar: '\u0639\u0644\u0642\u062A \u0627\u0644\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627: "\u062A\u0646\u0627\u063A\u0645 \u062F\u0628\u0633 \u062A\u0645\u0631 \u0627\u0644\u062E\u0644\u0627\u0635 \u0645\u0639 \u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0628\u062A\u0643\u0627\u0631 \u0627\u0633\u062A\u062B\u0646\u0627\u0626\u064A!"',
-        message_en: 'Chef Elena Rostova commented: "The balance of Kholas dates and black garlic is sublime!"',
-        time_ar: "\u0645\u0646\u0630 6 \u0633\u0627\u0639\u0627\u062A",
-        time_en: "6 hours ago",
-        timestamp: "2026-08-14T19:30:00Z",
-        read: true,
-        avatar: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=100&q=80",
-        target_url: "recipe.html?id=recipe-1"
-      },
-      {
-        id: "notif-5",
-        type: "rfq",
-        category: "rfqs",
-        title_ar: "\u062A\u0645 \u0642\u0628\u0648\u0644 \u0637\u0644\u0628 \u0627\u0644\u062A\u0648\u0631\u064A\u062F \u0628\u0646\u062C\u0627\u062D",
-        title_en: "RFQ Order Accepted",
-        message_ar: "\u062A\u0645 \u0642\u0628\u0648\u0644 \u0648\u062A\u0623\u0643\u064A\u062F \u0637\u0644\u0628 \u062A\u0648\u0631\u064A\u062F \u0628\u0631\u0627\u0645\u064A\u0644 \u0632\u064A\u062A \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0645\u0646 \u0645\u0639\u0627\u0635\u0631 \u0627\u0644\u062C\u0648\u0641 \u0627\u0644\u0630\u0647\u0628\u064A\u0629.",
-        message_en: "Al-Jouf Golden Mills accepted and confirmed your olive oil bulk shipment.",
-        time_ar: "\u0645\u0646\u0630 \u064A\u0648\u0645",
-        time_en: "1 day ago",
-        timestamp: "2026-08-13T10:00:00Z",
-        read: true,
-        avatar: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=100&q=80",
-        target_url: "chat.html?id=chat-3"
-      },
-      {
-        id: "notif-6",
-        type: "follow",
-        category: "likes",
-        title_ar: "\u0645\u062A\u0627\u0628\u0639\u0648\u0646 \u062C\u062F\u062F \u0644\u0645\u0644\u0641\u0643 \u0627\u0644\u0634\u062E\u0635\u064A",
-        title_en: "New Followers",
-        message_ar: "\u0628\u062F\u0623 128 \u0645\u062A\u062E\u0635\u0635\u0627\u064B \u0641\u064A \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0628\u0645\u062A\u0627\u0628\u0639\u0629 \u062D\u0633\u0627\u0628\u0643 \u0647\u0630\u0627 \u0627\u0644\u0623\u0633\u0628\u0648\u0639.",
-        message_en: "128 culinary professionals started following your profile this week.",
-        time_ar: "\u0645\u0646\u0630 \u064A\u0648\u0645\u064A\u0646",
-        time_en: "2 days ago",
-        timestamp: "2026-08-12T14:00:00Z",
-        read: true,
-        avatar: "https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?auto=format&fit=crop&w=100&q=80",
-        target_url: "chef.html?id=chef-1"
-      }
-    ],
-    // 7. PLATFORM TRENDS & DISCOVERY HIGHLIGHTS
-    trends: {
-      topics: [
+  // js/data/fixtures/chefs.js
+  var CHEF_FIXTURES = [
+    {
+      "id": "chef-1",
+      "name_ar": "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
+      "name_en": "Chef Faisal Al-Hashemi",
+      "handle": "@chef_faisal",
+      "title": "Executive Culinary Director & Gastronomy Consultant",
+      "title_ar": "\u0627\u0644\u0645\u062F\u064A\u0631 \u0627\u0644\u062A\u0646\u0641\u064A\u0630\u064A \u0644\u0644\u0637\u0647\u064A \u0648\u0645\u0633\u062A\u0634\u0627\u0631 \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631",
+      "title_en": "Executive Culinary Director & Gastronomy Consultant",
+      "avatar": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80",
+      "cover": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+      "verified": true,
+      "followers": 42800,
+      "followers_formatted": "42.8k",
+      "following": 310,
+      "recipes_count": 24,
+      "experience_years": 16,
+      "rating": 4.95,
+      "reviews_count": 318,
+      "specialty": "Modern Saudi Fine Dining & Smoke Fermentation",
+      "specialty_ar": "\u0627\u0644\u0645\u0637\u0628\u062E \u0627\u0644\u0633\u0639\u0648\u062F\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631 \u0648\u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u062A\u062F\u062E\u064A\u0646",
+      "specialty_en": "Modern Saudi Fine Dining & Smoke Fermentation",
+      "bio_ar": "\u0631\u0627\u0626\u062F \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0633\u0639\u0648\u062F\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631. \u064A\u0639\u064A\u062F \u0627\u0628\u062A\u0643\u0627\u0631 \u0627\u0644\u0648\u0635\u0641\u0627\u062A \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0627\u0644\u0646\u062C\u062F\u064A\u0629 \u0648\u0627\u0644\u062D\u062C\u0627\u0632\u064A\u0629 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0623\u062D\u062F\u062B \u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0648\u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0648\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062C\u0632\u064A\u0626\u064A.",
+      "bio_en": "Pioneer of modern Saudi fine dining. Reinventing heritage Najdi and Hejazi recipes through precision dry-aging, wild fermentation, and progressive molecular gastronomy.",
+      "philosophy_ar": "\u0627\u0644\u0637\u0647\u064A \u0644\u064A\u0633 \u0645\u062C\u0631\u062F \u0625\u0639\u062F\u0627\u062F \u0637\u0639\u0627\u0645\u060C \u0628\u0644 \u0647\u0648 \u062A\u062F\u0648\u064A\u0646 \u062A\u0627\u0631\u064A\u062E\u064A \u062D\u064A \u0644\u0644\u0623\u0631\u0636 \u0648\u0627\u0644\u0645\u0648\u0627\u0633\u0645 \u0648\u0627\u0644\u0646\u0643\u0647\u0627\u062A \u0627\u0644\u0623\u0635\u064A\u0644\u0629 \u0627\u0644\u062A\u064A \u062A\u062A\u0648\u0627\u0631\u062B\u0647\u0627 \u0627\u0644\u0623\u062C\u064A\u0627\u0644.",
+      "philosophy_en": "Culinary craft is living historical storytelling\u2014capturing terroir, seasons, and ancient flavor wisdom into modern masterpieces.",
+      "awards": [
         {
-          tag: "#NewNajdiCuisine",
-          title_ar: "\u0627\u0644\u0645\u0637\u0628\u062E \u0627\u0644\u0646\u062C\u062F\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631",
-          title_en: "Contemporary Najdi Gastronomy",
-          posts_count: "1.4k"
+          "name_ar": "\u0627\u0644\u0645\u0631\u0634\u062D \u0627\u0644\u0646\u0647\u0627\u0626\u064A \u0644\u062C\u0627\u0626\u0632\u0629 \u0627\u0644\u0628\u0648\u0643\u0648\u0632 \u062F\u0648\u0631 \u0644\u0644\u0634\u0631\u0642 \u0627\u0644\u0623\u0648\u0633\u0637",
+          "name_en": "Bocuse d'Or Middle East Finalist",
+          "year": 2024,
+          "organization_ar": "\u0623\u0643\u0627\u062F\u064A\u0645\u064A\u0629 \u0627\u0644\u0628\u0648\u0643\u0648\u0632 \u062F\u0648\u0631 \u0627\u0644\u0639\u0627\u0644\u0645\u064A\u0629",
+          "organization_en": "Bocuse d'Or World Academy",
+          "badge": "Gold"
         },
         {
-          tag: "#KojiFermentation",
-          title_ar: "\u062A\u0642\u0646\u064A\u0627\u062A \u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0643\u0648\u062C\u064A",
-          title_en: "Koji Fermentation Arts",
-          posts_count: "890"
+          "name_ar": "\u0634\u064A\u0641 \u0627\u0644\u0639\u0627\u0645 \u0644\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062A\u0631\u0627\u062B\u064A \u0627\u0644\u062D\u062F\u064A\u062B",
+          "name_en": "Heritage Innovation Chef of the Year",
+          "year": 2023,
+          "organization_ar": "\u0642\u0645\u0629 \u0627\u0644\u0630\u0648\u0627\u0642\u0629 \u0627\u0644\u0639\u0627\u0644\u0645\u064A\u0629",
+          "organization_en": "World Gourmet Summit",
+          "badge": "Master"
         },
         {
-          tag: "#ArtisanalPasta",
-          title_ar: "\u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u062D\u0631\u0641\u064A\u0629 \u0627\u0644\u064A\u062F\u0648\u064A\u0629",
-          title_en: "Handmade Artisanal Pasta",
-          posts_count: "2.1k"
-        },
-        {
-          tag: "#CommercialKitchenTech",
-          title_ar: "\u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0633\u062D\u0627\u0628\u064A\u0629",
-          title_en: "Commercial Kitchen Tech",
-          posts_count: "640"
-        },
-        {
-          tag: "#PastryArchitecture",
-          title_ar: "\u0647\u0646\u062F\u0633\u0629 \u0627\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0627\u0644\u0641\u0631\u0646\u0633\u064A\u0629",
-          title_en: "Architectural Haute Pastry",
-          posts_count: "1.8k"
+          "name_ar": "\u0646\u062C\u0645\u0629 \u062F\u0644\u064A\u0644 \u0627\u0644\u0630\u0648\u0627\u0642\u0629 \u0644\u0644\u062A\u0645\u064A\u0632 \u0627\u0644\u0627\u0628\u062A\u0643\u0627\u0631\u064A",
+          "name_en": "Culinary Distinction Star",
+          "year": 2022,
+          "organization_ar": "\u062F\u0644\u064A\u0644 \u0645\u064A\u0634\u0644\u0627\u0646 \u0627\u0644\u0627\u0633\u062A\u0634\u0627\u0631\u064A",
+          "organization_en": "Gastronomy Excellence Guild",
+          "badge": "Distinction"
         }
       ],
-      stories: [
+      "signature_dishes": [
         {
-          id: "story-1",
-          chef_id: "chef-1",
-          chef_name_ar: "\u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
-          chef_name_en: "Faisal Al-Hashemi",
-          avatar: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=150&q=80",
-          image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
-          unviewed: true
+          "id": "dish-1",
+          "name_ar": "\u0633\u062A\u064A\u0643 \u0648\u0627\u063A\u064A\u0648 \u0628\u0631\u064A\u0628 \u0622\u064A \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0648\u062B\u0648\u0645 \u0623\u0633\u0648\u062F",
+          "name_en": "Wagyu Ribeye with Black Garlic Date Glaze",
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+          "recipe_id": "recipe-1"
         },
         {
-          id: "story-2",
-          chef_id: "chef-2",
-          chef_name_ar: "\u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
-          chef_name_en: "Elena Rostova",
-          avatar: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=150&q=80",
-          image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80",
-          unviewed: true
-        },
-        {
-          id: "story-3",
-          chef_id: "chef-3",
-          chef_name_ar: "\u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631",
-          chef_name_en: "Tariq Mansour",
-          avatar: "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=150&q=80",
-          image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
-          unviewed: true
-        },
-        {
-          id: "story-4",
-          chef_id: "chef-4",
-          chef_name_ar: "\u0643\u064A\u0646\u062C\u064A \u062A\u0627\u0643\u0627\u0647\u0627\u0634\u064A",
-          chef_name_en: "Kenji Takahashi",
-          avatar: "https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?auto=format&fit=crop&w=150&q=80",
-          image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80",
-          unviewed: false
-        },
-        {
-          id: "story-5",
-          chef_id: "chef-5",
-          chef_name_ar: "\u0644\u064A\u0644\u0649 \u0628\u0646 \u062C\u0644\u0648\u0646",
-          chef_name_en: "Layla Benjelloun",
-          avatar: "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=150&q=80",
-          image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
-          unviewed: false
-        },
-        {
-          id: "story-6",
-          chef_id: "chef-6",
-          chef_name_ar: "\u0645\u0627\u0631\u0643\u0648 \u0628\u064A\u0644\u064A\u0646\u064A",
-          chef_name_en: "Marco Bellini",
-          avatar: "https://images.unsplash.com/photo-1574966740793-953ad375ded5?auto=format&fit=crop&w=150&q=80",
-          image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80",
-          unviewed: false
+          "id": "dish-2",
+          "name_ar": "\u0642\u0631\u064A\u062F\u0633 \u0627\u0644\u0628\u062D\u0631 \u0627\u0644\u0623\u062D\u0645\u0631 \u0627\u0644\u0645\u0646\u0642\u0648\u0639 \u0628\u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0627\u0644\u0623\u0633\u0648\u062F",
+          "name_en": "Red Sea Tiger Prawns with Dried Black Lime",
+          "image": "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=600&q=80",
+          "recipe_id": null
         }
       ],
-      top_suppliers: [
+      "restaurants": [
         {
-          id: "supplier-1",
-          name_ar: "\u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0644\u0644\u0645\u0639\u062F\u0627\u062A",
-          name_en: "Al-Fannar Kitchens",
-          category_ar: "\u0645\u0639\u062F\u0627\u062A \u062B\u0642\u064A\u0644\u0629",
-          category_en: "Heavy Equipment",
-          avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=100&q=80",
-          rating: 4.96,
-          orders_count: 480
+          "name_ar": "\u0645\u0637\u0639\u0645 \u0645\u0631\u062E \u0627\u0644\u0641\u0627\u062E\u0631 - \u0627\u0644\u0631\u064A\u0627\u0636",
+          "name_en": "Marakh Fine Dining - Riyadh",
+          "role_ar": "\u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u062A\u0646\u0641\u064A\u0630\u064A \u0648\u0627\u0644\u0634\u0631\u064A\u0643 \u0627\u0644\u0645\u0624\u0633\u0633",
+          "role_en": "Executive Chef & Co-Founder",
+          "years": "2021 - Present"
         },
         {
-          id: "supplier-2",
-          name_ar: "\u0645\u0639\u0627\u0635\u0631 \u0627\u0644\u062C\u0648\u0641 \u0627\u0644\u0630\u0647\u0628\u064A\u0629",
-          name_en: "Al-Jouf Olive Mills",
-          category_ar: "\u0645\u0643\u0648\u0646\u0627\u062A \u0628\u0627\u0644\u062C\u0645\u0644\u0629",
-          category_en: "Bulk Ingredients",
-          avatar: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=100&q=80",
-          rating: 4.98,
-          orders_count: 920
-        },
-        {
-          id: "supplier-3",
-          name_ar: "\u0643\u0627\u064A\u0632\u0646 \u0644\u0623\u062F\u0648\u0627\u062A \u0627\u0644\u0637\u0647\u0627\u0629",
-          name_en: "Kaizen Cutlery",
-          category_ar: "\u0633\u0643\u0627\u0643\u064A\u0646 \u064A\u0627\u0628\u0627\u0646\u064A\u0629",
-          category_en: "Japanese Cutlery",
-          avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80",
-          rating: 4.94,
-          orders_count: 310
-        }
-      ],
-      upcoming_workshops: [
-        {
-          id: "course-1",
-          title_ar: "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641",
-          title_en: "Fermentation & Dry Aging",
-          instructor_ar: "\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
-          instructor_en: "Chef Faisal Al-Hashemi",
-          date_ar: "10 \u0633\u0628\u062A\u0645\u0628\u0631 2026",
-          date_en: "Sep 10, 2026",
-          seats_left: 3
-        },
-        {
-          id: "course-2",
-          title_ar: "\u0641\u0646\u0648\u0646 \u0627\u0644\u0645\u062E\u0628\u0648\u0632\u0627\u062A \u0627\u0644\u0641\u0631\u0646\u0633\u064A\u0629 \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
-          title_en: "Haute Viennoiserie Masterclass",
-          instructor_ar: "\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
-          instructor_en: "Chef Elena Rostova",
-          date_ar: "18 \u0633\u0628\u062A\u0645\u0628\u0631 2026",
-          date_en: "Sep 18, 2026",
-          seats_left: 5
+          "name_ar": "\u0644\u0627 \u0631\u064A\u0632\u064A\u0631\u0641 - \u0628\u0627\u0631\u064A\u0633",
+          "name_en": "La R\xE9serve - Paris",
+          "role_ar": "\u0634\u064A\u0641 \u062F\u064A \u0628\u0627\u0631\u062A\u064A \u0623\u0648\u0644",
+          "role_en": "Senior Chef de Partie",
+          "years": "2016 - 2020"
         }
       ]
     },
-    // 8. ACTIVE LOGGED-IN USER SESSION MOCK
-    user: {
-      id: "chef-1",
-      name_ar: "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
-      name_en: "Chef Faisal Al-Hashemi",
-      handle: "@chef_faisal",
-      email: "faisal@meyar.sa",
-      role: "chef",
-      verified: true,
-      avatar: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80",
-      cover: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
-      title_ar: "\u0627\u0644\u0645\u062F\u064A\u0631 \u0627\u0644\u062A\u0646\u0641\u064A\u0630\u064A \u0644\u0644\u0637\u0647\u064A \u0648\u0645\u0633\u062A\u0634\u0627\u0631 \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631",
-      title_en: "Executive Culinary Director & Gastronomy Consultant",
-      bio_ar: "\u0631\u0627\u0626\u062F \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0633\u0639\u0648\u062F\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631. \u064A\u0639\u064A\u062F \u0627\u0628\u062A\u0643\u0627\u0631 \u0627\u0644\u0648\u0635\u0641\u0627\u062A \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0627\u0644\u0646\u062C\u062F\u064A\u0629 \u0648\u0627\u0644\u062D\u062C\u0627\u0632\u064A\u0629 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0623\u062D\u062F\u062B \u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0648\u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0648\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062C\u0632\u064A\u0626\u064A.",
-      bio_en: "Pioneer of modern Saudi fine dining. Reinventing heritage Najdi and Hejazi recipes through precision dry-aging, wild fermentation, and progressive molecular gastronomy.",
-      business_profile: {
-        company_name_ar: "\u0627\u0633\u062A\u0648\u062F\u064A\u0648 \u0646\u062C\u062F \u0644\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0648\u0627\u0644\u0636\u064A\u0627\u0641\u0629",
-        company_name_en: "Najd Culinary Studio & Hospitality Consultancy",
-        cr_number: "1010894521",
-        vat_number: "310245896300003",
-        category: "Fine Dining & Hospitality Consulting",
-        location_ar: "\u062D\u064A \u062D\u0637\u064A\u0646\u060C \u0627\u0644\u0631\u064A\u0627\u0636",
-        location_en: "Hittin, Riyadh, Saudi Arabia"
+    {
+      "id": "chef-2",
+      "name_ar": "\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
+      "name_en": "Chef Elena Rostova",
+      "handle": "@elena_pastry",
+      "title": "Master Pastry Chef & Sugar Sculptor",
+      "title_ar": "\u0645\u0627\u0633\u062A\u0631 \u0634\u064A\u0641 \u0627\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0648\u0641\u0646\u0648\u0646 \u0627\u0644\u062A\u0634\u0643\u064A\u0644 \u0628\u0627\u0644\u0633\u0643\u0631",
+      "title_en": "Master Pastry Chef & Sugar Sculptor",
+      "avatar": "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=400&q=80",
+      "cover": "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1200&q=80",
+      "verified": true,
+      "followers": 68500,
+      "followers_formatted": "68.5k",
+      "following": 240,
+      "recipes_count": 31,
+      "experience_years": 14,
+      "rating": 4.98,
+      "reviews_count": 512,
+      "specialty": "French Haute P\xE2tisserie & Sugar Art",
+      "specialty_ar": "\u0641\u0646\u0648\u0646 \u0627\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0627\u0644\u0641\u0631\u0646\u0633\u064A\u0629 \u0627\u0644\u0631\u0627\u0642\u064A\u0629 \u0648\u0627\u0644\u0633\u0643\u0631\u064A\u0627\u062A \u0627\u0644\u0641\u0646\u064A\u0629",
+      "specialty_en": "French Haute P\xE2tisserie & Sugar Art",
+      "bio_ar": "\u062E\u0631\u064A\u062C\u0629 \u0645\u0639\u0647\u062F \u0644\u0648 \u0643\u0648\u0631\u062F\u0648\u0646 \u0628\u0644\u0648 \u0628\u0627\u0631\u064A\u0633. \u062A\u062A\u062E\u0635\u0635 \u0641\u064A \u0627\u0628\u062A\u0643\u0627\u0631 \u0623\u0631\u0642\u0649 \u0643\u064A\u0643\u0627\u062A \u0627\u0644\u0625\u0646\u062A\u0631\u064A\u0645\u064A\u0647 \u0648\u0627\u0644\u0645\u0639\u062C\u0646\u0627\u062A \u0627\u0644\u0645\u0648\u0631\u0642\u0629 \u0627\u0644\u062A\u064A \u062A\u0645\u0632\u062C \u0627\u0644\u0646\u0643\u0647\u0627\u062A \u0627\u0644\u0632\u0647\u0631\u064A\u0629 \u0627\u0644\u0634\u0631\u0642\u064A\u0629 \u0645\u0639 \u0627\u0644\u062F\u0642\u0629 \u0627\u0644\u0647\u0646\u062F\u0633\u064A\u0629 \u0627\u0644\u0643\u0644\u0627\u0633\u064A\u0643\u064A\u0629.",
+      "bio_en": "Le Cordon Bleu Paris Grand Dipl\xF4me alumna. Specializes in architectural entremets and laminated viennoiserie blending delicate Middle Eastern floral essences with French classical precision.",
+      "philosophy_ar": "\u0635\u0646\u0627\u0639\u0629 \u0627\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0647\u064A \u0644\u0642\u0627\u0621 \u0639\u0644\u0645 \u0627\u0644\u0643\u064A\u0645\u064A\u0627\u0621 \u0627\u0644\u062F\u0642\u064A\u0642 \u0645\u0639 \u0627\u0644\u0647\u0646\u062F\u0633\u0629 \u0627\u0644\u0645\u0639\u0645\u0627\u0631\u064A\u0629 \u0627\u0644\u062A\u0634\u0643\u064A\u0644\u064A\u0629 \u0644\u0625\u0633\u0639\u0627\u062F \u0627\u0644\u062D\u0648\u0627\u0633.",
+      "philosophy_en": "Pastry making is the harmonious convergence of exact chemical sciences and architectural aesthetics designed to evoke sublime joy.",
+      "awards": [
+        {
+          "name_ar": "\u0627\u0644\u0645\u064A\u062F\u0627\u0644\u064A\u0629 \u0627\u0644\u0641\u0636\u064A\u0629 \u0641\u064A \u0643\u0623\u0633 \u0627\u0644\u0639\u0627\u0644\u0645 \u0644\u0644\u062D\u0644\u0648\u064A\u0627\u062A",
+          "name_en": "Coupe du Monde de la P\xE2tisserie Silver Medal",
+          "year": 2022,
+          "organization_ar": "\u0627\u0644\u0627\u062A\u062D\u0627\u062F \u0627\u0644\u062F\u0648\u0644\u064A \u0644\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0628\u0641\u0631\u0646\u0633\u0627",
+          "organization_en": "International Pastry Union France",
+          "badge": "Silver"
+        },
+        {
+          "name_ar": "\u0623\u0641\u0636\u0644 \u0634\u064A\u0641 \u062D\u0644\u0648\u064A\u0627\u062A \u0641\u064A \u0627\u0644\u0634\u0631\u0642 \u0627\u0644\u0623\u0648\u0633\u0637",
+          "name_en": "Pastry Chef of the Year MEA",
+          "year": 2025,
+          "organization_ar": "\u062C\u0648\u0627\u0626\u0632 \u0627\u0644\u0636\u064A\u0627\u0641\u0629 \u0627\u0644\u0639\u0627\u0644\u0645\u064A\u0629",
+          "organization_en": "Global Hospitality Awards",
+          "badge": "Master"
+        }
+      ],
+      "signature_dishes": [
+        {
+          "id": "dish-3",
+          "name_ar": "\u0625\u0646\u062A\u0631\u064A\u0645\u064A\u0647 \u0627\u0644\u0641\u0633\u062A\u0642 \u0648\u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u0645\u0633\u062A\u0643\u0629",
+          "name_en": "Pistachio & Rosewater Entremet with Mastic Glaze",
+          "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80",
+          "recipe_id": "recipe-5"
+        },
+        {
+          "id": "dish-4",
+          "name_ar": "\u062A\u0627\u0631\u062A \u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u062F\u0627\u0643\u0646\u0629 \u0628\u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0645\u062F\u062E\u0646",
+          "name_en": "Smoked Cardamom Dark Chocolate Tart",
+          "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80",
+          "recipe_id": "recipe-8"
+        }
+      ],
+      "restaurants": [
+        {
+          "name_ar": "\u0623\u062A\u064A\u0644\u064A\u0647 \u0631\u0648\u0633\u062A\u0648\u0641\u0627 \u0644\u0644\u062D\u0644\u0648\u064A\u0627\u062A - \u062F\u0628\u064A",
+          "name_en": "Atelier Rostova P\xE2tisserie - Dubai",
+          "role_ar": "\u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u0645\u0624\u0633\u0633 \u0648\u0627\u0644\u0645\u062F\u064A\u0631 \u0627\u0644\u0625\u0628\u062F\u0627\u0639\u064A",
+          "role_en": "Founder & Creative Director",
+          "years": "2022 - Present"
+        }
+      ]
+    },
+    {
+      "id": "chef-3",
+      "name_ar": "\u0634\u064A\u0641 \u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631",
+      "name_en": "Chef Tariq Mansour",
+      "handle": "@tariq_firecraft",
+      "title": "Master of Live Fire & Artisanal Smokehouse",
+      "title_ar": "\u062E\u0628\u064A\u0631 \u0627\u0644\u0637\u0647\u064A \u0628\u0627\u0644\u0646\u0627\u0631 \u0627\u0644\u0645\u0628\u0627\u0634\u0631\u0629 \u0648\u0627\u0644\u062A\u062F\u062E\u064A\u0646 \u0627\u0644\u062A\u0631\u0627\u062B\u064A",
+      "title_en": "Master of Live Fire & Artisanal Smokehouse",
+      "avatar": "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=400&q=80",
+      "cover": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+      "verified": true,
+      "followers": 51200,
+      "followers_formatted": "51.2k",
+      "following": 195,
+      "recipes_count": 19,
+      "experience_years": 18,
+      "rating": 4.92,
+      "reviews_count": 420,
+      "specialty": "Levantine Heritage Charcoal Grill & Smokehouse",
+      "specialty_ar": "\u0627\u0644\u0645\u0634\u0627\u0648\u064A \u0627\u0644\u0634\u0627\u0645\u064A\u0629 \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0648\u0627\u0644\u062A\u062F\u062E\u064A\u0646 \u0627\u0644\u062D\u0631\u0641\u064A",
+      "specialty_en": "Levantine Heritage Charcoal Grill & Smokehouse",
+      "bio_ar": "\u0645\u062A\u062E\u0635\u0635 \u0641\u064A \u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u062A\u062F\u062E\u064A\u0646 \u0627\u0644\u0628\u0637\u064A\u0621 \u0639\u0644\u0649 \u062D\u0637\u0628 \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0648\u0627\u0644\u0633\u0646\u062F\u064A\u0627\u0646 \u0648\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u0644\u062D\u0648\u0645 \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629\u060C \u0645\u0639 \u062F\u0645\u062C \u0627\u0644\u0623\u0639\u0634\u0627\u0628 \u0627\u0644\u0628\u0631\u064A\u0629 \u0627\u0644\u0634\u0627\u0645\u064A\u0629 \u0648\u0627\u0644\u0645\u0643\u0633\u0631\u0627\u062A \u0627\u0644\u0645\u062D\u0645\u0635\u0629.",
+      "bio_en": "Master of slow olive-wood and oak ember smoking, ancestral meat aging, and wild Levantine botanicals harmonized with ancient grain dishes.",
+      "philosophy_ar": "\u0627\u0644\u0646\u0627\u0631 \u0627\u0644\u062D\u064A\u0629 \u0647\u064A \u0623\u0642\u062F\u0645 \u0645\u0639\u0644\u0645 \u0644\u0644\u0625\u0646\u0633\u0627\u0646 \u0641\u064A \u0627\u0644\u0637\u0647\u064A\u061B \u0627\u062D\u062A\u0631\u0627\u0645 \u0627\u0644\u0644\u0647\u0628 \u0648\u0627\u0644\u0648\u0642\u062A \u064A\u0645\u0646\u062D \u0627\u0644\u0645\u0643\u0648\u0646\u0627\u062A \u0639\u0645\u0642\u0627\u064B \u0644\u0627 \u064A\u0636\u0627\u0647\u064A\u0647 \u0623\u064A \u062C\u0647\u0627\u0632 \u062D\u062F\u064A\u062B.",
+      "philosophy_en": "Live fire is humanity\u2019s oldest culinary mentor; respecting flames and patient time unlocks an unmatchable terroir.",
+      "awards": [
+        {
+          "name_ar": "\u062C\u0627\u0626\u0632\u0629 \u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u062D\u0631\u0641\u064A \u0627\u0644\u0645\u062A\u0645\u064A\u0632 \u0644\u0644\u0645\u0634\u0627\u0648\u064A",
+          "name_en": "Artisanal Fire & Grill Champion",
+          "year": 2023,
+          "organization_ar": "\u0631\u0627\u0628\u0637\u0629 \u0637\u0647\u0627\u0629 \u0627\u0644\u0634\u0631\u0642 \u0627\u0644\u0623\u0648\u0633\u0637",
+          "organization_en": "Middle East Chefs Guild",
+          "badge": "Gold"
+        }
+      ],
+      "signature_dishes": [
+        {
+          "id": "dish-5",
+          "name_ar": "\u0631\u064A\u0634 \u063A\u0646\u0645 \u0645\u062A\u0628\u0644\u0629 \u0628\u0625\u0643\u0644\u064A\u0644 \u0627\u0644\u062C\u0628\u0644 \u0627\u0644\u0645\u062F\u062E\u0646 \u0648\u0627\u0644\u062F\u0628\u0633",
+          "name_en": "Smoked Rosemary Crusted Lamb Chops",
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+          "recipe_id": "recipe-4"
+        },
+        {
+          "id": "dish-6",
+          "name_ar": "\u0631\u064A\u0632\u0648\u062A\u0648 \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0645\u0639 \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0628\u0631\u064A",
+          "name_en": "Smoked Freekeh Risotto with Wild Morels",
+          "image": "https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=600&q=80",
+          "recipe_id": "recipe-7"
+        }
+      ],
+      "restaurants": [
+        {
+          "name_ar": "\u0645\u0637\u0639\u0645 \u0627\u0644\u062D\u0637\u0628 \u0648\u0627\u0644\u0631\u0645\u0627\u062F - \u0639\u0645\u0651\u0627\u0646 / \u0627\u0644\u0631\u064A\u0627\u0636",
+          "name_en": "Ember & Oak Smokehouse - Amman / Riyadh",
+          "role_ar": "\u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u062A\u0646\u0641\u064A\u0630\u064A \u0648\u0627\u0644\u0634\u0631\u064A\u0643",
+          "role_en": "Executive Chef & Partner",
+          "years": "2019 - Present"
+        }
+      ]
+    },
+    {
+      "id": "chef-4",
+      "name_ar": "\u0634\u064A\u0641 \u0643\u064A\u0646\u062C\u064A \u062A\u0627\u0643\u0627\u0647\u0627\u0634\u064A",
+      "name_en": "Chef Kenji Takahashi",
+      "handle": "@kenji_kaiseki",
+      "title": "Two-Michelin Star Veteran & Omakase Master",
+      "title_ar": "\u062D\u0627\u0635\u0644 \u0639\u0644\u0649 \u0646\u062C\u0645\u062A\u064A \u0645\u064A\u0634\u0644\u0627\u0646 \u0648\u0623\u0633\u062A\u0627\u0630 \u0641\u0646\u0648\u0646 \u0627\u0644\u0623\u0648\u0645\u0627\u0643\u0627\u0633\u064A \u0648\u0627\u0644\u0643\u0627\u064A\u0633\u064A\u0643\u064A",
+      "title_en": "Two-Michelin Star Veteran & Omakase Master",
+      "avatar": "https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?auto=format&fit=crop&w=400&q=80",
+      "cover": "https://images.unsplash.com/photo-1579027989536-b7b1f875659b?auto=format&fit=crop&w=1200&q=80",
+      "verified": true,
+      "followers": 89e3,
+      "followers_formatted": "89.0k",
+      "following": 180,
+      "recipes_count": 22,
+      "experience_years": 25,
+      "rating": 4.99,
+      "reviews_count": 640,
+      "specialty": "Contemporary Japanese Kaiseki & Omakase",
+      "specialty_ar": "\u0627\u0644\u0643\u0627\u064A\u0633\u064A\u0643\u064A \u0627\u0644\u064A\u0627\u0628\u0627\u0646\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631 \u0648\u0627\u0644\u0623\u0648\u0645\u0627\u0643\u0627\u0633\u064A",
+      "specialty_en": "Contemporary Japanese Kaiseki & Omakase",
+      "bio_ar": "\u0642\u0636\u0649 25 \u0639\u0627\u0645\u0627\u064B \u0641\u064A \u0623\u0631\u0642\u0649 \u0645\u0637\u0627\u0639\u0645 \u0637\u0648\u0643\u064A\u0648 \u0648\u0643\u064A\u0648\u062A\u0648 \u0627\u0644\u062D\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u0646\u062C\u0648\u0645 \u0645\u064A\u0634\u0644\u0627\u0646. \u064A\u0631\u0643\u0632 \u0639\u0644\u0649 \u0646\u0642\u0627\u0621 \u0627\u0644\u0646\u0643\u0647\u0627\u062A \u0648\u062A\u0642\u0646\u064A\u0627\u062A \u062A\u0642\u0637\u064A\u0639 \u0627\u0644\u0633\u0627\u0634\u064A\u0645\u064A \u0627\u0644\u062D\u0631\u0641\u064A\u0629 \u0648\u0627\u0644\u0645\u0648\u0627\u0632\u0646\u0629 \u0627\u0644\u062F\u0642\u064A\u0642\u0629 \u0644\u0644\u0623\u0648\u0645\u0627\u0645\u064A.",
+      "bio_en": "Two decades in Tokyo and Kyoto Michelin-starred institutions. Devoted to seasonal micro-harvests, master blade knife crafts, and precise umami extraction.",
+      "philosophy_ar": "\u0627\u0644\u0625\u062A\u0642\u0627\u0646 \u0627\u0644\u062D\u0642\u064A\u0642\u064A \u064A\u0643\u0645\u0646 \u0641\u064A \u0627\u0644\u0628\u0633\u0627\u0637\u0629 \u0627\u0644\u062E\u0627\u0644\u0635\u0629\u061B \u0625\u0632\u0627\u0644\u0629 \u0643\u0644 \u0645\u0627 \u0647\u0648 \u0632\u0627\u0626\u062F \u0644\u0625\u0638\u0647\u0627\u0631 \u0627\u0644\u062C\u0648\u0647\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0644\u0644\u0646\u0642\u0627\u0621.",
+      "philosophy_en": "True mastery lives in sublime restraint; stripping away excess until only pristine natural essence remains.",
+      "awards": [
+        {
+          "name_ar": "\u0646\u062C\u0645\u062A\u0627 \u0645\u064A\u0634\u0644\u0627\u0646 \u0644\u0644\u062A\u0645\u064A\u0632 \u0641\u064A \u0627\u0644\u0637\u0647\u064A",
+          "name_en": "Two Michelin Stars",
+          "year": 2021,
+          "organization_ar": "\u062F\u0644\u064A\u0644 \u0645\u064A\u0634\u0644\u0627\u0646 \u0637\u0648\u0643\u064A\u0648",
+          "organization_en": "Michelin Guide Tokyo",
+          "badge": "Michelin"
+        },
+        {
+          "name_ar": "\u0645\u0627\u0633\u062A\u0631 \u0627\u0644\u0623\u0648\u0645\u0627\u0645\u064A \u0627\u0644\u0639\u0627\u0644\u0645\u064A",
+          "name_en": "Global Umami Master",
+          "year": 2020,
+          "organization_ar": "\u062C\u0645\u0639\u064A\u0629 \u0627\u0644\u0637\u0647\u0627\u0629 \u0627\u0644\u064A\u0627\u0628\u0627\u0646\u064A\u0629",
+          "organization_en": "Japanese Culinary Society",
+          "badge": "Master"
+        }
+      ],
+      "signature_dishes": [
+        {
+          "id": "dish-7",
+          "name_ar": "\u0643\u0631\u0648\u0648\u062F\u0648 \u0633\u0645\u0643 \u0627\u0644\u0647\u0627\u0645\u0627\u062A\u0634\u064A \u0645\u0639 \u0627\u0644\u064A\u0648\u0632\u0648 \u0648\u0628\u0648\u0646\u0632\u0648 \u0627\u0644\u0643\u0627\u0641\u064A\u0627\u0631",
+          "name_en": "Hamachi Crudo with Yuzu White Ponzu & Finger Lime",
+          "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80",
+          "recipe_id": "recipe-6"
+        }
+      ],
+      "restaurants": [
+        {
+          "name_ar": "\u0645\u0637\u0639\u0645 \u062A\u0627\u0643\u0627\u0647\u0627\u0634\u064A \u0623\u0648\u0645\u0627\u0643\u0627\u0633\u064A - \u0637\u0648\u0643\u064A\u0648",
+          "name_en": "Takahashi Omakase - Tokyo",
+          "role_ar": "\u0627\u0644\u0645\u0627\u0644\u0643 \u0648\u0631\u0626\u064A\u0633 \u0627\u0644\u0637\u0647\u0627\u0629",
+          "role_en": "Chef Patron",
+          "years": "2015 - Present"
+        }
+      ]
+    },
+    {
+      "id": "chef-5",
+      "name_ar": "\u0634\u064A\u0641 \u0644\u064A\u0644\u0649 \u0628\u0646 \u062C\u0644\u0648\u0646",
+      "name_en": "Chef Layla Benjelloun",
+      "handle": "@layla_gastronomie",
+      "title": "Contemporary Maghrebi & Mediterranean Gastronomist",
+      "title_ar": "\u062E\u0628\u064A\u0631\u0629 \u0641\u0646\u0648\u0646 \u0627\u0644\u0645\u0637\u0628\u062E \u0627\u0644\u0645\u063A\u0627\u0631\u0628\u064A \u0648\u0627\u0644\u0645\u062A\u0648\u0633\u0637\u064A \u0627\u0644\u062D\u062F\u064A\u062B",
+      "title_en": "Contemporary Maghrebi & Mediterranean Gastronomist",
+      "avatar": "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=400&q=80",
+      "cover": "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=1200&q=80",
+      "verified": true,
+      "followers": 37400,
+      "followers_formatted": "37.4k",
+      "following": 340,
+      "recipes_count": 18,
+      "experience_years": 13,
+      "rating": 4.91,
+      "reviews_count": 280,
+      "specialty": "North African Haute Cuisine & Spice Geometries",
+      "specialty_ar": "\u0627\u0644\u0645\u0637\u0628\u062E \u0627\u0644\u0645\u063A\u0627\u0631\u0628\u064A \u0627\u0644\u0631\u0641\u064A\u0639 \u0648\u0647\u0646\u062F\u0633\u0629 \u0627\u0644\u062A\u0648\u0627\u0628\u0644",
+      "specialty_en": "North African Haute Cuisine & Spice Geometries",
+      "bio_ar": "\u0628\u0627\u062D\u062B\u0629 \u0641\u064A \u062A\u0627\u0631\u064A\u062E \u0627\u0644\u0645\u0623\u0643\u0648\u0644\u0627\u062A \u0627\u0644\u0623\u0646\u062F\u0644\u0633\u064A\u0629 \u0648\u0627\u0644\u0645\u063A\u0631\u0628\u064A\u0629. \u062A\u062F\u0645\u062C \u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0637\u0647\u064A \u0628\u0627\u0644\u0628\u062E\u0627\u0631 \u0648\u0627\u0644\u062A\u062D\u0645\u064A\u0631 \u0627\u0644\u0628\u0637\u064A\u0621 \u0641\u064A \u0627\u0644\u0637\u0648\u0627\u062C\u0646 \u0627\u0644\u0641\u062E\u0627\u0631\u064A\u0629 \u0645\u0639 \u0639\u0646\u0627\u0635\u0631 \u0627\u0644\u062A\u0642\u062F\u064A\u0645 \u0627\u0644\u0641\u0646\u062F\u0642\u064A\u0629 \u0627\u0644\u062D\u062F\u064A\u062B\u0629.",
+      "bio_en": "Culinary researcher exploring Andalusian and Moroccan gastronomic heritage. Modernizing slow-simmered clay tagines with delicate herb oils and fine dining plating.",
+      "philosophy_ar": "\u0627\u0644\u062A\u0648\u0627\u0628\u0644 \u0644\u064A\u0633\u062A \u0646\u0643\u0647\u0629 \u0625\u0636\u0627\u0641\u064A\u0629\u060C \u0628\u0644 \u0647\u064A \u0646\u063A\u0645\u0627\u062A \u0645\u0648\u0633\u064A\u0642\u064A\u0629 \u0645\u062A\u0646\u0627\u063A\u0645\u0629 \u062A\u0639\u0632\u0641 \u0644\u062D\u0646 \u0627\u0644\u0623\u0631\u0636 \u0648\u062B\u0642\u0627\u0641\u062A\u0647\u0627.",
+      "philosophy_en": "Spices are not mere seasonings; they are tonal symphonies that echo the earth and cultural memory.",
+      "awards": [
+        {
+          "name_ar": "\u062C\u0627\u0626\u0632\u0629 \u0627\u0644\u062A\u0645\u064A\u0632 \u0627\u0644\u0645\u0637\u0628\u062E\u064A \u0627\u0644\u0623\u0641\u0631\u064A\u0642\u064A",
+          "name_en": "African Culinary Excellence Award",
+          "year": 2024,
+          "organization_ar": "\u0645\u0646\u0638\u0645\u0629 \u0627\u0644\u0630\u0648\u0627\u0642\u0629 \u0627\u0644\u0623\u0641\u0631\u064A\u0642\u064A\u0629",
+          "organization_en": "African Gastronomy Guild",
+          "badge": "Gold"
+        }
+      ],
+      "signature_dishes": [
+        {
+          "id": "dish-8",
+          "name_ar": "\u0642\u0627\u0631\u0648\u0635 \u0627\u0644\u0628\u062D\u0631 \u0628\u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0645\u0639 \u0645\u0633\u062A\u062D\u0644\u0628 \u0627\u0644\u0647\u064A\u0644",
+          "name_en": "Saffron Infused Sea Bass with Cardamom Emulsion",
+          "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+          "recipe_id": "recipe-2"
+        }
+      ],
+      "restaurants": [
+        {
+          "name_ar": "\u0645\u0637\u0639\u0645 \u0644\u0627\u0631\u062C\u0627\u0646\u064A\u064A\u0647 - \u0645\u0631\u0627\u0643\u0634 / \u0627\u0644\u062F\u0627\u0631 \u0627\u0644\u0628\u064A\u0636\u0627\u0621",
+          "name_en": "L'Arganier Haute Table - Marrakech",
+          "role_ar": "\u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u062A\u0646\u0641\u064A\u0630\u064A",
+          "role_en": "Executive Chef",
+          "years": "2020 - Present"
+        }
+      ]
+    },
+    {
+      "id": "chef-6",
+      "name_ar": "\u0634\u064A\u0641 \u0645\u0627\u0631\u0643\u0648 \u0628\u064A\u0644\u064A\u0646\u064A",
+      "name_en": "Chef Marco Bellini",
+      "handle": "@marco_pastaio",
+      "title": "Master Pastaio & Piedmont Truffle Specialist",
+      "title_ar": "\u0645\u0627\u0633\u062A\u0631 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u062D\u0631\u0641\u064A\u0629 \u0648\u062E\u0628\u064A\u0631 \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0625\u064A\u0637\u0627\u0644\u064A\u0629",
+      "title_en": "Master Pastaio & Piedmont Truffle Specialist",
+      "avatar": "https://images.unsplash.com/photo-1574966740793-953ad375ded5?auto=format&fit=crop&w=400&q=80",
+      "cover": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?auto=format&fit=crop&w=1200&q=80",
+      "verified": true,
+      "followers": 73100,
+      "followers_formatted": "73.1k",
+      "following": 220,
+      "recipes_count": 27,
+      "experience_years": 21,
+      "rating": 4.97,
+      "reviews_count": 580,
+      "specialty": "Artisanal Italian Pasta & Mycological Gastronomy",
+      "specialty_ar": "\u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u0625\u064A\u0637\u0627\u0644\u064A\u0629 \u0627\u0644\u062D\u0631\u0641\u064A\u0629 \u0648\u0641\u0646\u0648\u0646 \u0627\u0644\u0641\u0637\u0631 \u0627\u0644\u0628\u0631\u064A \u0648\u0627\u0644\u0643\u0645\u0623\u0629",
+      "specialty_en": "Artisanal Italian Pasta & Mycological Gastronomy",
+      "bio_ar": "\u0645\u0646 \u0633\u0644\u0627\u0644\u0629 \u0635\u0627\u0646\u0639\u064A \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0641\u064A \u0628\u0648\u0644\u0648\u0646\u064A\u0627. \u064A\u0643\u0631\u0633 \u0641\u0646\u0647 \u0644\u0635\u0646\u0627\u0639\u0629 \u0627\u0644\u0645\u0639\u0643\u0631\u0648\u0646\u0629 \u0627\u0644\u064A\u062F\u0648\u064A\u0629 \u0645\u0646 \u0642\u0645\u062D \u0627\u0644\u062F\u064A\u0648\u0631\u0645 \u0627\u0644\u0639\u0636\u0648\u064A \u0648\u0623\u0646\u062F\u0631 \u0623\u0646\u0648\u0627\u0639 \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u0648\u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0645\u0646 \u063A\u0627\u0628\u0627\u062A \u0628\u064A\u064A\u0645\u0648\u0646\u062A\u064A.",
+      "bio_en": "Third-generation master pastaio from Bologna. Dedicated to hand-shaped heirloom durum pasta, artisanal bronze extrusions, and Piedmont wild truffles.",
+      "philosophy_ar": "\u0627\u0644\u0639\u062C\u064A\u0646 \u0643\u0627\u0626\u0646 \u062D\u064A \u064A\u062A\u0646\u0641\u0633\u061B \u064A\u062C\u0628 \u0623\u0646 \u062A\u0634\u0639\u0631 \u0628\u0631\u0637\u0648\u0628\u062A\u0647 \u0648\u062D\u0631\u0627\u0631\u0629 \u064A\u062F\u064A\u0643 \u0644\u062A\u0635\u0644 \u0625\u0644\u0649 \u0627\u0644\u0642\u0648\u0627\u0645 \u0627\u0644\u062D\u0631\u064A\u0631\u064A \u0627\u0644\u0645\u062B\u0627\u0644\u064A.",
+      "philosophy_en": "Pasta dough is a living canvas; you must feel its moisture, tension, and soul to achieve ethereal al dente perfection.",
+      "awards": [
+        {
+          "name_ar": "\u0627\u0644\u0634\u0648\u0643\u0627\u062A \u0627\u0644\u062B\u0644\u0627\u062B \u0644\u062F\u0644\u064A\u0644 \u063A\u0627\u0645\u0628\u064A\u0631\u0648 \u0631\u0648\u0633\u0648",
+          "name_en": "Gambero Rosso 3 Tre Forchette",
+          "year": 2023,
+          "organization_ar": "\u062F\u0644\u064A\u0644 \u063A\u0627\u0645\u0628\u064A\u0631\u0648 \u0631\u0648\u0633\u0648 \u0627\u0644\u0625\u064A\u0637\u0627\u0644\u064A",
+          "organization_en": "Gambero Rosso Guide",
+          "badge": "Gold"
+        },
+        {
+          "name_ar": "\u0628\u0637\u0644 \u0627\u0644\u0639\u0627\u0644\u0645 \u0644\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u062D\u0631\u0641\u064A\u0629",
+          "name_en": "World Artisanal Pasta Champion",
+          "year": 2021,
+          "organization_ar": "\u0623\u0643\u0627\u062F\u064A\u0645\u064A\u0629 \u0628\u0627\u0631\u064A\u0644\u0627 \u0644\u0644\u0637\u0647\u064A \u0627\u0644\u062D\u0631\u0641\u064A",
+          "organization_en": "Barilla Culinary Academy",
+          "badge": "Master"
+        }
+      ],
+      "signature_dishes": [
+        {
+          "id": "dish-9",
+          "name_ar": "\u0623\u0646\u0648\u0644\u0648\u062A\u064A \u0628\u0627\u0644\u0631\u064A\u0643\u0648\u062A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0648\u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621",
+          "name_en": "Wild Truffle & Smoked Ricotta Agnolotti",
+          "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80",
+          "recipe_id": "recipe-3"
+        }
+      ],
+      "restaurants": [
+        {
+          "name_ar": "\u0623\u0648\u0633\u062A\u064A\u0631\u064A\u0627 \u0628\u064A\u0644\u064A\u0646\u064A - \u0641\u0644\u0648\u0631\u0646\u0633\u0627",
+          "name_en": "Osteria Bellini - Florence",
+          "role_ar": "\u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u0645\u0627\u0644\u0643",
+          "role_en": "Chef Patron",
+          "years": "2017 - Present"
+        }
+      ]
+    }
+  ];
+
+  // js/data/fixtures/recipes.js
+  var RECIPE_FIXTURES = [
+    {
+      "id": "recipe-1",
+      "title": "Wagyu Ribeye with Black Garlic Date Glaze",
+      "title_ar": "\u0633\u062A\u064A\u0643 \u0648\u0627\u063A\u064A\u0648 \u0631\u064A\u0628 \u0622\u064A \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0648\u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0644\u0645\u0639\u062A\u0642",
+      "title_en": "Wagyu Ribeye with Black Garlic Date Glaze",
+      "description_ar": "\u0642\u0637\u0639\u0629 \u0644\u062D\u0645 \u0648\u0627\u063A\u064A\u0648 A5 \u0645\u0639\u062A\u0642\u0629 \u0648\u0645\u0637\u0647\u0648\u0629 \u0644\u062F\u0631\u062C\u0629 \u0645\u062A\u0648\u0633\u0637\u0629\u060C \u0645\u063A\u0637\u0627\u0629 \u0628\u063A\u0644\u064A\u0632 \u0645\u0631\u0643\u0632 \u0645\u0646 \u062F\u0628\u0633 \u062A\u0645\u0631 \u0627\u0644\u062E\u0644\u0627\u0635 \u0627\u0644\u0646\u062C\u062F \u0648\u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0648\u062B\u0648\u0645 \u0627\u0644\u062D\u0628\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0627\u0644\u0645\u062E\u0645\u0631.",
+      "description_en": "Seared A5 Wagyu Ribeye brushed with a rich reduction of artisanal Najdi date molasses, fermented black garlic paste, and winter truffle jus.",
+      "author_id": "chef-1",
+      "author_name_ar": "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
+      "author_name_en": "Chef Faisal Al-Hashemi",
+      "author_avatar": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=200&q=80",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
+      ],
+      "cuisine": "Contemporary Saudi Fusion",
+      "cuisine_ar": "\u0633\u0639\u0648\u062F\u064A \u0645\u0639\u0627\u0635\u0631",
+      "cuisine_en": "Contemporary Saudi",
+      "category": "Main Course",
+      "category_ar": "\u0623\u0637\u0628\u0627\u0642 \u0631\u0626\u064A\u0633\u064A\u0629",
+      "category_en": "Main Course",
+      "difficulty": "Hard",
+      "difficulty_ar": "\u0645\u062A\u0642\u062F\u0645",
+      "difficulty_en": "Hard",
+      "base_servings": 4,
+      "prep_time": 35,
+      "cook_time": 45,
+      "total_time": 80,
+      "calories": 680,
+      "likes_count": 1420,
+      "saves_count": 890,
+      "rating": 4.96,
+      "reviews_count": 114,
+      "created_at": "2026-08-01",
+      "tags": [
+        "Wagyu",
+        "FineDining",
+        "SaudiFlavors",
+        "BlackGarlic",
+        "Glaze"
+      ],
+      "ingredients": [
+        {
+          "id": "ing-1",
+          "name_ar": "\u0644\u062D\u0645 \u0648\u0627\u063A\u064A\u0648 A5 \u0631\u064A\u0628 \u0622\u064A \u0645\u0639\u062A\u0642",
+          "name_en": "A5 Wagyu Ribeye Steaks",
+          "baseAmount": 800,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u0642\u0637\u0639\u0629 \u0628\u0633\u0645\u0627\u0643\u0629 3.5 \u0633\u0645",
+          "notes_en": "Cut to 3.5cm thickness"
+        },
+        {
+          "id": "ing-2",
+          "name_ar": "\u0645\u0639\u062C\u0648\u0646 \u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0644\u0645\u062E\u0645\u0631",
+          "name_en": "Fermented Black Garlic Paste",
+          "baseAmount": 45,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u0647\u0631\u0648\u0633 \u0646\u0627\u0639\u0645\u0627\u064B",
+          "notes_en": "Smoothly pureed"
+        },
+        {
+          "id": "ing-3",
+          "name_ar": "\u062F\u0628\u0633 \u062A\u0645\u0631 \u062E\u0644\u0627\u0635 \u0641\u0627\u062E\u0631",
+          "name_en": "Artisanal Kholas Date Molasses",
+          "baseAmount": 60,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0637\u0628\u064A\u0639\u064A \u0628\u062F\u0648\u0646 \u0633\u0643\u0631 \u0645\u0636\u0627\u0641",
+          "notes_en": "100% pure organic"
+        },
+        {
+          "id": "ing-4",
+          "name_ar": "\u0645\u0631\u0642 \u0644\u062D\u0645 \u0645\u0631\u0643\u0632 (\u062F\u064A\u0645\u064A \u063A\u0644\u0627\u0633)",
+          "name_en": "Veal Bone Marrow Demi-Glace",
+          "baseAmount": 120,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0645\u062E\u062A\u0632\u0644 \u0644\u0645\u062F\u0629 24 \u0633\u0627\u0639\u0629",
+          "notes_en": "24-hour reduction"
+        },
+        {
+          "id": "ing-5",
+          "name_ar": "\u0632\u0628\u062F\u0629 \u0641\u0631\u0646\u0633\u064A\u0629 \u063A\u064A\u0631 \u0645\u0645\u0644\u062D\u0629",
+          "name_en": "Unsalted Cultured French Butter",
+          "baseAmount": 50,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u062F\u0647\u0646 \u0627\u0644\u0633\u062A\u064A\u0643 \u0623\u062B\u0646\u0627\u0621 \u0627\u0644\u062A\u062D\u0645\u064A\u0631",
+          "notes_en": "For basting"
+        },
+        {
+          "id": "ing-6",
+          "name_ar": "\u0623\u063A\u0635\u0627\u0646 \u0632\u0639\u062A\u0631 \u0628\u0631\u064A \u0637\u0627\u0632\u062C",
+          "name_en": "Fresh Wild Thyme Sprigs",
+          "baseAmount": 4,
+          "unit_ar": "\u062D\u0628\u0629",
+          "unit_en": "pcs",
+          "notes_ar": "\u0645\u063A\u0633\u0648\u0644\u0629 \u0648\u0645\u062C\u0641\u0641\u0629",
+          "notes_en": "Freshly bruised"
+        },
+        {
+          "id": "ing-7",
+          "name_ar": "\u062E\u0644 \u0628\u0644\u0633\u0645\u064A \u0645\u0639\u062A\u0642 12 \u0639\u0627\u0645\u0627\u064B",
+          "name_en": "12-Year Aged Balsamic Vinegar",
+          "baseAmount": 20,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0644\u0645\u0648\u0627\u0632\u0646\u0629 \u0627\u0644\u062D\u0645\u0648\u0636\u0629",
+          "notes_en": "For acidity balance"
+        },
+        {
+          "id": "ing-8",
+          "name_ar": "\u0645\u0644\u062D \u0628\u062D\u0631\u064A \u0645\u062F\u062E\u0646 \u0646\u0627\u0639\u0645",
+          "name_en": "Flaky Smoked Sea Salt",
+          "baseAmount": 10,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0644\u062A\u0644\u0645\u064A\u0639 \u0627\u0644\u0646\u0647\u0627\u0626\u064A \u0639\u0646\u062F \u0627\u0644\u062A\u0642\u062F\u064A\u0645",
+          "notes_en": "For final finishing"
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "title_ar": "\u062A\u062D\u0636\u064A\u0631 \u0644\u062D\u0645 \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0648\u0627\u0644\u062A\u062A\u0628\u064A\u0644 \u0627\u0644\u0623\u0648\u0644\u064A",
+          "title_en": "Wagyu Tempering & Seasoning",
+          "instruction_ar": "\u0623\u062E\u0631\u062C \u0634\u0631\u0627\u0626\u062D \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0645\u0646 \u0627\u0644\u062B\u0644\u0627\u062C\u0629 \u0642\u0628\u0644 \u0627\u0644\u0637\u0647\u064A \u0628\u0640 45 \u062F\u0642\u064A\u0642\u0629 \u0644\u062A\u0635\u0644 \u0644\u062D\u0631\u0627\u0631\u0629 \u0627\u0644\u063A\u0631\u0641\u0629. \u062C\u0641\u0641 \u0627\u0644\u0633\u0637\u062D \u0628\u0648\u0631\u0642 \u0627\u0644\u0645\u0637\u0628\u062E \u062B\u0645 \u0631\u0634 \u0646\u0635\u0641 \u0643\u0645\u064A\u0629 \u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0628\u062D\u0631\u064A \u0627\u0644\u0645\u062F\u062E\u0646 \u0639\u0644\u0649 \u0643\u0644\u0627 \u0627\u0644\u0648\u062C\u0647\u064A\u0646 \u0628\u0627\u0644\u062A\u0633\u0627\u0648\u064A.",
+          "instruction_en": "Temper the Wagyu steaks at room temperature for 45 minutes. Pat dry with culinary towels and season evenly with half of the smoked flaky sea salt.",
+          "timer_minutes": 45,
+          "tip_ar": "\u0644\u0627 \u062A\u0636\u0639 \u0627\u0644\u0644\u062D\u0645 \u0628\u0627\u0631\u062F\u0627\u064B \u0623\u0628\u062F\u0627\u064B \u0641\u064A \u0627\u0644\u0645\u0642\u0644\u0627\u0629 \u0644\u062A\u0641\u0627\u062F\u064A \u0627\u0646\u062E\u0641\u0627\u0636 \u062D\u0631\u0627\u0631\u0629 \u0633\u0637\u062D \u0627\u0644\u062A\u062D\u0645\u064A\u0631 \u0648\u0641\u0642\u062F\u0627\u0646 \u0627\u0644\u0639\u0635\u0627\u0631\u0629.",
+          "tip_en": "Never sear cold Wagyu directly from the fridge as it causes sudden temperature drop and juice loss."
+        },
+        {
+          "step_number": 2,
+          "title_ar": "\u0625\u0639\u062F\u0627\u062F \u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0648\u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0644\u0645\u062E\u0645\u0631",
+          "title_en": "Preparing Black Garlic Date Glaze",
+          "instruction_ar": "\u0641\u064A \u0642\u062F\u0631 \u0646\u062D\u0627\u0633\u064A \u0635\u063A\u064A\u0631 \u0639\u0644\u0649 \u0646\u0627\u0631 \u0647\u0627\u062F\u0626\u0629\u060C \u0627\u062E\u0644\u0637 \u0645\u0639\u062C\u0648\u0646 \u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0645\u0639 \u062F\u0628\u0633 \u0627\u0644\u062A\u0645\u0631 \u0648\u0627\u0644\u062E\u0644 \u0627\u0644\u0628\u0644\u0633\u0645\u064A \u0648\u0627\u0644\u062F\u064A\u0645\u064A \u063A\u0644\u0627\u0633. \u0642\u0644\u0651\u0628 \u0628\u0627\u0633\u062A\u0645\u0631\u0627\u0631 \u062D\u062A\u0649 \u064A\u062A\u0643\u0627\u062B\u0641 \u0627\u0644\u0645\u0632\u064A\u062C \u0644\u064A\u063A\u0637\u064A \u0638\u0647\u0631 \u0627\u0644\u0645\u0644\u0639\u0642\u0629\u060C \u062B\u0645 \u0627\u0631\u0641\u0639\u0647 \u0639\u0646 \u0627\u0644\u0646\u0627\u0631 \u0648\u0627\u062A\u0631\u0643\u0647 \u062F\u0627\u0641\u0626\u0627\u064B.",
+          "instruction_en": "In a heavy copper saucepan over low heat, whisk together black garlic paste, date molasses, aged balsamic, and demi-glace. Simmer until it coats the back of a spoon smoothly.",
+          "timer_minutes": 10,
+          "tip_ar": "\u062A\u062C\u0646\u0628 \u063A\u0644\u064A\u0627\u0646 \u0627\u0644\u063A\u0644\u064A\u0632 \u0627\u0644\u0634\u062F\u064A\u062F \u062D\u062A\u0649 \u0644\u0627 \u064A\u062D\u062A\u0631\u0642 \u0627\u0644\u0633\u0643\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0641\u064A \u062F\u0628\u0633 \u0627\u0644\u062A\u0645\u0631 \u0648\u064A\u0635\u0628\u062D \u0645\u0631\u0627\u064B.",
+          "tip_en": "Avoid rapid boiling to preserve the nuanced natural sweetness of the dates."
+        },
+        {
+          "step_number": 3,
+          "title_ar": "\u0627\u0644\u062A\u062D\u0645\u064A\u0631 \u0627\u0644\u0639\u0627\u0644\u064A \u0648\u0627\u0644\u062F\u0647\u0646 \u0628\u0627\u0644\u0632\u0628\u062F\u0629 (Arros\xE9)",
+          "title_en": "High-Heat Sear & Butter Basting",
+          "instruction_ar": "\u0633\u062E\u0651\u0646 \u0645\u0642\u0644\u0627\u0629 \u062D\u062F\u064A\u062F \u0632\u0647\u0631 (Cast Iron) \u062D\u062A\u0649 \u062A\u0635\u0627\u0639\u062F \u062F\u062E\u0627\u0646 \u062E\u0641\u064A\u0641. \u0636\u0639 \u0642\u0637\u0639 \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0648\u0627\u0637\u0647\u0647\u0627 \u0644\u0645\u062F\u0629 \u062F\u0642\u064A\u0642\u062A\u064A\u0646 \u0644\u0643\u0644 \u062C\u0627\u0646\u0628 \u062D\u062A\u0649 \u062A\u062A\u0643\u0648\u0646 \u0637\u0628\u0642\u0629 \u0643\u0631\u0627\u0645\u064A\u0644 \u0630\u0647\u0628\u064A\u0629 \u0628\u0646\u064A\u0629. \u0623\u0636\u0641 \u0627\u0644\u0632\u0628\u062F\u0629 \u0648\u0627\u0644\u0632\u0639\u062A\u0631 \u0627\u0644\u0628\u0631\u064A \u0648\u0642\u0645 \u0628\u062F\u0647\u0646 \u0627\u0644\u0633\u062A\u064A\u0643 \u0628\u0645\u0644\u0639\u0642\u0629 \u0644\u0645\u062F\u0629 \u062F\u0642\u064A\u0642\u0629 \u0625\u0636\u0627\u0641\u064A\u0629.",
+          "instruction_en": "Heat a cast iron skillet until smoking hot. Sear Wagyu for 2 minutes per side to form a deep crust. Add butter and thyme, vigorously spooning foaming butter over steaks for 1 minute.",
+          "timer_minutes": 6,
+          "tip_ar": "\u0627\u0644\u0648\u0627\u063A\u064A\u0648 A5 \u064A\u062D\u062A\u0648\u064A \u0639\u0644\u0649 \u062F\u0647\u0648\u0646 \u0631\u062E\u0627\u0645\u064A\u0629 \u063A\u0646\u064A\u0629 \u062A\u0630\u0648\u0628 \u0628\u0633\u0631\u0639\u0629\u061B \u0644\u0627 \u062A\u062D\u062A\u0627\u062C \u0644\u0625\u0636\u0627\u0641\u0629 \u0632\u064A\u062A \u0625\u0636\u0627\u0641\u064A \u0644\u0644\u0645\u0642\u0644\u0627\u0629.",
+          "tip_en": "A5 Wagyu renders its own pristine fat; no supplementary oil is needed in the pan."
+        },
+        {
+          "step_number": 4,
+          "title_ar": "\u0627\u0644\u062A\u0634\u0631\u064A\u0628 \u0628\u0627\u0644\u063A\u0644\u064A\u0632 \u0648\u0625\u0631\u0627\u062D\u0629 \u0627\u0644\u0644\u062D\u0645",
+          "title_en": "Glazing & Resting the Meat",
+          "instruction_ar": "\u0627\u0631\u0641\u0639 \u0627\u0644\u0633\u062A\u064A\u0643 \u0625\u0644\u0649 \u0644\u0648\u062D \u0627\u0644\u062A\u0642\u0637\u064A\u0639 \u0627\u0644\u062E\u0634\u0628\u064A\u060C \u0648\u0627\u062F\u0647\u0646 \u0627\u0644\u0648\u062C\u0647\u064A\u0646 \u0628\u0633\u062E\u0627\u0621 \u0628\u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0627\u0644\u062F\u0627\u0641\u0626 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0641\u0631\u0634\u0627\u0629 \u0633\u064A\u0644\u064A\u0643\u0648\u0646. \u0627\u062A\u0631\u0643 \u0627\u0644\u0644\u062D\u0645 \u0644\u064A\u0631\u062A\u0627\u062D \u0644\u0645\u062F\u0629 8 \u0625\u0644\u0649 10 \u062F\u0642\u0627\u0626\u0642 \u0644\u062A\u0639\u064A\u062F \u0627\u0644\u0623\u0644\u064A\u0627\u0641 \u0627\u0645\u062A\u0635\u0627\u0635 \u0627\u0644\u0633\u0648\u0627\u0626\u0644.",
+          "instruction_en": "Transfer steaks to a warm carving board and brush generously with warm black garlic glaze. Rest for 8-10 minutes allowing intramuscular juices to settle.",
+          "timer_minutes": 10,
+          "tip_ar": "\u0641\u062A\u0631\u0629 \u0627\u0644\u0631\u0627\u062D\u0629 \u0623\u0633\u0627\u0633\u064A\u0629 \u0644\u062C\u0639\u0644 \u0627\u0644\u0644\u062D\u0645 \u0637\u0631\u064A\u0627\u064B \u062C\u062F\u0627\u064B \u0648\u0630\u0627 \u0639\u0635\u0627\u0631\u0629 \u0645\u062A\u0648\u0627\u0632\u0646\u0629.",
+          "tip_en": "Resting allows internal fibers to reabsorb flavor juices evenly throughout the steak."
+        },
+        {
+          "step_number": 5,
+          "title_ar": "\u0627\u0644\u062A\u0642\u0637\u064A\u0639 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645 \u0627\u0644\u0641\u0627\u062E\u0631",
+          "title_en": "Carving & Plating Presentation",
+          "instruction_ar": "\u0627\u0642\u0637\u0639 \u0634\u0631\u0627\u0626\u062D \u0627\u0644\u0633\u062A\u064A\u0643 \u0628\u0632\u0627\u0648\u064A\u0629 45 \u062F\u0631\u062C\u0629 \u0628\u0633\u0645\u0627\u0643\u0629 1 \u0633\u0645. \u0631\u062A\u0628\u0647\u0627 \u0641\u064A \u0637\u0628\u0642 \u0627\u0644\u062A\u0642\u062F\u064A\u0645 \u0627\u0644\u062F\u0627\u0641\u0626\u060C \u0648\u0631\u0634 \u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0645\u062F\u062E\u0646 \u0627\u0644\u0645\u062A\u0628\u0642\u064A \u0648\u0623\u0636\u0641 \u0642\u0637\u0631\u0627\u062A \u0645\u0646 \u0632\u064A\u062A \u0627\u0644\u0623\u0639\u0634\u0627\u0628 \u0628\u062C\u0627\u0646\u0628 \u0628\u0637\u0627\u0637\u0633 \u0627\u0644\u0628\u0627\u0641\u064A\u0647 \u0627\u0644\u0645\u0642\u0631\u0645\u0634\u0629.",
+          "instruction_en": "Carve steaks against the grain into 1cm slices. Fan out on warm plates, finish with smoked salt flakes, and drizzle residual glaze alongside potato pav\xE9.",
+          "timer_minutes": 5,
+          "tip_ar": "\u0642\u062F\u0651\u0645 \u0627\u0644\u0637\u0628\u0642 \u062F\u0627\u0626\u0645\u0627\u064B \u0639\u0644\u0649 \u0623\u0648\u0627\u0646\u064D \u0645\u0633\u062E\u0646\u0629 \u0645\u0633\u0628\u0642\u0627\u064B \u0644\u0644\u062D\u0641\u0627\u0638 \u0639\u0644\u0649 \u062F\u0641\u0621 \u062F\u0647\u0646 \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0627\u0644\u062D\u0631\u064A\u0631\u064A.",
+          "tip_en": "Always serve on pre-warmed plates so the luscious Wagyu fat maintains its velvety texture."
+        }
+      ],
+      "nutrition": {
+        "calories": 680,
+        "protein": "52g",
+        "carbs": "18g",
+        "fats": "46g",
+        "fiber": "2.5g",
+        "sodium": "620mg"
       },
-      stats: {
-        recipes_count: 24,
-        followers_count: 42800,
-        following_count: 310,
-        saved_count: 86,
-        monthly_views: 48250,
-        total_likes: 18400
+      "pairings": {
+        "drink_ar": "\u0625\u0643\u0633\u064A\u0631 \u0627\u0644\u0631\u0645\u0627\u0646 \u0627\u0644\u0645\u0631\u0643\u0632 \u0645\u0639 \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0648\u0627\u0644\u0645\u0627\u0621 \u0627\u0644\u0641\u0648\u0627\u0631 \u0627\u0644\u0645\u0628\u0631\u062F",
+        "drink_en": "Sparkling Pomegranate & Fresh Mint Botanical Elixir",
+        "side_ar": "\u0628\u0637\u0627\u0637\u0633 \u0627\u0644\u0628\u0627\u0641\u064A\u0647 \u0627\u0644\u0645\u0643\u0631\u0645\u0644\u0629 \u0645\u0639 \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0628\u0631\u064A \u0648\u0627\u0644\u0643\u0645\u0623\u0629",
+        "side_en": "Crispy Truffled Potato Pav\xE9 with Saut\xE9ed Morel Mushrooms",
+        "notes_ar": "\u062D\u0645\u0648\u0636\u0629 \u0627\u0644\u0631\u0645\u0627\u0646 \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u0629 \u062A\u0643\u0633\u0631 \u062F\u0633\u0645 \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0627\u0644\u0639\u0627\u0644\u064A \u0648\u062A\u0628\u0631\u0632 \u0646\u0643\u0647\u0629 \u062A\u0645\u0631 \u0627\u0644\u062E\u0644\u0627\u0635 \u0627\u0644\u0645\u0639\u062A\u0642.",
+        "notes_en": "The natural tartness of pomegranate cuts through the rich marbling while elevating the date glaze."
       }
     },
-    // 9. PLATFORM & DASHBOARD KPI STATS
-    stats: {
-      kpis: {
-        views: 48250,
-        views_growth: "+18.4%",
-        impressions: 142800,
-        impressions_growth: "+24.1%",
-        rfqs: 38,
-        rfqs_growth: "+12.5%",
-        revenue: 194500,
-        revenue_formatted: "194,500 \u0631.\u0633",
-        revenue_growth: "+31.2%"
-      },
-      chart_monthly: [
-        { month_ar: "\u064A\u0646\u0627\u064A\u0631", month_en: "Jan", views: 24e3, revenue: 11e4, rfqs: 18 },
-        { month_ar: "\u0641\u0628\u0631\u0627\u064A\u0631", month_en: "Feb", views: 29e3, revenue: 125e3, rfqs: 22 },
-        { month_ar: "\u0645\u0627\u0631\u0633", month_en: "Mar", views: 34e3, revenue: 142e3, rfqs: 26 },
-        { month_ar: "\u0623\u0628\u0631\u064A\u0644", month_en: "Apr", views: 38e3, revenue: 158e3, rfqs: 29 },
-        { month_ar: "\u0645\u0627\u064A\u0648", month_en: "May", views: 42e3, revenue: 175e3, rfqs: 33 },
-        { month_ar: "\u064A\u0648\u0646\u064A\u0648", month_en: "Jun", views: 48250, revenue: 194500, rfqs: 38 }
+    {
+      "id": "recipe-2",
+      "title": "Saffron Infused Sea Bass with Cardamom Emulsion",
+      "title_ar": "\u0642\u0627\u0631\u0648\u0635 \u0627\u0644\u0628\u062D\u0631 \u0628\u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0627\u0644\u0645\u0644\u0643\u064A \u0648\u0645\u0633\u062A\u062D\u0644\u0628 \u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0623\u062E\u0636\u0631",
+      "title_en": "Saffron Infused Sea Bass with Cardamom Emulsion",
+      "description_ar": "\u0641\u064A\u0644\u064A\u0647 \u0642\u0627\u0631\u0648\u0635 \u0627\u0644\u0628\u062D\u0631 \u0627\u0644\u0628\u0631\u064A \u0627\u0644\u0645\u062D\u0645\u0631 \u0628\u062C\u0644\u062F \u0645\u0642\u0631\u0645\u0634 \u0630\u0647\u0628\u064A\u060C \u064A\u0642\u062F\u0645 \u0641\u0648\u0642 \u0628\u064A\u0648\u0631\u064A\u0647 \u0627\u0644\u0634\u0645\u0631 \u0627\u0644\u062D\u0631\u064A\u0631\u064A \u0645\u0639 \u0645\u0633\u062A\u062D\u0644\u0628 \u0643\u0631\u064A\u0645\u064A \u0645\u0646\u0642\u0648\u0639 \u0628\u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0627\u0644\u0633\u0648\u0628\u0631 \u0646\u0642\u064A\u0646 \u0648\u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0623\u062E\u0636\u0631.",
+      "description_en": "Pan-seared wild Mediterranean Sea Bass with golden crackling skin, rested over silk fennel puree and drizzled with a rich saffron-cardamom emulsion.",
+      "author_id": "chef-5",
+      "author_name_ar": "\u0634\u064A\u0641 \u0644\u064A\u0644\u0649 \u0628\u0646 \u062C\u0644\u0648\u0646",
+      "author_name_en": "Chef Layla Benjelloun",
+      "author_avatar": "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=200&q=80",
+      "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80"
       ],
-      published_recipes_count: 24,
-      active_listings_count: 14,
-      pending_rfqs_count: 7
+      "cuisine": "Mediterranean Maghrebi Haute",
+      "cuisine_ar": "\u0628\u062D\u0631 \u0645\u062A\u0648\u0633\u0637\u064A \u0645\u063A\u0627\u0631\u0628\u064A",
+      "cuisine_en": "Mediterranean Maghrebi",
+      "category": "Seafood",
+      "category_ar": "\u0645\u0623\u0643\u0648\u0644\u0627\u062A \u0628\u062D\u0631\u064A\u0629",
+      "category_en": "Seafood",
+      "difficulty": "Medium",
+      "difficulty_ar": "\u0645\u062A\u0648\u0633\u0637",
+      "difficulty_en": "Medium",
+      "base_servings": 4,
+      "prep_time": 25,
+      "cook_time": 20,
+      "total_time": 45,
+      "calories": 420,
+      "likes_count": 980,
+      "saves_count": 640,
+      "rating": 4.93,
+      "reviews_count": 88,
+      "created_at": "2026-08-03",
+      "tags": [
+        "SeaBass",
+        "Saffron",
+        "Cardamom",
+        "Seafood",
+        "FineDining"
+      ],
+      "ingredients": [
+        {
+          "id": "ing-201",
+          "name_ar": "\u0641\u064A\u0644\u064A\u0647 \u0642\u0627\u0631\u0648\u0635 \u0628\u062D\u0631 \u0637\u0627\u0632\u062C \u0628\u062C\u0644\u062F\u0647",
+          "name_en": "Fresh Wild Sea Bass Fillets (Skin-on)",
+          "baseAmount": 700,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u0646\u0632\u0648\u0639 \u0627\u0644\u0634\u0648\u0643 \u0648\u0645\u062C\u0641\u0641 \u062C\u064A\u062F\u0627\u064B",
+          "notes_en": "Pin-boned and thoroughly dried"
+        },
+        {
+          "id": "ing-202",
+          "name_ar": "\u062E\u064A\u0648\u0637 \u0632\u0639\u0641\u0631\u0627\u0646 \u0645\u0644\u0643\u064A \u0633\u0648\u0628\u0631 \u0646\u0642\u064A\u0646",
+          "name_en": "Royal Super Negin Saffron Threads",
+          "baseAmount": 1,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u0646\u0642\u0648\u0639 \u0641\u064A \u0645\u0644\u0639\u0642\u062A\u064A\u0646 \u0645\u0627\u0621 \u062F\u0627\u0641\u0626",
+          "notes_en": "Bloomed in 2 tbsp warm water"
+        },
+        {
+          "id": "ing-203",
+          "name_ar": "\u062D\u0628\u0648\u0628 \u0647\u064A\u0644 \u0623\u062E\u0636\u0631 \u0645\u0637\u062D\u0648\u0646\u0629 \u0637\u0627\u0632\u062C\u0629",
+          "name_en": "Crushed Green Cardamom Pods",
+          "baseAmount": 6,
+          "unit_ar": "\u062D\u0628\u0629",
+          "unit_en": "pcs",
+          "notes_ar": "\u0645\u0641\u062A\u0648\u062D\u0629 \u0648\u0645\u062D\u0645\u0635\u0629 \u062E\u0641\u064A\u0641\u0627\u064B",
+          "notes_en": "Lightly toasted"
+        },
+        {
+          "id": "ing-204",
+          "name_ar": "\u0628\u0635\u064A\u0644\u0627\u062A \u0634\u0645\u0631 \u0637\u0627\u0632\u062C\u0629 \u0645\u0641\u0631\u0648\u0645\u0629",
+          "name_en": "Fresh Fennel Bulbs",
+          "baseAmount": 2,
+          "unit_ar": "\u062D\u0628\u0629",
+          "unit_en": "pcs",
+          "notes_ar": "\u0644\u0644\u0628\u064A\u0648\u0631\u064A\u0647 \u0627\u0644\u062D\u0631\u064A\u0631\u064A",
+          "notes_en": "For velvet puree"
+        },
+        {
+          "id": "ing-205",
+          "name_ar": "\u0643\u0631\u064A\u0645\u0629 \u0637\u0628\u062E \u0637\u0627\u0632\u062C\u0629 35%",
+          "name_en": "Heavy Whipping Cream (35%)",
+          "baseAmount": 150,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0644\u0642\u0627\u0639\u062F\u0629 \u0627\u0644\u0645\u0633\u062A\u062D\u0644\u0628",
+          "notes_en": "For emulsion base"
+        },
+        {
+          "id": "ing-206",
+          "name_ar": "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0628\u0643\u0631 \u0645\u0645\u062A\u0627\u0632 \u0646\u062E\u0628 \u0623\u0648\u0644",
+          "name_en": "Extra Virgin Cold Pressed Olive Oil",
+          "baseAmount": 40,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0644\u0644\u062A\u062D\u0645\u064A\u0631 \u0648\u0627\u0644\u062A\u0644\u0645\u064A\u0639",
+          "notes_en": "For searing"
+        },
+        {
+          "id": "ing-207",
+          "name_ar": "\u0639\u0635\u064A\u0631 \u0644\u064A\u0645\u0648\u0646 \u0623\u0635\u0641\u0631 \u0637\u0627\u0632\u062C",
+          "name_en": "Fresh Lemon Juice",
+          "baseAmount": 20,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0644\u0645\u0633\u0629 \u062D\u0645\u0648\u0636\u0629 \u0623\u062E\u064A\u0631\u0629",
+          "notes_en": "For citrus finish"
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "title_ar": "\u062A\u062D\u0636\u064A\u0631 \u0628\u064A\u0648\u0631\u064A\u0647 \u0627\u0644\u0634\u0645\u0631 \u0627\u0644\u062D\u0631\u064A\u0631\u064A",
+          "title_en": "Velvety Fennel Puree Preparation",
+          "instruction_ar": "\u0627\u0633\u0644\u0642 \u0642\u0637\u0639 \u0627\u0644\u0634\u0645\u0631 \u0641\u064A \u0645\u0627\u0621 \u0645\u0645\u0644\u062D \u062D\u062A\u0649 \u062A\u0635\u0628\u062D \u0637\u0631\u064A\u0629 \u062C\u062F\u0627\u064B\u060C \u062B\u0645 \u0635\u0641\u0647\u0627 \u0648\u0627\u062E\u0644\u0637\u0647\u0627 \u0641\u064A \u0627\u0644\u062E\u0644\u0627\u0637 \u0639\u0627\u0644\u064A \u0627\u0644\u0633\u0631\u0639\u0629 \u0645\u0639 \u0645\u0644\u0639\u0642\u0629 \u0632\u0628\u062F\u0629 \u0648\u0642\u0644\u064A\u0644 \u0645\u0646 \u0627\u0644\u0643\u0631\u064A\u0645\u0629 \u062D\u062A\u0649 \u062A\u0635\u0628\u062D \u062D\u0631\u064A\u0631\u064A\u0629 \u0648\u0646\u0627\u0639\u0645\u0629.",
+          "instruction_en": "Blanch chopped fennel until tender, then blitz in a high-speed blender with a knob of butter and splash of cream until completely silky.",
+          "timer_minutes": 15,
+          "tip_ar": "\u0645\u0631\u0631 \u0627\u0644\u0628\u064A\u0648\u0631\u064A\u0647 \u0639\u0628\u0631 \u0645\u0635\u0641\u0627\u0629 \u0634\u0628\u0643\u064A\u0629 \u0646\u0627\u0639\u0645\u0629 \u0644\u0644\u062D\u0635\u0648\u0644 \u0639\u0644\u0649 \u0645\u0644\u0645\u0633 \u0646\u0627\u0639\u0645 \u0643\u0627\u0644\u0645\u062E\u0645\u0644.",
+          "tip_en": "Pass puree through a fine tamis sieve for absolute hotel-grade smoothness."
+        },
+        {
+          "step_number": 2,
+          "title_ar": "\u0635\u0646\u0639 \u0645\u0633\u062A\u062D\u0644\u0628 \u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0648\u0627\u0644\u0647\u064A\u0644",
+          "title_en": "Saffron-Cardamom Emulsion",
+          "instruction_ar": "\u0641\u064A \u0645\u0642\u0644\u0627\u0629 \u0635\u063A\u064A\u0631\u0629\u060C \u0633\u062E\u0651\u0646 \u0627\u0644\u0643\u0631\u064A\u0645\u0629 \u0645\u0639 \u0645\u0646\u0642\u0648\u0639 \u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0648\u062D\u0628\u0648\u0628 \u0627\u0644\u0647\u064A\u0644 \u0639\u0644\u0649 \u0646\u0627\u0631 \u0647\u0627\u062F\u0626\u0629 \u0644\u0645\u062F\u0629 8 \u062F\u0642\u0627\u0626\u0642\u060C \u062B\u0645 \u0623\u0636\u0641 \u0639\u0635\u064A\u0631 \u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0648\u0627\u062E\u0641\u0642 \u0628\u0627\u0644\u0628\u0644\u0646\u062F\u0631 \u0627\u0644\u064A\u062F\u0648\u064A \u062D\u062A\u0649 \u062A\u062A\u0643\u0648\u0646 \u0631\u063A\u0648\u0629 \u0630\u0647\u0628\u064A\u0629 \u0647\u0648\u0627\u0626\u064A\u0629.",
+          "instruction_en": "Gently infuse cream with bloomed saffron and crushed cardamom over low heat for 8 mins, finish with lemon juice and aerate using an immersion blender.",
+          "timer_minutes": 8,
+          "tip_ar": "\u0627\u0644\u062E\u0641\u0642 \u0627\u0644\u0647\u0648\u0627\u0626\u064A \u0627\u0644\u0633\u0631\u064A\u0639 \u064A\u0645\u0646\u062D \u0627\u0644\u0645\u0633\u062A\u062D\u0644\u0628 \u0642\u0648\u0627\u0645\u0627\u064B \u062E\u0641\u064A\u0641\u0627\u064B \u0644\u0627 \u064A\u062B\u0642\u0644 \u0639\u0644\u0649 \u0627\u0644\u0633\u0645\u0643.",
+          "tip_en": "Immersion blending creates a delicate aromatic foam that lifts the dish."
+        },
+        {
+          "step_number": 3,
+          "title_ar": "\u062A\u062D\u0645\u064A\u0631 \u0641\u064A\u0644\u064A\u0647 \u0627\u0644\u0642\u0627\u0631\u0648\u0635 \u0628\u0642\u0634\u0631\u0629 \u0645\u0642\u0631\u0645\u0634\u0629",
+          "title_en": "Crispy Skin Fish Searing",
+          "instruction_ar": "\u0633\u062E\u0651\u0646 \u0632\u064A\u062A \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0641\u064A \u0645\u0642\u0644\u0627\u0629 \u063A\u064A\u0631 \u0644\u0627\u0635\u0642\u0629\u060C \u0648\u0636\u0639 \u0627\u0644\u0641\u064A\u0644\u064A\u0647 \u0628\u062D\u064A\u062B \u064A\u0643\u0648\u0646 \u0627\u0644\u062C\u0644\u062F \u0644\u0644\u0623\u0633\u0641\u0644 \u0645\u0639 \u0627\u0644\u0636\u063A\u0637 \u0627\u0644\u062E\u0641\u064A\u0641 \u0628\u0645\u0644\u0639\u0642\u0629 \u0645\u0633\u0637\u062D\u0629 \u0644\u0645\u062F\u0629 4 \u062F\u0642\u0627\u0626\u0642\u060C \u062B\u0645 \u0627\u0642\u0644\u0628\u0647 \u0644\u062F\u0642\u064A\u0642\u0629 \u0648\u0627\u062D\u062F\u0629 \u062D\u062A\u0649 \u064A\u0646\u0636\u062C \u0627\u0644\u0644\u062D\u0645 \u0648\u064A\u0638\u0644 \u0637\u0631\u064A\u0627\u064B.",
+          "instruction_en": "Heat olive oil in a stainless pan, press fish skin-side down firmly for 4 minutes until ultra-crisp, then flip for 1 minute to finish gently.",
+          "timer_minutes": 5,
+          "tip_ar": "\u0627\u0644\u0636\u063A\u0637 \u0627\u0644\u0623\u0648\u0644\u064A \u064A\u0645\u0646\u0639 \u062A\u0642\u0648\u0633 \u0627\u0644\u0641\u064A\u0644\u064A\u0647 \u0648\u064A\u0636\u0645\u0646 \u0642\u0631\u0645\u0634\u0629 \u0645\u062A\u0633\u0627\u0648\u064A\u0629 \u0644\u0643\u0627\u0645\u0644 \u0633\u0637\u062D \u0627\u0644\u062C\u0644\u062F.",
+          "tip_en": "Gentle pressure during the first 30 seconds ensures uniform skin contact and crispness."
+        },
+        {
+          "step_number": 4,
+          "title_ar": "\u0627\u0644\u062A\u0631\u0643\u064A\u0628 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645 \u0627\u0644\u0646\u0647\u0627\u0626\u064A",
+          "title_en": "Assembly & Finishing",
+          "instruction_ar": "\u0627\u0633\u0643\u0628 \u0645\u0644\u0639\u0642\u062A\u064A\u0646 \u0645\u0646 \u0628\u064A\u0648\u0631\u064A\u0647 \u0627\u0644\u0634\u0645\u0631 \u0641\u064A \u0648\u0633\u0637 \u0627\u0644\u0637\u0628\u0642\u060C \u0636\u0639 \u0642\u0637\u0639\u0629 \u0627\u0644\u0642\u0627\u0631\u0648\u0635 \u0641\u0648\u0642\u0647\u060C \u0648\u0627\u0633\u0643\u0628 \u0631\u063A\u0648\u0629 \u0645\u0633\u062A\u062D\u0644\u0628 \u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0648\u0627\u0644\u0647\u064A\u0644 \u062D\u0648\u0644 \u0627\u0644\u0637\u0628\u0642 \u0648\u0632\u064A\u0651\u0646 \u0628\u0623\u0648\u0631\u0627\u0642 \u0627\u0644\u0634\u0645\u0631 \u0627\u0644\u062E\u0636\u0631\u0627\u0621.",
+          "instruction_en": "Spoon warm fennel puree in the plate center, nestle sea bass fillet on top, spoon vibrant saffron foam around, and garnish with delicate fennel fronds.",
+          "timer_minutes": 3,
+          "tip_ar": "\u0644\u0627 \u062A\u063A\u0637\u0650 \u062C\u0644\u062F \u0627\u0644\u0633\u0645\u0643 \u0627\u0644\u0645\u0642\u0631\u0645\u0634 \u0628\u0627\u0644\u0635\u0644\u0635\u0629 \u062D\u062A\u0649 \u0644\u0627 \u064A\u0641\u0642\u062F \u0642\u0631\u0645\u0634\u062A\u0647 \u0627\u0644\u0645\u0645\u064A\u0632\u0629.",
+          "tip_en": "Never pour emulsion over the crispy skin; keep sauce beneath and around."
+        }
+      ],
+      "nutrition": {
+        "calories": 420,
+        "protein": "44g",
+        "carbs": "8g",
+        "fats": "22g",
+        "fiber": "3g",
+        "sodium": "410mg"
+      },
+      "pairings": {
+        "drink_ar": "\u0634\u0627\u064A \u0623\u0628\u064A\u0636 \u0645\u0639\u0637\u0631 \u0628\u0632\u0647\u0648\u0631 \u0627\u0644\u0628\u0631\u062A\u0642\u0627\u0644 \u0648\u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0627\u0644\u0645\u0639\u062A\u0642",
+        "drink_en": "Chilled White Tea Infused with Orange Blossom & Citrus",
+        "side_ar": "\u0633\u0644\u0637\u0629 \u0646\u0628\u0627\u062A \u0627\u0644\u0647\u0644\u064A\u0648\u0646 \u0627\u0644\u0645\u0634\u0648\u064A \u0645\u0639 \u0632\u064A\u062A \u0627\u0644\u0635\u0646\u0648\u0628\u0631 \u0627\u0644\u0645\u062D\u0645\u0635",
+        "side_en": "Charred Asparagus Spears with Roasted Pine Nut Dressing",
+        "notes_ar": "\u0627\u0644\u0646\u0643\u0647\u0629 \u0627\u0644\u0639\u0637\u0631\u064A\u0629 \u0644\u0644\u0647\u064A\u0644 \u0648\u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u062A\u062A\u0646\u0627\u063A\u0645 \u0628\u0627\u0645\u062A\u064A\u0627\u0632 \u0645\u0639 \u062D\u0644\u0627\u0648\u0629 \u0627\u0644\u0633\u0645\u0643 \u0627\u0644\u0623\u0628\u064A\u0636 \u0648\u0627\u0644\u0634\u0645\u0631.",
+        "notes_en": "Cardamom notes enhance the natural sweet salinity of fresh sea bass."
+      }
+    },
+    {
+      "id": "recipe-3",
+      "title": "Wild Truffle & Smoked Ricotta Handcrafted Agnolotti",
+      "title_ar": "\u0623\u0646\u0648\u0644\u0648\u062A\u064A \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u064A\u062F\u0648\u064A\u0629 \u0628\u0627\u0644\u0631\u064A\u0643\u0648\u062A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0648\u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621",
+      "title_en": "Wild Truffle & Smoked Ricotta Handcrafted Agnolotti",
+      "description_ar": "\u062C\u064A\u0648\u0628 \u0628\u0627\u0633\u062A\u0627 \u0623\u0646\u0648\u0644\u0648\u062A\u064A \u062D\u0631\u064A\u0631\u064A\u0629 \u0645\u062D\u0636\u0631\u0629 \u064A\u062F\u0648\u064A\u0627\u064B \u0645\u0646 \u0635\u0641\u0627\u0631 \u0627\u0644\u0628\u064A\u0636 \u0627\u0644\u0639\u0636\u0648\u064A\u060C \u0645\u062D\u0634\u0648\u0629 \u0628\u062C\u0628\u0646\u0629 \u0627\u0644\u0631\u064A\u0643\u0648\u062A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0648\u0627\u0644\u0628\u0627\u0631\u0645\u064A\u062C\u064A\u0627\u0646\u0648 36 \u0634\u0647\u0631\u0627\u064B\u060C \u0645\u063A\u0644\u0641\u0629 \u0628\u0635\u0644\u0635\u0629 \u0632\u0628\u062F\u0629 \u0627\u0644\u0643\u0645\u0623\u0629 \u0648\u0634\u0631\u0627\u0626\u062D \u0627\u0644\u062A\u0631\u0627\u0641\u0644 \u0627\u0644\u0637\u0627\u0632\u062C.",
+      "description_en": "Delicate hand-pinched egg pasta pillows stuffed with artisanal smoked sheep ricotta and 36-month Parmigiano, glazed in emulsion of cultured truffle butter.",
+      "author_id": "chef-6",
+      "author_name_ar": "\u0634\u064A\u0641 \u0645\u0627\u0631\u0643\u0648 \u0628\u064A\u0644\u064A\u0646\u064A",
+      "author_name_en": "Chef Marco Bellini",
+      "author_avatar": "https://images.unsplash.com/photo-1574966740793-953ad375ded5?auto=format&fit=crop&w=200&q=80",
+      "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80"
+      ],
+      "cuisine": "Artisanal Italian Haute",
+      "cuisine_ar": "\u0625\u064A\u0637\u0627\u0644\u064A \u062D\u0631\u0641\u064A",
+      "cuisine_en": "Artisanal Italian",
+      "category": "Pasta & Grains",
+      "category_ar": "\u0628\u0627\u0633\u062A\u0627 \u0648\u062D\u0628\u0648\u0628",
+      "category_en": "Pasta & Grains",
+      "difficulty": "Hard",
+      "difficulty_ar": "\u0645\u062A\u0642\u062F\u0645",
+      "difficulty_en": "Hard",
+      "base_servings": 4,
+      "prep_time": 50,
+      "cook_time": 15,
+      "total_time": 65,
+      "calories": 540,
+      "likes_count": 1680,
+      "saves_count": 1120,
+      "rating": 4.98,
+      "reviews_count": 145,
+      "created_at": "2026-08-04",
+      "tags": [
+        "Agnolotti",
+        "HandmadePasta",
+        "Truffle",
+        "Ricotta",
+        "Italian"
+      ],
+      "ingredients": [
+        {
+          "id": "ing-301",
+          "name_ar": "\u062F\u0642\u064A\u0642 \u0642\u0645\u062D \u0625\u064A\u0637\u0627\u0644\u064A \u0646\u0627\u0639\u0645 \u0646\u062E\u0628 \u062A\u064A\u0628\u0648 00",
+          "name_en": "Italian Tipo 00 Pasta Flour",
+          "baseAmount": 300,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u0646\u062E\u0648\u0644 \u0645\u0631\u062A\u064A\u0646",
+          "notes_en": "Double sifted"
+        },
+        {
+          "id": "ing-302",
+          "name_ar": "\u0635\u0641\u0627\u0631 \u0628\u064A\u0636 \u062F\u062C\u0627\u062C \u0639\u0636\u0648\u064A \u062D\u0631",
+          "name_en": "Organic Free-Range Egg Yolks",
+          "baseAmount": 8,
+          "unit_ar": "\u062D\u0628\u0629",
+          "unit_en": "pcs",
+          "notes_ar": "\u0628\u062D\u0631\u0627\u0631\u0629 \u0627\u0644\u063A\u0631\u0641\u0629",
+          "notes_en": "Room temperature"
+        },
+        {
+          "id": "ing-303",
+          "name_ar": "\u062C\u0628\u0646\u0629 \u0631\u064A\u0643\u0648\u062A\u0627 \u0623\u063A\u0646\u0627\u0645 \u0645\u062F\u062E\u0646\u0629 \u062D\u0631\u0641\u064A\u0629",
+          "name_en": "Artisanal Smoked Sheep Ricotta",
+          "baseAmount": 250,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u0635\u0641\u0627\u0629 \u0645\u0646 \u0627\u0644\u0633\u0648\u0627\u0626\u0644 \u0627\u0644\u0632\u0627\u0626\u062F\u0629",
+          "notes_en": "Well drained"
+        },
+        {
+          "id": "ing-304",
+          "name_ar": "\u062C\u0628\u0646\u0629 \u0628\u0627\u0631\u0645\u064A\u062C\u064A\u0627\u0646\u0648 \u0631\u064A\u062C\u064A\u0627\u0646\u0648 \u0645\u0639\u062A\u0642\u0629 36 \u0634\u0647\u0631\u0627\u064B",
+          "name_en": "36-Month Aged Parmigiano-Reggiano",
+          "baseAmount": 80,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u0628\u0634\u0648\u0631\u0629 \u0646\u0627\u0639\u0645\u0627\u064B \u062C\u062F\u0627\u064B",
+          "notes_en": "Microplaned finely"
+        },
+        {
+          "id": "ing-305",
+          "name_ar": "\u0643\u0645\u0623\u0629 \u0633\u0648\u062F\u0627\u0621 \u0637\u0627\u0632\u062C\u0629 (Piedmont)",
+          "name_en": "Fresh Black Winter Truffle",
+          "baseAmount": 25,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0644\u0628\u0634\u0631 \u0627\u0644\u0645\u0628\u0627\u0634\u0631 \u0639\u0646\u062F \u0627\u0644\u062A\u0642\u062F\u064A\u0645",
+          "notes_en": "For tableside shaving"
+        },
+        {
+          "id": "ing-306",
+          "name_ar": "\u0632\u0628\u062F\u0629 \u0646\u0642\u064A\u0629 \u0641\u0627\u062E\u0631\u0629 \u063A\u064A\u0631 \u0645\u0645\u0644\u062D\u0629",
+          "name_en": "Cultured Unsalted Mountain Butter",
+          "baseAmount": 75,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0635\u0644\u0635\u0629 \u0627\u0644\u0645\u0633\u062A\u062D\u0644\u0628",
+          "notes_en": "For emulsion gloss"
+        },
+        {
+          "id": "ing-307",
+          "name_ar": "\u062C\u0648\u0632\u0629 \u0627\u0644\u0637\u064A\u0628 \u0627\u0644\u0645\u0628\u0634\u0648\u0631\u0629 \u0637\u0627\u0632\u062C\u0627\u064B",
+          "name_en": "Freshly Grated Whole Nutmeg",
+          "baseAmount": 2,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0631\u0634\u0629 \u062E\u0641\u064A\u0641\u0629 \u0644\u0644\u062D\u0634\u0648\u0629",
+          "notes_en": "Pinch for filling"
+        },
+        {
+          "id": "ing-308",
+          "name_ar": "\u0645\u0644\u062D \u0628\u062D\u0631\u064A \u062E\u0634\u0646 \u0644\u0633\u0644\u0642 \u0627\u0644\u0628\u0627\u0633\u062A\u0627",
+          "name_en": "Coarse Sea Salt for Boiling",
+          "baseAmount": 20,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0645\u064A\u0627\u0647 \u0627\u0644\u0633\u0644\u0642",
+          "notes_en": "For pasta water"
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "title_ar": "\u0639\u062C\u0646 \u0648\u062A\u0634\u0643\u064A\u0644 \u0639\u062C\u064A\u0646\u0629 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u0630\u0647\u0628\u064A\u0629",
+          "title_en": "Kneading & Resting Egg Dough",
+          "instruction_ar": "\u0627\u0635\u0646\u0639 \u0641\u0648\u0647\u0629 \u0628\u0631\u0643\u0627\u0646\u064A\u0629 \u0645\u0646 \u0627\u0644\u062F\u0642\u064A\u0642\u060C \u0623\u0636\u0641 \u0635\u0641\u0627\u0631 \u0627\u0644\u0628\u064A\u0636 \u0648\u0631\u0634\u0629 \u0645\u0644\u062D \u0641\u064A \u0627\u0644\u0648\u0633\u0637. \u0627\u062F\u0645\u062C \u0628\u0627\u0644\u0634\u0648\u0643\u0629 \u062A\u062F\u0631\u064A\u062C\u064A\u0627\u064B \u062B\u0645 \u0627\u0639\u062C\u0646 \u0628\u0627\u0644\u064A\u062F \u0644\u0645\u062F\u0629 10 \u062F\u0642\u0627\u0626\u0642 \u062D\u062A\u0649 \u062A\u0635\u0628\u062D \u0627\u0644\u0639\u062C\u064A\u0646\u0629 \u0646\u0627\u0639\u0645\u0629 \u0648\u0645\u0637\u0627\u0637\u064A\u0629. \u063A\u0644\u0641\u0647\u0627 \u0628\u0646\u0627\u064A\u0644\u0648\u0646 \u0648\u0627\u062A\u0631\u0643\u0647\u0627 \u062A\u0631\u062A\u0627\u062D 30 \u062F\u0642\u064A\u0642\u0629.",
+          "instruction_en": "Form a flour well, add egg yolks and salt. Incorporate with a fork then knead vigorously for 10 mins until silky smooth. Wrap tightly and rest for 30 minutes.",
+          "timer_minutes": 30,
+          "tip_ar": "\u0641\u062A\u0631\u0629 \u0627\u0644\u0631\u0627\u062D\u0629 \u062A\u0641\u0643\u0643 \u0634\u0628\u0643\u0629 \u0627\u0644\u062C\u0644\u0648\u062A\u064A\u0646 \u0645\u0645\u0627 \u064A\u0633\u0647\u0644 \u0641\u0631\u062F \u0627\u0644\u0639\u062C\u064A\u0646\u0629 \u0644\u0633\u0645\u0643 \u0631\u0642\u064A\u0642 \u062C\u062F\u0627\u064B \u0648\u0634\u0641\u0627\u0641.",
+          "tip_en": "Resting relaxes gluten strands, essential for rolling paper-thin translucent sheets."
+        },
+        {
+          "step_number": 2,
+          "title_ar": "\u062A\u062D\u0636\u064A\u0631 \u062D\u0634\u0648\u0629 \u0627\u0644\u0631\u064A\u0643\u0648\u062A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0648\u0627\u0644\u0643\u0645\u0623\u0629",
+          "title_en": "Smoked Ricotta & Truffle Filling",
+          "instruction_ar": "\u0641\u064A \u0648\u0639\u0627\u0621 \u0632\u062C\u0627\u062C\u064A\u060C \u0627\u062E\u0644\u0637 \u0627\u0644\u0631\u064A\u0643\u0648\u062A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0645\u0639 \u0627\u0644\u0628\u0627\u0631\u0645\u064A\u062C\u064A\u0627\u0646\u0648 \u0627\u0644\u0645\u0628\u0634\u0648\u0631 \u0648\u062C\u0648\u0632\u0629 \u0627\u0644\u0637\u064A\u0628 \u0648\u0642\u0644\u064A\u0644 \u0645\u0646 \u0632\u064A\u062A \u0627\u0644\u0643\u0645\u0623\u0629. \u0636\u0639 \u0627\u0644\u062E\u0644\u064A\u0637 \u0641\u064A \u0643\u064A\u0633 \u062D\u0644\u0648\u0627\u0646\u064A \u0628\u0631\u0623\u0633 \u062F\u0627\u0626\u0631\u064A \u0635\u063A\u064A\u0631.",
+          "instruction_en": "Whisk smoked ricotta with microplaned Parmigiano, nutmeg, and a few drops of truffle oil. Transfer into a piping bag with a round nozzle.",
+          "timer_minutes": 10,
+          "tip_ar": "\u0627\u062D\u0631\u0635 \u0639\u0644\u0649 \u0623\u0646 \u062A\u0643\u0648\u0646 \u0627\u0644\u062D\u0634\u0648\u0629 \u0628\u0627\u0631\u062F\u0629 \u062D\u062A\u0649 \u0644\u0627 \u062A\u0631\u0637\u0628 \u0627\u0644\u0639\u062C\u064A\u0646 \u0648\u062A\u062C\u0639\u0644\u0647 \u0644\u0632\u062C\u0627\u064B.",
+          "tip_en": "Keep the filling chilled to maintain piping structure without softening pasta dough."
+        },
+        {
+          "step_number": 3,
+          "title_ar": "\u0641\u0631\u062F \u0627\u0644\u0639\u062C\u064A\u0646 \u0648\u062A\u0634\u0643\u064A\u0644 \u062D\u0628\u0627\u062A \u0627\u0644\u0623\u0646\u0648\u0644\u0648\u062A\u064A",
+          "title_en": "Rolling & Hand-Pinching Agnolotti",
+          "instruction_ar": "\u0627\u0641\u0631\u062F \u0627\u0644\u0639\u062C\u064A\u0646 \u0628\u0622\u0644\u0629 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u062D\u062A\u0649 \u0627\u0644\u062F\u0631\u062C\u0629 \u0627\u0644\u0623\u0631\u0641\u0639. \u0636\u0639 \u0646\u0642\u0627\u0637 \u062D\u0634\u0648\u0629 \u0645\u062A\u0628\u0627\u0639\u062F\u0629 \u0628\u0640 2 \u0633\u0645\u060C \u0627\u062B\u0646\u0650 \u0627\u0644\u0639\u062C\u064A\u0646 \u0641\u0648\u0642 \u0627\u0644\u062D\u0634\u0648\u0629 \u0648\u0627\u0636\u063A\u0637 \u0628\u0623\u0637\u0631\u0627\u0641 \u0623\u0635\u0627\u0628\u0639\u0643 \u0644\u0625\u062E\u0631\u0627\u062C \u0627\u0644\u0647\u0648\u0627\u0621 \u062B\u0645 \u0627\u0642\u0637\u0639\u0647\u0627 \u0628\u0639\u062C\u0644\u0629 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u0645\u0633\u0646\u0646\u0629.",
+          "instruction_en": "Roll pasta to the thinnest setting. Pipe filling dots 2cm apart, fold sheet over, pinch tightly to seal pockets, and cut with a fluted pasta wheel.",
+          "timer_minutes": 15,
+          "tip_ar": "\u062A\u0641\u0631\u064A\u063A \u0627\u0644\u0647\u0648\u0627\u0621 \u064A\u0645\u0646\u0639 \u0627\u0646\u0641\u062C\u0627\u0631 \u062D\u0628\u0627\u062A \u0627\u0644\u0623\u0646\u0648\u0644\u0648\u062A\u064A \u0623\u062B\u0646\u0627\u0621 \u0627\u0644\u0633\u0644\u0642 \u0641\u064A \u0627\u0644\u0645\u0627\u0621 \u0627\u0644\u0645\u063A\u0644\u064A.",
+          "tip_en": "Eliminating trapped air pockets prevents burst agnolotti during boiling."
+        },
+        {
+          "step_number": 4,
+          "title_ar": "\u0627\u0644\u0633\u0644\u0642 \u0627\u0644\u0633\u0631\u064A\u0639 \u0648\u0627\u0644\u0627\u0633\u062A\u062D\u0644\u0627\u0628 \u0628\u0627\u0644\u0632\u0628\u062F\u0629",
+          "title_en": "Flash Boiling & Butter Emulsion",
+          "instruction_ar": "\u0627\u0633\u0644\u0642 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0641\u064A \u0645\u0627\u0621 \u0645\u0645\u0644\u062D \u0645\u063A\u0644\u064A \u0644\u0645\u062F\u0629 \u062F\u0642\u064A\u0642\u062A\u064A\u0646 \u0648\u0646\u0635\u0641 \u0641\u0642\u0637. \u0627\u0646\u0642\u0644\u0647\u0627 \u0645\u0628\u0627\u0634\u0631\u0629 \u0625\u0644\u0649 \u0645\u0642\u0644\u0627\u0629 \u0648\u0627\u0633\u0639\u0629 \u062A\u062D\u062A\u0648\u064A \u0639\u0644\u0649 \u0627\u0644\u0632\u0628\u062F\u0629 \u0627\u0644\u0645\u0630\u0627\u0628\u0629 \u0648\u0645\u063A\u0631\u0641\u0629 \u0645\u0646 \u0645\u0627\u0621 \u0633\u0644\u0642 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u0646\u0634\u0648\u064A\u060C \u0648\u062D\u0631\u0643 \u0628\u062D\u0631\u0643\u0629 \u062F\u0627\u0626\u0631\u064A\u0629 \u0644\u062A\u0643\u0648\u064A\u0646 \u0635\u0644\u0635\u0629 \u0644\u0627\u0645\u0639\u0629.",
+          "instruction_en": "Boil agnolotti in salted water for 2.5 minutes. Transfer directly to a warm skillet with melted butter and a ladle of starchy pasta water, tossing to create a glossy coat.",
+          "timer_minutes": 4,
+          "tip_ar": "\u0627\u0644\u0646\u0634\u0627 \u0627\u0644\u0645\u0648\u062C\u0648\u062F \u0641\u064A \u0645\u0627\u0621 \u0627\u0644\u0633\u0644\u0642 \u0647\u0648 \u0627\u0644\u0639\u0627\u0645\u0644 \u0627\u0644\u0633\u0631\u064A \u0627\u0644\u0630\u064A \u064A\u0631\u0628\u0637 \u0627\u0644\u0632\u0628\u062F\u0629 \u0628\u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0628\u0625\u062A\u0642\u0627\u0646.",
+          "tip_en": "Starchy pasta cooking water is the emulsifying key to a velvety glossy glaze."
+        },
+        {
+          "step_number": 5,
+          "title_ar": "\u0627\u0644\u0628\u0634\u0631 \u0627\u0644\u0641\u0627\u062E\u0631 \u0644\u0644\u0643\u0645\u0623\u0629 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645",
+          "title_en": "Truffle Shaving & Plating",
+          "instruction_ar": "\u0631\u062A\u0628 \u062D\u0628\u0627\u062A \u0627\u0644\u0623\u0646\u0648\u0644\u0648\u062A\u064A \u0641\u064A \u0637\u0628\u0642 \u063A\u0627\u0626\u0631 \u062F\u0627\u0641\u0626\u060C \u0627\u0633\u0643\u0628 \u0627\u0644\u0635\u0644\u0635\u0629 \u0627\u0644\u0644\u0627\u0645\u0639\u0629\u060C \u062B\u0645 \u0627\u0628\u0634\u0631 \u0634\u0631\u0627\u0626\u062D \u0631\u0642\u064A\u0642\u0629 \u0645\u0646 \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0627\u0644\u0637\u0627\u0632\u062C\u0629 \u0623\u0645\u0627\u0645 \u0627\u0644\u0636\u064A\u0648\u0641 \u0645\u0639 \u0631\u0634 \u0628\u0627\u0631\u0645\u064A\u062C\u064A\u0627\u0646\u0648 \u0625\u0636\u0627\u0641\u064A.",
+          "instruction_en": "Plate agnolotti in warmed pasta bowls, coat with glossy truffle butter, and shave fresh black winter truffles generously over the top.",
+          "timer_minutes": 3,
+          "tip_ar": "\u062D\u0631\u0627\u0631\u0629 \u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u062F\u0627\u0641\u0626\u0629 \u0633\u062A\u0637\u0644\u0642 \u0627\u0644\u0632\u064A\u0648\u062A \u0627\u0644\u0639\u0637\u0631\u064A\u0629 \u0627\u0644\u0641\u0648\u0627\u062D\u0629 \u0641\u064A \u0634\u0631\u0627\u0626\u062D \u0627\u0644\u0643\u0645\u0623\u0629 \u0641\u0648\u0631 \u0645\u0644\u0627\u0645\u0633\u062A\u0647\u0627.",
+          "tip_en": "Residual pasta heat immediately activates the intense volatile aromas of shaved truffle."
+        }
+      ],
+      "nutrition": {
+        "calories": 540,
+        "protein": "24g",
+        "carbs": "58g",
+        "fats": "26g",
+        "fiber": "3.2g",
+        "sodium": "490mg"
+      },
+      "pairings": {
+        "drink_ar": "\u0645\u0634\u0631\u0648\u0628 \u0627\u0644\u0639\u0646\u0628 \u0627\u0644\u0623\u0628\u064A\u0636 \u063A\u064A\u0631 \u0627\u0644\u0643\u062D\u0648\u0644\u064A \u0627\u0644\u0641\u0648\u0627\u0631 \u0628\u0627\u0644\u0643\u0645\u062B\u0631\u0649",
+        "drink_en": "Sparkling White Grape & Crisp Winter Pear Mocktail",
+        "side_ar": "\u0633\u0644\u0637\u0629 \u0627\u0644\u062C\u0631\u062C\u064A\u0631 \u0627\u0644\u0628\u0631\u064A \u0645\u0639 \u0634\u0631\u0627\u0626\u062D \u0627\u0644\u0643\u0645\u062B\u0631\u0649 \u0648\u0627\u0644\u062C\u0648\u0632 \u0627\u0644\u0645\u062D\u0645\u0635",
+        "side_en": "Wild Arugula Salad with Shaved Pears and Toasted Walnuts",
+        "notes_ar": "\u0637\u0639\u0645 \u0627\u0644\u0631\u064A\u0643\u0648\u062A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0648\u0627\u0644\u0643\u0645\u0623\u0629 \u064A\u0643\u062A\u0645\u0644 \u0628\u0644\u0645\u0633\u0629 \u0645\u0646\u0639\u0634\u0629 \u0648\u0641\u0627\u0643\u0647\u064A\u0629 \u062E\u0641\u064A\u0641\u0629.",
+        "notes_en": "Earthy black truffle pairs magnificently with subtle toasted nut notes."
+      }
+    },
+    {
+      "id": "recipe-4",
+      "title": "Smoked Rosemary Crusted Lamb Chops",
+      "title_ar": "\u0631\u064A\u0634 \u063A\u0646\u0645 \u0646\u0639\u064A\u0645\u064A \u0645\u062A\u0628\u0644\u0629 \u0628\u0625\u0643\u0644\u064A\u0644 \u0627\u0644\u062C\u0628\u0644 \u0627\u0644\u0645\u062F\u062E\u0646 \u0648\u0627\u0644\u062F\u0628\u0633",
+      "title_en": "Smoked Rosemary Crusted Lamb Chops",
+      "description_ar": "\u0631\u064A\u0634 \u063A\u0646\u0645 \u0646\u0639\u064A\u0645\u064A \u0645\u062D\u0644\u064A\u0629 \u0637\u0631\u064A\u0629 \u0645\u062A\u0628\u0644\u0629 \u0628\u062E\u0644\u064A\u0637 \u0625\u0643\u0644\u064A\u0644 \u0627\u0644\u062C\u0628\u0644 \u0627\u0644\u0645\u062F\u062E\u0646 \u0648\u062F\u0628\u0633 \u0627\u0644\u0631\u0645\u0627\u0646 \u0648\u0627\u0644\u0641\u0644\u0641\u0644 \u0627\u0644\u062D\u0644\u0628\u064A\u060C \u0645\u0634\u0648\u064A\u0629 \u0639\u0644\u0649 \u062C\u0645\u0631 \u0627\u0644\u062D\u0637\u0628 \u062D\u062A\u0649 \u0627\u0644\u0648\u0635\u0648\u0644 \u0644\u0642\u0631\u0645\u0634\u0629 \u062E\u0627\u0631\u062C\u064A\u0629 \u0648\u0639\u0635\u0627\u0631\u0629 \u062F\u0627\u062E\u0644\u064A\u0629 \u0648\u0631\u062F\u064A\u0629.",
+      "description_en": "Local prime Naemi lamb cutlets marinated in wild smoked rosemary, artisanal pomegranate molasses, and crushed Aleppo pepper, charred over live oak embers.",
+      "author_id": "chef-3",
+      "author_name_ar": "\u0634\u064A\u0641 \u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631",
+      "author_name_en": "Chef Tariq Mansour",
+      "author_avatar": "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=200&q=80",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
+      ],
+      "cuisine": "Levantine Fire & Smoke",
+      "cuisine_ar": "\u0634\u0627\u0645\u064A \u062A\u0631\u0627\u062B\u064A \u0628\u0627\u0644\u0646\u0627\u0631",
+      "cuisine_en": "Levantine Live Fire",
+      "category": "Grills & Roasts",
+      "category_ar": "\u0645\u0634\u0627\u0648\u064A \u0648\u0644\u062D\u0648\u0645",
+      "category_en": "Grills & Roasts",
+      "difficulty": "Medium",
+      "difficulty_ar": "\u0645\u062A\u0648\u0633\u0637",
+      "difficulty_en": "Medium",
+      "base_servings": 4,
+      "prep_time": 30,
+      "cook_time": 25,
+      "total_time": 55,
+      "calories": 610,
+      "likes_count": 1190,
+      "saves_count": 730,
+      "rating": 4.94,
+      "reviews_count": 96,
+      "created_at": "2026-08-05",
+      "tags": [
+        "LambChops",
+        "LiveFire",
+        "Rosemary",
+        "Levantine",
+        "Grills"
+      ],
+      "ingredients": [
+        {
+          "id": "ing-401",
+          "name_ar": "\u0631\u064A\u0634 \u063A\u0646\u0645 \u0646\u0639\u064A\u0645\u064A \u0628\u0644\u062F\u064A \u0637\u0627\u0632\u062C\u0629",
+          "name_en": "Fresh Prime Local Lamb Chops (French Trimmed)",
+          "baseAmount": 8,
+          "unit_ar": "\u062D\u0628\u0629",
+          "unit_en": "pcs",
+          "notes_ar": "\u0645\u0646\u0638\u0641\u0629 \u0639\u0638\u0627\u0645\u0647\u0627 \u0628\u0625\u062A\u0642\u0627\u0646",
+          "notes_en": "Approx 800g total"
+        },
+        {
+          "id": "ing-402",
+          "name_ar": "\u0623\u063A\u0635\u0627\u0646 \u0625\u0643\u0644\u064A\u0644 \u0627\u0644\u062C\u0628\u0644 (\u0631\u0648\u0632\u0645\u0627\u0631\u064A) \u0637\u0627\u0632\u062C\u0629",
+          "name_en": "Fresh Rosemary Leaves",
+          "baseAmount": 20,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u0641\u0631\u0648\u0645\u0629 \u0646\u0627\u0639\u0645\u0627\u064B \u0645\u0639 \u0627\u0644\u062D\u0637\u0628",
+          "notes_en": "Finely minced"
+        },
+        {
+          "id": "ing-403",
+          "name_ar": "\u062F\u0628\u0633 \u0631\u0645\u0627\u0646 \u062C\u0628\u0644\u064A \u062D\u0627\u0645\u0636",
+          "name_en": "Mountain Pomegranate Molasses",
+          "baseAmount": 40,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0645\u0631\u0643\u0632 \u0637\u0628\u064A\u0639\u064A",
+          "notes_en": "Unsweetened reduction"
+        },
+        {
+          "id": "ing-404",
+          "name_ar": "\u0631\u0642\u0627\u0626\u0642 \u0641\u0644\u0641\u0644 \u062D\u0644\u0628\u064A \u0623\u062D\u0645\u0631 \u0645\u062C\u0631\u0648\u0634",
+          "name_en": "Crushed Aleppo Silk Chili Flakes",
+          "baseAmount": 10,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u062D\u0631\u0627\u0631\u0629 \u0645\u0639\u062A\u062F\u0644\u0629 \u0648\u0632\u064A\u062A\u064A\u0629",
+          "notes_en": "Mild oily warmth"
+        },
+        {
+          "id": "ing-405",
+          "name_ar": "\u0641\u0635\u0648\u0635 \u062B\u0648\u0645 \u0628\u0644\u062F\u064A \u0645\u0647\u0631\u0648\u0633\u0629",
+          "name_en": "Crushed Fresh Garlic Cloves",
+          "baseAmount": 5,
+          "unit_ar": "\u062D\u0628\u0629",
+          "unit_en": "pcs",
+          "notes_ar": "\u0646\u0627\u0639\u0645 \u062C\u062F\u0627\u064B",
+          "notes_en": "Finely minced paste"
+        },
+        {
+          "id": "ing-406",
+          "name_ar": "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0645\u0639\u0635\u0648\u0631 \u0639\u0644\u0649 \u0627\u0644\u0628\u0627\u0631\u062F",
+          "name_en": "Cold-Pressed Virgin Olive Oil",
+          "baseAmount": 50,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0644\u0644\u062A\u062A\u0628\u064A\u0644 \u0648\u0627\u0644\u062F\u0647\u0646",
+          "notes_en": "For marinade"
+        },
+        {
+          "id": "ing-407",
+          "name_ar": "\u0645\u0644\u062D \u0635\u062E\u0631\u064A \u0645\u062C\u0631\u0648\u0634 \u062E\u0634\u0646",
+          "name_en": "Coarse Desert Rock Salt",
+          "baseAmount": 12,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0644\u062A\u0645\u0644\u064A\u062D",
+          "notes_en": "For crust seasoning"
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "title_ar": "\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u062A\u062A\u0628\u064A\u0644\u0629 \u0627\u0644\u0639\u0637\u0631\u064A\u0629 \u0648\u0627\u0644\u062A\u062F\u0644\u064A\u0643",
+          "title_en": "Marinade Emulsion & Rub",
+          "instruction_ar": "\u0627\u062E\u0644\u0637 \u0625\u0643\u0644\u064A\u0644 \u0627\u0644\u062C\u0628\u0644 \u0627\u0644\u0645\u0641\u0631\u0648\u0645 \u0645\u0639 \u0627\u0644\u062B\u0648\u0645 \u0648\u062F\u0628\u0633 \u0627\u0644\u0631\u0645\u0627\u0646 \u0648\u0627\u0644\u0641\u0644\u0641\u0644 \u0627\u0644\u062D\u0644\u0628\u064A \u0648\u0632\u064A\u062A \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0648\u0627\u0644\u0645\u0644\u062D. \u0627\u062F\u0639\u0643 \u0631\u064A\u0634 \u0627\u0644\u063A\u0646\u0645 \u062C\u064A\u062F\u0627\u064B \u0628\u0627\u0644\u062A\u062A\u0628\u064A\u0644\u0629 \u0648\u0627\u062A\u0631\u0643\u0647\u0627 \u0641\u064A \u0627\u0644\u0628\u0631\u0627\u062F \u0644\u0645\u062F\u0629 30 \u062F\u0642\u064A\u0642\u0629 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644.",
+          "instruction_en": "Combine rosemary, garlic, pomegranate molasses, Aleppo chili, olive oil, and coarse salt. Massage thoroughly over chops and chill for 30 minutes.",
+          "timer_minutes": 30,
+          "tip_ar": "\u062D\u0645\u0648\u0636\u0629 \u062F\u0628\u0633 \u0627\u0644\u0631\u0645\u0627\u0646 \u062A\u0633\u0627\u0639\u062F \u0639\u0644\u0649 \u062A\u0644\u064A\u064A\u0646 \u0623\u0644\u064A\u0627\u0641 \u0627\u0644\u0644\u062D\u0645 \u0648\u062A\u0645\u0646\u062D\u0647 \u0644\u0648\u0646\u0627\u064B \u062F\u0627\u0643\u0646\u0627\u064B \u0645\u0643\u0631\u0627\u0645\u0644\u0627\u064B \u0639\u0646\u062F \u0627\u0644\u0634\u0648\u0627\u0621.",
+          "tip_en": "Pomegranate acidity tenderizes lamb fibers while promoting deep mahogany caramelization."
+        },
+        {
+          "step_number": 2,
+          "title_ar": "\u0625\u0634\u0639\u0627\u0644 \u0627\u0644\u062C\u0645\u0631 \u0648\u0627\u0644\u062A\u062F\u062E\u064A\u0646 \u0627\u0644\u0623\u0648\u0644\u064A",
+          "title_en": "Live Embers & Smoke Preparation",
+          "instruction_ar": "\u0623\u0634\u0639\u0644 \u062D\u0637\u0628 \u0627\u0644\u0633\u0646\u062F\u064A\u0627\u0646 \u0623\u0648 \u0627\u0644\u0641\u062D\u0645 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u062D\u062A\u0649 \u064A\u062A\u062D\u0648\u0644 \u0625\u0644\u0649 \u062C\u0645\u0631 \u0623\u0628\u064A\u0636 \u0645\u063A\u0637\u0649 \u0628\u0627\u0644\u0631\u0645\u0627\u062F \u0627\u0644\u062E\u0641\u064A\u0641. \u0636\u0639 \u0623\u063A\u0635\u0627\u0646 \u0631\u0648\u0632\u0645\u0627\u0631\u064A \u0637\u0627\u0632\u062C\u0629 \u0645\u0628\u0627\u0634\u0631\u0629 \u0641\u0648\u0642 \u0627\u0644\u062C\u0645\u0631 \u0644\u0625\u0637\u0644\u0627\u0642 \u0633\u062D\u0627\u0628\u0629 \u062F\u062E\u0627\u0646\u064A\u0629 \u0639\u0637\u0631\u064A\u0629.",
+          "instruction_en": "Ignite natural hardwood charcoal to white embers. Scatter fresh rosemary sprigs over embers to produce an intensely fragrant botanical smoke canopy.",
+          "timer_minutes": 15,
+          "tip_ar": "\u0627\u0644\u062A\u062F\u062E\u064A\u0646 \u0628\u0627\u0644\u0623\u0639\u0634\u0627\u0628 \u0627\u0644\u0637\u0627\u0632\u062C\u0629 \u064A\u0639\u0637\u064A \u0646\u0643\u0647\u0629 \u0641\u0648\u0631\u064A\u0629 \u0644\u0627 \u0645\u062B\u064A\u0644 \u0644\u0647\u0627 \u062F\u0648\u0646 \u0627\u062D\u062A\u0631\u0627\u0642 \u0645\u0631.",
+          "tip_en": "Botanical smoking over coals infuses delicate forest notes directly into the crust."
+        },
+        {
+          "step_number": 3,
+          "title_ar": "\u0627\u0644\u0634\u0648\u0627\u0621 \u0627\u0644\u0645\u0628\u0627\u0634\u0631 \u0639\u0644\u0649 \u0627\u0644\u0634\u0628\u0643",
+          "title_en": "High Direct Grilling",
+          "instruction_ar": "\u0636\u0639 \u0627\u0644\u0631\u064A\u0634 \u0641\u0648\u0642 \u0627\u0644\u0634\u0628\u0643 \u0627\u0644\u0633\u0627\u062E\u0646 \u0648\u0627\u0634\u0648\u0647\u0627 \u0644\u0645\u062F\u0629 3 \u0625\u0644\u0649 4 \u062F\u0642\u0627\u0626\u0642 \u0644\u0643\u0644 \u062C\u0627\u0646\u0628\u060C \u0645\u0639 \u062F\u0647\u0646\u0647\u0627 \u0628\u0627\u0644\u062A\u062A\u0628\u064A\u0644\u0629 \u0627\u0644\u0645\u062A\u0628\u0642\u064A\u0629 \u0645\u0631\u0629 \u0648\u0627\u062D\u062F\u0629 \u062D\u062A\u0649 \u062A\u0643\u062A\u0633\u0628 \u0639\u0644\u0627\u0645\u0627\u062A \u0634\u0648\u0627\u0621 \u062F\u0627\u0643\u0646\u0629 \u0648\u062D\u0631\u0627\u0631\u0629 \u062F\u0627\u062E\u0644\u064A\u0629 56 \u0645\u0626\u0648\u064A\u0629.",
+          "instruction_en": "Grill chops over high heat for 3-4 mins per side, basting once with residual marinade until reaching an internal core temp of 56\xB0C (Medium).",
+          "timer_minutes": 8,
+          "tip_ar": "\u0644\u0627 \u062A\u0641\u0631\u0637 \u0641\u064A \u0637\u0647\u064A \u0631\u064A\u0634 \u0627\u0644\u0646\u0639\u064A\u0645\u064A \u062D\u062A\u0649 \u0644\u0627 \u062A\u0641\u0642\u062F \u0637\u0631\u0627\u0648\u062A\u0647\u0627 \u0627\u0644\u0641\u0627\u0626\u0642\u0629.",
+          "tip_en": "Do not overcook premium lamb; medium-rare to medium preserves optimum succulence."
+        },
+        {
+          "step_number": 4,
+          "title_ar": "\u0627\u0644\u0631\u0627\u062D\u0629 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645",
+          "title_en": "Resting & Plating",
+          "instruction_ar": "\u062F\u0639 \u0627\u0644\u0631\u064A\u0634 \u062A\u0631\u062A\u0627\u062D 5 \u062F\u0642\u0627\u0626\u0642 \u0642\u0628\u0644 \u0627\u0644\u062A\u0642\u062F\u064A\u0645\u060C \u062B\u0645 \u0642\u062F\u0645\u0647\u0627 \u0645\u0639 \u0628\u0630\u0648\u0631 \u0627\u0644\u0631\u0645\u0627\u0646 \u0627\u0644\u0637\u0627\u0632\u062C\u0629 \u0648\u062E\u0628\u0632 \u0627\u0644\u0635\u0627\u062C \u0627\u0644\u0645\u062D\u0645\u0635 \u0639\u0644\u0649 \u0627\u0644\u0641\u062D\u0645.",
+          "instruction_en": "Rest for 5 minutes, garnish with vibrant fresh pomegranate arils and serve with charred flatbread.",
+          "timer_minutes": 5,
+          "tip_ar": "\u0642\u062F\u0651\u0645\u0647\u0627 \u0641\u0648\u0631\u0627\u064B \u0633\u0627\u062E\u0646\u0629 \u0645\u0639 \u063A\u0645\u0648\u0633 \u0627\u0644\u062B\u0648\u0645\u064A\u0629 \u0627\u0644\u062D\u0631\u0641\u064A\u0629 \u0623\u0648 \u0627\u0644\u0644\u0628\u0646\u0629 \u0627\u0644\u0645\u0634\u0648\u064A\u0629.",
+          "tip_en": "Serve sizzling hot alongside whipped artisanal labneh and charred garlic sauce."
+        }
+      ],
+      "nutrition": {
+        "calories": 610,
+        "protein": "48g",
+        "carbs": "12g",
+        "fats": "42g",
+        "fiber": "1.8g",
+        "sodium": "580mg"
+      },
+      "pairings": {
+        "drink_ar": "\u0634\u0631\u0627\u0628 \u0627\u0644\u0643\u0631\u0643\u062F\u064A\u0647 \u0627\u0644\u0645\u0631\u0643\u0632 \u0628\u0627\u0644\u0647\u064A\u0644 \u0648\u0642\u0637\u0639 \u0627\u0644\u062B\u0644\u062C \u0627\u0644\u0645\u0646\u0639\u0634\u0629",
+        "drink_en": "Chilled Cardamom Infused Hibiscus Cordial",
+        "side_ar": "\u063A\u0645\u0648\u0633 \u0627\u0644\u0644\u0628\u0646\u0629 \u0627\u0644\u0628\u0644\u062F\u064A\u0629 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0628\u0632\u064A\u062A \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0627\u0644\u0628\u0643\u0631",
+        "side_en": "Smoked Artisanal Labneh Dip with Zaatar and EVOO",
+        "notes_ar": "\u0646\u0643\u0647\u0629 \u0627\u0644\u062F\u062E\u0627\u0646 \u0648\u0625\u0643\u0644\u064A\u0644 \u0627\u0644\u062C\u0628\u0644 \u062A\u0628\u0631\u0632 \u063A\u0646\u0649 \u062F\u0647\u0646 \u0644\u062D\u0645 \u0627\u0644\u0646\u0639\u064A\u0645\u064A \u0627\u0644\u0628\u0644\u062F\u064A.",
+        "notes_en": "Earthy herbs and tang perfectly balance the rich profile of local lamb."
+      }
+    },
+    {
+      "id": "recipe-5",
+      "title": "Pistachio & Rosewater Entremet with Mastic Glaze",
+      "title_ar": "\u0625\u0646\u062A\u0631\u064A\u0645\u064A\u0647 \u0627\u0644\u0641\u0633\u062A\u0642 \u0648\u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u0645\u0631\u0622\u0629 \u0628\u0627\u0644\u0645\u0633\u062A\u0643\u0629",
+      "title_en": "Pistachio & Rosewater Entremet with Mastic Glaze",
+      "description_ar": "\u062D\u0644\u0648\u0649 \u0643\u0639\u0643\u0629 \u0625\u0646\u062A\u0631\u064A\u0645\u064A\u0647 \u0641\u0631\u0646\u0633\u064A\u0629 \u0631\u0627\u0642\u064A\u0629 \u0628\u0637\u0628\u0642\u0627\u062A \u0645\u0648\u0633 \u0627\u0644\u0641\u0633\u062A\u0642 \u0627\u0644\u0635\u0642\u0644\u064A\u060C \u0648\u0628\u0633\u0643\u0648\u064A\u062A \u0627\u0644\u062C\u0627\u0643\u0648\u0646\u062F \u0627\u0644\u062E\u0641\u064A\u0641\u060C \u0648\u062D\u0634\u0648\u0629 \u0647\u0644\u0627\u0645 \u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F \u0627\u0644\u062C\u0628\u0644\u064A\u060C \u0645\u063A\u0644\u0641\u0629 \u0628\u063A\u0644\u064A\u0632 \u0645\u0631\u0622\u0629 \u0644\u0627\u0645\u0639 \u0628\u0646\u0643\u0647\u0629 \u0627\u0644\u0645\u0633\u062A\u0643\u0629 \u0627\u0644\u064A\u0648\u0646\u0627\u0646\u064A\u0629.",
+      "description_en": "Haute French entremet layering Sicilian Bronte pistachio mousse, almond joconde sponge, and wild rosewater compote, encased in a high-gloss mastic mirror glaze.",
+      "author_id": "chef-2",
+      "author_name_ar": "\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
+      "author_name_en": "Chef Elena Rostova",
+      "author_avatar": "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=200&q=80",
+      "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80"
+      ],
+      "cuisine": "French Haute P\xE2tisserie",
+      "cuisine_ar": "\u062D\u0644\u0648\u064A\u0627\u062A \u0641\u0631\u0646\u0633\u064A\u0629 \u0641\u0627\u062E\u0631\u0629",
+      "cuisine_en": "French Haute P\xE2tisserie",
+      "category": "Desserts & Pastry",
+      "category_ar": "\u062D\u0644\u0648\u064A\u0627\u062A \u0648\u0645\u0639\u062C\u0646\u0627\u062A",
+      "category_en": "Desserts & Pastry",
+      "difficulty": "Hard",
+      "difficulty_ar": "\u0645\u062A\u0642\u062F\u0645",
+      "difficulty_en": "Hard",
+      "base_servings": 6,
+      "prep_time": 60,
+      "cook_time": 30,
+      "total_time": 90,
+      "calories": 460,
+      "likes_count": 2150,
+      "saves_count": 1480,
+      "rating": 4.99,
+      "reviews_count": 210,
+      "created_at": "2026-08-06",
+      "tags": [
+        "Entremet",
+        "Pistachio",
+        "Mastic",
+        "Rosewater",
+        "FrenchPastry"
+      ],
+      "ingredients": [
+        {
+          "id": "ing-501",
+          "name_ar": "\u0645\u0639\u062C\u0648\u0646 \u0641\u0633\u062A\u0642 \u0628\u0631\u0648\u0646\u062A\u064A \u0635\u0642\u0644\u064A \u0646\u0642\u064A 100%",
+          "name_en": "100% Pure Bronte Pistachio Paste",
+          "baseAmount": 120,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0628\u062F\u0648\u0646 \u0625\u0636\u0627\u0641\u0627\u062A \u0623\u0648 \u0645\u0644\u0648\u0646\u0627\u062A",
+          "notes_en": "Unsweetened vibrant green"
+        },
+        {
+          "id": "ing-502",
+          "name_ar": "\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0628\u064A\u0636\u0627\u0621 \u0641\u0627\u062E\u0631\u0629 34% \u0632\u0628\u062F\u0629 \u0643\u0627\u0643\u0627\u0648",
+          "name_en": "Valrhona 34% White Chocolate Couverture",
+          "baseAmount": 200,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0644\u0645\u0648\u0633 \u0648\u0627\u0644\u063A\u0644\u064A\u0632",
+          "notes_en": "For mousse and glaze"
+        },
+        {
+          "id": "ing-503",
+          "name_ar": "\u0643\u0631\u064A\u0645\u0629 \u062E\u0641\u0642 \u0637\u0627\u0632\u062C\u0629 36% \u062F\u0633\u0645",
+          "name_en": "Heavy Whipping Cream (36% fat)",
+          "baseAmount": 350,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0645\u062E\u0641\u0648\u0642\u0629 \u0644\u0646\u0635\u0641 \u0642\u0648\u0627\u0645 (Soft Peaks)",
+          "notes_en": "Whipped to soft peaks"
+        },
+        {
+          "id": "ing-504",
+          "name_ar": "\u0645\u0627\u0621 \u0648\u0631\u062F \u062C\u0628\u0644\u064A \u0637\u0628\u064A\u0639\u064A \u0645\u0642\u0637\u0631",
+          "name_en": "Distilled Wild Mountain Rosewater",
+          "baseAmount": 30,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0644\u0644\u062D\u0634\u0648\u0629 \u0627\u0644\u0647\u0644\u0627\u0645\u064A\u0629",
+          "notes_en": "For jelly insert"
+        },
+        {
+          "id": "ing-505",
+          "name_ar": "\u062F\u0645\u0648\u0639 \u0645\u0633\u062A\u0643\u0629 \u064A\u0648\u0646\u0627\u0646\u064A\u0629 \u0623\u0635\u0644\u064A\u0629 (\u062E\u064A\u0648\u0633)",
+          "name_en": "Chios Mastic Tears",
+          "baseAmount": 4,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u0637\u062D\u0648\u0646\u0629 \u0645\u0639 \u0642\u0644\u064A\u0644 \u0645\u0646 \u0627\u0644\u0633\u0643\u0631",
+          "notes_en": "Ground finely with sugar"
+        },
+        {
+          "id": "ing-506",
+          "name_ar": "\u0634\u0631\u0627\u0626\u062D \u062C\u064A\u0644\u0627\u062A\u064A\u0646 \u0628\u0642\u0631\u064A \u062D\u0644\u0627\u0644 (Gold)",
+          "name_en": "Halal Beef Gelatin Sheets (Gold Grade)",
+          "baseAmount": 6,
+          "unit_ar": "\u062D\u0628\u0629",
+          "unit_en": "pcs",
+          "notes_ar": "\u0645\u0646\u0642\u0648\u0639\u0629 \u0641\u064A \u0645\u0627\u0621 \u0645\u062B\u0644\u062C",
+          "notes_en": "Bloomed in ice water"
+        },
+        {
+          "id": "ing-507",
+          "name_ar": "\u062F\u0642\u064A\u0642 \u0644\u0648\u0632 \u0623\u0628\u064A\u0636 \u0645\u0637\u062D\u0648\u0646 \u0641\u0627\u0626\u0642 \u0627\u0644\u0646\u0639\u0648\u0645\u0629",
+          "name_en": "Ultra-Fine Blanched Almond Flour",
+          "baseAmount": 90,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0628\u0633\u0643\u0648\u064A\u062A \u0627\u0644\u062C\u0627\u0643\u0648\u0646\u062F",
+          "notes_en": "For joconde sponge"
+        },
+        {
+          "id": "ing-508",
+          "name_ar": "\u0633\u0643\u0631 \u0628\u0648\u062F\u0631\u0629 \u0641\u0627\u0626\u0642 \u0627\u0644\u0646\u0639\u0648\u0645\u0629",
+          "name_en": "Confectioners Powdered Sugar",
+          "baseAmount": 80,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0644\u0628\u0633\u0643\u0648\u064A\u062A \u0648\u0627\u0644\u0645\u0648\u0633",
+          "notes_en": "For sponge base"
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "title_ar": "\u062E\u0628\u0632 \u0628\u0633\u0643\u0648\u064A\u062A \u0627\u0644\u062C\u0627\u0643\u0648\u0646\u062F \u0628\u0627\u0644\u0644\u0648\u0632",
+          "title_en": "Almond Joconde Sponge Baking",
+          "instruction_ar": "\u0627\u062E\u0641\u0642 \u0627\u0644\u0628\u064A\u0636 \u0645\u0639 \u0633\u0643\u0631 \u0627\u0644\u0628\u0648\u062F\u0631\u0629 \u0648\u062F\u0642\u064A\u0642 \u0627\u0644\u0644\u0648\u0632 \u062D\u062A\u0649 \u064A\u062A\u0636\u0627\u0639\u0641 \u062D\u062C\u0645\u0647. \u0627\u062F\u0645\u062C \u0628\u064A\u0627\u0636 \u0627\u0644\u0628\u064A\u0636 \u0627\u0644\u0645\u062E\u0641\u0648\u0642 \u0628\u0644\u0637\u0641 \u0648\u0627\u062E\u0628\u0632 \u0639\u0644\u0649 \u0635\u064A\u0646\u064A\u0629 \u0631\u0642\u064A\u0642\u0629 \u0628\u062D\u0631\u0627\u0631\u0629 200 \u0645\u0626\u0648\u064A\u0629 \u0644\u0645\u062F\u0629 8 \u062F\u0642\u0627\u0626\u0642\u060C \u062B\u0645 \u0627\u062A\u0631\u0643\u0647 \u064A\u0628\u0631\u062F \u0648\u0627\u0642\u0637\u0639\u0647 \u0628\u062D\u062C\u0645 \u0627\u0644\u0642\u0627\u0644\u0628.",
+          "instruction_en": "Whip eggs, icing sugar, and almond flour. Fold in gentle meringue, spread thinly on parchment, and bake at 200\xB0C for 8 mins. Cool and cut to ring size.",
+          "timer_minutes": 15,
+          "tip_ar": "\u0627\u0644\u062E\u0628\u0632 \u0627\u0644\u0633\u0631\u064A\u0639 \u0641\u064A \u062D\u0631\u0627\u0631\u0629 \u0639\u0627\u0644\u064A\u0629 \u064A\u062D\u0627\u0641\u0638 \u0639\u0644\u0649 \u0637\u0631\u0627\u0648\u0629 \u0627\u0644\u0628\u0633\u0643\u0648\u064A\u062A \u062F\u0648\u0646 \u062C\u0641\u0627\u0641.",
+          "tip_en": "High-heat flash baking keeps joconde tender and supple for layering."
+        },
+        {
+          "step_number": 2,
+          "title_ar": "\u062A\u062D\u0636\u064A\u0631 \u062D\u0634\u0648\u0629 \u0647\u0644\u0627\u0645 \u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F \u0648\u062A\u062C\u0645\u064A\u062F\u0647\u0627",
+          "title_en": "Rosewater Insert Preparation",
+          "instruction_ar": "\u0633\u062E\u0651\u0646 \u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F \u0645\u0639 \u0642\u0644\u064A\u0644 \u0645\u0646 \u0639\u0635\u064A\u0631 \u0627\u0644\u062A\u0648\u062A \u0648\u0627\u0644\u062C\u064A\u0644\u0627\u062A\u064A\u0646 \u0627\u0644\u0645\u0635\u0641\u0649. \u0627\u0633\u0643\u0628 \u0627\u0644\u0647\u0644\u0627\u0645 \u0641\u064A \u0642\u0648\u0627\u0644\u0628 \u062F\u0627\u0626\u0631\u064A\u0629 \u0623\u0635\u063A\u0631 \u0628\u0640 2 \u0633\u0645 \u0645\u0646 \u0627\u0644\u0642\u0627\u0644\u0628 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u060C \u0648\u062C\u0645\u062F\u0647\u0627 \u062A\u0645\u0627\u0645\u0627\u064B \u0641\u064A \u0627\u0644\u0641\u0631\u064A\u0632\u0631 \u0644\u0645\u062F\u0629 \u0633\u0627\u0639\u062A\u064A\u0646.",
+          "instruction_en": "Warm rosewater with raspberry essence and bloomed gelatin. Pour into insert silicone molds (2cm smaller than cake ring) and freeze solid for 2 hours.",
+          "timer_minutes": 120,
+          "tip_ar": "\u062A\u062C\u0645\u064A\u062F \u0627\u0644\u062D\u0634\u0648\u0629 \u0627\u0644\u062F\u0627\u062E\u0644\u064A\u0629 \u062E\u0637\u0648\u0629 \u0623\u0633\u0627\u0633\u064A\u0629 \u0644\u0636\u0645\u0627\u0646 \u062B\u0628\u0627\u062A\u0647\u0627 \u0641\u064A \u0645\u0646\u062A\u0635\u0641 \u0627\u0644\u0645\u0648\u0633 \u0639\u0646\u062F \u0627\u0644\u062A\u0631\u0643\u064A\u0628.",
+          "tip_en": "Freezing inserts rock-solid prevents them from sinking or bleeding into the mousse."
+        },
+        {
+          "step_number": 3,
+          "title_ar": "\u0635\u0646\u0639 \u0645\u0648\u0633 \u0627\u0644\u0641\u0633\u062A\u0642 \u0627\u0644\u0628\u0627\u0641\u0627\u0631\u0648\u0627\u0632",
+          "title_en": "Pistachio Bavarois Mousse",
+          "instruction_ar": "\u0627\u0635\u0646\u0639 \u0643\u0627\u0633\u062A\u0631\u062F \u0625\u0646\u062C\u0644\u064A\u0632\u064A \u0633\u0627\u062E\u0646 \u0645\u0639 \u0645\u0639\u062C\u0648\u0646 \u0627\u0644\u0641\u0633\u062A\u0642 \u0648\u0627\u0644\u062C\u064A\u0644\u0627\u062A\u064A\u0646 \u0648\u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u0628\u064A\u0636\u0627\u0621. \u0639\u0646\u062F\u0645\u0627 \u062A\u0628\u0631\u062F \u0625\u0644\u0649 30 \u0645\u0626\u0648\u064A\u0629\u060C \u0627\u062F\u0645\u062C \u0643\u0631\u064A\u0645\u0629 \u0627\u0644\u062E\u0641\u0642 \u0627\u0644\u0645\u062E\u0641\u0648\u0642\u0629 \u0628\u062E\u0641\u0629 \u0628\u062D\u0631\u0643\u0627\u062A \u062F\u0627\u0626\u0631\u064A\u0629.",
+          "instruction_en": "Make an anglaise base with pistachio paste, white chocolate, and gelatin. When cooled to 30\xB0C, fold in soft-whipped cream gently until homogenous.",
+          "timer_minutes": 20,
+          "tip_ar": "\u062F\u0631\u062C\u0629 \u062D\u0631\u0627\u0631\u0629 \u062F\u0645\u062C \u0627\u0644\u0643\u0631\u064A\u0645\u0629 \u062D\u0627\u0633\u0645\u0629\u061B \u0625\u0630\u0627 \u0643\u0627\u0646\u062A \u0633\u0627\u062E\u0646\u0629 \u0633\u062A\u0630\u0648\u0628 \u0627\u0644\u0643\u0631\u064A\u0645\u0629\u060C \u0648\u0625\u0630\u0627 \u0643\u0627\u0646\u062A \u0628\u0627\u0631\u062F\u0629 \u0633\u064A\u062A\u0643\u062A\u0644 \u0627\u0644\u062C\u064A\u0644\u0627\u062A\u064A\u0646.",
+          "tip_en": "Temperature control (30\xB0C) is crucial to avoid deflating the whipped cream."
+        },
+        {
+          "step_number": 4,
+          "title_ar": "\u0627\u0644\u062A\u0631\u0643\u064A\u0628 \u0627\u0644\u0639\u0643\u0633\u064A \u0648\u0627\u0644\u062A\u062C\u0645\u064A\u062F \u0627\u0644\u0635\u0627\u062F\u0645",
+          "title_en": "Inverse Assembly & Blast Freezing",
+          "instruction_ar": "\u0627\u0633\u0643\u0628 \u0646\u0635\u0641 \u0643\u0645\u064A\u0629 \u0645\u0648\u0633 \u0627\u0644\u0641\u0633\u062A\u0642 \u0641\u064A \u0642\u0627\u0644\u0628 \u0633\u064A\u0644\u064A\u0643\u0648\u0646 \u0641\u0627\u062E\u0631\u060C \u0636\u0639 \u0642\u0631\u0635 \u0647\u0644\u0627\u0645 \u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F \u0627\u0644\u0645\u062C\u0645\u062F \u0641\u064A \u0627\u0644\u0648\u0633\u0637\u060C \u0623\u0636\u0641 \u0628\u0642\u064A\u0629 \u0627\u0644\u0645\u0648\u0633 \u062B\u0645 \u0627\u063A\u0644\u0642 \u0628\u0637\u0628\u0642\u0629 \u0628\u0633\u0643\u0648\u064A\u062A \u0627\u0644\u062C\u0627\u0643\u0648\u0646\u062F. \u062C\u0645\u062F \u0627\u0644\u0642\u0627\u0644\u0628 \u0644\u064A\u0644\u0629 \u0643\u0627\u0645\u0644\u0629.",
+          "instruction_en": "Pipe half the pistachio mousse into silicone mold, insert frozen rose disc in center, top with remaining mousse, and cap with joconde sponge. Freeze overnight.",
+          "timer_minutes": 360,
+          "tip_ar": "\u0627\u0644\u062A\u0631\u0643\u064A\u0628 \u0627\u0644\u0639\u0643\u0633\u064A \u064A\u0636\u0645\u0646 \u0633\u0637\u062D\u0627\u064B \u0623\u0645\u0644\u0633\u0627\u064B \u062E\u0627\u0644\u064A\u0627\u064B \u0645\u0646 \u0627\u0644\u0639\u064A\u0648\u0628 \u0639\u0646\u062F \u0646\u0632\u0639 \u0627\u0644\u0633\u064A\u0644\u064A\u0643\u0648\u0646.",
+          "tip_en": "Inverse molding produces pristine glass-smooth geometry upon demolding."
+        },
+        {
+          "step_number": 5,
+          "title_ar": "\u0633\u0643\u0628 \u063A\u0644\u064A\u0632 \u0627\u0644\u0645\u0631\u0622\u0629 \u0628\u0627\u0644\u0645\u0633\u062A\u0643\u0629 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645",
+          "title_en": "Mirror Glazing & Gold Leaf Finishing",
+          "instruction_ar": "\u0633\u062E\u0651\u0646 \u063A\u0644\u064A\u0632 \u0627\u0644\u0645\u0631\u0622\u0629 \u0627\u0644\u0645\u062D\u0636\u0631 \u0628\u0627\u0644\u0645\u0633\u062A\u0643\u0629 \u0648\u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u0625\u0644\u0649 \u062F\u0631\u062C\u0629 \u062D\u0631\u0627\u0631\u0629 32 \u0645\u0626\u0648\u064A\u0629. \u0627\u0646\u0632\u0639 \u0627\u0644\u0625\u0646\u062A\u0631\u064A\u0645\u064A\u0647 \u0627\u0644\u0645\u062C\u0645\u062F \u0645\u0646 \u0627\u0644\u0642\u0627\u0644\u0628\u060C \u0648\u0636\u0639\u0647 \u0641\u0648\u0642 \u0634\u0628\u0643 \u0648\u0627\u0633\u0643\u0628 \u0627\u0644\u063A\u0644\u064A\u0632 \u062F\u0641\u0639\u0629 \u0648\u0627\u062D\u062F\u0629 \u0648\u0628\u0634\u0643\u0644 \u0645\u062A\u0648\u0627\u0635\u0644 \u0644\u064A\u063A\u0637\u064A \u0627\u0644\u0642\u0628\u0629 \u0628\u0627\u0644\u0643\u0627\u0645\u0644.",
+          "instruction_en": "Warm mastic mirror glaze to exactly 32\xB0C. Demold frozen entremet onto a glazing rack, pour glaze in one fluid motion to coat seamlessly, and garnish with gold leaf and crushed pistachios.",
+          "timer_minutes": 10,
+          "tip_ar": "\u0635\u0628 \u0627\u0644\u063A\u0644\u064A\u0632 \u0628\u062D\u0631\u0643\u0629 \u0648\u0627\u062D\u062F\u0629 \u0645\u0633\u062A\u0645\u0631\u0629 \u064A\u0645\u0646\u0639 \u062A\u0643\u0648\u0646 \u062E\u0637\u0648\u0637 \u0623\u0648 \u062A\u062C\u0627\u0639\u064A\u062F \u0639\u0644\u0649 \u0633\u0637\u062D \u0627\u0644\u0645\u0631\u0622\u0629.",
+          "tip_en": "One uninterrupted pouring cascade guarantees a mirror reflection with zero streaks."
+        }
+      ],
+      "nutrition": {
+        "calories": 460,
+        "protein": "9g",
+        "carbs": "42g",
+        "fats": "30g",
+        "fiber": "2.8g",
+        "sodium": "110mg"
+      },
+      "pairings": {
+        "drink_ar": "\u0642\u0647\u0648\u0629 \u0633\u0639\u0648\u062F\u064A\u0629 \u0634\u0642\u0631\u0627\u0621 \u0628\u0627\u0644\u0647\u064A\u0644 \u0648\u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646 \u0627\u0644\u0641\u0627\u062E\u0631",
+        "drink_en": "Aromatic Saudi Light Roast Coffee with Cardamom",
+        "side_ar": "\u062D\u0628\u0627\u062A \u062A\u0648\u062A \u0627\u0644\u0639\u0644\u064A\u0642 \u0627\u0644\u0637\u0627\u0632\u062C \u0645\u0639 \u0644\u0645\u0633\u0627\u062A \u0648\u0631\u0642 \u0627\u0644\u0630\u0647\u0628 \u0627\u0644\u063A\u0630\u0627\u0626\u064A",
+        "side_en": "Fresh Raspberries with 24k Edible Gold Leaf",
+        "notes_ar": "\u0645\u0631\u0627\u0631\u0629 \u0627\u0644\u0642\u0647\u0648\u0629 \u0627\u0644\u062E\u0641\u064A\u0641\u0629 \u062A\u0648\u0627\u0632\u0646 \u062D\u0644\u0627\u0648\u0629 \u0627\u0644\u063A\u0644\u064A\u0632 \u0648\u062A\u0628\u0631\u0632 \u0639\u0637\u0631\u064A\u0629 \u0627\u0644\u0645\u0633\u062A\u0643\u0629 \u0648\u0645\u0627\u0621 \u0627\u0644\u0648\u0631\u062F.",
+        "notes_en": "Lightly spiced coffee cuts through the luscious richness of pistachio bavarois."
+      }
+    },
+    {
+      "id": "recipe-6",
+      "title": "Hamachi Crudo with Yuzu White Ponzu & Finger Lime",
+      "title_ar": "\u0643\u0631\u0648\u0648\u062F\u0648 \u0633\u0645\u0643 \u0627\u0644\u0647\u0627\u0645\u0627\u062A\u0634\u064A \u0645\u0639 \u0627\u0644\u064A\u0648\u0632\u0648 \u0648\u0628\u0648\u0646\u0632\u0648 \u0627\u0644\u0643\u0627\u0641\u064A\u0627\u0631 \u0627\u0644\u0644\u064A\u0645\u0648\u0646\u064A",
+      "title_en": "Hamachi Crudo with Yuzu White Ponzu & Finger Lime",
+      "description_ar": "\u0634\u0631\u0627\u0626\u062D \u0633\u0645\u0643 \u0647\u0627\u0645\u0627\u062A\u0634\u064A \u064A\u0627\u0628\u0627\u0646\u064A \u0637\u0627\u0632\u062C \u0628\u062F\u0631\u062C\u0629 \u0633\u0627\u0634\u064A\u0645\u064A\u060C \u0645\u062A\u0628\u0644\u0629 \u0628\u0635\u0644\u0635\u0629 \u0628\u0648\u0646\u0632\u0648 \u0628\u064A\u0636\u0627\u0621 \u0628\u0646\u0643\u0647\u0629 \u0641\u0627\u0643\u0647\u0629 \u0627\u0644\u064A\u0648\u0632\u0648 \u0627\u0644\u0639\u0637\u0631\u064A\u0629\u060C \u0645\u063A\u0637\u0627\u0629 \u0628\u0643\u0627\u0641\u064A\u0627\u0631 \u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0627\u0644\u0623\u0633\u062A\u0631\u0627\u0644\u064A \u0648\u0632\u064A\u062A \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u0648\u0627\u0644\u0623\u0639\u0634\u0627\u0628 \u0627\u0644\u0645\u062C\u0647\u0631\u064A\u0629.",
+      "description_en": "Sashimi-grade Japanese Yellowtail thinly shaved, dressed in citrusy white yuzu shoyu ponzu, crowned with bursting Australian finger lime pearls and micro greens.",
+      "author_id": "chef-4",
+      "author_name_ar": "\u0634\u064A\u0641 \u0643\u064A\u0646\u062C\u064A \u062A\u0627\u0643\u0627\u0647\u0627\u0634\u064A",
+      "author_name_en": "Chef Kenji Takahashi",
+      "author_avatar": "https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?auto=format&fit=crop&w=200&q=80",
+      "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80"
+      ],
+      "cuisine": "Contemporary Japanese Kaiseki",
+      "cuisine_ar": "\u064A\u0627\u0628\u0627\u0646\u064A \u0645\u0639\u0627\u0635\u0631 \u0643\u0627\u064A\u0633\u064A\u0643\u064A",
+      "cuisine_en": "Contemporary Japanese",
+      "category": "Appetizers & Raw",
+      "category_ar": "\u0645\u0642\u0628\u0644\u0627\u062A \u0648\u0623\u0637\u0628\u0627\u0642 \u0628\u0627\u0631\u062F\u0629",
+      "category_en": "Appetizers & Raw",
+      "difficulty": "Medium",
+      "difficulty_ar": "\u0645\u062A\u0648\u0633\u0637",
+      "difficulty_en": "Medium",
+      "base_servings": 4,
+      "prep_time": 20,
+      "cook_time": 0,
+      "total_time": 20,
+      "calories": 280,
+      "likes_count": 1350,
+      "saves_count": 820,
+      "rating": 4.97,
+      "reviews_count": 102,
+      "created_at": "2026-08-07",
+      "tags": [
+        "Hamachi",
+        "Crudo",
+        "Sashimi",
+        "Yuzu",
+        "Japanese"
+      ],
+      "ingredients": [
+        {
+          "id": "ing-601",
+          "name_ar": "\u0641\u064A\u0644\u064A\u0647 \u0633\u0645\u0643 \u0647\u0627\u0645\u0627\u062A\u0634\u064A \u064A\u0627\u0628\u0627\u0646\u064A \u0628\u062F\u0631\u062C\u0629 \u0633\u0627\u0634\u064A\u0645\u064A",
+          "name_en": "Sashimi-Grade Hamachi (Yellowtail) Loin",
+          "baseAmount": 360,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u0628\u0631\u062F \u0648\u0645\u062D\u0641\u0648\u0638 \u0639\u0644\u0649 \u062B\u0644\u062C \u062C\u0627\u0641",
+          "notes_en": "Ultra-fresh chilled sashimi grade"
+        },
+        {
+          "id": "ing-602",
+          "name_ar": "\u0639\u0635\u064A\u0631 \u064A\u0648\u0632\u0648 \u064A\u0627\u0628\u0627\u0646\u064A \u0637\u0628\u064A\u0639\u064A 100%",
+          "name_en": "Pure Japanese Yuzu Juice",
+          "baseAmount": 30,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u063A\u064A\u0631 \u0645\u062D\u0644\u0649",
+          "notes_en": "Unsweetened cold extracted"
+        },
+        {
+          "id": "ing-603",
+          "name_ar": "\u0635\u0644\u0635\u0629 \u0635\u0648\u064A\u0627 \u0628\u064A\u0636\u0627\u0621 (\u0634\u064A\u0631\u0648 \u0634\u064A\u0648)",
+          "name_en": "Artisanal White Soy Sauce (Shiro Shoyu)",
+          "baseAmount": 40,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0644\u062D\u0641\u0638 \u0644\u0648\u0646 \u0627\u0644\u0633\u0645\u0643 \u0627\u0644\u0648\u0631\u062F\u064A \u0627\u0644\u0641\u0627\u062A\u062D",
+          "notes_en": "Preserves pristine meat color"
+        },
+        {
+          "id": "ing-604",
+          "name_ar": "\u062D\u0628\u0627\u062A \u0643\u0627\u0641\u064A\u0627\u0631 \u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0627\u0644\u0623\u0633\u062A\u0631\u0627\u0644\u064A (Finger Lime)",
+          "name_en": "Fresh Finger Lime Pearls",
+          "baseAmount": 2,
+          "unit_ar": "\u062D\u0628\u0629",
+          "unit_en": "pcs",
+          "notes_ar": "\u062D\u0628\u064A\u0628\u0627\u062A \u062A\u0646\u0641\u062C\u0631 \u0628\u0627\u0644\u062D\u0645\u0648\u0636\u0629 \u0641\u064A \u0627\u0644\u0641\u0645",
+          "notes_en": "Caviar-like citrus pearls"
+        },
+        {
+          "id": "ing-605",
+          "name_ar": "\u0632\u064A\u062A \u0643\u0645\u0623\u0629 \u0628\u064A\u0636\u0627\u0621 \u0625\u064A\u0637\u0627\u0644\u064A \u0641\u0627\u062E\u0631",
+          "name_en": "White Truffle Infused Olive Oil",
+          "baseAmount": 15,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0642\u0637\u0631\u0627\u062A \u0644\u0644\u062A\u0644\u0645\u064A\u0639 \u0648\u0627\u0644\u0646\u0643\u0647\u0629",
+          "notes_en": "Aromatic finishing drops"
+        },
+        {
+          "id": "ing-606",
+          "name_ar": "\u0623\u0648\u0631\u0627\u0642 \u0643\u0632\u0628\u0631\u0629 \u0645\u062C\u0647\u0631\u064A\u0629 \u0648\u0632\u0647\u0648\u0631 \u0634\u064A\u0633\u0648 \u0628\u0646\u0641\u0633\u062C\u064A\u0629",
+          "name_en": "Micro Shiso Leaves & Edible Flowers",
+          "baseAmount": 10,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0644\u062A\u0632\u064A\u064A\u0646 \u0627\u0644\u062C\u0645\u0627\u0644\u064A",
+          "notes_en": "For visual elegance"
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "title_ar": "\u062A\u0642\u0637\u064A\u0639 \u0627\u0644\u0647\u0627\u0645\u0627\u062A\u0634\u064A \u0628\u0633\u0643\u064A\u0646 \u0627\u0644\u0633\u0627\u0634\u064A\u0645\u064A \u0627\u0644\u062D\u0631\u0641\u064A\u0629",
+          "title_en": "Precision Sashimi Slicing",
+          "instruction_ar": "\u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0633\u0643\u064A\u0646 \u064A\u0627\u0646\u0627\u063A\u064A\u0628\u0627 \u064A\u0627\u0628\u0627\u0646\u064A \u062D\u0627\u062F \u0644\u0644\u063A\u0627\u064A\u0629\u060C \u0627\u0642\u0637\u0639 \u0641\u064A\u0644\u064A\u0647 \u0627\u0644\u0647\u0627\u0645\u0627\u062A\u0634\u064A \u0628\u062D\u0631\u0643\u0629 \u0633\u062D\u0628 \u0648\u0627\u062D\u062F\u0629 \u0648\u0628\u0632\u0627\u0648\u064A\u0629 45 \u062F\u0631\u062C\u0629 \u0625\u0644\u0649 \u0634\u0631\u0627\u0626\u062D \u0631\u0642\u064A\u0642\u0629 \u0645\u062A\u0633\u0627\u0648\u064A\u0629 \u0628\u0633\u0645\u0627\u0643\u0629 3 \u0645\u0644\u0645.",
+          "instruction_en": "Using a razor-sharp Japanese Yanagiba blade, slice hamachi against the grain in one single pulling motion into 3mm delicate sashimi ribbons.",
+          "timer_minutes": 10,
+          "tip_ar": "\u062D\u0631\u0643\u0629 \u0627\u0644\u0633\u062D\u0628 \u0627\u0644\u0648\u0627\u062D\u062F\u0629 \u062A\u062D\u0627\u0641\u0638 \u0639\u0644\u0649 \u062E\u0644\u0627\u064A\u0627 \u0627\u0644\u0644\u062D\u0645 \u0645\u0644\u0633\u0627\u0621 \u0648\u0644\u0627\u0645\u0639\u0629 \u0648\u062A\u0645\u0646\u0639 \u062A\u0645\u0632\u0642 \u0627\u0644\u0623\u0646\u0633\u062C\u0629.",
+          "tip_en": "A single clean pull stroke preserves cellular integrity for a glossy sheen."
+        },
+        {
+          "step_number": 2,
+          "title_ar": "\u062A\u0631\u0643\u064A\u0628 \u0635\u0648\u0635 \u0627\u0644\u0628\u0648\u0646\u0632\u0648 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u0628\u0627\u0644\u064A\u0648\u0632\u0648",
+          "title_en": "White Yuzu Ponzu Dressing",
+          "instruction_ar": "\u0627\u062E\u0644\u0637 \u0639\u0635\u064A\u0631 \u0627\u0644\u064A\u0648\u0632\u0648 \u0645\u0639 \u0635\u0644\u0635\u0629 \u0627\u0644\u0635\u0648\u064A\u0627 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u0648\u0642\u0644\u064A\u0644 \u0645\u0646 \u0632\u064A\u062A \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u0641\u064A \u0648\u0639\u0627\u0621 \u0632\u062C\u0627\u062C\u064A \u0635\u063A\u064A\u0631 \u0645\u0628\u0631\u062F.",
+          "instruction_en": "Whisk yuzu juice with white shoyu and drops of white truffle oil in a chilled glass vessel.",
+          "timer_minutes": 5,
+          "tip_ar": "\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0627\u0644\u0635\u0648\u064A\u0627 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 \u064A\u0645\u0646\u0639 \u0627\u0633\u0648\u062F\u0627\u062F \u0644\u0648\u0646 \u0627\u0644\u0633\u0645\u0643 \u0627\u0644\u0623\u0628\u064A\u0636 \u0627\u0644\u0634\u0641\u0627\u0641.",
+          "tip_en": "White soy preserves the pearl-pink translucency of fresh yellowtail."
+        },
+        {
+          "step_number": 3,
+          "title_ar": "\u0627\u0644\u062A\u0631\u062A\u064A\u0628 \u0648\u0627\u0644\u062A\u0632\u064A\u064A\u0646 \u0628\u0627\u0644\u062D\u0645\u0636\u064A\u0627\u062A \u0648\u0627\u0644\u0632\u0647\u0648\u0631",
+          "title_en": "Arranging, Dressing & Serving",
+          "instruction_ar": "\u0631\u062A\u0628 \u0634\u0631\u0627\u0626\u062D \u0627\u0644\u0647\u0627\u0645\u0627\u062A\u0634\u064A \u0628\u0634\u0643\u0644 \u062F\u0627\u0626\u0631\u064A \u0623\u0646\u064A\u0642 \u0639\u0644\u0649 \u0637\u0628\u0642 \u0633\u064A\u0631\u0627\u0645\u064A\u0643 \u062D\u062C\u0631\u064A \u0628\u0627\u0631\u062F. \u0627\u0633\u0643\u0628 \u0627\u0644\u0628\u0648\u0646\u0632\u0648 \u0628\u0631\u0642\u0629 \u062D\u0648\u0644 \u0627\u0644\u0633\u0645\u0643\u060C \u0648\u0632\u0639 \u0644\u0622\u0644\u0626 \u0643\u0627\u0641\u064A\u0627\u0631 \u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0648\u0632\u0647\u0648\u0631 \u0627\u0644\u0634\u064A\u0633\u0648 \u0648\u0642\u062F\u0645\u0647 \u0641\u0648\u0631\u0627\u064B.",
+          "instruction_en": "Arrange sashimi slices harmoniously on chilled slate ceramic plates. Spoon chilled ponzu around, dot with finger lime pearls, and finish with micro shiso.",
+          "timer_minutes": 5,
+          "tip_ar": "\u0642\u062F\u0645 \u0627\u0644\u0637\u0628\u0642 \u0628\u0627\u0631\u062F\u0627\u064B \u0641\u0648\u0631 \u062A\u062D\u0636\u064A\u0631\u0647 \u0644\u0644\u0627\u0633\u062A\u0645\u062A\u0627\u0639 \u0628\u0627\u0646\u0641\u062C\u0627\u0631 \u062D\u0645\u0648\u0636\u0629 \u0643\u0627\u0641\u064A\u0627\u0631 \u0627\u0644\u0644\u064A\u0645\u0648\u0646.",
+          "tip_en": "Serve immediately on iced plates to capture the popping citrus crunch."
+        }
+      ],
+      "nutrition": {
+        "calories": 280,
+        "protein": "32g",
+        "carbs": "4g",
+        "fats": "15g",
+        "fiber": "0.8g",
+        "sodium": "460mg"
+      },
+      "pairings": {
+        "drink_ar": "\u0634\u0627\u064A \u0627\u0644\u0645\u0627\u062A\u0634\u0627 \u0627\u0644\u0623\u062E\u0636\u0631 \u0627\u0644\u0628\u0627\u0631\u062F \u0628\u0627\u0644\u062E\u064A\u0627\u0631 \u0648\u0627\u0644\u0632\u0646\u062C\u0628\u064A\u0644",
+        "drink_en": "Cold Brew Ceremonial Matcha with Cucumber & Ginger",
+        "side_ar": "\u0633\u0644\u0637\u0629 \u0623\u0639\u0634\u0627\u0628 \u0627\u0644\u0628\u062D\u0631 \u0627\u0644\u0648\u0643\u0627\u0645\u064A \u0627\u0644\u0645\u062E\u0644\u0644\u0629 \u0628\u0632\u064A\u062A \u0627\u0644\u0633\u0645\u0633\u0645 \u0627\u0644\u0645\u062D\u0645\u0635",
+        "side_en": "Pickled Wakame Seaweed with Toasted Sesame Oil",
+        "notes_ar": "\u062D\u0645\u0648\u0636\u0629 \u0627\u0644\u064A\u0648\u0632\u0648 \u062A\u0630\u064A\u0628 \u062F\u0647\u0648\u0646 \u0627\u0644\u0647\u0627\u0645\u0627\u062A\u0634\u064A \u0627\u0644\u063A\u0646\u064A\u0629 \u0644\u062A\u0645\u0646\u062D \u0627\u0646\u062A\u0639\u0627\u0634\u0627\u064B \u0641\u0648\u0631\u064A\u0627\u064B.",
+        "notes_en": "Yuzu brightness beautifully lifts the lush, rich oil content of sashimi yellowtail."
+      }
+    },
+    {
+      "id": "recipe-7",
+      "title": "Smoked Freekeh Risotto with Wild Morels",
+      "title_ar": "\u0631\u064A\u0632\u0648\u062A\u0648 \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0627\u0644\u062E\u0636\u0631\u0627\u0621 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0645\u0639 \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0628\u0631\u064A",
+      "title_en": "Smoked Freekeh Risotto with Wild Morels",
+      "description_ar": "\u062D\u0628\u0648\u0628 \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0627\u0644\u0634\u0627\u0645\u064A\u0629 \u0627\u0644\u062E\u0636\u0631\u0627\u0621 \u0627\u0644\u0645\u062D\u0645\u0635\u0629 \u0639\u0644\u0649 \u0627\u0644\u062D\u0637\u0628\u060C \u0645\u0637\u0647\u0648\u0629 \u0628\u0623\u0633\u0644\u0648\u0628 \u0627\u0644\u0631\u064A\u0632\u0648\u062A\u0648 \u0627\u0644\u0625\u064A\u0637\u0627\u0644\u064A \u0641\u064A \u0645\u0631\u0642 \u0627\u0644\u0641\u0637\u0631 \u0627\u0644\u0628\u0631\u064A \u0627\u0644\u0645\u0639\u062A\u0642\u060C \u0645\u0639 \u062C\u0628\u0646\u0629 \u0627\u0644\u0642\u0634\u0642\u0648\u0627\u0646 \u0627\u0644\u0642\u062F\u064A\u0645\u0629 \u0648\u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0645\u0643\u0631\u0645\u0644.",
+      "description_en": "Artisanal green fire-roasted smoked freekeh prepared risotto-style in rich wild mushroom broth, folded with aged Kashkaval cheese and pan-glazed wild morels.",
+      "author_id": "chef-3",
+      "author_name_ar": "\u0634\u064A\u0641 \u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631",
+      "author_name_en": "Chef Tariq Mansour",
+      "author_avatar": "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=200&q=80",
+      "image": "https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=800&q=80"
+      ],
+      "cuisine": "Modern Levantine Fusion",
+      "cuisine_ar": "\u0634\u0627\u0645\u064A \u0645\u0639\u0627\u0635\u0631",
+      "cuisine_en": "Modern Levantine",
+      "category": "Vegetarian & Grains",
+      "category_ar": "\u0646\u0628\u0627\u062A\u064A \u0648\u062D\u0628\u0648\u0628",
+      "category_en": "Vegetarian & Grains",
+      "difficulty": "Medium",
+      "difficulty_ar": "\u0645\u062A\u0648\u0633\u0637",
+      "difficulty_en": "Medium",
+      "base_servings": 4,
+      "prep_time": 20,
+      "cook_time": 35,
+      "total_time": 55,
+      "calories": 440,
+      "likes_count": 870,
+      "saves_count": 590,
+      "rating": 4.9,
+      "reviews_count": 74,
+      "created_at": "2026-08-08",
+      "tags": [
+        "Freekeh",
+        "Morels",
+        "Risotto",
+        "Vegetarian",
+        "SmokedGrains"
+      ],
+      "ingredients": [
+        {
+          "id": "ing-701",
+          "name_ar": "\u062D\u0628\u0648\u0628 \u0641\u0631\u064A\u0643\u0629 \u062E\u0636\u0631\u0627\u0621 \u0645\u062F\u062E\u0646\u0629 \u0628\u0644\u062F\u064A\u0629",
+          "name_en": "Green Fire-Smoked Whole Freekeh",
+          "baseAmount": 250,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u063A\u0633\u0648\u0644\u0629 \u0648\u0645\u0646\u0642\u0648\u0639\u0629 15 \u062F\u0642\u064A\u0642\u0629",
+          "notes_en": "Rinsed and soaked for 15 mins"
+        },
+        {
+          "id": "ing-702",
+          "name_ar": "\u0641\u0637\u0631 \u0645\u0648\u0631\u064A\u0644 \u0628\u0631\u064A \u0645\u062C\u0641\u0641 \u0641\u0627\u062E\u0631",
+          "name_en": "Premium Dried Wild Morel Mushrooms",
+          "baseAmount": 40,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u0646\u0642\u0648\u0639 \u0641\u064A \u0645\u0627\u0621 \u062F\u0627\u0641\u0626 \u0648\u0645\u0635\u0641\u0649",
+          "notes_en": "Rehydrated in warm broth"
+        },
+        {
+          "id": "ing-703",
+          "name_ar": "\u0628\u0635\u0644 \u0634\u0627\u0644\u0648\u062A \u0641\u0631\u0646\u0633\u064A \u0645\u0641\u0631\u0648\u0645 \u0646\u0627\u0639\u0645\u0627\u064B",
+          "name_en": "Minced French Shallots",
+          "baseAmount": 3,
+          "unit_ar": "\u062D\u0628\u0629",
+          "unit_en": "pcs",
+          "notes_ar": "\u0644\u0642\u0627\u0639\u062F\u0629 \u0627\u0644\u0637\u0647\u064A",
+          "notes_en": "For aromatic base"
+        },
+        {
+          "id": "ing-704",
+          "name_ar": "\u0645\u0631\u0642 \u062E\u0636\u0627\u0631 \u0648\u0641\u0637\u0631 \u0628\u0631\u064A \u063A\u0646\u064A",
+          "name_en": "Rich Wild Mushroom Vegetable Stock",
+          "baseAmount": 800,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0645\u062D\u0641\u0648\u0638 \u0633\u0627\u062E\u0646\u0627\u064B \u0639\u0644\u0649 \u0646\u0627\u0631 \u0647\u0627\u062F\u0626\u0629",
+          "notes_en": "Kept simmering"
+        },
+        {
+          "id": "ing-705",
+          "name_ar": "\u0633\u0645\u0646 \u0628\u0644\u062F\u064A \u0628\u0642\u0631\u064A \u0645\u0639\u062A\u0642",
+          "name_en": "Artisanal Cultured Grass-Fed Ghee",
+          "baseAmount": 45,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0644\u062A\u062D\u0645\u064A\u0631 \u0648\u0625\u0636\u0641\u0627\u0621 \u0644\u0645\u0639\u0627\u0646",
+          "notes_en": "For saut\xE9ing"
+        },
+        {
+          "id": "ing-706",
+          "name_ar": "\u062C\u0628\u0646\u0629 \u0642\u0634\u0642\u0648\u0627\u0646 \u062C\u0628\u0644\u064A\u0629 \u0645\u0639\u062A\u0642\u0629 \u0645\u0628\u0634\u0648\u0631\u0629",
+          "name_en": "Aged Mountain Kashkaval Cheese",
+          "baseAmount": 60,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0644\u062F\u0645\u062C \u0627\u0644\u0646\u0647\u0627\u0626\u064A",
+          "notes_en": "For mantecatura finish"
+        },
+        {
+          "id": "ing-707",
+          "name_ar": "\u0623\u0648\u0631\u0627\u0642 \u0632\u0639\u062A\u0631 \u0628\u0631\u064A \u062C\u0627\u0641 \u0648\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646",
+          "name_en": "Wild Mountain Zaatar & EVOO",
+          "baseAmount": 10,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0644\u062A\u0632\u064A\u064A\u0646 \u0627\u0644\u0639\u0637\u0631\u064A",
+          "notes_en": "For finishing drizzle"
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "title_ar": "\u062A\u062D\u0645\u064A\u0635 \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0648\u0627\u0644\u0634\u0627\u0644\u0648\u062A \u0628\u0627\u0644\u0633\u0645\u0646",
+          "title_en": "Toasting Freekeh & Shallots",
+          "instruction_ar": "\u0641\u064A \u0642\u062F\u0631 \u0630\u064A \u0642\u0627\u0639\u062F\u0629 \u0633\u0645\u064A\u0643\u0629\u060C \u0630\u0648\u0628 \u0646\u0635\u0641 \u0643\u0645\u064A\u0629 \u0627\u0644\u0633\u0645\u0646 \u0648\u0634\u0648\u0651\u062D \u0627\u0644\u0634\u0627\u0644\u0648\u062A \u062D\u062A\u0649 \u064A\u0630\u0628\u0644. \u0623\u0636\u0641 \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0648\u062D\u0645\u0635\u0647\u0627 \u0644\u0645\u062F\u0629 4 \u062F\u0642\u0627\u0626\u0642 \u062D\u062A\u0649 \u062A\u0637\u0644\u0642 \u0631\u0627\u0626\u062D\u0629 \u0627\u0644\u062D\u0637\u0628 \u0648\u0627\u0644\u0645\u0643\u0633\u0631\u0627\u062A \u0627\u0644\u0645\u062D\u0645\u0635\u0629.",
+          "instruction_en": "Melt half the ghee in a heavy pot, sweat shallots, and toast freekeh for 4 minutes until deeply nutty and fragrant.",
+          "timer_minutes": 6,
+          "tip_ar": "\u0627\u0644\u062A\u062D\u0645\u064A\u0635 \u0628\u0627\u0644\u0633\u0645\u0646 \u064A\u063A\u0644\u0641 \u062D\u0628\u0627\u062A \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0628\u0637\u0628\u0642\u0629 \u062F\u0647\u0646\u064A\u0629 \u062A\u0645\u0646\u0639 \u062A\u0639\u062C\u0646\u0647\u0627 \u0648\u062A\u0628\u0631\u0632 \u0646\u0643\u0647\u0629 \u0627\u0644\u062F\u062E\u0627\u0646 \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629.",
+          "tip_en": "Toasting creates a protective fat barrier that preserves individual grain texture."
+        },
+        {
+          "step_number": 2,
+          "title_ar": "\u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062A\u062F\u0631\u064A\u062C\u064A \u0628\u0627\u0644\u0645\u0631\u0642 \u0627\u0644\u0633\u0627\u062E\u0646 (\u0627\u0644\u0631\u064A\u0632\u0648\u062A\u0648)",
+          "title_en": "Simmering with Mushroom Broth",
+          "instruction_ar": "\u0623\u0636\u0641 \u0645\u0631\u0642 \u0627\u0644\u0641\u0637\u0631 \u0627\u0644\u0633\u0627\u062E\u0646 \u0628\u0645\u0639\u062F\u0644 \u0645\u063A\u0631\u0641\u0629 \u0641\u064A \u0643\u0644 \u0645\u0631\u0629 \u0645\u0639 \u0627\u0644\u062A\u0642\u0644\u064A\u0628 \u0627\u0644\u0645\u0633\u062A\u0645\u0631 \u0639\u0644\u0649 \u0646\u0627\u0631 \u0645\u062A\u0648\u0633\u0637\u0629. \u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0628\u0648\u0628 \u062A\u0645\u062A\u0635 \u0627\u0644\u0633\u0627\u0626\u0644 \u0642\u0628\u0644 \u0625\u0636\u0627\u0641\u0629 \u0627\u0644\u0645\u063A\u0631\u0641\u0629 \u0627\u0644\u062A\u0627\u0644\u064A\u0629\u060C \u0648\u0643\u0631\u0631 \u0627\u0644\u0639\u0645\u0644\u064A\u0629 \u0644\u0645\u062F\u0629 25 \u062F\u0642\u064A\u0642\u0629.",
+          "instruction_en": "Add simmering mushroom stock one ladle at a time, stirring steadily. Allow grains to absorb liquid before adding the next ladle over 25 mins.",
+          "timer_minutes": 25,
+          "tip_ar": "\u0627\u0644\u062A\u0642\u0644\u064A\u0628 \u0627\u0644\u0645\u0633\u062A\u0645\u0631 \u064A\u0637\u0644\u0642 \u0627\u0644\u0646\u0634\u0627 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0644\u064A\u0639\u0637\u064A \u0642\u0648\u0627\u0645\u0627\u064B \u0643\u0631\u064A\u0645\u064A\u0627\u064B \u0644\u0632\u062C\u0627\u064B \u062F\u0648\u0646 \u0627\u0644\u062D\u0627\u062C\u0629 \u0644\u0644\u0643\u0631\u064A\u0645\u0629 \u0627\u0644\u0635\u0646\u0627\u0639\u064A\u0629.",
+          "tip_en": "Constant agitation releases natural starch to create a velvety creaminess."
+        },
+        {
+          "step_number": 3,
+          "title_ar": "\u0643\u0631\u0645\u0644\u0629 \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0628\u0631\u064A",
+          "title_en": "Caramelizing Wild Morels",
+          "instruction_ar": "\u0641\u064A \u0645\u0642\u0644\u0627\u0629 \u0645\u0646\u0641\u0635\u0644\u0629\u060C \u0634\u0648\u0651\u062D \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0645\u0646\u0642\u0648\u0639 \u0645\u0639 \u0645\u0644\u0639\u0642\u0629 \u0633\u0645\u0646 \u0648\u0631\u0634\u0629 \u0645\u0644\u062D \u0648\u0641\u0644\u0641\u0644 \u0623\u0633\u0648\u062F \u0644\u0645\u062F\u0629 4 \u062F\u0642\u0627\u0626\u0642 \u062D\u062A\u0649 \u064A\u0635\u0628\u062D \u0630\u0647\u0628\u064A\u0627\u064B \u0648\u0645\u0642\u0631\u0645\u0634 \u0627\u0644\u062D\u0648\u0627\u0641.",
+          "instruction_en": "In a separate skillet, sear rehydrated morel mushrooms in ghee for 4 minutes until golden and deeply aromatic.",
+          "timer_minutes": 5,
+          "tip_ar": "\u062A\u0623\u0643\u062F \u0645\u0646 \u062A\u062C\u0641\u064A\u0641 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u062C\u064A\u062F\u0627\u064B \u0642\u0628\u0644 \u0627\u0644\u062A\u062D\u0645\u064A\u0631 \u0644\u0636\u0645\u0627\u0646 \u0627\u0643\u062A\u0633\u0627\u0628\u0647 \u0644\u0648\u0646 \u0627\u0644\u0643\u0631\u0645\u0644\u0629 \u0627\u0644\u0630\u0647\u0628\u064A.",
+          "tip_en": "Thoroughly pat morels dry to achieve a crisp, golden saut\xE9 crust."
+        },
+        {
+          "step_number": 4,
+          "title_ar": "\u0627\u0644\u062F\u0645\u062C \u0627\u0644\u0646\u0647\u0627\u0626\u064A (Mantecatura) \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645",
+          "title_en": "Mantecatura & Plating",
+          "instruction_ar": "\u0627\u0631\u0641\u0639 \u0627\u0644\u0642\u062F\u0631 \u0639\u0646 \u0627\u0644\u0646\u0627\u0631\u060C \u0623\u0636\u0641 \u062C\u0628\u0646\u0629 \u0627\u0644\u0642\u0634\u0642\u0648\u0627\u0646 \u0648\u0628\u0642\u064A\u0629 \u0627\u0644\u0633\u0645\u0646 \u0648\u062D\u0631\u0643 \u0628\u0642\u0648\u0629 \u0644\u062A\u0643\u0648\u064A\u0646 \u0642\u0648\u0627\u0645 \u0645\u0648\u062C\u064A \u0643\u0631\u064A\u0645\u064A. \u0627\u0633\u0643\u0628 \u0627\u0644\u0631\u064A\u0632\u0648\u062A\u0648 \u0641\u064A \u0623\u0637\u0628\u0627\u0642 \u062F\u0627\u0641\u0626\u0629 \u0648\u0636\u0639 \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0645\u0643\u0631\u0645\u0644 \u0639\u0644\u0649 \u0627\u0644\u0648\u062C\u0647 \u0645\u0639 \u0631\u0634\u0629 \u0632\u0639\u062A\u0631 \u0628\u0631\u064A.",
+          "instruction_en": "Remove from heat, vigorously beat in grated Kashkaval and remaining ghee for the mantecatura wave. Spoon into warm bowls, crown with morels, and dust with wild zaatar.",
+          "timer_minutes": 4,
+          "tip_ar": "\u0625\u062C\u0631\u0627\u0621 \u0627\u0644\u0645\u0627\u0646\u062A\u064A\u0643\u0627\u062A\u0648\u0631\u0627 \u0628\u0639\u064A\u062F\u0627\u064B \u0639\u0646 \u0627\u0644\u0646\u0627\u0631 \u064A\u0636\u0645\u0646 \u0625\u0630\u0627\u0628\u0629 \u0627\u0644\u062C\u0628\u0646 \u062F\u0648\u0646 \u0627\u0646\u0641\u0635\u0627\u0644 \u0632\u064A\u0648\u062A\u0647.",
+          "tip_en": "Off-heat mantecatura emulsifies cheese and fat smoothly without splitting."
+        }
+      ],
+      "nutrition": {
+        "calories": 440,
+        "protein": "16g",
+        "carbs": "62g",
+        "fats": "16g",
+        "fiber": "9.5g",
+        "sodium": "480mg"
+      },
+      "pairings": {
+        "drink_ar": "\u0639\u0635\u064A\u0631 \u0627\u0644\u062A\u0641\u0627\u062D \u0627\u0644\u0623\u062E\u0636\u0631 \u0627\u0644\u0641\u0648\u0627\u0631 \u0628\u0627\u0644\u0632\u0646\u062C\u0628\u064A\u0644 \u0648\u0627\u0644\u0632\u0639\u062A\u0631 \u0627\u0644\u0628\u0631\u064A",
+        "drink_en": "Sparkling Green Apple Cider with Fresh Thyme & Ginger",
+        "side_ar": "\u0633\u0644\u0637\u0629 \u0627\u0644\u0634\u0645\u0646\u062F\u0631 \u0627\u0644\u0645\u0634\u0648\u064A \u0645\u0639 \u0627\u0644\u062C\u0648\u0632 \u0648\u062C\u0628\u0646\u0629 \u0627\u0644\u0645\u0627\u0639\u0632",
+        "side_en": "Roasted Beetroot Salad with Crumbled Goat Cheese",
+        "notes_ar": "\u0646\u0643\u0647\u0629 \u0627\u0644\u0641\u0631\u064A\u0643\u0629 \u0627\u0644\u062E\u0636\u0631\u0627\u0621 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u062A\u062A\u0643\u0627\u0645\u0644 \u0628\u0628\u0631\u0627\u0639\u0629 \u0645\u0639 \u063A\u0646\u0649 \u0641\u0637\u0631 \u0627\u0644\u0645\u0648\u0631\u064A\u0644 \u0627\u0644\u0628\u0631\u064A \u0648\u0627\u0644\u0623\u062C\u0628\u0627\u0646 \u0627\u0644\u062C\u0628\u0644\u064A\u0629.",
+        "notes_en": "Smoky earthy grain notes marry seamlessly with the umami profile of wild morels."
+      }
+    },
+    {
+      "id": "recipe-8",
+      "title": "Smoked Cardamom Dark Chocolate Ganache Tart",
+      "title_ar": "\u062A\u0627\u0631\u062A \u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u062F\u0627\u0643\u0646\u0629 \u0628\u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0645\u062F\u062E\u0646 \u0648\u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0635\u062E\u0631\u064A",
+      "title_en": "Smoked Cardamom Dark Chocolate Ganache Tart",
+      "description_ar": "\u0642\u0627\u0639\u062F\u0629 \u062A\u0627\u0631\u062A \u0628\u0633\u0643\u0648\u064A\u062A \u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u0647\u0634 \u0627\u0644\u0645\u0642\u0631\u0645\u0634 (P\xE2te Sabl\xE9e)\u060C \u0645\u062D\u0634\u0648\u0629 \u0628\u063A\u0627\u0646\u0627\u0634 \u062D\u0631\u064A\u0631\u064A \u063A\u0646\u064A \u0645\u0646 \u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0641\u0627\u0644\u0631\u0648\u0646\u0627 70% \u0627\u0644\u0645\u0646\u0642\u0648\u0639\u0629 \u0628\u062D\u0628\u0627\u062A \u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0645\u062F\u062E\u0646 \u0648\u0639\u0633\u0644 \u0627\u0644\u0646\u062D\u0644 \u0627\u0644\u0639\u0636\u0648\u064A.",
+      "description_en": "Crisp chocolate p\xE2te sabl\xE9e tart shell filled with a glossy silk ganache of 70% Valrhona dark chocolate infused with crushed smoked cardamom and raw honey.",
+      "author_id": "chef-2",
+      "author_name_ar": "\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
+      "author_name_en": "Chef Elena Rostova",
+      "author_avatar": "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=200&q=80",
+      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"
+      ],
+      "cuisine": "Contemporary Fusion P\xE2tisserie",
+      "cuisine_ar": "\u062D\u0644\u0648\u064A\u0627\u062A \u0645\u0639\u0627\u0635\u0631\u0629",
+      "cuisine_en": "Contemporary P\xE2tisserie",
+      "category": "Desserts & Pastry",
+      "category_ar": "\u062D\u0644\u0648\u064A\u0627\u062A \u0648\u0645\u0639\u062C\u0646\u0627\u062A",
+      "category_en": "Desserts & Pastry",
+      "difficulty": "Hard",
+      "difficulty_ar": "\u0645\u062A\u0642\u062F\u0645",
+      "difficulty_en": "Hard",
+      "base_servings": 8,
+      "prep_time": 45,
+      "cook_time": 25,
+      "total_time": 70,
+      "calories": 490,
+      "likes_count": 1540,
+      "saves_count": 1040,
+      "rating": 4.96,
+      "reviews_count": 165,
+      "created_at": "2026-08-09",
+      "tags": [
+        "ChocolateTart",
+        "Ganache",
+        "Cardamom",
+        "Valrhona",
+        "FineDesserts"
+      ],
+      "ingredients": [
+        {
+          "id": "ing-801",
+          "name_ar": "\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u062F\u0627\u0643\u0646\u0629 \u0641\u0627\u0644\u0631\u0648\u0646\u0627 \u063A\u0648\u0627\u0646\u0627\u062E\u0627 70%",
+          "name_en": "Valrhona Guanaja 70% Dark Chocolate",
+          "baseAmount": 250,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0645\u0641\u0631\u0648\u0645\u0629 \u0646\u0627\u0639\u0645\u0627\u064B",
+          "notes_en": "Finely chopped callets"
+        },
+        {
+          "id": "ing-802",
+          "name_ar": "\u0643\u0631\u064A\u0645\u0629 \u062E\u0641\u0642 \u0637\u0627\u0632\u062C\u0629 36% \u062F\u0633\u0645",
+          "name_en": "Fresh Heavy Cream (36%)",
+          "baseAmount": 220,
+          "unit_ar": "\u0645\u0644",
+          "unit_en": "ml",
+          "notes_ar": "\u0644\u0646\u0642\u0639 \u0627\u0644\u0647\u064A\u0644 \u0648\u0627\u0644\u063A\u0627\u0646\u0627\u0634",
+          "notes_en": "For cardamom infusion"
+        },
+        {
+          "id": "ing-803",
+          "name_ar": "\u062D\u0628\u0648\u0628 \u0647\u064A\u0644 \u0623\u062E\u0636\u0631 \u0645\u062F\u062E\u0646\u0629 \u0648\u0645\u0637\u062D\u0648\u0646\u0629",
+          "name_en": "Smoked Green Cardamom Pods",
+          "baseAmount": 8,
+          "unit_ar": "\u062D\u0628\u0629",
+          "unit_en": "pcs",
+          "notes_ar": "\u0645\u062C\u0631\u0648\u0634\u0629 \u062C\u0632\u0626\u064A\u0627\u064B",
+          "notes_en": "Lightly crushed"
+        },
+        {
+          "id": "ing-804",
+          "name_ar": "\u0639\u0633\u0644 \u0633\u062F\u0631 \u0628\u0631\u064A \u0646\u0642\u064A",
+          "name_en": "Pure Wild Sidr Honey",
+          "baseAmount": 30,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0625\u0636\u0641\u0627\u0621 \u0644\u0645\u0639\u0627\u0646 \u0648\u0645\u0631\u0648\u0646\u0629 \u0644\u0644\u063A\u0627\u0646\u0627\u0634",
+          "notes_en": "Invert sugar for ganache shine"
+        },
+        {
+          "id": "ing-805",
+          "name_ar": "\u0632\u0628\u062F\u0629 \u0641\u0631\u0646\u0633\u064A\u0629 \u063A\u064A\u0631 \u0645\u0645\u0644\u062D\u0629",
+          "name_en": "Unsalted French Normandy Butter",
+          "baseAmount": 110,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0644\u0639\u062C\u064A\u0646\u0629 \u0648\u0627\u0644\u063A\u0627\u0646\u0627\u0634",
+          "notes_en": "Softened for emulsification"
+        },
+        {
+          "id": "ing-806",
+          "name_ar": "\u062F\u0642\u064A\u0642 \u0643\u0627\u0643\u0627\u0648 \u0647\u0648\u0644\u0646\u062F\u064A \u062F\u0627\u0643\u0646 \u0645\u0639\u0627\u0644\u062C",
+          "name_en": "Dutch Processed Dark Cocoa Powder",
+          "baseAmount": 35,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0642\u0627\u0639\u062F\u0629 \u0639\u062C\u064A\u0646\u0629 \u0627\u0644\u062A\u0627\u0631\u062A",
+          "notes_en": "For sable crust"
+        },
+        {
+          "id": "ing-807",
+          "name_ar": "\u062F\u0642\u064A\u0642 \u0642\u0645\u062D \u062D\u0644\u0648\u064A\u0627\u062A \u0641\u0627\u062E\u0631",
+          "name_en": "Pastry Flour",
+          "baseAmount": 180,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0639\u062C\u064A\u0646\u0629 \u0627\u0644\u0633\u0627\u0628\u0644\u064A\u0647",
+          "notes_en": "For tart shell"
+        },
+        {
+          "id": "ing-808",
+          "name_ar": "\u0645\u0644\u062D \u0628\u062D\u0631\u064A \u0645\u0642\u0631\u0645\u0634 \u0645\u062F\u062E\u0646 (Maldon)",
+          "name_en": "Maldon Smoked Sea Salt Flakes",
+          "baseAmount": 5,
+          "unit_ar": "\u062C\u0631\u0627\u0645",
+          "unit_en": "g",
+          "notes_ar": "\u0644\u0644\u062A\u0632\u064A\u064A\u0646 \u0627\u0644\u0646\u0647\u0627\u0626\u064A",
+          "notes_en": "For finishing crystals"
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "title_ar": "\u062A\u062D\u0636\u064A\u0631 \u0639\u062C\u064A\u0646\u0629 \u0627\u0644\u0633\u0627\u0628\u0644\u064A\u0647 \u0628\u0627\u0644\u0643\u0627\u0643\u0627\u0648 \u0648\u0627\u0644\u062E\u0628\u0632 \u0627\u0644\u0623\u0639\u0645\u0649",
+          "title_en": "Chocolate P\xE2te Sabl\xE9e Blind Baking",
+          "instruction_ar": "\u0627\u0641\u0631\u0643 \u0627\u0644\u0632\u0628\u062F\u0629 \u0645\u0639 \u0627\u0644\u062F\u0642\u064A\u0642 \u0648\u0627\u0644\u0643\u0627\u0643\u0627\u0648 \u0648\u0633\u0643\u0631 \u0627\u0644\u0628\u0648\u062F\u0631\u0629 \u062D\u062A\u0649 \u064A\u0635\u0628\u062D \u0643\u0641\u062A\u0627\u062A \u0627\u0644\u062E\u0628\u0632\u060C \u0627\u062C\u0645\u0639 \u0627\u0644\u0639\u062C\u064A\u0646 \u0628\u0627\u0644\u0628\u064A\u0636 \u0648\u0627\u0641\u0631\u062F\u0647 \u0641\u064A \u0642\u0648\u0627\u0644\u0628 \u0627\u0644\u062A\u0627\u0631\u062A \u0627\u0644\u0645\u0641\u0631\u063A\u0629. \u0627\u062E\u0628\u0632 \u0639\u0644\u0649 \u062D\u0631\u0627\u0631\u0629 170 \u0645\u0626\u0648\u064A\u0629 \u0645\u0639 \u0623\u062B\u0642\u0627\u0644 \u0627\u0644\u062E\u0628\u0632 \u0644\u0645\u062F\u0629 18 \u062F\u0642\u064A\u0642\u0629.",
+          "instruction_en": "Rub butter into flour, cocoa, and icing sugar. Bind with egg, line perforated tart rings, and blind bake with weights at 170\xB0C for 18 mins until crisp.",
+          "timer_minutes": 25,
+          "tip_ar": "\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0627\u0644\u0642\u0648\u0627\u0644\u0628 \u0627\u0644\u062F\u0627\u0626\u0631\u064A\u0629 \u0627\u0644\u0645\u062B\u0642\u0628\u0629 \u064A\u0645\u0646\u062D \u0623\u0637\u0631\u0627\u0641 \u0627\u0644\u062A\u0627\u0631\u062A \u0627\u0633\u062A\u0642\u0627\u0645\u0629 \u0647\u0646\u062F\u0633\u064A\u0629 \u062D\u0627\u062F\u0629 \u0643\u0627\u0644\u0645\u062D\u062A\u0631\u0641\u064A\u0646.",
+          "tip_en": "Perforated tart rings allow even steam escape, yielding crisp razor-sharp edges."
+        },
+        {
+          "step_number": 2,
+          "title_ar": "\u0646\u0642\u0639 \u0627\u0644\u0643\u0631\u064A\u0645\u0629 \u0628\u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0645\u062F\u062E\u0646",
+          "title_en": "Smoked Cardamom Infusion",
+          "instruction_ar": "\u0627\u063A\u0644\u0650 \u0627\u0644\u0643\u0631\u064A\u0645\u0629 \u0645\u0639 \u062D\u0628\u0648\u0628 \u0627\u0644\u0647\u064A\u0644 \u0627\u0644\u0645\u062F\u062E\u0646 \u0627\u0644\u0645\u062C\u0631\u0648\u0634\u0629 \u0648\u0639\u0633\u0644 \u0627\u0644\u0633\u062F\u0631\u060C \u0627\u0631\u0641\u0639\u0647\u0627 \u0639\u0646 \u0627\u0644\u0646\u0627\u0631 \u0648\u063A\u0637\u0647\u0627 \u0648\u0627\u062A\u0631\u0643\u0647\u0627 \u0644\u062A\u0646\u0642\u0639 \u0644\u0645\u062F\u0629 15 \u062F\u0642\u064A\u0642\u0629\u060C \u062B\u0645 \u0635\u0641\u0647\u0627 \u0648\u0623\u0639\u062F \u062A\u0633\u062E\u064A\u0646\u0647\u0627 \u0642\u0628\u0644 \u0633\u0643\u0628\u0647\u0627 \u0639\u0644\u0649 \u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629.",
+          "instruction_en": "Bring cream, crushed smoked cardamom, and raw honey to a simmer. Cover and steep for 15 mins, then strain and reheat.",
+          "timer_minutes": 15,
+          "tip_ar": "\u0627\u0644\u0646\u0642\u0639 \u0628\u0627\u0644\u063A\u0637\u0627\u0621 \u064A\u062D\u0628\u0633 \u0627\u0644\u0632\u064A\u0648\u062A \u0627\u0644\u0639\u0637\u0631\u064A\u0629 \u0627\u0644\u0637\u064A\u0627\u0631\u0629 \u0644\u0644\u0647\u064A\u0644 \u062F\u0627\u062E\u0644 \u0627\u0644\u0643\u0631\u064A\u0645\u0629.",
+          "tip_en": "Covering during steeping preserves volatile aromatic cardamom oils."
+        },
+        {
+          "step_number": 3,
+          "title_ar": "\u0627\u0633\u062A\u062D\u0644\u0627\u0628 \u0627\u0644\u063A\u0627\u0646\u0627\u0634 \u0627\u0644\u062D\u0631\u064A\u0631\u064A \u0648\u0627\u0644\u0635\u0628",
+          "title_en": "Ganache Emulsion & Pouring",
+          "instruction_ar": "\u0627\u0633\u0643\u0628 \u0627\u0644\u0643\u0631\u064A\u0645\u0629 \u0627\u0644\u0633\u0627\u062E\u0646\u0629 \u0639\u0644\u0649 \u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u0645\u0641\u0631\u0648\u0645\u0629 \u0639\u0644\u0649 3 \u062F\u0641\u0639\u0627\u062A\u060C \u0648\u0627\u062E\u0641\u0642 \u0628\u0627\u0644\u0628\u0644\u0646\u062F\u0631 \u0627\u0644\u064A\u062F\u0648\u064A \u062F\u0648\u0646 \u0625\u062F\u062E\u0627\u0644 \u0641\u0642\u0627\u0639\u0627\u062A \u0647\u0648\u0627\u0621 \u062D\u062A\u0649 \u062A\u062D\u0635\u0644 \u0639\u0644\u0649 \u0645\u0633\u062A\u062D\u0644\u0628 \u0644\u0627\u0645\u0639 \u0648\u0646\u0627\u0639\u0645. \u0623\u0636\u0641 \u0627\u0644\u0632\u0628\u062F\u0629 \u0627\u0644\u0645\u062A\u0628\u0642\u064A\u0629 \u0648\u0627\u0633\u0643\u0628 \u0627\u0644\u063A\u0627\u0646\u0627\u0634 \u0641\u064A \u0642\u0648\u0627\u0644\u0628 \u0627\u0644\u062A\u0627\u0631\u062A.",
+          "instruction_en": "Pour hot infused cream over chopped chocolate in 3 additions. Emulsify with an immersion blender held beneath surface, blend in butter, and pour into baked shells.",
+          "timer_minutes": 10,
+          "tip_ar": "\u0625\u0628\u0642\u0627\u0621 \u0631\u0623\u0633 \u0627\u0644\u062E\u0644\u0627\u0637 \u0627\u0644\u064A\u062F\u0648\u064A \u0645\u063A\u0645\u0648\u0631\u0627\u064B \u0641\u064A \u0627\u0644\u0642\u0627\u0639 \u064A\u0645\u0646\u0639 \u062F\u062E\u0648\u0644 \u0641\u0642\u0627\u0639\u0627\u062A \u0627\u0644\u0647\u0648\u0627\u0621 \u0627\u0644\u0645\u0632\u0639\u062C\u0629 \u0625\u0644\u0649 \u0633\u0637\u062D \u0627\u0644\u063A\u0627\u0646\u0627\u0634.",
+          "tip_en": "Keep immersion blender submerged flat to avoid air bubbles on the glossy surface."
+        },
+        {
+          "step_number": 4,
+          "title_ar": "\u0627\u0644\u062A\u0645\u0627\u0633\u0643 \u0648\u0627\u0644\u062A\u0632\u064A\u064A\u0646 \u0628\u0627\u0644\u0645\u0644\u062D \u0648\u0627\u0644\u0630\u0647\u0628",
+          "title_en": "Setting & Maldon Salt Finishing",
+          "instruction_ar": "\u0627\u062A\u0631\u0643 \u0627\u0644\u062A\u0627\u0631\u062A \u0644\u064A\u062A\u0645\u0627\u0633\u0643 \u0641\u064A \u062F\u0631\u062C\u0629 \u062D\u0631\u0627\u0631\u0629 \u0627\u0644\u063A\u0631\u0641\u0629 (18-20 \u0645\u0626\u0648\u064A\u0629) \u0644\u0645\u062F\u0629 \u0633\u0627\u0639\u062A\u064A\u0646. \u0642\u0628\u0644 \u0627\u0644\u062A\u0642\u062F\u064A\u0645 \u0645\u0628\u0627\u0634\u0631\u0629\u060C \u0648\u0632\u0639 \u0628\u0644\u0648\u0631\u0627\u062A \u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0645\u062F\u062E\u0646 \u0648\u0631\u0642\u0627\u0626\u0642 \u0627\u0644\u0630\u0647\u0628 \u0627\u0644\u063A\u0630\u0627\u0626\u064A \u0639\u0644\u0649 \u0627\u0644\u0633\u0637\u062D \u0627\u0644\u0644\u0627\u0645\u0639.",
+          "instruction_en": "Let set at room temperature (18-20\xB0C) for 2 hours. Just before serving, crown with smoked Maldon sea salt crystals and edible gold leaf.",
+          "timer_minutes": 120,
+          "tip_ar": "\u0627\u0644\u062A\u0628\u0631\u064A\u062F \u0641\u064A \u0627\u0644\u062B\u0644\u0627\u062C\u0629 \u0642\u062F \u064A\u0641\u0642\u062F \u0627\u0644\u063A\u0627\u0646\u0627\u0634 \u0628\u0631\u064A\u0642\u0647 \u0627\u0644\u0644\u0627\u0645\u0639 \u0648\u064A\u062C\u0639\u0644\u0647 \u0628\u0627\u0647\u062A\u0627\u064B\u061B \u064A\u0641\u0636\u0644 \u0627\u0644\u062A\u0645\u0627\u0633\u0643 \u0627\u0644\u0628\u0637\u064A\u0621 \u0641\u064A \u063A\u0631\u0641\u0629 \u0645\u0643\u064A\u0641\u0629.",
+          "tip_en": "Avoid fridge condensation which dulls ganache gloss; allow setting in a cool room."
+        }
+      ],
+      "nutrition": {
+        "calories": 490,
+        "protein": "7g",
+        "carbs": "46g",
+        "fats": "32g",
+        "fiber": "5.4g",
+        "sodium": "190mg"
+      },
+      "pairings": {
+        "drink_ar": "\u0625\u0633\u0628\u0631\u064A\u0633\u0648 \u0633\u064A\u0646\u063A\u0644 \u0623\u0648\u0631\u064A\u062C\u064A\u0646 \u0625\u062B\u064A\u0648\u0628\u064A \u0628\u0646\u0641\u062D\u0627\u062A \u0627\u0644\u064A\u0627\u0633\u0645\u064A\u0646 \u0648\u0627\u0644\u062A\u0648\u062A",
+        "drink_en": "Single-Origin Ethiopian Espresso with Floral Berry Notes",
+        "side_ar": "\u0622\u064A\u0633 \u0643\u0631\u064A\u0645 \u0627\u0644\u0641\u0627\u0646\u064A\u0644\u064A\u0627 \u0627\u0644\u0645\u062F\u062E\u0646\u0629 \u0627\u0644\u0645\u0635\u0646\u0648\u0639\u0629 \u0645\u0646\u0632\u0644\u064A\u0627\u064B",
+        "side_en": "Artisanal Smoked Tahitian Vanilla Gelato",
+        "notes_ar": "\u0645\u0631\u0627\u0631\u0629 \u0627\u0644\u0634\u0648\u0643\u0648\u0644\u0627\u062A\u0629 \u0627\u0644\u062F\u0627\u0643\u0646\u0629 \u0648\u062A\u0648\u0627\u0628\u0644 \u0627\u0644\u0647\u064A\u0644 \u062A\u062A\u0623\u0644\u0642 \u0628\u0648\u062C\u0648\u062F \u0628\u0644\u0648\u0631\u0627\u062A \u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0645\u062F\u062E\u0646 \u0627\u0644\u0645\u0628\u0627\u063A\u062A.",
+        "notes_en": "Crunchy smoked sea salt crystals heighten the intense aromatics of cocoa and spice."
+      }
     }
+  ];
+
+  // js/data/fixtures/supplies.js
+  var SUPPLY_FIXTURES = [
+    {
+      "id": "supply-1",
+      "name_ar": "\u0639\u062C\u0627\u0646\u0629 \u0644\u0648\u0644\u0628\u064A\u0629 \u062A\u062C\u0627\u0631\u064A\u0629 \u0644\u0644\u0645\u062E\u0627\u0628\u0632 \u0648\u0627\u0644\u0645\u0637\u0627\u0639\u0645 50 \u0644\u062A\u0631",
+      "name_en": "Commercial Heavy-Duty Spiral Dough Mixer 50L",
+      "category": "heavy_equipment",
+      "category_ar": "\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u062B\u0642\u064A\u0644\u0629",
+      "category_en": "Heavy Kitchen Equipment",
+      "price": 14500,
+      "price_formatted": "14,500 \u0631.\u0633",
+      "currency": "SAR",
+      "moq": 1,
+      "unit_ar": "\u0648\u062D\u062F\u0629",
+      "unit_en": "Unit",
+      "in_stock": true,
+      "stock_count": 8,
+      "image": "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description_ar": "\u0639\u062C\u0627\u0646\u0629 \u062D\u0644\u0632\u0648\u0646\u064A\u0629 \u0635\u0646\u0627\u0639\u064A\u0629 \u0639\u0627\u0644\u064A\u0629 \u0627\u0644\u062A\u062D\u0645\u0644 \u0628\u0647\u064A\u0643\u0644 \u0645\u062A\u064A\u0646 \u0645\u0646 \u0627\u0644\u0641\u0648\u0644\u0627\u0630 \u0627\u0644\u0645\u0642\u0627\u0648\u0645 \u0644\u0644\u0635\u062F\u0623 AISI 304\u060C \u0645\u0632\u0648\u062F\u0629 \u0628\u0645\u062D\u0631\u0643 \u0645\u0632\u062F\u0648\u062C \u0627\u0644\u0633\u0631\u0639\u0629 \u0648\u0645\u0624\u0642\u062A \u0631\u0642\u0645\u064A \u0648\u062D\u0627\u062C\u0632 \u0623\u0645\u0627\u0646 \u0630\u0643\u064A \u0645\u0646\u0627\u0633\u0628\u0629 \u0644\u0644\u062A\u0634\u063A\u064A\u0644 \u0627\u0644\u0645\u0633\u062A\u0645\u0631 \u0641\u064A \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0648\u0627\u0644\u0645\u062E\u0627\u0628\u0632 \u0627\u0644\u0631\u0627\u0642\u064A\u0629.",
+      "description_en": "Industrial-grade spiral mixer with AISI 304 food-grade stainless steel bowl. Equipped with dual-speed high-torque motor, digital programmable timer, and auto-shutoff safety guard for continuous bakery operation.",
+      "supplier": {
+        "id": "supplier-1",
+        "name_ar": "\u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0644\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u062A\u062C\u0627\u0631\u064A\u0629",
+        "name_en": "Al-Fannar Commercial Kitchens Co.",
+        "avatar": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&q=80",
+        "verified": true,
+        "rating": 4.96,
+        "reviews_count": 184,
+        "response_rate": "98%",
+        "response_time": "< 1 hour",
+        "location_ar": "\u0627\u0644\u0631\u064A\u0627\u0636\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
+        "location_en": "Riyadh, Saudi Arabia"
+      },
+      "specs": [
+        {
+          "label_ar": "\u0633\u0639\u0629 \u0627\u0644\u0648\u0639\u0627\u0621",
+          "label_en": "Bowl Capacity",
+          "value_ar": "50 \u0644\u062A\u0631 (30 \u0643\u063A \u0639\u062C\u064A\u0646)",
+          "value_en": "50 Liters (30kg Dough)"
+        },
+        {
+          "label_ar": "\u0642\u0648\u0629 \u0627\u0644\u0645\u062D\u0631\u0643",
+          "label_en": "Motor Power",
+          "value_ar": "3.0 \u0643\u064A\u0644\u0648\u0648\u0627\u0637 - 380 \u0641\u0648\u0644\u062A",
+          "value_en": "3.0 kW - 380V Three Phase"
+        },
+        {
+          "label_ar": "\u0627\u0644\u0633\u0631\u0639\u0627\u062A",
+          "label_en": "Speed Levels",
+          "value_ar": "\u0633\u0631\u0639\u062A\u0627\u0646 (125 / 250 \u062F\u0648\u0631\u0629/\u062F\u0642\u064A\u0642\u0629)",
+          "value_en": "2 Speeds (125 / 250 RPM)"
+        },
+        {
+          "label_ar": "\u0645\u0627\u062F\u0629 \u0627\u0644\u0635\u0646\u0639",
+          "label_en": "Build Material",
+          "value_ar": "\u0633\u062A\u0627\u0646\u0644\u0633 \u0633\u062A\u064A\u0644 AISI 304 \u0635\u062D\u064A",
+          "value_en": "Food-Grade AISI 304 Stainless Steel"
+        }
+      ],
+      "certifications": [
+        "CE Certified",
+        "ISO 9001:2015",
+        "SASO Approved",
+        "NSF Listed"
+      ],
+      "lead_time_ar": "3 \u0625\u0644\u0649 5 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
+      "lead_time_en": "3 to 5 Business Days",
+      "warranty_ar": "\u0636\u0645\u0627\u0646 \u0634\u0627\u0645\u0644 \u0644\u0645\u062F\u0629 24 \u0634\u0647\u0631\u0627\u064B \u0645\u0639 \u0627\u0644\u0635\u064A\u0627\u0646\u0629 \u0627\u0644\u0645\u0648\u0642\u0639\u064A\u0629",
+      "warranty_en": "24 Months Full Warranty with On-Site Maintenance"
+    },
+    {
+      "id": "supply-2",
+      "name_ar": "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0628\u0643\u0631 \u0645\u0645\u062A\u0627\u0632 \u0646\u062E\u0628 \u0623\u0648\u0644 \u0628\u0627\u0644\u062C\u0645\u0644\u0629 50 \u0644\u062A\u0631 - \u0627\u0644\u062C\u0648\u0641",
+      "name_en": "Extra Virgin Olive Oil Bulk Drum 50L - Al-Jouf Reserve",
+      "category": "bulk_ingredients",
+      "category_ar": "\u0645\u0643\u0648\u0646\u0627\u062A \u062E\u0627\u0645 \u0628\u0627\u0644\u062C\u0645\u0644\u0629",
+      "category_en": "Wholesale Bulk Ingredients",
+      "price": 1850,
+      "price_formatted": "1,850 \u0631.\u0633",
+      "currency": "SAR",
+      "moq": 2,
+      "unit_ar": "\u0628\u0631\u0645\u064A\u0644 (50 \u0644\u062A\u0631)",
+      "unit_en": "Drum (50L)",
+      "in_stock": true,
+      "stock_count": 45,
+      "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description_ar": "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0628\u0643\u0631 \u0645\u0645\u062A\u0627\u0632 \u0645\u0639\u0635\u0648\u0631 \u0639\u0644\u0649 \u0627\u0644\u0628\u0627\u0631\u062F \u0645\u0646 \u0645\u0632\u0627\u0631\u0639 \u0627\u0644\u062C\u0648\u0641 \u0627\u0644\u0634\u0645\u0627\u0644\u064A\u0629\u060C \u0646\u0633\u0628\u0629 \u062D\u0645\u0648\u0636\u0629 \u0623\u0642\u0644 \u0645\u0646 0.2% \u0645\u0639 \u0646\u0643\u0647\u0629 \u0641\u0627\u0643\u0647\u064A\u0629 \u0639\u0634\u0628\u064A\u0629 \u0645\u0645\u064A\u0632\u0629\u060C \u0645\u0639\u0628\u0623 \u0641\u064A \u0628\u0631\u0627\u0645\u064A\u0644 \u0633\u062A\u0627\u0646\u0644\u0633 \u0633\u062A\u064A\u0644 \u0645\u0639\u0632\u0648\u0644\u0629 \u0648\u0645\u062D\u0643\u0645\u0629 \u0627\u0644\u0625\u063A\u0644\u0627\u0642 \u0644\u0644\u0637\u0647\u0627\u0629 \u0648\u0627\u0644\u0645\u0637\u0627\u0639\u0645.",
+      "description_en": "First cold-pressed extra virgin olive oil from the fertile groves of Al-Jouf. Acidity below 0.2% with intense herbaceous notes, packaged in nitrogen-sealed food-safe drums for culinary enterprises.",
+      "supplier": {
+        "id": "supplier-2",
+        "name_ar": "\u0645\u0639\u0627\u0635\u0631 \u0627\u0644\u062C\u0648\u0641 \u0627\u0644\u0630\u0647\u0628\u064A\u0629 \u0627\u0644\u0632\u0631\u0627\u0639\u064A\u0629",
+        "name_en": "Al-Jouf Golden Olive Mills Ltd.",
+        "avatar": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=200&q=80",
+        "verified": true,
+        "rating": 4.98,
+        "reviews_count": 310,
+        "response_rate": "99%",
+        "response_time": "< 30 mins",
+        "location_ar": "\u0633\u0643\u0627\u0643\u0627 - \u0627\u0644\u062C\u0648\u0641\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
+        "location_en": "Al-Jouf, Saudi Arabia"
+      },
+      "specs": [
+        {
+          "label_ar": "\u0646\u0633\u0628\u0629 \u0627\u0644\u062D\u0645\u0648\u0636\u0629",
+          "label_en": "Acidity Level",
+          "value_ar": "< 0.18% (\u0641\u0627\u0626\u0642 \u0627\u0644\u062C\u0648\u062F\u0629)",
+          "value_en": "< 0.18% Ultra-Premium"
+        },
+        {
+          "label_ar": "\u0637\u0631\u064A\u0642\u0629 \u0627\u0644\u0639\u0635\u0631",
+          "label_en": "Extraction Method",
+          "value_ar": "\u0639\u0635\u0631\u0629 \u0623\u0648\u0644\u0649 \u0639\u0644\u0649 \u0627\u0644\u0628\u0627\u0631\u062F (22\xB0C)",
+          "value_en": "First Cold Pressed (22\xB0C)"
+        },
+        {
+          "label_ar": "\u0645\u0648\u0633\u0645 \u0627\u0644\u062D\u0635\u0627\u062F",
+          "label_en": "Harvest Season",
+          "value_ar": "\u062D\u0635\u0627\u062F \u0634\u062A\u0627\u0621 2026",
+          "value_en": "Winter 2026 Reserve Harvest"
+        },
+        {
+          "label_ar": "\u0627\u0644\u062A\u063A\u0644\u064A\u0641",
+          "label_en": "Packaging",
+          "value_ar": "\u0628\u0631\u0645\u064A\u0644 \u0633\u062A\u0627\u0646\u0644\u0633 \u0633\u062A\u064A\u0644 \u063A\u0630\u0627\u0626\u064A \u0645\u062D\u0643\u0645",
+          "value_en": "Nitrogen-Flushed Stainless Steel Drum"
+        }
+      ],
+      "certifications": [
+        "Saudi Organic Certified",
+        "SFDA Approved",
+        "Global G.A.P.",
+        "ISO 22000"
+      ],
+      "lead_time_ar": "2 \u0625\u0644\u0649 4 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
+      "lead_time_en": "2 to 4 Business Days",
+      "warranty_ar": "\u0636\u0645\u0627\u0646 \u0627\u0644\u062C\u0648\u062F\u0629 \u0648\u0627\u0644\u0646\u0642\u0627\u0621 100% \u0645\u0639 \u0634\u0647\u0627\u062F\u0629 \u0627\u0644\u062A\u062D\u0644\u064A\u0644 \u0627\u0644\u0645\u062E\u0628\u0631\u064A",
+      "warranty_en": "100% Purity Guarantee with Certificate of Analysis (COA)"
+    },
+    {
+      "id": "supply-3",
+      "name_ar": "\u0633\u0643\u064A\u0646 \u0627\u0644\u0634\u064A\u0641 \u0627\u0644\u0627\u062D\u062A\u0631\u0627\u0641\u064A \u062F\u0645\u0634\u0642\u064A 67 \u0637\u0628\u0642\u0629 240 \u0645\u0644\u0645",
+      "name_en": "67-Layer Damascus Japanese Chef Knife 240mm (Gyuto)",
+      "category": "knives_cutlery",
+      "category_ar": "\u0633\u0643\u0627\u0643\u064A\u0646 \u0648\u0623\u062F\u0648\u0627\u062A \u0627\u0644\u0642\u0637\u0639",
+      "category_en": "Knives & Cutlery",
+      "price": 890,
+      "price_formatted": "890 \u0631.\u0633",
+      "currency": "SAR",
+      "moq": 5,
+      "unit_ar": "\u0642\u0637\u0639\u0629",
+      "unit_en": "Pcs",
+      "in_stock": true,
+      "stock_count": 32,
+      "image": "https://images.unsplash.com/photo-1593618998160-e34014e67546?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1593618998160-e34014e67546?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description_ar": "\u0633\u0643\u064A\u0646 \u063A\u064A\u0648\u062A\u0648 \u064A\u0627\u0628\u0627\u0646\u064A \u0645\u0635\u0646\u0648\u0639 \u064A\u062F\u0648\u064A\u0627\u064B \u0645\u0646 \u0627\u0644\u0641\u0648\u0644\u0627\u0630 \u0627\u0644\u062F\u0645\u0634\u0642\u064A \u0628\u0642\u0644\u0628 \u0645\u0646 \u0635\u0644\u0628 VG-10 \u0641\u0627\u0626\u0642 \u0627\u0644\u0635\u0644\u0627\u0628\u0629 (60\xB12 HRC)\u060C \u0645\u0639 \u0645\u0642\u0628\u0636 \u062E\u0634\u0628\u064A \u062B\u0645\u0627\u0646\u064A \u0627\u0644\u0623\u0636\u0644\u0627\u0639 \u0645\u0646 \u062E\u0634\u0628 \u0627\u0644\u0635\u062D\u0631\u0627\u0621 \u0627\u0644\u0635\u0644\u0628 \u0644\u062A\u0648\u0627\u0632\u0646 \u0645\u062B\u0627\u0644\u064A \u0623\u062B\u0646\u0627\u0621 \u0627\u0644\u0639\u0645\u0644 \u0627\u0644\u064A\u0648\u0645\u064A \u0627\u0644\u0634\u0627\u0642.",
+      "description_en": "Hand-forged Japanese Gyuto chef knife with 67 layers of Damascus cladding over a VG-10 high-carbon super steel core (60\xB12 HRC). Octagonal desert ironwood handle engineered for professional balance.",
+      "supplier": {
+        "id": "supplier-3",
+        "name_ar": "\u0634\u0631\u0643\u0629 \u0643\u0627\u064A\u0632\u0646 \u0644\u0623\u062F\u0648\u0627\u062A \u0627\u0644\u0637\u0647\u0627\u0629 \u0627\u0644\u0645\u062D\u062A\u0631\u0641\u064A\u0646",
+        "name_en": "Kaizen Culinary Cutlery ME",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+        "verified": true,
+        "rating": 4.94,
+        "reviews_count": 142,
+        "response_rate": "96%",
+        "response_time": "< 2 hours",
+        "location_ar": "\u062F\u0628\u064A\u060C \u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062A \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0645\u062A\u062D\u062F\u0629",
+        "location_en": "Dubai, United Arab Emirates"
+      },
+      "specs": [
+        {
+          "label_ar": "\u0637\u0648\u0644 \u0627\u0644\u0646\u0635\u0644",
+          "label_en": "Blade Length",
+          "value_ar": "240 \u0645\u0644\u0645 (9.5 \u0625\u0646\u0634)",
+          "value_en": "240mm (9.5 Inches)"
+        },
+        {
+          "label_ar": "\u0635\u0644\u0627\u0628\u0629 \u0627\u0644\u0641\u0648\u0644\u0627\u0630",
+          "label_en": "Rockwell Hardness",
+          "value_ar": "60\xB12 HRC (VG-10 Core)",
+          "value_en": "60\xB12 HRC (VG-10 Core)"
+        },
+        {
+          "label_ar": "\u0632\u0627\u0648\u064A\u0629 \u0627\u0644\u0634\u062D\u0630",
+          "label_en": "Edge Angle",
+          "value_ar": "15 \u062F\u0631\u062C\u0629 \u0644\u0643\u0644 \u062C\u0627\u0646\u0628 (\u0634\u062F\u064A\u062F \u0627\u0644\u062D\u062F\u0629)",
+          "value_en": "15\xB0 per side (Razor Sharp)"
+        },
+        {
+          "label_ar": "\u0645\u0627\u062F\u0629 \u0627\u0644\u0645\u0642\u0628\u0636",
+          "label_en": "Handle Material",
+          "value_ar": "\u062E\u0634\u0628 \u0637\u0628\u064A\u0639\u064A \u062B\u0645\u0627\u0646\u064A \u0627\u0644\u0623\u0636\u0644\u0627\u0639",
+          "value_en": "Octagonal Natural Ironwood"
+        }
+      ],
+      "certifications": [
+        "Artisanal Forged Japan",
+        "NSF Listed",
+        "SGS Food Contact Safe"
+      ],
+      "lead_time_ar": "1 \u0625\u0644\u0649 3 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
+      "lead_time_en": "1 to 3 Business Days",
+      "warranty_ar": "\u0636\u0645\u0627\u0646 \u0645\u062F\u0649 \u0627\u0644\u062D\u064A\u0627\u0629 \u0636\u062F \u0639\u064A\u0648\u0628 \u0627\u0644\u062A\u0635\u0646\u064A\u0639 \u0648\u0633\u0648\u0621 \u0627\u0644\u0641\u0648\u0644\u0627\u0630",
+      "warranty_en": "Lifetime Warranty against Manufacturing Defects"
+    },
+    {
+      "id": "supply-4",
+      "name_ar": "\u062C\u0647\u0627\u0632 \u0633\u062D\u0628 \u0627\u0644\u0647\u0648\u0627\u0621 \u0648\u0627\u0644\u062A\u063A\u0644\u064A\u0641 \u0627\u0644\u0645\u0641\u0631\u063A \u0627\u0644\u062A\u062C\u0627\u0631\u064A \u0628\u0631\u0648 400",
+      "name_en": "Commercial Chamber Vacuum Sealer Pro 400",
+      "category": "heavy_equipment",
+      "category_ar": "\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u062B\u0642\u064A\u0644\u0629",
+      "category_en": "Heavy Kitchen Equipment",
+      "price": 6200,
+      "price_formatted": "6,200 \u0631.\u0633",
+      "currency": "SAR",
+      "moq": 1,
+      "unit_ar": "\u0648\u062D\u062F\u0629",
+      "unit_en": "Unit",
+      "in_stock": true,
+      "stock_count": 12,
+      "image": "https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description_ar": "\u062C\u0647\u0627\u0632 \u062A\u063A\u0644\u064A\u0641 \u0628\u0627\u0644\u062A\u0641\u0631\u064A\u063A \u0627\u0644\u0647\u0648\u0627\u0626\u064A \u0628\u063A\u0631\u0641\u0629 \u0645\u062D\u0643\u0645\u0629 \u0645\u0646 \u0627\u0644\u0641\u0648\u0644\u0627\u0630 \u0627\u0644\u0645\u0642\u0627\u0648\u0645 \u0644\u0644\u0635\u062F\u0623 \u0648\u0645\u0636\u062E\u0629 \u0628\u0648\u0634 \u0627\u0644\u0623\u0644\u0645\u0627\u0646\u064A\u0629 \u0627\u0644\u0642\u0648\u064A\u0629\u060C \u0645\u0632\u0648\u062F \u0628\u0645\u0633\u062A\u0634\u0639\u0631 \u0630\u0643\u064A \u0644\u062A\u063A\u0644\u064A\u0641 \u0627\u0644\u0633\u0648\u0627\u0626\u0644 \u0648\u0627\u0644\u0635\u0644\u0635\u0627\u062A \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0628\u0627\u0644\u062A\u0641\u0631\u064A\u063A.",
+      "description_en": "Commercial chamber vacuum sealer featuring heavy-duty German Busch rotary pump and digital sensor cycle. Capable of packaging delicate marinades, liquids, and large meat subprimals for sous-vide.",
+      "supplier": {
+        "id": "supplier-1",
+        "name_ar": "\u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0644\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u062A\u062C\u0627\u0631\u064A\u0629",
+        "name_en": "Al-Fannar Commercial Kitchens Co.",
+        "avatar": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&q=80",
+        "verified": true,
+        "rating": 4.96,
+        "reviews_count": 184,
+        "response_rate": "98%",
+        "response_time": "< 1 hour",
+        "location_ar": "\u0627\u0644\u0631\u064A\u0627\u0636\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
+        "location_en": "Riyadh, Saudi Arabia"
+      },
+      "specs": [
+        {
+          "label_ar": "\u0642\u0648\u0629 \u0627\u0644\u0645\u0636\u062E\u0629",
+          "label_en": "Pump Capacity",
+          "value_ar": "20 \u0645\u062A\u0631 \u0645\u0643\u0639\u0628/\u0633\u0627\u0639\u0629 (Busch)",
+          "value_en": "20 m\xB3/h German Busch Pump"
+        },
+        {
+          "label_ar": "\u0637\u0648\u0644 \u0634\u0631\u064A\u0637 \u0627\u0644\u0644\u062D\u0627\u0645",
+          "label_en": "Sealing Bar Length",
+          "value_ar": "420 \u0645\u0644\u0645 \u0645\u0632\u062F\u0648\u062C \u0627\u0644\u0644\u062D\u0627\u0645",
+          "value_en": "420mm Double Seal Bar"
+        },
+        {
+          "label_ar": "\u0623\u0628\u0639\u0627\u062F \u0627\u0644\u063A\u0631\u0641\u0629",
+          "label_en": "Chamber Dimensions",
+          "value_ar": "440 \xD7 420 \xD7 170 \u0645\u0644\u0645",
+          "value_en": "440 \xD7 420 \xD7 170 mm"
+        },
+        {
+          "label_ar": "\u0627\u0644\u062A\u062D\u0643\u0645",
+          "label_en": "Control System",
+          "value_ar": "\u0634\u0627\u0634\u0629 \u0631\u0642\u0645\u064A\u0629 \u0645\u0639 \u0630\u0627\u0643\u0631\u0629 10 \u0628\u0631\u0627\u0645\u062C",
+          "value_en": "Digital Display with 10 Programs"
+        }
+      ],
+      "certifications": [
+        "CE Certified",
+        "SASO Approved",
+        "NSF Listed"
+      ],
+      "lead_time_ar": "2 \u0625\u0644\u0649 5 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
+      "lead_time_en": "2 to 5 Business Days",
+      "warranty_ar": "\u0636\u0645\u0627\u0646 24 \u0634\u0647\u0631\u0627\u064B \u0645\u0639 \u0642\u0637\u0639 \u063A\u064A\u0627\u0631 \u0623\u0635\u0644\u064A\u0629 \u0645\u062A\u0648\u0641\u0631\u0629",
+      "warranty_en": "24 Months Warranty with Stocked Original Spare Parts"
+    },
+    {
+      "id": "supply-5",
+      "name_ar": "\u0632\u064A\u062A \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0627\u0644\u0634\u062A\u0648\u064A\u0629 \u0627\u0644\u0637\u0628\u064A\u0639\u064A 5 \u0644\u062A\u0631",
+      "name_en": "Artisanal Black Winter Truffle Infused Olive Oil 5L",
+      "category": "bulk_ingredients",
+      "category_ar": "\u0645\u0643\u0648\u0646\u0627\u062A \u062E\u0627\u0645 \u0628\u0627\u0644\u062C\u0645\u0644\u0629",
+      "category_en": "Wholesale Bulk Ingredients",
+      "price": 1250,
+      "price_formatted": "1,250 \u0631.\u0633",
+      "currency": "SAR",
+      "moq": 2,
+      "unit_ar": "\u0635\u0641\u064A\u062D\u0629 (5 \u0644\u062A\u0631)",
+      "unit_en": "Tin (5L)",
+      "in_stock": true,
+      "stock_count": 28,
+      "image": "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description_ar": "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0628\u0643\u0631 \u0625\u064A\u0637\u0627\u0644\u064A \u0646\u0642\u064A \u0645\u0646\u0642\u0648\u0639 \u0628\u0642\u0637\u0639 \u0648\u062E\u0644\u0627\u0635\u0627\u062A \u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0627\u0644\u0634\u062A\u0648\u064A\u0629 \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u0629 (Tuber melanosporum) \u0628\u062F\u0648\u0646 \u0646\u0643\u0647\u0627\u062A \u0643\u064A\u0645\u064A\u0627\u0626\u064A\u0629 \u0645\u0635\u0646\u0639\u0629\u060C \u0645\u062E\u0635\u0635 \u0644\u0644\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0627\u0644\u0641\u0646\u062F\u0642\u064A \u0627\u0644\u0641\u0627\u062E\u0631.",
+      "description_en": "Pure Italian extra virgin olive oil naturally infused with real black winter truffle extract (Tuber melanosporum). Zero synthetic aromas or chemical 2,4-dithiapentane additives.",
+      "supplier": {
+        "id": "supplier-4",
+        "name_ar": "\u0623\u0648\u0645\u0628\u0631\u064A\u0627 \u0644\u062A\u0648\u0631\u064A\u062F \u0627\u0644\u0645\u0643\u0648\u0646\u0627\u062A \u0627\u0644\u0630\u0648\u0627\u0642\u0629 \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
+        "name_en": "Umbria Gourmet Specialty Imports",
+        "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80",
+        "verified": true,
+        "rating": 4.97,
+        "reviews_count": 220,
+        "response_rate": "97%",
+        "response_time": "< 1 hour",
+        "location_ar": "\u062C\u062F\u0629\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
+        "location_en": "Jeddah, Saudi Arabia"
+      },
+      "specs": [
+        {
+          "label_ar": "\u0646\u0648\u0639 \u0627\u0644\u0643\u0645\u0623\u0629",
+          "label_en": "Truffle Species",
+          "value_ar": "\u0643\u0645\u0623\u0629 \u0633\u0648\u062F\u0627\u0621 \u0634\u062A\u0648\u064A\u0629 \u0646\u0631\u0648\u064A\u062C\u064A\u0629 \u0625\u064A\u0637\u0627\u0644\u064A\u0629",
+          "value_en": "Tuber Melanosporum Vitt."
+        },
+        {
+          "label_ar": "\u0646\u0633\u0628\u0629 \u0627\u0644\u0646\u0643\u0647\u0629 \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u0629",
+          "label_en": "Natural Aroma",
+          "value_ar": "100% \u062E\u0644\u0627\u0635\u0629 \u0637\u0628\u064A\u0639\u064A\u0629 \u062E\u0627\u0644\u064A\u0629 \u0645\u0646 \u0627\u0644\u0643\u064A\u0645\u0627\u0648\u064A\u0627\u062A",
+          "value_en": "100% Pure Natural Extract"
+        },
+        {
+          "label_ar": "\u062D\u062C\u0645 \u0627\u0644\u0639\u0628\u0648\u0629",
+          "label_en": "Volume",
+          "value_ar": "5 \u0644\u062A\u0631 \u0635\u0641\u064A\u062D\u0629 \u0645\u0639\u062F\u0646\u064A\u0629 \u0648\u0627\u0642\u064A\u0629 \u0645\u0646 \u0627\u0644\u0636\u0648\u0621",
+          "value_en": "5 Liter UV-Shielded Metal Tin"
+        }
+      ],
+      "certifications": [
+        "HACCP Certified",
+        "EU Organic",
+        "SFDA Approved"
+      ],
+      "lead_time_ar": "2 \u0625\u0644\u0649 4 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
+      "lead_time_en": "2 to 4 Business Days",
+      "warranty_ar": "\u0634\u0647\u0627\u062F\u0629 \u0627\u0644\u0645\u0646\u0634\u0623 \u0627\u0644\u0625\u064A\u0637\u0627\u0644\u064A\u0629 \u0645\u0639 \u0627\u0644\u062A\u062D\u0644\u064A\u0644 \u0627\u0644\u0639\u0636\u0648\u064A",
+      "warranty_en": "Italian Certificate of Origin & Organic Authentication"
+    },
+    {
+      "id": "supply-6",
+      "name_ar": "\u0639\u0644\u0628 \u062D\u0641\u0638 \u0648\u062A\u063A\u0644\u064A\u0641 \u0627\u0644\u0648\u062C\u0628\u0627\u062A \u0627\u0644\u0641\u0627\u062E\u0631\u0629 \u0645\u0646 \u0642\u0635\u0628 \u0627\u0644\u0633\u0643\u0631 1000 \u062D\u0628\u0629",
+      "name_en": "Biodegradable Sugarcane Bagasse Takeaway Containers 1000 Pcs",
+      "category": "eco_packaging",
+      "category_ar": "\u062D\u0644\u0648\u0644 \u0627\u0644\u062A\u063A\u0644\u064A\u0641 \u0627\u0644\u0645\u0633\u062A\u062F\u0627\u0645",
+      "category_en": "Eco-Friendly Packaging",
+      "price": 520,
+      "price_formatted": "520 \u0631.\u0633",
+      "currency": "SAR",
+      "moq": 5,
+      "unit_ar": "\u0643\u0631\u062A\u0648\u0646 (1000 \u062D\u0628\u0629)",
+      "unit_en": "Carton (1000 Pcs)",
+      "in_stock": true,
+      "stock_count": 120,
+      "image": "https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description_ar": "\u0639\u0644\u0628 \u0637\u0639\u0627\u0645 \u0635\u062F\u064A\u0642\u0629 \u0644\u0644\u0628\u064A\u0626\u0629 \u0642\u0627\u0628\u0644\u0629 \u0644\u0644\u062A\u062D\u0644\u0644 \u0627\u0644\u062D\u064A\u0648\u064A \u0628\u0627\u0644\u0643\u0627\u0645\u0644 \u0645\u0635\u0646\u0648\u0639\u0629 \u0645\u0646 \u0623\u0644\u064A\u0627\u0641 \u0642\u0635\u0628 \u0627\u0644\u0633\u0643\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u0629\u060C \u0645\u0642\u0627\u0648\u0645\u0629 \u0644\u0644\u0632\u064A\u0648\u062A \u0648\u0627\u0644\u0633\u0648\u0627\u0626\u0644 \u0627\u0644\u0633\u0627\u062E\u0646\u0629 \u0648\u062A\u062A\u062D\u0645\u0644 \u0627\u0644\u0645\u064A\u0643\u0631\u0648\u0648\u064A\u0641 \u0648\u0627\u0644\u062A\u062C\u0645\u064A\u062F \u0645\u0646 -20 \u0625\u0644\u0649 120 \u0645\u0626\u0648\u064A\u0629.",
+      "description_en": "100% biodegradable, compostable food containers crafted from natural unbleached sugarcane bagasse fiber. Oil-resistant, leak-proof, microwave and freezer safe from -20\xB0C to 120\xB0C.",
+      "supplier": {
+        "id": "supplier-5",
+        "name_ar": "\u0625\u064A\u0643\u0648\u0628\u0627\u0643 \u0644\u062D\u0644\u0648\u0644 \u0627\u0644\u062A\u063A\u0644\u064A\u0641 \u0627\u0644\u0645\u0633\u062A\u062F\u0627\u0645 \u0644\u0644\u0636\u064A\u0627\u0641\u0629",
+        "name_en": "EcoPack Sustainable Solutions ME",
+        "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+        "verified": true,
+        "rating": 4.89,
+        "reviews_count": 95,
+        "response_rate": "95%",
+        "response_time": "< 3 hours",
+        "location_ar": "\u0627\u0644\u062F\u0645\u0627\u0645\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
+        "location_en": "Dammam, Saudi Arabia"
+      },
+      "specs": [
+        {
+          "label_ar": "\u0627\u0644\u0633\u0639\u0629 \u0648\u0627\u0644\u062A\u0642\u0633\u064A\u0645",
+          "label_en": "Capacity & Style",
+          "value_ar": "850 \u0645\u0644 - \u062E\u0627\u0646\u0629 \u0648\u0627\u062D\u062F\u0629 \u0623\u0648 \u062E\u0627\u0646\u062A\u0627\u0646",
+          "value_en": "850ml Single/Dual Compartment"
+        },
+        {
+          "label_ar": "\u0646\u0637\u0627\u0642 \u0627\u0644\u062D\u0631\u0627\u0631\u0629",
+          "label_en": "Temperature Range",
+          "value_ar": "\u0645\u0646 -20\xB0C \u0625\u0644\u0649 +120\xB0C",
+          "value_en": "-20\xB0C to +120\xB0C"
+        },
+        {
+          "label_ar": "\u0627\u0644\u062A\u062D\u0644\u0644 \u0627\u0644\u0628\u064A\u0626\u064A",
+          "label_en": "Biodegradability",
+          "value_ar": "\u062A\u062D\u0644\u0644 \u0643\u0627\u0645\u0644 \u062E\u0644\u0627\u0644 90 \u064A\u0648\u0645\u0627\u064B \u0641\u064A \u0627\u0644\u062A\u0631\u0628\u0629",
+          "value_en": "100% Composted in 90 Days"
+        }
+      ],
+      "certifications": [
+        "BPI Certified Compostable",
+        "EN 13432",
+        "SASO Green Badge",
+        "FDA Food Grade"
+      ],
+      "lead_time_ar": "1 \u0625\u0644\u0649 2 \u064A\u0648\u0645 \u0639\u0645\u0644",
+      "lead_time_en": "1 to 2 Business Days",
+      "warranty_ar": "\u0636\u0645\u0627\u0646 \u0627\u0644\u062C\u0648\u062F\u0629 \u0648\u0645\u0642\u0627\u0648\u0645\u0629 \u0627\u0644\u062A\u0633\u0631\u064A\u0628 \u0628\u0646\u0633\u0628\u0629 100%",
+      "warranty_en": "100% Leak-Proof & Structural Integrity Guarantee"
+    },
+    {
+      "id": "supply-7",
+      "name_ar": "\u062C\u0647\u0627\u0632 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062F\u0642\u064A\u0642 \u0628\u0627\u0644\u0633\u0648\u0633 \u0641\u064A\u062F 30 \u0644\u062A\u0631 \u0628\u0631\u0648",
+      "name_en": "Commercial Precision Sous-Vide Immersion Circulator 30L",
+      "category": "heavy_equipment",
+      "category_ar": "\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u062B\u0642\u064A\u0644\u0629",
+      "category_en": "Heavy Kitchen Equipment",
+      "price": 2400,
+      "price_formatted": "2,400 \u0631.\u0633",
+      "currency": "SAR",
+      "moq": 1,
+      "unit_ar": "\u0648\u062D\u062F\u0629",
+      "unit_en": "Unit",
+      "in_stock": true,
+      "stock_count": 18,
+      "image": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description_ar": "\u062C\u0647\u0627\u0632 \u062A\u062F\u0648\u064A\u0631 \u062D\u0631\u0627\u0631\u064A \u0645\u062D\u062A\u0631\u0641 \u0644\u0644\u0637\u0647\u064A \u0627\u0644\u0645\u0627\u0626\u064A \u0627\u0644\u0628\u0637\u064A\u0621 \u0628\u062F\u0642\u0629 \u062D\u0631\u0627\u0631\u064A\u0629 \u062A\u0635\u0644 \u0625\u0644\u0649 \xB10.05 \u062F\u0631\u062C\u0629 \u0645\u0626\u0648\u064A\u0629\u060C \u0648\u0645\u0636\u062E\u0629 \u062A\u062F\u0648\u064A\u0631 \u0642\u0648\u064A\u0629 \u062A\u0643\u0641\u064A \u0644\u0623\u062D\u0648\u0627\u0636 \u0645\u0627\u0626\u064A\u0629 \u062D\u062A\u0649 30 \u0644\u062A\u0631\u0627\u064B \u0645\u0639 \u0634\u0627\u0634\u0629 \u0644\u0645\u0633 \u0645\u0644\u0648\u0646\u0629.",
+      "description_en": "Heavy-duty professional immersion circulator for precision low-temperature sous-vide bath. Delivers \xB10.05\xB0C temperature stability with high-volume 30L bath circulation pump.",
+      "supplier": {
+        "id": "supplier-1",
+        "name_ar": "\u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0644\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u062A\u062C\u0627\u0631\u064A\u0629",
+        "name_en": "Al-Fannar Commercial Kitchens Co.",
+        "avatar": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&q=80",
+        "verified": true,
+        "rating": 4.96,
+        "reviews_count": 184,
+        "response_rate": "98%",
+        "response_time": "< 1 hour",
+        "location_ar": "\u0627\u0644\u0631\u064A\u0627\u0636\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
+        "location_en": "Riyadh, Saudi Arabia"
+      },
+      "specs": [
+        {
+          "label_ar": "\u0627\u0644\u062F\u0642\u0629 \u0627\u0644\u062D\u0631\u0627\u0631\u064A\u0629",
+          "label_en": "Temperature Accuracy",
+          "value_ar": "\xB10.05\xB0C (\u062A\u062D\u0643\u0645 \u0631\u0642\u0645\u064A PID)",
+          "value_en": "\xB10.05\xB0C Digital PID Control"
+        },
+        {
+          "label_ar": "\u0642\u0648\u0629 \u0627\u0644\u0633\u062E\u0627\u0646",
+          "label_en": "Heating Power",
+          "value_ar": "1800 \u0648\u0627\u0637 \u062A\u0633\u062E\u064A\u0646 \u0633\u0631\u064A\u0639",
+          "value_en": "1800W Rapid Heating Element"
+        },
+        {
+          "label_ar": "\u0633\u0639\u0629 \u0627\u0644\u062D\u0648\u0636 \u0627\u0644\u0642\u0635\u0648\u0649",
+          "label_en": "Max Bath Capacity",
+          "value_ar": "30 \u0644\u062A\u0631 \u0645\u0627\u0621 \u0645\u062A\u062F\u0627\u0648\u0644",
+          "value_en": "30 Liters Continuous Circulation"
+        }
+      ],
+      "certifications": [
+        "CE Certified",
+        "IPX7 Waterproof",
+        "SASO Approved"
+      ],
+      "lead_time_ar": "2 \u0625\u0644\u0649 3 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
+      "lead_time_en": "2 to 3 Business Days",
+      "warranty_ar": "\u0636\u0645\u0627\u0646 24 \u0634\u0647\u0631\u0627\u064B \u0645\u0639 \u0627\u0633\u062A\u0628\u062F\u0627\u0644 \u0641\u0648\u0631\u064A \u0639\u0646\u062F \u0627\u0644\u0639\u0637\u0644",
+      "warranty_en": "24 Months Warranty with Instant Replacement Support"
+    },
+    {
+      "id": "supply-8",
+      "name_ar": "\u0632\u0639\u0641\u0631\u0627\u0646 \u0633\u0648\u0628\u0631 \u0646\u0642\u064A\u0646 \u0645\u0644\u0643\u064A \u0641\u0627\u062E\u0631 \u0646\u062E\u0628 \u0623\u0648\u0644 500 \u062C\u0631\u0627\u0645",
+      "name_en": "Grade 1 Royal Super Negin Saffron Bulk Tin 500g",
+      "category": "bulk_ingredients",
+      "category_ar": "\u0645\u0643\u0648\u0646\u0627\u062A \u062E\u0627\u0645 \u0628\u0627\u0644\u062C\u0645\u0644\u0629",
+      "category_en": "Wholesale Bulk Ingredients",
+      "price": 5400,
+      "price_formatted": "5,400 \u0631.\u0633",
+      "currency": "SAR",
+      "moq": 1,
+      "unit_ar": "\u0639\u0644\u0628\u0629 \u0645\u0639\u062F\u0646\u064A\u0629 (500 \u062C\u0631\u0627\u0645)",
+      "unit_en": "Tin (500g)",
+      "in_stock": true,
+      "stock_count": 15,
+      "image": "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description_ar": "\u0632\u0639\u0641\u0631\u0627\u0646 \u0633\u0648\u0628\u0631 \u0646\u0642\u064A\u0646 \u0623\u062D\u0645\u0631 \u0645\u0644\u0643\u064A \u0646\u0642\u064A 100% \u0628\u0623\u0639\u0644\u0649 \u062F\u0631\u062C\u0627\u062A \u0642\u0648\u0629 \u0627\u0644\u0644\u0648\u0646 (\u0643\u0631\u0648\u0633\u064A\u0646 > 260)\u060C \u062E\u064A\u0648\u0637 \u0643\u0627\u0645\u0644\u0629 \u0637\u0648\u064A\u0644\u0629 \u0628\u062F\u0648\u0646 \u0623\u064A \u0634\u0648\u0627\u0626\u0628 \u0635\u0641\u0631\u0627\u0621\u060C \u0645\u0639\u0628\u0623 \u0641\u064A \u0639\u0644\u0628 \u0645\u0639\u062F\u0646\u064A\u0629 \u0645\u0641\u0631\u063A\u0629 \u0645\u0646 \u0627\u0644\u0623\u0643\u0633\u062C\u064A\u0646 \u0644\u0644\u062D\u0641\u0627\u0638 \u0639\u0644\u0649 \u0627\u0644\u0631\u0627\u0626\u062D\u0629 \u0627\u0644\u0632\u0643\u064A\u0629.",
+      "description_en": "100% pure Grade-1 Royal Super Negin saffron with supreme coloring power (Crocin rating > 260). Long all-red stigmas with zero yellow style waste, hermetically vacuum-sealed in bulk culinary tins.",
+      "supplier": {
+        "id": "supplier-4",
+        "name_ar": "\u0623\u0648\u0645\u0628\u0631\u064A\u0627 \u0644\u062A\u0648\u0631\u064A\u062F \u0627\u0644\u0645\u0643\u0648\u0646\u0627\u062A \u0627\u0644\u0630\u0648\u0627\u0642\u0629 \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
+        "name_en": "Umbria Gourmet Specialty Imports",
+        "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80",
+        "verified": true,
+        "rating": 4.97,
+        "reviews_count": 220,
+        "response_rate": "97%",
+        "response_time": "< 1 hour",
+        "location_ar": "\u062C\u062F\u0629\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
+        "location_en": "Jeddah, Saudi Arabia"
+      },
+      "specs": [
+        {
+          "label_ar": "\u062F\u0631\u062C\u0629 \u0627\u0644\u0632\u0639\u0641\u0631\u0627\u0646",
+          "label_en": "Grading Category",
+          "value_ar": "\u0633\u0648\u0628\u0631 \u0646\u0642\u064A\u0646 \u0645\u0644\u0643\u064A - \u0641\u0626\u0629 \u0623\u0648\u0644\u0649 ISO",
+          "value_en": "Royal Super Negin - ISO Cat I"
+        },
+        {
+          "label_ar": "\u0642\u0648\u0629 \u0627\u0644\u0644\u0648\u0646 (Crocin)",
+          "label_en": "Color Reading",
+          "value_ar": "> 265 (\u0623\u0639\u0644\u0649 \u062A\u0631\u0643\u064A\u0632 \u0639\u0627\u0644\u0645\u064A)",
+          "value_en": "> 265 Supreme Pigmentation"
+        },
+        {
+          "label_ar": "\u0627\u0644\u0648\u0632\u0646 \u0627\u0644\u0635\u0627\u0641\u064A",
+          "label_en": "Net Weight",
+          "value_ar": "500 \u062C\u0631\u0627\u0645 \u062E\u064A\u0648\u0637 \u0646\u0642\u064A\u0629",
+          "value_en": "500g Pure Red Stigmas"
+        }
+      ],
+      "certifications": [
+        "ISO 3632-1 Certified",
+        "SFDA Food Safety Approved",
+        "Halal Certified"
+      ],
+      "lead_time_ar": "2 \u0625\u0644\u0649 4 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
+      "lead_time_en": "2 to 4 Business Days",
+      "warranty_ar": "\u0634\u0647\u0627\u062F\u0629 \u0627\u0644\u062A\u062D\u0644\u064A\u0644 \u0627\u0644\u0637\u064A\u0641\u064A \u0644\u0644\u0645\u062E\u062A\u0628\u0631 \u0627\u0644\u0645\u0639\u062A\u0645\u062F \u0645\u0639 \u0643\u0644 \u0639\u0628\u0648\u0629",
+      "warranty_en": "Spectrophotometric Lab Analysis Certificate with Each Tin"
+    }
+  ];
+
+  // js/data/fixtures/courses.js
+  var COURSE_FIXTURES = [
+    {
+      "id": "course-1",
+      "title": "Modern Fermentation & Dry Aging Masterclass",
+      "title_ar": "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0641\u064A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
+      "title_en": "Modern Fermentation & Dry Aging Masterclass",
+      "subtitle_ar": "\u062A\u0642\u0646\u064A\u0627\u062A \u0645\u062A\u0642\u062F\u0645\u0629 \u0641\u064A \u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0643\u0648\u062C\u064A\u060C \u0648\u0645\u062E\u0644\u0644\u0627\u062A \u0627\u0644\u0644\u0627\u0643\u062A\u0648\u060C \u0648\u0625\u0646\u0636\u0627\u062C \u0644\u062D\u0648\u0645 \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0644\u0644\u0645\u062D\u062A\u0631\u0641\u064A\u0646",
+      "subtitle_en": "Advanced koji fermentation, lacto-pickling chemistry, and precision dry-aging for culinary leaders",
+      "instructor_id": "chef-1",
+      "instructor_name_ar": "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
+      "instructor_name_en": "Chef Faisal Al-Hashemi",
+      "instructor_avatar": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=200&q=80",
+      "instructor_title_ar": "\u0634\u064A\u0641 \u062A\u0646\u0641\u064A\u0630\u064A \u0648\u062E\u0628\u064A\u0631 \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631",
+      "instructor_title_en": "Executive Chef & Modern Gastronomy Consultant",
+      "level": "masterclass",
+      "level_ar": "\u0627\u062D\u062A\u0631\u0627\u0641\u064A \u0645\u062A\u0642\u062F\u0645 (Masterclass)",
+      "level_en": "Masterclass",
+      "duration_ar": "6 \u0623\u0633\u0627\u0628\u064A\u0639 (24 \u0633\u0627\u0639\u0629 \u062A\u062F\u0631\u064A\u0628\u064A\u0629 \u0645\u0628\u0627\u0634\u0631\u0629)",
+      "duration_en": "6 Weeks (24 Live Hours)",
+      "price": 3200,
+      "price_formatted": "3,200 \u0631.\u0633",
+      "currency": "SAR",
+      "total_seats": 15,
+      "seats_left": 3,
+      "start_date": "2026-09-10",
+      "schedule_ar": "\u0643\u0644 \u062B\u0644\u0627\u062B\u0627\u0621 \u0648\u062E\u0645\u064A\u0633 (6:00 \u0645 - 8:00 \u0645 \u0628\u062A\u0648\u0642\u064A\u062A \u0645\u0643\u0629)",
+      "schedule_en": "Every Tue & Thu (6:00 PM - 8:00 PM AST)",
+      "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+      "includes_certificate": true,
+      "enrolled_count": 12,
+      "syllabus": [
+        {
+          "module_number": 1,
+          "title_ar": "\u0645\u0642\u062F\u0645\u0629 \u0641\u064A \u0643\u064A\u0645\u064A\u0627\u0621 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0628\u0643\u062A\u064A\u0631\u064A\u0627 \u0627\u0644\u0646\u0627\u0641\u0639\u0629",
+          "title_en": "Microbiology of Wild Fermentation & Safety",
+          "duration_ar": "4 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "4 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u0641\u0647\u0645 \u0628\u0643\u062A\u064A\u0631\u064A\u0627 \u062D\u0645\u0636 \u0627\u0644\u0644\u0627\u0643\u062A\u064A\u0643 \u0648\u0623\u0633\u0633 \u0627\u0644\u062A\u0645\u0644\u064A\u062D \u0627\u0644\u062F\u0642\u064A\u0642",
+              "title_en": "Lactic Acid Bacteria & Salt Calculations",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            },
+            {
+              "title_ar": "\u0632\u0631\u0627\u0639\u0629 \u0641\u0637\u0631 \u0627\u0644\u0643\u0648\u062C\u064A (Aspergillus oryzae) \u0639\u0644\u0649 \u0627\u0644\u062D\u0628\u0648\u0628",
+              "title_en": "Inoculating Koji Spores on Ancient Grains",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            }
+          ]
+        },
+        {
+          "module_number": 2,
+          "title_ar": "\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u0644\u062D\u0648\u0645 \u0627\u0644\u062C\u0627\u0641 \u0648\u0628\u0646\u0627\u0621 \u063A\u0631\u0641 \u0627\u0644\u062A\u0639\u062A\u064A\u0642",
+          "title_en": "Dry-Aging Chambers & Mycology Dynamics",
+          "duration_ar": "6 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "6 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u0627\u0644\u062A\u062D\u0643\u0645 \u0641\u064A \u0627\u0644\u0631\u0637\u0648\u0628\u0629 \u0648\u0627\u0644\u062D\u0631\u0627\u0631\u0629 \u0648\u062A\u062F\u0641\u0642 \u0627\u0644\u0647\u0648\u0627\u0621 \u0644\u063A\u0631\u0641 \u0627\u0644\u0625\u0646\u0636\u0627\u062C",
+              "title_en": "Humidity, Airflow & Thermal Engineering",
+              "duration_ar": "3 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "3 Hours"
+            },
+            {
+              "title_ar": "\u062A\u0637\u0648\u0631 \u0627\u0644\u0646\u0643\u0647\u0627\u062A \u0627\u0644\u0625\u0646\u0632\u064A\u0645\u064A\u0629 \u0648\u062A\u0642\u0644\u064A\u0645 \u0637\u0628\u0642\u0627\u062A \u0627\u0644\u062A\u0639\u062A\u064A\u0642",
+              "title_en": "Enzymatic Breakdown & Yield Trimming",
+              "duration_ar": "3 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "3 Hours"
+            }
+          ]
+        },
+        {
+          "module_number": 3,
+          "title_ar": "\u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u062A\u0645\u0648\u0631 \u0648\u0627\u0644\u0635\u0644\u0635\u0627\u062A \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0627\u0644\u0645\u0639\u0627\u0635\u0631\u0629",
+          "title_en": "Artisanal Date Garums & Heritage Ferments",
+          "duration_ar": "8 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "8 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u0635\u0646\u0627\u0639\u0629 \u0627\u0644\u063A\u0627\u0631\u0648\u0645 \u0627\u0644\u062D\u062F\u064A\u062B \u0645\u0646 \u0628\u0631\u0648\u062A\u064A\u0646\u0627\u062A \u0627\u0644\u0644\u062D\u0648\u0645 \u0648\u0627\u0644\u062A\u0645\u0631",
+              "title_en": "Modern Meat & Date Garum Alchemy",
+              "duration_ar": "4 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "4 Hours"
+            },
+            {
+              "title_ar": "\u062E\u0644\u0648\u0644 \u0627\u0644\u0641\u0648\u0627\u0643\u0647 \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u0629 \u0648\u062A\u0639\u062A\u064A\u0642\u0647\u0627 \u0641\u064A \u0628\u0631\u0627\u0645\u064A\u0644 \u062E\u0634\u0628\u064A\u0629",
+              "title_en": "Live Vinegar Brewing in Casks",
+              "duration_ar": "4 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "4 Hours"
+            }
+          ]
+        },
+        {
+          "module_number": 4,
+          "title_ar": "\u0627\u0644\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062E\u062A\u0627\u0645\u064A \u0648\u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u062A\u0630\u0648\u0642 \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
+          "title_en": "Capstone Project & Tasting Menu Design",
+          "duration_ar": "6 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "6 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u062A\u0635\u0645\u064A\u0645 \u0637\u0628\u0642 \u062A\u0648\u0642\u064A\u0639 \u064A\u062F\u0645\u062C 3 \u0639\u0646\u0627\u0635\u0631 \u0645\u062E\u0645\u0631\u0629 \u0645\u0639\u062A\u0642\u0629",
+              "title_en": "Crafting a 3-Ferment Signature Plate",
+              "duration_ar": "3 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "3 Hours"
+            },
+            {
+              "title_ar": "\u062C\u0644\u0633\u0629 \u0627\u0644\u062A\u0642\u064A\u064A\u0645 \u0648\u0627\u0644\u0627\u0639\u062A\u0645\u0627\u062F \u0627\u0644\u0645\u0647\u0646\u064A \u0627\u0644\u062F\u0648\u0644\u064A",
+              "title_en": "Masterclass Jury & Certification Evaluation",
+              "duration_ar": "3 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "3 Hours"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "course-2",
+      "title": "Haute Viennoiserie & Modern Laminated Dough",
+      "title_ar": "\u0641\u0646\u0648\u0646 \u0627\u0644\u0645\u062E\u0628\u0648\u0632\u0627\u062A \u0627\u0644\u0641\u0631\u0646\u0633\u064A\u0629 \u0627\u0644\u0641\u0627\u062E\u0631\u0629 \u0648\u0639\u062C\u0627\u0626\u0646 \u0627\u0644\u062A\u0648\u0631\u064A\u0642 \u0627\u0644\u062D\u062F\u064A\u062B\u0629",
+      "title_en": "Haute Viennoiserie & Modern Laminated Dough",
+      "subtitle_ar": "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u0643\u0631\u0648\u0627\u0633\u0648\u0646 \u062B\u0646\u0627\u0626\u064A \u0627\u0644\u0644\u0648\u0646\u060C \u0627\u0644\u0639\u062C\u0627\u0626\u0646 \u0627\u0644\u0645\u062E\u0645\u0631\u0629 \u0628\u0627\u0644\u0628\u0627\u0646\u064A\u062A\u0648\u0646\u060C \u0648\u0627\u0644\u062A\u0648\u0631\u064A\u0642 \u0627\u0644\u0647\u0646\u062F\u0633\u064A \u0644\u0644\u062D\u0644\u0648\u064A\u0627\u062A",
+      "subtitle_en": "Bicolor laminations, artisanal panettone sourdough, and architectural pastry shapes",
+      "instructor_id": "chef-2",
+      "instructor_name_ar": "\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
+      "instructor_name_en": "Chef Elena Rostova",
+      "instructor_avatar": "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=200&q=80",
+      "instructor_title_ar": "\u0645\u0627\u0633\u062A\u0631 \u0634\u064A\u0641 \u062D\u0644\u0648\u064A\u0627\u062A \u0648\u0641\u0627\u0626\u0632\u0629 \u0628\u062C\u0648\u0627\u0626\u0632 \u062F\u0648\u0644\u064A\u0629",
+      "instructor_title_en": "Master Pastry Chef & International Awardee",
+      "level": "intermediate",
+      "level_ar": "\u0645\u062A\u0648\u0633\u0637 (Intermediate)",
+      "level_en": "Intermediate",
+      "duration_ar": "4 \u0623\u0633\u0627\u0628\u064A\u0639 (16 \u0633\u0627\u0639\u0629 \u062A\u062F\u0631\u064A\u0628\u064A\u0629)",
+      "duration_en": "4 Weeks (16 Live Hours)",
+      "price": 2600,
+      "price_formatted": "2,600 \u0631.\u0633",
+      "currency": "SAR",
+      "total_seats": 18,
+      "seats_left": 5,
+      "start_date": "2026-09-18",
+      "schedule_ar": "\u0643\u0644 \u0633\u0628\u062A \u0648\u0627\u062B\u0646\u064A\u0646 (5:00 \u0645 - 7:00 \u0645 \u0628\u062A\u0648\u0642\u064A\u062A \u0645\u0643\u0629)",
+      "schedule_en": "Every Sat & Mon (5:00 PM - 7:00 PM AST)",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+      "includes_certificate": true,
+      "enrolled_count": 13,
+      "syllabus": [
+        {
+          "module_number": 1,
+          "title_ar": "\u0647\u0646\u062F\u0633\u0629 \u0627\u0644\u062A\u0648\u0631\u064A\u0642 \u0648\u0627\u062E\u062A\u064A\u0627\u0631 \u0627\u0644\u0632\u0628\u062F\u0629 \u0627\u0644\u0646\u0642\u064A\u0629",
+          "title_en": "Lamination Physics & Tournage Butter Standards",
+          "duration_ar": "4 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "4 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u0627\u062E\u062A\u064A\u0627\u0631 \u0627\u0644\u062F\u0642\u064A\u0642 \u0648\u0646\u0633\u0628 \u062A\u0645\u062F\u062F \u0627\u0644\u062C\u0644\u0648\u062A\u064A\u0646",
+              "title_en": "Flour Selection & Gluten Elasticity",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            },
+            {
+              "title_ar": "\u0627\u0644\u0637\u064A\u0627\u062A \u0627\u0644\u0641\u0631\u062F\u064A\u0629 \u0648\u0627\u0644\u0645\u0632\u062F\u0648\u062C\u0629 \u0648\u0627\u0644\u062A\u062D\u0643\u0645 \u0628\u0627\u0644\u062D\u0631\u0627\u0631\u0629",
+              "title_en": "Single & Double Envelope Folds",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            }
+          ]
+        },
+        {
+          "module_number": 2,
+          "title_ar": "\u0627\u0644\u0643\u0631\u0648\u0627\u0633\u0648\u0646 \u062B\u0646\u0627\u0626\u064A \u0627\u0644\u0644\u0648\u0646 \u0648\u062A\u0634\u0643\u064A\u0644 \u0627\u0644\u0642\u0648\u0627\u0644\u0628 \u0627\u0644\u062D\u062F\u064A\u062B\u0629",
+          "title_en": "Bicolor Croissants & Modern Geo-Shapes",
+          "duration_ar": "6 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "6 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u062A\u062D\u0636\u064A\u0631 \u0639\u062C\u0627\u0626\u0646 \u0627\u0644\u0643\u0627\u0643\u0627\u0648 \u0648\u0627\u0644\u062A\u0648\u062A \u0627\u0644\u0645\u0644\u0648\u0646\u0629",
+              "title_en": "Cocoa & Berry Laminate Skins",
+              "duration_ar": "3 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "3 Hours"
+            },
+            {
+              "title_ar": "\u0627\u0644\u0644\u0641 \u0641\u064A \u0627\u0644\u0642\u0648\u0627\u0644\u0628 \u0627\u0644\u0623\u0633\u0637\u0648\u0627\u0646\u064A\u0629 \u0648\u0627\u0644\u0645\u0643\u0639\u0628\u0629",
+              "title_en": "Rolls, Cubes & Architectural Coils",
+              "duration_ar": "3 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "3 Hours"
+            }
+          ]
+        },
+        {
+          "module_number": 3,
+          "title_ar": "\u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0628\u0637\u064A\u0621 \u0648\u0627\u0644\u062E\u0628\u0632 \u0641\u064A \u0623\u0641\u0631\u0627\u0646 \u0627\u0644\u0628\u062E\u0627\u0631",
+          "title_en": "Proofing Dynamics & Deck Oven Steam Baking",
+          "duration_ar": "6 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "6 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u0625\u062F\u0627\u0631\u0629 \u062F\u0631\u062C\u0627\u062A \u0631\u0637\u0648\u0628\u0629 \u0648\u062D\u0631\u0627\u0631\u0629 \u063A\u0631\u0641 \u0627\u0644\u062A\u062E\u0645\u064A\u0631",
+              "title_en": "Proofer Humidity & Temperature Curves",
+              "duration_ar": "3 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "3 Hours"
+            },
+            {
+              "title_ar": "\u0627\u0644\u062A\u0644\u0645\u064A\u0639 \u0628\u0627\u0644\u0634\u0631\u0627\u0628 \u0627\u0644\u0644\u0627\u0645\u0639 \u0648\u062A\u062B\u0628\u064A\u062A \u0627\u0644\u0647\u0634\u0627\u0634\u0629",
+              "title_en": "Gloss Glazing & Crust Preservation",
+              "duration_ar": "3 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "3 Hours"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "course-3",
+      "title": "Traditional Live Fire & Smoke Gastronomy",
+      "title_ar": "\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0645\u0628\u0627\u0634\u0631 \u0639\u0644\u0649 \u0627\u0644\u062D\u0637\u0628 \u0648\u0627\u0644\u062A\u062F\u062E\u064A\u0646 \u0627\u0644\u062D\u0631\u0641\u064A",
+      "title_en": "Traditional Live Fire & Smoke Gastronomy",
+      "subtitle_ar": "\u0625\u062F\u0627\u0631\u0629 \u0628\u064A\u0648\u062A \u0627\u0644\u062A\u062F\u062E\u064A\u0646\u060C \u062A\u062D\u0636\u064A\u0631 \u0628\u0647\u0627\u0631\u0627\u062A \u0627\u0644\u0631\u0651\u0628 \u0627\u0644\u062C\u0627\u0641\u0629\u060C \u0648\u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0634\u0648\u0627\u0621 \u0627\u0644\u0628\u0637\u064A\u0621 \u0639\u0644\u0649 \u062D\u0637\u0628 \u0627\u0644\u0632\u064A\u062A\u0648\u0646",
+      "subtitle_en": "Smokehouse management, artisanal dry rubs, and ultra-slow low-and-slow wood pitmastery",
+      "instructor_id": "chef-3",
+      "instructor_name_ar": "\u0634\u064A\u0641 \u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631",
+      "instructor_name_en": "Chef Tariq Mansour",
+      "instructor_avatar": "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=200&q=80",
+      "instructor_title_ar": "\u062E\u0628\u064A\u0631 \u0627\u0644\u0645\u0634\u0627\u0648\u064A \u0627\u0644\u062D\u0631\u0641\u064A\u0629 \u0648\u0627\u0644\u0637\u0647\u064A \u0628\u0627\u0644\u0646\u0627\u0631 \u0627\u0644\u062D\u064A\u0629",
+      "instructor_title_en": "Master Pitmaster & Live Fire Pioneer",
+      "level": "intermediate",
+      "level_ar": "\u0645\u062A\u0648\u0633\u0637 (Intermediate)",
+      "level_en": "Intermediate",
+      "duration_ar": "3 \u0623\u0633\u0627\u0628\u064A\u0639 (12 \u0633\u0627\u0639\u0629 \u062A\u062F\u0631\u064A\u0628\u064A\u0629)",
+      "duration_en": "3 Weeks (12 Live Hours)",
+      "price": 1950,
+      "price_formatted": "1,950 \u0631.\u0633",
+      "currency": "SAR",
+      "total_seats": 20,
+      "seats_left": 8,
+      "start_date": "2026-09-25",
+      "schedule_ar": "\u0643\u0644 \u062C\u0645\u0639\u0629 \u0648\u0633\u0628\u062A (4:00 \u0645 - 6:00 \u0645 \u0628\u062A\u0648\u0642\u064A\u062A \u0645\u0643\u0629)",
+      "schedule_en": "Every Fri & Sat (4:00 PM - 6:00 PM AST)",
+      "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+      "includes_certificate": true,
+      "enrolled_count": 12,
+      "syllabus": [
+        {
+          "module_number": 1,
+          "title_ar": "\u0623\u0646\u0648\u0627\u0639 \u0627\u0644\u0623\u062E\u0634\u0627\u0628 \u0648\u062E\u0635\u0627\u0626\u0635 \u0627\u0644\u062F\u062E\u0627\u0646 \u0627\u0644\u0639\u0637\u0631\u064A",
+          "title_en": "Wood Profiling & Clean Smoke Physics",
+          "duration_ar": "4 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "4 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u0627\u0644\u062A\u0645\u064A\u064A\u0632 \u0628\u064A\u0646 \u062E\u0634\u0628 \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0648\u0627\u0644\u0633\u0646\u062F\u064A\u0627\u0646 \u0648\u0623\u0634\u062C\u0627\u0631 \u0627\u0644\u0641\u0627\u0643\u0647\u0629",
+              "title_en": "Olive vs Oak vs Fruitwood Flavor Notes",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            },
+            {
+              "title_ar": "\u062A\u062C\u0646\u0628 \u0627\u0644\u062F\u062E\u0627\u0646 \u0627\u0644\u0623\u0628\u064A\u0636 \u0627\u0644\u0645\u0631 \u0648\u062A\u062D\u0642\u064A\u0642 \u0627\u0644\u062F\u062E\u0627\u0646 \u0627\u0644\u0623\u0632\u0631\u0642 \u0627\u0644\u0646\u0638\u064A\u0641",
+              "title_en": "Eliminating Creosote & Thin Blue Smoke",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            }
+          ]
+        },
+        {
+          "module_number": 2,
+          "title_ar": "\u062A\u0642\u0637\u064A\u0639 \u0627\u0644\u0644\u062D\u0648\u0645 \u0627\u0644\u0643\u0628\u064A\u0631\u0629 \u0648\u062A\u0648\u0627\u0632\u0646 \u0627\u0644\u0628\u0647\u0627\u0631\u0627\u062A",
+          "title_en": "Subprimal Butchery & Spice Geometry",
+          "duration_ar": "4 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "4 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u062A\u0634\u0631\u064A\u062D \u0627\u0644\u0623\u0636\u0644\u0627\u0639 \u0648\u0642\u0637\u0639 \u0627\u0644\u0628\u0631\u064A\u0633\u0643\u062A \u0648\u0627\u0644\u0643\u062A\u0641",
+              "title_en": "Trimming Brisket, Ribs & Whole Shoulders",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            },
+            {
+              "title_ar": "\u062A\u0631\u0643\u064A\u0628 \u0628\u0647\u0627\u0631\u0627\u062A \u0627\u0644\u0631\u0651\u0628 \u0627\u0644\u062C\u0627\u0641\u0629 \u0648\u0627\u0644\u062A\u0645\u0644\u064A\u062D \u0627\u0644\u0625\u0633\u0645\u0648\u0632\u064A",
+              "title_en": "Crafting Dry Rubs & Osmotic Equilibrium",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            }
+          ]
+        },
+        {
+          "module_number": 3,
+          "title_ar": "\u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0628\u0637\u064A\u0621 (Low & Slow) \u0644\u0640 14 \u0633\u0627\u0639\u0629",
+          "title_en": "The 14-Hour Low & Slow Session",
+          "duration_ar": "4 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "4 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u062A\u062C\u0627\u0648\u0632 \u0646\u0642\u0637\u0629 \u062B\u0628\u0627\u062A \u0627\u0644\u062D\u0631\u0627\u0631\u0629 (The Stall) \u0648\u0627\u0644\u0644\u0641",
+              "title_en": "Managing The Stall with Peach Butcher Paper",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            },
+            {
+              "title_ar": "\u0641\u062A\u0631\u0629 \u0627\u0644\u0631\u0627\u062D\u0629 \u0627\u0644\u062D\u0631\u0627\u0631\u064A\u0629 \u0648\u0627\u0644\u062A\u0642\u0637\u064A\u0639 \u0627\u0644\u062D\u0631\u064A\u0631\u064A",
+              "title_en": "Thermal Resting in Warmers & Slicing",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "course-4",
+      "title": "The Kaiseki Philosophy & Seafood Precision",
+      "title_ar": "\u0641\u0644\u0633\u0641\u0629 \u0627\u0644\u0643\u0627\u064A\u0633\u064A\u0643\u064A \u0648\u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u062A\u0639\u0627\u0645\u0644 \u0645\u0639 \u0627\u0644\u0645\u0623\u0643\u0648\u0644\u0627\u062A \u0627\u0644\u0628\u062D\u0631\u064A\u0629",
+      "title_en": "The Kaiseki Philosophy & Seafood Precision",
+      "subtitle_ar": "\u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0625\u064A\u0643\u064A \u062C\u064A\u0645\u064A \u0644\u0644\u0630\u0628\u062D \u0627\u0644\u0631\u062D\u064A\u0645\u060C \u062A\u0642\u0637\u064A\u0639 \u0627\u0644\u0633\u0627\u0634\u064A\u0645\u064A \u0627\u0644\u062D\u0631\u0641\u064A\u060C \u0648\u0627\u0633\u062A\u062E\u0644\u0627\u0635 \u0627\u0644\u062F\u0627\u0634\u064A \u0627\u0644\u0641\u0627\u062E\u0631",
+      "subtitle_en": "Ikejime human harvesting, master yanagiba knife arts, and supreme ichiban dashi extraction",
+      "instructor_id": "chef-4",
+      "instructor_name_ar": "\u0634\u064A\u0641 \u0643\u064A\u0646\u062C\u064A \u062A\u0627\u0643\u0627\u0647\u0627\u0634\u064A",
+      "instructor_name_en": "Chef Kenji Takahashi",
+      "instructor_avatar": "https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?auto=format&fit=crop&w=200&q=80",
+      "instructor_title_ar": "\u062D\u0627\u0635\u0644 \u0639\u0644\u0649 \u0646\u062C\u0645\u062A\u064A \u0645\u064A\u0634\u0644\u0627\u0646 \u0648\u0623\u0633\u062A\u0627\u0630 \u0627\u0644\u0643\u0627\u064A\u0633\u064A\u0643\u064A",
+      "instructor_title_en": "Two Michelin-Starred Master Chef",
+      "level": "masterclass",
+      "level_ar": "\u0627\u062D\u062A\u0631\u0627\u0641\u064A \u0645\u062A\u0642\u062F\u0645 (Masterclass)",
+      "level_en": "Masterclass",
+      "duration_ar": "5 \u0623\u0633\u0627\u0628\u064A\u0639 (20 \u0633\u0627\u0639\u0629 \u062A\u062F\u0631\u064A\u0628\u064A\u0629)",
+      "duration_en": "5 Weeks (20 Live Hours)",
+      "price": 3800,
+      "price_formatted": "3,800 \u0631.\u0633",
+      "currency": "SAR",
+      "total_seats": 12,
+      "seats_left": 2,
+      "start_date": "2026-10-02",
+      "schedule_ar": "\u0643\u0644 \u0623\u0631\u0628\u0639\u0627\u0621 \u0648\u0633\u0628\u062A (6:00 \u0645 - 8:00 \u0645 \u0628\u062A\u0648\u0642\u064A\u062A \u0645\u0643\u0629)",
+      "schedule_en": "Every Wed & Sat (6:00 PM - 8:00 PM AST)",
+      "image": "https://images.unsplash.com/photo-1579027989536-b7b1f875659b?auto=format&fit=crop&w=800&q=80",
+      "includes_certificate": true,
+      "enrolled_count": 10,
+      "syllabus": [
+        {
+          "module_number": 1,
+          "title_ar": "\u0639\u0644\u0645 \u0627\u0644\u0625\u064A\u0643\u064A \u062C\u064A\u0645\u064A \u0648\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u0623\u0633\u0645\u0627\u0643",
+          "title_en": "Ikejime Science & Seafood Curing",
+          "duration_ar": "4 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "4 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u0641\u064A\u0632\u064A\u0627\u0621 \u0634\u0644\u0644 \u0627\u0644\u0646\u062E\u0627\u0639 \u0648\u062A\u0641\u0631\u064A\u063A \u0627\u0644\u062F\u0645 \u0644\u062D\u0641\u0638 \u0627\u0644\u0646\u0636\u0627\u0631\u0629",
+              "title_en": "Neurological Dispatch & Blood Line Draining",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            },
+            {
+              "title_ar": "\u0627\u0644\u062A\u0645\u0644\u064A\u062D \u0648\u0627\u0644\u062A\u0639\u062A\u064A\u0642 \u0627\u0644\u0631\u0637\u0628 \u0644\u0644\u0623\u0633\u0645\u0627\u0643 \u0627\u0644\u0628\u064A\u0636\u0627\u0621 (Shime)",
+              "title_en": "Shime Curing with Kombu (Kobujime)",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            }
+          ]
+        },
+        {
+          "module_number": 2,
+          "title_ar": "\u0627\u0633\u062A\u062E\u0644\u0627\u0635 \u0627\u0644\u062F\u0627\u0634\u064A \u0627\u0644\u0623\u0648\u0644 \u0648\u0645\u0631\u0643\u0628\u0627\u062A \u0627\u0644\u0623\u0648\u0645\u0627\u0645\u064A",
+          "title_en": "Ichiban Dashi & Umami Synergies",
+          "duration_ar": "6 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "6 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u062F\u0631\u062C\u0627\u062A \u062D\u0631\u0627\u0631\u0629 \u0646\u0642\u0639 \u0639\u0634\u0628 \u0627\u0644\u0643\u0648\u0645\u0628\u0648 \u0644\u062A\u0639\u0638\u064A\u0645 \u0627\u0644\u062C\u0644\u0648\u062A\u0627\u0645\u0627\u062A",
+              "title_en": "Kombu Extraction Chemistry at 60\xB0C",
+              "duration_ar": "3 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "3 Hours"
+            },
+            {
+              "title_ar": "\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0627\u0626\u0642 \u0627\u0644\u0643\u0627\u062A\u0633\u0648\u0628\u0648\u0634\u064A \u0648\u0627\u0644\u062A\u0635\u0641\u064A\u0629 \u0627\u0644\u062D\u0631\u064A\u0631\u064A\u0629",
+              "title_en": "Katsuobushi Infusion & Paper Clarification",
+              "duration_ar": "3 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "3 Hours"
+            }
+          ]
+        },
+        {
+          "module_number": 3,
+          "title_ar": "\u0641\u0646\u0648\u0646 \u0627\u0644\u062A\u0642\u0637\u064A\u0639 \u0628\u0627\u0644\u0633\u0643\u0627\u0643\u064A\u0646 \u0627\u0644\u064A\u0627\u0628\u0627\u0646\u064A\u0629 \u0627\u0644\u062A\u0642\u0644\u064A\u062F\u064A\u0629",
+          "title_en": "Master Blade Cuts (Sogi-Giri & Hira-Zukuri)",
+          "duration_ar": "6 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "6 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u0642\u0637\u0639 \u0627\u0644\u0633\u0627\u0634\u064A\u0645\u064A \u0627\u0644\u0645\u0627\u0626\u0644 \u0648\u0627\u0644\u0645\u0633\u062A\u0642\u064A\u0645 \u0648\u0641\u0642 \u0646\u0633\u064A\u062C \u0627\u0644\u0623\u0644\u064A\u0627\u0641",
+              "title_en": "Cutting Angles Relative to Muscle Grain",
+              "duration_ar": "3 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "3 Hours"
+            },
+            {
+              "title_ar": "\u062A\u0642\u0634\u064A\u0631 \u0648\u062A\u0634\u0643\u064A\u0644 \u0627\u0644\u062E\u0636\u0631\u0648\u0627\u062A \u0627\u0644\u0643\u0627\u064A\u0633\u064A\u0643\u064A\u0629 (Katsuramuki)",
+              "title_en": "Paper-Thin Daikon Katsuramuki Sheeting",
+              "duration_ar": "3 \u0633\u0627\u0639\u0627\u062A",
+              "duration_en": "3 Hours"
+            }
+          ]
+        },
+        {
+          "module_number": 4,
+          "title_ar": "\u0641\u0644\u0633\u0641\u0629 \u0627\u0644\u0645\u0648\u0627\u0633\u0645 \u0648\u062A\u0635\u0645\u064A\u0645 \u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0643\u0627\u064A\u0633\u064A\u0643\u064A",
+          "title_en": "Shun Seasonality & Kaiseki Course Architecture",
+          "duration_ar": "4 \u0633\u0627\u0639\u0627\u062A",
+          "duration_en": "4 Hours",
+          "lessons": [
+            {
+              "title_ar": "\u0627\u0644\u0645\u0648\u0627\u0632\u0646\u0629 \u0628\u064A\u0646 \u0627\u0644\u0623\u0637\u0628\u0627\u0642 \u0627\u0644\u062B\u0645\u0627\u0646\u064A\u0629 (Sakizuke \u0625\u0644\u0649 Hassun)",
+              "title_en": "Harmonizing the 8 Classical Kaiseki Courses",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            },
+            {
+              "title_ar": "\u0627\u062E\u062A\u064A\u0627\u0631 \u0627\u0644\u0623\u0648\u0627\u0646\u064A \u0627\u0644\u062E\u0632\u0641\u064A\u0629 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645 \u0627\u0644\u062C\u0645\u0627\u0644\u064A",
+              "title_en": "Ceramic Selection & Seasonal Geometry",
+              "duration_ar": "2 \u0633\u0627\u0639\u0629",
+              "duration_en": "2 Hours"
+            }
+          ]
+        }
+      ]
+    }
+  ];
+
+  // js/data/fixtures/chats.js
+  var CHAT_FIXTURES = [
+    {
+      "id": "chat-1",
+      "partner": {
+        "id": "supplier-1",
+        "name_ar": "\u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0644\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E",
+        "name_en": "Al-Fannar Commercial Kitchens",
+        "avatar": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&q=80",
+        "role": "supplier",
+        "verified": true,
+        "online": true
+      },
+      "last_message_ar": "\u0645\u0631\u062D\u0628\u0627\u064B \u0634\u064A\u0641 \u0641\u064A\u0635\u0644\u060C \u0642\u0645\u0646\u0627 \u0628\u0645\u0631\u0627\u062C\u0639\u0629 \u0637\u0644\u0628 \u0627\u0644\u062A\u0633\u0639\u064A\u0631 \u0644\u0644\u0639\u062C\u0627\u0646\u0629 \u0627\u0644\u0644\u0648\u0644\u0628\u064A\u0629 50 \u0644\u062A\u0631 \u0648\u064A\u0633\u0639\u062F\u0646\u0627 \u062A\u0642\u062F\u064A\u0645 \u062E\u0635\u0645 \u0625\u0636\u0627\u0641\u064A \u0644\u0644\u062F\u0641\u0639\u0629 \u0627\u0644\u0623\u0648\u0644\u0649.",
+      "last_message_en": "Hello Chef Faisal, we reviewed your RFQ for the 50L Spiral Mixer and are pleased to offer an exclusive commercial batch discount.",
+      "last_message_time": "10:45 AM",
+      "unread_count": 1,
+      "category": "supplier",
+      "rfq_card": {
+        "rfq_id": "rfq-9801",
+        "item_id": "supply-1",
+        "item_name_ar": "\u0639\u062C\u0627\u0646\u0629 \u0644\u0648\u0644\u0628\u064A\u0629 \u062A\u062C\u0627\u0631\u064A\u0629 \u0644\u0644\u0645\u062E\u0627\u0628\u0632 50 \u0644\u062A\u0631",
+        "item_name_en": "Commercial Spiral Dough Mixer 50L",
+        "item_image": "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=200&q=80",
+        "quantity": 2,
+        "unit_ar": "\u0648\u062D\u062F\u0629",
+        "unit_en": "Units",
+        "target_price": 27e3,
+        "unit_price": 13500,
+        "total_price": 27e3,
+        "currency": "SAR",
+        "status": "quoted",
+        "destination_ar": "\u0627\u0644\u0631\u064A\u0627\u0636 - \u062D\u064A \u062D\u0637\u064A\u0646",
+        "destination_en": "Riyadh - Hittin District",
+        "target_date": "2026-09-01"
+      },
+      "messages": [
+        {
+          "id": "msg-101",
+          "sender": "me",
+          "text_ar": "\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064A\u0643\u0645\u060C \u0623\u0648\u062F \u0627\u0644\u0627\u0633\u062A\u0641\u0633\u0627\u0631 \u0639\u0646 \u062A\u0648\u0641\u0631 \u0639\u062C\u0627\u0646\u0629 50 \u0644\u062A\u0631 \u0627\u0644\u0641\u0648\u0644\u0627\u0630\u064A\u0629 \u0648\u0625\u0645\u0643\u0627\u0646\u064A\u0629 \u062A\u0648\u0631\u064A\u062F \u0648\u062D\u062F\u062A\u064A\u0646 \u0644\u0645\u0637\u0639\u0645\u0646\u0627 \u0627\u0644\u062C\u062F\u064A\u062F \u0628\u0627\u0644\u0631\u064A\u0627\u0636 \u062E\u0644\u0627\u0644 \u0623\u0633\u0628\u0648\u0639\u064A\u0646.",
+          "text_en": "Greetings, I would like to inquire about stock availability for 2 units of the 50L Spiral Mixer for our new restaurant opening in 2 weeks.",
+          "timestamp": "09:30 AM",
+          "has_rfq": true
+        },
+        {
+          "id": "msg-102",
+          "sender": "partner",
+          "text_ar": "\u0648\u0639\u0644\u064A\u0643\u0645 \u0627\u0644\u0633\u0644\u0627\u0645 \u0648\u0627\u0644\u0631\u062D\u0645\u0629 \u0634\u064A\u0641 \u0641\u064A\u0635\u0644. \u0627\u0644\u0648\u062D\u062F\u0627\u062A \u0645\u062A\u0648\u0641\u0631\u0629 \u0641\u064A \u0645\u0633\u062A\u0648\u062F\u0639\u0627\u062A\u0646\u0627 \u0627\u0644\u0645\u0631\u0643\u0632\u064A\u0629 \u0628\u0627\u0644\u0631\u064A\u0627\u0636 \u0648\u062C\u0627\u0647\u0632\u0629 \u0644\u0644\u0634\u062D\u0646 \u0627\u0644\u0641\u0648\u0631\u064A \u0645\u0639 \u0627\u0644\u062A\u0648\u0635\u064A\u0644 \u0648\u0627\u0644\u062A\u0631\u0643\u064A\u0628 \u0627\u0644\u0645\u062C\u0627\u0646\u064A.",
+          "text_en": "Welcome Chef Faisal. Both units are in stock at our central Riyadh warehouse, ready for immediate dispatch with complimentary installation.",
+          "timestamp": "10:15 AM"
+        },
+        {
+          "id": "msg-103",
+          "sender": "partner",
+          "text_ar": "\u0645\u0631\u062D\u0628\u0627\u064B \u0634\u064A\u0641 \u0641\u064A\u0635\u0644\u060C \u0642\u0645\u0646\u0627 \u0628\u0645\u0631\u0627\u062C\u0639\u0629 \u0637\u0644\u0628 \u0627\u0644\u062A\u0633\u0639\u064A\u0631 \u0644\u0644\u0639\u062C\u0627\u0646\u0629 \u0627\u0644\u0644\u0648\u0644\u0628\u064A\u0629 50 \u0644\u062A\u0631 \u0648\u064A\u0633\u0639\u062F\u0646\u0627 \u062A\u0642\u062F\u064A\u0645 \u062E\u0635\u0645 \u0625\u0636\u0627\u0641\u064A \u0644\u0644\u062F\u0641\u0639\u0629 \u0627\u0644\u0623\u0648\u0644\u0649.",
+          "text_en": "Hello Chef Faisal, we reviewed your RFQ for the 50L Spiral Mixer and are pleased to offer an exclusive commercial batch discount.",
+          "timestamp": "10:45 AM"
+        }
+      ]
+    },
+    {
+      "id": "chat-2",
+      "partner": {
+        "id": "chef-2",
+        "name_ar": "\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
+        "name_en": "Chef Elena Rostova",
+        "avatar": "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=200&q=80",
+        "role": "chef",
+        "verified": true,
+        "online": false
+      },
+      "last_message_ar": "\u0623\u0647\u0644\u0627\u064B \u0634\u064A\u0641 \u0641\u064A\u0635\u0644\u060C \u0648\u0635\u0641\u062A\u0643 \u0627\u0644\u062C\u062F\u064A\u062F\u0629 \u0644\u0644\u0648\u0627\u063A\u064A\u0648 \u0628\u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0643\u0627\u0646\u062A \u0645\u0628\u0647\u0631\u0629! \u0647\u0644 \u064A\u0645\u0643\u0646\u0646\u0627 \u0627\u0644\u062A\u0646\u0633\u064A\u0642 \u0644\u0648\u0631\u0634\u0629 \u0639\u0645\u0644 \u0645\u0634\u062A\u0631\u0643\u0629\u061F",
+      "last_message_en": "Hello Chef Faisal, your new Wagyu with date glaze recipe was phenomenal! Can we collaborate on a joint masterclass?",
+      "last_message_time": "Yesterday",
+      "unread_count": 0,
+      "category": "chef",
+      "rfq_card": null,
+      "messages": [
+        {
+          "id": "msg-201",
+          "sender": "partner",
+          "text_ar": "\u0623\u0647\u0644\u0627\u064B \u0634\u064A\u0641 \u0641\u064A\u0635\u0644\u060C \u0648\u0635\u0641\u062A\u0643 \u0627\u0644\u062C\u062F\u064A\u062F\u0629 \u0644\u0644\u0648\u0627\u063A\u064A\u0648 \u0628\u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0643\u0627\u0646\u062A \u0645\u0628\u0647\u0631\u0629! \u0647\u0644 \u064A\u0645\u0643\u0646\u0646\u0627 \u0627\u0644\u062A\u0646\u0633\u064A\u0642 \u0644\u0648\u0631\u0634\u0629 \u0639\u0645\u0644 \u0645\u0634\u062A\u0631\u0643\u0629\u061F",
+          "text_en": "Hello Chef Faisal, your new Wagyu with date glaze recipe was phenomenal! Can we collaborate on a joint masterclass?",
+          "timestamp": "Yesterday 04:20 PM"
+        },
+        {
+          "id": "msg-202",
+          "sender": "me",
+          "text_ar": "\u0623\u0647\u0644\u0627\u064B \u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627\u060C \u064A\u0633\u0639\u062F\u0646\u064A \u062C\u062F\u0627\u064B \u0630\u0644\u0643! \u064A\u0633\u0639\u062F\u0646\u064A \u062F\u0645\u062C \u0627\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0627\u0644\u0645\u0628\u062A\u0643\u0631\u0629 \u0645\u0639 \u0627\u0644\u0623\u0637\u0628\u0627\u0642 \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0641\u064A \u0648\u0631\u0634\u0629 \u0627\u0644\u0634\u0647\u0631 \u0627\u0644\u0642\u0627\u062F\u0645.",
+          "text_en": "Hello Chef Elena, I would be honored! Let us plan a fusion pastry-gastronomy workshop next month.",
+          "timestamp": "Yesterday 05:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "chat-3",
+      "partner": {
+        "id": "supplier-2",
+        "name_ar": "\u0645\u0639\u0627\u0635\u0631 \u0627\u0644\u062C\u0648\u0641 \u0627\u0644\u0630\u0647\u0628\u064A\u0629",
+        "name_en": "Al-Jouf Golden Olive Mills",
+        "avatar": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=200&q=80",
+        "role": "supplier",
+        "verified": true,
+        "online": true
+      },
+      "last_message_ar": "\u062A\u0645 \u062A\u0623\u0643\u064A\u062F \u0634\u062D\u0646 4 \u0628\u0631\u0627\u0645\u064A\u0644 \u0645\u0646 \u0632\u064A\u062A \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0627\u0644\u0628\u0643\u0631 \u0627\u0644\u0645\u0645\u062A\u0627\u0632\u060C \u0631\u0642\u0645 \u0627\u0644\u062A\u062A\u0628\u0639 \u0645\u0631\u0641\u0642 \u0628\u0637\u0644\u0628\u0643.",
+      "last_message_en": "Dispatched 4 drums of extra virgin olive oil reserve, tracking number attached to your RFQ order.",
+      "last_message_time": "Aug 12",
+      "unread_count": 0,
+      "category": "supplier",
+      "rfq_card": {
+        "rfq_id": "rfq-9802",
+        "item_id": "supply-2",
+        "item_name_ar": "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0628\u0643\u0631 \u0645\u0645\u062A\u0627\u0632 50 \u0644\u062A\u0631 - \u0627\u0644\u062C\u0648\u0641",
+        "item_name_en": "Extra Virgin Olive Oil Bulk Drum 50L",
+        "item_image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&q=80",
+        "quantity": 4,
+        "unit_ar": "\u0628\u0631\u0645\u064A\u0644",
+        "unit_en": "Drums",
+        "target_price": 7400,
+        "unit_price": 1850,
+        "total_price": 7400,
+        "currency": "SAR",
+        "status": "accepted",
+        "destination_ar": "\u0627\u0644\u062F\u0631\u0639\u064A\u0629 - \u0627\u0644\u0631\u064A\u0627\u0636",
+        "destination_en": "Diriyah - Riyadh",
+        "target_date": "2026-08-20"
+      },
+      "messages": [
+        {
+          "id": "msg-301",
+          "sender": "partner",
+          "text_ar": "\u062A\u0645 \u062A\u0623\u0643\u064A\u062F \u0634\u062D\u0646 4 \u0628\u0631\u0627\u0645\u064A\u0644 \u0645\u0646 \u0632\u064A\u062A \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0627\u0644\u0628\u0643\u0631 \u0627\u0644\u0645\u0645\u062A\u0627\u0632\u060C \u0631\u0642\u0645 \u0627\u0644\u062A\u062A\u0628\u0639 \u0645\u0631\u0641\u0642 \u0628\u0637\u0644\u0628\u0643.",
+          "text_en": "Dispatched 4 drums of extra virgin olive oil reserve, tracking number attached to your RFQ order.",
+          "timestamp": "Aug 12 11:15 AM"
+        }
+      ]
+    }
+  ];
+
+  // js/data/fixtures/notifications.js
+  var NOTIFICATION_FIXTURES = [
+    {
+      "id": "notif-1",
+      "type": "rfq",
+      "category": "rfqs",
+      "title_ar": "\u0639\u0631\u0636 \u0633\u0639\u0631 \u062C\u062F\u064A\u062F \u062C\u0627\u0647\u0632 \u0644\u0644\u0645\u0631\u0627\u062C\u0639\u0629",
+      "title_en": "New RFQ Quotation Ready",
+      "message_ar": "\u0642\u062F\u0645\u062A \u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0639\u0631\u0636 \u0633\u0639\u0631 \u0631\u0633\u0645\u064A \u0644\u0637\u0644\u0628\u0643 \u0627\u0644\u062E\u0627\u0635 \u0628\u0627\u0644\u0639\u062C\u0627\u0646\u0629 \u0627\u0644\u0644\u0648\u0644\u0628\u064A\u0629 50 \u0644\u062A\u0631.",
+      "message_en": "Al-Fannar Kitchens submitted an official quotation for your 50L Spiral Mixer RFQ.",
+      "time_ar": "\u0645\u0646\u0630 15 \u062F\u0642\u064A\u0642\u0629",
+      "time_en": "15 mins ago",
+      "timestamp": "2026-08-15T01:20:00Z",
+      "read": false,
+      "avatar": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=100&q=80",
+      "target_url": "chat.html?id=chat-1"
+    },
+    {
+      "id": "notif-2",
+      "type": "like",
+      "category": "likes",
+      "title_ar": "\u0625\u0639\u062C\u0627\u0628\u0627\u062A \u062C\u062F\u064A\u062F\u0629 \u0628\u0648\u0635\u0641\u0629 \u0627\u0644\u0633\u062A\u064A\u0643",
+      "title_en": "New Recipe Likes",
+      "message_ar": '\u0623\u0628\u062F\u0649 45 \u0634\u064A\u0641\u0627\u064B \u0625\u0639\u062C\u0627\u0628\u0647\u0645 \u0628\u0648\u0635\u0641\u0629 "\u0633\u062A\u064A\u0643 \u0648\u0627\u063A\u064A\u0648 \u0628\u0631\u064A\u0628 \u0622\u064A \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631".',
+      "message_en": '45 chefs liked your "Wagyu Ribeye with Black Garlic Date Glaze" recipe.',
+      "time_ar": "\u0645\u0646\u0630 \u0633\u0627\u0639\u062A\u064A\u0646",
+      "time_en": "2 hours ago",
+      "timestamp": "2026-08-14T23:30:00Z",
+      "read": false,
+      "avatar": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=100&q=80",
+      "target_url": "recipe.html?id=recipe-1"
+    },
+    {
+      "id": "notif-3",
+      "type": "course",
+      "category": "courses",
+      "title_ar": "\u062A\u0633\u062C\u064A\u0644 \u062C\u062F\u064A\u062F \u0641\u064A \u0648\u0631\u0634\u0629 \u0627\u0644\u062A\u062E\u0645\u064A\u0631",
+      "title_en": "New Masterclass Enrollment",
+      "message_ar": '\u0627\u0646\u0636\u0645 \u0627\u0644\u0634\u064A\u0641 \u0645\u0627\u0631\u0643\u0648 \u0628\u064A\u0644\u064A\u0646\u064A \u0625\u0644\u0649 \u062F\u0648\u0631\u0629 "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641". \u062A\u0628\u0642\u0649 3 \u0645\u0642\u0627\u0639\u062F \u0641\u0642\u0637!',
+      "message_en": 'Chef Marco Bellini enrolled in "Modern Fermentation Masterclass". Only 3 seats left!',
+      "time_ar": "\u0645\u0646\u0630 4 \u0633\u0627\u0639\u0627\u062A",
+      "time_en": "4 hours ago",
+      "timestamp": "2026-08-14T21:30:00Z",
+      "read": true,
+      "avatar": "https://images.unsplash.com/photo-1574966740793-953ad375ded5?auto=format&fit=crop&w=100&q=80",
+      "target_url": "courses.html?id=course-1"
+    },
+    {
+      "id": "notif-4",
+      "type": "comment",
+      "category": "likes",
+      "title_ar": "\u062A\u0639\u0644\u064A\u0642 \u062C\u062F\u064A\u062F \u0645\u0646 \u0627\u0644\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627",
+      "title_en": "New Comment on Recipe",
+      "message_ar": '\u0639\u0644\u0642\u062A \u0627\u0644\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627: "\u062A\u0646\u0627\u063A\u0645 \u062F\u0628\u0633 \u062A\u0645\u0631 \u0627\u0644\u062E\u0644\u0627\u0635 \u0645\u0639 \u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0628\u062A\u0643\u0627\u0631 \u0627\u0633\u062A\u062B\u0646\u0627\u0626\u064A!"',
+      "message_en": 'Chef Elena Rostova commented: "The balance of Kholas dates and black garlic is sublime!"',
+      "time_ar": "\u0645\u0646\u0630 6 \u0633\u0627\u0639\u0627\u062A",
+      "time_en": "6 hours ago",
+      "timestamp": "2026-08-14T19:30:00Z",
+      "read": true,
+      "avatar": "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=100&q=80",
+      "target_url": "recipe.html?id=recipe-1"
+    },
+    {
+      "id": "notif-5",
+      "type": "rfq",
+      "category": "rfqs",
+      "title_ar": "\u062A\u0645 \u0642\u0628\u0648\u0644 \u0637\u0644\u0628 \u0627\u0644\u062A\u0648\u0631\u064A\u062F \u0628\u0646\u062C\u0627\u062D",
+      "title_en": "RFQ Order Accepted",
+      "message_ar": "\u062A\u0645 \u0642\u0628\u0648\u0644 \u0648\u062A\u0623\u0643\u064A\u062F \u0637\u0644\u0628 \u062A\u0648\u0631\u064A\u062F \u0628\u0631\u0627\u0645\u064A\u0644 \u0632\u064A\u062A \u0627\u0644\u0632\u064A\u062A\u0648\u0646 \u0645\u0646 \u0645\u0639\u0627\u0635\u0631 \u0627\u0644\u062C\u0648\u0641 \u0627\u0644\u0630\u0647\u0628\u064A\u0629.",
+      "message_en": "Al-Jouf Golden Mills accepted and confirmed your olive oil bulk shipment.",
+      "time_ar": "\u0645\u0646\u0630 \u064A\u0648\u0645",
+      "time_en": "1 day ago",
+      "timestamp": "2026-08-13T10:00:00Z",
+      "read": true,
+      "avatar": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=100&q=80",
+      "target_url": "chat.html?id=chat-3"
+    },
+    {
+      "id": "notif-6",
+      "type": "follow",
+      "category": "likes",
+      "title_ar": "\u0645\u062A\u0627\u0628\u0639\u0648\u0646 \u062C\u062F\u062F \u0644\u0645\u0644\u0641\u0643 \u0627\u0644\u0634\u062E\u0635\u064A",
+      "title_en": "New Followers",
+      "message_ar": "\u0628\u062F\u0623 128 \u0645\u062A\u062E\u0635\u0635\u0627\u064B \u0641\u064A \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0628\u0645\u062A\u0627\u0628\u0639\u0629 \u062D\u0633\u0627\u0628\u0643 \u0647\u0630\u0627 \u0627\u0644\u0623\u0633\u0628\u0648\u0639.",
+      "message_en": "128 culinary professionals started following your profile this week.",
+      "time_ar": "\u0645\u0646\u0630 \u064A\u0648\u0645\u064A\u0646",
+      "time_en": "2 days ago",
+      "timestamp": "2026-08-12T14:00:00Z",
+      "read": true,
+      "avatar": "https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?auto=format&fit=crop&w=100&q=80",
+      "target_url": "chef.html?id=chef-1"
+    }
+  ];
+
+  // js/data/fixtures/trends.js
+  var TREND_FIXTURES = {
+    "topics": [
+      {
+        "tag": "#NewNajdiCuisine",
+        "title_ar": "\u0627\u0644\u0645\u0637\u0628\u062E \u0627\u0644\u0646\u062C\u062F\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631",
+        "title_en": "Contemporary Najdi Gastronomy",
+        "posts_count": "1.4k"
+      },
+      {
+        "tag": "#KojiFermentation",
+        "title_ar": "\u062A\u0642\u0646\u064A\u0627\u062A \u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0643\u0648\u062C\u064A",
+        "title_en": "Koji Fermentation Arts",
+        "posts_count": "890"
+      },
+      {
+        "tag": "#ArtisanalPasta",
+        "title_ar": "\u0627\u0644\u0628\u0627\u0633\u062A\u0627 \u0627\u0644\u062D\u0631\u0641\u064A\u0629 \u0627\u0644\u064A\u062F\u0648\u064A\u0629",
+        "title_en": "Handmade Artisanal Pasta",
+        "posts_count": "2.1k"
+      },
+      {
+        "tag": "#CommercialKitchenTech",
+        "title_ar": "\u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0633\u062D\u0627\u0628\u064A\u0629",
+        "title_en": "Commercial Kitchen Tech",
+        "posts_count": "640"
+      },
+      {
+        "tag": "#PastryArchitecture",
+        "title_ar": "\u0647\u0646\u062F\u0633\u0629 \u0627\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0627\u0644\u0641\u0631\u0646\u0633\u064A\u0629",
+        "title_en": "Architectural Haute Pastry",
+        "posts_count": "1.8k"
+      }
+    ],
+    "stories": [
+      {
+        "id": "story-1",
+        "chef_id": "chef-1",
+        "chef_name_ar": "\u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
+        "chef_name_en": "Faisal Al-Hashemi",
+        "avatar": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=150&q=80",
+        "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+        "unviewed": true
+      },
+      {
+        "id": "story-2",
+        "chef_id": "chef-2",
+        "chef_name_ar": "\u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
+        "chef_name_en": "Elena Rostova",
+        "avatar": "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=150&q=80",
+        "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80",
+        "unviewed": true
+      },
+      {
+        "id": "story-3",
+        "chef_id": "chef-3",
+        "chef_name_ar": "\u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631",
+        "chef_name_en": "Tariq Mansour",
+        "avatar": "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=150&q=80",
+        "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+        "unviewed": true
+      },
+      {
+        "id": "story-4",
+        "chef_id": "chef-4",
+        "chef_name_ar": "\u0643\u064A\u0646\u062C\u064A \u062A\u0627\u0643\u0627\u0647\u0627\u0634\u064A",
+        "chef_name_en": "Kenji Takahashi",
+        "avatar": "https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?auto=format&fit=crop&w=150&q=80",
+        "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80",
+        "unviewed": false
+      },
+      {
+        "id": "story-5",
+        "chef_id": "chef-5",
+        "chef_name_ar": "\u0644\u064A\u0644\u0649 \u0628\u0646 \u062C\u0644\u0648\u0646",
+        "chef_name_en": "Layla Benjelloun",
+        "avatar": "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=150&q=80",
+        "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+        "unviewed": false
+      },
+      {
+        "id": "story-6",
+        "chef_id": "chef-6",
+        "chef_name_ar": "\u0645\u0627\u0631\u0643\u0648 \u0628\u064A\u0644\u064A\u0646\u064A",
+        "chef_name_en": "Marco Bellini",
+        "avatar": "https://images.unsplash.com/photo-1574966740793-953ad375ded5?auto=format&fit=crop&w=150&q=80",
+        "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80",
+        "unviewed": false
+      }
+    ],
+    "top_suppliers": [
+      {
+        "id": "supplier-1",
+        "name_ar": "\u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0644\u0644\u0645\u0639\u062F\u0627\u062A",
+        "name_en": "Al-Fannar Kitchens",
+        "category_ar": "\u0645\u0639\u062F\u0627\u062A \u062B\u0642\u064A\u0644\u0629",
+        "category_en": "Heavy Equipment",
+        "avatar": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=100&q=80",
+        "rating": 4.96,
+        "orders_count": 480
+      },
+      {
+        "id": "supplier-2",
+        "name_ar": "\u0645\u0639\u0627\u0635\u0631 \u0627\u0644\u062C\u0648\u0641 \u0627\u0644\u0630\u0647\u0628\u064A\u0629",
+        "name_en": "Al-Jouf Olive Mills",
+        "category_ar": "\u0645\u0643\u0648\u0646\u0627\u062A \u0628\u0627\u0644\u062C\u0645\u0644\u0629",
+        "category_en": "Bulk Ingredients",
+        "avatar": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=100&q=80",
+        "rating": 4.98,
+        "orders_count": 920
+      },
+      {
+        "id": "supplier-3",
+        "name_ar": "\u0643\u0627\u064A\u0632\u0646 \u0644\u0623\u062F\u0648\u0627\u062A \u0627\u0644\u0637\u0647\u0627\u0629",
+        "name_en": "Kaizen Cutlery",
+        "category_ar": "\u0633\u0643\u0627\u0643\u064A\u0646 \u064A\u0627\u0628\u0627\u0646\u064A\u0629",
+        "category_en": "Japanese Cutlery",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80",
+        "rating": 4.94,
+        "orders_count": 310
+      }
+    ],
+    "upcoming_workshops": [
+      {
+        "id": "course-1",
+        "title_ar": "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641",
+        "title_en": "Fermentation & Dry Aging",
+        "instructor_ar": "\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
+        "instructor_en": "Chef Faisal Al-Hashemi",
+        "date_ar": "10 \u0633\u0628\u062A\u0645\u0628\u0631 2026",
+        "date_en": "Sep 10, 2026",
+        "seats_left": 3
+      },
+      {
+        "id": "course-2",
+        "title_ar": "\u0641\u0646\u0648\u0646 \u0627\u0644\u0645\u062E\u0628\u0648\u0632\u0627\u062A \u0627\u0644\u0641\u0631\u0646\u0633\u064A\u0629 \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
+        "title_en": "Haute Viennoiserie Masterclass",
+        "instructor_ar": "\u0634\u064A\u0641 \u0625\u064A\u0644\u064A\u0646\u0627 \u0631\u0648\u0633\u062A\u0648\u0641\u0627",
+        "instructor_en": "Chef Elena Rostova",
+        "date_ar": "18 \u0633\u0628\u062A\u0645\u0628\u0631 2026",
+        "date_en": "Sep 18, 2026",
+        "seats_left": 5
+      }
+    ]
+  };
+
+  // js/data/fixtures/users.js
+  var USER_FIXTURES = {
+    "id": "chef-1",
+    "name_ar": "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
+    "name_en": "Chef Faisal Al-Hashemi",
+    "handle": "@chef_faisal",
+    "email": "faisal@meyar.sa",
+    "role": "chef",
+    "verified": true,
+    "avatar": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80",
+    "cover": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "title_ar": "\u0627\u0644\u0645\u062F\u064A\u0631 \u0627\u0644\u062A\u0646\u0641\u064A\u0630\u064A \u0644\u0644\u0637\u0647\u064A \u0648\u0645\u0633\u062A\u0634\u0627\u0631 \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631",
+    "title_en": "Executive Culinary Director & Gastronomy Consultant",
+    "bio_ar": "\u0631\u0627\u0626\u062F \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0633\u0639\u0648\u062F\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631. \u064A\u0639\u064A\u062F \u0627\u0628\u062A\u0643\u0627\u0631 \u0627\u0644\u0648\u0635\u0641\u0627\u062A \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0627\u0644\u0646\u062C\u062F\u064A\u0629 \u0648\u0627\u0644\u062D\u062C\u0627\u0632\u064A\u0629 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0623\u062D\u062F\u062B \u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0648\u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0648\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062C\u0632\u064A\u0626\u064A.",
+    "bio_en": "Pioneer of modern Saudi fine dining. Reinventing heritage Najdi and Hejazi recipes through precision dry-aging, wild fermentation, and progressive molecular gastronomy.",
+    "business_profile": {
+      "company_name_ar": "\u0627\u0633\u062A\u0648\u062F\u064A\u0648 \u0646\u062C\u062F \u0644\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0648\u0627\u0644\u0636\u064A\u0627\u0641\u0629",
+      "company_name_en": "Najd Culinary Studio & Hospitality Consultancy",
+      "cr_number": "1010894521",
+      "vat_number": "310245896300003",
+      "category": "Fine Dining & Hospitality Consulting",
+      "location_ar": "\u062D\u064A \u062D\u0637\u064A\u0646\u060C \u0627\u0644\u0631\u064A\u0627\u0636",
+      "location_en": "Hittin, Riyadh, Saudi Arabia"
+    },
+    "stats": {
+      "recipes_count": 24,
+      "followers_count": 42800,
+      "following_count": 310,
+      "saved_count": 86,
+      "monthly_views": 48250,
+      "total_likes": 18400
+    }
+  };
+  var DEMO_USERS = {
+    activeUser: USER_FIXTURES,
+    supplierUser: {
+      id: "supplier-1",
+      name_ar: "\u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0644\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E",
+      name_en: "Al-Fanar Commercial Kitchen Equipment",
+      email: "b2b@alfanar.sa",
+      role: "supplier",
+      verified: true,
+      avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80"
+    },
+    enthusiastUser: {
+      id: "enthusiast-1",
+      name_ar: "\u0639\u0636\u0648 \u0645\u0639\u064A\u0627\u0631",
+      name_en: "Meyar Enthusiast",
+      role: "enthusiast",
+      verified: true,
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+    }
+  };
+
+  // js/data/fixtures/stats.js
+  var STAT_FIXTURES = {
+    "kpis": {
+      "views": 48250,
+      "views_growth": "+18.4%",
+      "impressions": 142800,
+      "impressions_growth": "+24.1%",
+      "rfqs": 38,
+      "rfqs_growth": "+12.5%",
+      "revenue": 194500,
+      "revenue_formatted": "194,500 \u0631.\u0633",
+      "revenue_growth": "+31.2%"
+    },
+    "chart_monthly": [
+      {
+        "month_ar": "\u064A\u0646\u0627\u064A\u0631",
+        "month_en": "Jan",
+        "views": 24e3,
+        "revenue": 11e4,
+        "rfqs": 18
+      },
+      {
+        "month_ar": "\u0641\u0628\u0631\u0627\u064A\u0631",
+        "month_en": "Feb",
+        "views": 29e3,
+        "revenue": 125e3,
+        "rfqs": 22
+      },
+      {
+        "month_ar": "\u0645\u0627\u0631\u0633",
+        "month_en": "Mar",
+        "views": 34e3,
+        "revenue": 142e3,
+        "rfqs": 26
+      },
+      {
+        "month_ar": "\u0623\u0628\u0631\u064A\u0644",
+        "month_en": "Apr",
+        "views": 38e3,
+        "revenue": 158e3,
+        "rfqs": 29
+      },
+      {
+        "month_ar": "\u0645\u0627\u064A\u0648",
+        "month_en": "May",
+        "views": 42e3,
+        "revenue": 175e3,
+        "rfqs": 33
+      },
+      {
+        "month_ar": "\u064A\u0648\u0646\u064A\u0648",
+        "month_en": "Jun",
+        "views": 48250,
+        "revenue": 194500,
+        "rfqs": 38
+      }
+    ],
+    "published_recipes_count": 24,
+    "active_listings_count": 14,
+    "pending_rfqs_count": 7
+  };
+
+  // js/data/fixtures/settings.js
+  var SETTING_FIXTURES = {
+    "profile": {
+      "name_ar": "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
+      "name_en": "Chef Faisal Al-Hashemi",
+      "handle": "@chef_faisal",
+      "email": "faisal@meyar.sa",
+      "phone": "+966 50 123 4567",
+      "title_ar": "\u0627\u0644\u0645\u062F\u064A\u0631 \u0627\u0644\u062A\u0646\u0641\u064A\u0630\u064A \u0644\u0644\u0637\u0647\u064A \u0648\u0645\u0633\u062A\u0634\u0627\u0631 \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631",
+      "title_en": "Executive Culinary Director & Gastronomy Consultant",
+      "bio_ar": "\u0631\u0627\u0626\u062F \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0633\u0639\u0648\u062F\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631. \u064A\u0639\u064A\u062F \u0627\u0628\u062A\u0643\u0627\u0631 \u0627\u0644\u0648\u0635\u0641\u0627\u062A \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0627\u0644\u0646\u062C\u062F\u064A\u0629 \u0648\u0627\u0644\u062D\u062C\u0627\u0632\u064A\u0629 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0623\u062D\u062F\u062B \u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0648\u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0648\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062C\u0632\u064A\u0626\u064A.",
+      "bio_en": "Pioneer of modern Saudi fine dining. Reinventing heritage Najdi and Hejazi recipes through precision dry-aging, wild fermentation, and progressive molecular gastronomy.",
+      "location_ar": "\u0627\u0644\u0631\u064A\u0627\u0636\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
+      "location_en": "Riyadh, Saudi Arabia",
+      "years_experience": 16,
+      "specialties": "\u0627\u0644\u0645\u0637\u0628\u062E \u0627\u0644\u0633\u0639\u0648\u062F\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631\u060C \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u060C \u0648\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062C\u0632\u064A\u0626\u064A",
+      "website": "",
+      "cv": null,
+      "avatar": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80",
+      "cover": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+    },
+    "business": {
+      "company_name_ar": "\u0627\u0633\u062A\u0648\u062F\u064A\u0648 \u0646\u062C\u062F \u0644\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0648\u0627\u0644\u0636\u064A\u0627\u0641\u0629",
+      "company_name_en": "Najd Culinary Studio & Hospitality Consultancy",
+      "cr_number": "1010894521",
+      "vat_number": "310245896300003",
+      "category": "Fine Dining & Hospitality Consulting",
+      "location_ar": "\u062D\u064A \u062D\u0637\u064A\u0646\u060C \u0627\u0644\u0631\u064A\u0627\u0636",
+      "location_en": "Hittin, Riyadh, Saudi Arabia",
+      "auto_quote": true
+    },
+    "notifications": {
+      "email_digest": true,
+      "email_rfq": true,
+      "email_courses": true,
+      "push_messages": true,
+      "push_social": true,
+      "push_followers": true,
+      "sms_urgent": true,
+      "sms_security": true
+    },
+    "security": {
+      "two_factor": true,
+      "login_alerts": true,
+      "active_sessions_count": 2
+    },
+    "privacy": {
+      "profile_visibility": "public",
+      "show_stats": true
+    },
+    "theme": {
+      "theme": "dark",
+      "high_contrast": false,
+      "compact_mode": false
+    },
+    "language": {
+      "lang": "ar",
+      "country": "SA",
+      "timezone": "Asia/Riyadh",
+      "currency": "SAR",
+      "calendar": "gregorian"
+    }
+  };
+
+  // js/data/fixtures/rfqs.js
+  var RFQ_FIXTURES = [
+    {
+      "rfq_id": "rfq-9801",
+      "item_id": "supply-1",
+      "item_name_ar": "\u0639\u062C\u0627\u0646\u0629 \u0644\u0648\u0644\u0628\u064A\u0629 \u062A\u062C\u0627\u0631\u064A\u0629 \u0644\u0644\u0645\u062E\u0627\u0628\u0632 50 \u0644\u062A\u0631",
+      "item_name_en": "Commercial Spiral Dough Mixer 50L",
+      "item_image": "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=200&q=80",
+      "quantity": 2,
+      "unit_ar": "\u0648\u062D\u062F\u0629",
+      "unit_en": "Units",
+      "target_price": 27e3,
+      "unit_price": 13500,
+      "total_price": 27e3,
+      "currency": "SAR",
+      "status": "quoted",
+      "destination_ar": "\u0627\u0644\u0631\u064A\u0627\u0636 - \u062D\u064A \u062D\u0637\u064A\u0646",
+      "destination_en": "Riyadh - Hittin District",
+      "target_date": "2026-09-01",
+      "partner_id": "supplier-1",
+      "partner_name_ar": "\u0634\u0631\u0643\u0629 \u0627\u0644\u0641\u0646\u0627\u0631 \u0644\u0645\u0639\u062F\u0627\u062A \u0627\u0644\u0645\u0637\u0627\u0628\u062E",
+      "partner_name_en": "Al-Fannar Commercial Kitchens",
+      "partner_avatar": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&q=80",
+      "partner_role": "supplier",
+      "created_at": "2026-08-14T10:00:00Z",
+      "chat_id": "chat-1"
+    },
+    {
+      "rfq_id": "rfq-9802",
+      "item_id": "supply-2",
+      "item_name_ar": "\u0632\u064A\u062A \u0632\u064A\u062A\u0648\u0646 \u0628\u0643\u0631 \u0645\u0645\u062A\u0627\u0632 50 \u0644\u062A\u0631 - \u0627\u0644\u062C\u0648\u0641",
+      "item_name_en": "Extra Virgin Olive Oil Bulk Drum 50L",
+      "item_image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&q=80",
+      "quantity": 4,
+      "unit_ar": "\u0628\u0631\u0645\u064A\u0644",
+      "unit_en": "Drums",
+      "target_price": 7400,
+      "unit_price": 1850,
+      "total_price": 7400,
+      "currency": "SAR",
+      "status": "accepted",
+      "destination_ar": "\u0627\u0644\u062F\u0631\u0639\u064A\u0629 - \u0627\u0644\u0631\u064A\u0627\u0636",
+      "destination_en": "Diriyah - Riyadh",
+      "target_date": "2026-08-20",
+      "partner_id": "supplier-2",
+      "partner_name_ar": "\u0645\u0639\u0627\u0635\u0631 \u0627\u0644\u062C\u0648\u0641 \u0627\u0644\u0630\u0647\u0628\u064A\u0629",
+      "partner_name_en": "Al-Jouf Golden Olive Mills",
+      "partner_avatar": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=200&q=80",
+      "partner_role": "supplier",
+      "created_at": "2026-08-14T10:00:00Z",
+      "chat_id": "chat-3"
+    }
+  ];
+
+  // js/data/fixtures/dashboard.js
+  var DASHBOARD_PERIOD_FIXTURES = {
+    "7d": {
+      multiplier: 0.23,
+      viewsGrowth: "+8.2%",
+      impressionsGrowth: "+11.4%",
+      rfqsGrowth: "+5.0%",
+      revenueGrowth: "+14.6%",
+      trafficPoints: [
+        { label_ar: "\u0627\u0644\u0633\u0628\u062A", label_en: "Sat", views: 1800, impressions: 5200 },
+        { label_ar: "\u0627\u0644\u0623\u062D\u062F", label_en: "Sun", views: 2400, impressions: 6800 },
+        { label_ar: "\u0627\u0644\u0627\u062B\u0646\u064A\u0646", label_en: "Mon", views: 2900, impressions: 8400 },
+        { label_ar: "\u0627\u0644\u062B\u0644\u0627\u062B\u0627\u0621", label_en: "Tue", views: 3200, impressions: 9600 },
+        { label_ar: "\u0627\u0644\u0623\u0631\u0628\u0639\u0627\u0621", label_en: "Wed", views: 3800, impressions: 11200 },
+        { label_ar: "\u0627\u0644\u062E\u0645\u064A\u0633", label_en: "Thu", views: 4600, impressions: 13800 },
+        { label_ar: "\u0627\u0644\u062C\u0645\u0639\u0629", label_en: "Fri", views: 5400, impressions: 16500 }
+      ],
+      revenuePoints: [
+        { label_ar: "\u0627\u0644\u0633\u0628\u062A", label_en: "Sat", revenue: 14e3, rfqs: 2 },
+        { label_ar: "\u0627\u0644\u0623\u062D\u062F", label_en: "Sun", revenue: 18500, rfqs: 3 },
+        { label_ar: "\u0627\u0644\u0627\u062B\u0646\u064A\u0646", label_en: "Mon", revenue: 22e3, rfqs: 4 },
+        { label_ar: "\u0627\u0644\u062B\u0644\u0627\u062B\u0627\u0621", label_en: "Tue", revenue: 26500, rfqs: 5 },
+        { label_ar: "\u0627\u0644\u0623\u0631\u0628\u0639\u0627\u0621", label_en: "Wed", revenue: 31e3, rfqs: 6 },
+        { label_ar: "\u0627\u0644\u062E\u0645\u064A\u0633", label_en: "Thu", revenue: 38500, rfqs: 8 },
+        { label_ar: "\u0627\u0644\u062C\u0645\u0639\u0629", label_en: "Fri", revenue: 44e3, rfqs: 10 }
+      ]
+    },
+    "30d": {
+      multiplier: 1,
+      viewsGrowth: "+18.4%",
+      impressionsGrowth: "+24.1%",
+      rfqsGrowth: "+12.5%",
+      revenueGrowth: "+31.2%",
+      trafficPoints: [
+        { label_ar: "\u0623\u0633\u0628\u0648\u0639 1", label_en: "Week 1", views: 9800, impressions: 28500 },
+        { label_ar: "\u0623\u0633\u0628\u0648\u0639 2", label_en: "Week 2", views: 11400, impressions: 34200 },
+        { label_ar: "\u0623\u0633\u0628\u0648\u0639 3", label_en: "Week 3", views: 13200, impressions: 39500 },
+        { label_ar: "\u0623\u0633\u0628\u0648\u0639 4", label_en: "Week 4", views: 13850, impressions: 40600 }
+      ],
+      revenuePoints: [
+        { label_ar: "\u0623\u0633\u0628\u0648\u0639 1", label_en: "Week 1", revenue: 38e3, rfqs: 7 },
+        { label_ar: "\u0623\u0633\u0628\u0648\u0639 2", label_en: "Week 2", revenue: 46500, rfqs: 9 },
+        { label_ar: "\u0623\u0633\u0628\u0648\u0639 3", label_en: "Week 3", revenue: 52e3, rfqs: 10 },
+        { label_ar: "\u0623\u0633\u0628\u0648\u0639 4", label_en: "Week 4", revenue: 58e3, rfqs: 12 }
+      ]
+    },
+    "6m": {
+      multiplier: 5.6,
+      viewsGrowth: "+34.8%",
+      impressionsGrowth: "+42.5%",
+      rfqsGrowth: "+28.0%",
+      revenueGrowth: "+52.4%",
+      trafficPoints: [
+        { label_ar: "\u064A\u0646\u0627\u064A\u0631", label_en: "Jan", views: 24e3, impressions: 68e3 },
+        { label_ar: "\u0641\u0628\u0631\u0627\u064A\u0631", label_en: "Feb", views: 29e3, impressions: 82e3 },
+        { label_ar: "\u0645\u0627\u0631\u0633", label_en: "Mar", views: 34e3, impressions: 98e3 },
+        { label_ar: "\u0623\u0628\u0631\u064A\u0644", label_en: "Apr", views: 38e3, impressions: 112e3 },
+        { label_ar: "\u0645\u0627\u064A\u0648", label_en: "May", views: 42e3, impressions: 128e3 },
+        { label_ar: "\u064A\u0648\u0646\u064A\u0648", label_en: "Jun", views: 48250, impressions: 142800 }
+      ],
+      revenuePoints: [
+        { label_ar: "\u064A\u0646\u0627\u064A\u0631", label_en: "Jan", revenue: 11e4, rfqs: 18 },
+        { label_ar: "\u0641\u0628\u0631\u0627\u064A\u0631", label_en: "Feb", revenue: 125e3, rfqs: 22 },
+        { label_ar: "\u0645\u0627\u0631\u0633", label_en: "Mar", revenue: 142e3, rfqs: 26 },
+        { label_ar: "\u0623\u0628\u0631\u064A\u0644", label_en: "Apr", revenue: 158e3, rfqs: 29 },
+        { label_ar: "\u0645\u0627\u064A\u0648", label_en: "May", revenue: 175e3, rfqs: 33 },
+        { label_ar: "\u064A\u0648\u0646\u064A\u0648", label_en: "Jun", revenue: 194500, rfqs: 38 }
+      ]
+    },
+    "1y": {
+      multiplier: 11.2,
+      viewsGrowth: "+68.5%",
+      impressionsGrowth: "+85.2%",
+      rfqsGrowth: "+48.0%",
+      revenueGrowth: "+94.0%",
+      trafficPoints: [
+        { label_ar: "\u0627\u0644\u0631\u0628\u0639 1", label_en: "Q1", views: 87e3, impressions: 248e3 },
+        { label_ar: "\u0627\u0644\u0631\u0628\u0639 2", label_en: "Q2", views: 128e3, impressions: 382e3 },
+        { label_ar: "\u0627\u0644\u0631\u0628\u0639 3", label_en: "Q3", views: 165e3, impressions: 49e4 },
+        { label_ar: "\u0627\u0644\u0631\u0628\u0639 4", label_en: "Q4", views: 194e3, impressions: 58e4 }
+      ],
+      revenuePoints: [
+        { label_ar: "\u0627\u0644\u0631\u0628\u0639 1", label_en: "Q1", revenue: 377e3, rfqs: 66 },
+        { label_ar: "\u0627\u0644\u0631\u0628\u0639 2", label_en: "Q2", revenue: 527500, rfqs: 100 },
+        { label_ar: "\u0627\u0644\u0631\u0628\u0639 3", label_en: "Q3", revenue: 64e4, rfqs: 124 },
+        { label_ar: "\u0627\u0644\u0631\u0628\u0639 4", label_en: "Q4", revenue: 785e3, rfqs: 156 }
+      ]
+    }
+  };
+  var DASHBOARD_RFQ_FIXTURES = [
+    {
+      id: "RFQ-9801",
+      client_name_ar: "\u0634\u0631\u0643\u0629 \u0645\u0637\u0627\u0639\u0645 \u0644\u0648\u0633\u064A\u0644 \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
+      client_name_en: "Lusail Fine Dining Group",
+      buyer_name: "\u0623\u062D\u0645\u062F \u0627\u0644\u0633\u0628\u064A\u0639\u064A",
+      buyer_email: "a.subaie@lusail-dining.sa",
+      item_id: "supply-1",
+      item_name_ar: "\u0639\u062C\u0627\u0646\u0629 \u0644\u0648\u0644\u0628\u064A\u0629 \u062A\u062C\u0627\u0631\u064A\u0629 50 \u0644\u062A\u0631",
+      item_name_en: "Commercial Heavy-Duty Spiral Dough Mixer 50L",
+      quantity: 3,
+      destination_ar: "\u0627\u0644\u0631\u064A\u0627\u0636 - \u062D\u064A \u0627\u0644\u0645\u0644\u0632",
+      destination_en: "Riyadh - Al-Malaz",
+      target_date: "2026-09-01",
+      status: "pending",
+      quoted_price: null,
+      lead_time: null,
+      created_at: "2026-08-14"
+    },
+    {
+      id: "RFQ-9802",
+      client_name_ar: "\u0645\u062C\u0645\u0648\u0639\u0629 \u0627\u0644\u0636\u064A\u0627\u0641\u0629 \u0627\u0644\u0645\u0628\u062A\u0643\u0631\u0629",
+      client_name_en: "Innovative Hospitality Group",
+      buyer_name: "\u0645. \u0631\u0627\u0643\u0627\u0646 \u0627\u0644\u063A\u0627\u0645\u062F\u064A",
+      buyer_email: "rakan@ihg-sa.com",
+      item_id: "supply-2",
+      item_name_ar: "\u0637\u0642\u0645 \u0633\u0643\u0627\u0643\u064A\u0646 \u062F\u0645\u0634\u0642\u064A\u0629 \u064A\u0627\u0628\u0627\u0646\u064A\u0629 6 \u0642\u0637\u0639",
+      item_name_en: "Master Japanese Damascus Chef Knives Set 6pcs",
+      quantity: 10,
+      destination_ar: "\u062C\u062F\u0629 - \u0627\u0644\u0631\u0648\u0636\u0629",
+      destination_en: "Jeddah - Al-Rawdah",
+      target_date: "2026-08-28",
+      status: "quoted",
+      quoted_price: 36e3,
+      quoted_price_formatted: "36,000 \u0631.\u0633",
+      lead_time: "4 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
+      created_at: "2026-08-13"
+    },
+    {
+      id: "RFQ-9803",
+      client_name_ar: "\u0645\u062E\u0628\u0632 \u0648\u0645\u0642\u0647\u0649 \u0627\u0644\u0633\u0646\u0628\u0644\u0629 \u0627\u0644\u0630\u0647\u0628\u064A\u0629",
+      client_name_en: "Golden Spike Artisanal Bakery",
+      buyer_name: "\u0646\u0648\u0631\u0629 \u0627\u0644\u0645\u0646\u0635\u0648\u0631",
+      buyer_email: "noura@goldenspike.sa",
+      item_id: "supply-3",
+      item_name_ar: "\u062F\u0642\u064A\u0642 \u0641\u0627\u062E\u0631 \u0639\u0636\u0648\u064A T65 \u0641\u0631\u0646\u0633\u064A 25 \u0643\u063A",
+      item_name_en: "Organic French Wheat Flour T65 25kg",
+      quantity: 50,
+      destination_ar: "\u0627\u0644\u062E\u0628\u0631 - \u0627\u0644\u062D\u0632\u0627\u0645 \u0627\u0644\u0623\u062E\u0636\u0631",
+      destination_en: "Khobar - Green Belt",
+      target_date: "2026-09-15",
+      status: "accepted",
+      quoted_price: 10500,
+      quoted_price_formatted: "10,500 \u0631.\u0633",
+      lead_time: "2 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
+      created_at: "2026-08-11"
+    },
+    {
+      id: "RFQ-9804",
+      client_name_ar: "\u0645\u0646\u062A\u062C\u0639 \u0634\u0627\u0637\u0626 \u0627\u0644\u0646\u0648\u0631\u0633",
+      client_name_en: "Al-Nawras Beach Resort",
+      buyer_name: "\u0641\u0647\u062F \u0627\u0644\u0639\u062A\u064A\u0628\u064A",
+      buyer_email: "f.otaibi@al-nawras.sa",
+      item_id: "supply-4",
+      item_name_ar: "\u0639\u0628\u0648\u0627\u062A \u062A\u0642\u062F\u064A\u0645 \u0635\u062F\u064A\u0642\u0629 \u0644\u0644\u0628\u064A\u0626\u0629 \u0642\u0627\u0628\u0644\u0629 \u0644\u0644\u062A\u062D\u0644\u0644",
+      item_name_en: "Biodegradable Eco Food Packaging Containers",
+      quantity: 200,
+      destination_ar: "\u0627\u0644\u062F\u0645\u0627\u0645 - \u0627\u0644\u0634\u0627\u0637\u0626 \u0627\u0644\u063A\u0631\u0628\u064A",
+      destination_en: "Dammam - West Coast",
+      target_date: "2026-08-30",
+      status: "pending",
+      quoted_price: null,
+      lead_time: null,
+      created_at: "2026-08-14"
+    },
+    {
+      id: "RFQ-9805",
+      client_name_ar: "\u0634\u0631\u0643\u0629 \u0625\u062A\u0642\u0627\u0646 \u0644\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0645\u0631\u0643\u0632\u064A\u0629",
+      client_name_en: "Itqan Cloud Kitchens",
+      buyer_name: "\u0633\u0627\u0644\u0645 \u0627\u0644\u062F\u0648\u0633\u0631\u064A",
+      buyer_email: "salem@itqan-kitchens.sa",
+      item_id: "supply-1",
+      item_name_ar: "\u0639\u062C\u0627\u0646\u0629 \u0644\u0648\u0644\u0628\u064A\u0629 \u062A\u062C\u0627\u0631\u064A\u0629 50 \u0644\u062A\u0631",
+      item_name_en: "Commercial Heavy-Duty Spiral Dough Mixer 50L",
+      quantity: 2,
+      destination_ar: "\u0627\u0644\u0631\u064A\u0627\u0636 - \u0627\u0644\u0633\u0644\u064A",
+      destination_en: "Riyadh - Al-Sulay",
+      target_date: "2026-08-25",
+      status: "rejected",
+      quoted_price: 29e3,
+      quoted_price_formatted: "29,000 \u0631.\u0633",
+      lead_time: "5 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
+      created_at: "2026-08-08"
+    }
+  ];
+  var DASHBOARD_ENROLLMENT_FIXTURES = [
+    {
+      id: "ENR-2041",
+      student_name_ar: "\u0633\u0627\u0631\u0629 \u0639\u0628\u062F \u0627\u0644\u0644\u0647 \u0627\u0644\u0634\u0645\u0631\u064A",
+      student_name_en: "Sarah Abdullah Al-Shammari",
+      student_email: "sarah.shammari@gmail.com",
+      student_avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+      course_id: "course-1",
+      course_title_ar: "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0641\u064A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
+      course_title_en: "Modern Fermentation & Dry Aging Masterclass",
+      booking_date: "2026-08-14",
+      payment_status: "paid",
+      amount_formatted: "3,200 \u0631.\u0633",
+      progress: 75
+    },
+    {
+      id: "ENR-2042",
+      student_name_ar: "\u062E\u0627\u0644\u062F \u0628\u0646 \u0646\u0627\u0635\u0631 \u0627\u0644\u0642\u062D\u0637\u0627\u0646\u064A",
+      student_name_en: "Khaled Nasser Al-Qahtani",
+      student_email: "khaled.q@outlook.com",
+      student_avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      course_id: "course-1",
+      course_title_ar: "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0641\u064A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
+      course_title_en: "Modern Fermentation & Dry Aging Masterclass",
+      booking_date: "2026-08-12",
+      payment_status: "paid",
+      amount_formatted: "3,200 \u0631.\u0633",
+      progress: 60
+    },
+    {
+      id: "ENR-2043",
+      student_name_ar: "\u0645\u0646\u0649 \u0628\u0646\u062A \u0633\u0644\u064A\u0645\u0627\u0646 \u0627\u0644\u0632\u0647\u0631\u0627\u0646\u064A",
+      student_name_en: "Mona Sulaiman Al-Zahrani",
+      student_email: "mona.z@yahoo.com",
+      student_avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80",
+      course_id: "course-2",
+      course_title_ar: "\u0641\u0646\u0648\u0646 \u0627\u0644\u0645\u062E\u0628\u0648\u0632\u0627\u062A \u0627\u0644\u0641\u0631\u0646\u0633\u064A\u0629 \u0627\u0644\u0641\u0627\u062E\u0631\u0629 (Viennoiserie)",
+      course_title_en: "Haute Viennoiserie Masterclass",
+      booking_date: "2026-08-10",
+      payment_status: "confirmed",
+      amount_formatted: "2,800 \u0631.\u0633",
+      progress: 100
+    },
+    {
+      id: "ENR-2044",
+      student_name_ar: "\u064A\u0627\u0633\u0631 \u0645\u062D\u0645\u062F \u0627\u0644\u062D\u0631\u0628\u064A",
+      student_name_en: "Yasser Mohammed Al-Harbi",
+      student_email: "yasser.harbi@cloudkitchen.sa",
+      student_avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+      course_id: "course-1",
+      course_title_ar: "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0641\u064A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
+      course_title_en: "Modern Fermentation & Dry Aging Masterclass",
+      booking_date: "2026-08-09",
+      payment_status: "paid",
+      amount_formatted: "3,200 \u0631.\u0633",
+      progress: 40
+    }
+  ];
+
+  // js/data/fixtures/chef-content.js
+  var CHEF_COLLECTION_FIXTURES = [
+    {
+      id: "col-1",
+      title_ar: "\u0645\u062E\u062A\u0627\u0631\u0627\u062A \u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0648\u0627\u0644\u062A\u0639\u062A\u064A\u0642 \u0627\u0644\u0641\u0627\u062E\u0631",
+      title_en: "Dry-Aging & Fermentation Reserve",
+      count: 8,
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+      tag_ar: "\u062A\u0642\u0646\u064A\u0627\u062A \u0645\u062A\u0642\u062F\u0645\u0629",
+      tag_en: "Advanced Technique"
+    },
+    {
+      id: "col-2",
+      title_ar: "\u0623\u0637\u0628\u0627\u0642 \u0627\u0644\u0645\u0623\u0643\u0648\u0644\u0627\u062A \u0627\u0644\u0628\u062D\u0631\u064A\u0629 \u0648\u0627\u0644\u0646\u0643\u0647\u0627\u062A \u0627\u0644\u062D\u0645\u0636\u064A\u0629 \u0627\u0644\u0645\u0639\u0627\u0635\u0631\u0629",
+      title_en: "Modern Marine Gastronomy & Citrus Crudo",
+      count: 6,
+      image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80",
+      tag_ar: "\u0623\u0637\u0628\u0627\u0642 \u0631\u0626\u064A\u0633\u064A\u0629",
+      tag_en: "Main Courses"
+    },
+    {
+      id: "col-3",
+      title_ar: "\u0641\u0646\u0648\u0646 \u0627\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0627\u0644\u0647\u0646\u062F\u0633\u064A\u0629 \u0648\u0627\u0644\u0645\u0633\u062A\u0643\u0629 \u0648\u0627\u0644\u0632\u0647\u0648\u0631 \u0627\u0644\u0634\u0631\u0642\u064A\u0629",
+      title_en: "Architectural Entremets & Floral Glazes",
+      count: 10,
+      image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80",
+      tag_ar: "\u062D\u0644\u0648\u064A\u0627\u062A \u0641\u0627\u062E\u0631\u0629",
+      tag_en: "Haute P\xE2tisserie"
+    }
+  ];
+  var CHEF_ACTIVITY_FIXTURES = [
+    {
+      id: "act-1",
+      type: "recipe",
+      time_ar: "\u0645\u0646\u0630 \u0633\u0627\u0639\u062A\u064A\u0646",
+      time_en: "2 hours ago",
+      title_ar: "\u0646\u0634\u0631 \u0648\u0635\u0641\u0629 \u062C\u062F\u064A\u062F\u0629 \u0641\u064A \u0645\u062C\u062A\u0645\u0639 \u0645\u0639\u064A\u0627\u0631",
+      title_en: "Published a new recipe in Meyar",
+      body_ar: '\u064A\u0633\u0639\u062F\u0646\u064A \u0645\u0634\u0627\u0631\u0643\u0629 \u0648\u0635\u0641\u062A\u064A \u0627\u0644\u062C\u062F\u064A\u062F\u0629 "\u0633\u062A\u064A\u0643 \u0648\u0627\u063A\u064A\u0648 \u0628\u0631\u064A\u0628 \u0622\u064A \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0648\u062B\u0648\u0645 \u0623\u0633\u0648\u062F". \u064A\u0645\u0643\u0646\u0643\u0645 \u0627\u0644\u0622\u0646 \u062A\u062C\u0631\u0628\u0629 \u0645\u0642\u064A\u0627\u0633 \u0627\u0644\u062D\u0635\u0635 \u0627\u0644\u0630\u0643\u064A \u0648\u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u062A\u0648\u0631\u064A\u062F\u0627\u062A \u0627\u0644\u0645\u0631\u0641\u0642\u0629.',
+      body_en: 'Excited to release my newest master recipe "Wagyu Ribeye with Black Garlic Date Glaze". Check out the dynamic serving scaler and linked B2B supplies.',
+      likes: 64,
+      replies: 12
+    },
+    {
+      id: "act-2",
+      type: "course",
+      time_ar: "\u0645\u0646\u0630 \u064A\u0648\u0645",
+      time_en: "1 day ago",
+      title_ar: "\u0641\u062A\u062D \u0628\u0627\u0628 \u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0641\u064A \u0648\u0631\u0634\u0629 \u0627\u0644\u0639\u0645\u0644 \u0627\u0644\u0642\u0627\u062F\u0645\u0629",
+      title_en: "Opened registrations for masterclass workshop",
+      body_ar: '\u0623\u0637\u0644\u0642\u0646\u0627 \u0645\u0642\u0627\u0639\u062F \u062F\u0648\u0631\u0629 "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0641\u064A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0641\u0627\u062E\u0631\u0629". \u0627\u0644\u0645\u0642\u0627\u0639\u062F \u0645\u062D\u062F\u0648\u062F\u0629 \u0628\u0640 15 \u0645\u0642\u0639\u062F\u0627\u064B \u062A\u062F\u0631\u064A\u0628\u064A\u0627\u064B \u0644\u0636\u0645\u0627\u0646 \u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A \u0627\u0644\u062F\u0642\u064A\u0642.',
+      body_en: 'Announcing our "Modern Fermentation & Dry Aging Masterclass". Limited to 15 culinary professionals for direct hands-on mastery.',
+      likes: 89,
+      replies: 19
+    },
+    {
+      id: "act-3",
+      type: "tip",
+      time_ar: "\u0645\u0646\u0630 3 \u0623\u064A\u0627\u0645",
+      time_en: "3 days ago",
+      title_ar: "\u0646\u0635\u064A\u062D\u0629 \u062A\u0642\u0646\u064A\u0629 \u0644\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0627\u062D\u062A\u0631\u0627\u0641\u064A\u0629",
+      title_en: "Professional Kitchen Technique Tip",
+      body_ar: "\u0644\u0644\u062D\u0635\u0648\u0644 \u0639\u0644\u0649 \u0643\u0631\u0627\u0645\u064A\u0644 \u0645\u062A\u0648\u0627\u0632\u0646 \u0644\u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631\u060C \u0627\u0633\u062A\u062E\u062F\u0645 \u062D\u0631\u0627\u0631\u0629 \u0645\u0646\u062E\u0641\u0636\u0629 \u062B\u0627\u0628\u062A\u0629 \u0639\u0646\u062F 85\xB0 \u0645\u0626\u0648\u064A\u0629 \u0644\u0645\u062F\u0629 40 \u062F\u0642\u064A\u0642\u0629 \u0645\u0639 \u0625\u0636\u0627\u0641\u0629 2% \u0645\u0646 \u062D\u0645\u0648\u0636\u0629 \u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0644\u0645\u0637\u062D\u0648\u0646 \u0644\u0645\u0648\u0627\u0632\u0646\u0629 \u0627\u0644\u0633\u0643\u0631\u064A\u0627\u062A \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u0629.",
+      body_en: "To balance rich date molasses glaze, hold at gentle 85\xB0C for 40 mins and add 2% dried black lime powder for enzymatic acid contrast.",
+      likes: 142,
+      replies: 28
+    },
+    {
+      id: "act-4",
+      type: "award",
+      time_ar: "\u0645\u0646\u0630 \u0623\u0633\u0628\u0648\u0639",
+      time_en: "1 week ago",
+      title_ar: "\u062A\u0643\u0631\u064A\u0645 \u062F\u0648\u0644\u064A \u062C\u062F\u064A\u062F",
+      title_en: "Received International Culinary Distinction",
+      body_ar: "\u0641\u062E\u0648\u0631 \u0628\u0627\u062E\u062A\u064A\u0627\u0631 \u0645\u0637\u0628\u062E\u0646\u0627 \u0636\u0645\u0646 \u0627\u0644\u0645\u0631\u0634\u062D\u064A\u0646 \u0627\u0644\u0646\u0647\u0627\u0626\u064A\u064A\u0646 \u0644\u062C\u0648\u0627\u0626\u0632 \u0627\u0644\u0628\u0648\u0643\u0648\u0632 \u062F\u0648\u0631 \u0644\u0644\u0634\u0631\u0642 \u0627\u0644\u0623\u0648\u0633\u0637 \u0644\u0639\u0627\u0645 2024. \u0634\u0643\u0631\u0627\u064B \u0644\u0641\u0631\u064A\u0642 \u0627\u0644\u0639\u0645\u0644 \u0648\u0634\u0631\u0643\u0627\u0621 \u0627\u0644\u0646\u062C\u0627\u062D.",
+      body_en: "Honored to be nominated as a Bocuse d\u2019Or Middle East Finalist for 2024. Deep gratitude to our culinary brigade.",
+      likes: 210,
+      replies: 45
+    }
+  ];
+
+  // js/data/fixtures/index.js
+  var MOCK_DATA = {
+    chefs: CHEF_FIXTURES,
+    recipes: RECIPE_FIXTURES,
+    supplies: SUPPLY_FIXTURES,
+    courses: COURSE_FIXTURES,
+    chats: CHAT_FIXTURES,
+    notifications: NOTIFICATION_FIXTURES,
+    trends: TREND_FIXTURES,
+    user: USER_FIXTURES,
+    stats: STAT_FIXTURES
   };
 
   // js/modules/search.js
@@ -4375,7 +5347,7 @@
       this.activeIndex = -1;
     }
     /**
-     * Query all domain entities in MOCK_DATA
+     * Query all domain entities in the temporary reference fixtures
      * @param {string} searchTerm 
      * @returns {{ recipes: Array, chefs: Array, supplies: Array, courses: Array, total: number }}
      */
@@ -4396,16 +5368,16 @@
         if (!Array.isArray(arr)) return false;
         return arr.some((item) => matchesText(item));
       };
-      const recipes = (MOCK_DATA.recipes || []).filter(
+      const recipes = (RECIPE_FIXTURES || []).filter(
         (r) => matchesText(r.title_ar) || matchesText(r.title_en) || matchesText(r.title) || matchesText(r.cuisine) || matchesText(r.cuisine_ar) || matchesText(r.cuisine_en) || matchesText(r.category_ar) || matchesText(r.category_en) || matchesText(r.category) || matchesText(r.author_name_ar) || matchesText(r.author_name_en) || matchesText(r.description_ar) || matchesText(r.description_en) || matchesList(r.tags) || Array.isArray(r.ingredients) && r.ingredients.some((ing) => matchesText(ing.name_ar) || matchesText(ing.name_en))
       );
-      const chefs = (MOCK_DATA.chefs || []).filter(
+      const chefs = (CHEF_FIXTURES || []).filter(
         (c) => matchesText(c.name_ar) || matchesText(c.name_en) || matchesText(c.name) || matchesText(c.handle) || matchesText(c.title_ar) || matchesText(c.title_en) || matchesText(c.title) || matchesText(c.specialty) || matchesText(c.specialty_ar) || matchesText(c.specialty_en) || matchesText(c.bio_ar) || matchesText(c.bio_en)
       );
-      const supplies = (MOCK_DATA.supplies || []).filter(
+      const supplies = (SUPPLY_FIXTURES || []).filter(
         (s) => matchesText(s.name_ar) || matchesText(s.name_en) || matchesText(s.name) || matchesText(s.category) || matchesText(s.category_ar) || matchesText(s.category_en) || matchesText(s.supplier?.name_ar) || matchesText(s.supplier?.name_en) || matchesText(s.supplier_name_ar) || matchesText(s.supplier_name_en) || matchesText(s.description_ar) || matchesText(s.description_en) || matchesList(s.tags) || Array.isArray(s.specs) && s.specs.some((sp) => matchesText(sp.value_ar) || matchesText(sp.value_en) || matchesText(sp.label_ar) || matchesText(sp.label_en))
       );
-      const courses = (MOCK_DATA.courses || []).filter(
+      const courses = (COURSE_FIXTURES || []).filter(
         (co) => matchesText(co.title_ar) || matchesText(co.title_en) || matchesText(co.title) || matchesText(co.subtitle_ar) || matchesText(co.subtitle_en) || matchesText(co.instructor_name_ar) || matchesText(co.instructor_name_en) || matchesText(co.level_ar) || matchesText(co.level_en) || matchesText(co.level)
       );
       const total = recipes.length + chefs.length + supplies.length + courses.length;
@@ -4605,6 +5577,493 @@
   __publicField(SearchModule, "isInitialized", false);
   __publicField(SearchModule, "activeIndex", -1);
 
+  // js/modules/rfq.js
+  var RFQManager = class {
+    /**
+     * Reset in-memory RFQ store (for tests and session reset)
+     */
+    static reset() {
+      this.rfqsStore = null;
+      this.activeItem = null;
+      this.currentQuantity = 1;
+    }
+    /**
+     * Clone the temporary RFQ fixtures for the current page session
+     */
+    static getInitialRFQs() {
+      return JSON.parse(JSON.stringify(RFQ_FIXTURES || []));
+    }
+    /**
+     * Retrieve all saved RFQs from in-memory store
+     * @returns {Array<Object>}
+     */
+    static getRFQs() {
+      if (!this.rfqsStore) {
+        this.rfqsStore = this.getInitialRFQs();
+      }
+      return this.rfqsStore;
+    }
+    /**
+     * Get a single RFQ by ID
+     * @param {string} rfqId 
+     * @returns {Object|null}
+     */
+    static getRFQById(rfqId) {
+      if (!rfqId) return null;
+      const rfqs = this.getRFQs();
+      return rfqs.find((r) => r.rfq_id === rfqId || r.id === rfqId) || null;
+    }
+    /**
+     * Calculate subtotal, VAT (15%), and total for given unit price and quantity
+     * @param {number} unitPrice 
+     * @param {number} quantity 
+     * @returns {Object}
+     */
+    static calculateEstimate(unitPrice, quantity) {
+      const price = Math.max(0, Number(unitPrice) || 0);
+      const qty = Math.max(1, parseInt(quantity, 10) || 1);
+      const subtotal = price * qty;
+      const vat = Math.round(subtotal * 0.15);
+      const total = subtotal + vat;
+      const lang = typeof I18n !== "undefined" ? I18n.getLang() : "ar";
+      const currencySuffix = lang === "ar" ? "\u0631.\u0633" : "SAR";
+      return {
+        unitPrice: price,
+        quantity: qty,
+        subtotal,
+        vat,
+        total,
+        formattedUnitPrice: `${price.toLocaleString()} ${currencySuffix}`,
+        formattedSubtotal: `${subtotal.toLocaleString()} ${currencySuffix}`,
+        formattedVat: `${vat.toLocaleString()} ${currencySuffix}`,
+        formattedTotal: `${total.toLocaleString()} ${currencySuffix}`
+      };
+    }
+    /**
+     * Validate RFQ form fields
+     * @param {Object} formData 
+     * @param {Object} supplyItem 
+     * @returns {{ isValid: boolean, errors: Object }}
+     */
+    static validateRFQ(formData = {}, supplyItem = null) {
+      const errors = {};
+      const item = supplyItem || this.activeItem;
+      const minMoq = item?.moq || 1;
+      const qty = parseInt(formData.quantity, 10);
+      if (isNaN(qty) || qty < minMoq) {
+        errors.quantity = I18n.t("rfq.moq_error", { moq: minMoq });
+      }
+      if (!formData.destination || !formData.destination.trim()) {
+        errors.destination = I18n.t("rfq.required_field");
+      }
+      if (!formData.target_date || !formData.target_date.trim()) {
+        errors.target_date = I18n.t("rfq.required_field");
+      }
+      return {
+        isValid: Object.keys(errors).length === 0,
+        errors
+      };
+    }
+    /**
+     * Add a new RFQ to the current page session and broadcast event
+     * @param {Object} rfqData 
+     * @returns {Object}
+     */
+    static saveRFQ(rfqData) {
+      const item = rfqData.supplyItem || (rfqData.item_id ? SUPPLY_FIXTURES?.find((s) => s.id === rfqData.item_id) : null) || this.activeItem;
+      const qty = Math.max(item?.moq || 1, parseInt(rfqData.quantity, 10) || item?.moq || 1);
+      const unitPrice = Number(item?.price || rfqData.unit_price || 0);
+      const estimate = this.calculateEstimate(unitPrice, qty);
+      const rfqId = rfqData.rfq_id || `rfq-${Math.floor(1e3 + Math.random() * 9e3)}`;
+      const newRFQ = {
+        rfq_id: rfqId,
+        item_id: item?.id || rfqData.item_id || "unknown-supply",
+        item_name_ar: item?.name_ar || rfqData.item_name_ar || "",
+        item_name_en: item?.name_en || rfqData.item_name_en || "",
+        item_image: item?.image || rfqData.item_image || "",
+        supplier_id: item?.supplier?.id || rfqData.supplier_id || "supplier-1",
+        supplier_name_ar: item?.supplier?.name_ar || rfqData.supplier_name_ar || "",
+        supplier_name_en: item?.supplier?.name_en || rfqData.supplier_name_en || "",
+        supplier_avatar: item?.supplier?.avatar || rfqData.supplier_avatar || "",
+        supplier_verified: item?.supplier?.verified ?? true,
+        quantity: qty,
+        unit_ar: item?.unit_ar || rfqData.unit_ar || "\u0648\u062D\u062F\u0629",
+        unit_en: item?.unit_en || rfqData.unit_en || "Unit",
+        unit_price: unitPrice,
+        target_price: estimate.subtotal,
+        total_price: estimate.subtotal,
+        currency: "SAR",
+        status: rfqData.status || "pending",
+        // pending | quoted | accepted | rejected
+        destination_ar: rfqData.destination || rfqData.destination_ar || "",
+        destination_en: rfqData.destination || rfqData.destination_en || "",
+        destination: rfqData.destination || "",
+        target_date: rfqData.target_date || new Date(Date.now() + 14 * 864e5).toISOString().split("T")[0],
+        company_name: rfqData.company_name || USER_FIXTURES?.business_profile?.company_name_ar || "",
+        buyer_contact: rfqData.buyer_contact || `${USER_FIXTURES?.name_ar || ""} (${USER_FIXTURES?.email || ""})`,
+        notes: rfqData.notes || "",
+        created_at: (/* @__PURE__ */ new Date()).toISOString()
+      };
+      const rfqs = this.getRFQs();
+      const updated = [newRFQ, ...rfqs.filter((r) => r.rfq_id !== newRFQ.rfq_id)];
+      this.rfqsStore = updated;
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("meyar:rfq-submitted", { detail: { rfq: newRFQ } }));
+      }
+      return newRFQ;
+    }
+    /**
+     * Update status of an existing RFQ
+     * @param {string} rfqId 
+     * @param {'pending'|'quoted'|'accepted'|'rejected'} status 
+     * @returns {boolean}
+     */
+    static updateRFQStatus(rfqId, status) {
+      if (!rfqId || !status) return false;
+      const rfqs = this.getRFQs();
+      const index = rfqs.findIndex((r) => r.rfq_id === rfqId || r.id === rfqId);
+      if (index === -1) return false;
+      rfqs[index].status = status;
+      rfqs[index].updated_at = (/* @__PURE__ */ new Date()).toISOString();
+      this.rfqsStore = rfqs;
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("meyar:rfq-status-updated", { detail: { rfqId, status } }));
+      }
+      return true;
+    }
+    /**
+     * Open RFQ Drawer / Modal preloaded with supply item data
+     * @param {string|Object} supplyIdOrItem 
+     * @param {number} [defaultQty] 
+     */
+    static openDrawer(supplyIdOrItem, defaultQty = null) {
+      let item = supplyIdOrItem;
+      if (typeof supplyIdOrItem === "string") {
+        item = SUPPLY_FIXTURES?.find((s) => s.id === supplyIdOrItem) || null;
+      }
+      if (!item) {
+        console.warn("RFQManager.openDrawer: Supply item not found", supplyIdOrItem);
+        return;
+      }
+      this.activeItem = item;
+      const moq = Math.max(1, item.moq || 1);
+      this.currentQuantity = defaultQty !== null && !isNaN(defaultQty) ? Math.max(moq, parseInt(defaultQty, 10)) : moq;
+      const lang = typeof I18n !== "undefined" ? I18n.getLang() : "ar";
+      const isAr = lang === "ar";
+      const drawer = document.getElementById("rfq-drawer") || document.getElementById("rfq-modal");
+      if (drawer) {
+        const previewImg = drawer.querySelector("[data-rfq-item-img]");
+        if (previewImg) {
+          previewImg.src = item.image || "";
+          previewImg.alt = isAr ? item.name_ar : item.name_en;
+        }
+        const previewTitle = drawer.querySelector("[data-rfq-item-title]");
+        if (previewTitle) {
+          previewTitle.textContent = isAr ? item.name_ar : item.name_en;
+        }
+        const previewSupplier = drawer.querySelector("[data-rfq-supplier-name]");
+        if (previewSupplier) {
+          previewSupplier.textContent = isAr ? item.supplier?.name_ar : item.supplier?.name_en;
+        }
+        const previewMoq = drawer.querySelector("[data-rfq-item-moq]");
+        if (previewMoq) {
+          const unit = isAr ? item.unit_ar : item.unit_en;
+          previewMoq.textContent = I18n.t("supplies.moq_badge", { count: moq, unit });
+        }
+        const previewUnitPrice = drawer.querySelector("[data-rfq-item-price]");
+        if (previewUnitPrice) {
+          previewUnitPrice.textContent = `${item.price?.toLocaleString()} ${isAr ? "\u0631.\u0633" : "SAR"} / ${isAr ? item.unit_ar : item.unit_en}`;
+        }
+        const idInput = drawer.querySelector("#rfq-item-id") || drawer.querySelector('[name="item_id"]');
+        if (idInput) idInput.value = item.id;
+        const qtyInput = drawer.querySelector("#rfq-quantity") || drawer.querySelector('[name="quantity"]');
+        if (qtyInput) {
+          qtyInput.value = this.currentQuantity;
+          qtyInput.min = moq;
+        }
+        const moqHelper = drawer.querySelector("[data-rfq-moq-helper]");
+        if (moqHelper) {
+          const unit = isAr ? item.unit_ar : item.unit_en;
+          moqHelper.textContent = `${isAr ? "\u0627\u0644\u062D\u062F \u0627\u0644\u0623\u062F\u0646\u0649 \u0644\u0644\u0637\u0644\u0628:" : "Minimum order quantity:"} ${moq} ${unit}`;
+        }
+        const dateInput = drawer.querySelector("#rfq-target-date") || drawer.querySelector('[name="target_date"]');
+        if (dateInput && !dateInput.value) {
+          const defaultDate = new Date(Date.now() + 14 * 864e5).toISOString().split("T")[0];
+          dateInput.value = defaultDate;
+          dateInput.min = (/* @__PURE__ */ new Date()).toISOString().split("T")[0];
+        }
+        drawer.querySelectorAll(".rfq-error-msg").forEach((el) => {
+          el.textContent = "";
+          el.classList.add("hidden");
+        });
+        drawer.querySelectorAll(".border-red-500").forEach((el) => el.classList.remove("border-red-500"));
+        this.updateLiveEstimate();
+        Modal.open(drawer.id);
+      }
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("meyar:rfq-drawer-opened", { detail: { item: this.activeItem } }));
+      }
+    }
+    /**
+     * Close the active RFQ drawer / modal
+     */
+    static closeDrawer() {
+      const drawer = document.getElementById("rfq-drawer") || document.getElementById("rfq-modal");
+      if (drawer) {
+        Modal.close(drawer.id);
+      }
+      this.activeItem = null;
+    }
+    /**
+     * Update live financial estimate breakdown in the drawer
+     */
+    static updateLiveEstimate() {
+      const drawer = document.getElementById("rfq-drawer") || document.getElementById("rfq-modal");
+      if (!drawer || !this.activeItem) return;
+      const qtyInput = drawer.querySelector("#rfq-quantity") || drawer.querySelector('[name="quantity"]');
+      const rawQty = qtyInput ? parseInt(qtyInput.value, 10) : this.currentQuantity;
+      const moq = this.activeItem.moq || 1;
+      const qty = isNaN(rawQty) || rawQty < moq ? moq : rawQty;
+      this.currentQuantity = qty;
+      const estimate = this.calculateEstimate(this.activeItem.price, qty);
+      const elUnit = drawer.querySelector("[data-rfq-est-unit]");
+      if (elUnit) elUnit.textContent = estimate.formattedUnitPrice;
+      const elQty = drawer.querySelector("[data-rfq-est-qty]");
+      if (elQty) elQty.textContent = `${estimate.quantity}`;
+      const elSubtotal = drawer.querySelector("[data-rfq-est-subtotal]");
+      if (elSubtotal) elSubtotal.textContent = estimate.formattedSubtotal;
+      const elVat = drawer.querySelector("[data-rfq-est-vat]");
+      if (elVat) elVat.textContent = estimate.formattedVat;
+      const elTotal = drawer.querySelector("[data-rfq-est-total]");
+      if (elTotal) elTotal.textContent = estimate.formattedTotal;
+    }
+    /**
+     * Handle stepper button quantity increment/decrement
+     * @param {number} delta 
+     */
+    static changeQuantity(delta) {
+      const moq = this.activeItem?.moq || 1;
+      const drawer = document.getElementById("rfq-drawer") || document.getElementById("rfq-modal");
+      const qtyInput = drawer?.querySelector("#rfq-quantity") || drawer?.querySelector('[name="quantity"]');
+      const current = qtyInput ? parseInt(qtyInput.value, 10) || moq : this.currentQuantity;
+      const newQty = Math.max(moq, current + delta);
+      if (qtyInput) {
+        qtyInput.value = newQty;
+      }
+      this.currentQuantity = newQty;
+      this.updateLiveEstimate();
+    }
+    /**
+     * Submit direct RFQ form
+     * @param {HTMLFormElement|Object} formOrData 
+     * @returns {Object|false}
+     */
+    static submitRFQ(formOrData) {
+      let formData = {};
+      let formElement = null;
+      const isFormElement = formOrData && (typeof HTMLFormElement !== "undefined" && formOrData instanceof HTMLFormElement || typeof Element !== "undefined" && formOrData instanceof Element || formOrData.elements !== void 0);
+      if (isFormElement) {
+        formElement = formOrData;
+        const elements = formElement.elements;
+        formData = {
+          item_id: elements["item_id"]?.value || this.activeItem?.id,
+          quantity: elements["quantity"]?.value || this.currentQuantity,
+          destination: elements["destination"]?.value || "",
+          target_date: elements["target_date"]?.value || "",
+          company_name: elements["company_name"]?.value || "",
+          buyer_contact: elements["buyer_contact"]?.value || "",
+          notes: elements["notes"]?.value || ""
+        };
+      } else {
+        formData = formOrData || {};
+      }
+      const item = (formData.item_id ? SUPPLY_FIXTURES?.find((s) => s.id === formData.item_id) : null) || this.activeItem;
+      if (!item) {
+        Toast.error(I18n.getLang() === "ar" ? "\u064A\u0631\u062C\u0649 \u062A\u062D\u062F\u064A\u062F \u0627\u0644\u0635\u0646\u0641 \u0627\u0644\u0645\u0637\u0644\u0648\u0628" : "Please select a supply item");
+        return false;
+      }
+      const validation = this.validateRFQ(formData, item);
+      if (!validation.isValid) {
+        if (formElement) {
+          Object.entries(validation.errors).forEach(([field, msg]) => {
+            const input = formElement.querySelector(`[name="${field}"]`) || formElement.querySelector(`#rfq-${field}`);
+            if (input) input.classList.add("border-red-500");
+            const errorContainer = formElement.querySelector(`[data-error-for="${field}"]`);
+            if (errorContainer) {
+              errorContainer.textContent = msg;
+              errorContainer.classList.remove("hidden");
+            }
+          });
+        }
+        Toast.error(Object.values(validation.errors)[0] || "Validation error");
+        return false;
+      }
+      const saved = this.saveRFQ({
+        ...formData,
+        supplyItem: item
+      });
+      Toast.success(I18n.t("toast.rfq_success"));
+      this.closeDrawer();
+      if (formElement) {
+        formElement.reset();
+      }
+      return saved;
+    }
+    /**
+     * Render RFQ History into a target container
+     * @param {HTMLElement} container 
+     */
+    static renderHistory(container) {
+      if (!container) return;
+      const rfqs = this.getRFQs();
+      const lang = I18n.getLang();
+      const isAr = lang === "ar";
+      if (rfqs.length === 0) {
+        container.innerHTML = `
+        <div class="py-12 text-center text-text-muted">
+          <svg class="w-12 h-12 mx-auto mb-3 text-border-subtle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+          <p class="text-sm font-semibold text-text-main" data-i18n="supplies.rfq_history_empty">${I18n.t("supplies.rfq_history_empty")}</p>
+        </div>
+      `;
+        return;
+      }
+      container.innerHTML = rfqs.map((rfq) => {
+        const statusBg = {
+          pending: "bg-surface-2 text-amber-500 border-amber-500",
+          quoted: "bg-surface-2 text-brand-gold border-brand-gold",
+          accepted: "bg-surface-2 text-brand-emerald border-brand-emerald",
+          rejected: "bg-surface-2 text-red-500 border-red-500"
+        }[rfq.status] || "bg-surface-2 text-text-muted border-border-subtle";
+        const statusLabel = {
+          pending: I18n.t("rfq.status_pending"),
+          quoted: I18n.t("rfq.status_quoted"),
+          accepted: I18n.t("rfq.status_accepted"),
+          rejected: I18n.t("rfq.status_rejected")
+        }[rfq.status] || rfq.status;
+        const itemName = isAr ? rfq.item_name_ar || rfq.item_name_en : rfq.item_name_en || rfq.item_name_ar;
+        const supplierName = isAr ? rfq.supplier_name_ar || rfq.partner_name_ar || rfq.supplier_name_en : rfq.supplier_name_en || rfq.partner_name_en || rfq.supplier_name_ar;
+        const unit = isAr ? rfq.unit_ar : rfq.unit_en;
+        const currency = isAr ? "\u0631.\u0633" : "SAR";
+        return `
+        <div class="p-4 bg-surface-2 border border-border-subtle rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3 min-w-0">
+            ${rfq.item_image ? `<img src="${rfq.item_image}" alt="${itemName}" class="w-12 h-12 rounded-lg object-cover border border-border-subtle shrink-0">` : ""}
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <span class="text-xs font-mono font-bold text-brand-gold">#${rfq.rfq_id}</span>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${statusBg}">${statusLabel}</span>
+              </div>
+              <h4 class="text-sm font-bold text-text-main truncate">${itemName}</h4>
+              <p class="text-xs text-text-muted mt-0.5 truncate">${supplierName} \u2022 ${rfq.quantity} ${unit || ""}</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-4 border-t sm:border-t-0 border-border-subtle pt-2 sm:pt-0">
+            <div class="text-start sm:text-end">
+              <span class="text-[10px] text-text-muted block">${I18n.t("rfq.total_price")}</span>
+              <span class="text-sm font-extrabold text-text-main">${rfq.total_price?.toLocaleString() || rfq.target_price?.toLocaleString()} ${currency}</span>
+            </div>
+            <a href="chat.html" class="px-3 py-1.5 text-xs font-semibold bg-surface-1 hover:bg-surface-3 border border-border-subtle rounded-lg text-brand-gold transition-colors shrink-0">
+              ${isAr ? "\u0645\u062A\u0627\u0628\u0639\u0629 \u0641\u064A \u0627\u0644\u0645\u062D\u0627\u062F\u062B\u0629" : "View in Chat"}
+            </a>
+          </div>
+        </div>
+      `;
+      }).join("");
+    }
+    /**
+     * Initialize event delegation for RFQ buttons and drawer actions
+     */
+    static init() {
+      if (typeof document !== "undefined" && this.lastDocument !== document) {
+        this.isInitialized = false;
+        this.lastDocument = document;
+      }
+      if (this.isInitialized || typeof document === "undefined") return;
+      this.isInitialized = true;
+      document.addEventListener("click", (e) => {
+        const rfqBtn = e.target.closest('[data-action="open-rfq"]');
+        if (rfqBtn) {
+          e.preventDefault();
+          const supplyId = rfqBtn.getAttribute("data-supply-id") || rfqBtn.getAttribute("data-item-id");
+          const qty = rfqBtn.getAttribute("data-default-qty");
+          this.openDrawer(supplyId, qty);
+          return;
+        }
+        const closeBtn = e.target.closest('[data-action="close-rfq-drawer"], [data-action="close-rfq-modal"]');
+        if (closeBtn) {
+          e.preventDefault();
+          this.closeDrawer();
+          return;
+        }
+        const qtyPlus = e.target.closest('[data-action="rfq-qty-plus"]');
+        if (qtyPlus) {
+          e.preventDefault();
+          this.changeQuantity(1);
+          return;
+        }
+        const qtyMinus = e.target.closest('[data-action="rfq-qty-minus"]');
+        if (qtyMinus) {
+          e.preventDefault();
+          this.changeQuantity(-1);
+          return;
+        }
+        const historyBtn = e.target.closest('[data-action="open-rfq-history"]');
+        if (historyBtn) {
+          e.preventDefault();
+          const historyContainer = document.getElementById("rfq-history-list");
+          if (historyContainer) {
+            this.renderHistory(historyContainer);
+          }
+          Modal.open("rfq-history-modal");
+          return;
+        }
+      });
+      document.addEventListener("submit", (e) => {
+        if (e.target && (e.target.id === "rfq-form" || e.target.hasAttribute("data-rfq-form"))) {
+          e.preventDefault();
+          this.submitRFQ(e.target);
+        }
+      });
+      document.addEventListener("input", (e) => {
+        if (e.target && (e.target.id === "rfq-quantity" || e.target.name === "quantity")) {
+          e.target.classList.remove("border-red-500");
+          const errorContainer = e.target.closest("form")?.querySelector('[data-error-for="quantity"]');
+          if (errorContainer) errorContainer.classList.add("hidden");
+          this.updateLiveEstimate();
+        }
+        if (e.target && (e.target.id === "rfq-destination" || e.target.name === "destination")) {
+          e.target.classList.remove("border-red-500");
+          const errorContainer = e.target.closest("form")?.querySelector('[data-error-for="destination"]');
+          if (errorContainer) errorContainer.classList.add("hidden");
+        }
+        if (e.target && (e.target.id === "rfq-target-date" || e.target.name === "target_date")) {
+          e.target.classList.remove("border-red-500");
+          const errorContainer = e.target.closest("form")?.querySelector('[data-error-for="target_date"]');
+          if (errorContainer) errorContainer.classList.add("hidden");
+        }
+      });
+      window.addEventListener("meyar:lang-changed", () => {
+        if (this.activeItem) {
+          this.openDrawer(this.activeItem, this.currentQuantity);
+        }
+        const historyContainer = document.getElementById("rfq-history-list");
+        if (historyContainer && !historyContainer.closest(".hidden")) {
+          this.renderHistory(historyContainer);
+        }
+      });
+    }
+  };
+  __publicField(RFQManager, "activeItem", null);
+  __publicField(RFQManager, "currentQuantity", 1);
+  __publicField(RFQManager, "isInitialized", false);
+  __publicField(RFQManager, "rfqsStore", null);
+
   // js/app.js
   function initApp() {
     if (typeof document === "undefined") return;
@@ -4612,6 +6071,7 @@
     I18n.init();
     Modal.init();
     SearchModule.init();
+    RFQManager.init();
     document.querySelectorAll('[data-action="toggle-mobile-menu"], [data-action="toggle-mobile-nav"]').forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -4689,51 +6149,75 @@
     } catch {
     }
   }
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initApp);
-    } else {
-      initApp();
+
+  // js/core/utils.js
+  function escapeHtml(str) {
+    if (str === null || str === void 0) return "";
+    const text = String(str);
+    return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+  }
+  function formatQuantity(val) {
+    if (val === null || val === void 0 || isNaN(val)) return "0";
+    if (val === Math.round(val)) return val.toString();
+    const fractions = { 0.125: "\u215B", 0.25: "\xBC", 0.33: "\u2153", 0.375: "\u215C", 0.5: "\xBD", 0.625: "\u215D", 0.66: "\u2154", 0.75: "\xBE", 0.875: "\u215E" };
+    const whole = Math.floor(val);
+    const decimal = Math.round((val - whole) * 1e3) / 1e3;
+    for (const [dec, frac] of Object.entries(fractions)) {
+      if (Math.abs(decimal - parseFloat(dec)) < 0.04) {
+        return whole > 0 ? `${whole} ${frac}` : frac;
+      }
     }
+    return val.toFixed(1);
+  }
+  function isCurrentUserId(entityId, currentUser) {
+    return Boolean(entityId && currentUser?.id && entityId === currentUser.id);
   }
 
   // js/pages/feed.js
   var FeedPage = class {
     /**
-     * Get list of saved recipe IDs from localStorage
+     * Reset in-memory feed state (for test isolation)
+     */
+    static reset() {
+      this.savedRecipeIds = /* @__PURE__ */ new Set();
+      this.likedRecipeIds = /* @__PURE__ */ new Set();
+      this.followingChefIds = /* @__PURE__ */ new Set();
+      this.currentFilter = "all";
+      this.userPosts = [];
+      this.deletedRecipeIds = /* @__PURE__ */ new Set();
+      this.hiddenRecipeIds = /* @__PURE__ */ new Set();
+      this.recipeEdits = /* @__PURE__ */ new Map();
+      this.pendingDeletePostId = null;
+      this.pendingDeleteIsUserPost = false;
+      this.pendingEditPostId = null;
+      this.pendingEditIsUserPost = false;
+      this.isInitialized = false;
+    }
+    static escapeHtml(str) {
+      if (str === null || str === void 0) return "";
+      const text = String(str);
+      return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+    /**
+     * Get list of saved recipe IDs from in-memory set
      * @returns {string[]}
      */
     static getSavedRecipeIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_SAVED);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.savedRecipeIds);
     }
     /**
-     * Get list of liked recipe IDs from localStorage
+     * Get list of liked recipe IDs from in-memory set
      * @returns {string[]}
      */
     static getLikedRecipeIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_LIKED);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.likedRecipeIds);
     }
     /**
-     * Get list of followed chef IDs from localStorage
+     * Get list of followed chef IDs from in-memory set
      * @returns {string[]}
      */
     static getFollowingChefIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_FOLLOWING);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.followingChefIds);
     }
     /**
      * Toggle saved status of a recipe
@@ -4742,19 +6226,13 @@
      */
     static toggleSave(recipeId) {
       if (!recipeId) return false;
-      const saved = new Set(this.getSavedRecipeIds());
-      const isSaved = saved.has(recipeId);
+      const isSaved = this.savedRecipeIds.has(recipeId);
       if (isSaved) {
-        saved.delete(recipeId);
+        this.savedRecipeIds.delete(recipeId);
         Toast.info(I18n.t("toast.unsaved_success"));
       } else {
-        saved.add(recipeId);
+        this.savedRecipeIds.add(recipeId);
         Toast.success(I18n.t("toast.saved_success"));
-      }
-      try {
-        localStorage.setItem(this.STORAGE_SAVED, JSON.stringify(Array.from(saved)));
-      } catch (e) {
-        console.error("Failed to save bookmarks to localStorage", e);
       }
       this.updateCardActionStates(recipeId);
       return !isSaved;
@@ -4766,20 +6244,14 @@
      */
     static toggleLike(recipeId) {
       if (!recipeId) return false;
-      const liked = new Set(this.getLikedRecipeIds());
-      const isLiked = liked.has(recipeId);
+      const isLiked = this.likedRecipeIds.has(recipeId);
       const lang = I18n.getLang();
       if (isLiked) {
-        liked.delete(recipeId);
+        this.likedRecipeIds.delete(recipeId);
         Toast.info(lang === "ar" ? "\u062A\u0645 \u0625\u0644\u063A\u0627\u0621 \u0627\u0644\u0625\u0639\u062C\u0627\u0628 \u0628\u0627\u0644\u0648\u0635\u0641\u0629" : "Recipe unliked");
       } else {
-        liked.add(recipeId);
+        this.likedRecipeIds.add(recipeId);
         Toast.success(lang === "ar" ? "\u0623\u0639\u062C\u0628\u0643 \u0647\u0630\u0627 \u0627\u0644\u0637\u0628\u0642 \u0627\u0644\u0641\u0627\u062E\u0631!" : "Liked this gourmet masterpiece!");
-      }
-      try {
-        localStorage.setItem(this.STORAGE_LIKED, JSON.stringify(Array.from(liked)));
-      } catch (e) {
-        console.error("Failed to save likes to localStorage", e);
       }
       this.updateCardActionStates(recipeId);
       return !isLiked;
@@ -4790,20 +6262,14 @@
      * @returns {boolean} New following state
      */
     static toggleFollow(chefId) {
-      if (!chefId) return false;
-      const following = new Set(this.getFollowingChefIds());
-      const isFollowing = following.has(chefId);
+      if (!chefId || isCurrentUserId(chefId, USER_FIXTURES)) return false;
+      const isFollowing = this.followingChefIds.has(chefId);
       if (isFollowing) {
-        following.delete(chefId);
+        this.followingChefIds.delete(chefId);
         Toast.info(I18n.t("toast.unfollowed_success"));
       } else {
-        following.add(chefId);
+        this.followingChefIds.add(chefId);
         Toast.success(I18n.t("toast.followed_success"));
-      }
-      try {
-        localStorage.setItem(this.STORAGE_FOLLOWING, JSON.stringify(Array.from(following)));
-      } catch (e) {
-        console.error("Failed to save following list to localStorage", e);
       }
       this.updateFollowButtonStates(chefId);
       return !isFollowing;
@@ -4922,8 +6388,8 @@
     static renderStories(container = typeof document !== "undefined" ? document.getElementById("stories-track") : null) {
       if (!container) return;
       const lang = I18n.getLang();
-      const stories = MOCK_DATA.trends?.stories || [];
-      const activeUser = MOCK_DATA.user;
+      const stories = TREND_FIXTURES?.stories || [];
+      const activeUser = USER_FIXTURES;
       let html = `
       <!-- User's Story Add Button -->
       <div class="flex flex-col items-center gap-1.5 shrink-0 snap-start cursor-pointer group" data-action="add-story">
@@ -4965,7 +6431,7 @@
     static renderTrendingTopics(container = typeof document !== "undefined" ? document.getElementById("trending-topics-container") : null) {
       if (!container) return;
       const lang = I18n.getLang();
-      const topics = MOCK_DATA.trends?.topics || [];
+      const topics = TREND_FIXTURES?.topics || [];
       const html = topics.map((item) => {
         const title = lang === "ar" ? item.title_ar : item.title_en;
         return `
@@ -4989,7 +6455,7 @@
     static renderTopSuppliers(container = typeof document !== "undefined" ? document.getElementById("top-suppliers-container") : null) {
       if (!container) return;
       const lang = I18n.getLang();
-      const suppliers = MOCK_DATA.trends?.top_suppliers || [];
+      const suppliers = TREND_FIXTURES?.top_suppliers || [];
       const html = suppliers.map((sup) => {
         const name = lang === "ar" ? sup.name_ar : sup.name_en;
         const category = lang === "ar" ? sup.category_ar : sup.category_en;
@@ -5019,7 +6485,7 @@
     static renderUpcomingWorkshops(container = typeof document !== "undefined" ? document.getElementById("upcoming-workshops-container") : null) {
       if (!container) return;
       const lang = I18n.getLang();
-      const workshops = MOCK_DATA.trends?.upcoming_workshops || [];
+      const workshops = TREND_FIXTURES?.upcoming_workshops || [];
       const html = workshops.map((ws) => {
         const title = lang === "ar" ? ws.title_ar : ws.title_en;
         const instructor = lang === "ar" ? ws.instructor_ar : ws.instructor_en;
@@ -5047,15 +6513,6 @@
       container.innerHTML = html;
     }
     /**
-     * Escape HTML entities in user input strings
-     * @param {string} str 
-     * @returns {string}
-     */
-    static escapeHtml(str) {
-      if (!str) return "";
-      return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-    }
-    /**
      * Render Main Stream Feed Posts
      * @param {HTMLElement} [container] 
      */
@@ -5065,7 +6522,8 @@
       const savedSet = new Set(this.getSavedRecipeIds());
       const likedSet = new Set(this.getLikedRecipeIds());
       const followingSet = new Set(this.getFollowingChefIds());
-      let recipes = [...MOCK_DATA.recipes || []];
+      const activeUser = USER_FIXTURES || { id: "" };
+      let recipes = [...RECIPE_FIXTURES || []].filter((r) => !this.deletedRecipeIds.has(r.id) && !this.hiddenRecipeIds.has(r.id)).map((r) => ({ ...r, ...this.recipeEdits.get(r.id) || {} }));
       if (this.currentFilter === "trending") {
         recipes.sort((a, b) => (b.likes_count || 0) - (a.likes_count || 0));
       } else if (this.currentFilter === "chefs") {
@@ -5077,8 +6535,17 @@
       }
       let html = "";
       this.userPosts.forEach((post) => {
+        const isSaved = savedSet.has(post.id);
+        const isLiked = likedSet.has(post.id);
+        const totalLikes = (post.likes_count || 0) + (isLiked ? 1 : 0);
+        const totalSaves = (post.saves_count || 0) + (isSaved ? 1 : 0);
+        const likeClass = isLiked ? "text-red-500 bg-surface-2 border-red-500" : "text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle";
+        const likeFill = isLiked ? "currentColor" : "none";
+        const saveClass = isSaved ? "text-brand-gold bg-surface-2 border-border-subtle" : "text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle";
+        const saveFill = isSaved ? "currentColor" : "none";
+        const isOwner = post.author_id === activeUser.id;
         html += `
-        <article class="bg-surface-1 border border-border-subtle rounded-2xl p-5 shadow-sm space-y-4 text-start">
+        <article class="bg-surface-1 border border-border-subtle rounded-2xl p-5 shadow-sm space-y-4 text-start relative" data-card-post-id="${post.id}">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-3">
               <img src="${this.escapeHtml(post.avatar)}" alt="${this.escapeHtml(post.author)}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle">
@@ -5087,17 +6554,81 @@
                 <p class="text-[11px] text-text-muted">${this.escapeHtml(post.timeAgo)} \u2022 <span class="text-brand-gold font-semibold">${this.escapeHtml(post.handle)}</span></p>
               </div>
             </div>
-            <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle">
-              ${lang === "ar" ? "\u0645\u0646\u0634\u0648\u0631 \u062C\u062F\u064A\u062F" : "New Post"}
-            </span>
+            <div class="flex items-center gap-2 relative">
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle">
+                ${lang === "ar" ? "\u0645\u0646\u0634\u0648\u0631 \u062C\u062F\u064A\u062F" : "New Post"}
+              </span>
+
+              <!-- 3-dots option button -->
+              <button type="button" data-action="toggle-dropdown" class="p-1.5 text-text-muted hover:text-text-main hover:bg-surface-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Options">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="1"></circle>
+                  <circle cx="12" cy="5" r="1"></circle>
+                  <circle cx="12" cy="19" r="1"></circle>
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div class="absolute end-0 top-full mt-1 w-40 bg-surface-1 border border-border-subtle rounded-xl shadow-lg py-1 z-10 hidden dropdown-menu" data-dropdown>
+                ${isOwner ? `
+                  <button type="button" data-action="edit-post" data-post-id="${post.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-text-main hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                    <span>${I18n.t("btn.edit")}</span>
+                  </button>
+                  <button type="button" data-action="delete-post" data-post-id="${post.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-red-600 hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    <span>${I18n.t("btn.delete")}</span>
+                  </button>
+                ` : `
+                  <button type="button" data-action="report-post" data-post-id="${post.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-text-main hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg>
+                    <span>${I18n.t("btn.report")}</span>
+                  </button>
+                  <button type="button" data-action="hide-post" data-post-id="${post.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-text-main hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24M1 1l22 22"/></svg>
+                    <span>${I18n.t("btn.hide")}</span>
+                  </button>
+                `}
+              </div>
+            </div>
           </div>
           <p class="text-xs sm:text-sm text-text-main leading-relaxed whitespace-pre-line">${this.escapeHtml(post.content)}</p>
+
+          <!-- Interactive Actions Bar -->
+          <div class="pb-1 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <!-- Like Button -->
+              <button type="button" data-action="like" data-recipe-id="${post.id}" data-base-likes="${post.likes_count || 0}"
+                      class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${likeClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                      aria-label="Like recipe">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="${likeFill}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span class="action-count">${totalLikes.toLocaleString()}</span>
+              </button>
+
+              <!-- Save / Bookmark Button -->
+              <button type="button" data-action="save" data-recipe-id="${post.id}" data-base-saves="${post.saves_count || 0}"
+                      class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${saveClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                      aria-label="Save recipe">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="${saveFill}" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+                <span class="action-label hidden sm:inline">${isSaved ? I18n.t("btn.saved") : I18n.t("btn.save")}</span>
+                <span class="action-count">${totalSaves.toLocaleString()}</span>
+              </button>
+
+              <!-- Share Button -->
+              <button type="button" data-action="share" data-recipe-id="${post.id}"
+                      class="p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                      aria-label="Share recipe">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              </button>
+            </div>
+          </div>
         </article>
       `;
       });
       recipes.forEach((recipe) => {
         const isSaved = savedSet.has(recipe.id);
         const isLiked = likedSet.has(recipe.id);
+        const isOwner = recipe.author_id === activeUser.id;
         const isFollowing = followingSet.has(recipe.author_id);
         const title = lang === "ar" ? recipe.title_ar || recipe.title : recipe.title_en || recipe.title;
         const description = lang === "ar" ? recipe.description_ar : recipe.description_en;
@@ -5112,12 +6643,18 @@
         const saveFill = isSaved ? "currentColor" : "none";
         const followText = isFollowing ? I18n.t("btn.following") : I18n.t("btn.follow");
         const followClass = isFollowing ? "bg-surface-2 text-text-muted border-border-subtle" : "bg-brand-gold hover:bg-brand-gold-hover text-white border-transparent";
+        const followButton = isOwner ? "" : `
+        <button type="button" data-action="follow" data-chef-id="${recipe.author_id}"
+                class="px-3.5 py-1.5 text-xs font-semibold rounded-xl border transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold ${followClass}">
+          ${followText}
+        </button>
+      `;
         const ingredientsPreview = (recipe.ingredients || []).slice(0, 3).map((ing) => {
           const name = lang === "ar" ? ing.name_ar : ing.name_en;
           return `<span class="inline-flex items-center text-[10px] font-medium px-2 py-0.5 rounded-lg bg-surface-2 border border-border-subtle text-text-muted">${name}</span>`;
         }).join(" ");
         html += `
-        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm space-y-4 text-start transition-all hover:border-border-subtle" data-card-recipe-id="${recipe.id}">
+        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm space-y-4 text-start transition-all hover:border-border-subtle relative" data-card-recipe-id="${recipe.id}">
           
           <!-- Post Author Header -->
           <div class="px-4 sm:px-5 pt-4 sm:pt-5 flex items-center justify-between gap-3">
@@ -5140,11 +6677,42 @@
               </div>
             </div>
 
-            <!-- Follow Button -->
-            <button type="button" data-action="follow" data-chef-id="${recipe.author_id}"
-                    class="px-3.5 py-1.5 text-xs font-semibold rounded-xl border transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold ${followClass}">
-              ${followText}
-            </button>
+            <!-- Follow Button & 3-dots -->
+            <div class="flex items-center gap-2 relative">
+              ${followButton}
+
+              <!-- 3-dots option button -->
+              <button type="button" data-action="toggle-dropdown" class="p-1.5 text-text-muted hover:text-text-main hover:bg-surface-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Options">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="1"></circle>
+                  <circle cx="12" cy="5" r="1"></circle>
+                  <circle cx="12" cy="19" r="1"></circle>
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div class="absolute end-0 top-full mt-1 w-40 bg-surface-1 border border-border-subtle rounded-xl shadow-lg py-1 z-10 hidden dropdown-menu" data-dropdown>
+                ${isOwner ? `
+                  <button type="button" data-action="edit-post" data-post-id="${recipe.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-text-main hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                    <span>${I18n.t("btn.edit")}</span>
+                  </button>
+                  <button type="button" data-action="delete-post" data-post-id="${recipe.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-red-600 hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    <span>${I18n.t("btn.delete")}</span>
+                  </button>
+                ` : `
+                  <button type="button" data-action="report-post" data-post-id="${recipe.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-text-main hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg>
+                    <span>${I18n.t("btn.report")}</span>
+                  </button>
+                  <button type="button" data-action="hide-post" data-post-id="${recipe.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-text-main hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24M1 1l22 22"/></svg>
+                    <span>${I18n.t("btn.hide")}</span>
+                  </button>
+                `}
+              </div>
+            </div>
           </div>
 
           <!-- Recipe Body: Title & Teaser -->
@@ -5155,7 +6723,7 @@
               </a>
             </h3>
             <p class="text-xs text-text-muted leading-relaxed line-clamp-2">
-              ${description}
+              ${this.escapeHtml(description)}
             </p>
           </div>
 
@@ -5267,15 +6835,18 @@
             composerInput.focus();
             return;
           }
-          const activeUser = MOCK_DATA.user;
+          const activeUser = USER_FIXTURES;
           const newPost = {
             id: `post-${Date.now()}`,
+            author_id: activeUser.id,
             author: lang === "ar" ? activeUser.name_ar : activeUser.name_en,
             handle: activeUser.handle,
             avatar: activeUser.avatar,
             content,
             timeAgo: lang === "ar" ? "\u0627\u0644\u0622\u0646" : "Just now",
-            created_at: (/* @__PURE__ */ new Date()).toISOString()
+            created_at: (/* @__PURE__ */ new Date()).toISOString(),
+            likes_count: 0,
+            saves_count: 0
           };
           this.userPosts.unshift(newPost);
           composerInput.value = "";
@@ -5349,7 +6920,171 @@
           }
           return;
         }
+        const toggleBtn = e.target.closest('[data-action="toggle-dropdown"]');
+        if (toggleBtn) {
+          e.preventDefault();
+          e.stopPropagation();
+          const dropdown = toggleBtn.parentElement.querySelector(".dropdown-menu");
+          if (dropdown) {
+            document.querySelectorAll(".dropdown-menu").forEach((dd) => {
+              if (dd !== dropdown) {
+                dd.classList.add("hidden");
+              }
+            });
+            dropdown.classList.toggle("hidden");
+          }
+          return;
+        }
+        if (!e.target.closest(".dropdown-menu") && !e.target.closest('[data-action="toggle-dropdown"]')) {
+          document.querySelectorAll(".dropdown-menu").forEach((dd) => {
+            dd.classList.add("hidden");
+          });
+        }
+        const deleteBtn = e.target.closest('[data-action="delete-post"]');
+        if (deleteBtn) {
+          e.preventDefault();
+          const postId = deleteBtn.getAttribute("data-post-id");
+          this.pendingDeletePostId = postId;
+          this.pendingDeleteIsUserPost = this.userPosts.some((p) => p.id === postId);
+          document.querySelectorAll(".dropdown-menu").forEach((dd) => {
+            dd.classList.add("hidden");
+          });
+          const modalEl = document.getElementById("modal-feed-delete-confirm");
+          if (modalEl) {
+            Modal.open("modal-feed-delete-confirm");
+          } else {
+            if (this.pendingDeleteIsUserPost) {
+              this.userPosts = this.userPosts.filter((p) => p.id !== postId);
+            } else {
+              this.deletedRecipeIds.add(postId);
+            }
+            Toast.success(I18n.t("toast.post_deleted"));
+            this.renderFeedPosts();
+            this.pendingDeletePostId = null;
+            this.pendingDeleteIsUserPost = false;
+          }
+          return;
+        }
+        const editBtn = e.target.closest('[data-action="edit-post"]');
+        if (editBtn) {
+          e.preventDefault();
+          const postId = editBtn.getAttribute("data-post-id");
+          this.pendingEditPostId = postId;
+          document.querySelectorAll(".dropdown-menu").forEach((dd) => {
+            dd.classList.add("hidden");
+          });
+          const textarea = document.getElementById("feed-edit-textarea");
+          const label = document.getElementById("feed-edit-modal-label");
+          const title = document.getElementById("feed-edit-modal-title");
+          const userPost = this.userPosts.find((p) => p.id === postId);
+          if (userPost) {
+            this.pendingEditIsUserPost = true;
+            if (textarea) textarea.value = userPost.content;
+            if (label) {
+              label.textContent = I18n.t("feed.edit_post_prompt");
+              label.setAttribute("data-i18n", "feed.edit_post_prompt");
+            }
+            if (title) {
+              title.textContent = I18n.t("feed.edit_post_title");
+              title.setAttribute("data-i18n", "feed.edit_post_title");
+            }
+          } else {
+            const recipe = RECIPE_FIXTURES?.find((r) => r.id === postId);
+            if (recipe) {
+              this.pendingEditIsUserPost = false;
+              const lang = I18n.getLang();
+              const edits = this.recipeEdits.get(postId) || {};
+              const currentDesc = lang === "ar" ? edits.description_ar || recipe.description_ar : edits.description_en || recipe.description_en;
+              if (textarea) textarea.value = currentDesc;
+              if (label) {
+                label.textContent = I18n.t("feed.edit_recipe_prompt");
+                label.setAttribute("data-i18n", "feed.edit_recipe_prompt");
+              }
+              if (title) {
+                title.textContent = I18n.t("feed.edit_recipe_title");
+                title.setAttribute("data-i18n", "feed.edit_recipe_title");
+              }
+            }
+          }
+          Modal.open("modal-feed-edit");
+          return;
+        }
+        const hideBtn = e.target.closest('[data-action="hide-post"]');
+        if (hideBtn) {
+          e.preventDefault();
+          const postId = hideBtn.getAttribute("data-post-id");
+          const isUserPost = this.userPosts.some((p) => p.id === postId);
+          if (isUserPost) {
+            this.userPosts = this.userPosts.filter((p) => p.id !== postId);
+          } else {
+            this.hiddenRecipeIds.add(postId);
+          }
+          Toast.success(I18n.t("toast.post_hidden"));
+          this.renderFeedPosts();
+          return;
+        }
+        const reportBtn = e.target.closest('[data-action="report-post"]');
+        if (reportBtn) {
+          e.preventDefault();
+          Toast.success(I18n.t("toast.post_reported"));
+          const dropdown = reportBtn.closest(".dropdown-menu");
+          if (dropdown) {
+            dropdown.classList.add("hidden");
+          }
+          return;
+        }
       });
+      const confirmDeleteBtn = document.getElementById("feed-confirm-delete-btn");
+      if (confirmDeleteBtn) {
+        confirmDeleteBtn.addEventListener("click", () => {
+          const postId = this.pendingDeletePostId;
+          if (postId) {
+            if (this.pendingDeleteIsUserPost) {
+              this.userPosts = this.userPosts.filter((p) => p.id !== postId);
+            } else {
+              this.deletedRecipeIds.add(postId);
+            }
+            Toast.success(I18n.t("toast.post_deleted"));
+            this.renderFeedPosts();
+          }
+          Modal.close("modal-feed-delete-confirm");
+          this.pendingDeletePostId = null;
+          this.pendingDeleteIsUserPost = false;
+        });
+      }
+      const saveEditBtn = document.getElementById("feed-save-edit-btn");
+      if (saveEditBtn) {
+        saveEditBtn.addEventListener("click", () => {
+          const postId = this.pendingEditPostId;
+          const textarea = document.getElementById("feed-edit-textarea");
+          if (postId && textarea) {
+            const newContent = this.escapeHtml(textarea.value.trim());
+            if (this.pendingEditIsUserPost) {
+              const userPost = this.userPosts.find((p) => p.id === postId);
+              if (userPost) {
+                userPost.content = newContent;
+                Toast.success(I18n.t("toast.post_updated"));
+                this.renderFeedPosts();
+              }
+            } else {
+              const recipe = RECIPE_FIXTURES?.find((r) => r.id === postId);
+              if (recipe) {
+                const lang = I18n.getLang();
+                const edits = this.recipeEdits.get(postId) || {};
+                this.recipeEdits.set(postId, {
+                  ...edits,
+                  [lang === "ar" ? "description_ar" : "description_en"]: newContent
+                });
+                Toast.success(I18n.t("toast.recipe_updated"));
+                this.renderFeedPosts();
+              }
+            }
+          }
+          Modal.close("modal-feed-edit");
+          this.pendingEditPostId = null;
+          this.pendingEditIsUserPost = false;
+        });
+      }
       if (typeof window !== "undefined") {
         window.addEventListener("meyar:lang-changed", () => {
           this.renderAll();
@@ -5371,74 +7106,67 @@
      */
     static init() {
       if (this.isInitialized) return;
+      if (typeof document === "undefined") return;
+      this.deletedRecipeIds = /* @__PURE__ */ new Set();
+      this.hiddenRecipeIds = /* @__PURE__ */ new Set();
       this.renderAll();
       this.bindEvents();
       this.isInitialized = true;
     }
   };
-  __publicField(FeedPage, "STORAGE_SAVED", "meyar_saved_recipes");
-  __publicField(FeedPage, "STORAGE_LIKED", "meyar_liked_recipes");
-  __publicField(FeedPage, "STORAGE_FOLLOWING", "meyar_following_chefs");
   __publicField(FeedPage, "currentFilter", "all");
   __publicField(FeedPage, "userPosts", []);
   __publicField(FeedPage, "isInitialized", false);
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => FeedPage.init());
-    } else {
-      FeedPage.init();
-    }
-  }
+  __publicField(FeedPage, "deletedRecipeIds", /* @__PURE__ */ new Set());
+  __publicField(FeedPage, "hiddenRecipeIds", /* @__PURE__ */ new Set());
+  __publicField(FeedPage, "recipeEdits", /* @__PURE__ */ new Map());
+  __publicField(FeedPage, "savedRecipeIds", /* @__PURE__ */ new Set());
+  __publicField(FeedPage, "likedRecipeIds", /* @__PURE__ */ new Set());
+  __publicField(FeedPage, "followingChefIds", /* @__PURE__ */ new Set());
+  __publicField(FeedPage, "pendingDeletePostId", null);
+  __publicField(FeedPage, "pendingDeleteIsUserPost", false);
+  __publicField(FeedPage, "pendingEditPostId", null);
+  __publicField(FeedPage, "pendingEditIsUserPost", false);
 
   // js/pages/explore.js
   var ExplorePage = class {
+    static reset() {
+      this.savedRecipeIds = /* @__PURE__ */ new Set();
+      this.likedRecipeIds = /* @__PURE__ */ new Set();
+      this.followingChefIds = /* @__PURE__ */ new Set();
+      this.enrolledCourseIds = /* @__PURE__ */ new Set();
+      this.currentCategory = "all";
+      this.searchQuery = "";
+      this.sortBy = "popular";
+      this.isInitialized = false;
+    }
     /**
-     * Get list of saved recipe IDs from localStorage
+     * Get list of saved recipe IDs from the current page session
      * @returns {string[]}
      */
     static getSavedRecipeIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_SAVED);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.savedRecipeIds);
     }
     /**
-     * Get list of liked recipe IDs from localStorage
+     * Get list of liked recipe IDs from the current page session
      * @returns {string[]}
      */
     static getLikedRecipeIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_LIKED);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.likedRecipeIds);
     }
     /**
-     * Get list of followed chef IDs from localStorage
+     * Get list of followed chef IDs from the current page session
      * @returns {string[]}
      */
     static getFollowingChefIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_FOLLOWING);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.followingChefIds);
     }
     /**
-     * Get list of enrolled course IDs from localStorage
+     * Get list of enrolled course IDs from the current page session
      * @returns {string[]}
      */
     static getEnrolledCourseIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_ENROLLED);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.enrolledCourseIds);
     }
     /**
      * Toggle save/bookmark status of a recipe
@@ -5447,19 +7175,13 @@
      */
     static toggleSave(recipeId) {
       if (!recipeId) return false;
-      const saved = new Set(this.getSavedRecipeIds());
-      const isSaved = saved.has(recipeId);
+      const isSaved = this.savedRecipeIds.has(recipeId);
       if (isSaved) {
-        saved.delete(recipeId);
+        this.savedRecipeIds.delete(recipeId);
         Toast.info(I18n.t("toast.unsaved_success"));
       } else {
-        saved.add(recipeId);
+        this.savedRecipeIds.add(recipeId);
         Toast.success(I18n.t("toast.saved_success"));
-      }
-      try {
-        localStorage.setItem(this.STORAGE_SAVED, JSON.stringify(Array.from(saved)));
-      } catch (e) {
-        console.error("Failed to save bookmarks to localStorage", e);
       }
       this.updateCardActionStates();
       return !isSaved;
@@ -5471,20 +7193,14 @@
      */
     static toggleLike(recipeId) {
       if (!recipeId) return false;
-      const liked = new Set(this.getLikedRecipeIds());
-      const isLiked = liked.has(recipeId);
+      const isLiked = this.likedRecipeIds.has(recipeId);
       const lang = I18n.getLang();
       if (isLiked) {
-        liked.delete(recipeId);
+        this.likedRecipeIds.delete(recipeId);
         Toast.info(lang === "ar" ? "\u062A\u0645 \u0625\u0644\u063A\u0627\u0621 \u0627\u0644\u0625\u0639\u062C\u0627\u0628 \u0628\u0627\u0644\u0648\u0635\u0641\u0629" : "Recipe unliked");
       } else {
-        liked.add(recipeId);
+        this.likedRecipeIds.add(recipeId);
         Toast.success(lang === "ar" ? "\u0623\u0639\u062C\u0628\u0643 \u0647\u0630\u0627 \u0627\u0644\u0637\u0628\u0642 \u0627\u0644\u0641\u0627\u062E\u0631!" : "Liked this gourmet dish!");
-      }
-      try {
-        localStorage.setItem(this.STORAGE_LIKED, JSON.stringify(Array.from(liked)));
-      } catch (e) {
-        console.error("Failed to save likes to localStorage", e);
       }
       this.updateCardActionStates();
       return !isLiked;
@@ -5495,20 +7211,14 @@
      * @returns {boolean}
      */
     static toggleFollow(chefId) {
-      if (!chefId) return false;
-      const following = new Set(this.getFollowingChefIds());
-      const isFollowing = following.has(chefId);
+      if (!chefId || isCurrentUserId(chefId, USER_FIXTURES)) return false;
+      const isFollowing = this.followingChefIds.has(chefId);
       if (isFollowing) {
-        following.delete(chefId);
+        this.followingChefIds.delete(chefId);
         Toast.info(I18n.t("toast.unfollowed_success"));
       } else {
-        following.add(chefId);
+        this.followingChefIds.add(chefId);
         Toast.success(I18n.t("toast.followed_success"));
-      }
-      try {
-        localStorage.setItem(this.STORAGE_FOLLOWING, JSON.stringify(Array.from(following)));
-      } catch (e) {
-        console.error("Failed to save following list to localStorage", e);
       }
       this.updateCardActionStates();
       return !isFollowing;
@@ -5520,20 +7230,16 @@
      */
     static toggleEnroll(courseId) {
       if (!courseId) return false;
-      const enrolled = new Set(this.getEnrolledCourseIds());
-      const isEnrolled = enrolled.has(courseId);
+      const course = COURSE_FIXTURES.find((item) => item.id === courseId);
+      if (isCurrentUserId(course?.instructor_id, USER_FIXTURES)) return false;
+      const isEnrolled = this.enrolledCourseIds.has(courseId);
       const lang = I18n.getLang();
       if (isEnrolled) {
-        enrolled.delete(courseId);
+        this.enrolledCourseIds.delete(courseId);
         Toast.info(lang === "ar" ? "\u062A\u0645 \u0625\u0644\u063A\u0627\u0621 \u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0641\u064A \u0627\u0644\u062F\u0648\u0631\u0629" : "Cancelled workshop enrollment");
       } else {
-        enrolled.add(courseId);
+        this.enrolledCourseIds.add(courseId);
         Toast.success(I18n.t("toast.course_enrolled"));
-      }
-      try {
-        localStorage.setItem(this.STORAGE_ENROLLED, JSON.stringify(Array.from(enrolled)));
-      } catch (e) {
-        console.error("Failed to save enrollments to localStorage", e);
       }
       this.updateCardActionStates();
       return !isEnrolled;
@@ -5544,7 +7250,7 @@
      * @returns {boolean}
      */
     static requestRFQ(supplyId) {
-      const item = MOCK_DATA.supplies.find((s) => s.id === supplyId);
+      const item = SUPPLY_FIXTURES.find((s) => s.id === supplyId);
       const lang = I18n.getLang();
       const name = item ? lang === "ar" ? item.title_ar : item.title_en : "";
       Toast.success(lang === "ar" ? `\u062A\u0645 \u0625\u0631\u0633\u0627\u0644 \u0637\u0644\u0628 \u0639\u0631\u0636 \u0633\u0639\u0631 \u0644\u0640 (${name}) \u0628\u0646\u062C\u0627\u062D!` : `RFQ request sent for (${name})!`);
@@ -5584,7 +7290,7 @@
       const includeSupplies = category === "all" || category === "supplies" || category === "gear" || category === "seasonal";
       const includeCourses = category === "all" || category === "courses" || category === "workshops";
       if (includeRecipes) {
-        MOCK_DATA.recipes.forEach((r) => {
+        RECIPE_FIXTURES.forEach((r) => {
           if (category === "seasonal") {
             const isSeasonal = r.tags && r.tags.some((t) => /seasonal|truffle|saffron|date|sea/i.test(t)) || /تمر|زعفران|كمأة|بحري|سمك/i.test(r.title_ar + r.description_ar);
             if (!isSeasonal) return;
@@ -5593,12 +7299,12 @@
         });
       }
       if (includeChefs) {
-        MOCK_DATA.chefs.forEach((c) => {
+        CHEF_FIXTURES.forEach((c) => {
           pool.push({ type: "chef", item: c });
         });
       }
       if (includeSupplies) {
-        MOCK_DATA.supplies.forEach((s) => {
+        SUPPLY_FIXTURES.forEach((s) => {
           if (category === "seasonal") {
             const isSeasonal = /oil|truffle|saffron/i.test(s.title_en + s.category_en) || /زيت|زعفران|كمأة/i.test(s.title_ar + s.category_ar);
             if (!isSeasonal) return;
@@ -5607,7 +7313,7 @@
         });
       }
       if (includeCourses) {
-        MOCK_DATA.courses.forEach((crs) => {
+        COURSE_FIXTURES.forEach((crs) => {
           pool.push({ type: "course", item: crs });
         });
       }
@@ -5716,7 +7422,9 @@
       const title = lang === "ar" ? recipe.title_ar : recipe.title_en;
       const cuisine = lang === "ar" ? recipe.cuisine_ar : recipe.cuisine_en;
       const desc = lang === "ar" ? recipe.description_ar : recipe.description_en;
-      const chefName = lang === "ar" ? recipe.chef_name_ar : recipe.chef_name_en;
+      const chefName = lang === "ar" ? recipe.author_name_ar : recipe.author_name_en;
+      const chefId = recipe.author_id || "";
+      const chefAvatar = recipe.author_avatar || "";
       const difficultyKey = recipe.difficulty === "Easy" ? "recipe.diff_easy" : recipe.difficulty === "Medium" ? "recipe.diff_medium" : "recipe.diff_hard";
       const diffLabel = I18n.t(difficultyKey);
       const isLiked = this.getLikedRecipeIds().includes(recipe.id);
@@ -5744,10 +7452,10 @@
           <!-- Card Content -->
           <div class="p-4 sm:p-5 space-y-3 text-start">
             <div class="flex items-center gap-2.5">
-              <a href="chef.html?id=${recipe.chef_id}" class="relative shrink-0 group/chef focus:outline-none">
-                <img src="${recipe.chef_avatar}" alt="${chefName}" class="w-7 h-7 rounded-lg object-cover border border-border-subtle">
+              <a href="chef.html?id=${chefId}" class="relative shrink-0 group/chef focus:outline-none">
+                <img src="${chefAvatar}" alt="${chefName}" class="w-7 h-7 rounded-lg object-cover border border-border-subtle">
               </a>
-              <a href="chef.html?id=${recipe.chef_id}" class="text-xs font-semibold text-text-muted hover:text-brand-gold transition-colors truncate">
+              <a href="chef.html?id=${chefId}" class="text-xs font-semibold text-text-muted hover:text-brand-gold transition-colors truncate">
                 ${chefName}
               </a>
             </div>
@@ -5810,6 +7518,7 @@
       const title = lang === "ar" ? chef.title_ar : chef.title_en;
       const specialty = lang === "ar" ? chef.specialty_ar : chef.specialty_en;
       const bio = lang === "ar" ? chef.bio_ar : chef.bio_en;
+      const isSelf = isCurrentUserId(chef.id, USER_FIXTURES);
       const isFollowing = this.getFollowingChefIds().includes(chef.id);
       return `
       <article data-card-type="chef" data-id="${chef.id}" class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm hover:border-brand-gold transition-all duration-200 flex flex-col justify-between group text-start">
@@ -5881,11 +7590,13 @@
 
         <!-- Footer Actions -->
         <div class="px-5 py-3.5 mt-4 border-t border-border-subtle bg-surface-2 flex items-center justify-between gap-2">
-          <button type="button" data-action="toggle-follow" data-chef-id="${chef.id}"
-                  class="flex-1 py-2 px-3 text-xs font-semibold rounded-xl border transition-colors flex items-center justify-center gap-1.5 ${isFollowing ? "bg-surface-2 text-text-main border-border-subtle" : "bg-brand-gold hover:bg-brand-gold-hover text-white border-transparent shadow-sm"}">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
-            <span>${isFollowing ? I18n.t("btn.following") : I18n.t("btn.follow")}</span>
-          </button>
+          ${isSelf ? "" : `
+            <button type="button" data-action="toggle-follow" data-chef-id="${chef.id}"
+                    class="flex-1 py-2 px-3 text-xs font-semibold rounded-xl border transition-colors flex items-center justify-center gap-1.5 ${isFollowing ? "bg-surface-2 text-text-main border-border-subtle" : "bg-brand-gold hover:bg-brand-gold-hover text-white border-transparent shadow-sm"}">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+              <span>${isFollowing ? I18n.t("btn.following") : I18n.t("btn.follow")}</span>
+            </button>
+          `}
           <a href="chef.html?id=${chef.id}" class="py-2 px-3 text-xs font-semibold text-text-main hover:text-brand-gold bg-surface-1 border border-border-subtle rounded-xl transition-colors shrink-0">
             ${I18n.t("common.view")}
           </a>
@@ -5897,12 +7608,13 @@
      * Render Supply / Commercial Equipment Card HTML
      */
     static renderSupplyCard(supply, lang) {
-      const title = lang === "ar" ? supply.title_ar : supply.title_en;
+      const title = lang === "ar" ? supply.name_ar : supply.name_en;
       const category = lang === "ar" ? supply.category_ar : supply.category_en;
-      const supplierName = lang === "ar" ? supply.supplier_name_ar : supply.supplier_name_en;
-      const priceRange = lang === "ar" ? supply.price_range_ar : supply.price_range_en;
-      const moq = lang === "ar" ? supply.moq_ar : supply.moq_en;
+      const supplierName = lang === "ar" ? supply.supplier?.name_ar : supply.supplier?.name_en;
+      const priceRange = supply.price_formatted || `${supply.price || 0} ${I18n.t("common.currency")}`;
+      const moq = `${supply.moq || 0} ${lang === "ar" ? supply.unit_ar || "\u0648\u062D\u062F\u0629" : supply.unit_en || "Units"}`;
       const leadTime = lang === "ar" ? supply.lead_time_ar : supply.lead_time_en;
+      const rating = supply.supplier?.rating ?? "";
       return `
       <article data-card-type="supply" data-id="${supply.id}" class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm hover:border-brand-gold transition-all duration-200 flex flex-col justify-between group text-start">
         <div>
@@ -5955,7 +7667,7 @@
         <div class="px-4 py-3 sm:px-5 sm:py-3.5 border-t border-border-subtle bg-surface-2 flex items-center justify-between gap-2">
           <div class="flex items-center gap-1 text-xs font-bold text-brand-gold">
             <svg class="w-3.5 h-3.5 fill-brand-gold text-brand-gold" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <span>${supply.rating}</span>
+            <span>${rating}</span>
           </div>
 
           <div class="flex items-center gap-2">
@@ -5979,15 +7691,22 @@
       const title = lang === "ar" ? course.title_ar : course.title_en;
       const level = lang === "ar" ? course.level_ar : course.level_en;
       const instructor = lang === "ar" ? course.instructor_name_ar : course.instructor_name_en;
-      const date = lang === "ar" ? course.date_ar : course.date_en;
+      const date = course.start_date || "";
       const duration = lang === "ar" ? course.duration_ar : course.duration_en;
+      const description = lang === "ar" ? course.description_ar || course.subtitle_ar : course.description_en || course.subtitle_en;
+      const price = course.price_formatted || `${course.price || 0} ${I18n.t("common.currency")}`;
+      const image = course.image || "";
+      const availableSeats = course.seats_left ?? 0;
+      const totalSeats = course.total_seats ?? 0;
+      const rating = course.rating ?? "";
+      const isSelf = isCurrentUserId(course.instructor_id, USER_FIXTURES);
       const isEnrolled = this.getEnrolledCourseIds().includes(course.id);
       return `
       <article data-card-type="course" data-id="${course.id}" class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm hover:border-brand-gold transition-all duration-200 flex flex-col justify-between group text-start">
         <div>
           <!-- Image Banner -->
           <div class="relative aspect-video w-full overflow-hidden bg-surface-2">
-            <img src="${course.cover_image}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="${image}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute top-3 start-3 flex items-center gap-1.5">
               <span class="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-surface-1 text-brand-gold border border-border-subtle shadow-sm">
                 ${level}
@@ -5997,7 +7716,7 @@
               </span>
             </div>
             <div class="absolute bottom-3 end-3 px-2 py-0.5 rounded-md bg-surface-1 text-[11px] font-bold text-brand-gold border border-border-subtle shadow-sm">
-              ${course.price_sar} ${I18n.t("common.currency")}
+              ${price}
             </div>
           </div>
 
@@ -6016,13 +7735,13 @@
                 ${title}
               </h3>
               <p class="text-xs text-text-muted mt-1.5 line-clamp-2 leading-relaxed">
-                ${lang === "ar" ? course.description_ar : course.description_en}
+                ${description}
               </p>
             </a>
 
             <!-- Capacity Info -->
             <div class="flex items-center justify-between text-[11px] text-text-muted pt-1">
-              <span>${lang === "ar" ? "\u0627\u0644\u0645\u0642\u0627\u0639\u062F \u0627\u0644\u0645\u062A\u0627\u062D\u0629" : "Available Seats"}: <strong class="text-text-main">${course.seats_total - course.enrolled_count}/${course.seats_total}</strong></span>
+              <span>${lang === "ar" ? "\u0627\u0644\u0645\u0642\u0627\u0639\u062F \u0627\u0644\u0645\u062A\u0627\u062D\u0629" : "Available Seats"}: <strong class="text-text-main">${availableSeats}/${totalSeats}</strong></span>
               <span class="text-brand-gold font-semibold">${course.enrolled_count} ${lang === "ar" ? "\u0645\u0633\u062C\u0644" : "enrolled"}</span>
             </div>
           </div>
@@ -6032,14 +7751,16 @@
         <div class="px-4 py-3 sm:px-5 sm:py-3.5 border-t border-border-subtle bg-surface-2 flex items-center justify-between gap-2">
           <div class="flex items-center gap-1 text-xs font-bold text-brand-gold">
             <svg class="w-3.5 h-3.5 fill-brand-gold text-brand-gold" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <span>${course.rating}</span>
+            <span>${rating}</span>
           </div>
 
           <div class="flex items-center gap-2">
-            <button type="button" data-action="enroll-course" data-course-id="${course.id}"
-                    class="px-3.5 py-1.5 text-xs font-semibold rounded-xl transition-colors ${isEnrolled ? "bg-surface-2 text-text-main border border-border-subtle" : "bg-brand-gold hover:bg-brand-gold-hover text-white shadow-sm"}">
-              <span>${isEnrolled ? I18n.t("btn.enrolled") : I18n.t("btn.enroll")}</span>
-            </button>
+            ${isSelf ? "" : `
+              <button type="button" data-action="enroll-course" data-course-id="${course.id}"
+                      class="px-3.5 py-1.5 text-xs font-semibold rounded-xl transition-colors ${isEnrolled ? "bg-surface-2 text-text-main border border-border-subtle" : "bg-brand-gold hover:bg-brand-gold-hover text-white shadow-sm"}">
+                <span>${isEnrolled ? I18n.t("btn.enrolled") : I18n.t("btn.enroll")}</span>
+              </button>
+            `}
             <a href="courses.html?id=${course.id}" class="p-2 rounded-xl bg-surface-1 border border-border-subtle text-text-muted hover:text-brand-gold transition-colors">
               <svg class="w-4 h-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </a>
@@ -6177,8 +7898,8 @@
      * Render Sidebar Trending Topics and Highlights
      */
     static renderTrendingSidebar(topicsContainer, storiesContainer, workshopsContainer, lang = I18n.getLang()) {
-      if (topicsContainer && MOCK_DATA.trends && MOCK_DATA.trends.topics) {
-        topicsContainer.innerHTML = MOCK_DATA.trends.topics.map((topic) => {
+      if (topicsContainer && TREND_FIXTURES && TREND_FIXTURES.topics) {
+        topicsContainer.innerHTML = TREND_FIXTURES.topics.map((topic) => {
           const title = lang === "ar" ? topic.title_ar : topic.title_en;
           return `
           <button type="button" data-action="filter-tag" data-tag="${topic.tag.replace("#", "")}"
@@ -6194,8 +7915,8 @@
         `;
         }).join("");
       }
-      if (storiesContainer && MOCK_DATA.trends && MOCK_DATA.trends.stories) {
-        storiesContainer.innerHTML = MOCK_DATA.trends.stories.map((story) => {
+      if (storiesContainer && TREND_FIXTURES && TREND_FIXTURES.stories) {
+        storiesContainer.innerHTML = TREND_FIXTURES.stories.map((story) => {
           const name = lang === "ar" ? story.chef_name_ar : story.chef_name_en;
           return `
           <a href="chef.html?id=${story.chef_id}" class="flex flex-col items-center gap-1.5 group shrink-0 focus:outline-none" aria-label="${name}">
@@ -6209,14 +7930,14 @@
         `;
         }).join("");
       }
-      if (workshopsContainer && MOCK_DATA.courses) {
-        workshopsContainer.innerHTML = MOCK_DATA.courses.slice(0, 2).map((crs) => {
+      if (workshopsContainer && COURSE_FIXTURES) {
+        workshopsContainer.innerHTML = COURSE_FIXTURES.slice(0, 2).map((crs) => {
           const title = lang === "ar" ? crs.title_ar : crs.title_en;
-          const date = lang === "ar" ? crs.date_ar : crs.date_en;
+          const date = crs.start_date || "";
           return `
           <div class="p-3 rounded-xl bg-surface-2 border border-border-subtle space-y-2 text-start">
             <div class="flex items-center justify-between text-[11px] text-text-muted">
-              <span class="text-brand-gold font-semibold">${crs.price_sar} ${I18n.t("common.currency")}</span>
+              <span class="text-brand-gold font-semibold">${crs.price_formatted || `${crs.price || 0} ${I18n.t("common.currency")}`}</span>
               <span>${date}</span>
             </div>
             <a href="courses.html?id=${crs.id}" class="font-bold text-xs text-text-main hover:text-brand-gold transition-colors block line-clamp-1">
@@ -6378,6 +8099,7 @@
      * Full Page Initializer
      */
     static init() {
+      if (this.isInitialized) return;
       if (typeof document === "undefined") return;
       const gridContainer = document.getElementById("explore-grid");
       const spotlightContainer = document.getElementById("explore-spotlight");
@@ -6391,7 +8113,6 @@
       this.renderSpotlight(spotlightContainer, lang);
       this.renderTrendingSidebar(topicsContainer, storiesContainer, workshopsContainer, lang);
       this.refresh();
-      if (this.isInitialized) return;
       this.isInitialized = true;
       document.querySelectorAll("[data-category]").forEach((btn) => {
         btn.addEventListener("click", (e) => {
@@ -6489,21 +8210,14 @@
       }
     }
   };
-  __publicField(ExplorePage, "STORAGE_SAVED", "meyar_saved_recipes");
-  __publicField(ExplorePage, "STORAGE_LIKED", "meyar_liked_recipes");
-  __publicField(ExplorePage, "STORAGE_FOLLOWING", "meyar_following_chefs");
-  __publicField(ExplorePage, "STORAGE_ENROLLED", "meyar_enrolled_courses");
   __publicField(ExplorePage, "currentCategory", "all");
   __publicField(ExplorePage, "searchQuery", "");
   __publicField(ExplorePage, "sortBy", "popular");
   __publicField(ExplorePage, "isInitialized", false);
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => ExplorePage.init());
-    } else {
-      ExplorePage.init();
-    }
-  }
+  __publicField(ExplorePage, "savedRecipeIds", /* @__PURE__ */ new Set());
+  __publicField(ExplorePage, "likedRecipeIds", /* @__PURE__ */ new Set());
+  __publicField(ExplorePage, "followingChefIds", /* @__PURE__ */ new Set());
+  __publicField(ExplorePage, "enrolledCourseIds", /* @__PURE__ */ new Set());
 
   // js/modules/scaler.js
   var RecipeScaler = class {
@@ -6676,10 +8390,10 @@
           html += `
           <li class="group flex items-center justify-between gap-3 py-3 px-3.5 rounded-xl hover:bg-surface-2 transition-colors border-b border-border-subtle last:border-b-0 text-sm" data-ingredient-row data-ingredient-id="${item.id || index}">
             <div class="flex items-center gap-3 min-w-0 flex-1">
-              <label class="flex items-center gap-3 cursor-pointer select-none min-w-0">
-                <input type="checkbox" class="w-4 h-4 rounded border-border-subtle bg-surface-1 text-brand-gold focus:ring-brand-gold shrink-0 cursor-pointer transition-colors" data-ingredient-checkbox aria-label="${item.name}">
-                <span class="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0 hidden sm:block"></span>
-                <span class="text-text-main font-semibold group-has-[:checked]:line-through group-has-[:checked]:text-text-muted transition-colors truncate">${item.name}</span>
+              <label class="flex items-start gap-3 cursor-pointer select-none min-w-0">
+                <input type="checkbox" class="w-4 h-4 rounded border-border-subtle bg-surface-1 text-brand-gold focus:ring-brand-gold shrink-0 cursor-pointer transition-colors mt-0.5" data-ingredient-checkbox aria-label="${item.name}">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0 hidden sm:block mt-2"></span>
+                <span class="text-text-main font-semibold group-has-[:checked]:line-through group-has-[:checked]:text-text-muted transition-colors">${item.name}</span>
               </label>
               ${item.notes ? `<span class="text-xs text-text-muted hidden md:inline shrink-0 font-normal">(${item.notes})</span>` : ""}
             </div>
@@ -6739,70 +8453,60 @@
 
   // js/pages/recipe-page.js
   var RecipePage = class {
+    // recipeId -> Set<number>
     /**
-     * Get list of saved recipe IDs from localStorage
+     * Reset in-memory recipe page state (for test isolation)
+     */
+    static reset() {
+      this.savedRecipeIds = /* @__PURE__ */ new Set();
+      this.likedRecipeIds = /* @__PURE__ */ new Set();
+      this.followingChefIds = /* @__PURE__ */ new Set();
+      this.completedStepsMap = /* @__PURE__ */ new Map();
+      this.completedSteps = /* @__PURE__ */ new Set();
+      this.currentRecipe = null;
+      this.scalerInstance = null;
+      this.activeTimers = /* @__PURE__ */ new Map();
+      this.isInitialized = false;
+    }
+    /**
+     * Get list of saved recipe IDs from in-memory set
      * @returns {string[]}
      */
     static getSavedRecipeIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_SAVED);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.savedRecipeIds);
     }
     /**
-     * Get list of liked recipe IDs from localStorage
+     * Get list of liked recipe IDs from in-memory set
      * @returns {string[]}
      */
     static getLikedRecipeIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_LIKED);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.likedRecipeIds);
     }
     /**
-     * Get list of followed chef IDs from localStorage
+     * Get list of followed chef IDs from in-memory set
      * @returns {string[]}
      */
     static getFollowingChefIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_FOLLOWING);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.followingChefIds);
     }
     /**
-     * Get list of completed step numbers for a recipe from localStorage
+     * Get list of completed step numbers for a recipe from in-memory map
      * @param {string} recipeId 
      * @returns {number[]}
      */
     static getCompletedSteps(recipeId) {
       if (!recipeId) return [];
-      try {
-        const key = `${this.STORAGE_PROGRESS_PREFIX}${recipeId}`;
-        const data = localStorage.getItem(key);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      const set = this.completedStepsMap.get(recipeId);
+      return set ? Array.from(set) : [];
     }
     /**
-     * Save completed step numbers to localStorage
+     * Save completed step numbers to in-memory map
      * @param {string} recipeId 
      * @param {number[]} steps 
      */
     static saveCompletedSteps(recipeId, steps) {
       if (!recipeId) return;
-      try {
-        const key = `${this.STORAGE_PROGRESS_PREFIX}${recipeId}`;
-        localStorage.setItem(key, JSON.stringify(steps));
-      } catch (e) {
-        console.error("Failed to save step progress", e);
-      }
+      this.completedStepsMap.set(recipeId, new Set(steps || []));
     }
     /**
      * Load recipe by ID or query param, falling back to default recipe
@@ -6815,11 +8519,11 @@
         recipeId = params.get("id");
       }
       let recipe = null;
-      if (recipeId && Array.isArray(MOCK_DATA.recipes)) {
-        recipe = MOCK_DATA.recipes.find((r) => r.id === recipeId);
+      if (recipeId && Array.isArray(RECIPE_FIXTURES)) {
+        recipe = RECIPE_FIXTURES.find((r) => r.id === recipeId);
       }
-      if (!recipe && Array.isArray(MOCK_DATA.recipes) && MOCK_DATA.recipes.length > 0) {
-        recipe = MOCK_DATA.recipes[0];
+      if (!recipe && Array.isArray(RECIPE_FIXTURES) && RECIPE_FIXTURES.length > 0) {
+        recipe = RECIPE_FIXTURES[0];
       }
       return recipe;
     }
@@ -6830,19 +8534,13 @@
      */
     static toggleSave(recipeId) {
       if (!recipeId) return false;
-      const saved = new Set(this.getSavedRecipeIds());
-      const isSaved = saved.has(recipeId);
+      const isSaved = this.savedRecipeIds.has(recipeId);
       if (isSaved) {
-        saved.delete(recipeId);
+        this.savedRecipeIds.delete(recipeId);
         Toast.info(I18n.t("toast.unsaved_success"));
       } else {
-        saved.add(recipeId);
+        this.savedRecipeIds.add(recipeId);
         Toast.success(I18n.t("toast.saved_success"));
-      }
-      try {
-        localStorage.setItem(this.STORAGE_SAVED, JSON.stringify(Array.from(saved)));
-      } catch (e) {
-        console.error("Failed to save bookmark", e);
       }
       this.updateActionStates();
       return !isSaved;
@@ -6854,20 +8552,14 @@
      */
     static toggleLike(recipeId) {
       if (!recipeId) return false;
-      const liked = new Set(this.getLikedRecipeIds());
-      const isLiked = liked.has(recipeId);
+      const isLiked = this.likedRecipeIds.has(recipeId);
       const lang = I18n.getLang();
       if (isLiked) {
-        liked.delete(recipeId);
+        this.likedRecipeIds.delete(recipeId);
         Toast.info(lang === "ar" ? "\u062A\u0645 \u0625\u0644\u063A\u0627\u0621 \u0627\u0644\u0625\u0639\u062C\u0627\u0628 \u0628\u0627\u0644\u0648\u0635\u0641\u0629" : "Recipe unliked");
       } else {
-        liked.add(recipeId);
+        this.likedRecipeIds.add(recipeId);
         Toast.success(lang === "ar" ? "\u0623\u0639\u062C\u0628\u0643 \u0647\u0630\u0627 \u0627\u0644\u0637\u0628\u0642 \u0627\u0644\u0641\u0627\u062E\u0631!" : "Liked this gourmet dish!");
-      }
-      try {
-        localStorage.setItem(this.STORAGE_LIKED, JSON.stringify(Array.from(liked)));
-      } catch (e) {
-        console.error("Failed to save like state", e);
       }
       this.updateActionStates();
       return !isLiked;
@@ -6878,21 +8570,15 @@
      * @returns {boolean}
      */
     static toggleFollowChef(chefId) {
-      if (!chefId) return false;
-      const following = new Set(this.getFollowingChefIds());
-      const isFollowing = following.has(chefId);
+      if (!chefId || isCurrentUserId(chefId, USER_FIXTURES)) return false;
+      const isFollowing = this.followingChefIds.has(chefId);
       const lang = I18n.getLang();
       if (isFollowing) {
-        following.delete(chefId);
+        this.followingChefIds.delete(chefId);
         Toast.info(lang === "ar" ? "\u062A\u0645 \u0625\u0644\u063A\u0627\u0621 \u0645\u062A\u0627\u0628\u0639\u0629 \u0627\u0644\u0634\u064A\u0641" : "Unfollowed chef");
       } else {
-        following.add(chefId);
+        this.followingChefIds.add(chefId);
         Toast.success(lang === "ar" ? "\u0623\u0635\u0628\u062D\u062A \u062A\u062A\u0627\u0628\u0639 \u0647\u0630\u0627 \u0627\u0644\u0634\u064A\u0641!" : "Now following chef!");
-      }
-      try {
-        localStorage.setItem(this.STORAGE_FOLLOWING, JSON.stringify(Array.from(following)));
-      } catch (e) {
-        console.error("Failed to save following chefs", e);
       }
       this.updateActionStates();
       return !isFollowing;
@@ -7184,7 +8870,7 @@
       if (typeof document === "undefined" || !this.currentRecipe) return;
       const r = this.currentRecipe;
       const lang = I18n.getLang();
-      const chef = Array.isArray(MOCK_DATA.chefs) ? MOCK_DATA.chefs.find((c) => c.id === r.author_id) : null;
+      const chef = Array.isArray(CHEF_FIXTURES) ? CHEF_FIXTURES.find((c) => c.id === r.author_id) : null;
       const avatarEl = document.getElementById("recipe-chef-avatar");
       if (avatarEl) {
         avatarEl.src = r.author_avatar || (chef ? chef.avatar : "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=200&q=80");
@@ -7213,6 +8899,11 @@
       const followBtn = document.getElementById("btn-follow-chef");
       if (followBtn && r.author_id) {
         followBtn.setAttribute("data-chef-id", r.author_id);
+        if (isCurrentUserId(r.author_id, USER_FIXTURES)) {
+          followBtn.classList.add("hidden");
+        } else {
+          followBtn.classList.remove("hidden");
+        }
       }
     }
     /**
@@ -7430,7 +9121,7 @@
       if (typeof document === "undefined" || !this.currentRecipe) return;
       const container = document.getElementById("related-recipes-container");
       if (!container) return;
-      const allRecipes = Array.isArray(MOCK_DATA.recipes) ? MOCK_DATA.recipes : [];
+      const allRecipes = Array.isArray(RECIPE_FIXTURES) ? RECIPE_FIXTURES : [];
       const related = allRecipes.filter((r) => r.id !== this.currentRecipe.id).slice(0, 3);
       const lang = I18n.getLang();
       const savedIds = new Set(this.getSavedRecipeIds());
@@ -7496,10 +9187,12 @@
         const label = saveBtn.querySelector(".save-label");
         if (isSaved) {
           saveBtn.classList.add("text-brand-gold", "bg-surface-2");
+          saveBtn.classList.remove("text-text-muted", "bg-surface-1");
           if (icon) icon.classList.add("fill-current");
           if (label) label.textContent = I18n.getLang() === "ar" ? "\u0645\u062D\u0641\u0648\u0638\u0629" : "Saved";
         } else {
           saveBtn.classList.remove("text-brand-gold", "bg-surface-2");
+          saveBtn.classList.add("text-text-muted", "bg-surface-1");
           if (icon) icon.classList.remove("fill-current");
           if (label) label.textContent = I18n.t("btn.save");
         }
@@ -7512,10 +9205,12 @@
         const baseLikes = Number(r.likes_count) || 1400;
         if (isLiked) {
           likeBtn.classList.add("text-red-500", "bg-surface-2");
+          likeBtn.classList.remove("text-text-muted", "bg-surface-1");
           if (icon) icon.classList.add("fill-current");
           if (likesCountEl) likesCountEl.textContent = (baseLikes + 1).toString();
         } else {
           likeBtn.classList.remove("text-red-500", "bg-surface-2");
+          likeBtn.classList.add("text-text-muted", "bg-surface-1");
           if (icon) icon.classList.remove("fill-current");
           if (likesCountEl) likesCountEl.textContent = baseLikes.toString();
         }
@@ -7523,6 +9218,13 @@
       const isFollowing = followingIds.has(r.author_id);
       const followBtn = document.getElementById("btn-follow-chef");
       if (followBtn) {
+        const isSelf = isCurrentUserId(r.author_id, USER_FIXTURES);
+        if (isSelf) {
+          followBtn.classList.add("hidden");
+          this.followingChefIds.delete(r.author_id);
+          return;
+        }
+        followBtn.classList.remove("hidden");
         const btnText = followBtn.querySelector(".btn-text");
         const lang = I18n.getLang();
         if (isFollowing) {
@@ -7667,6 +9369,11 @@
      * Main initializer for Recipe Page
      */
     static init(recipeId = null) {
+      if (typeof document !== "undefined" && this.lastDocument !== document) {
+        this.isInitialized = false;
+        this.lastDocument = document;
+      }
+      if (this.isInitialized) return;
       this.currentRecipe = this.loadRecipe(recipeId);
       if (!this.currentRecipe) return;
       const savedSteps = this.getCompletedSteps(this.currentRecipe.id);
@@ -7689,29 +9396,21 @@
       this.renderRelatedRecipes();
       this.updateActionStates();
       this.updateProgressUI();
-      if (!this.isInitialized) {
-        this.bindEvents();
-        this.isInitialized = true;
-      }
+      this.bindEvents();
+      this.isInitialized = true;
     }
   };
-  __publicField(RecipePage, "STORAGE_SAVED", "meyar_saved_recipes");
-  __publicField(RecipePage, "STORAGE_LIKED", "meyar_liked_recipes");
-  __publicField(RecipePage, "STORAGE_FOLLOWING", "meyar_following_chefs");
-  __publicField(RecipePage, "STORAGE_PROGRESS_PREFIX", "meyar_recipe_steps_");
   __publicField(RecipePage, "currentRecipe", null);
   __publicField(RecipePage, "scalerInstance", null);
   __publicField(RecipePage, "completedSteps", /* @__PURE__ */ new Set());
   __publicField(RecipePage, "activeTimers", /* @__PURE__ */ new Map());
   // stepNumber -> { intervalId, remainingSeconds, totalSeconds, isRunning }
   __publicField(RecipePage, "isInitialized", false);
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => RecipePage.init());
-    } else {
-      RecipePage.init();
-    }
-  }
+  __publicField(RecipePage, "lastDocument", null);
+  __publicField(RecipePage, "savedRecipeIds", /* @__PURE__ */ new Set());
+  __publicField(RecipePage, "likedRecipeIds", /* @__PURE__ */ new Set());
+  __publicField(RecipePage, "followingChefIds", /* @__PURE__ */ new Set());
+  __publicField(RecipePage, "completedStepsMap", /* @__PURE__ */ new Map());
 
   // js/pages/create-recipe.js
   var CreateRecipeStudio = class {
@@ -8401,14 +10100,25 @@
       if (summaryBox) summaryBox.classList.add("hidden");
     }
     /**
-     * Save current recipe data to localStorage draft
+     * Reset in-memory studio state (for test isolation)
+     */
+    static reset() {
+      this.currentDraft = null;
+      this.customRecipes = [];
+      this.coverImage = "";
+      this.galleryImages = [];
+      this.currentStep = 1;
+      this.isInitialized = false;
+    }
+    /**
+     * Save current recipe data to the current page session
      * @param {boolean} manual 
      * @returns {boolean}
      */
     static saveDraft(manual = true) {
       try {
         const formData = this.getFormData();
-        localStorage.setItem(this.STORAGE_DRAFT, JSON.stringify(formData));
+        this.currentDraft = formData;
         const timeStr = (/* @__PURE__ */ new Date()).toLocaleTimeString((I18n?.currentLang || "ar") === "ar" ? "ar-SA" : "en-US", {
           hour: "2-digit",
           minute: "2-digit",
@@ -8432,15 +10142,13 @@
       }
     }
     /**
-     * Load existing draft from localStorage and populate inputs
+     * Load the current session draft and populate inputs
      * @returns {boolean}
      */
     static loadDraft() {
       try {
-        const draftJson = localStorage.getItem(this.STORAGE_DRAFT);
-        if (!draftJson) return false;
-        const data = JSON.parse(draftJson);
-        this.populateForm(data);
+        if (!this.currentDraft) return false;
+        this.populateForm(this.currentDraft);
         const draftStatus = document.getElementById("draft-status-indicator");
         if (draftStatus) {
           draftStatus.textContent = "\u062A\u0645 \u0627\u0633\u062A\u0639\u0627\u062F\u0629 \u0627\u0644\u0645\u0633\u0648\u062F\u0629 \u0627\u0644\u0633\u0627\u0628\u0642\u0629 \u0628\u0646\u062C\u0627\u062D";
@@ -8499,13 +10207,10 @@
       this.setInstructions(data.steps || []);
     }
     /**
-     * Reset form and clear draft from localStorage
+     * Reset form and clear the current session draft
      */
     static clearDraft() {
-      try {
-        localStorage.removeItem(this.STORAGE_DRAFT);
-      } catch {
-      }
+      this.currentDraft = null;
       const form = document.getElementById("create-recipe-form");
       if (form) form.reset();
       this.coverImage = "";
@@ -8547,27 +10252,17 @@
         ...formData,
         id: recipeId,
         created_at: (/* @__PURE__ */ new Date()).toISOString().split("T")[0],
-        author_id: "chef-1",
-        author_name_ar: "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
-        author_name_en: "Chef Faisal Al-Hashemi",
-        author_avatar: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=200&q=80",
+        author_id: USER_FIXTURES.id,
+        author_name_ar: USER_FIXTURES.name_ar,
+        author_name_en: USER_FIXTURES.name_en,
+        author_avatar: USER_FIXTURES.avatar,
         rating: 5,
         reviews_count: 0,
         likes_count: 0,
         saves_count: 0
       };
-      try {
-        const stored = localStorage.getItem(this.STORAGE_CUSTOM_RECIPES);
-        const list = stored ? JSON.parse(stored) : [];
-        list.unshift(newRecipe);
-        localStorage.setItem(this.STORAGE_CUSTOM_RECIPES, JSON.stringify(list));
-        localStorage.removeItem(this.STORAGE_DRAFT);
-      } catch (e) {
-        console.error("Failed to persist published recipe", e);
-      }
-      if (MOCK_DATA && Array.isArray(MOCK_DATA.recipes)) {
-        MOCK_DATA.recipes.unshift(newRecipe);
-      }
+      this.customRecipes.unshift(newRecipe);
+      this.currentDraft = null;
       Toast.success(I18n?.t("recipe.published_success") || "\u062A\u0645 \u0646\u0634\u0631 \u0627\u0644\u0648\u0635\u0641\u0629 \u0628\u0646\u062C\u0627\u062D \u0641\u064A \u0645\u062C\u062A\u0645\u0639 \u0645\u0639\u064A\u0627\u0631!");
       setTimeout(() => {
         if (typeof window !== "undefined" && window.location) {
@@ -8580,94 +10275,11 @@
      * Load rich gourmet sample data into the form
      */
     static loadSampleData() {
-      const sample = {
-        title_ar: "\u0633\u062A\u064A\u0643 \u0648\u0627\u063A\u064A\u0648 \u0631\u064A\u0628 \u0622\u064A \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0648\u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0644\u0645\u0639\u062A\u0642",
-        title_en: "Wagyu Ribeye with Black Garlic Date Glaze",
-        description_ar: "\u0642\u0637\u0639\u0629 \u0644\u062D\u0645 \u0648\u0627\u063A\u064A\u0648 A5 \u0645\u0639\u062A\u0642\u0629 \u0648\u0645\u0637\u0647\u0648\u0629 \u0644\u062F\u0631\u062C\u0629 \u0645\u062A\u0648\u0633\u0637\u0629\u060C \u0645\u063A\u0637\u0627\u0629 \u0628\u063A\u0644\u064A\u0632 \u0645\u0631\u0643\u0632 \u0645\u0646 \u062F\u0628\u0633 \u062A\u0645\u0631 \u0627\u0644\u062E\u0644\u0627\u0635 \u0627\u0644\u0646\u062C\u062F \u0648\u0627\u0644\u0643\u0645\u0623\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0648\u062B\u0648\u0645 \u0627\u0644\u062D\u0628\u0629 \u0627\u0644\u0633\u0648\u062F\u0627\u0621 \u0627\u0644\u0645\u062E\u0645\u0631.",
-        description_en: "Seared A5 Wagyu Ribeye brushed with a rich reduction of artisanal Najdi date molasses, fermented black garlic paste, and winter truffle jus.",
-        cuisine: "Saudi",
-        category: "Main Course",
-        difficulty: "Hard",
-        base_servings: 4,
-        prep_time: 35,
-        cook_time: 45,
-        calories: 680,
-        tags: ["Halal", "FineDining", "DryAged", "Organic"],
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
-        gallery: [
-          "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80",
-          "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
-        ],
-        video_url: "https://youtube.com/watch?v=sample-wagyu",
-        plating_notes: "\u064A\u0633\u0643\u0628 \u0641\u064A \u0635\u062D\u0646 \u0641\u062E\u0627\u0631\u064A \u0631\u0645\u0627\u062F\u064A \u0633\u0627\u062E\u0646 \u0645\u0639 \u0627\u0644\u062A\u0632\u064A\u064A\u0646 \u0628\u0627\u0644\u0632\u0639\u062A\u0631 \u0627\u0644\u0628\u0631\u064A \u0648\u0632\u0647\u0631 \u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0645\u062F\u062E\u0646",
-        ingredients: [
-          {
-            name_ar: "\u0644\u062D\u0645 \u0648\u0627\u063A\u064A\u0648 A5 \u0631\u064A\u0628 \u0622\u064A \u0645\u0639\u062A\u0642",
-            name_en: "A5 Wagyu Ribeye Steaks",
-            baseAmount: 800,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            section: "Main",
-            notes_ar: "\u0645\u0642\u0637\u0639\u0629 \u0628\u0633\u0645\u0627\u0643\u0629 3.5 \u0633\u0645"
-          },
-          {
-            name_ar: "\u0645\u0639\u062C\u0648\u0646 \u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0644\u0645\u062E\u0645\u0631",
-            name_en: "Fermented Black Garlic Paste",
-            baseAmount: 45,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            section: "Sauce",
-            notes_ar: "\u0645\u0647\u0631\u0648\u0633 \u0646\u0627\u0639\u0645\u0627\u064B"
-          },
-          {
-            name_ar: "\u062F\u0628\u0633 \u062A\u0645\u0631 \u062E\u0644\u0627\u0635 \u0641\u0627\u062E\u0631",
-            name_en: "Artisanal Kholas Date Molasses",
-            baseAmount: 60,
-            unit_ar: "\u0645\u0644",
-            unit_en: "ml",
-            section: "Sauce",
-            notes_ar: "\u0637\u0628\u064A\u0639\u064A \u0628\u062F\u0648\u0646 \u0633\u0643\u0631 \u0645\u0636\u0627\u0641"
-          },
-          {
-            name_ar: "\u0632\u0628\u062F\u0629 \u0641\u0631\u0646\u0633\u064A\u0629 \u063A\u064A\u0631 \u0645\u0645\u0644\u062D\u0629",
-            name_en: "Unsalted Cultured French Butter",
-            baseAmount: 50,
-            unit_ar: "\u062C\u0631\u0627\u0645",
-            unit_en: "g",
-            section: "Marinade",
-            notes_ar: "\u0644\u0644\u062F\u0647\u0646 \u0623\u062B\u0646\u0627\u0621 \u0627\u0644\u062A\u062D\u0645\u064A\u0631"
-          }
-        ],
-        steps: [
-          {
-            step_number: 1,
-            title_ar: "\u062A\u062D\u0636\u064A\u0631 \u0644\u062D\u0645 \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0648\u0627\u0644\u062A\u062A\u0628\u064A\u0644 \u0627\u0644\u0623\u0648\u0644\u064A",
-            title_en: "Wagyu Tempering & Seasoning",
-            instruction_ar: "\u0623\u062E\u0631\u062C \u0634\u0631\u0627\u0626\u062D \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0645\u0646 \u0627\u0644\u062B\u0644\u0627\u062C\u0629 \u0642\u0628\u0644 \u0627\u0644\u0637\u0647\u064A \u0628\u0640 45 \u062F\u0642\u064A\u0642\u0629 \u0644\u062A\u0635\u0644 \u0644\u062D\u0631\u0627\u0631\u0629 \u0627\u0644\u063A\u0631\u0641\u0629. \u062C\u0641\u0641 \u0627\u0644\u0633\u0637\u062D \u0628\u0648\u0631\u0642 \u0627\u0644\u0645\u0637\u0628\u062E \u062B\u0645 \u0631\u0634 \u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0628\u062D\u0631\u064A \u0627\u0644\u0645\u062F\u062E\u0646 \u0628\u0627\u0644\u062A\u0633\u0627\u0648\u064A.",
-            instruction_en: "Temper the Wagyu steaks at room temperature for 45 minutes. Pat dry with culinary towels and season evenly with smoked sea salt.",
-            timer_minutes: 45,
-            tip_ar: "\u0644\u0627 \u062A\u0636\u0639 \u0627\u0644\u0644\u062D\u0645 \u0628\u0627\u0631\u062F\u0627\u064B \u0623\u0628\u062F\u0627\u064B \u0641\u064A \u0627\u0644\u0645\u0642\u0644\u0627\u0629 \u0644\u062A\u0641\u0627\u062F\u064A \u0627\u0646\u062E\u0641\u0627\u0636 \u062D\u0631\u0627\u0631\u0629 \u0633\u0637\u062D \u0627\u0644\u062A\u062D\u0645\u064A\u0631 \u0648\u0641\u0642\u062F\u0627\u0646 \u0627\u0644\u0639\u0635\u0627\u0631\u0629."
-          },
-          {
-            step_number: 2,
-            title_ar: "\u0625\u0639\u062F\u0627\u062F \u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0648\u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0644\u0645\u062E\u0645\u0631",
-            title_en: "Preparing Black Garlic Date Glaze",
-            instruction_ar: "\u0641\u064A \u0642\u062F\u0631 \u0646\u062D\u0627\u0633\u064A \u0635\u063A\u064A\u0631 \u0639\u0644\u0649 \u0646\u0627\u0631 \u0647\u0627\u062F\u0626\u0629\u060C \u0627\u062E\u0644\u0637 \u0645\u0639\u062C\u0648\u0646 \u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F \u0645\u0639 \u062F\u0628\u0633 \u0627\u0644\u062A\u0645\u0631 \u0648\u0627\u0644\u062E\u0644 \u0627\u0644\u0628\u0644\u0633\u0645\u064A \u0648\u0627\u0644\u062F\u064A\u0645\u064A \u063A\u0644\u0627\u0633. \u0642\u0644\u0651\u0628 \u0628\u0627\u0633\u062A\u0645\u0631\u0627\u0631 \u062D\u062A\u0649 \u064A\u062A\u0643\u0627\u062B\u0641 \u0627\u0644\u0645\u0632\u064A\u062C.",
-            instruction_en: "In a copper saucepan over low heat, whisk together black garlic paste, date molasses, balsamic, and demi-glace until reduced.",
-            timer_minutes: 10,
-            tip_ar: "\u062A\u062C\u0646\u0628 \u063A\u0644\u064A\u0627\u0646 \u0627\u0644\u063A\u0644\u064A\u0632 \u0627\u0644\u0634\u062F\u064A\u062F \u062D\u062A\u0649 \u0644\u0627 \u064A\u062D\u062A\u0631\u0642 \u0627\u0644\u0633\u0643\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0641\u064A \u062F\u0628\u0633 \u0627\u0644\u062A\u0645\u0631."
-          },
-          {
-            step_number: 3,
-            title_ar: "\u0627\u0644\u062A\u062D\u0645\u064A\u0631 \u0627\u0644\u0639\u0627\u0644\u064A \u0648\u0627\u0644\u062F\u0647\u0646 \u0628\u0627\u0644\u0632\u0628\u062F\u0629 (Arros\xE9)",
-            title_en: "High-Heat Sear & Butter Basting",
-            instruction_ar: "\u0633\u062E\u0651\u0646 \u0645\u0642\u0644\u0627\u0629 \u062D\u062F\u064A\u062F \u0632\u0647\u0631 \u062D\u062A\u0649 \u062A\u0635\u0627\u0639\u062F \u062F\u062E\u0627\u0646 \u062E\u0641\u064A\u0641. \u0627\u0637\u0647 \u0627\u0644\u0648\u0627\u063A\u064A\u0648 \u0644\u062F\u0642\u064A\u0642\u062A\u064A\u0646 \u0644\u0643\u0644 \u062C\u0627\u0646\u0628\u060C \u062B\u0645 \u0623\u0636\u0641 \u0627\u0644\u0632\u0628\u062F\u0629 \u0648\u0627\u0644\u0632\u0639\u062A\u0631 \u0648\u0627\u062F\u0647\u0646 \u0627\u0644\u0644\u062D\u0645 \u0628\u0627\u0633\u062A\u0645\u0631\u0627\u0631.",
-            instruction_en: "Heat cast iron skillet until smoking hot. Sear Wagyu 2 min per side. Add butter and thyme, basting steaks with foaming butter.",
-            timer_minutes: 6,
-            tip_ar: "\u0627\u0644\u0648\u0627\u063A\u064A\u0648 A5 \u064A\u062D\u062A\u0648\u064A \u0639\u0644\u0649 \u062F\u0647\u0648\u0646 \u0643\u0627\u0641\u064A\u0629 \u062A\u0630\u0648\u0628 \u0628\u0633\u0631\u0639\u0629\u061B \u0644\u0627 \u062A\u062D\u062A\u0627\u062C \u0644\u0625\u0636\u0627\u0641\u0629 \u0632\u064A\u062A \u0625\u0636\u0627\u0641\u064A \u0644\u0644\u0645\u0642\u0644\u0627\u0629."
-          }
-        ]
-      };
+      const sample = JSON.parse(JSON.stringify(RECIPE_FIXTURES[0] || {}));
+      sample.ingredients = (sample.ingredients || []).map((ingredient, index) => ({
+        ...ingredient,
+        section: index === 0 ? "Main" : "Sauce"
+      }));
       this.populateForm(sample);
       Toast.success("\u062A\u0645 \u062A\u062D\u0645\u064A\u0644 \u0646\u0645\u0648\u0630\u062C \u0627\u0644\u0648\u0635\u0641\u0629 \u0627\u0644\u0641\u0627\u062E\u0631\u0629 \u0628\u0646\u062C\u0627\u062D!");
     }
@@ -8675,6 +10287,11 @@
      * Initialize all studio event bindings, buttons, and state
      */
     static init() {
+      if (typeof document !== "undefined" && this.lastDocument !== document) {
+        this.isInitialized = false;
+        this.lastDocument = document;
+      }
+      if (this.isInitialized) return;
       if (typeof document === "undefined") return;
       document.querySelectorAll(".wizard-step-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -8716,12 +10333,10 @@
       if (addIngBtn) addIngBtn.addEventListener("click", () => this.addIngredientRow());
       if (loadSampleIngBtn) {
         loadSampleIngBtn.addEventListener("click", () => {
-          this.setIngredients([
-            { name_ar: "\u0644\u062D\u0645 \u0648\u0627\u063A\u064A\u0648 A5 \u0631\u064A\u0628 \u0622\u064A", name_en: "A5 Wagyu Ribeye", baseAmount: 800, unit_en: "g", unit_ar: "\u062C\u0631\u0627\u0645", section: "Main" },
-            { name_ar: "\u062F\u0628\u0633 \u062A\u0645\u0631 \u062E\u0644\u0627\u0635 \u0646\u062C\u062F", name_en: "Najdi Date Molasses", baseAmount: 60, unit_en: "ml", unit_ar: "\u0645\u0644", section: "Sauce" },
-            { name_ar: "\u0645\u0639\u062C\u0648\u0646 \u0627\u0644\u062B\u0648\u0645 \u0627\u0644\u0623\u0633\u0648\u062F", name_en: "Black Garlic Paste", baseAmount: 45, unit_en: "g", unit_ar: "\u062C\u0631\u0627\u0645", section: "Sauce" },
-            { name_ar: "\u0632\u0628\u062F\u0629 \u0641\u0631\u0646\u0633\u064A\u0629 \u063A\u064A\u0631 \u0645\u0645\u0644\u062D\u0629", name_en: "French Butter", baseAmount: 50, unit_en: "g", unit_ar: "\u062C\u0631\u0627\u0645", section: "Marinade" }
-          ]);
+          this.setIngredients((RECIPE_FIXTURES[0]?.ingredients || []).map((ingredient, index) => ({
+            ...ingredient,
+            section: index === 0 ? "Main" : "Sauce"
+          })));
           Toast.success("\u062A\u0645\u062A \u0625\u0636\u0627\u0641\u0629 \u0627\u0644\u0645\u0643\u0648\u0646\u0627\u062A \u0627\u0644\u062A\u062C\u0631\u064A\u0628\u064A\u0629 \u0628\u0646\u062C\u0627\u062D");
         });
       }
@@ -8730,11 +10345,7 @@
       if (addStepBtn) addStepBtn.addEventListener("click", () => this.addInstructionStep());
       if (loadSampleStepsBtn) {
         loadSampleStepsBtn.addEventListener("click", () => {
-          this.setInstructions([
-            { step_number: 1, title_ar: "\u0627\u0644\u062A\u062A\u0628\u064A\u0644 \u0648\u0627\u0644\u062A\u062D\u0636\u064A\u0631", instruction_ar: "\u0623\u062E\u0631\u062C \u0627\u0644\u0644\u062D\u0645 \u0645\u0646 \u0627\u0644\u062B\u0644\u0627\u062C\u0629 \u0644\u064A\u0635\u0628\u062D \u0628\u062D\u0631\u0627\u0631\u0629 \u0627\u0644\u063A\u0631\u0641\u0629 \u062B\u0645 \u0631\u0634\u0647 \u0628\u0627\u0644\u0645\u0644\u062D \u0627\u0644\u0628\u062D\u0631\u064A.", timer_minutes: 30, tip_ar: "\u0644\u0627 \u062A\u0636\u0639 \u0627\u0644\u0644\u062D\u0645 \u0628\u0627\u0631\u062F\u0627\u064B \u0641\u064A \u0627\u0644\u0645\u0642\u0644\u0627\u0629." },
-            { step_number: 2, title_ar: "\u0627\u0644\u062A\u062D\u0645\u064A\u0631 \u0627\u0644\u0639\u0627\u0644\u064A", instruction_ar: "\u0633\u062E\u0646 \u0627\u0644\u0645\u0642\u0644\u0627\u0629 \u0648\u0627\u0637\u0647 \u0627\u0644\u0644\u062D\u0645 \u0644\u062F\u0642\u064A\u0642\u062A\u064A\u0646 \u0644\u0643\u0644 \u062C\u0627\u0646\u0628 \u0645\u0639 \u062F\u0647\u0646\u0647 \u0628\u0627\u0644\u0632\u0628\u062F\u0629 \u0648\u0627\u0644\u0632\u0639\u062A\u0631.", timer_minutes: 6, tip_ar: "\u0627\u0633\u062A\u062E\u062F\u0645 \u0645\u0642\u0644\u0627\u0629 \u062D\u062F\u064A\u062F \u0632\u0647\u0631 \u062B\u0642\u064A\u0644\u0629." },
-            { step_number: 3, title_ar: "\u0627\u0644\u0631\u0627\u062D\u0629 \u0648\u0627\u0644\u0633\u0643\u0628", instruction_ar: "\u0627\u062A\u0631\u0643 \u0627\u0644\u0644\u062D\u0645 \u0644\u064A\u0631\u062A\u0627\u062D 10 \u062F\u0642\u0627\u0626\u0642 \u062B\u0645 \u0627\u062F\u0647\u0646\u0647 \u0628\u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0627\u0644\u062F\u0627\u0641\u0626 \u0642\u0628\u0644 \u0627\u0644\u062A\u0642\u0637\u064A\u0639.", timer_minutes: 10, tip_ar: "\u0627\u0644\u0631\u0627\u062D\u0629 \u062A\u062D\u0641\u0638 \u0627\u0644\u0639\u0635\u0627\u0631\u0629 \u062F\u0627\u062E\u0644 \u0627\u0644\u0623\u0646\u0633\u062C\u0629." }
-          ]);
+          this.setInstructions(JSON.parse(JSON.stringify(RECIPE_FIXTURES[0]?.steps || [])));
           Toast.success("\u062A\u0645\u062A \u0625\u0636\u0627\u0641\u0629 \u062E\u0637\u0648\u0627\u062A \u0627\u0644\u062A\u062D\u0636\u064A\u0631 \u0627\u0644\u062A\u062C\u0631\u064A\u0628\u064A\u0629 \u0628\u0646\u062C\u0627\u062D");
         });
       }
@@ -8867,8 +10478,6 @@
       return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
     }
   };
-  __publicField(CreateRecipeStudio, "STORAGE_DRAFT", "meyar_recipe_draft");
-  __publicField(CreateRecipeStudio, "STORAGE_CUSTOM_RECIPES", "meyar_custom_recipes");
   __publicField(CreateRecipeStudio, "UNITS", [
     { value: "g", label_ar: "\u062C\u0631\u0627\u0645 (g)", label_en: "g (grams)" },
     { value: "kg", label_ar: "\u0643\u063A (kg)", label_en: "kg (kilograms)" },
@@ -8896,63 +10505,50 @@
   __publicField(CreateRecipeStudio, "galleryImages", []);
   __publicField(CreateRecipeStudio, "autoSaveTimer", null);
   __publicField(CreateRecipeStudio, "isInitialized", false);
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => CreateRecipeStudio.init());
-    } else {
-      CreateRecipeStudio.init();
-    }
-  }
+  __publicField(CreateRecipeStudio, "currentDraft", null);
+  __publicField(CreateRecipeStudio, "customRecipes", []);
 
   // js/pages/chef.js
   var ChefPage = class {
     /**
-     * Get list of followed chef IDs from localStorage
+     * Reset in-memory ChefPage state (for test isolation)
+     */
+    static reset() {
+      this.followingChefIds = /* @__PURE__ */ new Set();
+      this.savedRecipeIds = /* @__PURE__ */ new Set();
+      this.likedRecipeIds = /* @__PURE__ */ new Set();
+      this.enrolledCourseIds = /* @__PURE__ */ new Set();
+      this.activeTab = "recipes";
+      this.currentChef = null;
+      this.isInitialized = false;
+    }
+    /**
+     * Get list of followed chef IDs from in-memory set
      * @returns {string[]}
      */
     static getFollowingChefIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_FOLLOWING);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.followingChefIds);
     }
     /**
-     * Get list of saved recipe IDs from localStorage
+     * Get list of saved recipe IDs from in-memory set
      * @returns {string[]}
      */
     static getSavedRecipeIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_SAVED);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.savedRecipeIds);
     }
     /**
-     * Get list of liked recipe IDs from localStorage
+     * Get list of liked recipe IDs from in-memory set
      * @returns {string[]}
      */
     static getLikedRecipeIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_LIKED);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.likedRecipeIds);
     }
     /**
-     * Get list of enrolled course IDs from localStorage
+     * Get list of enrolled course IDs from in-memory set
      * @returns {string[]}
      */
     static getEnrolledCourseIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_ENROLLED);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.enrolledCourseIds);
     }
     /**
      * Toggle follow status of a chef
@@ -8961,19 +10557,14 @@
      */
     static toggleFollow(chefId) {
       if (!chefId) return false;
-      const following = new Set(this.getFollowingChefIds());
-      const isFollowing = following.has(chefId);
+      if (isCurrentUserId(chefId, USER_FIXTURES)) return false;
+      const isFollowing = this.followingChefIds.has(chefId);
       if (isFollowing) {
-        following.delete(chefId);
+        this.followingChefIds.delete(chefId);
         Toast.info(I18n.t("toast.unfollowed_success"));
       } else {
-        following.add(chefId);
+        this.followingChefIds.add(chefId);
         Toast.success(I18n.t("toast.followed_success"));
-      }
-      try {
-        localStorage.setItem(this.STORAGE_FOLLOWING, JSON.stringify(Array.from(following)));
-      } catch (e) {
-        console.error("Failed to save following to localStorage", e);
       }
       this.updateFollowButton();
       return !isFollowing;
@@ -8985,19 +10576,13 @@
      */
     static toggleSave(recipeId) {
       if (!recipeId) return false;
-      const saved = new Set(this.getSavedRecipeIds());
-      const isSaved = saved.has(recipeId);
+      const isSaved = this.savedRecipeIds.has(recipeId);
       if (isSaved) {
-        saved.delete(recipeId);
+        this.savedRecipeIds.delete(recipeId);
         Toast.info(I18n.t("toast.unsaved_success"));
       } else {
-        saved.add(recipeId);
+        this.savedRecipeIds.add(recipeId);
         Toast.success(I18n.t("toast.saved_success"));
-      }
-      try {
-        localStorage.setItem(this.STORAGE_SAVED, JSON.stringify(Array.from(saved)));
-      } catch (e) {
-        console.error("Failed to save bookmarks to localStorage", e);
       }
       this.updateActionStates();
       return !isSaved;
@@ -9009,17 +10594,11 @@
      */
     static toggleLike(recipeId) {
       if (!recipeId) return false;
-      const liked = new Set(this.getLikedRecipeIds());
-      const isLiked = liked.has(recipeId);
+      const isLiked = this.likedRecipeIds.has(recipeId);
       if (isLiked) {
-        liked.delete(recipeId);
+        this.likedRecipeIds.delete(recipeId);
       } else {
-        liked.add(recipeId);
-      }
-      try {
-        localStorage.setItem(this.STORAGE_LIKED, JSON.stringify(Array.from(liked)));
-      } catch (e) {
-        console.error("Failed to save likes to localStorage", e);
+        this.likedRecipeIds.add(recipeId);
       }
       this.updateActionStates();
       return !isLiked;
@@ -9031,19 +10610,15 @@
      */
     static enrollCourse(courseId) {
       if (!courseId) return false;
-      const enrolled = new Set(this.getEnrolledCourseIds());
-      const isEnrolled = enrolled.has(courseId);
+      const course = COURSE_FIXTURES.find((item) => item.id === courseId);
+      if (isCurrentUserId(course?.instructor_id, USER_FIXTURES)) return false;
+      const isEnrolled = this.enrolledCourseIds.has(courseId);
       if (isEnrolled) {
-        enrolled.delete(courseId);
+        this.enrolledCourseIds.delete(courseId);
         Toast.info(I18n.getLang() === "ar" ? "\u062A\u0645 \u0625\u0644\u063A\u0627\u0621 \u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0641\u064A \u0648\u0631\u0634\u0629 \u0627\u0644\u0639\u0645\u0644" : "Masterclass enrollment cancelled");
       } else {
-        enrolled.add(courseId);
+        this.enrolledCourseIds.add(courseId);
         Toast.success(I18n.t("toast.course_enrolled"));
-      }
-      try {
-        localStorage.setItem(this.STORAGE_ENROLLED, JSON.stringify(Array.from(enrolled)));
-      } catch (e) {
-        console.error("Failed to save enrollments to localStorage", e);
       }
       this.renderCoursesPanel();
       return !isEnrolled;
@@ -9058,8 +10633,8 @@
         const params = new URLSearchParams(window.location.search);
         chefId = params.get("id") || params.get("chef");
       }
-      const found = MOCK_DATA.chefs.find((c) => c.id === chefId);
-      this.currentChef = found || MOCK_DATA.chefs[0];
+      const found = CHEF_FIXTURES.find((c) => c.id === chefId);
+      this.currentChef = found || CHEF_FIXTURES[0];
       this.currentChefId = this.currentChef.id;
       return this.currentChef;
     }
@@ -9167,7 +10742,7 @@
       const followingCount = document.getElementById("stat-following-count");
       if (followingCount) followingCount.textContent = String(chef.following || 0);
       const recipesCount = document.getElementById("stat-recipes-count");
-      const chefRecipes = MOCK_DATA.recipes.filter((r) => r.author_id === chef.id);
+      const chefRecipes = RECIPE_FIXTURES.filter((r) => r.author_id === chef.id);
       if (recipesCount) recipesCount.textContent = String(chefRecipes.length > 0 ? chefRecipes.length : chef.recipes_count);
       const experienceCount = document.getElementById("stat-experience-count");
       if (experienceCount) experienceCount.textContent = String(chef.experience_years);
@@ -9182,14 +10757,14 @@
       if (badgePortfolio) badgePortfolio.textContent = String(signatureDishes.length);
       const badgeSaved = document.getElementById("badge-saved-count");
       if (badgeSaved) badgeSaved.textContent = "3";
-      const chefCourses = MOCK_DATA.courses.filter((c) => c.instructor_id === chef.id);
+      const chefCourses = COURSE_FIXTURES.filter((c) => c.instructor_id === chef.id);
       const badgeCourses = document.getElementById("badge-courses-count");
       if (badgeCourses) badgeCourses.textContent = String(chefCourses.length);
       const badgeActivity = document.getElementById("badge-activity-count");
       if (badgeActivity) badgeActivity.textContent = "5";
       const msgBtn = document.getElementById("btn-message-chef");
       if (msgBtn) {
-        msgBtn.href = `chat.html?id=chat-${chef.id === "chef-2" ? "2" : "1"}`;
+        msgBtn.href = `chat.html?chef=${encodeURIComponent(chef.id)}`;
       }
       const shareInput = document.getElementById("chef-share-url-input");
       if (shareInput && typeof window !== "undefined") {
@@ -9207,6 +10782,39 @@
     static updateFollowButton() {
       const btn = document.getElementById("btn-follow-chef");
       if (!btn || !this.currentChef) return;
+      const isSelf = isCurrentUserId(this.currentChef.id, USER_FIXTURES);
+      const viewerActions = document.getElementById("viewer-actions-group");
+      const ownerActions = document.getElementById("owner-actions-group");
+      if (isSelf) {
+        if (viewerActions) {
+          viewerActions.classList.add("hidden");
+          viewerActions.classList.remove("flex");
+        }
+        btn.classList.add("hidden");
+        const msgBtn = document.getElementById("btn-message-chef");
+        if (msgBtn) msgBtn.classList.add("hidden");
+        const hireBtn = document.getElementById("btn-hire-chef");
+        if (hireBtn) hireBtn.classList.add("hidden");
+        if (ownerActions) {
+          ownerActions.classList.remove("hidden");
+          ownerActions.classList.add("flex");
+        }
+        return;
+      } else {
+        if (viewerActions) {
+          viewerActions.classList.remove("hidden");
+          viewerActions.classList.add("flex");
+        }
+        btn.classList.remove("hidden");
+        const msgBtn = document.getElementById("btn-message-chef");
+        if (msgBtn) msgBtn.classList.remove("hidden");
+        const hireBtn = document.getElementById("btn-hire-chef");
+        if (hireBtn) hireBtn.classList.remove("hidden");
+        if (ownerActions) {
+          ownerActions.classList.add("hidden");
+          ownerActions.classList.remove("flex");
+        }
+      }
       const following = new Set(this.getFollowingChefIds());
       const isFollowing = following.has(this.currentChef.id);
       const labelEl = btn.querySelector(".follow-label");
@@ -9269,7 +10877,7 @@
       const counterText = document.getElementById("chef-recipes-counter-text");
       if (!grid || !this.currentChef) return;
       const isAr = I18n.getLang() === "ar";
-      let recipes = MOCK_DATA.recipes.filter((r) => r.author_id === this.currentChef.id);
+      let recipes = RECIPE_FIXTURES.filter((r) => r.author_id === this.currentChef.id);
       if (this.recipeFilterQuery.trim()) {
         const norm = normalizeSearchQuery(this.recipeFilterQuery);
         recipes = recipes.filter((r) => {
@@ -9437,35 +11045,7 @@
       const emptyState = document.getElementById("chef-saved-empty");
       if (!grid || !this.currentChef) return;
       const isAr = I18n.getLang() === "ar";
-      const collections = [
-        {
-          id: "col-1",
-          title_ar: "\u0645\u062E\u062A\u0627\u0631\u0627\u062A \u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0648\u0627\u0644\u062A\u0639\u062A\u064A\u0642 \u0627\u0644\u0641\u0627\u062E\u0631",
-          title_en: "Dry-Aging & Fermentation Reserve",
-          count: 8,
-          image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
-          tag_ar: "\u062A\u0642\u0646\u064A\u0627\u062A \u0645\u062A\u0642\u062F\u0645\u0629",
-          tag_en: "Advanced Technique"
-        },
-        {
-          id: "col-2",
-          title_ar: "\u0623\u0637\u0628\u0627\u0642 \u0627\u0644\u0645\u0623\u0643\u0648\u0644\u0627\u062A \u0627\u0644\u0628\u062D\u0631\u064A\u0629 \u0648\u0627\u0644\u0646\u0643\u0647\u0627\u062A \u0627\u0644\u062D\u0645\u0636\u064A\u0629 \u0627\u0644\u0645\u0639\u0627\u0635\u0631\u0629",
-          title_en: "Modern Marine Gastronomy & Citrus Crudo",
-          count: 6,
-          image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80",
-          tag_ar: "\u0623\u0637\u0628\u0627\u0642 \u0631\u0626\u064A\u0633\u064A\u0629",
-          tag_en: "Main Courses"
-        },
-        {
-          id: "col-3",
-          title_ar: "\u0641\u0646\u0648\u0646 \u0627\u0644\u062D\u0644\u0648\u064A\u0627\u062A \u0627\u0644\u0647\u0646\u062F\u0633\u064A\u0629 \u0648\u0627\u0644\u0645\u0633\u062A\u0643\u0629 \u0648\u0627\u0644\u0632\u0647\u0648\u0631 \u0627\u0644\u0634\u0631\u0642\u064A\u0629",
-          title_en: "Architectural Entremets & Floral Glazes",
-          count: 10,
-          image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80",
-          tag_ar: "\u062D\u0644\u0648\u064A\u0627\u062A \u0641\u0627\u062E\u0631\u0629",
-          tag_en: "Haute P\xE2tisserie"
-        }
-      ];
+      const collections = CHEF_COLLECTION_FIXTURES;
       if (collections.length === 0) {
         grid.innerHTML = "";
         if (emptyState) emptyState.classList.remove("hidden");
@@ -9520,7 +11100,7 @@
       const emptyState = document.getElementById("chef-courses-empty");
       if (!grid || !this.currentChef) return;
       const isAr = I18n.getLang() === "ar";
-      const courses = MOCK_DATA.courses.filter((c) => c.instructor_id === this.currentChef.id);
+      const courses = COURSE_FIXTURES.filter((c) => c.instructor_id === this.currentChef.id);
       if (courses.length === 0) {
         grid.innerHTML = "";
         if (emptyState) emptyState.classList.remove("hidden");
@@ -9534,6 +11114,7 @@
         const level = isAr ? course.level_ar : course.level_en;
         const duration = isAr ? course.duration_ar : course.duration_en;
         const schedule = isAr ? course.schedule_ar : course.schedule_en;
+        const isSelf = isCurrentUserId(course.instructor_id, USER_FIXTURES);
         const isEnrolled = enrolledSet.has(course.id);
         return `
         <article class="bg-surface-1 border border-border-subtle rounded-3xl overflow-hidden shadow-sm hover:border-border-subtle transition-all flex flex-col justify-between text-start" data-course-id="${course.id}">
@@ -9590,11 +11171,13 @@
 
           <!-- Bottom Action Buttons -->
           <div class="p-6 pt-0 flex items-center gap-3">
-            <button type="button" data-action="enroll-course" data-id="${course.id}"
-                    class="flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-gold flex items-center justify-center gap-2 ${isEnrolled ? "bg-brand-emerald text-white" : "bg-brand-gold hover:bg-brand-gold-hover text-white"}">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              <span>${isEnrolled ? isAr ? "\u062A\u0645 \u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0641\u064A \u0627\u0644\u0648\u0631\u0634\u0629" : "Enrolled" : isAr ? "\u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0641\u064A \u0648\u0631\u0634\u0629 \u0627\u0644\u0639\u0645\u0644" : "Enroll in Masterclass"}</span>
-            </button>
+            ${isSelf ? "" : `
+              <button type="button" data-action="enroll-course" data-id="${course.id}"
+                      class="flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-gold flex items-center justify-center gap-2 ${isEnrolled ? "bg-brand-emerald text-white" : "bg-brand-gold hover:bg-brand-gold-hover text-white"}">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>${isEnrolled ? isAr ? "\u062A\u0645 \u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0641\u064A \u0627\u0644\u0648\u0631\u0634\u0629" : "Enrolled" : isAr ? "\u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0641\u064A \u0648\u0631\u0634\u0629 \u0627\u0644\u0639\u0645\u0644" : "Enroll in Masterclass"}</span>
+              </button>
+            `}
             <a href="courses.html" class="p-3 rounded-xl bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-muted hover:text-text-main transition-colors" title="View Full Course Details">
               <svg class="w-4 h-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </a>
@@ -9612,56 +11195,7 @@
       if (!stream || !this.currentChef) return;
       const isAr = I18n.getLang() === "ar";
       const chefName = isAr ? this.currentChef.name_ar : this.currentChef.name_en;
-      const activities = [
-        {
-          id: "act-1",
-          type: "recipe",
-          time_ar: "\u0645\u0646\u0630 \u0633\u0627\u0639\u062A\u064A\u0646",
-          time_en: "2 hours ago",
-          title_ar: "\u0646\u0634\u0631 \u0648\u0635\u0641\u0629 \u062C\u062F\u064A\u062F\u0629 \u0641\u064A \u0645\u062C\u062A\u0645\u0639 \u0645\u0639\u064A\u0627\u0631",
-          title_en: "Published a new recipe in Meyar",
-          body_ar: '\u064A\u0633\u0639\u062F\u0646\u064A \u0645\u0634\u0627\u0631\u0643\u0629 \u0648\u0635\u0641\u062A\u064A \u0627\u0644\u062C\u062F\u064A\u062F\u0629 "\u0633\u062A\u064A\u0643 \u0648\u0627\u063A\u064A\u0648 \u0628\u0631\u064A\u0628 \u0622\u064A \u0645\u0639 \u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631 \u0648\u062B\u0648\u0645 \u0623\u0633\u0648\u062F". \u064A\u0645\u0643\u0646\u0643\u0645 \u0627\u0644\u0622\u0646 \u062A\u062C\u0631\u0628\u0629 \u0645\u0642\u064A\u0627\u0633 \u0627\u0644\u062D\u0635\u0635 \u0627\u0644\u0630\u0643\u064A \u0648\u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u062A\u0648\u0631\u064A\u062F\u0627\u062A \u0627\u0644\u0645\u0631\u0641\u0642\u0629.',
-          body_en: 'Excited to release my newest master recipe "Wagyu Ribeye with Black Garlic Date Glaze". Check out the dynamic serving scaler and linked B2B supplies.',
-          likes: 64,
-          replies: 12
-        },
-        {
-          id: "act-2",
-          type: "course",
-          time_ar: "\u0645\u0646\u0630 \u064A\u0648\u0645",
-          time_en: "1 day ago",
-          title_ar: "\u0641\u062A\u062D \u0628\u0627\u0628 \u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0641\u064A \u0648\u0631\u0634\u0629 \u0627\u0644\u0639\u0645\u0644 \u0627\u0644\u0642\u0627\u062F\u0645\u0629",
-          title_en: "Opened registrations for masterclass workshop",
-          body_ar: '\u0623\u0637\u0644\u0642\u0646\u0627 \u0645\u0642\u0627\u0639\u062F \u062F\u0648\u0631\u0629 "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0641\u064A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0641\u0627\u062E\u0631\u0629". \u0627\u0644\u0645\u0642\u0627\u0639\u062F \u0645\u062D\u062F\u0648\u062F\u0629 \u0628\u0640 15 \u0645\u0642\u0639\u062F\u0627\u064B \u062A\u062F\u0631\u064A\u0628\u064A\u0627\u064B \u0644\u0636\u0645\u0627\u0646 \u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A \u0627\u0644\u062F\u0642\u064A\u0642.',
-          body_en: 'Announcing our "Modern Fermentation & Dry Aging Masterclass". Limited to 15 culinary professionals for direct hands-on mastery.',
-          likes: 89,
-          replies: 19
-        },
-        {
-          id: "act-3",
-          type: "tip",
-          time_ar: "\u0645\u0646\u0630 3 \u0623\u064A\u0627\u0645",
-          time_en: "3 days ago",
-          title_ar: "\u0646\u0635\u064A\u062D\u0629 \u062A\u0642\u0646\u064A\u0629 \u0644\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0627\u062D\u062A\u0631\u0627\u0641\u064A\u0629",
-          title_en: "Professional Kitchen Technique Tip",
-          body_ar: "\u0644\u0644\u062D\u0635\u0648\u0644 \u0639\u0644\u0649 \u0643\u0631\u0627\u0645\u064A\u0644 \u0645\u062A\u0648\u0627\u0632\u0646 \u0644\u063A\u0644\u064A\u0632 \u0627\u0644\u062A\u0645\u0631\u060C \u0627\u0633\u062A\u062E\u062F\u0645 \u062D\u0631\u0627\u0631\u0629 \u0645\u0646\u062E\u0641\u0636\u0629 \u062B\u0627\u0628\u062A\u0629 \u0639\u0646\u062F 85\xB0 \u0645\u0626\u0648\u064A\u0629 \u0644\u0645\u062F\u0629 40 \u062F\u0642\u064A\u0642\u0629 \u0645\u0639 \u0625\u0636\u0627\u0641\u0629 2% \u0645\u0646 \u062D\u0645\u0648\u0636\u0629 \u0627\u0644\u0644\u064A\u0645\u0648\u0646 \u0627\u0644\u0623\u0633\u0648\u062F \u0627\u0644\u0645\u0637\u062D\u0648\u0646 \u0644\u0645\u0648\u0627\u0632\u0646\u0629 \u0627\u0644\u0633\u0643\u0631\u064A\u0627\u062A \u0627\u0644\u0637\u0628\u064A\u0639\u064A\u0629.",
-          body_en: "To balance rich date molasses glaze, hold at gentle 85\xB0C for 40 mins and add 2% dried black lime powder for enzymatic acid contrast.",
-          likes: 142,
-          replies: 28
-        },
-        {
-          id: "act-4",
-          type: "award",
-          time_ar: "\u0645\u0646\u0630 \u0623\u0633\u0628\u0648\u0639",
-          time_en: "1 week ago",
-          title_ar: "\u062A\u0643\u0631\u064A\u0645 \u062F\u0648\u0644\u064A \u062C\u062F\u064A\u062F",
-          title_en: "Received International Culinary Distinction",
-          body_ar: "\u0641\u062E\u0648\u0631 \u0628\u0627\u062E\u062A\u064A\u0627\u0631 \u0645\u0637\u0628\u062E\u0646\u0627 \u0636\u0645\u0646 \u0627\u0644\u0645\u0631\u0634\u062D\u064A\u0646 \u0627\u0644\u0646\u0647\u0627\u0626\u064A\u064A\u0646 \u0644\u062C\u0648\u0627\u0626\u0632 \u0627\u0644\u0628\u0648\u0643\u0648\u0632 \u062F\u0648\u0631 \u0644\u0644\u0634\u0631\u0642 \u0627\u0644\u0623\u0648\u0633\u0637 \u0644\u0639\u0627\u0645 2024. \u0634\u0643\u0631\u0627\u064B \u0644\u0641\u0631\u064A\u0642 \u0627\u0644\u0639\u0645\u0644 \u0648\u0634\u0631\u0643\u0627\u0621 \u0627\u0644\u0646\u062C\u0627\u062D.",
-          body_en: "Honored to be nominated as a Bocuse d\u2019Or Middle East Finalist for 2024. Deep gratitude to our culinary brigade.",
-          likes: 210,
-          replies: 45
-        }
-      ];
+      const activities = CHEF_ACTIVITY_FIXTURES;
       if (activities.length === 0) {
         stream.innerHTML = "";
         if (emptyState) emptyState.classList.remove("hidden");
@@ -9770,7 +11304,7 @@
       }
       const equipList = document.getElementById("about-equipment-list");
       if (equipList) {
-        const supplies = MOCK_DATA.supplies.slice(0, 3);
+        const supplies = SUPPLY_FIXTURES.slice(0, 3);
         equipList.innerHTML = supplies.map((sup) => {
           const title = isAr ? sup.title_ar : sup.title_en;
           return `
@@ -9907,6 +11441,11 @@
      * Main entry point
      */
     static init() {
+      if (typeof document !== "undefined" && this.lastDocument !== document) {
+        this.isInitialized = false;
+        this.lastDocument = document;
+      }
+      if (this.isInitialized) return;
       if (typeof document === "undefined") return;
       this.loadChef();
       let initialTab = "recipes";
@@ -9924,37 +11463,42 @@
       this.isInitialized = true;
     }
   };
-  __publicField(ChefPage, "STORAGE_FOLLOWING", "meyar_following_chefs");
-  __publicField(ChefPage, "STORAGE_SAVED", "meyar_saved_recipes");
-  __publicField(ChefPage, "STORAGE_LIKED", "meyar_liked_recipes");
-  __publicField(ChefPage, "STORAGE_ENROLLED", "meyar_enrolled_courses");
   __publicField(ChefPage, "currentChefId", "chef-1");
   __publicField(ChefPage, "currentChef", null);
   __publicField(ChefPage, "activeTab", "recipes");
   __publicField(ChefPage, "recipeFilterQuery", "");
   __publicField(ChefPage, "isInitialized", false);
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => ChefPage.init());
-    } else {
-      ChefPage.init();
-    }
-  }
+  __publicField(ChefPage, "lastDocument", null);
+  __publicField(ChefPage, "followingChefIds", /* @__PURE__ */ new Set());
+  __publicField(ChefPage, "savedRecipeIds", /* @__PURE__ */ new Set());
+  __publicField(ChefPage, "likedRecipeIds", /* @__PURE__ */ new Set());
+  __publicField(ChefPage, "enrolledCourseIds", /* @__PURE__ */ new Set());
 
   // js/pages/dashboard.js
   var DashboardPage = class {
     /**
+     * Reset in-memory dashboard stores (for test isolation)
+     */
+    static reset() {
+      this.recipesStore = null;
+      this.suppliesStore = null;
+      this.rfqsStore = null;
+      this.enrollmentsStore = null;
+      this.currentPeriod = "30d";
+      this.activeTab = "recipes";
+      this.searchQuery = "";
+      this.statusFilter = "all";
+      this.currentPage = 1;
+      this.isInitialized = false;
+    }
+    /**
      * Initialize initial datasets for Dashboard items
      */
     static getRecipes() {
-      try {
-        const stored = localStorage.getItem(this.STORAGE_RECIPES);
-        if (stored) {
-          return JSON.parse(stored);
-        }
-      } catch (e) {
+      if (this.recipesStore) {
+        return this.recipesStore;
       }
-      const defaults = (MOCK_DATA.recipes || []).map((r, idx) => ({
+      const defaults = (RECIPE_FIXTURES || []).map((r, idx) => ({
         id: r.id,
         title_ar: r.title_ar,
         title_en: r.title_en,
@@ -9967,27 +11511,17 @@
         status: idx === 1 || idx === 4 ? "draft" : "published",
         updated_at: "2026-08-12"
       }));
-      try {
-        localStorage.setItem(this.STORAGE_RECIPES, JSON.stringify(defaults));
-      } catch (e) {
-      }
+      this.recipesStore = defaults;
       return defaults;
     }
     static saveRecipes(recipes) {
-      try {
-        localStorage.setItem(this.STORAGE_RECIPES, JSON.stringify(recipes));
-      } catch (e) {
-      }
+      this.recipesStore = recipes;
     }
     static getSupplies() {
-      try {
-        const stored = localStorage.getItem(this.STORAGE_SUPPLIES);
-        if (stored) {
-          return JSON.parse(stored);
-        }
-      } catch (e) {
+      if (this.suppliesStore) {
+        return this.suppliesStore;
       }
-      const defaults = (MOCK_DATA.supplies || []).map((s, idx) => ({
+      const defaults = (SUPPLY_FIXTURES || []).map((s, idx) => ({
         id: s.id,
         name_ar: s.name_ar,
         name_en: s.name_en,
@@ -10007,223 +11541,44 @@
         lead_time_en: s.lead_time_en || "3-5 Business Days",
         updated_at: "2026-08-10"
       }));
-      try {
-        localStorage.setItem(this.STORAGE_SUPPLIES, JSON.stringify(defaults));
-      } catch (e) {
-      }
+      this.suppliesStore = defaults;
       return defaults;
     }
     static saveSupplies(supplies) {
-      try {
-        localStorage.setItem(this.STORAGE_SUPPLIES, JSON.stringify(supplies));
-      } catch (e) {
-      }
+      this.suppliesStore = supplies;
     }
     static getRFQs() {
-      try {
-        const stored = localStorage.getItem(this.STORAGE_RFQS);
-        if (stored) {
-          return JSON.parse(stored);
-        }
-      } catch (e) {
+      if (this.rfqsStore) {
+        return this.rfqsStore;
       }
-      const defaults = [
-        {
-          id: "RFQ-9801",
-          client_name_ar: "\u0634\u0631\u0643\u0629 \u0645\u0637\u0627\u0639\u0645 \u0644\u0648\u0633\u064A\u0644 \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
-          client_name_en: "Lusail Fine Dining Group",
-          buyer_name: "\u0623\u062D\u0645\u062F \u0627\u0644\u0633\u0628\u064A\u0639\u064A",
-          buyer_email: "a.subaie@lusail-dining.sa",
-          item_id: "supply-1",
-          item_name_ar: "\u0639\u062C\u0627\u0646\u0629 \u0644\u0648\u0644\u0628\u064A\u0629 \u062A\u062C\u0627\u0631\u064A\u0629 50 \u0644\u062A\u0631",
-          item_name_en: "Commercial Heavy-Duty Spiral Dough Mixer 50L",
-          quantity: 3,
-          destination_ar: "\u0627\u0644\u0631\u064A\u0627\u0636 - \u062D\u064A \u0627\u0644\u0645\u0644\u0632",
-          destination_en: "Riyadh - Al-Malaz",
-          target_date: "2026-09-01",
-          status: "pending",
-          quoted_price: null,
-          lead_time: null,
-          created_at: "2026-08-14"
-        },
-        {
-          id: "RFQ-9802",
-          client_name_ar: "\u0645\u062C\u0645\u0648\u0639\u0629 \u0627\u0644\u0636\u064A\u0627\u0641\u0629 \u0627\u0644\u0645\u0628\u062A\u0643\u0631\u0629",
-          client_name_en: "Innovative Hospitality Group",
-          buyer_name: "\u0645. \u0631\u0627\u0643\u0627\u0646 \u0627\u0644\u063A\u0627\u0645\u062F\u064A",
-          buyer_email: "rakan@ihg-sa.com",
-          item_id: "supply-2",
-          item_name_ar: "\u0637\u0642\u0645 \u0633\u0643\u0627\u0643\u064A\u0646 \u062F\u0645\u0634\u0642\u064A\u0629 \u064A\u0627\u0628\u0627\u0646\u064A\u0629 6 \u0642\u0637\u0639",
-          item_name_en: "Master Japanese Damascus Chef Knives Set 6pcs",
-          quantity: 10,
-          destination_ar: "\u062C\u062F\u0629 - \u0627\u0644\u0631\u0648\u0636\u0629",
-          destination_en: "Jeddah - Al-Rawdah",
-          target_date: "2026-08-28",
-          status: "quoted",
-          quoted_price: 36e3,
-          quoted_price_formatted: "36,000 \u0631.\u0633",
-          lead_time: "4 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
-          created_at: "2026-08-13"
-        },
-        {
-          id: "RFQ-9803",
-          client_name_ar: "\u0645\u062E\u0628\u0632 \u0648\u0645\u0642\u0647\u0649 \u0627\u0644\u0633\u0646\u0628\u0644\u0629 \u0627\u0644\u0630\u0647\u0628\u064A\u0629",
-          client_name_en: "Golden Spike Artisanal Bakery",
-          buyer_name: "\u0646\u0648\u0631\u0629 \u0627\u0644\u0645\u0646\u0635\u0648\u0631",
-          buyer_email: "noura@goldenspike.sa",
-          item_id: "supply-3",
-          item_name_ar: "\u062F\u0642\u064A\u0642 \u0641\u0627\u062E\u0631 \u0639\u0636\u0648\u064A T65 \u0641\u0631\u0646\u0633\u064A 25 \u0643\u063A",
-          item_name_en: "Organic French Wheat Flour T65 25kg",
-          quantity: 50,
-          destination_ar: "\u0627\u0644\u062E\u0628\u0631 - \u0627\u0644\u062D\u0632\u0627\u0645 \u0627\u0644\u0623\u062E\u0636\u0631",
-          destination_en: "Khobar - Green Belt",
-          target_date: "2026-09-15",
-          status: "accepted",
-          quoted_price: 10500,
-          quoted_price_formatted: "10,500 \u0631.\u0633",
-          lead_time: "2 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
-          created_at: "2026-08-11"
-        },
-        {
-          id: "RFQ-9804",
-          client_name_ar: "\u0645\u0646\u062A\u062C\u0639 \u0634\u0627\u0637\u0626 \u0627\u0644\u0646\u0648\u0631\u0633",
-          client_name_en: "Al-Nawras Beach Resort",
-          buyer_name: "\u0641\u0647\u062F \u0627\u0644\u0639\u062A\u064A\u0628\u064A",
-          buyer_email: "f.otaibi@al-nawras.sa",
-          item_id: "supply-4",
-          item_name_ar: "\u0639\u0628\u0648\u0627\u062A \u062A\u0642\u062F\u064A\u0645 \u0635\u062F\u064A\u0642\u0629 \u0644\u0644\u0628\u064A\u0626\u0629 \u0642\u0627\u0628\u0644\u0629 \u0644\u0644\u062A\u062D\u0644\u0644",
-          item_name_en: "Biodegradable Eco Food Packaging Containers",
-          quantity: 200,
-          destination_ar: "\u0627\u0644\u062F\u0645\u0627\u0645 - \u0627\u0644\u0634\u0627\u0637\u0626 \u0627\u0644\u063A\u0631\u0628\u064A",
-          destination_en: "Dammam - West Coast",
-          target_date: "2026-08-30",
-          status: "pending",
-          quoted_price: null,
-          lead_time: null,
-          created_at: "2026-08-14"
-        },
-        {
-          id: "RFQ-9805",
-          client_name_ar: "\u0634\u0631\u0643\u0629 \u0625\u062A\u0642\u0627\u0646 \u0644\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0645\u0631\u0643\u0632\u064A\u0629",
-          client_name_en: "Itqan Cloud Kitchens",
-          buyer_name: "\u0633\u0627\u0644\u0645 \u0627\u0644\u062F\u0648\u0633\u0631\u064A",
-          buyer_email: "salem@itqan-kitchens.sa",
-          item_id: "supply-1",
-          item_name_ar: "\u0639\u062C\u0627\u0646\u0629 \u0644\u0648\u0644\u0628\u064A\u0629 \u062A\u062C\u0627\u0631\u064A\u0629 50 \u0644\u062A\u0631",
-          item_name_en: "Commercial Heavy-Duty Spiral Dough Mixer 50L",
-          quantity: 2,
-          destination_ar: "\u0627\u0644\u0631\u064A\u0627\u0636 - \u0627\u0644\u0633\u0644\u064A",
-          destination_en: "Riyadh - Al-Sulay",
-          target_date: "2026-08-25",
-          status: "rejected",
-          quoted_price: 29e3,
-          quoted_price_formatted: "29,000 \u0631.\u0633",
-          lead_time: "10 \u0623\u064A\u0627\u0645 \u0639\u0645\u0644",
-          created_at: "2026-08-08"
-        }
-      ];
-      try {
-        localStorage.setItem(this.STORAGE_RFQS, JSON.stringify(defaults));
-      } catch (e) {
-      }
+      const defaults = JSON.parse(JSON.stringify(DASHBOARD_RFQ_FIXTURES || []));
+      this.rfqsStore = defaults;
       return defaults;
     }
     static saveRFQs(rfqs) {
-      try {
-        localStorage.setItem(this.STORAGE_RFQS, JSON.stringify(rfqs));
-      } catch (e) {
-      }
+      this.rfqsStore = rfqs;
     }
     static getEnrollments() {
-      try {
-        const stored = localStorage.getItem(this.STORAGE_ENROLLED);
-        if (stored) {
-          return JSON.parse(stored);
-        }
-      } catch (e) {
+      if (this.enrollmentsStore) {
+        return this.enrollmentsStore;
       }
-      const defaults = [
-        {
-          id: "ENR-2041",
-          student_name_ar: "\u0633\u0627\u0631\u0629 \u0639\u0628\u062F \u0627\u0644\u0644\u0647 \u0627\u0644\u0634\u0645\u0631\u064A",
-          student_name_en: "Sarah Abdullah Al-Shammari",
-          student_email: "sarah.shammari@gmail.com",
-          student_avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
-          course_id: "course-1",
-          course_title_ar: "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0641\u064A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
-          course_title_en: "Modern Fermentation & Dry Aging Masterclass",
-          booking_date: "2026-08-14",
-          payment_status: "paid",
-          amount_formatted: "3,200 \u0631.\u0633",
-          progress: 75
-        },
-        {
-          id: "ENR-2042",
-          student_name_ar: "\u062E\u0627\u0644\u062F \u0628\u0646 \u0646\u0627\u0635\u0631 \u0627\u0644\u0642\u062D\u0637\u0627\u0646\u064A",
-          student_name_en: "Khaled Nasser Al-Qahtani",
-          student_email: "khaled.q@outlook.com",
-          student_avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
-          course_id: "course-1",
-          course_title_ar: "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0641\u064A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
-          course_title_en: "Modern Fermentation & Dry Aging Masterclass",
-          booking_date: "2026-08-12",
-          payment_status: "paid",
-          amount_formatted: "3,200 \u0631.\u0633",
-          progress: 60
-        },
-        {
-          id: "ENR-2043",
-          student_name_ar: "\u0645\u0646\u0649 \u0628\u0646\u062A \u0633\u0644\u064A\u0645\u0627\u0646 \u0627\u0644\u0632\u0647\u0631\u0627\u0646\u064A",
-          student_name_en: "Mona Sulaiman Al-Zahrani",
-          student_email: "mona.z@yahoo.com",
-          student_avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80",
-          course_id: "course-2",
-          course_title_ar: "\u0641\u0646\u0648\u0646 \u0627\u0644\u0645\u062E\u0628\u0648\u0632\u0627\u062A \u0627\u0644\u0641\u0631\u0646\u0633\u064A\u0629 \u0627\u0644\u0641\u0627\u062E\u0631\u0629 (Viennoiserie)",
-          course_title_en: "Haute Viennoiserie Masterclass",
-          booking_date: "2026-08-10",
-          payment_status: "confirmed",
-          amount_formatted: "2,800 \u0631.\u0633",
-          progress: 100
-        },
-        {
-          id: "ENR-2044",
-          student_name_ar: "\u064A\u0627\u0633\u0631 \u0645\u062D\u0645\u062F \u0627\u0644\u062D\u0631\u0628\u064A",
-          student_name_en: "Yasser Mohammed Al-Harbi",
-          student_email: "yasser.harbi@cloudkitchen.sa",
-          student_avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
-          course_id: "course-1",
-          course_title_ar: "\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0648\u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0641\u064A \u0627\u0644\u0645\u0637\u0627\u0628\u062E \u0627\u0644\u0641\u0627\u062E\u0631\u0629",
-          course_title_en: "Modern Fermentation & Dry Aging Masterclass",
-          booking_date: "2026-08-09",
-          payment_status: "paid",
-          amount_formatted: "3,200 \u0631.\u0633",
-          progress: 40
-        }
-      ];
-      try {
-        localStorage.setItem(this.STORAGE_ENROLLED, JSON.stringify(defaults));
-      } catch (e) {
-      }
+      const defaults = JSON.parse(JSON.stringify(DASHBOARD_ENROLLMENT_FIXTURES || []));
+      this.enrollmentsStore = defaults;
       return defaults;
     }
     static saveEnrollments(enrollments) {
-      try {
-        localStorage.setItem(this.STORAGE_ENROLLED, JSON.stringify(enrollments));
-      } catch (e) {
-      }
+      this.enrollmentsStore = enrollments;
     }
     /**
      * Main Initialize Method
      */
     static init() {
-      if (typeof document === "undefined") return;
-      try {
-        const savedPeriod = localStorage.getItem(this.STORAGE_PERIOD);
-        if (savedPeriod && this.PERIOD_CONFIGS[savedPeriod]) {
-          this.currentPeriod = savedPeriod;
-        }
-      } catch (e) {
+      if (typeof document !== "undefined" && this.lastDocument !== document) {
+        this.isInitialized = false;
+        this.lastDocument = document;
       }
+      if (this.isInitialized) return;
+      if (typeof document === "undefined") return;
       this.bindEvents();
       this.renderAll();
       this.isInitialized = true;
@@ -10327,10 +11682,6 @@
      */
     static setPeriod(period) {
       this.currentPeriod = period;
-      try {
-        localStorage.setItem(this.STORAGE_PERIOD, period);
-      } catch (e) {
-      }
       document.querySelectorAll(".period-btn").forEach((btn) => {
         const p = btn.getAttribute("data-period");
         if (p === period) {
@@ -10432,12 +11783,7 @@
      */
     static renderKPIs() {
       const config = this.PERIOD_CONFIGS[this.currentPeriod] || this.PERIOD_CONFIGS["30d"];
-      const baseStats = MOCK_DATA.stats?.kpis || {
-        views: 48250,
-        impressions: 142800,
-        rfqs: 38,
-        revenue: 194500
-      };
+      const baseStats = STAT_FIXTURES?.kpis || {};
       const views = Math.round(baseStats.views * config.multiplier);
       const impressions = Math.round(baseStats.impressions * config.multiplier);
       const rfqs = Math.round(baseStats.rfqs * config.multiplier);
@@ -11315,7 +12661,7 @@
       const reportData = {
         generated_at: (/* @__PURE__ */ new Date()).toISOString(),
         platform: "Meyar \u0645\u0639\u064A\u0627\u0631 Culinary Platform",
-        user: MOCK_DATA.user?.name_ar || "Chef Faisal Al-Hashemi",
+        user: USER_FIXTURES?.name_ar || "",
         period: this.currentPeriod,
         metrics: {
           recipes_count: recipes.length,
@@ -11339,11 +12685,6 @@
       Toast.success(isAr ? "\u062A\u0645 \u062A\u0635\u062F\u064A\u0631 \u062A\u0642\u0631\u064A\u0631 \u0627\u0644\u0623\u062F\u0627\u0621 \u0627\u0644\u0645\u0627\u0644\u064A \u0648\u0627\u0644\u062A\u0634\u063A\u064A\u0644\u064A \u0628\u0646\u062C\u0627\u062D!" : "Performance report exported successfully!");
     }
   };
-  __publicField(DashboardPage, "STORAGE_RECIPES", "meyar_dashboard_recipes");
-  __publicField(DashboardPage, "STORAGE_SUPPLIES", "meyar_dashboard_supplies");
-  __publicField(DashboardPage, "STORAGE_RFQS", "meyar_dashboard_rfqs");
-  __publicField(DashboardPage, "STORAGE_ENROLLMENTS", "meyar_dashboard_enrollments");
-  __publicField(DashboardPage, "STORAGE_PERIOD", "meyar_dashboard_period");
   __publicField(DashboardPage, "currentPeriod", "30d");
   // '7d' | '30d' | '6m' | '1y'
   __publicField(DashboardPage, "activeTab", "recipes");
@@ -11353,634 +12694,38 @@
   __publicField(DashboardPage, "currentPage", 1);
   __publicField(DashboardPage, "pageSize", 10);
   __publicField(DashboardPage, "isInitialized", false);
+  __publicField(DashboardPage, "recipesStore", null);
+  __publicField(DashboardPage, "suppliesStore", null);
+  __publicField(DashboardPage, "rfqsStore", null);
+  __publicField(DashboardPage, "enrollmentsStore", null);
   /**
    * Period multipliers and dataset configurations
    */
-  __publicField(DashboardPage, "PERIOD_CONFIGS", {
-    "7d": {
-      multiplier: 0.23,
-      viewsGrowth: "+8.2%",
-      impressionsGrowth: "+11.4%",
-      rfqsGrowth: "+5.0%",
-      revenueGrowth: "+14.6%",
-      trafficPoints: [
-        { label_ar: "\u0627\u0644\u0633\u0628\u062A", label_en: "Sat", views: 1800, impressions: 5200 },
-        { label_ar: "\u0627\u0644\u0623\u062D\u062F", label_en: "Sun", views: 2400, impressions: 6800 },
-        { label_ar: "\u0627\u0644\u0627\u062B\u0646\u064A\u0646", label_en: "Mon", views: 2900, impressions: 8400 },
-        { label_ar: "\u0627\u0644\u062B\u0644\u0627\u062B\u0627\u0621", label_en: "Tue", views: 3200, impressions: 9600 },
-        { label_ar: "\u0627\u0644\u0623\u0631\u0628\u0639\u0627\u0621", label_en: "Wed", views: 3800, impressions: 11200 },
-        { label_ar: "\u0627\u0644\u062E\u0645\u064A\u0633", label_en: "Thu", views: 4600, impressions: 13800 },
-        { label_ar: "\u0627\u0644\u062C\u0645\u0639\u0629", label_en: "Fri", views: 5400, impressions: 16500 }
-      ],
-      revenuePoints: [
-        { label_ar: "\u0627\u0644\u0633\u0628\u062A", label_en: "Sat", revenue: 14e3, rfqs: 2 },
-        { label_ar: "\u0627\u0644\u0623\u062D\u062F", label_en: "Sun", revenue: 18500, rfqs: 3 },
-        { label_ar: "\u0627\u0644\u0627\u062B\u0646\u064A\u0646", label_en: "Mon", revenue: 22e3, rfqs: 4 },
-        { label_ar: "\u0627\u0644\u062B\u0644\u0627\u062B\u0627\u0621", label_en: "Tue", revenue: 26500, rfqs: 5 },
-        { label_ar: "\u0627\u0644\u0623\u0631\u0628\u0639\u0627\u0621", label_en: "Wed", revenue: 31e3, rfqs: 6 },
-        { label_ar: "\u0627\u0644\u062E\u0645\u064A\u0633", label_en: "Thu", revenue: 38500, rfqs: 8 },
-        { label_ar: "\u0627\u0644\u062C\u0645\u0639\u0629", label_en: "Fri", revenue: 44e3, rfqs: 10 }
-      ]
-    },
-    "30d": {
-      multiplier: 1,
-      viewsGrowth: "+18.4%",
-      impressionsGrowth: "+24.1%",
-      rfqsGrowth: "+12.5%",
-      revenueGrowth: "+31.2%",
-      trafficPoints: [
-        { label_ar: "\u0623\u0633\u0628\u0648\u0639 1", label_en: "Week 1", views: 9800, impressions: 28500 },
-        { label_ar: "\u0623\u0633\u0628\u0648\u0639 2", label_en: "Week 2", views: 11400, impressions: 34200 },
-        { label_ar: "\u0623\u0633\u0628\u0648\u0639 3", label_en: "Week 3", views: 13200, impressions: 39500 },
-        { label_ar: "\u0623\u0633\u0628\u0648\u0639 4", label_en: "Week 4", views: 13850, impressions: 40600 }
-      ],
-      revenuePoints: [
-        { label_ar: "\u0623\u0633\u0628\u0648\u0639 1", label_en: "Week 1", revenue: 38e3, rfqs: 7 },
-        { label_ar: "\u0623\u0633\u0628\u0648\u0639 2", label_en: "Week 2", revenue: 46500, rfqs: 9 },
-        { label_ar: "\u0623\u0633\u0628\u0648\u0639 3", label_en: "Week 3", revenue: 52e3, rfqs: 10 },
-        { label_ar: "\u0623\u0633\u0628\u0648\u0639 4", label_en: "Week 4", revenue: 58e3, rfqs: 12 }
-      ]
-    },
-    "6m": {
-      multiplier: 5.6,
-      viewsGrowth: "+34.8%",
-      impressionsGrowth: "+42.5%",
-      rfqsGrowth: "+28.0%",
-      revenueGrowth: "+52.4%",
-      trafficPoints: [
-        { label_ar: "\u064A\u0646\u0627\u064A\u0631", label_en: "Jan", views: 24e3, impressions: 68e3 },
-        { label_ar: "\u0641\u0628\u0631\u0627\u064A\u0631", label_en: "Feb", views: 29e3, impressions: 82e3 },
-        { label_ar: "\u0645\u0627\u0631\u0633", label_en: "Mar", views: 34e3, impressions: 98e3 },
-        { label_ar: "\u0623\u0628\u0631\u064A\u0644", label_en: "Apr", views: 38e3, impressions: 112e3 },
-        { label_ar: "\u0645\u0627\u064A\u0648", label_en: "May", views: 42e3, impressions: 128e3 },
-        { label_ar: "\u064A\u0648\u0646\u064A\u0648", label_en: "Jun", views: 48250, impressions: 142800 }
-      ],
-      revenuePoints: [
-        { label_ar: "\u064A\u0646\u0627\u064A\u0631", label_en: "Jan", revenue: 11e4, rfqs: 18 },
-        { label_ar: "\u0641\u0628\u0631\u0627\u064A\u0631", label_en: "Feb", revenue: 125e3, rfqs: 22 },
-        { label_ar: "\u0645\u0627\u0631\u0633", label_en: "Mar", revenue: 142e3, rfqs: 26 },
-        { label_ar: "\u0623\u0628\u0631\u064A\u0644", label_en: "Apr", revenue: 158e3, rfqs: 29 },
-        { label_ar: "\u0645\u0627\u064A\u0648", label_en: "May", revenue: 175e3, rfqs: 33 },
-        { label_ar: "\u064A\u0648\u0646\u064A\u0648", label_en: "Jun", revenue: 194500, rfqs: 38 }
-      ]
-    },
-    "1y": {
-      multiplier: 11.2,
-      viewsGrowth: "+68.5%",
-      impressionsGrowth: "+85.2%",
-      rfqsGrowth: "+48.0%",
-      revenueGrowth: "+94.0%",
-      trafficPoints: [
-        { label_ar: "\u0627\u0644\u0631\u0628\u0639 1", label_en: "Q1", views: 87e3, impressions: 248e3 },
-        { label_ar: "\u0627\u0644\u0631\u0628\u0639 2", label_en: "Q2", views: 128e3, impressions: 382e3 },
-        { label_ar: "\u0627\u0644\u0631\u0628\u0639 3", label_en: "Q3", views: 165e3, impressions: 49e4 },
-        { label_ar: "\u0627\u0644\u0631\u0628\u0639 4", label_en: "Q4", views: 194e3, impressions: 58e4 }
-      ],
-      revenuePoints: [
-        { label_ar: "\u0627\u0644\u0631\u0628\u0639 1", label_en: "Q1", revenue: 377e3, rfqs: 66 },
-        { label_ar: "\u0627\u0644\u0631\u0628\u0639 2", label_en: "Q2", revenue: 527500, rfqs: 100 },
-        { label_ar: "\u0627\u0644\u0631\u0628\u0639 3", label_en: "Q3", revenue: 64e4, rfqs: 124 },
-        { label_ar: "\u0627\u0644\u0631\u0628\u0639 4", label_en: "Q4", revenue: 785e3, rfqs: 156 }
-      ]
-    }
-  });
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => DashboardPage.init());
-    } else {
-      DashboardPage.init();
-    }
-  }
-
-  // js/modules/rfq.js
-  var RFQManager = class {
-    /**
-     * Seed / Initial RFQ list from mock data if storage is empty
-     */
-    static getInitialRFQs() {
-      const seed = [];
-      if (MOCK_DATA?.chats) {
-        MOCK_DATA.chats.forEach((chat) => {
-          if (chat.rfq_card) {
-            seed.push({
-              ...chat.rfq_card,
-              partner_id: chat.partner?.id || "supplier-1",
-              partner_name_ar: chat.partner?.name_ar || "",
-              partner_name_en: chat.partner?.name_en || "",
-              partner_avatar: chat.partner?.avatar || "",
-              partner_role: chat.partner?.role || "supplier",
-              created_at: "2026-08-14T10:00:00Z",
-              chat_id: chat.id
-            });
-          }
-        });
-      }
-      return seed;
-    }
-    /**
-     * Retrieve all saved RFQs from localStorage
-     * @returns {Array<Object>}
-     */
-    static getRFQs() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_KEY);
-        if (!data) {
-          const initial = this.getInitialRFQs();
-          if (initial.length > 0) {
-            localStorage.setItem(this.STORAGE_KEY, JSON.stringify(initial));
-          }
-          return initial;
-        }
-        return JSON.parse(data);
-      } catch {
-        return this.getInitialRFQs();
-      }
-    }
-    /**
-     * Get a single RFQ by ID
-     * @param {string} rfqId 
-     * @returns {Object|null}
-     */
-    static getRFQById(rfqId) {
-      if (!rfqId) return null;
-      const rfqs = this.getRFQs();
-      return rfqs.find((r) => r.rfq_id === rfqId || r.id === rfqId) || null;
-    }
-    /**
-     * Calculate subtotal, VAT (15%), and total for given unit price and quantity
-     * @param {number} unitPrice 
-     * @param {number} quantity 
-     * @returns {Object}
-     */
-    static calculateEstimate(unitPrice, quantity) {
-      const price = Math.max(0, Number(unitPrice) || 0);
-      const qty = Math.max(1, parseInt(quantity, 10) || 1);
-      const subtotal = price * qty;
-      const vat = Math.round(subtotal * 0.15);
-      const total = subtotal + vat;
-      const lang = typeof I18n !== "undefined" ? I18n.getLang() : "ar";
-      const currencySuffix = lang === "ar" ? "\u0631.\u0633" : "SAR";
-      return {
-        unitPrice: price,
-        quantity: qty,
-        subtotal,
-        vat,
-        total,
-        formattedUnitPrice: `${price.toLocaleString()} ${currencySuffix}`,
-        formattedSubtotal: `${subtotal.toLocaleString()} ${currencySuffix}`,
-        formattedVat: `${vat.toLocaleString()} ${currencySuffix}`,
-        formattedTotal: `${total.toLocaleString()} ${currencySuffix}`
-      };
-    }
-    /**
-     * Validate RFQ form fields
-     * @param {Object} formData 
-     * @param {Object} supplyItem 
-     * @returns {{ isValid: boolean, errors: Object }}
-     */
-    static validateRFQ(formData = {}, supplyItem = null) {
-      const errors = {};
-      const item = supplyItem || this.activeItem;
-      const minMoq = item?.moq || 1;
-      const qty = parseInt(formData.quantity, 10);
-      if (isNaN(qty) || qty < minMoq) {
-        errors.quantity = I18n.t("rfq.moq_error", { moq: minMoq });
-      }
-      if (!formData.destination || !formData.destination.trim()) {
-        errors.destination = I18n.t("rfq.required_field");
-      }
-      if (!formData.target_date || !formData.target_date.trim()) {
-        errors.target_date = I18n.t("rfq.required_field");
-      }
-      return {
-        isValid: Object.keys(errors).length === 0,
-        errors
-      };
-    }
-    /**
-     * Persist a new RFQ to localStorage and broadcast event
-     * @param {Object} rfqData 
-     * @returns {Object}
-     */
-    static saveRFQ(rfqData) {
-      const item = rfqData.supplyItem || (rfqData.item_id ? MOCK_DATA.supplies?.find((s) => s.id === rfqData.item_id) : null) || this.activeItem;
-      const qty = Math.max(item?.moq || 1, parseInt(rfqData.quantity, 10) || item?.moq || 1);
-      const unitPrice = Number(item?.price || rfqData.unit_price || 0);
-      const estimate = this.calculateEstimate(unitPrice, qty);
-      const rfqId = rfqData.rfq_id || `rfq-${Math.floor(1e3 + Math.random() * 9e3)}`;
-      const newRFQ = {
-        rfq_id: rfqId,
-        item_id: item?.id || rfqData.item_id || "unknown-supply",
-        item_name_ar: item?.name_ar || rfqData.item_name_ar || "",
-        item_name_en: item?.name_en || rfqData.item_name_en || "",
-        item_image: item?.image || rfqData.item_image || "",
-        supplier_id: item?.supplier?.id || rfqData.supplier_id || "supplier-1",
-        supplier_name_ar: item?.supplier?.name_ar || rfqData.supplier_name_ar || "",
-        supplier_name_en: item?.supplier?.name_en || rfqData.supplier_name_en || "",
-        supplier_avatar: item?.supplier?.avatar || rfqData.supplier_avatar || "",
-        supplier_verified: item?.supplier?.verified ?? true,
-        quantity: qty,
-        unit_ar: item?.unit_ar || rfqData.unit_ar || "\u0648\u062D\u062F\u0629",
-        unit_en: item?.unit_en || rfqData.unit_en || "Unit",
-        unit_price: unitPrice,
-        target_price: estimate.subtotal,
-        total_price: estimate.subtotal,
-        currency: "SAR",
-        status: rfqData.status || "pending",
-        // pending | quoted | accepted | rejected
-        destination_ar: rfqData.destination || rfqData.destination_ar || "",
-        destination_en: rfqData.destination || rfqData.destination_en || "",
-        destination: rfqData.destination || "",
-        target_date: rfqData.target_date || new Date(Date.now() + 14 * 864e5).toISOString().split("T")[0],
-        company_name: rfqData.company_name || "\u0645\u0637\u0639\u0645 \u0627\u0644\u0623\u0646\u062F\u0644\u0633\u064A\u0629 \u0627\u0644\u0631\u0627\u0642\u064A",
-        buyer_contact: rfqData.buyer_contact || "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A (+966 50 123 4567)",
-        notes: rfqData.notes || "",
-        created_at: (/* @__PURE__ */ new Date()).toISOString()
-      };
-      const rfqs = this.getRFQs();
-      const updated = [newRFQ, ...rfqs.filter((r) => r.rfq_id !== newRFQ.rfq_id)];
-      try {
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(updated));
-      } catch (e) {
-        console.error("Failed to persist RFQ to localStorage", e);
-      }
-      if (typeof window !== "undefined") {
-        window.dispatchEvent(new CustomEvent("meyar:rfq-submitted", { detail: { rfq: newRFQ } }));
-      }
-      return newRFQ;
-    }
-    /**
-     * Update status of an existing RFQ
-     * @param {string} rfqId 
-     * @param {'pending'|'quoted'|'accepted'|'rejected'} status 
-     * @returns {boolean}
-     */
-    static updateRFQStatus(rfqId, status) {
-      if (!rfqId || !status) return false;
-      const rfqs = this.getRFQs();
-      const index = rfqs.findIndex((r) => r.rfq_id === rfqId || r.id === rfqId);
-      if (index === -1) return false;
-      rfqs[index].status = status;
-      rfqs[index].updated_at = (/* @__PURE__ */ new Date()).toISOString();
-      try {
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(rfqs));
-      } catch (e) {
-        console.error("Failed to update RFQ status in localStorage", e);
-      }
-      if (typeof window !== "undefined") {
-        window.dispatchEvent(new CustomEvent("meyar:rfq-status-updated", { detail: { rfqId, status } }));
-      }
-      return true;
-    }
-    /**
-     * Open RFQ Drawer / Modal preloaded with supply item data
-     * @param {string|Object} supplyIdOrItem 
-     * @param {number} [defaultQty] 
-     */
-    static openDrawer(supplyIdOrItem, defaultQty = null) {
-      let item = supplyIdOrItem;
-      if (typeof supplyIdOrItem === "string") {
-        item = MOCK_DATA.supplies?.find((s) => s.id === supplyIdOrItem) || null;
-      }
-      if (!item) {
-        console.warn("RFQManager.openDrawer: Supply item not found", supplyIdOrItem);
-        return;
-      }
-      this.activeItem = item;
-      const moq = Math.max(1, item.moq || 1);
-      this.currentQuantity = defaultQty !== null && !isNaN(defaultQty) ? Math.max(moq, parseInt(defaultQty, 10)) : moq;
-      const lang = typeof I18n !== "undefined" ? I18n.getLang() : "ar";
-      const isAr = lang === "ar";
-      const drawer = document.getElementById("rfq-drawer") || document.getElementById("rfq-modal");
-      if (drawer) {
-        const previewImg = drawer.querySelector("[data-rfq-item-img]");
-        if (previewImg) {
-          previewImg.src = item.image || "";
-          previewImg.alt = isAr ? item.name_ar : item.name_en;
-        }
-        const previewTitle = drawer.querySelector("[data-rfq-item-title]");
-        if (previewTitle) {
-          previewTitle.textContent = isAr ? item.name_ar : item.name_en;
-        }
-        const previewSupplier = drawer.querySelector("[data-rfq-supplier-name]");
-        if (previewSupplier) {
-          previewSupplier.textContent = isAr ? item.supplier?.name_ar : item.supplier?.name_en;
-        }
-        const previewMoq = drawer.querySelector("[data-rfq-item-moq]");
-        if (previewMoq) {
-          const unit = isAr ? item.unit_ar : item.unit_en;
-          previewMoq.textContent = I18n.t("supplies.moq_badge", { count: moq, unit });
-        }
-        const previewUnitPrice = drawer.querySelector("[data-rfq-item-price]");
-        if (previewUnitPrice) {
-          previewUnitPrice.textContent = `${item.price?.toLocaleString()} ${isAr ? "\u0631.\u0633" : "SAR"} / ${isAr ? item.unit_ar : item.unit_en}`;
-        }
-        const idInput = drawer.querySelector("#rfq-item-id") || drawer.querySelector('[name="item_id"]');
-        if (idInput) idInput.value = item.id;
-        const qtyInput = drawer.querySelector("#rfq-quantity") || drawer.querySelector('[name="quantity"]');
-        if (qtyInput) {
-          qtyInput.value = this.currentQuantity;
-          qtyInput.min = moq;
-        }
-        const moqHelper = drawer.querySelector("[data-rfq-moq-helper]");
-        if (moqHelper) {
-          const unit = isAr ? item.unit_ar : item.unit_en;
-          moqHelper.textContent = `${isAr ? "\u0627\u0644\u062D\u062F \u0627\u0644\u0623\u062F\u0646\u0649 \u0644\u0644\u0637\u0644\u0628:" : "Minimum order quantity:"} ${moq} ${unit}`;
-        }
-        const dateInput = drawer.querySelector("#rfq-target-date") || drawer.querySelector('[name="target_date"]');
-        if (dateInput && !dateInput.value) {
-          const defaultDate = new Date(Date.now() + 14 * 864e5).toISOString().split("T")[0];
-          dateInput.value = defaultDate;
-          dateInput.min = (/* @__PURE__ */ new Date()).toISOString().split("T")[0];
-        }
-        drawer.querySelectorAll(".rfq-error-msg").forEach((el) => {
-          el.textContent = "";
-          el.classList.add("hidden");
-        });
-        drawer.querySelectorAll(".border-red-500").forEach((el) => el.classList.remove("border-red-500"));
-        this.updateLiveEstimate();
-        Modal.open(drawer.id);
-      }
-      if (typeof window !== "undefined") {
-        window.dispatchEvent(new CustomEvent("meyar:rfq-drawer-opened", { detail: { item: this.activeItem } }));
-      }
-    }
-    /**
-     * Close the active RFQ drawer / modal
-     */
-    static closeDrawer() {
-      const drawer = document.getElementById("rfq-drawer") || document.getElementById("rfq-modal");
-      if (drawer) {
-        Modal.close(drawer.id);
-      }
-      this.activeItem = null;
-    }
-    /**
-     * Update live financial estimate breakdown in the drawer
-     */
-    static updateLiveEstimate() {
-      const drawer = document.getElementById("rfq-drawer") || document.getElementById("rfq-modal");
-      if (!drawer || !this.activeItem) return;
-      const qtyInput = drawer.querySelector("#rfq-quantity") || drawer.querySelector('[name="quantity"]');
-      const rawQty = qtyInput ? parseInt(qtyInput.value, 10) : this.currentQuantity;
-      const moq = this.activeItem.moq || 1;
-      const qty = isNaN(rawQty) || rawQty < moq ? moq : rawQty;
-      this.currentQuantity = qty;
-      const estimate = this.calculateEstimate(this.activeItem.price, qty);
-      const elUnit = drawer.querySelector("[data-rfq-est-unit]");
-      if (elUnit) elUnit.textContent = estimate.formattedUnitPrice;
-      const elQty = drawer.querySelector("[data-rfq-est-qty]");
-      if (elQty) elQty.textContent = `${estimate.quantity}`;
-      const elSubtotal = drawer.querySelector("[data-rfq-est-subtotal]");
-      if (elSubtotal) elSubtotal.textContent = estimate.formattedSubtotal;
-      const elVat = drawer.querySelector("[data-rfq-est-vat]");
-      if (elVat) elVat.textContent = estimate.formattedVat;
-      const elTotal = drawer.querySelector("[data-rfq-est-total]");
-      if (elTotal) elTotal.textContent = estimate.formattedTotal;
-    }
-    /**
-     * Handle stepper button quantity increment/decrement
-     * @param {number} delta 
-     */
-    static changeQuantity(delta) {
-      const moq = this.activeItem?.moq || 1;
-      const drawer = document.getElementById("rfq-drawer") || document.getElementById("rfq-modal");
-      const qtyInput = drawer?.querySelector("#rfq-quantity") || drawer?.querySelector('[name="quantity"]');
-      const current = qtyInput ? parseInt(qtyInput.value, 10) || moq : this.currentQuantity;
-      const newQty = Math.max(moq, current + delta);
-      if (qtyInput) {
-        qtyInput.value = newQty;
-      }
-      this.currentQuantity = newQty;
-      this.updateLiveEstimate();
-    }
-    /**
-     * Submit direct RFQ form
-     * @param {HTMLFormElement|Object} formOrData 
-     * @returns {Object|false}
-     */
-    static submitRFQ(formOrData) {
-      let formData = {};
-      let formElement = null;
-      const isFormElement = formOrData && (typeof HTMLFormElement !== "undefined" && formOrData instanceof HTMLFormElement || typeof Element !== "undefined" && formOrData instanceof Element || formOrData.elements !== void 0);
-      if (isFormElement) {
-        formElement = formOrData;
-        const elements = formElement.elements;
-        formData = {
-          item_id: elements["item_id"]?.value || this.activeItem?.id,
-          quantity: elements["quantity"]?.value || this.currentQuantity,
-          destination: elements["destination"]?.value || "",
-          target_date: elements["target_date"]?.value || "",
-          company_name: elements["company_name"]?.value || "",
-          buyer_contact: elements["buyer_contact"]?.value || "",
-          notes: elements["notes"]?.value || ""
-        };
-      } else {
-        formData = formOrData || {};
-      }
-      const item = (formData.item_id ? MOCK_DATA.supplies?.find((s) => s.id === formData.item_id) : null) || this.activeItem;
-      if (!item) {
-        Toast.error(I18n.getLang() === "ar" ? "\u064A\u0631\u062C\u0649 \u062A\u062D\u062F\u064A\u062F \u0627\u0644\u0635\u0646\u0641 \u0627\u0644\u0645\u0637\u0644\u0648\u0628" : "Please select a supply item");
-        return false;
-      }
-      const validation = this.validateRFQ(formData, item);
-      if (!validation.isValid) {
-        if (formElement) {
-          Object.entries(validation.errors).forEach(([field, msg]) => {
-            const input = formElement.querySelector(`[name="${field}"]`) || formElement.querySelector(`#rfq-${field}`);
-            if (input) input.classList.add("border-red-500");
-            const errorContainer = formElement.querySelector(`[data-error-for="${field}"]`);
-            if (errorContainer) {
-              errorContainer.textContent = msg;
-              errorContainer.classList.remove("hidden");
-            }
-          });
-        }
-        Toast.error(Object.values(validation.errors)[0] || "Validation error");
-        return false;
-      }
-      const saved = this.saveRFQ({
-        ...formData,
-        supplyItem: item
-      });
-      Toast.success(I18n.t("toast.rfq_success"));
-      this.closeDrawer();
-      if (formElement) {
-        formElement.reset();
-      }
-      return saved;
-    }
-    /**
-     * Render RFQ History into a target container
-     * @param {HTMLElement} container 
-     */
-    static renderHistory(container) {
-      if (!container) return;
-      const rfqs = this.getRFQs();
-      const lang = I18n.getLang();
-      const isAr = lang === "ar";
-      if (rfqs.length === 0) {
-        container.innerHTML = `
-        <div class="py-12 text-center text-text-muted">
-          <svg class="w-12 h-12 mx-auto mb-3 text-border-subtle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/>
-            <line x1="16" y1="17" x2="8" y2="17"/>
-            <polyline points="10 9 9 9 8 9"/>
-          </svg>
-          <p class="text-sm font-semibold text-text-main" data-i18n="supplies.rfq_history_empty">${I18n.t("supplies.rfq_history_empty")}</p>
-        </div>
-      `;
-        return;
-      }
-      container.innerHTML = rfqs.map((rfq) => {
-        const statusBg = {
-          pending: "bg-surface-2 text-amber-500 border-amber-500",
-          quoted: "bg-surface-2 text-brand-gold border-brand-gold",
-          accepted: "bg-surface-2 text-brand-emerald border-brand-emerald",
-          rejected: "bg-surface-2 text-red-500 border-red-500"
-        }[rfq.status] || "bg-surface-2 text-text-muted border-border-subtle";
-        const statusLabel = {
-          pending: I18n.t("rfq.status_pending"),
-          quoted: I18n.t("rfq.status_quoted"),
-          accepted: I18n.t("rfq.status_accepted"),
-          rejected: I18n.t("rfq.status_rejected")
-        }[rfq.status] || rfq.status;
-        const itemName = isAr ? rfq.item_name_ar || rfq.item_name_en : rfq.item_name_en || rfq.item_name_ar;
-        const supplierName = isAr ? rfq.supplier_name_ar || rfq.partner_name_ar || rfq.supplier_name_en : rfq.supplier_name_en || rfq.partner_name_en || rfq.supplier_name_ar;
-        const unit = isAr ? rfq.unit_ar : rfq.unit_en;
-        const currency = isAr ? "\u0631.\u0633" : "SAR";
-        return `
-        <div class="p-4 bg-surface-2 border border-border-subtle rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div class="flex items-center gap-3 min-w-0">
-            ${rfq.item_image ? `<img src="${rfq.item_image}" alt="${itemName}" class="w-12 h-12 rounded-lg object-cover border border-border-subtle shrink-0">` : ""}
-            <div class="min-w-0">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <span class="text-xs font-mono font-bold text-brand-gold">#${rfq.rfq_id}</span>
-                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${statusBg}">${statusLabel}</span>
-              </div>
-              <h4 class="text-sm font-bold text-text-main truncate">${itemName}</h4>
-              <p class="text-xs text-text-muted mt-0.5 truncate">${supplierName} \u2022 ${rfq.quantity} ${unit || ""}</p>
-            </div>
-          </div>
-          <div class="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-4 border-t sm:border-t-0 border-border-subtle pt-2 sm:pt-0">
-            <div class="text-start sm:text-end">
-              <span class="text-[10px] text-text-muted block">${I18n.t("rfq.total_price")}</span>
-              <span class="text-sm font-extrabold text-text-main">${rfq.total_price?.toLocaleString() || rfq.target_price?.toLocaleString()} ${currency}</span>
-            </div>
-            <a href="chat.html" class="px-3 py-1.5 text-xs font-semibold bg-surface-1 hover:bg-surface-3 border border-border-subtle rounded-lg text-brand-gold transition-colors shrink-0">
-              ${isAr ? "\u0645\u062A\u0627\u0628\u0639\u0629 \u0641\u064A \u0627\u0644\u0645\u062D\u0627\u062F\u062B\u0629" : "View in Chat"}
-            </a>
-          </div>
-        </div>
-      `;
-      }).join("");
-    }
-    /**
-     * Initialize event delegation for RFQ buttons and drawer actions
-     */
-    static init() {
-      if (this.isInitialized || typeof document === "undefined") return;
-      document.addEventListener("click", (e) => {
-        const rfqBtn = e.target.closest('[data-action="open-rfq"]');
-        if (rfqBtn) {
-          e.preventDefault();
-          const supplyId = rfqBtn.getAttribute("data-supply-id") || rfqBtn.getAttribute("data-item-id");
-          const qty = rfqBtn.getAttribute("data-default-qty");
-          this.openDrawer(supplyId, qty);
-          return;
-        }
-        const closeBtn = e.target.closest('[data-action="close-rfq-drawer"], [data-action="close-rfq-modal"]');
-        if (closeBtn) {
-          e.preventDefault();
-          this.closeDrawer();
-          return;
-        }
-        const qtyPlus = e.target.closest('[data-action="rfq-qty-plus"]');
-        if (qtyPlus) {
-          e.preventDefault();
-          this.changeQuantity(1);
-          return;
-        }
-        const qtyMinus = e.target.closest('[data-action="rfq-qty-minus"]');
-        if (qtyMinus) {
-          e.preventDefault();
-          this.changeQuantity(-1);
-          return;
-        }
-        const historyBtn = e.target.closest('[data-action="open-rfq-history"]');
-        if (historyBtn) {
-          e.preventDefault();
-          const historyContainer = document.getElementById("rfq-history-list");
-          if (historyContainer) {
-            this.renderHistory(historyContainer);
-          }
-          Modal.open("rfq-history-modal");
-          return;
-        }
-      });
-      document.addEventListener("submit", (e) => {
-        if (e.target && (e.target.id === "rfq-form" || e.target.hasAttribute("data-rfq-form"))) {
-          e.preventDefault();
-          this.submitRFQ(e.target);
-        }
-      });
-      document.addEventListener("input", (e) => {
-        if (e.target && (e.target.id === "rfq-quantity" || e.target.name === "quantity")) {
-          e.target.classList.remove("border-red-500");
-          const errorContainer = e.target.closest("form")?.querySelector('[data-error-for="quantity"]');
-          if (errorContainer) errorContainer.classList.add("hidden");
-          this.updateLiveEstimate();
-        }
-        if (e.target && (e.target.id === "rfq-destination" || e.target.name === "destination")) {
-          e.target.classList.remove("border-red-500");
-          const errorContainer = e.target.closest("form")?.querySelector('[data-error-for="destination"]');
-          if (errorContainer) errorContainer.classList.add("hidden");
-        }
-        if (e.target && (e.target.id === "rfq-target-date" || e.target.name === "target_date")) {
-          e.target.classList.remove("border-red-500");
-          const errorContainer = e.target.closest("form")?.querySelector('[data-error-for="target_date"]');
-          if (errorContainer) errorContainer.classList.add("hidden");
-        }
-      });
-      window.addEventListener("meyar:lang-changed", () => {
-        if (this.activeItem) {
-          this.openDrawer(this.activeItem, this.currentQuantity);
-        }
-        const historyContainer = document.getElementById("rfq-history-list");
-        if (historyContainer && !historyContainer.closest(".hidden")) {
-          this.renderHistory(historyContainer);
-        }
-      });
-      this.isInitialized = true;
-    }
-  };
-  __publicField(RFQManager, "STORAGE_KEY", "meyar_rfqs");
-  __publicField(RFQManager, "activeItem", null);
-  __publicField(RFQManager, "currentQuantity", 1);
-  __publicField(RFQManager, "isInitialized", false);
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => RFQManager.init());
-    } else {
-      RFQManager.init();
-    }
-  }
+  __publicField(DashboardPage, "PERIOD_CONFIGS", DASHBOARD_PERIOD_FIXTURES);
 
   // js/pages/supplies.js
   var SuppliesPage = class {
     /**
-     * Get bookmarked supply IDs from localStorage
+     * Reset in-memory supplies state (for test isolation)
+     */
+    static reset() {
+      this.savedSupplyIds = /* @__PURE__ */ new Set();
+      this.currentCategory = "all";
+      this.searchQuery = "";
+      this.selectedMOQ = "all";
+      this.stockFilter = "all";
+      this.selectedCertifications = /* @__PURE__ */ new Set();
+      this.minPrice = null;
+      this.maxPrice = null;
+      this.sortBy = "popular";
+      this.isInitialized = false;
+    }
+    /**
+     * Get bookmarked supply IDs from in-memory set
      * @returns {string[]}
      */
     static getSavedSupplyIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_SAVED);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.savedSupplyIds);
     }
     /**
      * Toggle save/bookmark status for a supply item
@@ -11989,20 +12734,14 @@
      */
     static toggleSaveSupply(supplyId) {
       if (!supplyId) return false;
-      const saved = new Set(this.getSavedSupplyIds());
-      const isSaved = saved.has(supplyId);
+      const isSaved = this.savedSupplyIds.has(supplyId);
       const isAr = I18n.getLang() === "ar";
       if (isSaved) {
-        saved.delete(supplyId);
+        this.savedSupplyIds.delete(supplyId);
         Toast.info(isAr ? "\u062A\u0645\u062A \u0625\u0632\u0627\u0644\u0629 \u0627\u0644\u0645\u0646\u062A\u062C \u0645\u0646 \u0627\u0644\u062A\u0648\u0631\u064A\u062F\u0627\u062A \u0627\u0644\u0645\u062D\u0641\u0648\u0638\u0629" : "Removed from saved supplies");
       } else {
-        saved.add(supplyId);
+        this.savedSupplyIds.add(supplyId);
         Toast.success(isAr ? "\u062A\u0645 \u062D\u0641\u0638 \u0627\u0644\u0645\u0646\u062A\u062C \u0641\u064A \u0642\u0627\u0626\u0645\u062A\u0643 \u0627\u0644\u062A\u062C\u0627\u0631\u064A\u0629" : "Saved to your supplies list");
-      }
-      try {
-        localStorage.setItem(this.STORAGE_SAVED, JSON.stringify(Array.from(saved)));
-      } catch (e) {
-        console.error("Failed to update saved supplies in localStorage", e);
       }
       this.updateSaveButtonStates();
       return !isSaved;
@@ -12034,7 +12773,7 @@
      * @returns {Array<Object>}
      */
     static filterSupplies() {
-      const items = MOCK_DATA.supplies || [];
+      const items = SUPPLY_FIXTURES || [];
       const normQuery = normalizeSearchQuery(this.searchQuery);
       return items.filter((item) => {
         if (this.currentCategory !== "all" && item.category !== this.currentCategory) {
@@ -12306,7 +13045,7 @@
       const chips = [];
       const isAr = I18n.getLang() === "ar";
       if (this.currentCategory !== "all") {
-        const catObj = MOCK_DATA.supplies?.find((s) => s.category === this.currentCategory);
+        const catObj = SUPPLY_FIXTURES?.find((s) => s.category === this.currentCategory);
         const catLabel = catObj ? isAr ? catObj.category_ar : catObj.category_en : this.currentCategory;
         chips.push({ type: "category", label: catLabel });
       }
@@ -12350,7 +13089,7 @@
      * @param {string} supplyId 
      */
     static openSpecsModal(supplyId) {
-      const item = MOCK_DATA.supplies?.find((s) => s.id === supplyId);
+      const item = SUPPLY_FIXTURES?.find((s) => s.id === supplyId);
       if (!item) return;
       const isAr = I18n.getLang() === "ar";
       const modal = document.getElementById("specs-modal");
@@ -12590,7 +13329,6 @@
       this.isInitialized = true;
     }
   };
-  __publicField(SuppliesPage, "STORAGE_SAVED", "meyar_saved_supplies");
   __publicField(SuppliesPage, "currentCategory", "all");
   __publicField(SuppliesPage, "searchQuery", "");
   __publicField(SuppliesPage, "selectedMOQ", "all");
@@ -12603,34 +13341,29 @@
   __publicField(SuppliesPage, "sortBy", "popular");
   // popular | price_asc | price_desc | moq_asc | rating
   __publicField(SuppliesPage, "isInitialized", false);
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => SuppliesPage.init());
-    } else {
-      SuppliesPage.init();
-    }
-  }
+  __publicField(SuppliesPage, "savedSupplyIds", /* @__PURE__ */ new Set());
 
   // js/pages/courses.js
   var CoursesPage = class {
     /**
-     * Get enrolled course IDs from localStorage (handles both string IDs and object records)
+     * Reset in-memory courses state (for test isolation)
+     */
+    static reset() {
+      this.enrolledCourseIds = /* @__PURE__ */ new Set();
+      this.savedCourseIds = /* @__PURE__ */ new Set();
+      this.currentCategory = "all";
+      this.currentLevel = "all";
+      this.searchQuery = "";
+      this.sortBy = "popular";
+      this.filterAvailableOnly = false;
+      this.isInitialized = false;
+    }
+    /**
+     * Get enrolled course IDs from in-memory set
      * @returns {string[]}
      */
     static getEnrolledCourseIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_ENROLLED);
-        if (!data) return [];
-        const parsed = JSON.parse(data);
-        if (!Array.isArray(parsed)) return [];
-        return parsed.map((item) => {
-          if (typeof item === "string") return item;
-          if (item && typeof item === "object") return item.course_id || item.id || "";
-          return "";
-        }).filter(Boolean);
-      } catch {
-        return [];
-      }
+      return Array.from(this.enrolledCourseIds);
     }
     /**
      * Check if a course is currently enrolled by the active user
@@ -12639,20 +13372,14 @@
      */
     static isEnrolled(courseId) {
       if (!courseId) return false;
-      const enrolled = new Set(this.getEnrolledCourseIds());
-      return enrolled.has(courseId);
+      return this.enrolledCourseIds.has(courseId);
     }
     /**
-     * Get saved/bookmarked course IDs from localStorage
+     * Get saved/bookmarked course IDs from in-memory set
      * @returns {string[]}
      */
     static getSavedCourseIds() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_SAVED);
-        return data ? JSON.parse(data) : [];
-      } catch {
-        return [];
-      }
+      return Array.from(this.savedCourseIds);
     }
     /**
      * Toggle bookmark/save status for a course
@@ -12661,20 +13388,14 @@
      */
     static toggleSaveCourse(courseId) {
       if (!courseId) return false;
-      const saved = new Set(this.getSavedCourseIds());
-      const isSaved = saved.has(courseId);
+      const isSaved = this.savedCourseIds.has(courseId);
       const isAr = I18n.getLang() === "ar";
       if (isSaved) {
-        saved.delete(courseId);
+        this.savedCourseIds.delete(courseId);
         Toast.info(isAr ? "\u062A\u0645\u062A \u0625\u0632\u0627\u0644\u0629 \u0627\u0644\u0648\u0631\u0634\u0629 \u0645\u0646 \u0627\u0644\u062F\u0648\u0631\u0627\u062A \u0627\u0644\u0645\u062D\u0641\u0648\u0638\u0629" : "Masterclass removed from saved list");
       } else {
-        saved.add(courseId);
+        this.savedCourseIds.add(courseId);
         Toast.success(isAr ? "\u062A\u0645 \u062D\u0641\u0638 \u0648\u0631\u0634\u0629 \u0627\u0644\u0639\u0645\u0644 \u0641\u064A \u0642\u0627\u0626\u0645\u062A\u0643" : "Masterclass saved to your list");
-      }
-      try {
-        localStorage.setItem(this.STORAGE_SAVED, JSON.stringify(Array.from(saved)));
-      } catch (e) {
-        console.error("Failed to update saved courses in localStorage", e);
       }
       this.updateSaveButtonStates();
       return !isSaved;
@@ -12687,22 +13408,17 @@
      */
     static enrollInCourse(courseId, studentDetails = {}) {
       if (!courseId) return false;
-      const course = (MOCK_DATA.courses || []).find((c) => c.id === courseId);
+      const course = (COURSE_FIXTURES || []).find((c) => c.id === courseId);
       if (!course) {
         Toast.error(I18n.getLang() === "ar" ? "\u0639\u0630\u0631\u0627\u064B\u060C \u0644\u0645 \u064A\u062A\u0645 \u0627\u0644\u0639\u062B\u0648\u0631 \u0639\u0644\u0649 \u0628\u064A\u0627\u0646\u0627\u062A \u0627\u0644\u0648\u0631\u0634\u0629" : "Masterclass not found");
         return false;
       }
-      const enrolledIds = new Set(this.getEnrolledCourseIds());
-      if (enrolledIds.has(courseId)) {
+      if (isCurrentUserId(course.instructor_id, USER_FIXTURES)) return false;
+      if (this.enrolledCourseIds.has(courseId)) {
         Toast.info(I18n.t("courses.already_enrolled") || "\u0623\u0646\u062A \u0645\u0633\u062C\u0644 \u0628\u0627\u0644\u0641\u0639\u0644 \u0641\u064A \u0647\u0630\u0647 \u0627\u0644\u062F\u0648\u0631\u0629");
         return true;
       }
-      enrolledIds.add(courseId);
-      try {
-        localStorage.setItem(this.STORAGE_ENROLLED, JSON.stringify(Array.from(enrolledIds)));
-      } catch (e) {
-        console.error("Failed to save enrollment to localStorage", e);
-      }
+      this.enrolledCourseIds.add(courseId);
       const isAr = I18n.getLang() === "ar";
       Toast.success(
         isAr ? `\u062A\u0645 \u062A\u0623\u0643\u064A\u062F \u062A\u0633\u062C\u064A\u0644\u0643 \u0641\u064A: ${course.title_ar}` : `Enrolled successfully in: ${course.title_en}`,
@@ -12727,14 +13443,8 @@
      */
     static cancelEnrollment(courseId) {
       if (!courseId) return false;
-      const enrolledIds = new Set(this.getEnrolledCourseIds());
-      if (!enrolledIds.has(courseId)) return false;
-      enrolledIds.delete(courseId);
-      try {
-        localStorage.setItem(this.STORAGE_ENROLLED, JSON.stringify(Array.from(enrolledIds)));
-      } catch (e) {
-        console.error("Failed to remove enrollment from localStorage", e);
-      }
+      if (!this.enrolledCourseIds.has(courseId)) return false;
+      this.enrolledCourseIds.delete(courseId);
       const isAr = I18n.getLang() === "ar";
       Toast.info(isAr ? "\u062A\u0645 \u0625\u0644\u063A\u0627\u0621 \u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0641\u064A \u0627\u0644\u062F\u0648\u0631\u0629" : "Workshop enrollment cancelled");
       if (typeof window !== "undefined") {
@@ -12770,7 +13480,7 @@
      * @returns {Array<Object>}
      */
     static filterCourses() {
-      const courses = MOCK_DATA.courses || [];
+      const courses = COURSE_FIXTURES || [];
       const normQuery = normalizeSearchQuery(this.searchQuery);
       return courses.filter((item) => {
         if (this.currentCategory !== "all") {
@@ -12866,6 +13576,15 @@
       const seatsText = isUrgent ? isAr ? `\u0628\u0627\u0642\u064A ${course.seats_left} \u0645\u0642\u0627\u0639\u062F \u0641\u0642\u0637!` : `Only ${course.seats_left} seats left!` : isAr ? `${course.seats_left} \u0645\u0642\u0627\u0639\u062F \u0645\u062A\u0627\u062D\u0629` : `${course.seats_left} seats left`;
       const enrollBtnText = isEnrolled ? isAr ? "\u0623\u0646\u062A \u0645\u0633\u062C\u0644 \u0628\u0627\u0644\u0641\u0648\u062C \u2713" : "Enrolled in Cohort \u2713" : isAr ? "\u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0627\u0644\u0641\u0648\u0631\u064A" : "Enroll Now";
       const enrollBtnClass = isEnrolled ? "bg-brand-emerald text-white hover:bg-brand-emerald-hover" : "bg-brand-gold text-white hover:bg-brand-gold-hover";
+      const enrollControl = isCurrentUserId(course.instructor_id, USER_FIXTURES) ? "" : `
+      <button type="button"
+              data-action="open-enroll"
+              data-course-id="${course.id}"
+              class="px-3 py-2 text-xs font-bold rounded-xl shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-gold flex items-center justify-center gap-1.5 ${enrollBtnClass}">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+        <span>${enrollBtnText}</span>
+      </button>
+    `;
       return `
       <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-border-subtle shadow-sm"
                data-course-card="${course.id}"
@@ -12983,13 +13702,7 @@
                 <span>${isAr ? "\u0627\u0644\u0645\u0646\u0647\u062C \u0648\u0627\u0644\u0645\u062D\u0627\u0648\u0631" : "Syllabus"}</span>
               </button>
 
-              <button type="button" 
-                      data-action="open-enroll" 
-                      data-course-id="${course.id}"
-                      class="px-3 py-2 text-xs font-bold rounded-xl shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-gold flex items-center justify-center gap-1.5 ${enrollBtnClass}">
-                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
-                <span>${enrollBtnText}</span>
-              </button>
+              ${enrollControl}
             </div>
           </div>
 
@@ -13033,7 +13746,7 @@
     static renderCurriculumModal(courseId) {
       const modal = document.getElementById("course-curriculum-modal");
       if (!modal) return;
-      const course = (MOCK_DATA.courses || []).find((c) => c.id === courseId);
+      const course = (COURSE_FIXTURES || []).find((c) => c.id === courseId);
       if (!course) return;
       const isAr = I18n.getLang() === "ar";
       const title = isAr ? course.title_ar : course.title_en;
@@ -13044,6 +13757,15 @@
       const durationLabel = isAr ? course.duration_ar : course.duration_en;
       const scheduleLabel = isAr ? course.schedule_ar : course.schedule_en;
       const isEnrolled = this.isEnrolled(course.id);
+      const enrollControl = isCurrentUserId(course.instructor_id, USER_FIXTURES) ? "" : `
+      <button type="button"
+              data-action="open-enroll"
+              data-course-id="${course.id}"
+              class="flex-1 sm:flex-none px-6 py-2.5 text-xs font-bold text-white ${isEnrolled ? "bg-brand-emerald hover:bg-brand-emerald-hover" : "bg-brand-gold hover:bg-brand-gold-hover"} rounded-xl shadow-md transition-colors flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+        <span>${isEnrolled ? isAr ? "\u0623\u0646\u062A \u0645\u0633\u062C\u0644 \u0628\u0627\u0644\u0641\u0648\u062C" : "Enrolled" : isAr ? "\u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0641\u064A \u0627\u0644\u0648\u0631\u0634\u0629" : "Enroll in Workshop"}</span>
+      </button>
+    `;
       const syllabusHtml = (course.syllabus || []).map((mod) => {
         const modTitle = isAr ? mod.title_ar : mod.title_en;
         const modDuration = isAr ? mod.duration_ar : mod.duration_en;
@@ -13167,13 +13889,7 @@
                 ${isAr ? "\u0625\u063A\u0644\u0627\u0642" : "Close"}
               </button>
 
-              <button type="button" 
-                      data-action="open-enroll" 
-                      data-course-id="${course.id}"
-                      class="flex-1 sm:flex-none px-6 py-2.5 text-xs font-bold text-white ${isEnrolled ? "bg-brand-emerald hover:bg-brand-emerald-hover" : "bg-brand-gold hover:bg-brand-gold-hover"} rounded-xl shadow-md transition-colors flex items-center justify-center gap-2">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
-                <span>${isEnrolled ? isAr ? "\u0623\u0646\u062A \u0645\u0633\u062C\u0644 \u0628\u0627\u0644\u0641\u0648\u062C" : "Enrolled" : isAr ? "\u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0641\u064A \u0627\u0644\u0648\u0631\u0634\u0629" : "Enroll in Workshop"}</span>
-              </button>
+              ${enrollControl}
             </div>
           </div>
 
@@ -13189,14 +13905,15 @@
     static renderEnrollModal(courseId) {
       const modal = document.getElementById("course-enroll-modal");
       if (!modal) return;
-      const course = (MOCK_DATA.courses || []).find((c) => c.id === courseId);
+      const course = (COURSE_FIXTURES || []).find((c) => c.id === courseId);
       if (!course) return;
+      if (isCurrentUserId(course.instructor_id, USER_FIXTURES)) return;
       const isAr = I18n.getLang() === "ar";
       const title = isAr ? course.title_ar : course.title_en;
       const instructorName = isAr ? course.instructor_name_ar : course.instructor_name_en;
       const scheduleLabel = isAr ? course.schedule_ar : course.schedule_en;
       const isEnrolled = this.isEnrolled(course.id);
-      const user = MOCK_DATA.user || {};
+      const user = USER_FIXTURES || {};
       const defaultName = isAr ? user.name_ar || "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A" : user.name_en || "Chef Faisal Al-Hashemi";
       const defaultEmail = user.email || "faisal@meyar.sa";
       const defaultRole = isAr ? user.title_ar || "\u0634\u064A\u0641 \u062A\u0646\u0641\u064A\u0630\u064A \u0648\u0645\u0633\u062A\u0634\u0627\u0631 \u0637\u0647\u064A" : user.title_en || "Executive Chef & Culinary Consultant";
@@ -13407,10 +14124,8 @@
      * Initialize all event handlers and query string parameters
      */
     static init() {
-      if (this.isInitialized) {
-        this.render();
-        return;
-      }
+      if (this.isInitialized) return;
+      if (typeof document === "undefined") return;
       this.isInitialized = true;
       document.querySelectorAll("[data-course-filter]").forEach((btn) => {
         btn.addEventListener("click", (e) => {
@@ -13591,8 +14306,6 @@
       }
     }
   };
-  __publicField(CoursesPage, "STORAGE_ENROLLED", "meyar_enrolled_courses");
-  __publicField(CoursesPage, "STORAGE_SAVED", "meyar_saved_courses");
   __publicField(CoursesPage, "currentCategory", "all");
   // all | fermentation | pastry | smoke | seafood
   __publicField(CoursesPage, "currentLevel", "all");
@@ -13602,53 +14315,41 @@
   // popular | price_asc | price_desc | seats_asc | date_asc
   __publicField(CoursesPage, "filterAvailableOnly", false);
   __publicField(CoursesPage, "isInitialized", false);
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => CoursesPage.init());
-    } else {
-      CoursesPage.init();
-    }
-  }
+  __publicField(CoursesPage, "enrolledCourseIds", /* @__PURE__ */ new Set());
+  __publicField(CoursesPage, "savedCourseIds", /* @__PURE__ */ new Set());
 
   // js/modules/chat-module.js
   var ChatModule = class {
     /**
-     * Seed default chats from MOCK_DATA
+     * Reset the in-memory chat store (for test isolation and session resets)
+     */
+    static reset() {
+      this.chatsStore = null;
+    }
+    /**
+     * Clone the temporary chat fixtures for the current page session
      * @returns {Array<Object>}
      */
     static getInitialChats() {
-      if (!MOCK_DATA?.chats) return [];
-      return JSON.parse(JSON.stringify(MOCK_DATA.chats));
+      if (!CHAT_FIXTURES) return [];
+      return JSON.parse(JSON.stringify(CHAT_FIXTURES));
     }
     /**
-     * Retrieve all chats from localStorage (or initialize if empty)
+     * Retrieve all chats from in-memory store (or initialize from fixtures)
      * @returns {Array<Object>}
      */
     static getChats() {
-      try {
-        const data = localStorage.getItem(this.STORAGE_KEY);
-        if (!data) {
-          const initial = this.getInitialChats();
-          if (initial.length > 0) {
-            localStorage.setItem(this.STORAGE_KEY, JSON.stringify(initial));
-          }
-          return initial;
-        }
-        return JSON.parse(data);
-      } catch {
-        return this.getInitialChats();
+      if (!this.chatsStore) {
+        this.chatsStore = this.getInitialChats();
       }
+      return this.chatsStore;
     }
     /**
-     * Persist chats array to localStorage and broadcast update event
+     * Persist chats array to in-memory store and broadcast update event
      * @param {Array<Object>} chats 
      */
     static saveChats(chats) {
-      try {
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(chats));
-      } catch (e) {
-        console.error("Failed to persist chats to localStorage", e);
-      }
+      this.chatsStore = chats;
       if (typeof window !== "undefined") {
         window.dispatchEvent(new CustomEvent("meyar:chats-updated", { detail: { chats } }));
       }
@@ -13931,7 +14632,7 @@
       });
     }
   };
-  __publicField(ChatModule, "STORAGE_KEY", "meyar_chats");
+  __publicField(ChatModule, "chatsStore", null);
 
   // js/pages/chat.js
   var ChatPage = class {
@@ -13939,6 +14640,11 @@
      * Initialize Chat Page, parse query params, render views, and attach event listeners
      */
     static init() {
+      if (typeof document !== "undefined" && this.lastDocument !== document) {
+        this.isInitialized = false;
+        this.lastDocument = document;
+      }
+      if (this.isInitialized) return;
       if (typeof document === "undefined") return;
       this.parseURLParams();
       this.renderConversationList();
@@ -13950,6 +14656,7 @@
      * Parse URL parameters to auto-select or initiate conversations
      */
     static parseURLParams() {
+      this.activeChatId = null;
       const params = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
       const chatId = params.get("id");
       const chefId = params.get("chef");
@@ -13957,7 +14664,7 @@
       const rfqId = params.get("rfq");
       if (chatId) {
         const chat = ChatModule.getChatById(chatId);
-        if (chat) {
+        if (chat && !isCurrentUserId(chat.partner?.id, USER_FIXTURES)) {
           this.activeChatId = chat.id;
           return;
         }
@@ -13970,7 +14677,8 @@
         }
         const rfq = (typeof RFQManager !== "undefined" ? RFQManager.getRFQById(rfqId) : null) || null;
         if (rfq) {
-          const supplier = MOCK_DATA.suppliers?.find((s) => s.id === rfq.supplier_id || s.id === rfq.partner_id) || {
+          const supplierItem = SUPPLY_FIXTURES?.find((s) => s.id === rfq.supplier_id || s.id === rfq.partner_id || s.supplier?.id === rfq.partner_id);
+          const supplier = supplierItem?.supplier || supplierItem || {
             id: rfq.supplier_id || "supplier-1",
             name_ar: rfq.supplier_name_ar || "\u0634\u0631\u0643\u0629 \u0627\u0644\u0645\u0648\u0631\u062F \u0627\u0644\u062A\u062C\u0627\u0631\u064A",
             name_en: rfq.supplier_name_en || "Commercial Supplier Co.",
@@ -13992,13 +14700,13 @@
           return;
         }
       }
-      if (chefId) {
+      if (chefId && !isCurrentUserId(chefId, USER_FIXTURES)) {
         const existing = ChatModule.getChatByPartnerId(chefId);
         if (existing) {
           this.activeChatId = existing.id;
           return;
         }
-        const chef = MOCK_DATA.chefs?.find((c) => c.id === chefId);
+        const chef = CHEF_FIXTURES?.find((c) => c.id === chefId);
         if (chef) {
           const newChat = ChatModule.createOrGetChat({
             partner: {
@@ -14022,7 +14730,8 @@
           this.activeChatId = existing.id;
           return;
         }
-        const supplier = MOCK_DATA.suppliers?.find((s) => s.id === supplierId);
+        const supplierItem = SUPPLY_FIXTURES?.find((s) => s.id === supplierId || s.supplier?.id === supplierId);
+        const supplier = supplierItem?.supplier || supplierItem;
         if (supplier) {
           const newChat = ChatModule.createOrGetChat({
             partner: {
@@ -14753,45 +15462,34 @@
   __publicField(ChatPage, "selectedAttachment", null);
   __publicField(ChatPage, "activeCounterData", null);
   __publicField(ChatPage, "isInitialized", false);
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => ChatPage.init());
-    } else {
-      ChatPage.init();
-    }
-  }
 
   // js/pages/notifications.js
   var NotificationsPage = class {
     /**
-     * Get all notifications from localStorage or fallback to MOCK_DATA
+     * Reset in-memory notifications store (for test isolation)
+     */
+    static reset() {
+      this.notificationsStore = null;
+      this.currentFilter = "all";
+      this.isInitialized = false;
+    }
+    /**
+     * Get all notifications from in-memory store or fallback to fixtures
      * @returns {Array<object>}
      */
     static getNotifications() {
-      try {
-        const stored = localStorage.getItem(this.STORAGE_KEY);
-        if (stored) {
-          const parsed = JSON.parse(stored);
-          if (Array.isArray(parsed)) return parsed;
-        }
-      } catch (e) {
-        console.warn("Failed to parse stored notifications, using mock defaults", e);
+      if (!this.notificationsStore) {
+        this.notificationsStore = JSON.parse(JSON.stringify(NOTIFICATION_FIXTURES || []));
       }
-      const defaults = JSON.parse(JSON.stringify(MOCK_DATA.notifications || []));
-      this.saveNotifications(defaults, false);
-      return defaults;
+      return this.notificationsStore;
     }
     /**
-     * Save notifications array to localStorage and update UI
+     * Save notifications array to in-memory store and update UI
      * @param {Array<object>} notifications 
      * @param {boolean} [shouldRender=true] 
      */
     static saveNotifications(notifications, shouldRender = true) {
-      try {
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notifications));
-      } catch (e) {
-        console.error("Failed to save notifications to localStorage", e);
-      }
+      this.notificationsStore = notifications;
       const unreadCount = this.getUnreadCount(notifications);
       if (typeof window !== "undefined" && typeof window.dispatchEvent === "function") {
         try {
@@ -15295,6 +15993,11 @@
      * Initialize notifications page
      */
     static init() {
+      if (typeof document !== "undefined" && this.lastDocument !== document) {
+        this.isInitialized = false;
+        this.lastDocument = document;
+      }
+      if (this.isInitialized) return;
       if (typeof document === "undefined") return;
       this.parseURLParams();
       this.render();
@@ -15302,119 +16005,98 @@
       this.isInitialized = true;
     }
   };
-  __publicField(NotificationsPage, "STORAGE_KEY", "meyar_notifications");
   __publicField(NotificationsPage, "currentFilter", "all");
   // all | likes | rfqs | courses
   __publicField(NotificationsPage, "isInitialized", false);
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => NotificationsPage.init());
-    } else {
-      NotificationsPage.init();
-    }
-  }
+  __publicField(NotificationsPage, "notificationsStore", null);
 
   // js/pages/settings.js
   var SettingsPage = class {
     /**
-     * Return initial default settings combined with mock user session
+     * Reset in-memory settings store (for test isolation)
+     */
+    static reset() {
+      this.settingsStore = null;
+      this.activeTab = "profile";
+      this.isInitialized = false;
+      this.pendingMedia = {};
+      this.pendingCv = void 0;
+      this.resetMediaEditor();
+    }
+    static resetMediaEditor() {
+      this.mediaEditor = {
+        kind: null,
+        image: null,
+        zoom: 1,
+        panX: 0,
+        panY: 0,
+        drag: null
+      };
+    }
+    /**
+     * Return initial reference settings combined with the active fixture user
      * @returns {object}
      */
     static getDefaultSettings() {
-      const user = MOCK_DATA.user || {};
+      const user = USER_FIXTURES || {};
       const biz = user.business_profile || {};
+      const settings = JSON.parse(JSON.stringify(SETTING_FIXTURES || {}));
       return {
         profile: {
-          name_ar: user.name_ar || "\u0627\u0644\u0634\u064A\u0641 \u0641\u064A\u0635\u0644 \u0627\u0644\u0647\u0627\u0634\u0645\u064A",
-          name_en: user.name_en || "Chef Faisal Al-Hashemi",
-          handle: user.handle || "@chef_faisal",
-          email: user.email || "faisal@meyar.sa",
-          phone: "+966 50 123 4567",
-          location_ar: "\u0627\u0644\u0631\u064A\u0627\u0636\u060C \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629 \u0627\u0644\u0633\u0639\u0648\u062F\u064A\u0629",
-          location_en: "Riyadh, Saudi Arabia",
-          title_ar: user.title_ar || "\u0627\u0644\u0645\u062F\u064A\u0631 \u0627\u0644\u062A\u0646\u0641\u064A\u0630\u064A \u0644\u0644\u0637\u0647\u064A \u0648\u0645\u0633\u062A\u0634\u0627\u0631 \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631",
-          title_en: user.title_en || "Executive Culinary Director & Gastronomy Consultant",
-          bio_ar: user.bio_ar || "\u0631\u0627\u0626\u062F \u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u0633\u0639\u0648\u062F\u064A \u0627\u0644\u0645\u0639\u0627\u0635\u0631. \u064A\u0639\u064A\u062F \u0627\u0628\u062A\u0643\u0627\u0631 \u0627\u0644\u0648\u0635\u0641\u0627\u062A \u0627\u0644\u062A\u0631\u0627\u062B\u064A\u0629 \u0627\u0644\u0646\u062C\u062F\u064A\u0629 \u0648\u0627\u0644\u062D\u062C\u0627\u0632\u064A\u0629 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0623\u062D\u062F\u062B \u062A\u0642\u0646\u064A\u0627\u062A \u0627\u0644\u0625\u0646\u0636\u0627\u062C \u0627\u0644\u062C\u0627\u0641 \u0648\u0627\u0644\u062A\u062E\u0645\u064A\u0631 \u0627\u0644\u0637\u0628\u064A\u0639\u064A \u0648\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0627\u0644\u062C\u0632\u064A\u0626\u064A.",
-          bio_en: user.bio_en || "Pioneer of modern Saudi fine dining. Reinventing heritage Najdi and Hejazi recipes through precision dry-aging, wild fermentation, and progressive molecular gastronomy.",
-          avatar: user.avatar || "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80",
-          cover: user.cover || "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+          ...settings.profile,
+          name_ar: user.name_ar,
+          name_en: user.name_en,
+          handle: user.handle,
+          email: user.email,
+          title_ar: user.title_ar,
+          title_en: user.title_en,
+          bio_ar: user.bio_ar,
+          bio_en: user.bio_en,
+          avatar: user.avatar,
+          cover: user.cover
         },
         security: {
-          two_factor: true,
-          login_alerts: true,
-          active_sessions_count: 2
+          ...settings.security,
+          active_sessions_count: settings.security?.active_sessions_count ?? settings.security?.sessions_count ?? 1
         },
         language: {
-          lang: I18n.getLang() || "ar",
-          country: "SA",
-          timezone: "Asia/Riyadh",
-          currency: "SAR",
-          calendar: "gregorian"
+          ...settings.language,
+          lang: I18n.getLang() || settings.language?.lang || "ar"
         },
         theme: {
-          theme: ThemeManager.getTheme() || "dark",
-          high_contrast: false,
-          compact_mode: false
+          ...settings.theme,
+          theme: ThemeManager.getTheme() || settings.theme?.theme || "dark"
         },
-        notifications: {
-          email_digest: true,
-          email_rfq: true,
-          email_courses: true,
-          push_messages: true,
-          push_social: true,
-          push_followers: true,
-          sms_urgent: true,
-          sms_security: true
-        },
+        notifications: { ...settings.notifications },
         business: {
-          company_name_ar: biz.company_name_ar || "\u0627\u0633\u062A\u0648\u062F\u064A\u0648 \u0646\u062C\u062F \u0644\u0641\u0646\u0648\u0646 \u0627\u0644\u0637\u0647\u064A \u0648\u0627\u0644\u0636\u064A\u0627\u0641\u0629",
-          company_name_en: biz.company_name_en || "Najd Culinary Studio & Hospitality Consultancy",
-          cr_number: biz.cr_number || "1010894521",
-          vat_number: biz.vat_number || "310245896300003",
-          category: biz.category || "Fine Dining & Hospitality Consulting",
-          location_ar: biz.location_ar || "\u062D\u064A \u062D\u0637\u064A\u0646\u060C \u0627\u0644\u0631\u064A\u0627\u0636",
-          location_en: biz.location_en || "Hittin, Riyadh, Saudi Arabia",
-          auto_quote: true
+          ...settings.business,
+          company_name_ar: biz.company_name_ar,
+          company_name_en: biz.company_name_en,
+          cr_number: biz.cr_number,
+          vat_number: biz.vat_number,
+          category: biz.category,
+          location_ar: biz.location_ar,
+          location_en: biz.location_en
         }
       };
     }
     /**
-     * Load stored settings or fallback to defaults
+     * Load current session settings or fallback to the reference fixture
      * @returns {object}
      */
     static getSettings() {
-      try {
-        const stored = localStorage.getItem(this.STORAGE_KEY);
-        if (stored) {
-          const parsed = JSON.parse(stored);
-          const defaults2 = this.getDefaultSettings();
-          return {
-            profile: { ...defaults2.profile, ...parsed.profile || {} },
-            security: { ...defaults2.security, ...parsed.security || {} },
-            language: { ...defaults2.language, ...parsed.language || {} },
-            theme: { ...defaults2.theme, ...parsed.theme || {} },
-            notifications: { ...defaults2.notifications, ...parsed.notifications || {} },
-            business: { ...defaults2.business, ...parsed.business || {} }
-          };
-        }
-      } catch (e) {
-        console.warn("Failed to parse stored settings, using defaults", e);
+      if (!this.settingsStore) {
+        this.settingsStore = this.getDefaultSettings();
       }
-      const defaults = this.getDefaultSettings();
-      this.saveSettingsToStorage(defaults, false);
-      return defaults;
+      return this.settingsStore;
     }
     /**
-     * Save settings object directly to localStorage
+     * Save settings object directly to the current page session
      * @param {object} settings 
      * @param {boolean} [dispatchEvent=true] 
      */
-    static saveSettingsToStorage(settings, dispatchEvent = true) {
-      try {
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(settings));
-      } catch (e) {
-        console.error("Failed to save settings to localStorage", e);
-      }
+    static saveSettings(settings, dispatchEvent = true) {
+      this.settingsStore = settings;
       if (dispatchEvent && typeof window !== "undefined" && typeof window.dispatchEvent === "function") {
         try {
           window.dispatchEvent(
@@ -15489,10 +16171,14 @@
       setVal("setting-profile-bio-en", settings.profile.bio_en);
       setVal("setting-profile-location-ar", settings.profile.location_ar);
       setVal("setting-profile-location-en", settings.profile.location_en);
-      const avatarImg = document.getElementById("setting-avatar-preview");
-      if (avatarImg && settings.profile.avatar) {
-        avatarImg.src = settings.profile.avatar;
-      }
+      setVal("setting-profile-experience", settings.profile.years_experience);
+      setVal("setting-profile-specialties", settings.profile.specialties);
+      setVal("setting-profile-website", settings.profile.website);
+      const avatar = Object.prototype.hasOwnProperty.call(this.pendingMedia, "avatar") ? this.pendingMedia.avatar : settings.profile.avatar;
+      const cover = Object.prototype.hasOwnProperty.call(this.pendingMedia, "cover") ? this.pendingMedia.cover : settings.profile.cover;
+      this.renderMediaPreview("avatar", avatar);
+      this.renderMediaPreview("cover", cover);
+      this.renderCvPreview(this.pendingCv !== void 0 ? this.pendingCv : settings.profile.cv);
       setChecked("setting-security-2fa", settings.security.two_factor);
       setChecked("setting-security-login-alerts", settings.security.login_alerts);
       const langSelect = document.getElementById("setting-lang-select");
@@ -15533,7 +16219,7 @@
       if (typeof document === "undefined") return this.getSettings();
       const getVal = (id, fallback = "") => {
         const el = document.getElementById(id);
-        return el ? el.value.trim() : fallback;
+        return el ? String(el.value ?? "").trim() : fallback;
       };
       const getChecked = (id, fallback = false) => {
         const el = document.getElementById(id);
@@ -15555,8 +16241,12 @@
           bio_en: getVal("setting-profile-bio-en", currentSettings.profile.bio_en),
           location_ar: getVal("setting-profile-location-ar", currentSettings.profile.location_ar),
           location_en: getVal("setting-profile-location-en", currentSettings.profile.location_en),
-          avatar: currentSettings.profile.avatar,
-          cover: currentSettings.profile.cover
+          years_experience: getVal("setting-profile-experience", currentSettings.profile.years_experience),
+          specialties: getVal("setting-profile-specialties", currentSettings.profile.specialties),
+          website: getVal("setting-profile-website", currentSettings.profile.website),
+          avatar: Object.prototype.hasOwnProperty.call(this.pendingMedia, "avatar") ? this.pendingMedia.avatar : currentSettings.profile.avatar,
+          cover: Object.prototype.hasOwnProperty.call(this.pendingMedia, "cover") ? this.pendingMedia.cover : currentSettings.profile.cover,
+          cv: this.pendingCv !== void 0 ? this.pendingCv : currentSettings.profile.cv
         },
         security: {
           two_factor: getChecked("setting-security-2fa", currentSettings.security.two_factor),
@@ -15624,8 +16314,225 @@
       }
       return { valid: true };
     }
+    static renderMediaPreview(kind, src) {
+      if (typeof document === "undefined") return;
+      const preview = document.getElementById(`setting-${kind}-preview`);
+      if (preview && src) preview.src = src;
+    }
+    static renderCvPreview(cv) {
+      if (typeof document === "undefined") return;
+      const label = document.getElementById("setting-profile-cv-name");
+      const link = document.getElementById("setting-profile-cv-link");
+      const file = typeof cv === "string" ? { name: cv } : cv;
+      const name = file?.name || "";
+      if (label) label.textContent = name || I18n.t("settings.no_cv");
+      if (link) {
+        if (name && file?.dataUrl) {
+          link.href = file.dataUrl;
+          link.download = name;
+          link.classList.remove("hidden");
+        } else {
+          link.removeAttribute("href");
+          link.classList.add("hidden");
+        }
+      }
+    }
+    static handleMediaFile(kind, file) {
+      if (!file) return;
+      const isImage = file.type?.startsWith("image/") || /\.(jpe?g|png|webp)$/i.test(file.name || "");
+      if (!isImage) {
+        Toast.error(I18n.t("settings.image_type_error"));
+        return;
+      }
+      if (file.size > 10 * 1024 * 1024) {
+        Toast.error(I18n.t("settings.image_size_error"));
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = () => this.openMediaEditor(kind, reader.result);
+      reader.onerror = () => Toast.error(I18n.t("settings.image_read_error"));
+      reader.readAsDataURL(file);
+    }
+    static openMediaEditor(kind, src) {
+      const config = this.MEDIA_CONFIG[kind];
+      const modal = document.getElementById("setting-image-editor-modal");
+      const stage = document.getElementById("setting-image-editor-stage");
+      if (!config || !modal || !stage || typeof Image === "undefined") return;
+      this.mediaEditor = { kind, image: null, zoom: 1, panX: 0, panY: 0, drag: null };
+      stage.style.aspectRatio = `${config.width} / ${config.height}`;
+      const title = document.getElementById("setting-image-editor-title");
+      if (title) {
+        title.setAttribute("data-i18n", config.titleKey);
+        title.textContent = I18n.t(config.titleKey);
+      }
+      const zoomInput = document.getElementById("setting-image-editor-zoom");
+      const zoomOutput = document.getElementById("setting-image-editor-zoom-value");
+      if (zoomInput) zoomInput.value = "1";
+      if (zoomOutput) zoomOutput.textContent = "100%";
+      const preview = document.getElementById("setting-image-editor-image");
+      if (preview) preview.src = src;
+      Modal.open(modal.id);
+      const image = new Image();
+      image.onload = () => {
+        this.mediaEditor.image = image;
+        this.updateMediaEditor();
+      };
+      image.onerror = () => {
+        this.closeMediaEditor();
+        Toast.error(I18n.t("settings.image_read_error"));
+      };
+      image.src = src;
+    }
+    static getMediaCropMetrics({
+      stageWidth,
+      stageHeight,
+      imageWidth,
+      imageHeight,
+      zoom = 1,
+      panX = 0,
+      panY = 0
+    }) {
+      if (![stageWidth, stageHeight, imageWidth, imageHeight].every((dimension) => Number(dimension) > 0)) {
+        return null;
+      }
+      const safeZoom = Math.max(1, Number(zoom) || 1);
+      const scale = Math.max(stageWidth / imageWidth, stageHeight / imageHeight) * safeZoom;
+      const renderWidth = imageWidth * scale;
+      const renderHeight = imageHeight * scale;
+      const maxPanX = Math.max(0, (renderWidth - stageWidth) / 2);
+      const maxPanY = Math.max(0, (renderHeight - stageHeight) / 2);
+      const safePanX = Math.max(-1, Math.min(1, Number(panX) || 0));
+      const safePanY = Math.max(-1, Math.min(1, Number(panY) || 0));
+      return {
+        renderWidth,
+        renderHeight,
+        left: (stageWidth - renderWidth) / 2 + safePanX * maxPanX,
+        top: (stageHeight - renderHeight) / 2 + safePanY * maxPanY,
+        maxPanX,
+        maxPanY
+      };
+    }
+    static updateMediaEditor() {
+      const stage = document.getElementById("setting-image-editor-stage");
+      const preview = document.getElementById("setting-image-editor-image");
+      const image = this.mediaEditor.image;
+      if (!stage || !preview || !image?.naturalWidth || !image?.naturalHeight) return;
+      const metrics = this.getMediaCropMetrics({
+        stageWidth: stage.clientWidth,
+        stageHeight: stage.clientHeight,
+        imageWidth: image.naturalWidth,
+        imageHeight: image.naturalHeight,
+        zoom: this.mediaEditor.zoom,
+        panX: this.mediaEditor.panX,
+        panY: this.mediaEditor.panY
+      });
+      if (!metrics) return;
+      preview.src = image.src;
+      preview.style.width = `${metrics.renderWidth}px`;
+      preview.style.height = `${metrics.renderHeight}px`;
+      preview.style.left = `${metrics.left}px`;
+      preview.style.top = `${metrics.top}px`;
+    }
+    static updateMediaZoom(event) {
+      this.mediaEditor.zoom = Math.max(1, Number(event.target.value) || 1);
+      const output = document.getElementById("setting-image-editor-zoom-value");
+      if (output) output.textContent = `${Math.round(this.mediaEditor.zoom * 100)}%`;
+      this.updateMediaEditor();
+    }
+    static startMediaPan(event) {
+      if (!this.mediaEditor.image) return;
+      this.mediaEditor.drag = { x: event.clientX, y: event.clientY };
+      event.currentTarget.classList.add("cursor-grabbing");
+      if (event.currentTarget.setPointerCapture && event.pointerId !== void 0) {
+        event.currentTarget.setPointerCapture(event.pointerId);
+      }
+    }
+    static moveMediaPan(event) {
+      const drag = this.mediaEditor.drag;
+      const stage = event.currentTarget;
+      if (!drag || !stage) return;
+      const image = this.mediaEditor.image;
+      const metrics = this.getMediaCropMetrics({
+        stageWidth: stage.clientWidth,
+        stageHeight: stage.clientHeight,
+        imageWidth: image.naturalWidth,
+        imageHeight: image.naturalHeight,
+        zoom: this.mediaEditor.zoom,
+        panX: this.mediaEditor.panX,
+        panY: this.mediaEditor.panY
+      });
+      if (!metrics) return;
+      this.mediaEditor.panX = metrics.maxPanX ? this.mediaEditor.panX + (event.clientX - drag.x) / metrics.maxPanX : 0;
+      this.mediaEditor.panY = metrics.maxPanY ? this.mediaEditor.panY + (event.clientY - drag.y) / metrics.maxPanY : 0;
+      this.mediaEditor.panX = Math.max(-1, Math.min(1, this.mediaEditor.panX));
+      this.mediaEditor.panY = Math.max(-1, Math.min(1, this.mediaEditor.panY));
+      this.mediaEditor.drag = { x: event.clientX, y: event.clientY };
+      this.updateMediaEditor();
+    }
+    static endMediaPan(event) {
+      this.mediaEditor.drag = null;
+      if (event.currentTarget) event.currentTarget.classList.remove("cursor-grabbing");
+    }
+    static applyMediaEdit() {
+      const { kind, image, zoom, panX, panY } = this.mediaEditor;
+      const config = this.MEDIA_CONFIG[kind];
+      if (!kind || !image || !config) return;
+      const canvas = document.createElement("canvas");
+      canvas.width = config.width;
+      canvas.height = config.height;
+      const context = canvas.getContext("2d");
+      if (!context) {
+        Toast.error(I18n.t("settings.image_read_error"));
+        return;
+      }
+      const metrics = this.getMediaCropMetrics({
+        stageWidth: config.width,
+        stageHeight: config.height,
+        imageWidth: image.naturalWidth,
+        imageHeight: image.naturalHeight,
+        zoom,
+        panX,
+        panY
+      });
+      context.drawImage(image, metrics.left, metrics.top, metrics.renderWidth, metrics.renderHeight);
+      const src = canvas.toDataURL("image/jpeg", 0.9);
+      this.pendingMedia[kind] = src;
+      this.renderMediaPreview(kind, src);
+      this.closeMediaEditor();
+      Toast.success(I18n.t("settings.image_saved"));
+    }
+    static closeMediaEditor() {
+      const modal = document.getElementById("setting-image-editor-modal");
+      if (modal && !modal.classList.contains("hidden")) Modal.close(modal);
+      this.resetMediaEditor();
+    }
+    static handleCvFile(file) {
+      if (!file) return;
+      const isCv = /\.(pdf|doc|docx)$/i.test(file.name || "") || /application\/(pdf|msword|vnd\.openxmlformats-officedocument\.wordprocessingml\.document)/i.test(file.type || "");
+      if (!isCv) {
+        Toast.error(I18n.t("settings.cv_type_error"));
+        return;
+      }
+      if (file.size > 5 * 1024 * 1024) {
+        Toast.error(I18n.t("settings.cv_size_error"));
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.pendingCv = {
+          name: file.name,
+          type: file.type,
+          size: file.size,
+          dataUrl: reader.result
+        };
+        this.renderCvPreview(this.pendingCv);
+        Toast.success(I18n.t("settings.cv_selected"));
+      };
+      reader.onerror = () => Toast.error(I18n.t("settings.cv_read_error"));
+      reader.readAsDataURL(file);
+    }
     /**
-     * Save settings from form to storage and apply live system changes
+     * Save settings to the current session and apply live system changes
      */
     static handleSave() {
       const validation = this.validateForm();
@@ -15634,7 +16541,9 @@
         return;
       }
       const updated = this.collectFormData();
-      this.saveSettingsToStorage(updated, true);
+      this.saveSettings(updated, true);
+      this.pendingMedia = {};
+      this.pendingCv = void 0;
       const currentLang = I18n.getLang();
       if (updated.language.lang && updated.language.lang !== currentLang) {
         I18n.setLang(updated.language.lang);
@@ -15655,6 +16564,9 @@
      * Reset form fields back to stored settings
      */
     static handleReset() {
+      this.pendingMedia = {};
+      this.pendingCv = void 0;
+      this.closeMediaEditor();
       this.populateForm();
       Toast.info(I18n.t("settings.discard_changes"));
     }
@@ -15664,7 +16576,7 @@
     static revokeSessions() {
       const settings = this.getSettings();
       settings.security.active_sessions_count = 1;
-      this.saveSettingsToStorage(settings, true);
+      this.saveSettings(settings, true);
       const sessionListEl = document.getElementById("setting-sessions-list");
       if (sessionListEl) {
         const secondarySessions = sessionListEl.querySelectorAll(".secondary-session");
@@ -15719,6 +16631,42 @@
           this.revokeSessions();
         });
       }
+      ["avatar", "cover"].forEach((kind) => {
+        const changeBtn = document.getElementById(`setting-${kind}-change-btn`);
+        const fileInput = document.getElementById(`setting-${kind}-file`);
+        if (changeBtn && fileInput) {
+          changeBtn.addEventListener("click", () => fileInput.click());
+          fileInput.addEventListener("change", (e) => {
+            this.handleMediaFile(kind, e.target.files?.[0]);
+            e.target.value = "";
+          });
+        }
+      });
+      const cvInput = document.getElementById("setting-profile-cv");
+      const cvButton = document.getElementById("setting-profile-cv-btn");
+      if (cvInput && cvButton) {
+        cvButton.addEventListener("click", () => cvInput.click());
+        cvInput.addEventListener("change", (e) => {
+          this.handleCvFile(e.target.files?.[0]);
+          e.target.value = "";
+        });
+      }
+      const editorStage = document.getElementById("setting-image-editor-stage");
+      if (editorStage) {
+        editorStage.addEventListener("pointerdown", (e) => this.startMediaPan(e));
+        editorStage.addEventListener("pointermove", (e) => this.moveMediaPan(e));
+        editorStage.addEventListener("pointerup", (e) => this.endMediaPan(e));
+        editorStage.addEventListener("pointercancel", (e) => this.endMediaPan(e));
+      }
+      const zoomInput = document.getElementById("setting-image-editor-zoom");
+      if (zoomInput) zoomInput.addEventListener("input", (e) => this.updateMediaZoom(e));
+      const applyMediaBtn = document.getElementById("setting-image-editor-apply");
+      if (applyMediaBtn) {
+        applyMediaBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          this.applyMediaEdit();
+        });
+      }
       if (typeof window !== "undefined") {
         window.addEventListener("meyar:lang-changed", () => {
           this.populateForm();
@@ -15730,6 +16678,10 @@
             if (radio) radio.checked = true;
           }
         });
+        window.addEventListener("meyar:modal-closed", (e) => {
+          if (e.detail?.modalId === "setting-image-editor-modal") this.resetMediaEditor();
+        });
+        window.addEventListener("resize", () => this.updateMediaEditor());
       }
     }
     /**
@@ -15751,6 +16703,14 @@
      * Initialize settings page
      */
     static init() {
+      if (typeof document !== "undefined" && this.lastDocument !== document) {
+        this.isInitialized = false;
+        this.lastDocument = document;
+        this.pendingMedia = {};
+        this.pendingCv = void 0;
+        this.resetMediaEditor();
+      }
+      if (this.isInitialized) return;
       if (typeof document === "undefined") return;
       this.parseURL();
       this.populateForm();
@@ -15759,24 +16719,46 @@
       this.isInitialized = true;
     }
   };
-  __publicField(SettingsPage, "STORAGE_KEY", "meyar_user_settings");
   __publicField(SettingsPage, "activeTab", "profile");
   // profile | security | language | theme | notifications | business
   __publicField(SettingsPage, "isInitialized", false);
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => SettingsPage.init());
-    } else {
-      SettingsPage.init();
-    }
-  }
+  __publicField(SettingsPage, "settingsStore", null);
+  __publicField(SettingsPage, "pendingMedia", {});
+  __publicField(SettingsPage, "pendingCv");
+  __publicField(SettingsPage, "mediaEditor", {
+    kind: null,
+    image: null,
+    zoom: 1,
+    panX: 0,
+    panY: 0,
+    drag: null
+  });
+  __publicField(SettingsPage, "MEDIA_CONFIG", {
+    avatar: { width: 400, height: 400, titleKey: "settings.edit_avatar" },
+    cover: { width: 1600, height: 500, titleKey: "settings.edit_cover" }
+  });
 
   // js/pages/auth.js
   var AuthPage = class {
     /**
+     * Reset in-memory auth state (for test isolation)
+     */
+    static reset() {
+      this.currentUser = null;
+      this.currentToken = null;
+      this.activeTab = "login";
+      this.selectedRole = "chef";
+      this.isInitialized = false;
+    }
+    /**
      * Initialize Auth Page controller
      */
     static init() {
+      if (typeof document !== "undefined" && this.lastDocument !== document) {
+        this.isInitialized = false;
+        this.lastDocument = document;
+      }
+      if (this.isInitialized) return;
       if (typeof document === "undefined") return;
       this.bindTabEvents();
       this.bindRoleEvents();
@@ -15785,6 +16767,7 @@
       this.bindSocialAuthEvents();
       this.bindLangListener();
       this.initFromUrlParams();
+      this.isInitialized = true;
     }
     /**
      * Read initial tab and role from URL search params (e.g. ?tab=register&role=supplier)
@@ -16047,29 +17030,26 @@
         Toast.error(I18n.t("auth.invalid_email"), I18n.t("common.error"));
         return { success: false, error: "invalid_email" };
       }
-      const mockUser = {
+      const sessionUser = {
         id: "user-" + Date.now().toString(36),
         name_ar: email.split("@")[0],
         name_en: email.split("@")[0],
         email,
         role: "chef",
         verified: true,
-        avatar: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80",
+        avatar: USER_FIXTURES.avatar,
         remember,
         loggedInAt: (/* @__PURE__ */ new Date()).toISOString()
       };
-      try {
-        localStorage.setItem(this.USER_STORAGE_KEY, JSON.stringify(mockUser));
-        localStorage.setItem(this.TOKEN_STORAGE_KEY, "mock_token_" + Date.now());
-      } catch {
-      }
+      this.currentUser = sessionUser;
+      this.currentToken = "session_token_" + Date.now();
       Toast.success(I18n.t("auth.login_success"), I18n.t("common.success"));
       if (typeof window !== "undefined" && window.location) {
         setTimeout(() => {
           window.location.href = "index.html";
         }, 1e3);
       }
-      return { success: true, user: mockUser };
+      return { success: true, user: sessionUser };
     }
     /**
      * Handle Registration Form Submission
@@ -16124,14 +17104,11 @@
           company_name_en: business,
           category: role === "supplier" ? "Kitchen Equipment & Supplies" : "Culinary Studio"
         } : null,
-        avatar: role === "chef" ? "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80" : role === "supplier" ? "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80" : "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+        avatar: DEMO_USERS[role === "supplier" ? "supplierUser" : role === "enthusiast" ? "enthusiastUser" : "activeUser"].avatar,
         createdAt: (/* @__PURE__ */ new Date()).toISOString()
       };
-      try {
-        localStorage.setItem(this.USER_STORAGE_KEY, JSON.stringify(newUser));
-        localStorage.setItem(this.TOKEN_STORAGE_KEY, "mock_token_" + Date.now());
-      } catch {
-      }
+      this.currentUser = newUser;
+      this.currentToken = "session_token_" + Date.now();
       Toast.success(I18n.t("auth.register_success"), I18n.t("common.success"));
       if (typeof window !== "undefined" && window.location) {
         setTimeout(() => {
@@ -16158,29 +17135,27 @@
      */
     static handleSocialAuth(provider) {
       const providerName = provider === "apple" ? "Apple" : "Google";
-      const mockUser = {
+      const demoUser = DEMO_USERS[this.selectedRole === "supplier" ? "supplierUser" : this.selectedRole === "enthusiast" ? "enthusiastUser" : "activeUser"];
+      const sessionUser = {
+        ...demoUser,
         id: `${provider}-user-` + Date.now().toString(36),
         name_ar: `\u0645\u0633\u062A\u062E\u062F\u0645 ${providerName}`,
         name_en: `${providerName} User`,
         email: `user@${provider.toLowerCase()}.com`,
         role: this.selectedRole || "enthusiast",
         verified: true,
-        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
         authProvider: provider,
         loggedInAt: (/* @__PURE__ */ new Date()).toISOString()
       };
-      try {
-        localStorage.setItem(this.USER_STORAGE_KEY, JSON.stringify(mockUser));
-        localStorage.setItem(this.TOKEN_STORAGE_KEY, "mock_oauth_" + Date.now());
-      } catch {
-      }
+      this.currentUser = sessionUser;
+      this.currentToken = "oauth_session_" + Date.now();
       Toast.success(`${providerName}: ${I18n.t("auth.login_success")}`, I18n.t("common.success"));
       if (typeof window !== "undefined" && window.location) {
         setTimeout(() => {
           window.location.href = "index.html";
         }, 1e3);
       }
-      return mockUser;
+      return sessionUser;
     }
     /**
      * Basic Email Validator Regex
@@ -16191,62 +17166,28 @@
       return typeof email === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
     /**
-     * Check if a user is currently logged in from localStorage
+     * Check if a user is currently logged in from in-memory session
      * @returns {object|null}
      */
     static getCurrentUser() {
-      try {
-        const data = localStorage.getItem(this.USER_STORAGE_KEY);
-        return data ? JSON.parse(data) : null;
-      } catch {
-        return null;
-      }
+      return this.currentUser || null;
     }
     /**
      * Clear session data (logout)
      */
     static logout() {
-      try {
-        localStorage.removeItem(this.USER_STORAGE_KEY);
-        localStorage.removeItem(this.TOKEN_STORAGE_KEY);
-      } catch {
-      }
+      this.currentUser = null;
+      this.currentToken = null;
       if (typeof window !== "undefined" && window.location) {
         window.location.href = "auth.html";
       }
     }
   };
+  __publicField(AuthPage, "isInitialized", false);
   __publicField(AuthPage, "activeTab", "login");
   __publicField(AuthPage, "selectedRole", "chef");
-  __publicField(AuthPage, "USER_STORAGE_KEY", "meyar_user");
-  __publicField(AuthPage, "TOKEN_STORAGE_KEY", "meyar_token");
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => AuthPage.init());
-    } else {
-      AuthPage.init();
-    }
-  }
-
-  // js/core/utils.js
-  function escapeHtml(str) {
-    if (str === null || str === void 0) return "";
-    const text = String(str);
-    return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-  }
-  function formatQuantity(val) {
-    if (val === null || val === void 0 || isNaN(val)) return "0";
-    if (val === Math.round(val)) return val.toString();
-    const fractions = { 0.125: "\u215B", 0.25: "\xBC", 0.33: "\u2153", 0.375: "\u215C", 0.5: "\xBD", 0.625: "\u215D", 0.66: "\u2154", 0.75: "\xBE", 0.875: "\u215E" };
-    const whole = Math.floor(val);
-    const decimal = Math.round((val - whole) * 1e3) / 1e3;
-    for (const [dec, frac] of Object.entries(fractions)) {
-      if (Math.abs(decimal - parseFloat(dec)) < 0.04) {
-        return whole > 0 ? `${whole} ${frac}` : frac;
-      }
-    }
-    return val.toFixed(1);
-  }
+  __publicField(AuthPage, "currentUser", null);
+  __publicField(AuthPage, "currentToken", null);
 
   // js/main.js
   if (typeof window !== "undefined") {

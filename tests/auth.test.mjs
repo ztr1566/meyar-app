@@ -669,7 +669,7 @@ test('AuthPage - Password Visibility Toggling', () => {
   assert.strictEqual(eyeOffIcon.classList.contains('hidden'), true);
 });
 
-test('AuthPage - Form Submission: Login Validation and Session Persistence', () => {
+test('AuthPage - Form Submission: Login Validation and Session State', () => {
   const { doc, storage } = setupDOM();
   buildAuthDOMStructure(doc);
 
@@ -695,17 +695,14 @@ test('AuthPage - Form Submission: Login Validation and Session Persistence', () 
   assert.strictEqual(successLogin.success, true);
   assert.strictEqual(successLogin.user.email, 'faisal@meyar.sa');
 
-  // Verify persistence in localStorage
-  assert.strictEqual(storage.has(AuthPage.USER_STORAGE_KEY), true);
-  assert.strictEqual(storage.has(AuthPage.TOKEN_STORAGE_KEY), true);
-
-  const storedUser = JSON.parse(storage.get(AuthPage.USER_STORAGE_KEY));
-  assert.strictEqual(storedUser.email, 'faisal@meyar.sa');
-  assert.strictEqual(storedUser.role, 'chef');
+  // Verify in-memory session
+  const currentUser = AuthPage.getCurrentUser();
+  assert.strictEqual(currentUser.email, 'faisal@meyar.sa');
+  assert.strictEqual(currentUser.role, 'chef');
 });
 
-test('AuthPage - Form Submission: Register Validation and Session Persistence', () => {
-  const { doc, storage } = setupDOM();
+test('AuthPage - Form Submission: Register Validation and Session State', () => {
+  const { doc } = setupDOM();
   buildAuthDOMStructure(doc);
 
   AuthPage.selectRole('supplier');
@@ -761,39 +758,36 @@ test('AuthPage - Form Submission: Register Validation and Session Persistence', 
   assert.strictEqual(successReg.user.verified, true);
   assert.strictEqual(successReg.user.business_profile.company_name_ar, 'استوديو نجد للطهي');
 
-  const storedUser = JSON.parse(storage.get(AuthPage.USER_STORAGE_KEY));
-  assert.strictEqual(storedUser.role, 'supplier');
+  const registeredUser = AuthPage.getCurrentUser();
+  assert.strictEqual(registeredUser.role, 'supplier');
 });
 
 test('AuthPage - Social OAuth Login Simulation (Google & Apple)', () => {
-  const { doc, storage } = setupDOM();
+  const { doc } = setupDOM();
   buildAuthDOMStructure(doc);
 
   // Google Social Auth
   const googleUser = AuthPage.handleSocialAuth('google');
   assert.strictEqual(googleUser.authProvider, 'google');
-  assert.strictEqual(storage.has(AuthPage.USER_STORAGE_KEY), true);
+  assert.strictEqual(AuthPage.getCurrentUser().authProvider, 'google');
 
   // Apple Social Auth
   const appleUser = AuthPage.handleSocialAuth('apple');
   assert.strictEqual(appleUser.authProvider, 'apple');
-  assert.strictEqual(storage.has(AuthPage.TOKEN_STORAGE_KEY), true);
+  assert.strictEqual(AuthPage.getCurrentUser().authProvider, 'apple');
 });
 
 test('AuthPage - Session Lifecycle (getCurrentUser, logout)', () => {
-  const { storage } = setupDOM();
+  setupDOM();
 
   const mockUser = { id: 'u1', name_ar: 'شيف', email: 'c@m.sa', role: 'chef' };
-  storage.set(AuthPage.USER_STORAGE_KEY, JSON.stringify(mockUser));
-  storage.set(AuthPage.TOKEN_STORAGE_KEY, 'token123');
+  AuthPage.currentUser = mockUser;
 
   const current = AuthPage.getCurrentUser();
   assert.strictEqual(current.id, 'u1');
   assert.strictEqual(current.email, 'c@m.sa');
 
   AuthPage.logout();
-  assert.strictEqual(storage.has(AuthPage.USER_STORAGE_KEY), false);
-  assert.strictEqual(storage.has(AuthPage.TOKEN_STORAGE_KEY), false);
   assert.strictEqual(AuthPage.getCurrentUser(), null);
 });
 

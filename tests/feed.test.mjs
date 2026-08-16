@@ -96,6 +96,12 @@ function setupDOM() {
       return child;
     }
 
+    remove() {
+      if (this.parentElement) {
+        this.parentElement.removeChild(this);
+      }
+    }
+
     addEventListener(event, callback) {
       if (!listeners.has(this)) {
         listeners.set(this, new Map());
@@ -304,9 +310,9 @@ function setupDOM() {
   return { doc, storage, windowMock, localStorageMock, Element };
 }
 
-test('FeedPage - Bookmark / Save Recipe Toggle and Persistence', () => {
-  const { storage } = setupDOM();
-  FeedPage.isInitialized = false;
+  test('FeedPage - Bookmark / Save Recipe Toggle and Session State', () => {
+  setupDOM();
+  FeedPage.reset();
 
   // Initial state should be empty
   assert.deepEqual(FeedPage.getSavedRecipeIds(), []);
@@ -315,7 +321,6 @@ test('FeedPage - Bookmark / Save Recipe Toggle and Persistence', () => {
   const isSaved1 = FeedPage.toggleSave('recipe-1');
   assert.equal(isSaved1, true, 'recipe-1 should now be saved');
   assert.deepEqual(FeedPage.getSavedRecipeIds(), ['recipe-1']);
-  assert.equal(JSON.parse(storage.get('meyar_saved_recipes'))[0], 'recipe-1');
 
   // 2. Save recipe-2
   const isSaved2 = FeedPage.toggleSave('recipe-2');
@@ -328,9 +333,9 @@ test('FeedPage - Bookmark / Save Recipe Toggle and Persistence', () => {
   assert.deepEqual(FeedPage.getSavedRecipeIds(), ['recipe-2']);
 });
 
-test('FeedPage - Like Recipe Toggle and Persistence', () => {
-  const { storage } = setupDOM();
-  FeedPage.isInitialized = false;
+  test('FeedPage - Like Recipe Toggle and Session State', () => {
+  setupDOM();
+  FeedPage.reset();
 
   // Initial state should be empty
   assert.deepEqual(FeedPage.getLikedRecipeIds(), []);
@@ -346,27 +351,27 @@ test('FeedPage - Like Recipe Toggle and Persistence', () => {
   assert.deepEqual(FeedPage.getLikedRecipeIds(), []);
 });
 
-test('FeedPage - Follow Chef Toggle and Persistence', () => {
-  const { storage } = setupDOM();
-  FeedPage.isInitialized = false;
+test('FeedPage - Follow Chef Toggle and Session State', () => {
+  setupDOM();
+  FeedPage.reset();
 
   // Initial state should be empty
   assert.deepEqual(FeedPage.getFollowingChefIds(), []);
 
-  // 1. Follow chef-1
-  const isFollowing1 = FeedPage.toggleFollow('chef-1');
-  assert.equal(isFollowing1, true, 'chef-1 should now be followed');
-  assert.deepEqual(FeedPage.getFollowingChefIds(), ['chef-1']);
+  // The active user is chef-1 and cannot follow their own profile.
+  const isFollowingSelf = FeedPage.toggleFollow('chef-1');
+  assert.equal(isFollowingSelf, false, 'self-follow must be rejected');
+  assert.deepEqual(FeedPage.getFollowingChefIds(), []);
 
-  // 2. Follow chef-2
+  // Follow chef-2
   const isFollowing2 = FeedPage.toggleFollow('chef-2');
   assert.equal(isFollowing2, true, 'chef-2 should now be followed');
-  assert.deepEqual(FeedPage.getFollowingChefIds().sort(), ['chef-1', 'chef-2'].sort());
-
-  // 3. Unfollow chef-1
-  const isFollowingAgain = FeedPage.toggleFollow('chef-1');
-  assert.equal(isFollowingAgain, false, 'chef-1 should now be unfollowed');
   assert.deepEqual(FeedPage.getFollowingChefIds(), ['chef-2']);
+
+  // Unfollow chef-2
+  const isFollowingAgain = FeedPage.toggleFollow('chef-2');
+  assert.equal(isFollowingAgain, false, 'chef-2 should now be unfollowed');
+  assert.deepEqual(FeedPage.getFollowingChefIds(), []);
 });
 
 test('FeedPage - Stories Carousel Rendering & Bilingual Names', () => {
@@ -438,6 +443,7 @@ test('FeedPage - Main Feed Stream Dynamic Recipe Cards Rendering', () => {
   assert.ok(feedCont.innerHTML.includes('data-action="like"'), 'Should render like action button');
   assert.ok(feedCont.innerHTML.includes('data-action="save"'), 'Should render save action button');
   assert.ok(feedCont.innerHTML.includes('data-action="share"'), 'Should render share action button');
+  assert.equal(feedCont.innerHTML.includes('data-action="follow" data-chef-id="chef-1"'), false, 'Self-follow button must not render');
 
   // Test filter switching
   FeedPage.currentFilter = 'trending';
@@ -535,4 +541,91 @@ test('FeedPage - Language Change Event Re-renders Page', () => {
   windowMock.dispatchEvent({ type: 'meyar:lang-changed', detail: { lang: 'en' } });
 
   assert.ok(storiesTrack.innerHTML.includes('Your Story'));
+});
+
+test('FeedPage - Post Actions and Dropdown Menus', () => {
+  const { doc, Element } = setupDOM();
+  I18n.setLang('en');
+  FeedPage.isInitialized = false;
+  FeedPage.currentFilter = 'all';
+  FeedPage.userPosts = [];
+  FeedPage.deletedRecipeIds.clear();
+  FeedPage.hiddenRecipeIds.clear();
+
+  const feedCont = new Element('div');
+  feedCont.id = 'feed-posts-container';
+  doc.body.appendChild(feedCont);
+
+  // Add a user post (owned by active user 'chef-1')
+  FeedPage.userPosts.push({
+    id: 'user-post-1',
+    author_id: 'chef-1',
+    author: 'Active User',
+    content: 'My new recipe idea',
+    likes_count: 0,
+    saves_count: 0
+  });
+
+  FeedPage.renderFeedPosts(feedCont);
+
+  // 1. Verify user posts contain Like, Save, and Share buttons
+  assert.ok(feedCont.innerHTML.includes('data-action="like"'), 'User post should have Like button');
+  assert.ok(feedCont.innerHTML.includes('data-action="save"'), 'User post should have Save button');
+  assert.ok(feedCont.innerHTML.includes('data-action="share"'), 'User post should have Share button');
+
+  // 2. Verify both user posts and recipe posts display the 3-dots button
+  const toggleDropdownCount = (feedCont.innerHTML.match(/data-action="toggle-dropdown"/g) || []).length;
+  assert.ok(toggleDropdownCount >= 2, 'Should have toggle-dropdown buttons for both user posts and recipe posts');
+
+  // 3. Verify owner dropdown contains Delete button
+  assert.ok(feedCont.innerHTML.includes('data-action="delete-post"'), 'Owner post should have Delete button');
+  assert.ok(feedCont.innerHTML.includes('data-post-id="user-post-1"'), 'Delete button should be for user-post-1');
+
+  // 4. Verify viewer dropdown contains Report and Hide, but NOT Delete
+  // recipe-2 is owned by chef-2 (not active user)
+  assert.ok(feedCont.innerHTML.includes('data-action="report-post"'), 'Viewer post should have Report button');
+  assert.ok(feedCont.innerHTML.includes('data-action="hide-post"'), 'Viewer post should have Hide button');
+
+  const recipe2Html = feedCont.innerHTML.substring(feedCont.innerHTML.indexOf('data-card-recipe-id="recipe-2"'));
+  const recipe2Dropdown = recipe2Html.substring(0, recipe2Html.indexOf('</article>'));
+  assert.ok(!recipe2Dropdown.includes('data-action="delete-post"'), 'Viewer post should NOT have Delete button');
+  assert.ok(recipe2Dropdown.includes('data-action="report-post"'), 'Viewer post should have Report button');
+  assert.ok(recipe2Dropdown.includes('data-action="hide-post"'), 'Viewer post should have Hide button');
+
+  // 5. Verify functionality of Delete, Hide, and Report actions
+  FeedPage.bindEvents();
+
+  // Simulate Delete on user post
+  const deleteBtn = new Element('button');
+  deleteBtn.setAttribute('data-action', 'delete-post');
+  deleteBtn.setAttribute('data-post-id', 'user-post-1');
+  doc.body.appendChild(deleteBtn);
+  deleteBtn.click();
+
+  assert.equal(FeedPage.userPosts.length, 0, 'User post should be deleted');
+
+  // Simulate Hide on recipe-2
+  const hideBtn = new Element('button');
+  hideBtn.setAttribute('data-action', 'hide-post');
+  hideBtn.setAttribute('data-post-id', 'recipe-2');
+
+  const article = new Element('article');
+  article.appendChild(hideBtn);
+  doc.body.appendChild(article);
+
+  hideBtn.click();
+  assert.ok(FeedPage.hiddenRecipeIds.has('recipe-2'), 'recipe-2 should be added to hiddenRecipeIds');
+
+  // Simulate Report on recipe-3
+  const reportBtn = new Element('button');
+  reportBtn.setAttribute('data-action', 'report-post');
+  reportBtn.setAttribute('data-post-id', 'recipe-3');
+
+  const dropdownMenu = new Element('div');
+  dropdownMenu.className = 'dropdown-menu';
+  dropdownMenu.appendChild(reportBtn);
+  doc.body.appendChild(dropdownMenu);
+
+  reportBtn.click();
+  assert.ok(dropdownMenu.classList.contains('hidden'), 'Dropdown should be hidden after reporting');
 });

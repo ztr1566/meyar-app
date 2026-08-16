@@ -205,10 +205,10 @@ export class RecipeScaler {
         html += `
           <li class="group flex items-center justify-between gap-3 py-3 px-3.5 rounded-xl hover:bg-surface-2 transition-colors border-b border-border-subtle last:border-b-0 text-sm" data-ingredient-row data-ingredient-id="${item.id || index}">
             <div class="flex items-center gap-3 min-w-0 flex-1">
-              <label class="flex items-center gap-3 cursor-pointer select-none min-w-0">
-                <input type="checkbox" class="w-4 h-4 rounded border-border-subtle bg-surface-1 text-brand-gold focus:ring-brand-gold shrink-0 cursor-pointer transition-colors" data-ingredient-checkbox aria-label="${item.name}">
-                <span class="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0 hidden sm:block"></span>
-                <span class="text-text-main font-semibold group-has-[:checked]:line-through group-has-[:checked]:text-text-muted transition-colors truncate">${item.name}</span>
+              <label class="flex items-start gap-3 cursor-pointer select-none min-w-0">
+                <input type="checkbox" class="w-4 h-4 rounded border-border-subtle bg-surface-1 text-brand-gold focus:ring-brand-gold shrink-0 cursor-pointer transition-colors mt-0.5" data-ingredient-checkbox aria-label="${item.name}">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0 hidden sm:block mt-2"></span>
+                <span class="text-text-main font-semibold group-has-[:checked]:line-through group-has-[:checked]:text-text-muted transition-colors">${item.name}</span>
               </label>
               ${item.notes ? `<span class="text-xs text-text-muted hidden md:inline shrink-0 font-normal">(${item.notes})</span>` : ''}
             </div>

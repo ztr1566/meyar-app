@@ -398,7 +398,8 @@ function setupDOM() {
     'setting-profile-name-ar', 'setting-profile-name-en', 'setting-profile-handle',
     'setting-profile-email', 'setting-profile-phone', 'setting-profile-location-ar',
     'setting-profile-location-en', 'setting-profile-title-ar', 'setting-profile-title-en',
-    'setting-profile-bio-ar', 'setting-profile-bio-en'
+    'setting-profile-bio-ar', 'setting-profile-bio-en', 'setting-profile-experience',
+    'setting-profile-specialties', 'setting-profile-website'
   ];
   profileFields.forEach(id => {
     const input = new Element(id.includes('bio') ? 'textarea' : 'input');
@@ -621,11 +622,11 @@ test('SettingsPage - Form Population, Collection & Validation', async (t) => {
   });
 });
 
-test('SettingsPage - Live Theme & Language Switching and Storage Persistence', async (t) => {
+test('SettingsPage - Live Theme & Language Switching and Session State', async (t) => {
   setupDOM();
   localStorage.clear();
 
-  await t.test('handleSave persists updated settings and triggers live system changes', () => {
+  await t.test('handleSave updates session settings and triggers live system changes', () => {
     SettingsPage.init();
 
     // Modify values
@@ -647,7 +648,7 @@ test('SettingsPage - Live Theme & Language Switching and Storage Persistence', a
     assert.strictEqual(ThemeManager.getTheme(), 'light');
   });
 
-  await t.test('revokeSessions terminates secondary sessions and persists updated session count', () => {
+  await t.test('revokeSessions terminates secondary sessions and updates session state', () => {
     SettingsPage.revokeSessions();
     const saved = SettingsPage.getSettings();
     assert.strictEqual(saved.security.active_sessions_count, 1);
@@ -655,6 +656,37 @@ test('SettingsPage - Live Theme & Language Switching and Storage Persistence', a
     const secondarySessions = document.querySelectorAll('.secondary-session');
     assert.strictEqual(secondarySessions.length, 0);
   });
+});
+
+test('SettingsPage - Media crop geometry and additional profile fields', () => {
+  setupDOM();
+  SettingsPage.reset();
+
+  const metrics = SettingsPage.getMediaCropMetrics({
+    stageWidth: 320,
+    stageHeight: 320,
+    imageWidth: 1600,
+    imageHeight: 900,
+    zoom: 1
+  });
+
+  assert.strictEqual(Math.round(metrics.renderWidth), 569);
+  assert.strictEqual(Math.round(metrics.renderHeight), 320);
+  assert.ok(metrics.maxPanX > 0, 'wide images should allow horizontal crop movement');
+
+  document.getElementById('setting-profile-experience').value = '18';
+  document.getElementById('setting-profile-specialties').value = 'Fermentation';
+  document.getElementById('setting-profile-website').value = 'https://example.com';
+  SettingsPage.pendingMedia = { avatar: 'avatar-data', cover: 'cover-data' };
+  SettingsPage.pendingCv = { name: 'faisal-cv.pdf', dataUrl: 'cv-data' };
+
+  const collected = SettingsPage.collectFormData();
+  assert.strictEqual(collected.profile.years_experience, '18');
+  assert.strictEqual(collected.profile.specialties, 'Fermentation');
+  assert.strictEqual(collected.profile.website, 'https://example.com');
+  assert.strictEqual(collected.profile.avatar, 'avatar-data');
+  assert.strictEqual(collected.profile.cover, 'cover-data');
+  assert.strictEqual(collected.profile.cv.name, 'faisal-cv.pdf');
 });
 
 test('SettingsPage - Strict HTML & Solid Surfaces Design Validation', async (t) => {

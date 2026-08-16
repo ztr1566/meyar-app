@@ -366,7 +366,7 @@ test('SuppliesPage - Initial Catalog & Card Rendering', () => {
   assert.ok(countContainer.textContent.includes('8'));
 });
 
-test('SuppliesPage - Bookmark / Save Supply Toggle and Persistence', () => {
+test('SuppliesPage - Bookmark / Save Supply Toggle and Session State', () => {
   setupDOM();
   I18n.setLang('ar');
 

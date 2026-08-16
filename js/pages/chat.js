@@ -5,10 +5,11 @@
  * counter-offer modals, and mobile responsive switching.
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import { CHEF_FIXTURES, SUPPLY_FIXTURES, USER_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Modal } from '../core/modal.js';
 import { Toast } from '../core/toast.js';
+import { isCurrentUserId } from '../core/utils.js';
 import { ChatModule } from '../modules/chat-module.js';
 import { RFQManager } from '../modules/rfq.js';
 
@@ -24,6 +25,11 @@ export class ChatPage {
    * Initialize Chat Page, parse query params, render views, and attach event listeners
    */
   static init() {
+    if (typeof document !== 'undefined' && this.lastDocument !== document) {
+      this.isInitialized = false;
+      this.lastDocument = document;
+    }
+    if (this.isInitialized) return;
     if (typeof document === 'undefined') return;
 
     this.parseURLParams();
@@ -37,6 +43,7 @@ export class ChatPage {
    * Parse URL parameters to auto-select or initiate conversations
    */
   static parseURLParams() {
+    this.activeChatId = null;
     const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
     const chatId = params.get('id');
     const chefId = params.get('chef');
@@ -46,7 +53,7 @@ export class ChatPage {
     // 1. Direct Chat ID
     if (chatId) {
       const chat = ChatModule.getChatById(chatId);
-      if (chat) {
+      if (chat && !isCurrentUserId(chat.partner?.id, USER_FIXTURES)) {
         this.activeChatId = chat.id;
         return;
       }
@@ -60,10 +67,11 @@ export class ChatPage {
         return;
       }
 
-      // Try looking up RFQ details from RFQManager or mock
+       // Try looking up RFQ details from the temporary reference fixtures
       const rfq = (typeof RFQManager !== 'undefined' ? RFQManager.getRFQById(rfqId) : null) || null;
       if (rfq) {
-        const supplier = MOCK_DATA.suppliers?.find(s => s.id === rfq.supplier_id || s.id === rfq.partner_id) || {
+        const supplierItem = SUPPLY_FIXTURES?.find(s => s.id === rfq.supplier_id || s.id === rfq.partner_id || s.supplier?.id === rfq.partner_id);
+        const supplier = supplierItem?.supplier || supplierItem || {
           id: rfq.supplier_id || 'supplier-1',
           name_ar: rfq.supplier_name_ar || 'شركة المورد التجاري',
           name_en: rfq.supplier_name_en || 'Commercial Supplier Co.',
@@ -88,14 +96,14 @@ export class ChatPage {
     }
 
     // 3. Direct Chef ID
-    if (chefId) {
+    if (chefId && !isCurrentUserId(chefId, USER_FIXTURES)) {
       const existing = ChatModule.getChatByPartnerId(chefId);
       if (existing) {
         this.activeChatId = existing.id;
         return;
       }
 
-      const chef = MOCK_DATA.chefs?.find(c => c.id === chefId);
+      const chef = CHEF_FIXTURES?.find(c => c.id === chefId);
       if (chef) {
         const newChat = ChatModule.createOrGetChat({
           partner: {
@@ -122,7 +130,8 @@ export class ChatPage {
         return;
       }
 
-      const supplier = MOCK_DATA.suppliers?.find(s => s.id === supplierId);
+      const supplierItem = SUPPLY_FIXTURES?.find(s => s.id === supplierId || s.supplier?.id === supplierId);
+      const supplier = supplierItem?.supplier || supplierItem;
       if (supplier) {
         const newChat = ChatModule.createOrGetChat({
           partner: {
@@ -976,14 +985,5 @@ export class ChatPage {
       this.renderConversationList();
       this.renderActiveThread();
     });
-  }
-}
-
-// Auto-bootstrap when page loads
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => ChatPage.init());
-  } else {
-    ChatPage.init();
   }
 }

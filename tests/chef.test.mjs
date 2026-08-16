@@ -283,6 +283,8 @@ function setupDOM() {
     'btn-message-chef',
     'btn-hire-chef',
     'btn-share-chef',
+    'owner-actions-group',
+    'viewer-actions-group',
     'chef-bio-text',
     'chef-philosophy-snippet',
     'chef-awards-ribbon',
@@ -557,35 +559,45 @@ test('ChefPage - 6 Functional Tabs Switching & Deep Linking', () => {
   assert.equal(ChefPage.activeTab, 'recipes');
 });
 
-test('ChefPage - Follow / Unfollow Chef Persistence & UI Feedback', () => {
-  const { elementsById, storage } = setupDOM();
-  ChefPage.loadChef('chef-1');
-  ChefPage.init();
+test('ChefPage - Follow / Unfollow Chef Session State & UI Feedback', () => {
+  const { elementsById } = setupDOM();
+  ChefPage.reset();
+  const originalUserId = MOCK_DATA.user.id;
 
-  const followBtn = elementsById.get('btn-follow-chef');
+  try {
+    MOCK_DATA.user.id = 'chef-2';
 
-  // Initial state: not following
-  assert.equal(ChefPage.getFollowingChefIds().includes('chef-1'), false);
+    ChefPage.loadChef('chef-1');
+    ChefPage.init();
 
-  // Click Follow
-  const isNowFollowing = ChefPage.toggleFollow('chef-1');
-  assert.equal(isNowFollowing, true);
-  assert.equal(ChefPage.getFollowingChefIds().includes('chef-1'), true);
-  assert.ok(storage.get(ChefPage.STORAGE_FOLLOWING).includes('chef-1'));
+    const followBtn = elementsById.get('btn-follow-chef');
 
-  // Follow Button UI updated
-  const label = followBtn.querySelector('.follow-label');
-  assert.equal(label.textContent, I18n.t('btn.following'));
+    // Initial state: not following
+    assert.equal(ChefPage.getFollowingChefIds().includes('chef-1'), false);
 
-  // Click Unfollow
-  const isNowUnfollowing = ChefPage.toggleFollow('chef-1');
-  assert.equal(isNowUnfollowing, false);
-  assert.equal(ChefPage.getFollowingChefIds().includes('chef-1'), false);
-  assert.equal(label.textContent, I18n.t('btn.follow'));
+    // Click Follow
+    const isNowFollowing = ChefPage.toggleFollow('chef-1');
+    assert.equal(isNowFollowing, true);
+    assert.equal(ChefPage.getFollowingChefIds().includes('chef-1'), true);
+
+    // Follow Button UI updated
+    const label = followBtn.querySelector('.follow-label');
+    assert.equal(label.textContent, I18n.t('btn.following'));
+    assert.equal(elementsById.get('btn-message-chef').href, 'chat.html?chef=chef-1');
+
+    // Click Unfollow
+    const isNowUnfollowing = ChefPage.toggleFollow('chef-1');
+    assert.equal(isNowUnfollowing, false);
+    assert.equal(ChefPage.getFollowingChefIds().includes('chef-1'), false);
+    assert.equal(label.textContent, I18n.t('btn.follow'));
+  } finally {
+    MOCK_DATA.user.id = originalUserId;
+  }
 });
 
 test('ChefPage - Recipe Save & Like Toggles', () => {
-  const { storage } = setupDOM();
+  setupDOM();
+  ChefPage.reset();
   ChefPage.loadChef('chef-1');
   ChefPage.init();
 
@@ -594,7 +606,6 @@ test('ChefPage - Recipe Save & Like Toggles', () => {
   const isSaved = ChefPage.toggleSave('recipe-1');
   assert.equal(isSaved, true);
   assert.equal(ChefPage.getSavedRecipeIds().includes('recipe-1'), true);
-  assert.ok(storage.get(ChefPage.STORAGE_SAVED).includes('recipe-1'));
 
   const isUnsaved = ChefPage.toggleSave('recipe-1');
   assert.equal(isUnsaved, false);
@@ -605,7 +616,6 @@ test('ChefPage - Recipe Save & Like Toggles', () => {
   const isLiked = ChefPage.toggleLike('recipe-1');
   assert.equal(isLiked, true);
   assert.equal(ChefPage.getLikedRecipeIds().includes('recipe-1'), true);
-  assert.ok(storage.get(ChefPage.STORAGE_LIKED).includes('recipe-1'));
 
   const isUnliked = ChefPage.toggleLike('recipe-1');
   assert.equal(isUnliked, false);
@@ -613,21 +623,26 @@ test('ChefPage - Recipe Save & Like Toggles', () => {
 });
 
 test('ChefPage - Masterclass Course Enrollment', () => {
-  const { storage } = setupDOM();
+  setupDOM();
+  ChefPage.reset();
   ChefPage.loadChef('chef-1');
   ChefPage.init();
 
-  // Test Enroll in course-1
+  // The active user teaches course-1 and cannot enroll in it.
   assert.equal(ChefPage.getEnrolledCourseIds().includes('course-1'), false);
-  const isEnrolled = ChefPage.enrollCourse('course-1');
+  const selfEnrollment = ChefPage.enrollCourse('course-1');
+  assert.equal(selfEnrollment, false);
+  assert.equal(ChefPage.getEnrolledCourseIds().includes('course-1'), false);
+
+  // Enroll in another chef's course.
+  const isEnrolled = ChefPage.enrollCourse('course-2');
   assert.equal(isEnrolled, true);
-  assert.equal(ChefPage.getEnrolledCourseIds().includes('course-1'), true);
-  assert.ok(storage.get(ChefPage.STORAGE_ENROLLED).includes('course-1'));
+  assert.equal(ChefPage.getEnrolledCourseIds().includes('course-2'), true);
 
   // Test Un-enroll
-  const isUnenrolled = ChefPage.enrollCourse('course-1');
+  const isUnenrolled = ChefPage.enrollCourse('course-2');
   assert.equal(isUnenrolled, false);
-  assert.equal(ChefPage.getEnrolledCourseIds().includes('course-1'), false);
+  assert.equal(ChefPage.getEnrolledCourseIds().includes('course-2'), false);
 });
 
 test('ChefPage - Recipes Panel Search & Filtering', () => {
@@ -773,4 +788,41 @@ test('ChefPage - Strict Design & HTML Validation', () => {
   assert.ok(content.includes('id="hire-modal"'), 'Must include hire chef modal');
   assert.ok(content.includes('id="share-modal"'), 'Must include share chef modal');
   assert.ok(content.includes('id="search-modal"'), 'Must include search modal');
+});
+
+test('ChefPage - Self Profile Buttons Hidden', () => {
+  const { elementsById } = setupDOM();
+  const originalUserId = MOCK_DATA.user.id;
+
+  try {
+    // Test viewing own profile
+    MOCK_DATA.user.id = 'chef-1';
+    ChefPage.isInitialized = false;
+    ChefPage.loadChef('chef-1');
+    ChefPage.init();
+
+    assert.equal(elementsById.get('btn-follow-chef').classList.contains('hidden'), true);
+    assert.equal(elementsById.get('btn-message-chef').classList.contains('hidden'), true);
+    assert.equal(elementsById.get('btn-hire-chef').classList.contains('hidden'), true);
+    assert.equal(elementsById.get('owner-actions-group').classList.contains('hidden'), false);
+    assert.equal(elementsById.get('owner-actions-group').classList.contains('flex'), true);
+    assert.equal(elementsById.get('viewer-actions-group').classList.contains('hidden'), true);
+    assert.equal(elementsById.get('viewer-actions-group').classList.contains('flex'), false);
+
+    // Test viewing another profile
+    MOCK_DATA.user.id = 'chef-2';
+    ChefPage.isInitialized = false;
+    ChefPage.loadChef('chef-1');
+    ChefPage.init();
+
+    assert.equal(elementsById.get('btn-follow-chef').classList.contains('hidden'), false);
+    assert.equal(elementsById.get('btn-message-chef').classList.contains('hidden'), false);
+    assert.equal(elementsById.get('btn-hire-chef').classList.contains('hidden'), false);
+    assert.equal(elementsById.get('owner-actions-group').classList.contains('hidden'), true);
+    assert.equal(elementsById.get('owner-actions-group').classList.contains('flex'), false);
+    assert.equal(elementsById.get('viewer-actions-group').classList.contains('hidden'), false);
+    assert.equal(elementsById.get('viewer-actions-group').classList.contains('flex'), true);
+  } finally {
+    MOCK_DATA.user.id = originalUserId;
+  }
 });

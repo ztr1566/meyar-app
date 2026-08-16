@@ -1,23 +1,43 @@
 /**
  * Meyar (معيار) Authentication Controller
  * Handles Login/Register tab switching, 3-role archetype selection,
- * password visibility toggling, client-side validation, session persistence,
+ * password visibility toggling, client-side validation, transient session state,
  * and social login simulation.
  */
 
+import { DEMO_USERS, USER_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Toast } from '../core/toast.js';
 
 export class AuthPage {
+  static isInitialized = false;
+
   static activeTab = 'login';
   static selectedRole = 'chef';
-  static USER_STORAGE_KEY = 'meyar_user';
-  static TOKEN_STORAGE_KEY = 'meyar_token';
+
+  static currentUser = null;
+  static currentToken = null;
+
+  /**
+   * Reset in-memory auth state (for test isolation)
+   */
+  static reset() {
+    this.currentUser = null;
+    this.currentToken = null;
+    this.activeTab = 'login';
+    this.selectedRole = 'chef';
+    this.isInitialized = false;
+  }
 
   /**
    * Initialize Auth Page controller
    */
   static init() {
+    if (typeof document !== 'undefined' && this.lastDocument !== document) {
+      this.isInitialized = false;
+      this.lastDocument = document;
+    }
+    if (this.isInitialized) return;
     if (typeof document === 'undefined') return;
 
     this.bindTabEvents();
@@ -29,6 +49,7 @@ export class AuthPage {
 
     // Check URL parameters for initial tab and role
     this.initFromUrlParams();
+    this.isInitialized = true;
   }
 
   /**
@@ -348,25 +369,21 @@ export class AuthPage {
       return { success: false, error: 'invalid_email' };
     }
 
-    // Mock Login Session Creation
-    const mockUser = {
+    // Build a transient session from the submitted credentials.
+    const sessionUser = {
       id: 'user-' + Date.now().toString(36),
       name_ar: email.split('@')[0],
       name_en: email.split('@')[0],
       email: email,
       role: 'chef',
       verified: true,
-      avatar: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80',
+      avatar: USER_FIXTURES.avatar,
       remember: remember,
       loggedInAt: new Date().toISOString()
     };
 
-    try {
-      localStorage.setItem(this.USER_STORAGE_KEY, JSON.stringify(mockUser));
-      localStorage.setItem(this.TOKEN_STORAGE_KEY, 'mock_token_' + Date.now());
-    } catch {
-      // LocalStorage access issues
-    }
+    this.currentUser = sessionUser;
+    this.currentToken = 'session_token_' + Date.now();
 
     Toast.success(I18n.t('auth.login_success'), I18n.t('common.success'));
 
@@ -377,7 +394,7 @@ export class AuthPage {
       }, 1000);
     }
 
-    return { success: true, user: mockUser };
+    return { success: true, user: sessionUser };
   }
 
   /**
@@ -430,7 +447,7 @@ export class AuthPage {
       return { success: false, error: 'terms_not_accepted' };
     }
 
-    // Create persistent registered user
+    // Create a transient registered user.
     const newUser = {
       id: `${role}-${Date.now().toString(36)}`,
       name_ar: name,
@@ -443,20 +460,12 @@ export class AuthPage {
         company_name_en: business,
         category: role === 'supplier' ? 'Kitchen Equipment & Supplies' : 'Culinary Studio'
       } : null,
-      avatar: role === 'chef'
-        ? 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80'
-        : (role === 'supplier'
-          ? 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80'
-          : 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'),
+      avatar: DEMO_USERS[role === 'supplier' ? 'supplierUser' : (role === 'enthusiast' ? 'enthusiastUser' : 'activeUser')].avatar,
       createdAt: new Date().toISOString()
     };
 
-    try {
-      localStorage.setItem(this.USER_STORAGE_KEY, JSON.stringify(newUser));
-      localStorage.setItem(this.TOKEN_STORAGE_KEY, 'mock_token_' + Date.now());
-    } catch {
-      // LocalStorage access issues
-    }
+    this.currentUser = newUser;
+    this.currentToken = 'session_token_' + Date.now();
 
     Toast.success(I18n.t('auth.register_success'), I18n.t('common.success'));
 
@@ -490,24 +499,23 @@ export class AuthPage {
   static handleSocialAuth(provider) {
     const providerName = provider === 'apple' ? 'Apple' : 'Google';
     
-    const mockUser = {
+    const demoUser = DEMO_USERS[this.selectedRole === 'supplier'
+      ? 'supplierUser'
+      : (this.selectedRole === 'enthusiast' ? 'enthusiastUser' : 'activeUser')];
+    const sessionUser = {
+      ...demoUser,
       id: `${provider}-user-` + Date.now().toString(36),
       name_ar: `مستخدم ${providerName}`,
       name_en: `${providerName} User`,
       email: `user@${provider.toLowerCase()}.com`,
       role: this.selectedRole || 'enthusiast',
       verified: true,
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
       authProvider: provider,
       loggedInAt: new Date().toISOString()
     };
 
-    try {
-      localStorage.setItem(this.USER_STORAGE_KEY, JSON.stringify(mockUser));
-      localStorage.setItem(this.TOKEN_STORAGE_KEY, 'mock_oauth_' + Date.now());
-    } catch {
-      // LocalStorage access issues
-    }
+    this.currentUser = sessionUser;
+    this.currentToken = 'oauth_session_' + Date.now();
 
     Toast.success(`${providerName}: ${I18n.t('auth.login_success')}`, I18n.t('common.success'));
 
@@ -517,7 +525,7 @@ export class AuthPage {
       }, 1000);
     }
 
-    return mockUser;
+    return sessionUser;
   }
 
   /**
@@ -530,39 +538,22 @@ export class AuthPage {
   }
 
   /**
-   * Check if a user is currently logged in from localStorage
+   * Check if a user is currently logged in from in-memory session
    * @returns {object|null}
    */
   static getCurrentUser() {
-    try {
-      const data = localStorage.getItem(this.USER_STORAGE_KEY);
-      return data ? JSON.parse(data) : null;
-    } catch {
-      return null;
-    }
+    return this.currentUser || null;
   }
 
   /**
    * Clear session data (logout)
    */
   static logout() {
-    try {
-      localStorage.removeItem(this.USER_STORAGE_KEY);
-      localStorage.removeItem(this.TOKEN_STORAGE_KEY);
-    } catch {
-      // Ignore
-    }
+    this.currentUser = null;
+    this.currentToken = null;
+
     if (typeof window !== 'undefined' && window.location) {
       window.location.href = 'auth.html';
     }
-  }
-}
-
-// Auto-initialize when running in browser
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => AuthPage.init());
-  } else {
-    AuthPage.init();
   }
 }

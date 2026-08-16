@@ -402,15 +402,16 @@ function setupDOM() {
   return { documentMock, windowMock, localStorageMock, feedContainer, headerUnreadBadge, filterContainer };
 }
 
-test('NotificationsPage - Data Loading, Storage & Defaults', async (t) => {
+test('NotificationsPage - Data Loading, Session State & Defaults', async (t) => {
   setupDOM();
   localStorage.clear();
 
-  await t.test('Loads initial notifications from MOCK_DATA and saves to localStorage', () => {
+  await t.test('Loads initial notifications from fixtures into session state', () => {
+    NotificationsPage.reset();
     const notifs = NotificationsPage.getNotifications();
     assert.ok(Array.isArray(notifs));
     assert.strictEqual(notifs.length, MOCK_DATA.notifications.length);
-    assert.ok(localStorage.getItem(NotificationsPage.STORAGE_KEY));
+    assert.ok(NotificationsPage.notificationsStore !== null);
   });
 
   await t.test('Calculates initial unread notifications count correctly', () => {
@@ -425,7 +426,7 @@ test('NotificationsPage - Mark All as Read & Individual Toggle Actions', async (
   setupDOM();
   localStorage.clear();
 
-  await t.test('markAllAsRead marks all notifications as read and updates storage and badges', () => {
+  await t.test('markAllAsRead marks all notifications as read and updates badges', () => {
     NotificationsPage.init();
     assert.ok(NotificationsPage.getUnreadCount() > 0);
 
@@ -472,7 +473,7 @@ test('NotificationsPage - Delete and Clear All Actions', async (t) => {
   setupDOM();
   localStorage.clear();
 
-  await t.test('deleteNotification removes the targeted item from storage and updates feed', () => {
+  await t.test('deleteNotification removes the targeted item from session state and updates feed', () => {
     NotificationsPage.init();
     const initialList = NotificationsPage.getNotifications();
     const targetId = initialList[0].id;

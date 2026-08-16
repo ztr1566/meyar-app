@@ -38,3 +38,13 @@ export function formatQuantity(val) {
   }
   return val.toFixed(1);
 }
+
+/**
+ * Checks whether an entity belongs to the active user.
+ * @param {string} entityId - Entity identity to compare
+ * @param {Object} currentUser - Active user record
+ * @returns {boolean} Whether the entity belongs to the active user
+ */
+export function isCurrentUserId(entityId, currentUser) {
+  return Boolean(entityId && currentUser?.id && entityId === currentUser.id);
+}

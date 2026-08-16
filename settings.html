@@ -30,7 +30,7 @@
 </head>
 <body class="bg-canvas text-text-main min-h-screen flex flex-col antialiased selection:bg-brand-gold selection:text-white transition-colors duration-200 pb-16 lg:pb-0">
 
-    <!-- ================= GLOBAL TOPBAR ================= -->
+      <!-- ================= GLOBAL TOPBAR ================= -->
   <header class="sticky top-0 w-full border-b border-border-subtle bg-surface-1 z-30 shrink-0">
     <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 h-14 sm:h-16 flex items-center justify-between gap-2 lg:gap-3">
       
@@ -296,16 +296,43 @@
           </div>
 
           <!-- Avatar & Cover Management -->
-          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 bg-surface-2 rounded-xl border border-border-subtle">
-            <img id="setting-avatar-preview" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80"
-                 alt="Profile avatar" class="w-16 h-16 rounded-2xl object-cover border border-border-subtle shadow-sm shrink-0">
-            <div class="space-y-1 flex-1">
-              <h3 class="text-xs font-bold text-text-main">صورة الملف الشخصي</h3>
-              <p class="text-[11px] text-text-muted">الصور الموصى بها مربعة بحجم 400×400 بكسل على الأقل (JPG, PNG, WebP).</p>
+          <div class="space-y-3">
+            <div>
+              <h3 class="text-xs font-bold text-text-main" data-i18n="settings.profile_media">الصور والهوية البصرية</h3>
+              <p class="text-[11px] text-text-muted mt-0.5" data-i18n="settings.profile_media_desc">اضبط صورة الملف والغلاف كما سيظهران في صفحتك العامة.</p>
             </div>
-            <button type="button" class="px-3.5 py-1.5 bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl text-xs font-bold text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0">
-              تغيير الصورة
-            </button>
+
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+              <div class="flex items-center gap-4 p-4 bg-surface-2 rounded-xl border border-border-subtle">
+                <img id="setting-avatar-preview" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80"
+                     alt="Profile avatar" class="w-20 h-20 rounded-2xl object-cover border border-border-subtle shadow-sm shrink-0">
+                <div class="space-y-1 flex-1 min-w-0">
+                  <h4 class="text-xs font-bold text-text-main" data-i18n="settings.avatar">صورة الملف الشخصي</h4>
+                  <p class="text-[11px] text-text-muted" data-i18n="settings.avatar_hint">مربع 400×400 بكسل على الأقل. JPG أو PNG أو WebP.</p>
+                  <input type="file" id="setting-avatar-file" accept="image/jpeg,image/png,image/webp" class="hidden">
+                  <button type="button" id="setting-avatar-change-btn" class="mt-2 px-3.5 py-1.5 bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl text-xs font-bold text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                    <span data-i18n="settings.change_avatar">تغيير الصورة</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="p-4 bg-surface-2 rounded-xl border border-border-subtle space-y-3">
+                <div class="relative overflow-hidden rounded-xl border border-border-subtle bg-surface-1">
+                  <img id="setting-cover-preview" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+                       alt="Profile cover" class="w-full aspect-[16/5] object-cover">
+                </div>
+                <div class="flex items-center justify-between gap-3">
+                  <div class="space-y-1 min-w-0">
+                    <h4 class="text-xs font-bold text-text-main" data-i18n="settings.cover">صورة الغلاف</h4>
+                    <p class="text-[11px] text-text-muted" data-i18n="settings.cover_hint">نسبة عريضة 1600×500 بكسل تقريباً. JPG أو PNG أو WebP.</p>
+                  </div>
+                  <input type="file" id="setting-cover-file" accept="image/jpeg,image/png,image/webp" class="hidden">
+                  <button type="button" id="setting-cover-change-btn" class="px-3.5 py-1.5 bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl text-xs font-bold text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0">
+                    <span data-i18n="settings.change_cover">تغيير الغلاف</span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Profile Input Grid -->
@@ -353,6 +380,13 @@
                      placeholder="الرياض، المملكة العربية السعودية">
             </div>
 
+            <div class="space-y-1.5">
+              <label for="setting-profile-location-en" class="text-xs font-bold text-text-main" data-i18n="settings.location_en">المدينة / الموقع (بالإنجليزية)</label>
+              <input type="text" id="setting-profile-location-en" dir="ltr"
+                     class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold transition-colors"
+                     placeholder="Riyadh, Saudi Arabia">
+            </div>
+
             <div class="sm:col-span-2 space-y-1.5">
               <label for="setting-profile-title-ar" class="text-xs font-bold text-text-main" data-i18n="settings.title_field">المسمى المهني واللقب</label>
               <input type="text" id="setting-profile-title-ar"
@@ -361,10 +395,70 @@
             </div>
 
             <div class="sm:col-span-2 space-y-1.5">
+              <label for="setting-profile-title-en" class="text-xs font-bold text-text-main" data-i18n="settings.title_en">المسمى المهني (بالإنجليزية)</label>
+              <input type="text" id="setting-profile-title-en" dir="ltr"
+                     class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold transition-colors"
+                     placeholder="Executive Culinary Director">
+            </div>
+
+            <div class="sm:col-span-2 space-y-1.5">
               <label for="setting-profile-bio-ar" class="text-xs font-bold text-text-main" data-i18n="settings.bio">نبذة مهنية مختصرة</label>
               <textarea id="setting-profile-bio-ar" rows="3"
                         class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold transition-colors"
                         placeholder="نبذة عن خبراتك وأسلوبك وفلسفتك في الطهي..."></textarea>
+            </div>
+
+            <div class="sm:col-span-2 space-y-1.5">
+              <label for="setting-profile-bio-en" class="text-xs font-bold text-text-main" data-i18n="settings.bio_en">نبذة مهنية (بالإنجليزية)</label>
+              <textarea id="setting-profile-bio-en" rows="3" dir="ltr"
+                        class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold transition-colors"
+                        placeholder="Tell the community about your experience and culinary approach..."></textarea>
+            </div>
+
+            <!-- Additional professional information -->
+            <div class="sm:col-span-2 border-t border-border-subtle pt-5 space-y-4">
+              <div>
+                <h3 class="text-sm font-bold text-text-main" data-i18n="settings.profile_details">تفاصيل مهنية إضافية</h3>
+                <p class="text-[11px] text-text-muted mt-0.5" data-i18n="settings.profile_details_desc">أضف معلومات تساعد العملاء والجهات المهنية على فهم خبرتك والتواصل معك.</p>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label for="setting-profile-experience" class="text-xs font-bold text-text-main" data-i18n="settings.experience">سنوات الخبرة</label>
+                  <input type="number" id="setting-profile-experience" min="0" max="80" inputmode="numeric"
+                         class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold transition-colors"
+                         placeholder="16">
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="setting-profile-specialties" class="text-xs font-bold text-text-main" data-i18n="settings.specialties">مجالات التخصص</label>
+                  <input type="text" id="setting-profile-specialties"
+                         class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold transition-colors"
+                         placeholder="المطبخ السعودي، التخمير، الحلويات">
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="setting-profile-website" class="text-xs font-bold text-text-main" data-i18n="settings.website">الموقع أو معرض الأعمال</label>
+                  <input type="url" id="setting-profile-website" dir="ltr"
+                         class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-surface-2 border border-border-subtle rounded-xl text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand-gold transition-colors"
+                         placeholder="https://example.com">
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="setting-profile-cv" class="text-xs font-bold text-text-main" data-i18n="settings.cv">السيرة الذاتية</label>
+                  <div class="flex items-center gap-2 min-w-0">
+                    <input type="file" id="setting-profile-cv" accept=".pdf,.doc,.docx,application/pdf" class="hidden">
+                    <button type="button" id="setting-profile-cv-btn" class="px-3.5 py-2.5 bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl text-xs font-bold text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0">
+                      <span data-i18n="settings.upload_cv">رفع CV</span>
+                    </button>
+                    <div class="min-w-0">
+                      <p id="setting-profile-cv-name" class="text-[11px] text-text-muted truncate" data-i18n="settings.no_cv">لم يتم رفع ملف</p>
+                      <a id="setting-profile-cv-link" href="#" class="hidden text-[11px] text-brand-gold hover:underline" target="_blank" rel="noopener" data-i18n="settings.view_cv">عرض الملف</a>
+                    </div>
+                  </div>
+                  <p class="text-[10px] text-text-muted" data-i18n="settings.cv_hint">PDF أو DOC أو DOCX، بحد أقصى 5 ميغابايت.</p>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -769,20 +863,80 @@
 
   </main>
 
-  <!-- ================= SEARCH MODAL PALETTE ================= -->
-  <div id="search-modal" data-modal class="hidden fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-canvas" role="dialog" aria-modal="true">
-    <div class="w-full max-w-2xl bg-surface-1 border border-border-subtle rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]">
-      <div class="p-4 border-b border-border-subtle flex items-center gap-3">
-        <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input type="text" id="search-palette-input"
-               class="w-full bg-transparent border-none text-text-main placeholder:text-text-muted focus:outline-none text-sm sm:text-base"
-               placeholder="ابحث في الوصفات، الطهاة، التوريدات، والدورات..."
-               data-i18n-placeholder="search.placeholder" autocomplete="off">
-        <button type="button" data-modal-close class="p-1 text-text-muted hover:text-text-main rounded-lg" aria-label="Close modal">
+  <!-- ================= PROFILE IMAGE EDITOR ================= -->
+  <div id="setting-image-editor-modal" data-modal class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-canvas" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="absolute inset-0 bg-canvas" data-modal-backdrop></div>
+    <div class="relative w-full max-w-2xl max-h-[calc(100vh-2rem)] overflow-y-auto bg-surface-1 border border-border-subtle rounded-2xl shadow-xl p-4 sm:p-6 space-y-5">
+      <div class="flex items-start justify-between gap-4 border-b border-border-subtle pb-4">
+        <div>
+          <h2 id="setting-image-editor-title" class="text-base font-bold text-text-main">تحرير الصورة</h2>
+          <p class="text-xs text-text-muted mt-1" data-i18n="settings.image_editor_desc">اسحب الصورة داخل الإطار، ثم اضبط التكبير قبل التطبيق.</p>
+        </div>
+        <button type="button" data-modal-close class="p-1.5 text-text-muted hover:text-text-main rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Close image editor">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-      <div id="search-results-list" class="overflow-y-auto p-3 space-y-2 flex-1"></div>
+
+      <div id="setting-image-editor-stage" class="relative w-full max-w-xl mx-auto overflow-hidden rounded-xl border border-border-subtle bg-surface-2 cursor-move touch-none select-none" style="aspect-ratio: 1 / 1;">
+        <img id="setting-image-editor-image" src="" alt="Image crop preview" class="absolute max-w-none pointer-events-none select-none" draggable="false">
+        <div class="absolute inset-0 pointer-events-none border-2 border-brand-gold"></div>
+      </div>
+
+      <div class="space-y-2">
+        <div class="flex items-center justify-between gap-3 text-xs">
+          <label for="setting-image-editor-zoom" class="font-bold text-text-main" data-i18n="settings.image_zoom">التكبير</label>
+          <output id="setting-image-editor-zoom-value" class="text-brand-gold font-bold" for="setting-image-editor-zoom">100%</output>
+        </div>
+        <input type="range" id="setting-image-editor-zoom" min="1" max="3" step="0.01" value="1" class="w-full accent-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold">
+      </div>
+
+      <div class="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-end gap-2 pt-1">
+        <button type="button" data-modal-close class="px-4 py-2.5 text-xs font-bold text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold" data-i18n="btn.cancel">إلغاء</button>
+        <button type="button" id="setting-image-editor-apply" class="px-4 py-2.5 text-xs font-bold text-white bg-brand-gold hover:bg-brand-gold-hover rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold" data-i18n="settings.apply_image">تطبيق الصورة</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SEARCH MODAL PALETTE ================= -->
+  <div id="search-modal" role="dialog" aria-modal="true" aria-hidden="true" class="hidden fixed inset-0 z-50 items-center justify-center p-4 sm:p-6">
+    <!-- Solid Backdrop overlay -->
+    <div class="fixed inset-0 bg-canvas" data-modal-backdrop></div>
+
+    <!-- Solid Dialog Container -->
+    <div class="relative bg-surface-1 border border-border-subtle rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden z-10 flex flex-col max-h-[85vh] text-start">
+
+      <!-- Input Header -->
+      <div class="p-4 border-b border-border-subtle flex items-center gap-3 shrink-0">
+        <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="global-search-input"
+               class="flex-1 bg-transparent border-0 text-sm sm:text-base text-text-main placeholder:text-text-muted focus:outline-none"
+               placeholder="ابحث في الوصفات، الطهاة، التوريدات، والدورات..."
+               data-i18n-placeholder="search.placeholder"
+               autocomplete="off">
+        <button type="button" data-modal-close class="p-1.5 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-lg transition-colors" aria-label="Close Search">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Live Search Results Container -->
+      <div id="search-results-container" class="overflow-y-auto p-4 flex-1 divide-y divide-border-subtle min-h-[160px]">
+        <div class="p-8 text-center text-xs text-text-muted" data-i18n="search.type_prompt">
+          اكتب حرفين على الأقل للبحث الفوري...
+        </div>
+      </div>
+
+      <!-- Footer Hints -->
+      <div class="p-3 bg-surface-2 border-t border-border-subtle flex items-center justify-between text-[11px] text-text-muted shrink-0">
+        <div class="flex items-center gap-3">
+          <span class="flex items-center gap-1"><kbd class="px-1.5 py-0.5 bg-surface-1 border border-border-subtle rounded text-[10px]">↑↓</kbd> للتنقل</span>
+          <span class="flex items-center gap-1"><kbd class="px-1.5 py-0.5 bg-surface-1 border border-border-subtle rounded text-[10px]">Enter</kbd> للاختيار</span>
+        </div>
+        <span class="flex items-center gap-1" data-i18n="search.hint"><kbd class="px-1.5 py-0.5 bg-surface-1 border border-border-subtle rounded text-[10px]">ESC</kbd> للإغلاق</span>
+      </div>
+
     </div>
   </div>
 

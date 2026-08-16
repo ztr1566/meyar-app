@@ -1,0 +1,150 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Meyar Home" [ref=e5] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=e9]:
+            - text: معيار
+            - generic [ref=e10]: Meyar
+        - button "Search" [ref=e11]:
+          - generic [ref=e12]: ابحث في الوصفات، الطهاة، التوريدات، والدورات...
+      - generic [ref=e17]:
+        - link "ابتكار وصفة" [ref=e18] [cursor=pointer]:
+          - /url: create-recipe.html
+        - link "Messages" [ref=e22] [cursor=pointer]:
+          - /url: chat.html
+        - link "Notifications" [ref=e26] [cursor=pointer]:
+          - /url: notifications.html
+        - button "Switch to English" [ref=e31]:
+          - generic [ref=e35]: English
+        - button "Toggle theme" [ref=e36]
+        - button "User profile options" [ref=e41]:
+          - img "Chef Faisal Al-Hashemi" [ref=e42]
+        - button "Open mobile menu" [ref=e45]
+  - main [ref=e47]:
+    - generic [ref=e48]:
+      - complementary [ref=e49]:
+        - generic [ref=e50]:
+          - heading "المحادثات والتفاوض المباشر" [level=1] [ref=e55]
+          - generic [ref=e56]: "1"
+        - textbox "البحث في المحادثات والرسائل..." [ref=e59]
+        - tablist [ref=e60]:
+          - tab "كافة الرسائل" [selected] [ref=e61]
+          - tab "الطهاة" [ref=e62]
+          - tab "الموردون التجاريون" [ref=e63]
+        - generic [ref=e64]:
+          - button "شركة الفنار لمعدات المطابخ شركة الفنار لمعدات المطابخ 10:45 AM مرحباً شيف فيصل، قمنا بمراجعة طلب التسعير للعجانة اللولبية 50 لتر ويسعدنا تقديم خصم إضافي للدفعة الأولى. مورد RFQ 1" [ref=e65] [cursor=pointer]:
+            - img "شركة الفنار لمعدات المطابخ" [ref=e67]
+            - generic [ref=e69]:
+              - generic [ref=e70]:
+                - generic [ref=e71]: شركة الفنار لمعدات المطابخ
+                - generic [ref=e75]: 10:45 AM
+              - paragraph [ref=e76]: مرحباً شيف فيصل، قمنا بمراجعة طلب التسعير للعجانة اللولبية 50 لتر ويسعدنا تقديم خصم إضافي للدفعة الأولى.
+              - generic [ref=e77]:
+                - generic [ref=e78]:
+                  - generic [ref=e79]: مورد
+                  - generic [ref=e80]: RFQ
+                - generic [ref=e85]: "1"
+          - button "شيف إيلينا روستوفا شيف إيلينا روستوفا Yesterday أهلاً شيف فيصل، وصفتك الجديدة للواغيو بغليز التمر كانت مبهرة! هل يمكننا التنسيق لورشة عمل مشتركة؟ شيف" [ref=e86] [cursor=pointer]:
+            - img "شيف إيلينا روستوفا" [ref=e88]
+            - generic [ref=e90]:
+              - generic [ref=e91]:
+                - generic [ref=e92]: شيف إيلينا روستوفا
+                - generic [ref=e96]: Yesterday
+              - paragraph [ref=e97]: أهلاً شيف فيصل، وصفتك الجديدة للواغيو بغليز التمر كانت مبهرة! هل يمكننا التنسيق لورشة عمل مشتركة؟
+              - generic [ref=e98]: شيف
+          - button "معاصر الجوف الذهبية معاصر الجوف الذهبية Aug 12 تم تأكيد شحن 4 براميل من زيت الزيتون البكر الممتاز، رقم التتبع مرفق بطلبك. مورد RFQ" [ref=e101] [cursor=pointer]:
+            - img "معاصر الجوف الذهبية" [ref=e103]
+            - generic [ref=e105]:
+              - generic [ref=e106]:
+                - generic [ref=e107]: معاصر الجوف الذهبية
+                - generic [ref=e111]: Aug 12
+              - paragraph [ref=e112]: تم تأكيد شحن 4 براميل من زيت الزيتون البكر الممتاز، رقم التتبع مرفق بطلبك.
+              - generic [ref=e114]:
+                - generic [ref=e115]: مورد
+                - generic [ref=e116]: RFQ
+      - region "Active Conversation Room" [ref=e121]:
+        - generic [ref=e122]:
+          - generic [ref=e123]:
+            - button "Back to conversations list" [ref=e124]
+            - img "شركة الفنار لمعدات المطابخ" [ref=e128]
+            - generic [ref=e130]:
+              - heading "شركة الفنار لمعدات المطابخ" [level=2] [ref=e132]
+              - generic [ref=e135]:
+                - generic [ref=e136]: مورد تجاري B2B
+                - generic [ref=e137]: متصل الآن
+          - generic [ref=e138]:
+            - link "عرض الملف التجاري" [ref=e139] [cursor=pointer]:
+              - /url: supplies.html
+            - button "Contact information" [ref=e140]
+        - generic [ref=e143]:
+          - generic [ref=e144]: اليوم / Today
+          - generic [ref=e146]:
+            - generic [ref=e147]:
+              - generic [ref=e148]:
+                - generic [ref=e149]:
+                  - generic [ref=e155]:
+                    - heading "بطاقة تسعير تجارية" [level=3] [ref=e156]
+                    - text: "#rfq-9801"
+                  - generic [ref=e157]: عرض سعر رسمي جاهز
+                - generic [ref=e162]:
+                  - img "عجانة لولبية تجارية للمخابز 50 لتر" [ref=e163]
+                  - generic [ref=e164]:
+                    - heading "عجانة لولبية تجارية للمخابز 50 لتر" [level=4] [ref=e165]
+                    - link "عرض تفاصيل ومواصفات المنتج" [ref=e166] [cursor=pointer]:
+                      - /url: supplies.html?id=supply-1
+                - generic [ref=e170]:
+                  - generic [ref=e171]:
+                    - generic [ref=e172]: "الكمية المطلوبة:"
+                    - text: 2 وحدة
+                  - generic [ref=e173]:
+                    - generic [ref=e174]: "سعر الوحدة:"
+                    - text: 13,500 ر.س
+                  - generic [ref=e175]:
+                    - generic [ref=e176]: "وجهة التوصيل:"
+                    - generic [ref=e177]: الرياض - حي حطين
+                  - generic [ref=e178]:
+                    - generic [ref=e179]: "تاريخ التوريد:"
+                    - text: 2026-09-01
+                - generic [ref=e180]:
+                  - generic [ref=e181]: "الإجمالي التقديري للتوريد:"
+                  - generic [ref=e182]: 27,000 ر.س
+                - generic [ref=e183]:
+                  - button "قبول وتأكيد العرض" [ref=e184]
+                  - button "تقديم عرض مالي مقابل" [ref=e188]
+              - generic [ref=e192]:
+                - paragraph [ref=e193]: السلام عليكم، أود الاستفسار عن توفر عجانة 50 لتر الفولاذية وإمكانية توريد وحدتين لمطعمنا الجديد بالرياض خلال أسبوعين.
+                - generic [ref=e194]: 09:30 AM
+            - generic [ref=e199]:
+              - paragraph [ref=e200]: وعليكم السلام والرحمة شيف فيصل. الوحدات متوفرة في مستودعاتنا المركزية بالرياض وجاهزة للشحن الفوري مع التوصيل والتركيب المجاني.
+              - generic [ref=e201]: 10:15 AM
+            - generic [ref=e204]:
+              - paragraph [ref=e205]: مرحباً شيف فيصل، قمنا بمراجعة طلب التسعير للعجانة اللولبية 50 لتر ويسعدنا تقديم خصم إضافي للدفعة الأولى.
+              - generic [ref=e206]: 10:45 AM
+        - generic [ref=e208]:
+          - generic [ref=e209]: "مقترحات:"
+          - button "هل يتوفر شحن فوري ومجاني للرياض؟" [ref=e210]
+          - button "يسعدنا اعتماد العرض والبدء في إجراءات التوريد." [ref=e211]
+          - button "هل يوجد خصم إضافي للكميات الكبيرة الدورية؟" [ref=e212]
+          - button "يسعدني التنسيق لورشة عمل مشتركة قريباً." [ref=e213]
+        - generic [ref=e214]:
+          - button "Attach file or quotation" [ref=e215]
+          - textbox "اكتب رسالتك أو استفسارك هنا..." [ref=e219]
+          - button "Send message" [ref=e220]:
+            - generic [ref=e221]: إرسال
+  - navigation "Mobile Bottom Navigation" [ref=e225]:
+    - link "Home Feed" [ref=e226] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e230]: الرئيسية
+    - link "Explore" [ref=e231] [cursor=pointer]:
+      - /url: explore.html
+      - generic [ref=e235]: استكشف
+    - link "Create Recipe" [ref=e236] [cursor=pointer]:
+      - /url: create-recipe.html
+    - link "Messages" [ref=e239] [cursor=pointer]:
+      - /url: chat.html
+      - generic [ref=e242]: المحادثات
+    - link "Dashboard" [ref=e243] [cursor=pointer]:
+      - /url: dashboard.html
+      - generic [ref=e249]: لوحة التحكم

@@ -1,0 +1,938 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Meyar Home" [ref=e5] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=e9]:
+            - text: معيار
+            - generic [ref=e10]: Meyar
+        - button "Search" [ref=e11]:
+          - generic [ref=e12]: ابحث في الوصفات، الطهاة، التوريدات، والدورات...
+      - generic [ref=e17]:
+        - link "ابتكار وصفة" [ref=e18] [cursor=pointer]:
+          - /url: create-recipe.html
+        - link "Messages" [ref=e22] [cursor=pointer]:
+          - /url: chat.html
+        - link "Notifications" [ref=e26] [cursor=pointer]:
+          - /url: notifications.html
+        - button "Switch to English" [ref=e31]:
+          - generic [ref=e35]: English
+        - button "Toggle theme" [ref=e36]
+        - button "User profile options" [ref=e41]:
+          - img "Chef Faisal Al-Hashemi" [ref=e42]
+        - button "Open mobile menu" [ref=e45]
+  - main [ref=e47]:
+    - region "Culinary Trend Spotlight" [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - img "Culinary Trend Spotlight" [ref=e51]
+          - generic [ref=e52]: الاتجاه الرائج للأسبوع
+          - generic [ref=e54]:
+            - generic [ref=e55]:
+              - img "Chef Faisal" [ref=e56]
+              - generic [ref=e57]:
+                - generic [ref=e58]: الشيف فيصل الهاشمي
+                - text: Executive Culinary Director
+            - link "عرض" [ref=e59] [cursor=pointer]:
+              - /url: chef.html?id=chef-1
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: "#NewNajdiCuisine"
+            - generic [ref=e63]: "#DryAgingArt"
+          - heading "فنون الإنضاج الجاف والتدخين المعاصر بالأعشاب البرية" [level=2] [ref=e64]
+          - paragraph [ref=e65]: استكشف كيف يدمج نخبة الطهاة تقنيات تخمير الكوجي وإنضاج اللحوم مع نفحات النباتات العطرية السعودية لابتكار نكهات استثنائية.
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - generic [ref=e68]: 24+
+              - generic [ref=e69]: وصفة معاصرة
+            - generic [ref=e70]:
+              - generic [ref=e71]: "8"
+              - generic [ref=e72]: كبار الطهاة
+            - generic [ref=e73]:
+              - generic [ref=e74]: 1.4k
+              - generic [ref=e75]: مشاركة مجتمعية
+          - generic [ref=e76]:
+            - button "استكشف وصفات الاتجاه" [ref=e77]
+            - link "عرض طبق الأسبوع المميز" [ref=e81] [cursor=pointer]:
+              - /url: recipe.html?id=recipe-1
+    - generic [ref=e82]:
+      - generic [ref=e83]:
+        - textbox "ابحث عن وصفة، شيف، معدة، أو تقنية طهي..." [ref=e85]
+        - generic [ref=e86]:
+          - generic [ref=e87]: عرض 26 من النتائج
+          - generic [ref=e88]:
+            - generic [ref=e89]: "ترتيب حسب:"
+            - combobox "ترتيب حسب:" [ref=e90] [cursor=pointer]:
+              - option "الأكثر تفاعلاً ورواجاً" [selected]
+              - option "الأعلى تقييماً"
+              - option "الأحدث إضافة"
+      - tablist "Filter Categories" [ref=e91]:
+        - tab "الكل" [selected] [ref=e92]
+        - tab "أطباق رائجة" [ref=e93]
+        - tab "نخبة الطهاة" [ref=e97]
+        - tab "معدات احترافية" [ref=e102]
+        - tab "دورات تدريبية" [ref=e106]
+        - tab "مكونات موسمية" [ref=e111]
+    - generic [ref=e116]:
+      - region "Explore Grid" [ref=e117]:
+        - generic [ref=e118]:
+          - article [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - img "شيف كينجي تاكاهاشي" [ref=e122]
+                - generic [ref=e123]: شيف محترف
+              - generic [ref=e124]:
+                - generic [ref=e125]:
+                  - generic [ref=e126]:
+                    - img "شيف كينجي تاكاهاشي" [ref=e127]
+                    - generic "Verified Chef" [ref=e128]
+                  - generic [ref=e131]: "4.99"
+                - generic [ref=e135]:
+                  - link "شيف كينجي تاكاهاشي" [ref=e136] [cursor=pointer]:
+                    - /url: chef.html?id=chef-4
+                  - generic [ref=e137]: "@kenji_kaiseki"
+                  - paragraph [ref=e138]: حاصل على نجمتي ميشلان وأستاذ فنون الأوماكاسي والكايسيكي
+                - generic [ref=e139]: الكايسيكي الياباني المعاصر والأوماكاسي
+                - paragraph [ref=e141]: قضى 25 عاماً في أرقى مطاعم طوكيو وكيوتو الحاصلة على نجوم ميشلان. يركز على نقاء النكهات وتقنيات تقطيع الساشيمي الحرفية والموازنة الدقيقة للأومامي.
+                - generic [ref=e142]:
+                  - generic [ref=e143]:
+                    - generic [ref=e144]: "22"
+                    - generic [ref=e145]: الوصفات
+                  - generic [ref=e146]:
+                    - generic [ref=e147]: 89.0k
+                    - generic [ref=e148]: متابع
+                  - generic [ref=e149]:
+                    - generic [ref=e150]: 25y
+                    - generic [ref=e151]: خبرة
+            - generic [ref=e152]:
+              - button "متابعة" [ref=e153]
+              - link "عرض" [ref=e158] [cursor=pointer]:
+                - /url: chef.html?id=chef-4
+          - article [ref=e159]:
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - img "شيف ماركو بيليني" [ref=e162]
+                - generic [ref=e163]: شيف محترف
+              - generic [ref=e164]:
+                - generic [ref=e165]:
+                  - generic [ref=e166]:
+                    - img "شيف ماركو بيليني" [ref=e167]
+                    - generic "Verified Chef" [ref=e168]
+                  - generic [ref=e171]: "4.97"
+                - generic [ref=e175]:
+                  - link "شيف ماركو بيليني" [ref=e176] [cursor=pointer]:
+                    - /url: chef.html?id=chef-6
+                  - generic [ref=e177]: "@marco_pastaio"
+                  - paragraph [ref=e178]: ماستر الباستا الحرفية وخبير الكمأة الإيطالية
+                - generic [ref=e179]: الباستا الإيطالية الحرفية وفنون الفطر البري والكمأة
+                - paragraph [ref=e181]: من سلالة صانعي الباستا في بولونيا. يكرس فنه لصناعة المعكرونة اليدوية من قمح الديورم العضوي وأندر أنواع الكمأة البيضاء والسوداء من غابات بييمونتي.
+                - generic [ref=e182]:
+                  - generic [ref=e183]:
+                    - generic [ref=e184]: "27"
+                    - generic [ref=e185]: الوصفات
+                  - generic [ref=e186]:
+                    - generic [ref=e187]: 73.1k
+                    - generic [ref=e188]: متابع
+                  - generic [ref=e189]:
+                    - generic [ref=e190]: 21y
+                    - generic [ref=e191]: خبرة
+            - generic [ref=e192]:
+              - button "متابعة" [ref=e193]
+              - link "عرض" [ref=e198] [cursor=pointer]:
+                - /url: chef.html?id=chef-6
+          - article [ref=e199]:
+            - generic [ref=e200]:
+              - generic [ref=e201]:
+                - img "شيف إيلينا روستوفا" [ref=e202]
+                - generic [ref=e203]: شيف محترف
+              - generic [ref=e204]:
+                - generic [ref=e205]:
+                  - generic [ref=e206]:
+                    - img "شيف إيلينا روستوفا" [ref=e207]
+                    - generic "Verified Chef" [ref=e208]
+                  - generic [ref=e211]: "4.98"
+                - generic [ref=e215]:
+                  - link "شيف إيلينا روستوفا" [ref=e216] [cursor=pointer]:
+                    - /url: chef.html?id=chef-2
+                  - generic [ref=e217]: "@elena_pastry"
+                  - paragraph [ref=e218]: ماستر شيف الحلويات وفنون التشكيل بالسكر
+                - generic [ref=e219]: فنون الحلويات الفرنسية الراقية والسكريات الفنية
+                - paragraph [ref=e221]: خريجة معهد لو كوردون بلو باريس. تتخصص في ابتكار أرقى كيكات الإنتريميه والمعجنات المورقة التي تمزج النكهات الزهرية الشرقية مع الدقة الهندسية الكلاسيكية.
+                - generic [ref=e222]:
+                  - generic [ref=e223]:
+                    - generic [ref=e224]: "31"
+                    - generic [ref=e225]: الوصفات
+                  - generic [ref=e226]:
+                    - generic [ref=e227]: 68.5k
+                    - generic [ref=e228]: متابع
+                  - generic [ref=e229]:
+                    - generic [ref=e230]: 14y
+                    - generic [ref=e231]: خبرة
+            - generic [ref=e232]:
+              - button "متابعة" [ref=e233]
+              - link "عرض" [ref=e238] [cursor=pointer]:
+                - /url: chef.html?id=chef-2
+          - article [ref=e239]:
+            - generic [ref=e240]:
+              - generic [ref=e241]:
+                - img "إنتريميه الفستق وماء الورد مع غليز المرآة بالمستكة" [ref=e242]
+                - generic [ref=e243]:
+                  - generic [ref=e244]: حلويات فرنسية فاخرة
+                  - generic [ref=e245]: متقدم
+                - generic [ref=e246]: "60"
+              - generic [ref=e251]:
+                - generic [ref=e252]:
+                  - link [ref=e253] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                    - img "undefined" [ref=e254]
+                  - link "undefined" [ref=e255] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                - link [ref=e256] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-5
+                  - heading "إنتريميه الفستق وماء الورد مع غليز المرآة بالمستكة" [level=3] [ref=e257]
+                  - paragraph [ref=e258]: حلوى كعكة إنتريميه فرنسية راقية بطبقات موس الفستق الصقلي، وبسكويت الجاكوند الخفيف، وحشوة هلام ماء الورد الجبلي، مغلفة بغليز مرآة لامع بنكهة المستكة اليونانية.
+                - generic [ref=e259]:
+                  - button "#Entremet" [ref=e260]
+                  - button "#Pistachio" [ref=e261]
+                  - button "#Mastic" [ref=e262]
+            - generic [ref=e263]:
+              - generic [ref=e264]:
+                - generic [ref=e267]: "4.99"
+                - generic [ref=e268]: (210)
+              - generic [ref=e269]:
+                - button "Like recipe" [ref=e270]
+                - button "Save recipe" [ref=e273]
+                - link "عرض الطبق" [ref=e276] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-5
+          - article [ref=e280]:
+            - generic [ref=e281]:
+              - generic [ref=e282]:
+                - img "أنولوتي الباستا اليدوية بالريكوتا المدخنة والكمأة السوداء" [ref=e283]
+                - generic [ref=e284]:
+                  - generic [ref=e285]: إيطالي حرفي
+                  - generic [ref=e286]: متقدم
+                - generic [ref=e287]: "50"
+              - generic [ref=e292]:
+                - generic [ref=e293]:
+                  - link [ref=e294] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                    - img "undefined" [ref=e295]
+                  - link "undefined" [ref=e296] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                - link [ref=e297] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-3
+                  - heading "أنولوتي الباستا اليدوية بالريكوتا المدخنة والكمأة السوداء" [level=3] [ref=e298]
+                  - paragraph [ref=e299]: جيوب باستا أنولوتي حريرية محضرة يدوياً من صفار البيض العضوي، محشوة بجبنة الريكوتا المدخنة والبارميجيانو 36 شهراً، مغلفة بصلصة زبدة الكمأة وشرائح الترافل الطازج.
+                - generic [ref=e300]:
+                  - button "#Agnolotti" [ref=e301]
+                  - button "#HandmadePasta" [ref=e302]
+                  - button "#Truffle" [ref=e303]
+            - generic [ref=e304]:
+              - generic [ref=e305]:
+                - generic [ref=e308]: "4.98"
+                - generic [ref=e309]: (145)
+              - generic [ref=e310]:
+                - button "Like recipe" [ref=e311]
+                - button "Save recipe" [ref=e314]
+                - link "عرض الطبق" [ref=e317] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-3
+          - article [ref=e321]:
+            - generic [ref=e322]:
+              - generic [ref=e323]:
+                - img "شيف طارق منصور" [ref=e324]
+                - generic [ref=e325]: شيف محترف
+              - generic [ref=e326]:
+                - generic [ref=e327]:
+                  - generic [ref=e328]:
+                    - img "شيف طارق منصور" [ref=e329]
+                    - generic "Verified Chef" [ref=e330]
+                  - generic [ref=e333]: "4.92"
+                - generic [ref=e337]:
+                  - link "شيف طارق منصور" [ref=e338] [cursor=pointer]:
+                    - /url: chef.html?id=chef-3
+                  - generic [ref=e339]: "@tariq_firecraft"
+                  - paragraph [ref=e340]: خبير الطهي بالنار المباشرة والتدخين التراثي
+                - generic [ref=e341]: المشاوي الشامية التراثية والتدخين الحرفي
+                - paragraph [ref=e343]: متخصص في تقنيات التدخين البطيء على حطب الزيتون والسنديان وإنضاج اللحوم التراثية، مع دمج الأعشاب البرية الشامية والمكسرات المحمصة.
+                - generic [ref=e344]:
+                  - generic [ref=e345]:
+                    - generic [ref=e346]: "19"
+                    - generic [ref=e347]: الوصفات
+                  - generic [ref=e348]:
+                    - generic [ref=e349]: 51.2k
+                    - generic [ref=e350]: متابع
+                  - generic [ref=e351]:
+                    - generic [ref=e352]: 18y
+                    - generic [ref=e353]: خبرة
+            - generic [ref=e354]:
+              - button "متابعة" [ref=e355]
+              - link "عرض" [ref=e360] [cursor=pointer]:
+                - /url: chef.html?id=chef-3
+          - article [ref=e361]:
+            - generic [ref=e362]:
+              - generic [ref=e363]:
+                - img "تارت الشوكولاتة الداكنة بالهيل المدخن والملح الصخري" [ref=e364]
+                - generic [ref=e365]:
+                  - generic [ref=e366]: حلويات معاصرة
+                  - generic [ref=e367]: متقدم
+                - generic [ref=e368]: "45"
+              - generic [ref=e373]:
+                - generic [ref=e374]:
+                  - link [ref=e375] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                    - img "undefined" [ref=e376]
+                  - link "undefined" [ref=e377] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                - link [ref=e378] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-8
+                  - heading "تارت الشوكولاتة الداكنة بالهيل المدخن والملح الصخري" [level=3] [ref=e379]
+                  - paragraph [ref=e380]: قاعدة تارت بسكويت الشوكولاتة الهش المقرمش (Pâte Sablée)، محشوة بغاناش حريري غني من شوكولاتة فالرونا 70% المنقوعة بحبات الهيل المدخن وعسل النحل العضوي.
+                - generic [ref=e381]:
+                  - button "#ChocolateTart" [ref=e382]
+                  - button "#Ganache" [ref=e383]
+                  - button "#Cardamom" [ref=e384]
+            - generic [ref=e385]:
+              - generic [ref=e386]:
+                - generic [ref=e389]: "4.96"
+                - generic [ref=e390]: (165)
+              - generic [ref=e391]:
+                - button "Like recipe" [ref=e392]
+                - button "Save recipe" [ref=e395]
+                - link "عرض الطبق" [ref=e398] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-8
+          - article [ref=e402]:
+            - generic [ref=e403]:
+              - generic [ref=e404]:
+                - img "ستيك واغيو ريب آي مع غليز التمر والثوم الأسود المعتق" [ref=e405]
+                - generic [ref=e406]:
+                  - generic [ref=e407]: سعودي معاصر
+                  - generic [ref=e408]: متقدم
+                - generic [ref=e409]: "35"
+              - generic [ref=e414]:
+                - generic [ref=e415]:
+                  - link [ref=e416] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                    - img "undefined" [ref=e417]
+                  - link "undefined" [ref=e418] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                - link [ref=e419] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-1
+                  - heading "ستيك واغيو ريب آي مع غليز التمر والثوم الأسود المعتق" [level=3] [ref=e420]
+                  - paragraph [ref=e421]: قطعة لحم واغيو A5 معتقة ومطهوة لدرجة متوسطة، مغطاة بغليز مركز من دبس تمر الخلاص النجد والكمأة السوداء وثوم الحبة السوداء المخمر.
+                - generic [ref=e422]:
+                  - button "#Wagyu" [ref=e423]
+                  - button "#FineDining" [ref=e424]
+                  - button "#SaudiFlavors" [ref=e425]
+            - generic [ref=e426]:
+              - generic [ref=e427]:
+                - generic [ref=e430]: "4.96"
+                - generic [ref=e431]: (114)
+              - generic [ref=e432]:
+                - button "Like recipe" [ref=e433]
+                - button "Save recipe" [ref=e436]
+                - link "عرض الطبق" [ref=e439] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-1
+          - article [ref=e443]:
+            - generic [ref=e444]:
+              - generic [ref=e445]:
+                - img "الشيف فيصل الهاشمي" [ref=e446]
+                - generic [ref=e447]: شيف محترف
+              - generic [ref=e448]:
+                - generic [ref=e449]:
+                  - generic [ref=e450]:
+                    - img "الشيف فيصل الهاشمي" [ref=e451]
+                    - generic "Verified Chef" [ref=e452]
+                  - generic [ref=e455]: "4.95"
+                - generic [ref=e459]:
+                  - link "الشيف فيصل الهاشمي" [ref=e460] [cursor=pointer]:
+                    - /url: chef.html?id=chef-1
+                  - generic [ref=e461]: "@chef_faisal"
+                  - paragraph [ref=e462]: المدير التنفيذي للطهي ومستشار فنون الطهي المعاصر
+                - generic [ref=e463]: المطبخ السعودي المعاصر وتقنيات التخمير والتدخين
+                - paragraph [ref=e465]: رائد فنون الطهي السعودي المعاصر. يعيد ابتكار الوصفات التراثية النجدية والحجازية باستخدام أحدث تقنيات الإنضاج الجاف والتخمير الطبيعي وفنون الطهي الجزيئي.
+                - generic [ref=e466]:
+                  - generic [ref=e467]:
+                    - generic [ref=e468]: "24"
+                    - generic [ref=e469]: الوصفات
+                  - generic [ref=e470]:
+                    - generic [ref=e471]: 42.8k
+                    - generic [ref=e472]: متابع
+                  - generic [ref=e473]:
+                    - generic [ref=e474]: 16y
+                    - generic [ref=e475]: خبرة
+            - link "عرض" [ref=e477] [cursor=pointer]:
+              - /url: chef.html?id=chef-1
+          - article [ref=e478]:
+            - generic [ref=e479]:
+              - generic [ref=e480]:
+                - img "كروودو سمك الهاماتشي مع اليوزو وبونزو الكافيار الليموني" [ref=e481]
+                - generic [ref=e482]:
+                  - generic [ref=e483]: ياباني معاصر كايسيكي
+                  - generic [ref=e484]: متوسط
+                - generic [ref=e485]: "20"
+              - generic [ref=e490]:
+                - generic [ref=e491]:
+                  - link [ref=e492] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                    - img "undefined" [ref=e493]
+                  - link "undefined" [ref=e494] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                - link [ref=e495] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-6
+                  - heading "كروودو سمك الهاماتشي مع اليوزو وبونزو الكافيار الليموني" [level=3] [ref=e496]
+                  - paragraph [ref=e497]: شرائح سمك هاماتشي ياباني طازج بدرجة ساشيمي، متبلة بصلصة بونزو بيضاء بنكهة فاكهة اليوزو العطرية، مغطاة بكافيار الليمون الأسترالي وزيت الكمأة البيضاء والأعشاب المجهرية.
+                - generic [ref=e498]:
+                  - button "#Hamachi" [ref=e499]
+                  - button "#Crudo" [ref=e500]
+                  - button "#Sashimi" [ref=e501]
+            - generic [ref=e502]:
+              - generic [ref=e503]:
+                - generic [ref=e506]: "4.97"
+                - generic [ref=e507]: (102)
+              - generic [ref=e508]:
+                - button "Like recipe" [ref=e509]
+                - button "Save recipe" [ref=e512]
+                - link "عرض الطبق" [ref=e515] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-6
+          - article [ref=e519]:
+            - generic [ref=e520]:
+              - generic [ref=e521]:
+                - img "شيف ليلى بن جلون" [ref=e522]
+                - generic [ref=e523]: شيف محترف
+              - generic [ref=e524]:
+                - generic [ref=e525]:
+                  - generic [ref=e526]:
+                    - img "شيف ليلى بن جلون" [ref=e527]
+                    - generic "Verified Chef" [ref=e528]
+                  - generic [ref=e531]: "4.91"
+                - generic [ref=e535]:
+                  - link "شيف ليلى بن جلون" [ref=e536] [cursor=pointer]:
+                    - /url: chef.html?id=chef-5
+                  - generic [ref=e537]: "@layla_gastronomie"
+                  - paragraph [ref=e538]: خبيرة فنون المطبخ المغاربي والمتوسطي الحديث
+                - generic [ref=e539]: المطبخ المغاربي الرفيع وهندسة التوابل
+                - paragraph [ref=e541]: باحثة في تاريخ المأكولات الأندلسية والمغربية. تدمج تقنيات الطهي بالبخار والتحمير البطيء في الطواجن الفخارية مع عناصر التقديم الفندقية الحديثة.
+                - generic [ref=e542]:
+                  - generic [ref=e543]:
+                    - generic [ref=e544]: "18"
+                    - generic [ref=e545]: الوصفات
+                  - generic [ref=e546]:
+                    - generic [ref=e547]: 37.4k
+                    - generic [ref=e548]: متابع
+                  - generic [ref=e549]:
+                    - generic [ref=e550]: 13y
+                    - generic [ref=e551]: خبرة
+            - generic [ref=e552]:
+              - button "متابعة" [ref=e553]
+              - link "عرض" [ref=e558] [cursor=pointer]:
+                - /url: chef.html?id=chef-5
+          - article [ref=e559]:
+            - generic [ref=e560]:
+              - generic [ref=e561]:
+                - img "ريش غنم نعيمي متبلة بإكليل الجبل المدخن والدبس" [ref=e562]
+                - generic [ref=e563]:
+                  - generic [ref=e564]: شامي تراثي بالنار
+                  - generic [ref=e565]: متوسط
+                - generic [ref=e566]: "30"
+              - generic [ref=e571]:
+                - generic [ref=e572]:
+                  - link [ref=e573] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                    - img "undefined" [ref=e574]
+                  - link "undefined" [ref=e575] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                - link [ref=e576] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-4
+                  - heading "ريش غنم نعيمي متبلة بإكليل الجبل المدخن والدبس" [level=3] [ref=e577]
+                  - paragraph [ref=e578]: ريش غنم نعيمي محلية طرية متبلة بخليط إكليل الجبل المدخن ودبس الرمان والفلفل الحلبي، مشوية على جمر الحطب حتى الوصول لقرمشة خارجية وعصارة داخلية وردية.
+                - generic [ref=e579]:
+                  - button "#LambChops" [ref=e580]
+                  - button "#LiveFire" [ref=e581]
+                  - button "#Rosemary" [ref=e582]
+            - generic [ref=e583]:
+              - generic [ref=e584]:
+                - generic [ref=e587]: "4.94"
+                - generic [ref=e588]: (96)
+              - generic [ref=e589]:
+                - button "Like recipe" [ref=e590]
+                - button "Save recipe" [ref=e593]
+                - link "عرض الطبق" [ref=e596] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-4
+          - article [ref=e600]:
+            - generic [ref=e601]:
+              - generic [ref=e602]:
+                - img "قاروص البحر بالزعفران الملكي ومستحلب الهيل الأخضر" [ref=e603]
+                - generic [ref=e604]:
+                  - generic [ref=e605]: بحر متوسطي مغاربي
+                  - generic [ref=e606]: متوسط
+                - generic [ref=e607]: "25"
+              - generic [ref=e612]:
+                - generic [ref=e613]:
+                  - link [ref=e614] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                    - img "undefined" [ref=e615]
+                  - link "undefined" [ref=e616] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                - link [ref=e617] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-2
+                  - heading "قاروص البحر بالزعفران الملكي ومستحلب الهيل الأخضر" [level=3] [ref=e618]
+                  - paragraph [ref=e619]: فيليه قاروص البحر البري المحمر بجلد مقرمش ذهبي، يقدم فوق بيوريه الشمر الحريري مع مستحلب كريمي منقوع بالزعفران السوبر نقين والهيل الأخضر.
+                - generic [ref=e620]:
+                  - button "#SeaBass" [ref=e621]
+                  - button "#Saffron" [ref=e622]
+                  - button "#Cardamom" [ref=e623]
+            - generic [ref=e624]:
+              - generic [ref=e625]:
+                - generic [ref=e628]: "4.93"
+                - generic [ref=e629]: (88)
+              - generic [ref=e630]:
+                - button "Like recipe" [ref=e631]
+                - button "Save recipe" [ref=e634]
+                - link "عرض الطبق" [ref=e637] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-2
+          - article [ref=e641]:
+            - generic [ref=e642]:
+              - generic [ref=e643]:
+                - img "ريزوتو الفريكة الخضراء المدخنة مع فطر الموريل البري" [ref=e644]
+                - generic [ref=e645]:
+                  - generic [ref=e646]: شامي معاصر
+                  - generic [ref=e647]: متوسط
+                - generic [ref=e648]: "20"
+              - generic [ref=e653]:
+                - generic [ref=e654]:
+                  - link [ref=e655] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                    - img "undefined" [ref=e656]
+                  - link "undefined" [ref=e657] [cursor=pointer]:
+                    - /url: chef.html?id=undefined
+                - link [ref=e658] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-7
+                  - heading "ريزوتو الفريكة الخضراء المدخنة مع فطر الموريل البري" [level=3] [ref=e659]
+                  - paragraph [ref=e660]: حبوب الفريكة الشامية الخضراء المحمصة على الحطب، مطهوة بأسلوب الريزوتو الإيطالي في مرق الفطر البري المعتق، مع جبنة القشقوان القديمة وفطر الموريل المكرمل.
+                - generic [ref=e661]:
+                  - button "#Freekeh" [ref=e662]
+                  - button "#Morels" [ref=e663]
+                  - button "#Risotto" [ref=e664]
+            - generic [ref=e665]:
+              - generic [ref=e666]:
+                - generic [ref=e669]: "4.9"
+                - generic [ref=e670]: (74)
+              - generic [ref=e671]:
+                - button "Like recipe" [ref=e672]
+                - button "Save recipe" [ref=e675]
+                - link "عرض الطبق" [ref=e678] [cursor=pointer]:
+                  - /url: recipe.html?id=recipe-7
+          - article [ref=e682]:
+            - generic [ref=e683]:
+              - generic [ref=e684]:
+                - img "undefined" [ref=e685]
+                - generic [ref=e686]: معدات المطابخ الثقيلة
+                - generic [ref=e688]: متوفر بالمخزن
+              - generic [ref=e689]:
+                - generic [ref=e690]:
+                  - generic [ref=e691]: undefined
+                  - generic [ref=e692]: undefined
+                - link [ref=e693] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-1
+                  - heading "undefined" [level=3] [ref=e694]
+                  - paragraph [ref=e695]: عجانة حلزونية صناعية عالية التحمل بهيكل متين من الفولاذ المقاوم للصدأ AISI 304، مزودة بمحرك مزدوج السرعة ومؤقت رقمي وحاجز أمان ذكي مناسبة للتشغيل المستمر في المطاعم والمخابز الراقية.
+                - generic [ref=e696]:
+                  - generic [ref=e697]:
+                    - generic [ref=e698]: السعر التقديري
+                    - text: undefined
+                  - generic [ref=e699]:
+                    - generic [ref=e700]: مدة التوريد المتوقعة
+                    - text: 3 إلى 5 أيام عمل
+            - generic [ref=e701]:
+              - generic [ref=e702]: undefined
+              - generic [ref=e706]:
+                - button "طلب تسعير بالجملة (RFQ)" [ref=e707]
+                - link "View details" [ref=e712] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-1
+          - article [ref=e715]:
+            - generic [ref=e716]:
+              - generic [ref=e717]:
+                - img "undefined" [ref=e718]
+                - generic [ref=e719]: مكونات خام بالجملة
+                - generic [ref=e721]: متوفر بالمخزن
+              - generic [ref=e722]:
+                - generic [ref=e723]:
+                  - generic [ref=e724]: undefined
+                  - generic [ref=e725]: undefined
+                - link [ref=e726] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-2
+                  - heading "undefined" [level=3] [ref=e727]
+                  - paragraph [ref=e728]: زيت زيتون بكر ممتاز معصور على البارد من مزارع الجوف الشمالية، نسبة حموضة أقل من 0.2% مع نكهة فاكهية عشبية مميزة، معبأ في براميل ستانلس ستيل معزولة ومحكمة الإغلاق للطهاة والمطاعم.
+                - generic [ref=e729]:
+                  - generic [ref=e730]:
+                    - generic [ref=e731]: السعر التقديري
+                    - text: undefined
+                  - generic [ref=e732]:
+                    - generic [ref=e733]: مدة التوريد المتوقعة
+                    - text: 2 إلى 4 أيام عمل
+            - generic [ref=e734]:
+              - generic [ref=e735]: undefined
+              - generic [ref=e739]:
+                - button "طلب تسعير بالجملة (RFQ)" [ref=e740]
+                - link "View details" [ref=e745] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-2
+          - article [ref=e748]:
+            - generic [ref=e749]:
+              - generic [ref=e750]:
+                - img "undefined" [ref=e751]
+                - generic [ref=e752]: سكاكين وأدوات القطع
+                - generic [ref=e754]: متوفر بالمخزن
+              - generic [ref=e755]:
+                - generic [ref=e756]:
+                  - generic [ref=e757]: undefined
+                  - generic [ref=e758]: undefined
+                - link [ref=e759] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-3
+                  - heading "undefined" [level=3] [ref=e760]
+                  - paragraph [ref=e761]: سكين غيوتو ياباني مصنوع يدوياً من الفولاذ الدمشقي بقلب من صلب VG-10 فائق الصلابة (60±2 HRC)، مع مقبض خشبي ثماني الأضلاع من خشب الصحراء الصلب لتوازن مثالي أثناء العمل اليومي الشاق.
+                - generic [ref=e762]:
+                  - generic [ref=e763]:
+                    - generic [ref=e764]: السعر التقديري
+                    - text: undefined
+                  - generic [ref=e765]:
+                    - generic [ref=e766]: مدة التوريد المتوقعة
+                    - text: 1 إلى 3 أيام عمل
+            - generic [ref=e767]:
+              - generic [ref=e768]: undefined
+              - generic [ref=e772]:
+                - button "طلب تسعير بالجملة (RFQ)" [ref=e773]
+                - link "View details" [ref=e778] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-3
+          - article [ref=e781]:
+            - generic [ref=e782]:
+              - generic [ref=e783]:
+                - img "undefined" [ref=e784]
+                - generic [ref=e785]: معدات المطابخ الثقيلة
+                - generic [ref=e787]: متوفر بالمخزن
+              - generic [ref=e788]:
+                - generic [ref=e789]:
+                  - generic [ref=e790]: undefined
+                  - generic [ref=e791]: undefined
+                - link [ref=e792] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-4
+                  - heading "undefined" [level=3] [ref=e793]
+                  - paragraph [ref=e794]: جهاز تغليف بالتفريغ الهوائي بغرفة محكمة من الفولاذ المقاوم للصدأ ومضخة بوش الألمانية القوية، مزود بمستشعر ذكي لتغليف السوائل والصلصات والإنضاج بالتفريغ.
+                - generic [ref=e795]:
+                  - generic [ref=e796]:
+                    - generic [ref=e797]: السعر التقديري
+                    - text: undefined
+                  - generic [ref=e798]:
+                    - generic [ref=e799]: مدة التوريد المتوقعة
+                    - text: 2 إلى 5 أيام عمل
+            - generic [ref=e800]:
+              - generic [ref=e801]: undefined
+              - generic [ref=e805]:
+                - button "طلب تسعير بالجملة (RFQ)" [ref=e806]
+                - link "View details" [ref=e811] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-4
+          - article [ref=e814]:
+            - generic [ref=e815]:
+              - generic [ref=e816]:
+                - img "undefined" [ref=e817]
+                - generic [ref=e818]: مكونات خام بالجملة
+                - generic [ref=e820]: متوفر بالمخزن
+              - generic [ref=e821]:
+                - generic [ref=e822]:
+                  - generic [ref=e823]: undefined
+                  - generic [ref=e824]: undefined
+                - link [ref=e825] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-5
+                  - heading "undefined" [level=3] [ref=e826]
+                  - paragraph [ref=e827]: زيت زيتون بكر إيطالي نقي منقوع بقطع وخلاصات الكمأة السوداء الشتوية الطبيعية (Tuber melanosporum) بدون نكهات كيميائية مصنعة، مخصص للاستخدام الفندقي الفاخر.
+                - generic [ref=e828]:
+                  - generic [ref=e829]:
+                    - generic [ref=e830]: السعر التقديري
+                    - text: undefined
+                  - generic [ref=e831]:
+                    - generic [ref=e832]: مدة التوريد المتوقعة
+                    - text: 2 إلى 4 أيام عمل
+            - generic [ref=e833]:
+              - generic [ref=e834]: undefined
+              - generic [ref=e838]:
+                - button "طلب تسعير بالجملة (RFQ)" [ref=e839]
+                - link "View details" [ref=e844] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-5
+          - article [ref=e847]:
+            - generic [ref=e848]:
+              - generic [ref=e849]:
+                - img "undefined" [ref=e850]
+                - generic [ref=e851]: حلول التغليف المستدام
+                - generic [ref=e853]: متوفر بالمخزن
+              - generic [ref=e854]:
+                - generic [ref=e855]:
+                  - generic [ref=e856]: undefined
+                  - generic [ref=e857]: undefined
+                - link [ref=e858] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-6
+                  - heading "undefined" [level=3] [ref=e859]
+                  - paragraph [ref=e860]: علب طعام صديقة للبيئة قابلة للتحلل الحيوي بالكامل مصنوعة من ألياف قصب السكر الطبيعية، مقاومة للزيوت والسوائل الساخنة وتتحمل الميكروويف والتجميد من -20 إلى 120 مئوية.
+                - generic [ref=e861]:
+                  - generic [ref=e862]:
+                    - generic [ref=e863]: السعر التقديري
+                    - text: undefined
+                  - generic [ref=e864]:
+                    - generic [ref=e865]: مدة التوريد المتوقعة
+                    - text: 1 إلى 2 يوم عمل
+            - generic [ref=e866]:
+              - generic [ref=e867]: undefined
+              - generic [ref=e871]:
+                - button "طلب تسعير بالجملة (RFQ)" [ref=e872]
+                - link "View details" [ref=e877] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-6
+          - article [ref=e880]:
+            - generic [ref=e881]:
+              - generic [ref=e882]:
+                - img "undefined" [ref=e883]
+                - generic [ref=e884]: معدات المطابخ الثقيلة
+                - generic [ref=e886]: متوفر بالمخزن
+              - generic [ref=e887]:
+                - generic [ref=e888]:
+                  - generic [ref=e889]: undefined
+                  - generic [ref=e890]: undefined
+                - link [ref=e891] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-7
+                  - heading "undefined" [level=3] [ref=e892]
+                  - paragraph [ref=e893]: جهاز تدوير حراري محترف للطهي المائي البطيء بدقة حرارية تصل إلى ±0.05 درجة مئوية، ومضخة تدوير قوية تكفي لأحواض مائية حتى 30 لتراً مع شاشة لمس ملونة.
+                - generic [ref=e894]:
+                  - generic [ref=e895]:
+                    - generic [ref=e896]: السعر التقديري
+                    - text: undefined
+                  - generic [ref=e897]:
+                    - generic [ref=e898]: مدة التوريد المتوقعة
+                    - text: 2 إلى 3 أيام عمل
+            - generic [ref=e899]:
+              - generic [ref=e900]: undefined
+              - generic [ref=e904]:
+                - button "طلب تسعير بالجملة (RFQ)" [ref=e905]
+                - link "View details" [ref=e910] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-7
+          - article [ref=e913]:
+            - generic [ref=e914]:
+              - generic [ref=e915]:
+                - img "undefined" [ref=e916]
+                - generic [ref=e917]: مكونات خام بالجملة
+                - generic [ref=e919]: متوفر بالمخزن
+              - generic [ref=e920]:
+                - generic [ref=e921]:
+                  - generic [ref=e922]: undefined
+                  - generic [ref=e923]: undefined
+                - link [ref=e924] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-8
+                  - heading "undefined" [level=3] [ref=e925]
+                  - paragraph [ref=e926]: زعفران سوبر نقين أحمر ملكي نقي 100% بأعلى درجات قوة اللون (كروسين > 260)، خيوط كاملة طويلة بدون أي شوائب صفراء، معبأ في علب معدنية مفرغة من الأكسجين للحفاظ على الرائحة الزكية.
+                - generic [ref=e927]:
+                  - generic [ref=e928]:
+                    - generic [ref=e929]: السعر التقديري
+                    - text: undefined
+                  - generic [ref=e930]:
+                    - generic [ref=e931]: مدة التوريد المتوقعة
+                    - text: 2 إلى 4 أيام عمل
+            - generic [ref=e932]:
+              - generic [ref=e933]: undefined
+              - generic [ref=e937]:
+                - button "طلب تسعير بالجملة (RFQ)" [ref=e938]
+                - link "View details" [ref=e943] [cursor=pointer]:
+                  - /url: supplies.html?id=supply-8
+          - article [ref=e946]:
+            - generic [ref=e947]:
+              - generic [ref=e948]:
+                - img "فنون المخبوزات الفرنسية الفاخرة وعجائن التوريق الحديثة" [ref=e949]
+                - generic [ref=e950]:
+                  - generic [ref=e951]: متوسط (Intermediate)
+                  - generic [ref=e952]: 4 أسابيع (16 ساعة تدريبية)
+                - generic [ref=e953]: 2,600 ر.س
+              - generic [ref=e954]:
+                - generic [ref=e955]:
+                  - img "شيف إيلينا روستوفا" [ref=e956]
+                  - generic [ref=e957]: شيف إيلينا روستوفا
+                  - generic [ref=e959]: 2026-09-18
+                - link [ref=e960] [cursor=pointer]:
+                  - /url: courses.html?id=course-2
+                  - heading "فنون المخبوزات الفرنسية الفاخرة وعجائن التوريق الحديثة" [level=3] [ref=e961]
+                  - paragraph [ref=e962]: أسرار الكرواسون ثنائي اللون، العجائن المخمرة بالبانيتون، والتوريق الهندسي للحلويات
+                - generic [ref=e963]:
+                  - generic [ref=e964]:
+                    - text: "المقاعد المتاحة:"
+                    - strong [ref=e965]: 5/18
+                  - generic [ref=e966]: 13 مسجل
+            - generic [ref=e971]:
+              - button "التسجيل الآن" [ref=e972]
+              - link [ref=e973] [cursor=pointer]:
+                - /url: courses.html?id=course-2
+          - article [ref=e976]:
+            - generic [ref=e977]:
+              - generic [ref=e978]:
+                - img "أسرار التخمير والإنضاج الجاف في المطابخ الفاخرة" [ref=e979]
+                - generic [ref=e980]:
+                  - generic [ref=e981]: احترافي متقدم (Masterclass)
+                  - generic [ref=e982]: 6 أسابيع (24 ساعة تدريبية مباشرة)
+                - generic [ref=e983]: 3,200 ر.س
+              - generic [ref=e984]:
+                - generic [ref=e985]:
+                  - img "الشيف فيصل الهاشمي" [ref=e986]
+                  - generic [ref=e987]: الشيف فيصل الهاشمي
+                  - generic [ref=e989]: 2026-09-10
+                - link [ref=e990] [cursor=pointer]:
+                  - /url: courses.html?id=course-1
+                  - heading "أسرار التخمير والإنضاج الجاف في المطابخ الفاخرة" [level=3] [ref=e991]
+                  - paragraph [ref=e992]: تقنيات متقدمة في تخمير الكوجي، ومخللات اللاكتو، وإنضاج لحوم الواغيو التراثية للمحترفين
+                - generic [ref=e993]:
+                  - generic [ref=e994]:
+                    - text: "المقاعد المتاحة:"
+                    - strong [ref=e995]: 3/15
+                  - generic [ref=e996]: 12 مسجل
+            - link [ref=e1002] [cursor=pointer]:
+              - /url: courses.html?id=course-1
+          - article [ref=e1005]:
+            - generic [ref=e1006]:
+              - generic [ref=e1007]:
+                - img "فنون الطهي المباشر على الحطب والتدخين الحرفي" [ref=e1008]
+                - generic [ref=e1009]:
+                  - generic [ref=e1010]: متوسط (Intermediate)
+                  - generic [ref=e1011]: 3 أسابيع (12 ساعة تدريبية)
+                - generic [ref=e1012]: 1,950 ر.س
+              - generic [ref=e1013]:
+                - generic [ref=e1014]:
+                  - img "شيف طارق منصور" [ref=e1015]
+                  - generic [ref=e1016]: شيف طارق منصور
+                  - generic [ref=e1018]: 2026-09-25
+                - link [ref=e1019] [cursor=pointer]:
+                  - /url: courses.html?id=course-3
+                  - heading "فنون الطهي المباشر على الحطب والتدخين الحرفي" [level=3] [ref=e1020]
+                  - paragraph [ref=e1021]: إدارة بيوت التدخين، تحضير بهارات الرّب الجافة، وتقنيات الشواء البطيء على حطب الزيتون
+                - generic [ref=e1022]:
+                  - generic [ref=e1023]:
+                    - text: "المقاعد المتاحة:"
+                    - strong [ref=e1024]: 8/20
+                  - generic [ref=e1025]: 12 مسجل
+            - generic [ref=e1030]:
+              - button "التسجيل الآن" [ref=e1031]
+              - link [ref=e1032] [cursor=pointer]:
+                - /url: courses.html?id=course-3
+          - article [ref=e1035]:
+            - generic [ref=e1036]:
+              - generic [ref=e1037]:
+                - img "فلسفة الكايسيكي وتقنيات التعامل مع المأكولات البحرية" [ref=e1038]
+                - generic [ref=e1039]:
+                  - generic [ref=e1040]: احترافي متقدم (Masterclass)
+                  - generic [ref=e1041]: 5 أسابيع (20 ساعة تدريبية)
+                - generic [ref=e1042]: 3,800 ر.س
+              - generic [ref=e1043]:
+                - generic [ref=e1044]:
+                  - img "شيف كينجي تاكاهاشي" [ref=e1045]
+                  - generic [ref=e1046]: شيف كينجي تاكاهاشي
+                  - generic [ref=e1048]: 2026-10-02
+                - link [ref=e1049] [cursor=pointer]:
+                  - /url: courses.html?id=course-4
+                  - heading "فلسفة الكايسيكي وتقنيات التعامل مع المأكولات البحرية" [level=3] [ref=e1050]
+                  - paragraph [ref=e1051]: تقنيات الإيكي جيمي للذبح الرحيم، تقطيع الساشيمي الحرفي، واستخلاص الداشي الفاخر
+                - generic [ref=e1052]:
+                  - generic [ref=e1053]:
+                    - text: "المقاعد المتاحة:"
+                    - strong [ref=e1054]: 2/12
+                  - generic [ref=e1055]: 10 مسجل
+            - generic [ref=e1060]:
+              - button "التسجيل الآن" [ref=e1061]
+              - link [ref=e1062] [cursor=pointer]:
+                - /url: courses.html?id=course-4
+      - complementary [ref=e1065]:
+        - generic [ref=e1066]:
+          - generic [ref=e1067]:
+            - heading "طهاة متميزون" [level=3] [ref=e1068]
+            - generic [ref=e1069]: Verified
+          - generic [ref=e1070]:
+            - link "فيصل الهاشمي" [ref=e1071] [cursor=pointer]:
+              - /url: chef.html?id=chef-1
+              - img "فيصل الهاشمي" [ref=e1073]
+            - link "إيلينا روستوفا" [ref=e1075] [cursor=pointer]:
+              - /url: chef.html?id=chef-2
+              - img "إيلينا روستوفا" [ref=e1077]
+            - link "طارق منصور" [ref=e1079] [cursor=pointer]:
+              - /url: chef.html?id=chef-3
+              - img "طارق منصور" [ref=e1081]
+            - link "كينجي تاكاهاشي" [ref=e1083] [cursor=pointer]:
+              - /url: chef.html?id=chef-4
+              - img "كينجي تاكاهاشي" [ref=e1085]
+            - link "ليلى بن جلون" [ref=e1087] [cursor=pointer]:
+              - /url: chef.html?id=chef-5
+              - img "ليلى بن جلون" [ref=e1089]
+            - link "ماركو بيليني" [ref=e1091] [cursor=pointer]:
+              - /url: chef.html?id=chef-6
+              - img "ماركو بيليني" [ref=e1093]
+        - generic [ref=e1095]:
+          - generic [ref=e1096]:
+            - heading "الوسوم الأكثر بحثاً" [level=3] [ref=e1097]
+            - generic [ref=e1098]: Trending
+          - generic [ref=e1099]:
+            - button "#NewNajdiCuisine المطبخ النجدي المعاصر 1.4k" [ref=e1100]:
+              - generic [ref=e1101]:
+                - generic [ref=e1102]: "#NewNajdiCuisine"
+                - generic [ref=e1103]: المطبخ النجدي المعاصر
+              - generic [ref=e1104]: 1.4k
+            - button "#KojiFermentation تقنيات تخمير الكوجي 890" [ref=e1105]:
+              - generic [ref=e1106]:
+                - generic [ref=e1107]: "#KojiFermentation"
+                - generic [ref=e1108]: تقنيات تخمير الكوجي
+              - generic [ref=e1109]: "890"
+            - button "#ArtisanalPasta الباستا الحرفية اليدوية 2.1k" [ref=e1110]:
+              - generic [ref=e1111]:
+                - generic [ref=e1112]: "#ArtisanalPasta"
+                - generic [ref=e1113]: الباستا الحرفية اليدوية
+              - generic [ref=e1114]: 2.1k
+            - button "#CommercialKitchenTech تقنيات المطابخ السحابية 640" [ref=e1115]:
+              - generic [ref=e1116]:
+                - generic [ref=e1117]: "#CommercialKitchenTech"
+                - generic [ref=e1118]: تقنيات المطابخ السحابية
+              - generic [ref=e1119]: "640"
+            - button "#PastryArchitecture هندسة الحلويات الفرنسية 1.8k" [ref=e1120]:
+              - generic [ref=e1121]:
+                - generic [ref=e1122]: "#PastryArchitecture"
+                - generic [ref=e1123]: هندسة الحلويات الفرنسية
+              - generic [ref=e1124]: 1.8k
+        - generic [ref=e1125]:
+          - generic [ref=e1126]:
+            - heading "أقرب ورش العمل المباشرة" [level=3] [ref=e1127]
+            - link "عرض الكل" [ref=e1128] [cursor=pointer]:
+              - /url: courses.html
+          - generic [ref=e1129]:
+            - generic [ref=e1130]:
+              - generic [ref=e1131]:
+                - generic [ref=e1132]: undefined ر.س
+                - generic [ref=e1133]: undefined
+              - link "أسرار التخمير والإنضاج الجاف في المطابخ الفاخرة" [ref=e1134] [cursor=pointer]:
+                - /url: courses.html?id=course-1
+              - generic [ref=e1135]:
+                - generic [ref=e1136]: احترافي متقدم (Masterclass)
+                - link "التفاصيل →" [ref=e1137] [cursor=pointer]:
+                  - /url: courses.html?id=course-1
+            - generic [ref=e1138]:
+              - generic [ref=e1139]:
+                - generic [ref=e1140]: undefined ر.س
+                - generic [ref=e1141]: undefined
+              - link "فنون المخبوزات الفرنسية الفاخرة وعجائن التوريق الحديثة" [ref=e1142] [cursor=pointer]:
+                - /url: courses.html?id=course-2
+              - generic [ref=e1143]:
+                - generic [ref=e1144]: متوسط (Intermediate)
+                - link "التفاصيل →" [ref=e1145] [cursor=pointer]:
+                  - /url: courses.html?id=course-2
+  - navigation "Mobile Bottom Navigation" [ref=e1146]:
+    - link "Home Feed" [ref=e1147] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e1151]: الرئيسية
+    - link "Explore" [ref=e1152] [cursor=pointer]:
+      - /url: explore.html
+      - generic [ref=e1156]: استكشف
+    - link "Create Recipe" [ref=e1157] [cursor=pointer]:
+      - /url: create-recipe.html
+    - link "Supplies" [ref=e1160] [cursor=pointer]:
+      - /url: supplies.html
+      - generic [ref=e1163]: التوريدات
+    - link "Dashboard" [ref=e1164] [cursor=pointer]:
+      - /url: dashboard.html
+      - generic [ref=e1170]: لوحة التحكم

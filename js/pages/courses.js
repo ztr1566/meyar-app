@@ -2,20 +2,18 @@
  * Meyar (معيار) Culinary Masterclasses & Workshops Page Controller
  * Handles culinary academy catalog rendering, multi-facet filtering (categories, skill levels,
  * availability, keyword search), curriculum breakdown modal, interactive 1-click enrollment,
- * schedule selection, localStorage persistence (meyar_enrolled_courses & meyar_saved_courses),
+ * schedule selection, transient session state,
  * and dynamic bilingual updates.
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import { COURSE_FIXTURES, USER_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Modal } from '../core/modal.js';
 import { Toast } from '../core/toast.js';
+import { isCurrentUserId } from '../core/utils.js';
 import { normalizeSearchQuery } from '../modules/search.js';
 
 export class CoursesPage {
-  static STORAGE_ENROLLED = 'meyar_enrolled_courses';
-  static STORAGE_SAVED = 'meyar_saved_courses';
-
   static currentCategory = 'all'; // all | fermentation | pastry | smoke | seafood
   static currentLevel = 'all'; // all | masterclass | intermediate | beginner
   static searchQuery = '';
@@ -23,24 +21,29 @@ export class CoursesPage {
   static filterAvailableOnly = false;
   static isInitialized = false;
 
+  static enrolledCourseIds = new Set();
+  static savedCourseIds = new Set();
+
   /**
-   * Get enrolled course IDs from localStorage (handles both string IDs and object records)
+   * Reset in-memory courses state (for test isolation)
+   */
+  static reset() {
+    this.enrolledCourseIds = new Set();
+    this.savedCourseIds = new Set();
+    this.currentCategory = 'all';
+    this.currentLevel = 'all';
+    this.searchQuery = '';
+    this.sortBy = 'popular';
+    this.filterAvailableOnly = false;
+    this.isInitialized = false;
+  }
+
+  /**
+   * Get enrolled course IDs from in-memory set
    * @returns {string[]}
    */
   static getEnrolledCourseIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_ENROLLED);
-      if (!data) return [];
-      const parsed = JSON.parse(data);
-      if (!Array.isArray(parsed)) return [];
-      return parsed.map(item => {
-        if (typeof item === 'string') return item;
-        if (item && typeof item === 'object') return item.course_id || item.id || '';
-        return '';
-      }).filter(Boolean);
-    } catch {
-      return [];
-    }
+    return Array.from(this.enrolledCourseIds);
   }
 
   /**
@@ -50,21 +53,15 @@ export class CoursesPage {
    */
   static isEnrolled(courseId) {
     if (!courseId) return false;
-    const enrolled = new Set(this.getEnrolledCourseIds());
-    return enrolled.has(courseId);
+    return this.enrolledCourseIds.has(courseId);
   }
 
   /**
-   * Get saved/bookmarked course IDs from localStorage
+   * Get saved/bookmarked course IDs from in-memory set
    * @returns {string[]}
    */
   static getSavedCourseIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_SAVED);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.savedCourseIds);
   }
 
   /**
@@ -74,22 +71,15 @@ export class CoursesPage {
    */
   static toggleSaveCourse(courseId) {
     if (!courseId) return false;
-    const saved = new Set(this.getSavedCourseIds());
-    const isSaved = saved.has(courseId);
+    const isSaved = this.savedCourseIds.has(courseId);
     const isAr = I18n.getLang() === 'ar';
 
     if (isSaved) {
-      saved.delete(courseId);
+      this.savedCourseIds.delete(courseId);
       Toast.info(isAr ? 'تمت إزالة الورشة من الدورات المحفوظة' : 'Masterclass removed from saved list');
     } else {
-      saved.add(courseId);
+      this.savedCourseIds.add(courseId);
       Toast.success(isAr ? 'تم حفظ ورشة العمل في قائمتك' : 'Masterclass saved to your list');
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_SAVED, JSON.stringify(Array.from(saved)));
-    } catch (e) {
-      console.error('Failed to update saved courses in localStorage', e);
     }
 
     this.updateSaveButtonStates();
@@ -104,26 +94,19 @@ export class CoursesPage {
    */
   static enrollInCourse(courseId, studentDetails = {}) {
     if (!courseId) return false;
-    const course = (MOCK_DATA.courses || []).find(c => c.id === courseId);
+    const course = (COURSE_FIXTURES || []).find(c => c.id === courseId);
     if (!course) {
       Toast.error(I18n.getLang() === 'ar' ? 'عذراً، لم يتم العثور على بيانات الورشة' : 'Masterclass not found');
       return false;
     }
+    if (isCurrentUserId(course.instructor_id, USER_FIXTURES)) return false;
 
-    const enrolledIds = new Set(this.getEnrolledCourseIds());
-    if (enrolledIds.has(courseId)) {
+    if (this.enrolledCourseIds.has(courseId)) {
       Toast.info(I18n.t('courses.already_enrolled') || 'أنت مسجل بالفعل في هذه الدورة');
       return true;
     }
 
-    enrolledIds.add(courseId);
-
-    // Save as array of string IDs for cross-compatibility with explore/chef pages
-    try {
-      localStorage.setItem(this.STORAGE_ENROLLED, JSON.stringify(Array.from(enrolledIds)));
-    } catch (e) {
-      console.error('Failed to save enrollment to localStorage', e);
-    }
+    this.enrolledCourseIds.add(courseId);
 
     const isAr = I18n.getLang() === 'ar';
     Toast.success(
@@ -153,15 +136,9 @@ export class CoursesPage {
    */
   static cancelEnrollment(courseId) {
     if (!courseId) return false;
-    const enrolledIds = new Set(this.getEnrolledCourseIds());
-    if (!enrolledIds.has(courseId)) return false;
+    if (!this.enrolledCourseIds.has(courseId)) return false;
 
-    enrolledIds.delete(courseId);
-    try {
-      localStorage.setItem(this.STORAGE_ENROLLED, JSON.stringify(Array.from(enrolledIds)));
-    } catch (e) {
-      console.error('Failed to remove enrollment from localStorage', e);
-    }
+    this.enrolledCourseIds.delete(courseId);
 
     const isAr = I18n.getLang() === 'ar';
     Toast.info(isAr ? 'تم إلغاء التسجيل في الدورة' : 'Workshop enrollment cancelled');
@@ -202,7 +179,7 @@ export class CoursesPage {
    * @returns {Array<Object>}
    */
   static filterCourses() {
-    const courses = MOCK_DATA.courses || [];
+    const courses = COURSE_FIXTURES || [];
     const normQuery = normalizeSearchQuery(this.searchQuery);
 
     return courses.filter(item => {
@@ -326,6 +303,15 @@ export class CoursesPage {
     const enrollBtnClass = isEnrolled
       ? 'bg-brand-emerald text-white hover:bg-brand-emerald-hover'
       : 'bg-brand-gold text-white hover:bg-brand-gold-hover';
+    const enrollControl = isCurrentUserId(course.instructor_id, USER_FIXTURES) ? '' : `
+      <button type="button"
+              data-action="open-enroll"
+              data-course-id="${course.id}"
+              class="px-3 py-2 text-xs font-bold rounded-xl shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-gold flex items-center justify-center gap-1.5 ${enrollBtnClass}">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+        <span>${enrollBtnText}</span>
+      </button>
+    `;
 
     return `
       <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-border-subtle shadow-sm"
@@ -444,13 +430,7 @@ export class CoursesPage {
                 <span>${isAr ? 'المنهج والمحاور' : 'Syllabus'}</span>
               </button>
 
-              <button type="button" 
-                      data-action="open-enroll" 
-                      data-course-id="${course.id}"
-                      class="px-3 py-2 text-xs font-bold rounded-xl shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-gold flex items-center justify-center gap-1.5 ${enrollBtnClass}">
-                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
-                <span>${enrollBtnText}</span>
-              </button>
+              ${enrollControl}
             </div>
           </div>
 
@@ -497,7 +477,7 @@ export class CoursesPage {
     const modal = document.getElementById('course-curriculum-modal');
     if (!modal) return;
 
-    const course = (MOCK_DATA.courses || []).find(c => c.id === courseId);
+    const course = (COURSE_FIXTURES || []).find(c => c.id === courseId);
     if (!course) return;
 
     const isAr = I18n.getLang() === 'ar';
@@ -509,6 +489,15 @@ export class CoursesPage {
     const durationLabel = isAr ? course.duration_ar : course.duration_en;
     const scheduleLabel = isAr ? course.schedule_ar : course.schedule_en;
     const isEnrolled = this.isEnrolled(course.id);
+    const enrollControl = isCurrentUserId(course.instructor_id, USER_FIXTURES) ? '' : `
+      <button type="button"
+              data-action="open-enroll"
+              data-course-id="${course.id}"
+              class="flex-1 sm:flex-none px-6 py-2.5 text-xs font-bold text-white ${isEnrolled ? 'bg-brand-emerald hover:bg-brand-emerald-hover' : 'bg-brand-gold hover:bg-brand-gold-hover'} rounded-xl shadow-md transition-colors flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+        <span>${isEnrolled ? (isAr ? 'أنت مسجل بالفوج' : 'Enrolled') : (isAr ? 'التسجيل في الورشة' : 'Enroll in Workshop')}</span>
+      </button>
+    `;
 
     const syllabusHtml = (course.syllabus || []).map((mod) => {
       const modTitle = isAr ? mod.title_ar : mod.title_en;
@@ -636,13 +625,7 @@ export class CoursesPage {
                 ${isAr ? 'إغلاق' : 'Close'}
               </button>
 
-              <button type="button" 
-                      data-action="open-enroll" 
-                      data-course-id="${course.id}"
-                      class="flex-1 sm:flex-none px-6 py-2.5 text-xs font-bold text-white ${isEnrolled ? 'bg-brand-emerald hover:bg-brand-emerald-hover' : 'bg-brand-gold hover:bg-brand-gold-hover'} rounded-xl shadow-md transition-colors flex items-center justify-center gap-2">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
-                <span>${isEnrolled ? (isAr ? 'أنت مسجل بالفوج' : 'Enrolled') : (isAr ? 'التسجيل في الورشة' : 'Enroll in Workshop')}</span>
-              </button>
+              ${enrollControl}
             </div>
           </div>
 
@@ -661,8 +644,9 @@ export class CoursesPage {
     const modal = document.getElementById('course-enroll-modal');
     if (!modal) return;
 
-    const course = (MOCK_DATA.courses || []).find(c => c.id === courseId);
+    const course = (COURSE_FIXTURES || []).find(c => c.id === courseId);
     if (!course) return;
+    if (isCurrentUserId(course.instructor_id, USER_FIXTURES)) return;
 
     const isAr = I18n.getLang() === 'ar';
     const title = isAr ? course.title_ar : course.title_en;
@@ -671,7 +655,7 @@ export class CoursesPage {
     const isEnrolled = this.isEnrolled(course.id);
 
     // Default logged in user data
-    const user = MOCK_DATA.user || {};
+    const user = USER_FIXTURES || {};
     const defaultName = isAr ? (user.name_ar || 'الشيف فيصل الهاشمي') : (user.name_en || 'Chef Faisal Al-Hashemi');
     const defaultEmail = user.email || 'faisal@meyar.sa';
     const defaultRole = isAr ? (user.title_ar || 'شيف تنفيذي ومستشار طهي') : (user.title_en || 'Executive Chef & Culinary Consultant');
@@ -896,10 +880,8 @@ export class CoursesPage {
    * Initialize all event handlers and query string parameters
    */
   static init() {
-    if (this.isInitialized) {
-      this.render();
-      return;
-    }
+    if (this.isInitialized) return;
+    if (typeof document === 'undefined') return;
 
     this.isInitialized = true;
 
@@ -1126,13 +1108,4 @@ export class CoursesPage {
 
 export function initCoursesPage() {
   CoursesPage.init();
-}
-
-// Auto-initialize when running in browser
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => CoursesPage.init());
-  } else {
-    CoursesPage.init();
-  }
 }

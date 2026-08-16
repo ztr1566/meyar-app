@@ -596,6 +596,7 @@ test('CreateRecipeStudio - Dynamic Instruction Steps Builder (Add, Remove, Move,
 
 test('CreateRecipeStudio - Media & Cover Photo Management', () => {
   setupDOM();
+  CreateRecipeStudio.reset();
   CreateRecipeStudio.init();
 
   const coverUrl = 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80';
@@ -624,6 +625,7 @@ test('CreateRecipeStudio - Media & Cover Photo Management', () => {
 
 test('CreateRecipeStudio - Form Validation & Error Highlighting', () => {
   setupDOM();
+  CreateRecipeStudio.reset();
   CreateRecipeStudio.init();
 
   // Test Step 1 Validation with empty fields
@@ -663,8 +665,9 @@ test('CreateRecipeStudio - Form Validation & Error Highlighting', () => {
   assert.equal(val4.valid, false, 'Step 4 should be invalid without instructions');
 });
 
-test('CreateRecipeStudio - Draft Persistence in LocalStorage', () => {
+test('CreateRecipeStudio - Draft State in Current Session', () => {
   setupDOM();
+  CreateRecipeStudio.reset();
   CreateRecipeStudio.init();
 
   CreateRecipeStudio.handleCoverUpload('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80');
@@ -679,20 +682,18 @@ test('CreateRecipeStudio - Draft Persistence in LocalStorage', () => {
   const saved = CreateRecipeStudio.saveDraft(true);
   assert.equal(saved, true, 'Draft should save successfully');
 
-  const draftJson = localStorage.getItem(CreateRecipeStudio.STORAGE_DRAFT);
-  assert.ok(draftJson, 'Draft must exist in localStorage');
-
-  const parsed = JSON.parse(draftJson);
-  assert.equal(parsed.title_ar, 'ستيك واغيو فاخر');
-  assert.equal(parsed.ingredients.length, 1);
-  assert.equal(parsed.steps.length, 1);
+  assert.ok(CreateRecipeStudio.currentDraft, 'Draft must exist in memory');
+  assert.equal(CreateRecipeStudio.currentDraft.title_ar, 'ستيك واغيو فاخر');
+  assert.equal(CreateRecipeStudio.currentDraft.ingredients.length, 1);
+  assert.equal(CreateRecipeStudio.currentDraft.steps.length, 1);
 
   // Clear Form and reload from draft
+  const savedDraft = JSON.parse(JSON.stringify(CreateRecipeStudio.currentDraft));
   CreateRecipeStudio.clearDraft();
-  assert.equal(localStorage.getItem(CreateRecipeStudio.STORAGE_DRAFT), null, 'Draft should be cleared from storage');
+  assert.equal(CreateRecipeStudio.currentDraft, null, 'Draft should be cleared');
 
   // Restore by saving again and loading
-  localStorage.setItem(CreateRecipeStudio.STORAGE_DRAFT, draftJson);
+  CreateRecipeStudio.currentDraft = savedDraft;
   const loaded = CreateRecipeStudio.loadDraft();
   assert.equal(loaded, true, 'Draft should load successfully');
   assert.equal(CreateRecipeStudio.getIngredients().length, 1);
@@ -700,6 +701,7 @@ test('CreateRecipeStudio - Draft Persistence in LocalStorage', () => {
 
 test('CreateRecipeStudio - Recipe Publishing Pipeline & Integrity', () => {
   setupDOM();
+  CreateRecipeStudio.reset();
   CreateRecipeStudio.init();
 
   // Load sample recipe to ensure full validity
@@ -714,9 +716,8 @@ test('CreateRecipeStudio - Recipe Publishing Pipeline & Integrity', () => {
   assert.ok(newRecipe.steps.length >= 3);
 
   // Verify stored in custom recipes list
-  const storedList = JSON.parse(localStorage.getItem(CreateRecipeStudio.STORAGE_CUSTOM_RECIPES));
-  assert.ok(Array.isArray(storedList));
-  assert.equal(storedList[0].id, newRecipe.id);
+  assert.ok(Array.isArray(CreateRecipeStudio.customRecipes));
+  assert.equal(CreateRecipeStudio.customRecipes[0].id, newRecipe.id);
 });
 
 test('CreateRecipeStudio - Language Switcher Event Reactivity', () => {

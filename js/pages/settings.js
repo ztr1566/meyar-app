@@ -2,123 +2,124 @@
  * Meyar (معيار) Account & Platform Settings Controller
  * Handles multi-section tabs (Profile, Security, Language, Theme, Notifications, B2B),
  * live theme & language switching, form validation, password matching,
- * session revocation, and localStorage persistence.
+ * session revocation, and transient session state.
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import { SETTING_FIXTURES, USER_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { ThemeManager } from '../core/theme.js';
 import { Toast } from '../core/toast.js';
+import { Modal } from '../core/modal.js';
 
 export class SettingsPage {
-  static STORAGE_KEY = 'meyar_user_settings';
   static activeTab = 'profile'; // profile | security | language | theme | notifications | business
   static isInitialized = false;
+  static settingsStore = null;
+  static pendingMedia = {};
+  static pendingCv;
+  static mediaEditor = {
+    kind: null,
+    image: null,
+    zoom: 1,
+    panX: 0,
+    panY: 0,
+    drag: null
+  };
+  static MEDIA_CONFIG = {
+    avatar: { width: 400, height: 400, titleKey: 'settings.edit_avatar' },
+    cover: { width: 1600, height: 500, titleKey: 'settings.edit_cover' }
+  };
 
   /**
-   * Return initial default settings combined with mock user session
+   * Reset in-memory settings store (for test isolation)
+   */
+  static reset() {
+    this.settingsStore = null;
+    this.activeTab = 'profile';
+    this.isInitialized = false;
+    this.pendingMedia = {};
+    this.pendingCv = undefined;
+    this.resetMediaEditor();
+  }
+
+  static resetMediaEditor() {
+    this.mediaEditor = {
+      kind: null,
+      image: null,
+      zoom: 1,
+      panX: 0,
+      panY: 0,
+      drag: null
+    };
+  }
+
+  /**
+   * Return initial reference settings combined with the active fixture user
    * @returns {object}
    */
   static getDefaultSettings() {
-    const user = MOCK_DATA.user || {};
+    const user = USER_FIXTURES || {};
     const biz = user.business_profile || {};
+    const settings = JSON.parse(JSON.stringify(SETTING_FIXTURES || {}));
 
     return {
       profile: {
-        name_ar: user.name_ar || 'الشيف فيصل الهاشمي',
-        name_en: user.name_en || 'Chef Faisal Al-Hashemi',
-        handle: user.handle || '@chef_faisal',
-        email: user.email || 'faisal@meyar.sa',
-        phone: '+966 50 123 4567',
-        location_ar: 'الرياض، المملكة العربية السعودية',
-        location_en: 'Riyadh, Saudi Arabia',
-        title_ar: user.title_ar || 'المدير التنفيذي للطهي ومستشار فنون الطهي المعاصر',
-        title_en: user.title_en || 'Executive Culinary Director & Gastronomy Consultant',
-        bio_ar: user.bio_ar || 'رائد فنون الطهي السعودي المعاصر. يعيد ابتكار الوصفات التراثية النجدية والحجازية باستخدام أحدث تقنيات الإنضاج الجاف والتخمير الطبيعي وفنون الطهي الجزيئي.',
-        bio_en: user.bio_en || 'Pioneer of modern Saudi fine dining. Reinventing heritage Najdi and Hejazi recipes through precision dry-aging, wild fermentation, and progressive molecular gastronomy.',
-        avatar: user.avatar || 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=400&q=80',
-        cover: user.cover || 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80'
+        ...settings.profile,
+        name_ar: user.name_ar,
+        name_en: user.name_en,
+        handle: user.handle,
+        email: user.email,
+        title_ar: user.title_ar,
+        title_en: user.title_en,
+        bio_ar: user.bio_ar,
+        bio_en: user.bio_en,
+        avatar: user.avatar,
+        cover: user.cover
       },
       security: {
-        two_factor: true,
-        login_alerts: true,
-        active_sessions_count: 2
+        ...settings.security,
+        active_sessions_count: settings.security?.active_sessions_count ?? settings.security?.sessions_count ?? 1
       },
       language: {
-        lang: I18n.getLang() || 'ar',
-        country: 'SA',
-        timezone: 'Asia/Riyadh',
-        currency: 'SAR',
-        calendar: 'gregorian'
+        ...settings.language,
+        lang: I18n.getLang() || settings.language?.lang || 'ar'
       },
       theme: {
-        theme: ThemeManager.getTheme() || 'dark',
-        high_contrast: false,
-        compact_mode: false
+        ...settings.theme,
+        theme: ThemeManager.getTheme() || settings.theme?.theme || 'dark'
       },
-      notifications: {
-        email_digest: true,
-        email_rfq: true,
-        email_courses: true,
-        push_messages: true,
-        push_social: true,
-        push_followers: true,
-        sms_urgent: true,
-        sms_security: true
-      },
+      notifications: { ...settings.notifications },
       business: {
-        company_name_ar: biz.company_name_ar || 'استوديو نجد لفنون الطهي والضيافة',
-        company_name_en: biz.company_name_en || 'Najd Culinary Studio & Hospitality Consultancy',
-        cr_number: biz.cr_number || '1010894521',
-        vat_number: biz.vat_number || '310245896300003',
-        category: biz.category || 'Fine Dining & Hospitality Consulting',
-        location_ar: biz.location_ar || 'حي حطين، الرياض',
-        location_en: biz.location_en || 'Hittin, Riyadh, Saudi Arabia',
-        auto_quote: true
+        ...settings.business,
+        company_name_ar: biz.company_name_ar,
+        company_name_en: biz.company_name_en,
+        cr_number: biz.cr_number,
+        vat_number: biz.vat_number,
+        category: biz.category,
+        location_ar: biz.location_ar,
+        location_en: biz.location_en
       }
     };
   }
 
   /**
-   * Load stored settings or fallback to defaults
+   * Load current session settings or fallback to the reference fixture
    * @returns {object}
    */
   static getSettings() {
-    try {
-      const stored = localStorage.getItem(this.STORAGE_KEY);
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        const defaults = this.getDefaultSettings();
-        // Deep merge with defaults to ensure all keys exist
-        return {
-          profile: { ...defaults.profile, ...(parsed.profile || {}) },
-          security: { ...defaults.security, ...(parsed.security || {}) },
-          language: { ...defaults.language, ...(parsed.language || {}) },
-          theme: { ...defaults.theme, ...(parsed.theme || {}) },
-          notifications: { ...defaults.notifications, ...(parsed.notifications || {}) },
-          business: { ...defaults.business, ...(parsed.business || {}) }
-        };
-      }
-    } catch (e) {
-      console.warn('Failed to parse stored settings, using defaults', e);
+    if (!this.settingsStore) {
+      this.settingsStore = this.getDefaultSettings();
     }
-
-    const defaults = this.getDefaultSettings();
-    this.saveSettingsToStorage(defaults, false);
-    return defaults;
+    return this.settingsStore;
   }
 
   /**
-   * Save settings object directly to localStorage
+   * Save settings object directly to the current page session
    * @param {object} settings 
    * @param {boolean} [dispatchEvent=true] 
    */
-  static saveSettingsToStorage(settings, dispatchEvent = true) {
-    try {
-      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(settings));
-    } catch (e) {
-      console.error('Failed to save settings to localStorage', e);
-    }
+  static saveSettings(settings, dispatchEvent = true) {
+    this.settingsStore = settings;
 
     if (dispatchEvent && typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
       try {
@@ -212,12 +213,20 @@ export class SettingsPage {
     setVal('setting-profile-bio-en', settings.profile.bio_en);
     setVal('setting-profile-location-ar', settings.profile.location_ar);
     setVal('setting-profile-location-en', settings.profile.location_en);
+    setVal('setting-profile-experience', settings.profile.years_experience);
+    setVal('setting-profile-specialties', settings.profile.specialties);
+    setVal('setting-profile-website', settings.profile.website);
 
     // Profile previews
-    const avatarImg = document.getElementById('setting-avatar-preview');
-    if (avatarImg && settings.profile.avatar) {
-      avatarImg.src = settings.profile.avatar;
-    }
+    const avatar = Object.prototype.hasOwnProperty.call(this.pendingMedia, 'avatar')
+      ? this.pendingMedia.avatar
+      : settings.profile.avatar;
+    const cover = Object.prototype.hasOwnProperty.call(this.pendingMedia, 'cover')
+      ? this.pendingMedia.cover
+      : settings.profile.cover;
+    this.renderMediaPreview('avatar', avatar);
+    this.renderMediaPreview('cover', cover);
+    this.renderCvPreview(this.pendingCv !== undefined ? this.pendingCv : settings.profile.cv);
 
     // 2. Security
     setChecked('setting-security-2fa', settings.security.two_factor);
@@ -270,7 +279,7 @@ export class SettingsPage {
 
     const getVal = (id, fallback = '') => {
       const el = document.getElementById(id);
-      return el ? el.value.trim() : fallback;
+      return el ? String(el.value ?? '').trim() : fallback;
     };
 
     const getChecked = (id, fallback = false) => {
@@ -296,8 +305,16 @@ export class SettingsPage {
         bio_en: getVal('setting-profile-bio-en', currentSettings.profile.bio_en),
         location_ar: getVal('setting-profile-location-ar', currentSettings.profile.location_ar),
         location_en: getVal('setting-profile-location-en', currentSettings.profile.location_en),
-        avatar: currentSettings.profile.avatar,
-        cover: currentSettings.profile.cover
+        years_experience: getVal('setting-profile-experience', currentSettings.profile.years_experience),
+        specialties: getVal('setting-profile-specialties', currentSettings.profile.specialties),
+        website: getVal('setting-profile-website', currentSettings.profile.website),
+        avatar: Object.prototype.hasOwnProperty.call(this.pendingMedia, 'avatar')
+          ? this.pendingMedia.avatar
+          : currentSettings.profile.avatar,
+        cover: Object.prototype.hasOwnProperty.call(this.pendingMedia, 'cover')
+          ? this.pendingMedia.cover
+          : currentSettings.profile.cover,
+        cv: this.pendingCv !== undefined ? this.pendingCv : currentSettings.profile.cv
       },
       security: {
         two_factor: getChecked('setting-security-2fa', currentSettings.security.two_factor),
@@ -371,8 +388,258 @@ export class SettingsPage {
     return { valid: true };
   }
 
+  static renderMediaPreview(kind, src) {
+    if (typeof document === 'undefined') return;
+    const preview = document.getElementById(`setting-${kind}-preview`);
+    if (preview && src) preview.src = src;
+  }
+
+  static renderCvPreview(cv) {
+    if (typeof document === 'undefined') return;
+
+    const label = document.getElementById('setting-profile-cv-name');
+    const link = document.getElementById('setting-profile-cv-link');
+    const file = typeof cv === 'string' ? { name: cv } : cv;
+    const name = file?.name || '';
+
+    if (label) label.textContent = name || I18n.t('settings.no_cv');
+    if (link) {
+      if (name && file?.dataUrl) {
+        link.href = file.dataUrl;
+        link.download = name;
+        link.classList.remove('hidden');
+      } else {
+        link.removeAttribute('href');
+        link.classList.add('hidden');
+      }
+    }
+  }
+
+  static handleMediaFile(kind, file) {
+    if (!file) return;
+
+    const isImage = file.type?.startsWith('image/') || /\.(jpe?g|png|webp)$/i.test(file.name || '');
+    if (!isImage) {
+      Toast.error(I18n.t('settings.image_type_error'));
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      Toast.error(I18n.t('settings.image_size_error'));
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => this.openMediaEditor(kind, reader.result);
+    reader.onerror = () => Toast.error(I18n.t('settings.image_read_error'));
+    reader.readAsDataURL(file);
+  }
+
+  static openMediaEditor(kind, src) {
+    const config = this.MEDIA_CONFIG[kind];
+    const modal = document.getElementById('setting-image-editor-modal');
+    const stage = document.getElementById('setting-image-editor-stage');
+    if (!config || !modal || !stage || typeof Image === 'undefined') return;
+
+    this.mediaEditor = { kind, image: null, zoom: 1, panX: 0, panY: 0, drag: null };
+    stage.style.aspectRatio = `${config.width} / ${config.height}`;
+
+    const title = document.getElementById('setting-image-editor-title');
+    if (title) {
+      title.setAttribute('data-i18n', config.titleKey);
+      title.textContent = I18n.t(config.titleKey);
+    }
+
+    const zoomInput = document.getElementById('setting-image-editor-zoom');
+    const zoomOutput = document.getElementById('setting-image-editor-zoom-value');
+    if (zoomInput) zoomInput.value = '1';
+    if (zoomOutput) zoomOutput.textContent = '100%';
+
+    const preview = document.getElementById('setting-image-editor-image');
+    if (preview) preview.src = src;
+    Modal.open(modal.id);
+
+    const image = new Image();
+    image.onload = () => {
+      this.mediaEditor.image = image;
+      this.updateMediaEditor();
+    };
+    image.onerror = () => {
+      this.closeMediaEditor();
+      Toast.error(I18n.t('settings.image_read_error'));
+    };
+    image.src = src;
+  }
+
+  static getMediaCropMetrics({
+    stageWidth,
+    stageHeight,
+    imageWidth,
+    imageHeight,
+    zoom = 1,
+    panX = 0,
+    panY = 0
+  }) {
+    if (![stageWidth, stageHeight, imageWidth, imageHeight].every(dimension => Number(dimension) > 0)) {
+      return null;
+    }
+
+    const safeZoom = Math.max(1, Number(zoom) || 1);
+    const scale = Math.max(stageWidth / imageWidth, stageHeight / imageHeight) * safeZoom;
+    const renderWidth = imageWidth * scale;
+    const renderHeight = imageHeight * scale;
+    const maxPanX = Math.max(0, (renderWidth - stageWidth) / 2);
+    const maxPanY = Math.max(0, (renderHeight - stageHeight) / 2);
+    const safePanX = Math.max(-1, Math.min(1, Number(panX) || 0));
+    const safePanY = Math.max(-1, Math.min(1, Number(panY) || 0));
+
+    return {
+      renderWidth,
+      renderHeight,
+      left: (stageWidth - renderWidth) / 2 + safePanX * maxPanX,
+      top: (stageHeight - renderHeight) / 2 + safePanY * maxPanY,
+      maxPanX,
+      maxPanY
+    };
+  }
+
+  static updateMediaEditor() {
+    const stage = document.getElementById('setting-image-editor-stage');
+    const preview = document.getElementById('setting-image-editor-image');
+    const image = this.mediaEditor.image;
+    if (!stage || !preview || !image?.naturalWidth || !image?.naturalHeight) return;
+
+    const metrics = this.getMediaCropMetrics({
+      stageWidth: stage.clientWidth,
+      stageHeight: stage.clientHeight,
+      imageWidth: image.naturalWidth,
+      imageHeight: image.naturalHeight,
+      zoom: this.mediaEditor.zoom,
+      panX: this.mediaEditor.panX,
+      panY: this.mediaEditor.panY
+    });
+    if (!metrics) return;
+
+    preview.src = image.src;
+    preview.style.width = `${metrics.renderWidth}px`;
+    preview.style.height = `${metrics.renderHeight}px`;
+    preview.style.left = `${metrics.left}px`;
+    preview.style.top = `${metrics.top}px`;
+  }
+
+  static updateMediaZoom(event) {
+    this.mediaEditor.zoom = Math.max(1, Number(event.target.value) || 1);
+    const output = document.getElementById('setting-image-editor-zoom-value');
+    if (output) output.textContent = `${Math.round(this.mediaEditor.zoom * 100)}%`;
+    this.updateMediaEditor();
+  }
+
+  static startMediaPan(event) {
+    if (!this.mediaEditor.image) return;
+    this.mediaEditor.drag = { x: event.clientX, y: event.clientY };
+    event.currentTarget.classList.add('cursor-grabbing');
+    if (event.currentTarget.setPointerCapture && event.pointerId !== undefined) {
+      event.currentTarget.setPointerCapture(event.pointerId);
+    }
+  }
+
+  static moveMediaPan(event) {
+    const drag = this.mediaEditor.drag;
+    const stage = event.currentTarget;
+    if (!drag || !stage) return;
+
+    const image = this.mediaEditor.image;
+    const metrics = this.getMediaCropMetrics({
+      stageWidth: stage.clientWidth,
+      stageHeight: stage.clientHeight,
+      imageWidth: image.naturalWidth,
+      imageHeight: image.naturalHeight,
+      zoom: this.mediaEditor.zoom,
+      panX: this.mediaEditor.panX,
+      panY: this.mediaEditor.panY
+    });
+    if (!metrics) return;
+
+    this.mediaEditor.panX = metrics.maxPanX ? this.mediaEditor.panX + (event.clientX - drag.x) / metrics.maxPanX : 0;
+    this.mediaEditor.panY = metrics.maxPanY ? this.mediaEditor.panY + (event.clientY - drag.y) / metrics.maxPanY : 0;
+    this.mediaEditor.panX = Math.max(-1, Math.min(1, this.mediaEditor.panX));
+    this.mediaEditor.panY = Math.max(-1, Math.min(1, this.mediaEditor.panY));
+    this.mediaEditor.drag = { x: event.clientX, y: event.clientY };
+    this.updateMediaEditor();
+  }
+
+  static endMediaPan(event) {
+    this.mediaEditor.drag = null;
+    if (event.currentTarget) event.currentTarget.classList.remove('cursor-grabbing');
+  }
+
+  static applyMediaEdit() {
+    const { kind, image, zoom, panX, panY } = this.mediaEditor;
+    const config = this.MEDIA_CONFIG[kind];
+    if (!kind || !image || !config) return;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = config.width;
+    canvas.height = config.height;
+    const context = canvas.getContext('2d');
+    if (!context) {
+      Toast.error(I18n.t('settings.image_read_error'));
+      return;
+    }
+
+    const metrics = this.getMediaCropMetrics({
+      stageWidth: config.width,
+      stageHeight: config.height,
+      imageWidth: image.naturalWidth,
+      imageHeight: image.naturalHeight,
+      zoom,
+      panX,
+      panY
+    });
+    context.drawImage(image, metrics.left, metrics.top, metrics.renderWidth, metrics.renderHeight);
+
+    const src = canvas.toDataURL('image/jpeg', 0.9);
+    this.pendingMedia[kind] = src;
+    this.renderMediaPreview(kind, src);
+    this.closeMediaEditor();
+    Toast.success(I18n.t('settings.image_saved'));
+  }
+
+  static closeMediaEditor() {
+    const modal = document.getElementById('setting-image-editor-modal');
+    if (modal && !modal.classList.contains('hidden')) Modal.close(modal);
+    this.resetMediaEditor();
+  }
+
+  static handleCvFile(file) {
+    if (!file) return;
+
+    const isCv = /\.(pdf|doc|docx)$/i.test(file.name || '') || /application\/(pdf|msword|vnd\.openxmlformats-officedocument\.wordprocessingml\.document)/i.test(file.type || '');
+    if (!isCv) {
+      Toast.error(I18n.t('settings.cv_type_error'));
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      Toast.error(I18n.t('settings.cv_size_error'));
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.pendingCv = {
+        name: file.name,
+        type: file.type,
+        size: file.size,
+        dataUrl: reader.result
+      };
+      this.renderCvPreview(this.pendingCv);
+      Toast.success(I18n.t('settings.cv_selected'));
+    };
+    reader.onerror = () => Toast.error(I18n.t('settings.cv_read_error'));
+    reader.readAsDataURL(file);
+  }
+
   /**
-   * Save settings from form to storage and apply live system changes
+   * Save settings to the current session and apply live system changes
    */
   static handleSave() {
     const validation = this.validateForm();
@@ -382,7 +649,9 @@ export class SettingsPage {
     }
 
     const updated = this.collectFormData();
-    this.saveSettingsToStorage(updated, true);
+    this.saveSettings(updated, true);
+    this.pendingMedia = {};
+    this.pendingCv = undefined;
 
     // Apply Live Language Change if changed
     const currentLang = I18n.getLang();
@@ -411,6 +680,9 @@ export class SettingsPage {
    * Reset form fields back to stored settings
    */
   static handleReset() {
+    this.pendingMedia = {};
+    this.pendingCv = undefined;
+    this.closeMediaEditor();
     this.populateForm();
     Toast.info(I18n.t('settings.discard_changes'));
   }
@@ -421,7 +693,7 @@ export class SettingsPage {
   static revokeSessions() {
     const settings = this.getSettings();
     settings.security.active_sessions_count = 1;
-    this.saveSettingsToStorage(settings, true);
+    this.saveSettings(settings, true);
 
     const sessionListEl = document.getElementById('setting-sessions-list');
     if (sessionListEl) {
@@ -492,7 +764,49 @@ export class SettingsPage {
       });
     }
 
-    // 7. System Lang Changed Listener
+    // 7. Profile media and CV uploads
+    ['avatar', 'cover'].forEach((kind) => {
+      const changeBtn = document.getElementById(`setting-${kind}-change-btn`);
+      const fileInput = document.getElementById(`setting-${kind}-file`);
+      if (changeBtn && fileInput) {
+        changeBtn.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', (e) => {
+          this.handleMediaFile(kind, e.target.files?.[0]);
+          e.target.value = '';
+        });
+      }
+    });
+
+    const cvInput = document.getElementById('setting-profile-cv');
+    const cvButton = document.getElementById('setting-profile-cv-btn');
+    if (cvInput && cvButton) {
+      cvButton.addEventListener('click', () => cvInput.click());
+      cvInput.addEventListener('change', (e) => {
+        this.handleCvFile(e.target.files?.[0]);
+        e.target.value = '';
+      });
+    }
+
+    const editorStage = document.getElementById('setting-image-editor-stage');
+    if (editorStage) {
+      editorStage.addEventListener('pointerdown', (e) => this.startMediaPan(e));
+      editorStage.addEventListener('pointermove', (e) => this.moveMediaPan(e));
+      editorStage.addEventListener('pointerup', (e) => this.endMediaPan(e));
+      editorStage.addEventListener('pointercancel', (e) => this.endMediaPan(e));
+    }
+
+    const zoomInput = document.getElementById('setting-image-editor-zoom');
+    if (zoomInput) zoomInput.addEventListener('input', (e) => this.updateMediaZoom(e));
+
+    const applyMediaBtn = document.getElementById('setting-image-editor-apply');
+    if (applyMediaBtn) {
+      applyMediaBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.applyMediaEdit();
+      });
+    }
+
+    // 8. System Lang Changed Listener
     if (typeof window !== 'undefined') {
       window.addEventListener('meyar:lang-changed', () => {
         this.populateForm();
@@ -505,6 +819,11 @@ export class SettingsPage {
           if (radio) radio.checked = true;
         }
       });
+
+      window.addEventListener('meyar:modal-closed', (e) => {
+        if (e.detail?.modalId === 'setting-image-editor-modal') this.resetMediaEditor();
+      });
+      window.addEventListener('resize', () => this.updateMediaEditor());
     }
   }
 
@@ -527,6 +846,14 @@ export class SettingsPage {
    * Initialize settings page
    */
   static init() {
+    if (typeof document !== 'undefined' && this.lastDocument !== document) {
+      this.isInitialized = false;
+      this.lastDocument = document;
+      this.pendingMedia = {};
+      this.pendingCv = undefined;
+      this.resetMediaEditor();
+    }
+    if (this.isInitialized) return;
     if (typeof document === 'undefined') return;
 
     this.parseURL();
@@ -534,14 +861,5 @@ export class SettingsPage {
     this.switchTab(this.activeTab);
     this.attachEventListeners();
     this.isInitialized = true;
-  }
-}
-
-// Auto-bootstrap when running in browser
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => SettingsPage.init());
-  } else {
-    SettingsPage.init();
   }
 }

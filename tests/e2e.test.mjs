@@ -24,6 +24,15 @@ const ALL_12_PAGES = [
   'auth.html'
 ];
 
+const SEARCH_PAGES = ALL_12_PAGES.filter(page => page !== 'auth.html');
+
+function extractSearchModal(content, page) {
+  const start = content.indexOf('<!-- ================= SEARCH MODAL PALETTE ================= -->');
+  const end = content.indexOf('<!-- ================= MOBILE NAVIGATION DRAWER', start);
+  assert.ok(start >= 0 && end >= 0, `${page} must contain the canonical search modal`);
+  return content.slice(start, end);
+}
+
 test('E2E Suite: All 12 HTML Pages Exist and are Valid', (t) => {
   for (const page of ALL_12_PAGES) {
     const filePath = path.resolve(process.cwd(), page);
@@ -67,6 +76,15 @@ test('E2E Suite: Synchronous Anti-FOUC Script in <head> across all 12 pages', (t
       headSection.includes('document.documentElement.setAttribute("dir"'),
       `${page} Anti-FOUC script must set dir attribute`
     );
+  }
+});
+
+test('E2E Suite: Shared Search Modal Markup across all app pages', () => {
+  const canonical = extractSearchModal(fs.readFileSync(path.resolve(process.cwd(), 'index.html'), 'utf-8'), 'index.html');
+
+  for (const page of SEARCH_PAGES) {
+    const content = fs.readFileSync(path.resolve(process.cwd(), page), 'utf-8');
+    assert.equal(extractSearchModal(content, page), canonical, `${page} search modal must match the feed search modal`);
   }
 });
 

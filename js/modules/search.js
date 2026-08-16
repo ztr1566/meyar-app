@@ -4,7 +4,7 @@
  * Full bilingual support (Arabic & English), keyboard navigation (Ctrl+K / Cmd+K / Esc / Arrows).
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import { CHEF_FIXTURES, COURSE_FIXTURES, RECIPE_FIXTURES, SUPPLY_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Modal } from '../core/modal.js';
 
@@ -124,7 +124,7 @@ export class SearchModule {
   }
 
   /**
-   * Query all domain entities in MOCK_DATA
+   * Query all domain entities in the temporary reference fixtures
    * @param {string} searchTerm 
    * @returns {{ recipes: Array, chefs: Array, supplies: Array, courses: Array, total: number }}
    */
@@ -151,7 +151,7 @@ export class SearchModule {
     };
 
     // 1. Recipes matching
-    const recipes = (MOCK_DATA.recipes || []).filter(r => 
+    const recipes = (RECIPE_FIXTURES || []).filter(r =>
       matchesText(r.title_ar) ||
       matchesText(r.title_en) ||
       matchesText(r.title) ||
@@ -170,7 +170,7 @@ export class SearchModule {
     );
 
     // 2. Chefs matching
-    const chefs = (MOCK_DATA.chefs || []).filter(c =>
+    const chefs = (CHEF_FIXTURES || []).filter(c =>
       matchesText(c.name_ar) ||
       matchesText(c.name_en) ||
       matchesText(c.name) ||
@@ -186,7 +186,7 @@ export class SearchModule {
     );
 
     // 3. B2B Supplies matching
-    const supplies = (MOCK_DATA.supplies || []).filter(s =>
+    const supplies = (SUPPLY_FIXTURES || []).filter(s =>
       matchesText(s.name_ar) ||
       matchesText(s.name_en) ||
       matchesText(s.name) ||
@@ -204,7 +204,7 @@ export class SearchModule {
     );
 
     // 4. Courses / Masterclasses matching
-    const courses = (MOCK_DATA.courses || []).filter(co =>
+    const courses = (COURSE_FIXTURES || []).filter(co =>
       matchesText(co.title_ar) ||
       matchesText(co.title_en) ||
       matchesText(co.title) ||

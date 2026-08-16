@@ -430,10 +430,13 @@ test('CoursesPage - Initial Catalog & Card Rendering', () => {
   assert.ok(grid.innerHTML.includes('المخبوزات') || grid.innerHTML.includes('Haute Viennoiserie'), 'Should include Course 2');
   assert.ok(grid.innerHTML.includes('الطهي المباشر') || grid.innerHTML.includes('Live Fire'), 'Should include Course 3');
   assert.ok(grid.innerHTML.includes('الكايسيكي') || grid.innerHTML.includes('Kaiseki Philosophy'), 'Should include Course 4');
+  assert.equal(CoursesPage.renderCourseCard(MOCK_DATA.courses[0], true).includes('data-action="open-enroll"'), false, 'Own course must not render an enrollment action');
+  assert.equal(CoursesPage.renderCourseCard(MOCK_DATA.courses[1], true).includes('data-action="open-enroll"'), true, 'Other instructors must retain enrollment');
 });
 
-test('CoursesPage - Bookmark / Save Masterclass Toggle and Persistence', () => {
-  const { documentMock, localStorageMock } = setupDOM();
+test('CoursesPage - Bookmark / Save Masterclass Toggle and Session State', () => {
+  const { documentMock } = setupDOM();
+  CoursesPage.reset();
   I18n.init();
 
   const grid = documentMock.createElement('div');
@@ -448,7 +451,6 @@ test('CoursesPage - Bookmark / Save Masterclass Toggle and Persistence', () => {
   const isSavedFirst = CoursesPage.toggleSaveCourse('course-1');
   assert.equal(isSavedFirst, true);
   assert.deepEqual(CoursesPage.getSavedCourseIds(), ['course-1']);
-  assert.equal(localStorageMock.getItem('meyar_saved_courses'), JSON.stringify(['course-1']));
 
   // Toggle save on course-2
   CoursesPage.toggleSaveCourse('course-2');
@@ -615,8 +617,9 @@ test('CoursesPage - Curriculum Modal Inspection & Syllabus Modules', () => {
   assert.ok(body.innerHTML.includes('3,200'));
 });
 
-test('CoursesPage - 1-Click Enrollment Modal & Form Flow & Persistence', () => {
-  const { documentMock, localStorageMock } = setupDOM();
+test('CoursesPage - 1-Click Enrollment Modal & Form Flow & Session State', () => {
+  const { documentMock } = setupDOM();
+  CoursesPage.reset();
   I18n.init();
 
   const modal = documentMock.createElement('div');
@@ -628,29 +631,30 @@ test('CoursesPage - 1-Click Enrollment Modal & Form Flow & Persistence', () => {
 
   assert.equal(CoursesPage.isEnrolled('course-1'), false);
 
-  CoursesPage.renderEnrollModal('course-1');
+  CoursesPage.renderEnrollModal('course-2');
   assert.ok(body.innerHTML.includes('course-enroll-form'));
-  assert.ok(body.innerHTML.includes('3,200'));
+  assert.ok(body.innerHTML.includes('2,600'));
 
-  // Test direct enrollment
-  const enrolledSuccess = CoursesPage.enrollInCourse('course-1', {
+  // The active user teaches course-1 and cannot enroll in it.
+  const selfEnrollment = CoursesPage.enrollInCourse('course-1', {
     student_name: 'الشيف فيصل الهاشمي',
     student_email: 'faisal@meyar.sa'
   });
+  assert.equal(selfEnrollment, false);
+  assert.equal(CoursesPage.isEnrolled('course-1'), false);
 
+  // Enroll in courses taught by other chefs.
+  const enrolledSuccess = CoursesPage.enrollInCourse('course-2', { student_name: 'Faisal' });
   assert.equal(enrolledSuccess, true);
-  assert.equal(CoursesPage.isEnrolled('course-1'), true);
-  assert.deepEqual(CoursesPage.getEnrolledCourseIds(), ['course-1']);
-  assert.equal(localStorageMock.getItem('meyar_enrolled_courses'), JSON.stringify(['course-1']));
-
-  // Enroll in another course
+  assert.equal(CoursesPage.isEnrolled('course-2'), true);
   CoursesPage.enrollInCourse('course-4', { student_name: 'Faisal' });
   assert.equal(CoursesPage.isEnrolled('course-4'), true);
-  assert.deepEqual(CoursesPage.getEnrolledCourseIds(), ['course-1', 'course-4']);
+  assert.deepEqual(CoursesPage.getEnrolledCourseIds(), ['course-2', 'course-4']);
 });
 
 test('CoursesPage - Enrollment Cancellation & Event Dispatch', () => {
-  const { localStorageMock, windowMock } = setupDOM();
+  const { windowMock } = setupDOM();
+  CoursesPage.reset();
   I18n.init();
 
   CoursesPage.enrollInCourse('course-2');

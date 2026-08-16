@@ -9,6 +9,7 @@ import { I18n } from './core/i18n.js';
 import { Modal } from './core/modal.js';
 import { Toast } from './core/toast.js';
 import { SearchModule } from './modules/search.js';
+import { RFQManager } from './modules/rfq.js';
 
 /**
  * Initialize all core platform systems and global UI event delegation
@@ -21,6 +22,7 @@ export function initApp() {
   I18n.init();
   Modal.init();
   SearchModule.init();
+  RFQManager.init();
 
   // 2. Mobile navigation drawer toggle & close handlers
   document.querySelectorAll('[data-action="toggle-mobile-menu"], [data-action="toggle-mobile-nav"]').forEach(btn => {
@@ -113,15 +115,6 @@ export function initApp() {
       });
     }
   } catch {}
-}
-
-// Auto-bootstrap when running in browser
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initApp);
-  } else {
-    initApp();
-  }
 }
 
 export {

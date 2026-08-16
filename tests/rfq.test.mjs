@@ -388,7 +388,7 @@ test('RFQManager - Form Validation Logic', () => {
   assert.equal(Object.keys(res4.errors).length, 0);
 });
 
-test('RFQManager - Save RFQ Persistence & Event Dispatch', () => {
+test('RFQManager - Save RFQ Session State & Event Dispatch', () => {
   setupDOM();
   I18n.setLang('ar');
 
@@ -418,7 +418,7 @@ test('RFQManager - Save RFQ Persistence & Event Dispatch', () => {
   assert.equal(eventFired, true);
   assert.equal(eventDetail.rfq.item_id, 'supply-1');
 
-  // Verify retrieved from storage
+  // Verify retrieved from session state
   const allRFQs = RFQManager.getRFQs();
   assert.ok(allRFQs.length > 0);
   assert.equal(allRFQs[0].rfq_id, saved.rfq_id);
@@ -604,6 +604,7 @@ test('RFQManager - Form Submission Flow & Validation Rejection', () => {
 
 test('RFQManager - Render History List', () => {
   const { documentMock } = setupDOM();
+  RFQManager.reset();
   I18n.setLang('ar');
 
   const container = documentMock.createElement('div');
@@ -616,7 +617,7 @@ test('RFQManager - Render History List', () => {
   assert.ok(container.innerHTML.includes('#rfq-9801') || container.innerHTML.includes('rfq-'));
 
   // Empty storage
-  localStorage.setItem(RFQManager.STORAGE_KEY, JSON.stringify([]));
+  RFQManager.rfqsStore = [];
   RFQManager.renderHistory(container);
   assert.ok(container.innerHTML.includes('supplies.rfq_history_empty') || container.innerHTML.includes('لا توجد طلبات'));
 });

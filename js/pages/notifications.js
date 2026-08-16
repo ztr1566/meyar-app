@@ -2,50 +2,45 @@
  * Meyar (معيار) Notifications Center Controller
  * Handles grouped notification feeds (Today, Yesterday, Earlier),
  * category filtering pills, mark all as read, item actions, link navigation,
- * unread badges, and persistent localStorage state.
+ * unread badges, and transient session state.
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import { NOTIFICATION_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Toast } from '../core/toast.js';
 
 export class NotificationsPage {
-  static STORAGE_KEY = 'meyar_notifications';
   static currentFilter = 'all'; // all | likes | rfqs | courses
   static isInitialized = false;
+  static notificationsStore = null;
 
   /**
-   * Get all notifications from localStorage or fallback to MOCK_DATA
-   * @returns {Array<object>}
+   * Reset in-memory notifications store (for test isolation)
    */
-  static getNotifications() {
-    try {
-      const stored = localStorage.getItem(this.STORAGE_KEY);
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed)) return parsed;
-      }
-    } catch (e) {
-      console.warn('Failed to parse stored notifications, using mock defaults', e);
-    }
-
-    // Default to mock dataset and clone
-    const defaults = JSON.parse(JSON.stringify(MOCK_DATA.notifications || []));
-    this.saveNotifications(defaults, false);
-    return defaults;
+  static reset() {
+    this.notificationsStore = null;
+    this.currentFilter = 'all';
+    this.isInitialized = false;
   }
 
   /**
-   * Save notifications array to localStorage and update UI
+   * Get all notifications from in-memory store or fallback to fixtures
+   * @returns {Array<object>}
+   */
+  static getNotifications() {
+    if (!this.notificationsStore) {
+      this.notificationsStore = JSON.parse(JSON.stringify(NOTIFICATION_FIXTURES || []));
+    }
+    return this.notificationsStore;
+  }
+
+  /**
+   * Save notifications array to in-memory store and update UI
    * @param {Array<object>} notifications 
    * @param {boolean} [shouldRender=true] 
    */
   static saveNotifications(notifications, shouldRender = true) {
-    try {
-      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notifications));
-    } catch (e) {
-      console.error('Failed to save notifications to localStorage', e);
-    }
+    this.notificationsStore = notifications;
 
     const unreadCount = this.getUnreadCount(notifications);
 
@@ -197,7 +192,7 @@ export class NotificationsPage {
         }
       }
 
-      // 2. Textual heuristic fallback for mock strings
+      // 2. Textual heuristic fallback for relative-time strings
       if (!isToday && !isYesterday) {
         const timeEn = (item.time_en || '').toLowerCase();
         const timeAr = (item.time_ar || '').toLowerCase();
@@ -633,20 +628,16 @@ export class NotificationsPage {
    * Initialize notifications page
    */
   static init() {
+    if (typeof document !== 'undefined' && this.lastDocument !== document) {
+      this.isInitialized = false;
+      this.lastDocument = document;
+    }
+    if (this.isInitialized) return;
     if (typeof document === 'undefined') return;
 
     this.parseURLParams();
     this.render();
     this.attachEventListeners();
     this.isInitialized = true;
-  }
-}
-
-// Auto-bootstrap when running in browser
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => NotificationsPage.init());
-  } else {
-    NotificationsPage.init();
   }
 }

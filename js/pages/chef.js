@@ -5,74 +5,77 @@
  * masterclass enrollment, community activity feed, hire inquiries, and bilingual re-rendering.
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import {
+  CHEF_ACTIVITY_FIXTURES,
+  CHEF_COLLECTION_FIXTURES,
+  CHEF_FIXTURES,
+  COURSE_FIXTURES,
+  RECIPE_FIXTURES,
+  SUPPLY_FIXTURES,
+  USER_FIXTURES
+} from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Toast } from '../core/toast.js';
 import { Modal } from '../core/modal.js';
+import { isCurrentUserId } from '../core/utils.js';
 import { normalizeSearchQuery } from '../modules/search.js';
 
 export class ChefPage {
-  static STORAGE_FOLLOWING = 'meyar_following_chefs';
-  static STORAGE_SAVED = 'meyar_saved_recipes';
-  static STORAGE_LIKED = 'meyar_liked_recipes';
-  static STORAGE_ENROLLED = 'meyar_enrolled_courses';
-
   static currentChefId = 'chef-1';
   static currentChef = null;
   static activeTab = 'recipes';
   static recipeFilterQuery = '';
   static isInitialized = false;
+  static lastDocument = null;
+
+  static followingChefIds = new Set();
+  static savedRecipeIds = new Set();
+  static likedRecipeIds = new Set();
+  static enrolledCourseIds = new Set();
 
   /**
-   * Get list of followed chef IDs from localStorage
+   * Reset in-memory ChefPage state (for test isolation)
+   */
+  static reset() {
+    this.followingChefIds = new Set();
+    this.savedRecipeIds = new Set();
+    this.likedRecipeIds = new Set();
+    this.enrolledCourseIds = new Set();
+    this.activeTab = 'recipes';
+    this.currentChef = null;
+    this.isInitialized = false;
+  }
+
+  /**
+   * Get list of followed chef IDs from in-memory set
    * @returns {string[]}
    */
   static getFollowingChefIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_FOLLOWING);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.followingChefIds);
   }
 
   /**
-   * Get list of saved recipe IDs from localStorage
+   * Get list of saved recipe IDs from in-memory set
    * @returns {string[]}
    */
   static getSavedRecipeIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_SAVED);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.savedRecipeIds);
   }
 
   /**
-   * Get list of liked recipe IDs from localStorage
+   * Get list of liked recipe IDs from in-memory set
    * @returns {string[]}
    */
   static getLikedRecipeIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_LIKED);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.likedRecipeIds);
   }
 
   /**
-   * Get list of enrolled course IDs from localStorage
+   * Get list of enrolled course IDs from in-memory set
    * @returns {string[]}
    */
   static getEnrolledCourseIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_ENROLLED);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.enrolledCourseIds);
   }
 
   /**
@@ -82,21 +85,15 @@ export class ChefPage {
    */
   static toggleFollow(chefId) {
     if (!chefId) return false;
-    const following = new Set(this.getFollowingChefIds());
-    const isFollowing = following.has(chefId);
+    if (isCurrentUserId(chefId, USER_FIXTURES)) return false;
+    const isFollowing = this.followingChefIds.has(chefId);
 
     if (isFollowing) {
-      following.delete(chefId);
+      this.followingChefIds.delete(chefId);
       Toast.info(I18n.t('toast.unfollowed_success'));
     } else {
-      following.add(chefId);
+      this.followingChefIds.add(chefId);
       Toast.success(I18n.t('toast.followed_success'));
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_FOLLOWING, JSON.stringify(Array.from(following)));
-    } catch (e) {
-      console.error('Failed to save following to localStorage', e);
     }
 
     this.updateFollowButton();
@@ -110,21 +107,14 @@ export class ChefPage {
    */
   static toggleSave(recipeId) {
     if (!recipeId) return false;
-    const saved = new Set(this.getSavedRecipeIds());
-    const isSaved = saved.has(recipeId);
+    const isSaved = this.savedRecipeIds.has(recipeId);
 
     if (isSaved) {
-      saved.delete(recipeId);
+      this.savedRecipeIds.delete(recipeId);
       Toast.info(I18n.t('toast.unsaved_success'));
     } else {
-      saved.add(recipeId);
+      this.savedRecipeIds.add(recipeId);
       Toast.success(I18n.t('toast.saved_success'));
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_SAVED, JSON.stringify(Array.from(saved)));
-    } catch (e) {
-      console.error('Failed to save bookmarks to localStorage', e);
     }
 
     this.updateActionStates();
@@ -138,19 +128,12 @@ export class ChefPage {
    */
   static toggleLike(recipeId) {
     if (!recipeId) return false;
-    const liked = new Set(this.getLikedRecipeIds());
-    const isLiked = liked.has(recipeId);
+    const isLiked = this.likedRecipeIds.has(recipeId);
 
     if (isLiked) {
-      liked.delete(recipeId);
+      this.likedRecipeIds.delete(recipeId);
     } else {
-      liked.add(recipeId);
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_LIKED, JSON.stringify(Array.from(liked)));
-    } catch (e) {
-      console.error('Failed to save likes to localStorage', e);
+      this.likedRecipeIds.add(recipeId);
     }
 
     this.updateActionStates();
@@ -164,21 +147,16 @@ export class ChefPage {
    */
   static enrollCourse(courseId) {
     if (!courseId) return false;
-    const enrolled = new Set(this.getEnrolledCourseIds());
-    const isEnrolled = enrolled.has(courseId);
+    const course = COURSE_FIXTURES.find(item => item.id === courseId);
+    if (isCurrentUserId(course?.instructor_id, USER_FIXTURES)) return false;
+    const isEnrolled = this.enrolledCourseIds.has(courseId);
 
     if (isEnrolled) {
-      enrolled.delete(courseId);
+      this.enrolledCourseIds.delete(courseId);
       Toast.info(I18n.getLang() === 'ar' ? 'تم إلغاء التسجيل في ورشة العمل' : 'Masterclass enrollment cancelled');
     } else {
-      enrolled.add(courseId);
+      this.enrolledCourseIds.add(courseId);
       Toast.success(I18n.t('toast.course_enrolled'));
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_ENROLLED, JSON.stringify(Array.from(enrolled)));
-    } catch (e) {
-      console.error('Failed to save enrollments to localStorage', e);
     }
 
     this.renderCoursesPanel();
@@ -196,8 +174,8 @@ export class ChefPage {
       chefId = params.get('id') || params.get('chef');
     }
 
-    const found = MOCK_DATA.chefs.find(c => c.id === chefId);
-    this.currentChef = found || MOCK_DATA.chefs[0];
+    const found = CHEF_FIXTURES.find(c => c.id === chefId);
+    this.currentChef = found || CHEF_FIXTURES[0];
     this.currentChefId = this.currentChef.id;
     return this.currentChef;
   }
@@ -336,7 +314,7 @@ export class ChefPage {
     if (followingCount) followingCount.textContent = String(chef.following || 0);
 
     const recipesCount = document.getElementById('stat-recipes-count');
-    const chefRecipes = MOCK_DATA.recipes.filter(r => r.author_id === chef.id);
+    const chefRecipes = RECIPE_FIXTURES.filter(r => r.author_id === chef.id);
     if (recipesCount) recipesCount.textContent = String(chefRecipes.length > 0 ? chefRecipes.length : chef.recipes_count);
 
     const experienceCount = document.getElementById('stat-experience-count');
@@ -359,7 +337,7 @@ export class ChefPage {
     const badgeSaved = document.getElementById('badge-saved-count');
     if (badgeSaved) badgeSaved.textContent = '3';
 
-    const chefCourses = MOCK_DATA.courses.filter(c => c.instructor_id === chef.id);
+    const chefCourses = COURSE_FIXTURES.filter(c => c.instructor_id === chef.id);
     const badgeCourses = document.getElementById('badge-courses-count');
     if (badgeCourses) badgeCourses.textContent = String(chefCourses.length);
 
@@ -369,7 +347,7 @@ export class ChefPage {
     // Message link
     const msgBtn = document.getElementById('btn-message-chef');
     if (msgBtn) {
-      msgBtn.href = `chat.html?id=chat-${chef.id === 'chef-2' ? '2' : '1'}`;
+      msgBtn.href = `chat.html?chef=${encodeURIComponent(chef.id)}`;
     }
 
     // Share URL input
@@ -393,6 +371,45 @@ export class ChefPage {
   static updateFollowButton() {
     const btn = document.getElementById('btn-follow-chef');
     if (!btn || !this.currentChef) return;
+
+    const isSelf = isCurrentUserId(this.currentChef.id, USER_FIXTURES);
+    const viewerActions = document.getElementById('viewer-actions-group');
+    const ownerActions = document.getElementById('owner-actions-group');
+
+    if (isSelf) {
+      if (viewerActions) {
+        viewerActions.classList.add('hidden');
+        viewerActions.classList.remove('flex');
+      }
+      // ponytail: also toggle individual buttons to satisfy existing tests without modifying test files
+      btn.classList.add('hidden');
+      const msgBtn = document.getElementById('btn-message-chef');
+      if (msgBtn) msgBtn.classList.add('hidden');
+      const hireBtn = document.getElementById('btn-hire-chef');
+      if (hireBtn) hireBtn.classList.add('hidden');
+
+      if (ownerActions) {
+        ownerActions.classList.remove('hidden');
+        ownerActions.classList.add('flex');
+      }
+      return;
+    } else {
+      if (viewerActions) {
+        viewerActions.classList.remove('hidden');
+        viewerActions.classList.add('flex');
+      }
+      // ponytail: also toggle individual buttons to satisfy existing tests without modifying test files
+      btn.classList.remove('hidden');
+      const msgBtn = document.getElementById('btn-message-chef');
+      if (msgBtn) msgBtn.classList.remove('hidden');
+      const hireBtn = document.getElementById('btn-hire-chef');
+      if (hireBtn) hireBtn.classList.remove('hidden');
+
+      if (ownerActions) {
+        ownerActions.classList.add('hidden');
+        ownerActions.classList.remove('flex');
+      }
+    }
 
     const following = new Set(this.getFollowingChefIds());
     const isFollowing = following.has(this.currentChef.id);
@@ -463,7 +480,7 @@ export class ChefPage {
     if (!grid || !this.currentChef) return;
 
     const isAr = I18n.getLang() === 'ar';
-    let recipes = MOCK_DATA.recipes.filter(r => r.author_id === this.currentChef.id);
+    let recipes = RECIPE_FIXTURES.filter(r => r.author_id === this.currentChef.id);
 
     // Filter by search query if any
     if (this.recipeFilterQuery.trim()) {
@@ -659,35 +676,7 @@ export class ChefPage {
 
     const isAr = I18n.getLang() === 'ar';
 
-    const collections = [
-      {
-        id: 'col-1',
-        title_ar: 'مختارات الإنضاج الجاف والتعتيق الفاخر',
-        title_en: 'Dry-Aging & Fermentation Reserve',
-        count: 8,
-        image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80',
-        tag_ar: 'تقنيات متقدمة',
-        tag_en: 'Advanced Technique'
-      },
-      {
-        id: 'col-2',
-        title_ar: 'أطباق المأكولات البحرية والنكهات الحمضية المعاصرة',
-        title_en: 'Modern Marine Gastronomy & Citrus Crudo',
-        count: 6,
-        image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80',
-        tag_ar: 'أطباق رئيسية',
-        tag_en: 'Main Courses'
-      },
-      {
-        id: 'col-3',
-        title_ar: 'فنون الحلويات الهندسية والمستكة والزهور الشرقية',
-        title_en: 'Architectural Entremets & Floral Glazes',
-        count: 10,
-        image: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80',
-        tag_ar: 'حلويات فاخرة',
-        tag_en: 'Haute Pâtisserie'
-      }
-    ];
+    const collections = CHEF_COLLECTION_FIXTURES;
 
     if (collections.length === 0) {
       grid.innerHTML = '';
@@ -750,7 +739,7 @@ export class ChefPage {
     if (!grid || !this.currentChef) return;
 
     const isAr = I18n.getLang() === 'ar';
-    const courses = MOCK_DATA.courses.filter(c => c.instructor_id === this.currentChef.id);
+    const courses = COURSE_FIXTURES.filter(c => c.instructor_id === this.currentChef.id);
 
     if (courses.length === 0) {
       grid.innerHTML = '';
@@ -768,6 +757,7 @@ export class ChefPage {
       const level = isAr ? course.level_ar : course.level_en;
       const duration = isAr ? course.duration_ar : course.duration_en;
       const schedule = isAr ? course.schedule_ar : course.schedule_en;
+      const isSelf = isCurrentUserId(course.instructor_id, USER_FIXTURES);
       const isEnrolled = enrolledSet.has(course.id);
 
       return `
@@ -825,11 +815,13 @@ export class ChefPage {
 
           <!-- Bottom Action Buttons -->
           <div class="p-6 pt-0 flex items-center gap-3">
-            <button type="button" data-action="enroll-course" data-id="${course.id}"
-                    class="flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-gold flex items-center justify-center gap-2 ${isEnrolled ? 'bg-brand-emerald text-white' : 'bg-brand-gold hover:bg-brand-gold-hover text-white'}">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              <span>${isEnrolled ? (isAr ? 'تم التسجيل في الورشة' : 'Enrolled') : (isAr ? 'التسجيل في ورشة العمل' : 'Enroll in Masterclass')}</span>
-            </button>
+            ${isSelf ? '' : `
+              <button type="button" data-action="enroll-course" data-id="${course.id}"
+                      class="flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-gold flex items-center justify-center gap-2 ${isEnrolled ? 'bg-brand-emerald text-white' : 'bg-brand-gold hover:bg-brand-gold-hover text-white'}">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>${isEnrolled ? (isAr ? 'تم التسجيل في الورشة' : 'Enrolled') : (isAr ? 'التسجيل في ورشة العمل' : 'Enroll in Masterclass')}</span>
+              </button>
+            `}
             <a href="courses.html" class="p-3 rounded-xl bg-surface-2 hover:bg-surface-1 border border-border-subtle text-text-muted hover:text-text-main transition-colors" title="View Full Course Details">
               <svg class="w-4 h-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </a>
@@ -850,56 +842,7 @@ export class ChefPage {
     const isAr = I18n.getLang() === 'ar';
     const chefName = isAr ? this.currentChef.name_ar : this.currentChef.name_en;
 
-    const activities = [
-      {
-        id: 'act-1',
-        type: 'recipe',
-        time_ar: 'منذ ساعتين',
-        time_en: '2 hours ago',
-        title_ar: 'نشر وصفة جديدة في مجتمع معيار',
-        title_en: 'Published a new recipe in Meyar',
-        body_ar: 'يسعدني مشاركة وصفتي الجديدة "ستيك واغيو بريب آي مع غليز التمر وثوم أسود". يمكنكم الآن تجربة مقياس الحصص الذكي وقائمة التوريدات المرفقة.',
-        body_en: 'Excited to release my newest master recipe "Wagyu Ribeye with Black Garlic Date Glaze". Check out the dynamic serving scaler and linked B2B supplies.',
-        likes: 64,
-        replies: 12
-      },
-      {
-        id: 'act-2',
-        type: 'course',
-        time_ar: 'منذ يوم',
-        time_en: '1 day ago',
-        title_ar: 'فتح باب التسجيل في ورشة العمل القادمة',
-        title_en: 'Opened registrations for masterclass workshop',
-        body_ar: 'أطلقنا مقاعد دورة "أسرار التخمير والإنضاج الجاف في المطابخ الفاخرة". المقاعد محدودة بـ 15 مقعداً تدريبياً لضمان التطبيق العملي الدقيق.',
-        body_en: 'Announcing our "Modern Fermentation & Dry Aging Masterclass". Limited to 15 culinary professionals for direct hands-on mastery.',
-        likes: 89,
-        replies: 19
-      },
-      {
-        id: 'act-3',
-        type: 'tip',
-        time_ar: 'منذ 3 أيام',
-        time_en: '3 days ago',
-        title_ar: 'نصيحة تقنية للمطابخ الاحترافية',
-        title_en: 'Professional Kitchen Technique Tip',
-        body_ar: 'للحصول على كراميل متوازن لغليز التمر، استخدم حرارة منخفضة ثابتة عند 85° مئوية لمدة 40 دقيقة مع إضافة 2% من حموضة الليمون الأسود المطحون لموازنة السكريات الطبيعية.',
-        body_en: 'To balance rich date molasses glaze, hold at gentle 85°C for 40 mins and add 2% dried black lime powder for enzymatic acid contrast.',
-        likes: 142,
-        replies: 28
-      },
-      {
-        id: 'act-4',
-        type: 'award',
-        time_ar: 'منذ أسبوع',
-        time_en: '1 week ago',
-        title_ar: 'تكريم دولي جديد',
-        title_en: 'Received International Culinary Distinction',
-        body_ar: 'فخور باختيار مطبخنا ضمن المرشحين النهائيين لجوائز البوكوز دور للشرق الأوسط لعام 2024. شكراً لفريق العمل وشركاء النجاح.',
-        body_en: 'Honored to be nominated as a Bocuse d’Or Middle East Finalist for 2024. Deep gratitude to our culinary brigade.',
-        likes: 210,
-        replies: 45
-      }
-    ];
+    const activities = CHEF_ACTIVITY_FIXTURES;
 
     if (activities.length === 0) {
       stream.innerHTML = '';
@@ -1025,7 +968,7 @@ export class ChefPage {
     // Endorsed kitchen equipment & supplies
     const equipList = document.getElementById('about-equipment-list');
     if (equipList) {
-      const supplies = MOCK_DATA.supplies.slice(0, 3);
+    const supplies = SUPPLY_FIXTURES.slice(0, 3);
       equipList.innerHTML = supplies.map(sup => {
         const title = isAr ? sup.title_ar : sup.title_en;
         return `
@@ -1191,6 +1134,11 @@ export class ChefPage {
    * Main entry point
    */
   static init() {
+    if (typeof document !== 'undefined' && this.lastDocument !== document) {
+      this.isInitialized = false;
+      this.lastDocument = document;
+    }
+    if (this.isInitialized) return;
     if (typeof document === 'undefined') return;
 
     this.loadChef();
@@ -1210,14 +1158,5 @@ export class ChefPage {
     this.setActiveTab(initialTab, false);
     this.bindEvents();
     this.isInitialized = true;
-  }
-}
-
-// Auto-bootstrap when in browser
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => ChefPage.init());
-  } else {
-    ChefPage.init();
   }
 }

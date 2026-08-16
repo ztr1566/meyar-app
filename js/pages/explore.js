@@ -5,72 +5,63 @@
  * and seamless Arabic/English language synchronization.
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import { COURSE_FIXTURES, CHEF_FIXTURES, RECIPE_FIXTURES, SUPPLY_FIXTURES, TREND_FIXTURES, USER_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Toast } from '../core/toast.js';
+import { isCurrentUserId } from '../core/utils.js';
 import { normalizeSearchQuery } from '../modules/search.js';
 
 export class ExplorePage {
-  static STORAGE_SAVED = 'meyar_saved_recipes';
-  static STORAGE_LIKED = 'meyar_liked_recipes';
-  static STORAGE_FOLLOWING = 'meyar_following_chefs';
-  static STORAGE_ENROLLED = 'meyar_enrolled_courses';
-
   static currentCategory = 'all';
   static searchQuery = '';
   static sortBy = 'popular';
   static isInitialized = false;
+  static savedRecipeIds = new Set();
+  static likedRecipeIds = new Set();
+  static followingChefIds = new Set();
+  static enrolledCourseIds = new Set();
+
+  static reset() {
+    this.savedRecipeIds = new Set();
+    this.likedRecipeIds = new Set();
+    this.followingChefIds = new Set();
+    this.enrolledCourseIds = new Set();
+    this.currentCategory = 'all';
+    this.searchQuery = '';
+    this.sortBy = 'popular';
+    this.isInitialized = false;
+  }
 
   /**
-   * Get list of saved recipe IDs from localStorage
+   * Get list of saved recipe IDs from the current page session
    * @returns {string[]}
    */
   static getSavedRecipeIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_SAVED);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.savedRecipeIds);
   }
 
   /**
-   * Get list of liked recipe IDs from localStorage
+   * Get list of liked recipe IDs from the current page session
    * @returns {string[]}
    */
   static getLikedRecipeIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_LIKED);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.likedRecipeIds);
   }
 
   /**
-   * Get list of followed chef IDs from localStorage
+   * Get list of followed chef IDs from the current page session
    * @returns {string[]}
    */
   static getFollowingChefIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_FOLLOWING);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.followingChefIds);
   }
 
   /**
-   * Get list of enrolled course IDs from localStorage
+   * Get list of enrolled course IDs from the current page session
    * @returns {string[]}
    */
   static getEnrolledCourseIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_ENROLLED);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.enrolledCourseIds);
   }
 
   /**
@@ -80,21 +71,14 @@ export class ExplorePage {
    */
   static toggleSave(recipeId) {
     if (!recipeId) return false;
-    const saved = new Set(this.getSavedRecipeIds());
-    const isSaved = saved.has(recipeId);
+    const isSaved = this.savedRecipeIds.has(recipeId);
 
     if (isSaved) {
-      saved.delete(recipeId);
+      this.savedRecipeIds.delete(recipeId);
       Toast.info(I18n.t('toast.unsaved_success'));
     } else {
-      saved.add(recipeId);
+      this.savedRecipeIds.add(recipeId);
       Toast.success(I18n.t('toast.saved_success'));
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_SAVED, JSON.stringify(Array.from(saved)));
-    } catch (e) {
-      console.error('Failed to save bookmarks to localStorage', e);
     }
 
     this.updateCardActionStates();
@@ -108,22 +92,15 @@ export class ExplorePage {
    */
   static toggleLike(recipeId) {
     if (!recipeId) return false;
-    const liked = new Set(this.getLikedRecipeIds());
-    const isLiked = liked.has(recipeId);
+    const isLiked = this.likedRecipeIds.has(recipeId);
     const lang = I18n.getLang();
 
     if (isLiked) {
-      liked.delete(recipeId);
+      this.likedRecipeIds.delete(recipeId);
       Toast.info(lang === 'ar' ? 'تم إلغاء الإعجاب بالوصفة' : 'Recipe unliked');
     } else {
-      liked.add(recipeId);
+      this.likedRecipeIds.add(recipeId);
       Toast.success(lang === 'ar' ? 'أعجبك هذا الطبق الفاخر!' : 'Liked this gourmet dish!');
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_LIKED, JSON.stringify(Array.from(liked)));
-    } catch (e) {
-      console.error('Failed to save likes to localStorage', e);
     }
 
     this.updateCardActionStates();
@@ -136,22 +113,15 @@ export class ExplorePage {
    * @returns {boolean}
    */
   static toggleFollow(chefId) {
-    if (!chefId) return false;
-    const following = new Set(this.getFollowingChefIds());
-    const isFollowing = following.has(chefId);
+    if (!chefId || isCurrentUserId(chefId, USER_FIXTURES)) return false;
+    const isFollowing = this.followingChefIds.has(chefId);
 
     if (isFollowing) {
-      following.delete(chefId);
+      this.followingChefIds.delete(chefId);
       Toast.info(I18n.t('toast.unfollowed_success'));
     } else {
-      following.add(chefId);
+      this.followingChefIds.add(chefId);
       Toast.success(I18n.t('toast.followed_success'));
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_FOLLOWING, JSON.stringify(Array.from(following)));
-    } catch (e) {
-      console.error('Failed to save following list to localStorage', e);
     }
 
     this.updateCardActionStates();
@@ -165,22 +135,17 @@ export class ExplorePage {
    */
   static toggleEnroll(courseId) {
     if (!courseId) return false;
-    const enrolled = new Set(this.getEnrolledCourseIds());
-    const isEnrolled = enrolled.has(courseId);
+    const course = COURSE_FIXTURES.find(item => item.id === courseId);
+    if (isCurrentUserId(course?.instructor_id, USER_FIXTURES)) return false;
+    const isEnrolled = this.enrolledCourseIds.has(courseId);
     const lang = I18n.getLang();
 
     if (isEnrolled) {
-      enrolled.delete(courseId);
+      this.enrolledCourseIds.delete(courseId);
       Toast.info(lang === 'ar' ? 'تم إلغاء التسجيل في الدورة' : 'Cancelled workshop enrollment');
     } else {
-      enrolled.add(courseId);
+      this.enrolledCourseIds.add(courseId);
       Toast.success(I18n.t('toast.course_enrolled'));
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_ENROLLED, JSON.stringify(Array.from(enrolled)));
-    } catch (e) {
-      console.error('Failed to save enrollments to localStorage', e);
     }
 
     this.updateCardActionStates();
@@ -193,7 +158,7 @@ export class ExplorePage {
    * @returns {boolean}
    */
   static requestRFQ(supplyId) {
-    const item = MOCK_DATA.supplies.find(s => s.id === supplyId);
+    const item = SUPPLY_FIXTURES.find(s => s.id === supplyId);
     const lang = I18n.getLang();
     const name = item ? (lang === 'ar' ? item.title_ar : item.title_en) : '';
     Toast.success(lang === 'ar' ? `تم إرسال طلب عرض سعر لـ (${name}) بنجاح!` : `RFQ request sent for (${name})!`);
@@ -242,7 +207,7 @@ export class ExplorePage {
     const includeCourses = category === 'all' || category === 'courses' || category === 'workshops';
 
     if (includeRecipes) {
-      MOCK_DATA.recipes.forEach(r => {
+      RECIPE_FIXTURES.forEach(r => {
         if (category === 'seasonal') {
           const isSeasonal = (r.tags && r.tags.some(t => /seasonal|truffle|saffron|date|sea/i.test(t))) ||
             /تمر|زعفران|كمأة|بحري|سمك/i.test(r.title_ar + r.description_ar);
@@ -253,13 +218,13 @@ export class ExplorePage {
     }
 
     if (includeChefs) {
-      MOCK_DATA.chefs.forEach(c => {
+      CHEF_FIXTURES.forEach(c => {
         pool.push({ type: 'chef', item: c });
       });
     }
 
     if (includeSupplies) {
-      MOCK_DATA.supplies.forEach(s => {
+      SUPPLY_FIXTURES.forEach(s => {
         if (category === 'seasonal') {
           const isSeasonal = /oil|truffle|saffron/i.test(s.title_en + s.category_en) ||
             /زيت|زعفران|كمأة/i.test(s.title_ar + s.category_ar);
@@ -270,7 +235,7 @@ export class ExplorePage {
     }
 
     if (includeCourses) {
-      MOCK_DATA.courses.forEach(crs => {
+      COURSE_FIXTURES.forEach(crs => {
         pool.push({ type: 'course', item: crs });
       });
     }
@@ -393,7 +358,9 @@ export class ExplorePage {
     const title = lang === 'ar' ? recipe.title_ar : recipe.title_en;
     const cuisine = lang === 'ar' ? recipe.cuisine_ar : recipe.cuisine_en;
     const desc = lang === 'ar' ? recipe.description_ar : recipe.description_en;
-    const chefName = lang === 'ar' ? recipe.chef_name_ar : recipe.chef_name_en;
+    const chefName = lang === 'ar' ? recipe.author_name_ar : recipe.author_name_en;
+    const chefId = recipe.author_id || '';
+    const chefAvatar = recipe.author_avatar || '';
     const difficultyKey = recipe.difficulty === 'Easy' ? 'recipe.diff_easy' : (recipe.difficulty === 'Medium' ? 'recipe.diff_medium' : 'recipe.diff_hard');
     const diffLabel = I18n.t(difficultyKey);
 
@@ -423,10 +390,10 @@ export class ExplorePage {
           <!-- Card Content -->
           <div class="p-4 sm:p-5 space-y-3 text-start">
             <div class="flex items-center gap-2.5">
-              <a href="chef.html?id=${recipe.chef_id}" class="relative shrink-0 group/chef focus:outline-none">
-                <img src="${recipe.chef_avatar}" alt="${chefName}" class="w-7 h-7 rounded-lg object-cover border border-border-subtle">
+              <a href="chef.html?id=${chefId}" class="relative shrink-0 group/chef focus:outline-none">
+                <img src="${chefAvatar}" alt="${chefName}" class="w-7 h-7 rounded-lg object-cover border border-border-subtle">
               </a>
-              <a href="chef.html?id=${recipe.chef_id}" class="text-xs font-semibold text-text-muted hover:text-brand-gold transition-colors truncate">
+              <a href="chef.html?id=${chefId}" class="text-xs font-semibold text-text-muted hover:text-brand-gold transition-colors truncate">
                 ${chefName}
               </a>
             </div>
@@ -490,6 +457,7 @@ export class ExplorePage {
     const title = lang === 'ar' ? chef.title_ar : chef.title_en;
     const specialty = lang === 'ar' ? chef.specialty_ar : chef.specialty_en;
     const bio = lang === 'ar' ? chef.bio_ar : chef.bio_en;
+    const isSelf = isCurrentUserId(chef.id, USER_FIXTURES);
     const isFollowing = this.getFollowingChefIds().includes(chef.id);
 
     return `
@@ -562,11 +530,13 @@ export class ExplorePage {
 
         <!-- Footer Actions -->
         <div class="px-5 py-3.5 mt-4 border-t border-border-subtle bg-surface-2 flex items-center justify-between gap-2">
-          <button type="button" data-action="toggle-follow" data-chef-id="${chef.id}"
-                  class="flex-1 py-2 px-3 text-xs font-semibold rounded-xl border transition-colors flex items-center justify-center gap-1.5 ${isFollowing ? 'bg-surface-2 text-text-main border-border-subtle' : 'bg-brand-gold hover:bg-brand-gold-hover text-white border-transparent shadow-sm'}">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
-            <span>${isFollowing ? I18n.t('btn.following') : I18n.t('btn.follow')}</span>
-          </button>
+          ${isSelf ? '' : `
+            <button type="button" data-action="toggle-follow" data-chef-id="${chef.id}"
+                    class="flex-1 py-2 px-3 text-xs font-semibold rounded-xl border transition-colors flex items-center justify-center gap-1.5 ${isFollowing ? 'bg-surface-2 text-text-main border-border-subtle' : 'bg-brand-gold hover:bg-brand-gold-hover text-white border-transparent shadow-sm'}">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+              <span>${isFollowing ? I18n.t('btn.following') : I18n.t('btn.follow')}</span>
+            </button>
+          `}
           <a href="chef.html?id=${chef.id}" class="py-2 px-3 text-xs font-semibold text-text-main hover:text-brand-gold bg-surface-1 border border-border-subtle rounded-xl transition-colors shrink-0">
             ${I18n.t('common.view')}
           </a>
@@ -579,12 +549,13 @@ export class ExplorePage {
    * Render Supply / Commercial Equipment Card HTML
    */
   static renderSupplyCard(supply, lang) {
-    const title = lang === 'ar' ? supply.title_ar : supply.title_en;
+    const title = lang === 'ar' ? supply.name_ar : supply.name_en;
     const category = lang === 'ar' ? supply.category_ar : supply.category_en;
-    const supplierName = lang === 'ar' ? supply.supplier_name_ar : supply.supplier_name_en;
-    const priceRange = lang === 'ar' ? supply.price_range_ar : supply.price_range_en;
-    const moq = lang === 'ar' ? supply.moq_ar : supply.moq_en;
+    const supplierName = lang === 'ar' ? supply.supplier?.name_ar : supply.supplier?.name_en;
+    const priceRange = supply.price_formatted || `${supply.price || 0} ${I18n.t('common.currency')}`;
+    const moq = `${supply.moq || 0} ${lang === 'ar' ? (supply.unit_ar || 'وحدة') : (supply.unit_en || 'Units')}`;
     const leadTime = lang === 'ar' ? supply.lead_time_ar : supply.lead_time_en;
+    const rating = supply.supplier?.rating ?? '';
 
     return `
       <article data-card-type="supply" data-id="${supply.id}" class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm hover:border-brand-gold transition-all duration-200 flex flex-col justify-between group text-start">
@@ -638,7 +609,7 @@ export class ExplorePage {
         <div class="px-4 py-3 sm:px-5 sm:py-3.5 border-t border-border-subtle bg-surface-2 flex items-center justify-between gap-2">
           <div class="flex items-center gap-1 text-xs font-bold text-brand-gold">
             <svg class="w-3.5 h-3.5 fill-brand-gold text-brand-gold" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <span>${supply.rating}</span>
+            <span>${rating}</span>
           </div>
 
           <div class="flex items-center gap-2">
@@ -663,8 +634,15 @@ export class ExplorePage {
     const title = lang === 'ar' ? course.title_ar : course.title_en;
     const level = lang === 'ar' ? course.level_ar : course.level_en;
     const instructor = lang === 'ar' ? course.instructor_name_ar : course.instructor_name_en;
-    const date = lang === 'ar' ? course.date_ar : course.date_en;
+    const date = course.start_date || '';
     const duration = lang === 'ar' ? course.duration_ar : course.duration_en;
+    const description = lang === 'ar' ? (course.description_ar || course.subtitle_ar) : (course.description_en || course.subtitle_en);
+    const price = course.price_formatted || `${course.price || 0} ${I18n.t('common.currency')}`;
+    const image = course.image || '';
+    const availableSeats = course.seats_left ?? 0;
+    const totalSeats = course.total_seats ?? 0;
+    const rating = course.rating ?? '';
+    const isSelf = isCurrentUserId(course.instructor_id, USER_FIXTURES);
     const isEnrolled = this.getEnrolledCourseIds().includes(course.id);
 
     return `
@@ -672,7 +650,7 @@ export class ExplorePage {
         <div>
           <!-- Image Banner -->
           <div class="relative aspect-video w-full overflow-hidden bg-surface-2">
-            <img src="${course.cover_image}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="${image}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute top-3 start-3 flex items-center gap-1.5">
               <span class="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-surface-1 text-brand-gold border border-border-subtle shadow-sm">
                 ${level}
@@ -682,7 +660,7 @@ export class ExplorePage {
               </span>
             </div>
             <div class="absolute bottom-3 end-3 px-2 py-0.5 rounded-md bg-surface-1 text-[11px] font-bold text-brand-gold border border-border-subtle shadow-sm">
-              ${course.price_sar} ${I18n.t('common.currency')}
+              ${price}
             </div>
           </div>
 
@@ -701,13 +679,13 @@ export class ExplorePage {
                 ${title}
               </h3>
               <p class="text-xs text-text-muted mt-1.5 line-clamp-2 leading-relaxed">
-                ${lang === 'ar' ? course.description_ar : course.description_en}
+                ${description}
               </p>
             </a>
 
             <!-- Capacity Info -->
             <div class="flex items-center justify-between text-[11px] text-text-muted pt-1">
-              <span>${lang === 'ar' ? 'المقاعد المتاحة' : 'Available Seats'}: <strong class="text-text-main">${course.seats_total - course.enrolled_count}/${course.seats_total}</strong></span>
+              <span>${lang === 'ar' ? 'المقاعد المتاحة' : 'Available Seats'}: <strong class="text-text-main">${availableSeats}/${totalSeats}</strong></span>
               <span class="text-brand-gold font-semibold">${course.enrolled_count} ${lang === 'ar' ? 'مسجل' : 'enrolled'}</span>
             </div>
           </div>
@@ -717,14 +695,16 @@ export class ExplorePage {
         <div class="px-4 py-3 sm:px-5 sm:py-3.5 border-t border-border-subtle bg-surface-2 flex items-center justify-between gap-2">
           <div class="flex items-center gap-1 text-xs font-bold text-brand-gold">
             <svg class="w-3.5 h-3.5 fill-brand-gold text-brand-gold" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <span>${course.rating}</span>
+            <span>${rating}</span>
           </div>
 
           <div class="flex items-center gap-2">
-            <button type="button" data-action="enroll-course" data-course-id="${course.id}"
-                    class="px-3.5 py-1.5 text-xs font-semibold rounded-xl transition-colors ${isEnrolled ? 'bg-surface-2 text-text-main border border-border-subtle' : 'bg-brand-gold hover:bg-brand-gold-hover text-white shadow-sm'}">
-              <span>${isEnrolled ? I18n.t('btn.enrolled') : I18n.t('btn.enroll')}</span>
-            </button>
+            ${isSelf ? '' : `
+              <button type="button" data-action="enroll-course" data-course-id="${course.id}"
+                      class="px-3.5 py-1.5 text-xs font-semibold rounded-xl transition-colors ${isEnrolled ? 'bg-surface-2 text-text-main border border-border-subtle' : 'bg-brand-gold hover:bg-brand-gold-hover text-white shadow-sm'}">
+                <span>${isEnrolled ? I18n.t('btn.enrolled') : I18n.t('btn.enroll')}</span>
+              </button>
+            `}
             <a href="courses.html?id=${course.id}" class="p-2 rounded-xl bg-surface-1 border border-border-subtle text-text-muted hover:text-brand-gold transition-colors">
               <svg class="w-4 h-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </a>
@@ -870,8 +850,8 @@ export class ExplorePage {
    */
   static renderTrendingSidebar(topicsContainer, storiesContainer, workshopsContainer, lang = I18n.getLang()) {
     // 1. Trending Hashtags
-    if (topicsContainer && MOCK_DATA.trends && MOCK_DATA.trends.topics) {
-      topicsContainer.innerHTML = MOCK_DATA.trends.topics.map(topic => {
+    if (topicsContainer && TREND_FIXTURES && TREND_FIXTURES.topics) {
+      topicsContainer.innerHTML = TREND_FIXTURES.topics.map(topic => {
         const title = lang === 'ar' ? topic.title_ar : topic.title_en;
         return `
           <button type="button" data-action="filter-tag" data-tag="${topic.tag.replace('#', '')}"
@@ -889,8 +869,8 @@ export class ExplorePage {
     }
 
     // 2. Featured Chef Stories / Highlights
-    if (storiesContainer && MOCK_DATA.trends && MOCK_DATA.trends.stories) {
-      storiesContainer.innerHTML = MOCK_DATA.trends.stories.map(story => {
+    if (storiesContainer && TREND_FIXTURES && TREND_FIXTURES.stories) {
+      storiesContainer.innerHTML = TREND_FIXTURES.stories.map(story => {
         const name = lang === 'ar' ? story.chef_name_ar : story.chef_name_en;
         return `
           <a href="chef.html?id=${story.chef_id}" class="flex flex-col items-center gap-1.5 group shrink-0 focus:outline-none" aria-label="${name}">
@@ -906,14 +886,14 @@ export class ExplorePage {
     }
 
     // 3. Upcoming Workshops
-    if (workshopsContainer && MOCK_DATA.courses) {
-      workshopsContainer.innerHTML = MOCK_DATA.courses.slice(0, 2).map(crs => {
+    if (workshopsContainer && COURSE_FIXTURES) {
+      workshopsContainer.innerHTML = COURSE_FIXTURES.slice(0, 2).map(crs => {
         const title = lang === 'ar' ? crs.title_ar : crs.title_en;
-        const date = lang === 'ar' ? crs.date_ar : crs.date_en;
+        const date = crs.start_date || '';
         return `
           <div class="p-3 rounded-xl bg-surface-2 border border-border-subtle space-y-2 text-start">
             <div class="flex items-center justify-between text-[11px] text-text-muted">
-              <span class="text-brand-gold font-semibold">${crs.price_sar} ${I18n.t('common.currency')}</span>
+              <span class="text-brand-gold font-semibold">${crs.price_formatted || `${crs.price || 0} ${I18n.t('common.currency')}`}</span>
               <span>${date}</span>
             </div>
             <a href="courses.html?id=${crs.id}" class="font-bold text-xs text-text-main hover:text-brand-gold transition-colors block line-clamp-1">
@@ -1092,6 +1072,7 @@ export class ExplorePage {
    * Full Page Initializer
    */
   static init() {
+    if (this.isInitialized) return;
     if (typeof document === 'undefined') return;
 
     const gridContainer = document.getElementById('explore-grid');
@@ -1109,7 +1090,6 @@ export class ExplorePage {
     this.renderTrendingSidebar(topicsContainer, storiesContainer, workshopsContainer, lang);
     this.refresh();
 
-    if (this.isInitialized) return;
     this.isInitialized = true;
 
     // 2. Category Filter Buttons
@@ -1229,14 +1209,5 @@ export class ExplorePage {
         this.refresh();
       });
     }
-  }
-}
-
-// Auto-bootstrap when page loads in browser
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => ExplorePage.init());
-  } else {
-    ExplorePage.init();
   }
 }

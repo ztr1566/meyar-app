@@ -4,53 +4,47 @@
  * interactive RFQ negotiation cards (approvals, counter-offers), search, and filtering.
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import { CHAT_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { RFQManager } from './rfq.js';
 import { normalizeSearchQuery } from './search.js';
 
 export class ChatModule {
-  static STORAGE_KEY = 'meyar_chats';
+  static chatsStore = null;
 
   /**
-   * Seed default chats from MOCK_DATA
+   * Reset the in-memory chat store (for test isolation and session resets)
+   */
+  static reset() {
+    this.chatsStore = null;
+  }
+
+  /**
+   * Clone the temporary chat fixtures for the current page session
    * @returns {Array<Object>}
    */
   static getInitialChats() {
-    if (!MOCK_DATA?.chats) return [];
-    return JSON.parse(JSON.stringify(MOCK_DATA.chats));
+    if (!CHAT_FIXTURES) return [];
+    return JSON.parse(JSON.stringify(CHAT_FIXTURES));
   }
 
   /**
-   * Retrieve all chats from localStorage (or initialize if empty)
+   * Retrieve all chats from in-memory store (or initialize from fixtures)
    * @returns {Array<Object>}
    */
   static getChats() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_KEY);
-      if (!data) {
-        const initial = this.getInitialChats();
-        if (initial.length > 0) {
-          localStorage.setItem(this.STORAGE_KEY, JSON.stringify(initial));
-        }
-        return initial;
-      }
-      return JSON.parse(data);
-    } catch {
-      return this.getInitialChats();
+    if (!this.chatsStore) {
+      this.chatsStore = this.getInitialChats();
     }
+    return this.chatsStore;
   }
 
   /**
-   * Persist chats array to localStorage and broadcast update event
+   * Persist chats array to in-memory store and broadcast update event
    * @param {Array<Object>} chats 
    */
   static saveChats(chats) {
-    try {
-      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(chats));
-    } catch (e) {
-      console.error('Failed to persist chats to localStorage', e);
-    }
+    this.chatsStore = chats;
 
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('meyar:chats-updated', { detail: { chats } }));

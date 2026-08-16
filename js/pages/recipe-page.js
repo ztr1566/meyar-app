@@ -4,91 +4,83 @@
  * progress tracking, bookmarks, likes, chef follow, and bilingual live synchronization.
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import { CHEF_FIXTURES, RECIPE_FIXTURES, USER_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Toast } from '../core/toast.js';
+import { isCurrentUserId } from '../core/utils.js';
 import { RecipeScaler } from '../modules/scaler.js';
 
 export class RecipePage {
-  static STORAGE_SAVED = 'meyar_saved_recipes';
-  static STORAGE_LIKED = 'meyar_liked_recipes';
-  static STORAGE_FOLLOWING = 'meyar_following_chefs';
-  static STORAGE_PROGRESS_PREFIX = 'meyar_recipe_steps_';
-
   static currentRecipe = null;
   static scalerInstance = null;
   static completedSteps = new Set();
   static activeTimers = new Map(); // stepNumber -> { intervalId, remainingSeconds, totalSeconds, isRunning }
   static isInitialized = false;
+  static lastDocument = null;
+
+  static savedRecipeIds = new Set();
+  static likedRecipeIds = new Set();
+  static followingChefIds = new Set();
+  static completedStepsMap = new Map(); // recipeId -> Set<number>
 
   /**
-   * Get list of saved recipe IDs from localStorage
+   * Reset in-memory recipe page state (for test isolation)
+   */
+  static reset() {
+    this.savedRecipeIds = new Set();
+    this.likedRecipeIds = new Set();
+    this.followingChefIds = new Set();
+    this.completedStepsMap = new Map();
+    this.completedSteps = new Set();
+    this.currentRecipe = null;
+    this.scalerInstance = null;
+    this.activeTimers = new Map();
+    this.isInitialized = false;
+  }
+
+  /**
+   * Get list of saved recipe IDs from in-memory set
    * @returns {string[]}
    */
   static getSavedRecipeIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_SAVED);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.savedRecipeIds);
   }
 
   /**
-   * Get list of liked recipe IDs from localStorage
+   * Get list of liked recipe IDs from in-memory set
    * @returns {string[]}
    */
   static getLikedRecipeIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_LIKED);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.likedRecipeIds);
   }
 
   /**
-   * Get list of followed chef IDs from localStorage
+   * Get list of followed chef IDs from in-memory set
    * @returns {string[]}
    */
   static getFollowingChefIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_FOLLOWING);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.followingChefIds);
   }
 
   /**
-   * Get list of completed step numbers for a recipe from localStorage
+   * Get list of completed step numbers for a recipe from in-memory map
    * @param {string} recipeId 
    * @returns {number[]}
    */
   static getCompletedSteps(recipeId) {
     if (!recipeId) return [];
-    try {
-      const key = `${this.STORAGE_PROGRESS_PREFIX}${recipeId}`;
-      const data = localStorage.getItem(key);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    const set = this.completedStepsMap.get(recipeId);
+    return set ? Array.from(set) : [];
   }
 
   /**
-   * Save completed step numbers to localStorage
+   * Save completed step numbers to in-memory map
    * @param {string} recipeId 
    * @param {number[]} steps 
    */
   static saveCompletedSteps(recipeId, steps) {
     if (!recipeId) return;
-    try {
-      const key = `${this.STORAGE_PROGRESS_PREFIX}${recipeId}`;
-      localStorage.setItem(key, JSON.stringify(steps));
-    } catch (e) {
-      console.error('Failed to save step progress', e);
-    }
+    this.completedStepsMap.set(recipeId, new Set(steps || []));
   }
 
   /**
@@ -103,12 +95,12 @@ export class RecipePage {
     }
 
     let recipe = null;
-    if (recipeId && Array.isArray(MOCK_DATA.recipes)) {
-      recipe = MOCK_DATA.recipes.find(r => r.id === recipeId);
+    if (recipeId && Array.isArray(RECIPE_FIXTURES)) {
+      recipe = RECIPE_FIXTURES.find(r => r.id === recipeId);
     }
 
-    if (!recipe && Array.isArray(MOCK_DATA.recipes) && MOCK_DATA.recipes.length > 0) {
-      recipe = MOCK_DATA.recipes[0];
+    if (!recipe && Array.isArray(RECIPE_FIXTURES) && RECIPE_FIXTURES.length > 0) {
+      recipe = RECIPE_FIXTURES[0];
     }
 
     return recipe;
@@ -121,21 +113,14 @@ export class RecipePage {
    */
   static toggleSave(recipeId) {
     if (!recipeId) return false;
-    const saved = new Set(this.getSavedRecipeIds());
-    const isSaved = saved.has(recipeId);
+    const isSaved = this.savedRecipeIds.has(recipeId);
 
     if (isSaved) {
-      saved.delete(recipeId);
+      this.savedRecipeIds.delete(recipeId);
       Toast.info(I18n.t('toast.unsaved_success'));
     } else {
-      saved.add(recipeId);
+      this.savedRecipeIds.add(recipeId);
       Toast.success(I18n.t('toast.saved_success'));
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_SAVED, JSON.stringify(Array.from(saved)));
-    } catch (e) {
-      console.error('Failed to save bookmark', e);
     }
 
     this.updateActionStates();
@@ -149,22 +134,15 @@ export class RecipePage {
    */
   static toggleLike(recipeId) {
     if (!recipeId) return false;
-    const liked = new Set(this.getLikedRecipeIds());
-    const isLiked = liked.has(recipeId);
+    const isLiked = this.likedRecipeIds.has(recipeId);
     const lang = I18n.getLang();
 
     if (isLiked) {
-      liked.delete(recipeId);
+      this.likedRecipeIds.delete(recipeId);
       Toast.info(lang === 'ar' ? 'تم إلغاء الإعجاب بالوصفة' : 'Recipe unliked');
     } else {
-      liked.add(recipeId);
+      this.likedRecipeIds.add(recipeId);
       Toast.success(lang === 'ar' ? 'أعجبك هذا الطبق الفاخر!' : 'Liked this gourmet dish!');
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_LIKED, JSON.stringify(Array.from(liked)));
-    } catch (e) {
-      console.error('Failed to save like state', e);
     }
 
     this.updateActionStates();
@@ -177,23 +155,16 @@ export class RecipePage {
    * @returns {boolean}
    */
   static toggleFollowChef(chefId) {
-    if (!chefId) return false;
-    const following = new Set(this.getFollowingChefIds());
-    const isFollowing = following.has(chefId);
+    if (!chefId || isCurrentUserId(chefId, USER_FIXTURES)) return false;
+    const isFollowing = this.followingChefIds.has(chefId);
     const lang = I18n.getLang();
 
     if (isFollowing) {
-      following.delete(chefId);
+      this.followingChefIds.delete(chefId);
       Toast.info(lang === 'ar' ? 'تم إلغاء متابعة الشيف' : 'Unfollowed chef');
     } else {
-      following.add(chefId);
+      this.followingChefIds.add(chefId);
       Toast.success(lang === 'ar' ? 'أصبحت تتابع هذا الشيف!' : 'Now following chef!');
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_FOLLOWING, JSON.stringify(Array.from(following)));
-    } catch (e) {
-      console.error('Failed to save following chefs', e);
     }
 
     this.updateActionStates();
@@ -550,7 +521,7 @@ export class RecipePage {
     const lang = I18n.getLang();
 
     // Look up detailed chef record if available
-    const chef = Array.isArray(MOCK_DATA.chefs) ? MOCK_DATA.chefs.find(c => c.id === r.author_id) : null;
+    const chef = Array.isArray(CHEF_FIXTURES) ? CHEF_FIXTURES.find(c => c.id === r.author_id) : null;
 
     const avatarEl = document.getElementById('recipe-chef-avatar');
     if (avatarEl) {
@@ -585,6 +556,11 @@ export class RecipePage {
     const followBtn = document.getElementById('btn-follow-chef');
     if (followBtn && r.author_id) {
       followBtn.setAttribute('data-chef-id', r.author_id);
+      if (isCurrentUserId(r.author_id, USER_FIXTURES)) {
+        followBtn.classList.add('hidden');
+      } else {
+        followBtn.classList.remove('hidden');
+      }
     }
   }
 
@@ -836,7 +812,7 @@ export class RecipePage {
     const container = document.getElementById('related-recipes-container');
     if (!container) return;
 
-    const allRecipes = Array.isArray(MOCK_DATA.recipes) ? MOCK_DATA.recipes : [];
+    const allRecipes = Array.isArray(RECIPE_FIXTURES) ? RECIPE_FIXTURES : [];
     // Exclude current recipe and pick 3 related
     const related = allRecipes.filter(r => r.id !== this.currentRecipe.id).slice(0, 3);
     const lang = I18n.getLang();
@@ -909,10 +885,12 @@ export class RecipePage {
       const label = saveBtn.querySelector('.save-label');
       if (isSaved) {
         saveBtn.classList.add('text-brand-gold', 'bg-surface-2');
+        saveBtn.classList.remove('text-text-muted', 'bg-surface-1');
         if (icon) icon.classList.add('fill-current');
         if (label) label.textContent = I18n.getLang() === 'ar' ? 'محفوظة' : 'Saved';
       } else {
         saveBtn.classList.remove('text-brand-gold', 'bg-surface-2');
+        saveBtn.classList.add('text-text-muted', 'bg-surface-1');
         if (icon) icon.classList.remove('fill-current');
         if (label) label.textContent = I18n.t('btn.save');
       }
@@ -927,10 +905,12 @@ export class RecipePage {
       const baseLikes = Number(r.likes_count) || 1400;
       if (isLiked) {
         likeBtn.classList.add('text-red-500', 'bg-surface-2');
+        likeBtn.classList.remove('text-text-muted', 'bg-surface-1');
         if (icon) icon.classList.add('fill-current');
         if (likesCountEl) likesCountEl.textContent = (baseLikes + 1).toString();
       } else {
         likeBtn.classList.remove('text-red-500', 'bg-surface-2');
+        likeBtn.classList.add('text-text-muted', 'bg-surface-1');
         if (icon) icon.classList.remove('fill-current');
         if (likesCountEl) likesCountEl.textContent = baseLikes.toString();
       }
@@ -940,6 +920,13 @@ export class RecipePage {
     const isFollowing = followingIds.has(r.author_id);
     const followBtn = document.getElementById('btn-follow-chef');
     if (followBtn) {
+      const isSelf = isCurrentUserId(r.author_id, USER_FIXTURES);
+      if (isSelf) {
+        followBtn.classList.add('hidden');
+        this.followingChefIds.delete(r.author_id);
+        return;
+      }
+      followBtn.classList.remove('hidden');
       const btnText = followBtn.querySelector('.btn-text');
       const lang = I18n.getLang();
       if (isFollowing) {
@@ -1118,6 +1105,12 @@ export class RecipePage {
    * Main initializer for Recipe Page
    */
   static init(recipeId = null) {
+    if (typeof document !== 'undefined' && this.lastDocument !== document) {
+      this.isInitialized = false;
+      this.lastDocument = document;
+    }
+    if (this.isInitialized) return;
+
     this.currentRecipe = this.loadRecipe(recipeId);
     if (!this.currentRecipe) return;
 
@@ -1147,18 +1140,7 @@ export class RecipePage {
     this.updateActionStates();
     this.updateProgressUI();
 
-    if (!this.isInitialized) {
-      this.bindEvents();
-      this.isInitialized = true;
-    }
-  }
-}
-
-// Auto-bootstrap when page loads in browser
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => RecipePage.init());
-  } else {
-    RecipePage.init();
+    this.bindEvents();
+    this.isInitialized = true;
   }
 }

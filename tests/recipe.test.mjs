@@ -530,7 +530,8 @@ test('RecipePage - Dynamic Serving Scaler Integration', (t) => {
 });
 
 test('RecipePage - Interactive Cooking Steps Completion & Progress Tracker', (t) => {
-  const { elementsById, storage } = setupDOM();
+  const { elementsById } = setupDOM();
+  RecipePage.reset();
   RecipePage.init('recipe-1');
 
   const totalSteps = RecipePage.currentRecipe.steps.length; // 5 steps
@@ -544,8 +545,8 @@ test('RecipePage - Interactive Cooking Steps Completion & Progress Tracker', (t)
   assert.equal(RecipePage.completedSteps.has(1), true);
   assert.equal(RecipePage.completedSteps.size, 1);
 
-  // Verify persistence in localStorage
-  const saved = JSON.parse(storage.get('meyar_recipe_steps_recipe-1'));
+  // Verify in-memory session state
+  const saved = RecipePage.getCompletedSteps('recipe-1');
   assert.deepEqual(saved, [1]);
 
   // Toggle step 2 completion
@@ -570,6 +571,7 @@ test('RecipePage - Interactive Cooking Steps Completion & Progress Tracker', (t)
 
 test('RecipePage - Step Timer Format & State Controls', (t) => {
   setupDOM();
+  RecipePage.reset();
 
   // Test seconds formatter
   assert.equal(RecipePage.formatTimerSeconds(2700), '45:00');
@@ -599,36 +601,42 @@ test('RecipePage - Step Timer Format & State Controls', (t) => {
   assert.equal(timer.isRunning, false);
 });
 
-test('RecipePage - Bookmark, Like, and Chef Follow Persistence', (t) => {
-  const { storage } = setupDOM();
+test('RecipePage - Bookmark, Like, and Chef Follow Session State', (t) => {
+  const { elementsById } = setupDOM();
+  RecipePage.reset();
   RecipePage.init('recipe-1');
+  assert.equal(elementsById.get('btn-follow-chef').classList.contains('hidden'), true, 'self-follow button must be hidden');
 
   // 1. Bookmark / Save
   const saved1 = RecipePage.toggleSave('recipe-1');
   assert.equal(saved1, true);
-  assert.deepEqual(JSON.parse(storage.get(RecipePage.STORAGE_SAVED)), ['recipe-1']);
+  assert.deepEqual(RecipePage.getSavedRecipeIds(), ['recipe-1']);
 
   const saved2 = RecipePage.toggleSave('recipe-1');
   assert.equal(saved2, false);
-  assert.deepEqual(JSON.parse(storage.get(RecipePage.STORAGE_SAVED)), []);
+  assert.deepEqual(RecipePage.getSavedRecipeIds(), []);
 
   // 2. Like
   const liked1 = RecipePage.toggleLike('recipe-1');
   assert.equal(liked1, true);
-  assert.deepEqual(JSON.parse(storage.get(RecipePage.STORAGE_LIKED)), ['recipe-1']);
+  assert.deepEqual(RecipePage.getLikedRecipeIds(), ['recipe-1']);
 
   const liked2 = RecipePage.toggleLike('recipe-1');
   assert.equal(liked2, false);
-  assert.deepEqual(JSON.parse(storage.get(RecipePage.STORAGE_LIKED)), []);
+  assert.deepEqual(RecipePage.getLikedRecipeIds(), []);
 
-  // 3. Follow Chef
-  const followed1 = RecipePage.toggleFollowChef('chef-1');
+  // 3. Self-follow is rejected, while another chef can be followed.
+  const followedSelf = RecipePage.toggleFollowChef('chef-1');
+  assert.equal(followedSelf, false);
+  assert.deepEqual(RecipePage.getFollowingChefIds(), []);
+
+  const followed1 = RecipePage.toggleFollowChef('chef-2');
   assert.equal(followed1, true);
-  assert.deepEqual(JSON.parse(storage.get(RecipePage.STORAGE_FOLLOWING)), ['chef-1']);
+  assert.deepEqual(RecipePage.getFollowingChefIds(), ['chef-2']);
 
-  const followed2 = RecipePage.toggleFollowChef('chef-1');
+  const followed2 = RecipePage.toggleFollowChef('chef-2');
   assert.equal(followed2, false);
-  assert.deepEqual(JSON.parse(storage.get(RecipePage.STORAGE_FOLLOWING)), []);
+  assert.deepEqual(RecipePage.getFollowingChefIds(), []);
 });
 
 test('RecipePage - Language Reactivity & Bilingual Re-rendering', (t) => {

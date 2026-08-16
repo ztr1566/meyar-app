@@ -1,0 +1,370 @@
+- generic [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - generic [ref=f3e4]:
+        - link "Meyar Home" [ref=f3e5] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=f3e9]:
+            - text: معيار
+            - generic [ref=f3e10]: Meyar
+        - button "Search" [ref=f3e11]:
+          - generic [ref=f3e12]: ابحث في الوصفات، الطهاة، التوريدات، والدورات...
+      - generic [ref=f3e17]:
+        - link "ابتكار وصفة" [ref=f3e18] [cursor=pointer]:
+          - /url: create-recipe.html
+        - link "Messages" [ref=f3e22] [cursor=pointer]:
+          - /url: chat.html
+        - link "Notifications" [ref=f3e26] [cursor=pointer]:
+          - /url: notifications.html
+        - button "Switch to English" [ref=f3e31]:
+          - generic [ref=f3e35]: English
+        - button "Toggle theme" [ref=f3e36]
+        - button "User profile options" [ref=f3e41]:
+          - img "Chef Faisal Al-Hashemi" [ref=f3e42]
+        - button "Open mobile menu" [ref=f3e45]
+  - main [ref=f3e47]:
+    - generic [ref=f3e48]:
+      - generic [ref=f3e49]:
+        - generic [ref=f3e50]:
+          - generic [ref=f3e51]: أكاديمية معيار للطهي الاحترافي
+          - heading "دورات الطهي الاحترافية وورش العمل" [level=1] [ref=f3e56]
+          - paragraph [ref=f3e57]: تعلّم أسرار فنون الطهي الراقي وأحدث التقنيات مباشرة من كبار الطهاة المعتمدين
+        - generic [ref=f3e58]:
+          - generic [ref=f3e59]:
+            - generic [ref=f3e60]: 4+
+            - text: ورش احترافية مكثفة
+          - generic [ref=f3e61]:
+            - generic [ref=f3e62]: 100%
+            - text: طهاة معتمدون دولياً
+          - generic [ref=f3e63]:
+            - generic [ref=f3e64]: ≤20
+            - text: مقعد كحد أقصى للفوج
+          - generic [ref=f3e65]:
+            - generic [ref=f3e66]: معتمد
+            - text: شهادات إتمام مهنية
+      - generic [ref=f3e67]:
+        - generic [ref=f3e72]:
+          - generic [ref=f3e73]: مناهج تطبيقية حية
+          - text: جلسات تفاعلية مباشرة مع شيف الورشة
+        - generic [ref=f3e79]:
+          - generic [ref=f3e80]: جداول مرنة مسائية
+          - text: مواعيد تناسب ساعات عمل المطابخ والمحترفين
+        - generic [ref=f3e88]:
+          - generic [ref=f3e89]: شبكة مجتمع الطهاة
+          - text: نقاشات مغلقة ومراجعات مع خبراء الصناعة
+    - generic [ref=f3e90]:
+      - generic [ref=f3e91]:
+        - textbox "ابحث في الدورات، أسماء الشيف، المناهج والتقنيات..." [ref=f3e93]
+        - generic [ref=f3e94]:
+          - combobox "Filter by skill level" [ref=f3e96] [cursor=pointer]:
+            - option "جميع المستويات" [selected]
+            - option "احترافي متقدم (Masterclass)"
+            - option "متوسط"
+            - option "مبتدئ"
+          - combobox "Sort masterclasses" [ref=f3e98] [cursor=pointer]:
+            - option "الأبرز والموصى به" [selected]
+            - 'option "السعر: من الأقل للأعلى"'
+            - 'option "السعر: من الأعلى للأقل"'
+            - option "المقاعد المتبقية الأقل"
+            - option "تاريخ الانطلاق الأقرب"
+      - generic [ref=f3e99]:
+        - tablist "Course Categories" [ref=f3e100]:
+          - button "جميع الدورات" [ref=f3e101]
+          - button "التخمير والتعتيق" [ref=f3e102]
+          - button "المخبوزات والحلويات" [ref=f3e103]
+          - button "الطهي بالنار والتدخين" [ref=f3e104]
+          - button "الكايسيكي والمأكولات البحرية" [ref=f3e105]
+        - generic [ref=f3e106]: عرض 4 ورشة عمل معتمدة
+    - region "Masterclasses Catalog" [ref=f3e107]:
+      - generic [ref=f3e108]:
+        - article [ref=f3e109]:
+          - generic [ref=f3e110]:
+            - img "فنون المخبوزات الفرنسية الفاخرة وعجائن التوريق الحديثة" [ref=f3e111]
+            - generic:
+              - generic: متوسط (Intermediate)
+              - generic [ref=f3e112]:
+                - generic [ref=f3e113]: 5 مقاعد متاحة
+                - button "Save" [ref=f3e119]
+            - generic [ref=f3e122]: شهادة معتمدة مشمولة من أكاديمية معيار
+          - generic [ref=f3e126]:
+            - generic [ref=f3e127]:
+              - link "شيف إيلينا روستوفا شيف إيلينا روستوفا ماستر شيف حلويات وفائزة بجوائز دولية" [ref=f3e128] [cursor=pointer]:
+                - /url: chef.html?id=chef-2
+                - img "شيف إيلينا روستوفا" [ref=f3e129]
+                - generic [ref=f3e130]:
+                  - generic [ref=f3e131]: شيف إيلينا روستوفا
+                  - generic [ref=f3e132]: ماستر شيف حلويات وفائزة بجوائز دولية
+              - generic [ref=f3e133]:
+                - heading "فنون المخبوزات الفرنسية الفاخرة وعجائن التوريق الحديثة" [level=3] [ref=f3e134]
+                - paragraph [ref=f3e135]: أسرار الكرواسون ثنائي اللون، العجائن المخمرة بالبانيتون، والتوريق الهندسي للحلويات
+              - generic [ref=f3e136]:
+                - generic [ref=f3e137]: 4 أسابيع (16 ساعة تدريبية)
+                - generic [ref=f3e142]: 3 وحدات • 6 دروس
+                - generic [ref=f3e147]: كل سبت واثنين (5:00 م - 7:00 م بتوقيت مكة)
+            - generic [ref=f3e151]:
+              - generic [ref=f3e152]:
+                - generic [ref=f3e153]:
+                  - generic [ref=f3e154]: رسوم الاستثمار المهني
+                  - text: 2,600 ر.س
+                - generic [ref=f3e155]: فوج محدود
+              - generic [ref=f3e156]:
+                - button "المنهج والمحاور" [ref=f3e157]
+                - button "التسجيل الفوري" [ref=f3e162]
+        - article [ref=f3e168]:
+          - generic [ref=f3e169]:
+            - img "أسرار التخمير والإنضاج الجاف في المطابخ الفاخرة" [ref=f3e170]
+            - generic:
+              - generic: احترافي متقدم (Masterclass)
+              - generic [ref=f3e171]:
+                - generic [ref=f3e172]: باقي 3 مقاعد فقط!
+                - button "Save" [ref=f3e178]
+            - generic [ref=f3e181]: شهادة معتمدة مشمولة من أكاديمية معيار
+          - generic [ref=f3e185]:
+            - generic [ref=f3e186]:
+              - link "الشيف فيصل الهاشمي الشيف فيصل الهاشمي شيف تنفيذي وخبير فنون الطهي المعاصر" [ref=f3e187] [cursor=pointer]:
+                - /url: chef.html?id=chef-1
+                - img "الشيف فيصل الهاشمي" [ref=f3e188]
+                - generic [ref=f3e189]:
+                  - generic [ref=f3e190]: الشيف فيصل الهاشمي
+                  - generic [ref=f3e191]: شيف تنفيذي وخبير فنون الطهي المعاصر
+              - generic [ref=f3e192]:
+                - heading "أسرار التخمير والإنضاج الجاف في المطابخ الفاخرة" [level=3] [ref=f3e193]
+                - paragraph [ref=f3e194]: تقنيات متقدمة في تخمير الكوجي، ومخللات اللاكتو، وإنضاج لحوم الواغيو التراثية للمحترفين
+              - generic [ref=f3e195]:
+                - generic [ref=f3e196]: 6 أسابيع (24 ساعة تدريبية مباشرة)
+                - generic [ref=f3e201]: 4 وحدات • 8 دروس
+                - generic [ref=f3e206]: كل ثلاثاء وخميس (6:00 م - 8:00 م بتوقيت مكة)
+            - generic [ref=f3e210]:
+              - generic [ref=f3e211]:
+                - generic [ref=f3e212]:
+                  - generic [ref=f3e213]: رسوم الاستثمار المهني
+                  - text: 3,200 ر.س
+                - generic [ref=f3e214]: فوج محدود
+              - button "المنهج والمحاور" [ref=f3e216]
+        - article [ref=f3e221]:
+          - generic [ref=f3e222]:
+            - img "فنون الطهي المباشر على الحطب والتدخين الحرفي" [ref=f3e223]
+            - generic:
+              - generic: متوسط (Intermediate)
+              - generic [ref=f3e224]:
+                - generic [ref=f3e225]: 8 مقاعد متاحة
+                - button "Save" [ref=f3e231]
+            - generic [ref=f3e234]: شهادة معتمدة مشمولة من أكاديمية معيار
+          - generic [ref=f3e238]:
+            - generic [ref=f3e239]:
+              - link "شيف طارق منصور شيف طارق منصور خبير المشاوي الحرفية والطهي بالنار الحية" [ref=f3e240] [cursor=pointer]:
+                - /url: chef.html?id=chef-3
+                - img "شيف طارق منصور" [ref=f3e241]
+                - generic [ref=f3e242]:
+                  - generic [ref=f3e243]: شيف طارق منصور
+                  - generic [ref=f3e244]: خبير المشاوي الحرفية والطهي بالنار الحية
+              - generic [ref=f3e245]:
+                - heading "فنون الطهي المباشر على الحطب والتدخين الحرفي" [level=3] [ref=f3e246]
+                - paragraph [ref=f3e247]: إدارة بيوت التدخين، تحضير بهارات الرّب الجافة، وتقنيات الشواء البطيء على حطب الزيتون
+              - generic [ref=f3e248]:
+                - generic [ref=f3e249]: 3 أسابيع (12 ساعة تدريبية)
+                - generic [ref=f3e254]: 3 وحدات • 6 دروس
+                - generic [ref=f3e259]: كل جمعة وسبت (4:00 م - 6:00 م بتوقيت مكة)
+            - generic [ref=f3e263]:
+              - generic [ref=f3e264]:
+                - generic [ref=f3e265]:
+                  - generic [ref=f3e266]: رسوم الاستثمار المهني
+                  - text: 1,950 ر.س
+                - generic [ref=f3e267]: فوج محدود
+              - generic [ref=f3e268]:
+                - button "المنهج والمحاور" [ref=f3e269]
+                - button "التسجيل الفوري" [ref=f3e274]
+        - article [ref=f3e280]:
+          - generic [ref=f3e281]:
+            - img "فلسفة الكايسيكي وتقنيات التعامل مع المأكولات البحرية" [ref=f3e282]
+            - generic:
+              - generic: احترافي متقدم (Masterclass)
+              - generic [ref=f3e283]:
+                - generic [ref=f3e284]: باقي 2 مقاعد فقط!
+                - button "Save" [ref=f3e290]
+            - generic [ref=f3e293]: شهادة معتمدة مشمولة من أكاديمية معيار
+          - generic [ref=f3e297]:
+            - generic [ref=f3e298]:
+              - link "شيف كينجي تاكاهاشي شيف كينجي تاكاهاشي حاصل على نجمتي ميشلان وأستاذ الكايسيكي" [ref=f3e299] [cursor=pointer]:
+                - /url: chef.html?id=chef-4
+                - img "شيف كينجي تاكاهاشي" [ref=f3e300]
+                - generic [ref=f3e301]:
+                  - generic [ref=f3e302]: شيف كينجي تاكاهاشي
+                  - generic [ref=f3e303]: حاصل على نجمتي ميشلان وأستاذ الكايسيكي
+              - generic [ref=f3e304]:
+                - heading "فلسفة الكايسيكي وتقنيات التعامل مع المأكولات البحرية" [level=3] [ref=f3e305]
+                - paragraph [ref=f3e306]: تقنيات الإيكي جيمي للذبح الرحيم، تقطيع الساشيمي الحرفي، واستخلاص الداشي الفاخر
+              - generic [ref=f3e307]:
+                - generic [ref=f3e308]: 5 أسابيع (20 ساعة تدريبية)
+                - generic [ref=f3e313]: 4 وحدات • 8 دروس
+                - generic [ref=f3e318]: كل أربعاء وسبت (6:00 م - 8:00 م بتوقيت مكة)
+            - generic [ref=f3e322]:
+              - generic [ref=f3e323]:
+                - generic [ref=f3e324]:
+                  - generic [ref=f3e325]: رسوم الاستثمار المهني
+                  - text: 3,800 ر.س
+                - generic [ref=f3e326]: فوج محدود
+              - generic [ref=f3e327]:
+                - button "المنهج والمحاور" [ref=f3e328]
+                - button "التسجيل الفوري" [ref=f3e333]
+  - dialog [ref=f3e397]:
+    - generic [ref=f3e399]:
+      - generic [ref=f3e400]:
+        - generic [ref=f3e406]:
+          - heading "محاور ومنهج الدورة" [level=3] [ref=f3e407]
+          - paragraph [ref=f3e408]: خطة تدريبية مكثفة تشمل التطبيق العملي، التقنيات الحرفية، وجلسات التقييم المباشر
+        - button "Close dialog" [active] [ref=f3e409]
+      - generic [ref=f3e414]:
+        - generic [ref=f3e415]:
+          - generic [ref=f3e416]:
+            - generic [ref=f3e417]: احترافي متقدم (Masterclass)
+            - generic [ref=f3e418]: 6 أسابيع (24 ساعة تدريبية مباشرة)
+            - generic [ref=f3e419]: 3 مقاعد شاغرة
+          - heading "أسرار التخمير والإنضاج الجاف في المطابخ الفاخرة" [level=2] [ref=f3e420]
+          - paragraph [ref=f3e421]: تقنيات متقدمة في تخمير الكوجي، ومخللات اللاكتو، وإنضاج لحوم الواغيو التراثية للمحترفين
+        - generic [ref=f3e422]:
+          - generic [ref=f3e423]:
+            - img "الشيف فيصل الهاشمي" [ref=f3e424]
+            - generic [ref=f3e425]:
+              - generic [ref=f3e426]: الشيف فيصل الهاشمي
+              - generic [ref=f3e427]: شيف تنفيذي وخبير فنون الطهي المعاصر
+          - link "ملف الشيف" [ref=f3e428] [cursor=pointer]:
+            - /url: chef.html?id=chef-1
+        - generic [ref=f3e429]:
+          - generic [ref=f3e433]:
+            - generic [ref=f3e434]: تاريخ الانطلاق
+            - text: 2026-09-10
+          - generic [ref=f3e439]:
+            - generic [ref=f3e440]: المواعيد الأسبوعية
+            - text: كل ثلاثاء وخميس (6:00 م - 8:00 م بتوقيت مكة)
+        - generic [ref=f3e441]:
+          - generic [ref=f3e442]:
+            - heading "المنهج التدريبي والمحاور التطبيقية" [level=3] [ref=f3e443]
+            - generic [ref=f3e448]: 4 وحدات معتمدة
+          - generic [ref=f3e449]:
+            - generic [ref=f3e450]:
+              - generic [ref=f3e451]:
+                - generic [ref=f3e452]:
+                  - generic [ref=f3e453]: الوحدة 1
+                  - heading "مقدمة في كيمياء التخمير والبكتيريا النافعة" [level=4] [ref=f3e454]
+                - generic [ref=f3e455]: 4 ساعات
+              - generic [ref=f3e456]:
+                - generic [ref=f3e457]:
+                  - generic [ref=f3e458]:
+                    - generic [ref=f3e459]: "1"
+                    - generic [ref=f3e460]: فهم بكتيريا حمض اللاكتيك وأسس التمليح الدقيق
+                  - generic [ref=f3e461]: 2 ساعة
+                - generic [ref=f3e462]:
+                  - generic [ref=f3e463]:
+                    - generic [ref=f3e464]: "2"
+                    - generic [ref=f3e465]: زراعة فطر الكوجي (Aspergillus oryzae) على الحبوب
+                  - generic [ref=f3e466]: 2 ساعة
+            - generic [ref=f3e467]:
+              - generic [ref=f3e468]:
+                - generic [ref=f3e469]:
+                  - generic [ref=f3e470]: الوحدة 2
+                  - heading "إنضاج اللحوم الجاف وبناء غرف التعتيق" [level=4] [ref=f3e471]
+                - generic [ref=f3e472]: 6 ساعات
+              - generic [ref=f3e473]:
+                - generic [ref=f3e474]:
+                  - generic [ref=f3e475]:
+                    - generic [ref=f3e476]: "1"
+                    - generic [ref=f3e477]: التحكم في الرطوبة والحرارة وتدفق الهواء لغرف الإنضاج
+                  - generic [ref=f3e478]: 3 ساعات
+                - generic [ref=f3e479]:
+                  - generic [ref=f3e480]:
+                    - generic [ref=f3e481]: "2"
+                    - generic [ref=f3e482]: تطور النكهات الإنزيمية وتقليم طبقات التعتيق
+                  - generic [ref=f3e483]: 3 ساعات
+            - generic [ref=f3e484]:
+              - generic [ref=f3e485]:
+                - generic [ref=f3e486]:
+                  - generic [ref=f3e487]: الوحدة 3
+                  - heading "تخمير التمور والصلصات التراثية المعاصرة" [level=4] [ref=f3e488]
+                - generic [ref=f3e489]: 8 ساعات
+              - generic [ref=f3e490]:
+                - generic [ref=f3e491]:
+                  - generic [ref=f3e492]:
+                    - generic [ref=f3e493]: "1"
+                    - generic [ref=f3e494]: صناعة الغاروم الحديث من بروتينات اللحوم والتمر
+                  - generic [ref=f3e495]: 4 ساعات
+                - generic [ref=f3e496]:
+                  - generic [ref=f3e497]:
+                    - generic [ref=f3e498]: "2"
+                    - generic [ref=f3e499]: خلول الفواكه الطبيعية وتعتيقها في براميل خشبية
+                  - generic [ref=f3e500]: 4 ساعات
+            - generic [ref=f3e501]:
+              - generic [ref=f3e502]:
+                - generic [ref=f3e503]:
+                  - generic [ref=f3e504]: الوحدة 4
+                  - heading "المشروع الختامي وقائمة التذوق الفاخرة" [level=4] [ref=f3e505]
+                - generic [ref=f3e506]: 6 ساعات
+              - generic [ref=f3e507]:
+                - generic [ref=f3e508]:
+                  - generic [ref=f3e509]:
+                    - generic [ref=f3e510]: "1"
+                    - generic [ref=f3e511]: تصميم طبق توقيع يدمج 3 عناصر مخمرة معتقة
+                  - generic [ref=f3e512]: 3 ساعات
+                - generic [ref=f3e513]:
+                  - generic [ref=f3e514]:
+                    - generic [ref=f3e515]: "2"
+                    - generic [ref=f3e516]: جلسة التقييم والاعتماد المهني الدولي
+                  - generic [ref=f3e517]: 3 ساعات
+        - generic [ref=f3e518]:
+          - generic [ref=f3e519]:
+            - generic [ref=f3e520]: الرسوم الإجمالية (شامل الضريبة والاعتماد)
+            - text: 3,200 ر.س
+          - button "إغلاق" [ref=f3e522]
+  - navigation "Mobile Bottom Navigation" [ref=f3e339]:
+    - link "Home Feed" [ref=f3e340] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f3e344]: الرئيسية
+    - link "Explore" [ref=f3e345] [cursor=pointer]:
+      - /url: explore.html
+      - generic [ref=f3e349]: استكشف
+    - link "Create Recipe" [ref=f3e350] [cursor=pointer]:
+      - /url: create-recipe.html
+    - link "Courses" [ref=f3e353] [cursor=pointer]:
+      - /url: courses.html
+      - generic [ref=f3e357]: الدورات
+    - link "Dashboard" [ref=f3e358] [cursor=pointer]:
+      - /url: dashboard.html
+      - generic [ref=f3e364]: لوحة التحكم
+  - contentinfo [ref=f3e365]:
+    - generic [ref=f3e366]:
+      - generic [ref=f3e367]:
+        - generic [ref=f3e368]:
+          - generic [ref=f3e369]:
+            - generic [ref=f3e370]: م
+            - generic [ref=f3e371]: معيار Meyar
+          - paragraph [ref=f3e372]: منصة الطهي الاحترافية وشبكة تجارة المستلزمات والمطاعم
+        - generic [ref=f3e373]:
+          - heading "أقسام المنصة" [level=4] [ref=f3e374]
+          - list [ref=f3e375]:
+            - listitem [ref=f3e376]:
+              - link "استكشاف الأطباق والوصفات" [ref=f3e377] [cursor=pointer]:
+                - /url: explore.html
+            - listitem [ref=f3e378]:
+              - link "سوق التوريدات والمعدات" [ref=f3e379] [cursor=pointer]:
+                - /url: supplies.html
+            - listitem [ref=f3e380]:
+              - link "ورش العمل والدورات" [ref=f3e381] [cursor=pointer]:
+                - /url: courses.html
+            - listitem [ref=f3e382]:
+              - link "لوحة إدارة الأعمال" [ref=f3e383] [cursor=pointer]:
+                - /url: dashboard.html
+        - generic [ref=f3e384]:
+          - heading "الموردون والشركات" [level=4] [ref=f3e385]
+          - list [ref=f3e386]:
+            - listitem [ref=f3e387]:
+              - link "تسجيل مورد تجاري" [ref=f3e388] [cursor=pointer]:
+                - /url: dashboard.html
+            - listitem [ref=f3e389]:
+              - link "إدارة طلبات الأسعار (RFQ)" [ref=f3e390] [cursor=pointer]:
+                - /url: chat.html
+            - listitem [ref=f3e391]:
+              - link "شهادات ومعايير التوريد" [ref=f3e392] [cursor=pointer]:
+                - /url: supplies.html
+      - generic [ref=f3e393]:
+        - paragraph [ref=f3e394]: © 2026 معيار | Meyar Culinary Social Platform. جميع الحقوق محفوظة.
+        - generic [ref=f3e395]: الرياض، المملكة العربية السعودية

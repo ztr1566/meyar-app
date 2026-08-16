@@ -1,60 +1,85 @@
 /**
  * Meyar (معيار) Discovery Feed Controller
  * Handles dynamic feed stream rendering, interactive stories carousel,
- * real-time post composer, filter pills, like/bookmark persistence,
+ * real-time post composer, filter pills, like/bookmark session state,
  * chef follow states, link sharing, and instant solid toast notifications.
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import { RECIPE_FIXTURES, TREND_FIXTURES, USER_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Toast } from '../core/toast.js';
+import { Modal } from '../core/modal.js';
+import { isCurrentUserId } from '../core/utils.js';
 
 export class FeedPage {
-  static STORAGE_SAVED = 'meyar_saved_recipes';
-  static STORAGE_LIKED = 'meyar_liked_recipes';
-  static STORAGE_FOLLOWING = 'meyar_following_chefs';
-
   static currentFilter = 'all';
   static userPosts = [];
   static isInitialized = false;
+  static deletedRecipeIds = new Set();
+  static hiddenRecipeIds = new Set();
+  static recipeEdits = new Map();
+
+  static savedRecipeIds = new Set();
+  static likedRecipeIds = new Set();
+  static followingChefIds = new Set();
+
+  static pendingDeletePostId = null;
+  static pendingDeleteIsUserPost = false;
+  static pendingEditPostId = null;
+  static pendingEditIsUserPost = false;
 
   /**
-   * Get list of saved recipe IDs from localStorage
+   * Reset in-memory feed state (for test isolation)
+   */
+  static reset() {
+    this.savedRecipeIds = new Set();
+    this.likedRecipeIds = new Set();
+    this.followingChefIds = new Set();
+    this.currentFilter = 'all';
+    this.userPosts = [];
+    this.deletedRecipeIds = new Set();
+    this.hiddenRecipeIds = new Set();
+    this.recipeEdits = new Map();
+    this.pendingDeletePostId = null;
+    this.pendingDeleteIsUserPost = false;
+    this.pendingEditPostId = null;
+    this.pendingEditIsUserPost = false;
+    this.isInitialized = false;
+  }
+
+  static escapeHtml(str) {
+    if (str === null || str === undefined) return '';
+    const text = String(str);
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  /**
+   * Get list of saved recipe IDs from in-memory set
    * @returns {string[]}
    */
   static getSavedRecipeIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_SAVED);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.savedRecipeIds);
   }
 
   /**
-   * Get list of liked recipe IDs from localStorage
+   * Get list of liked recipe IDs from in-memory set
    * @returns {string[]}
    */
   static getLikedRecipeIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_LIKED);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.likedRecipeIds);
   }
 
   /**
-   * Get list of followed chef IDs from localStorage
+   * Get list of followed chef IDs from in-memory set
    * @returns {string[]}
    */
   static getFollowingChefIds() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_FOLLOWING);
-      return data ? JSON.parse(data) : [];
-    } catch {
-      return [];
-    }
+    return Array.from(this.followingChefIds);
   }
 
   /**
@@ -64,21 +89,14 @@ export class FeedPage {
    */
   static toggleSave(recipeId) {
     if (!recipeId) return false;
-    const saved = new Set(this.getSavedRecipeIds());
-    const isSaved = saved.has(recipeId);
+    const isSaved = this.savedRecipeIds.has(recipeId);
 
     if (isSaved) {
-      saved.delete(recipeId);
+      this.savedRecipeIds.delete(recipeId);
       Toast.info(I18n.t('toast.unsaved_success'));
     } else {
-      saved.add(recipeId);
+      this.savedRecipeIds.add(recipeId);
       Toast.success(I18n.t('toast.saved_success'));
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_SAVED, JSON.stringify(Array.from(saved)));
-    } catch (e) {
-      console.error('Failed to save bookmarks to localStorage', e);
     }
 
     this.updateCardActionStates(recipeId);
@@ -92,22 +110,15 @@ export class FeedPage {
    */
   static toggleLike(recipeId) {
     if (!recipeId) return false;
-    const liked = new Set(this.getLikedRecipeIds());
-    const isLiked = liked.has(recipeId);
+    const isLiked = this.likedRecipeIds.has(recipeId);
     const lang = I18n.getLang();
 
     if (isLiked) {
-      liked.delete(recipeId);
+      this.likedRecipeIds.delete(recipeId);
       Toast.info(lang === 'ar' ? 'تم إلغاء الإعجاب بالوصفة' : 'Recipe unliked');
     } else {
-      liked.add(recipeId);
+      this.likedRecipeIds.add(recipeId);
       Toast.success(lang === 'ar' ? 'أعجبك هذا الطبق الفاخر!' : 'Liked this gourmet masterpiece!');
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_LIKED, JSON.stringify(Array.from(liked)));
-    } catch (e) {
-      console.error('Failed to save likes to localStorage', e);
     }
 
     this.updateCardActionStates(recipeId);
@@ -120,22 +131,15 @@ export class FeedPage {
    * @returns {boolean} New following state
    */
   static toggleFollow(chefId) {
-    if (!chefId) return false;
-    const following = new Set(this.getFollowingChefIds());
-    const isFollowing = following.has(chefId);
+    if (!chefId || isCurrentUserId(chefId, USER_FIXTURES)) return false;
+    const isFollowing = this.followingChefIds.has(chefId);
 
     if (isFollowing) {
-      following.delete(chefId);
+      this.followingChefIds.delete(chefId);
       Toast.info(I18n.t('toast.unfollowed_success'));
     } else {
-      following.add(chefId);
+      this.followingChefIds.add(chefId);
       Toast.success(I18n.t('toast.followed_success'));
-    }
-
-    try {
-      localStorage.setItem(this.STORAGE_FOLLOWING, JSON.stringify(Array.from(following)));
-    } catch (e) {
-      console.error('Failed to save following list to localStorage', e);
     }
 
     this.updateFollowButtonStates(chefId);
@@ -272,8 +276,8 @@ export class FeedPage {
     if (!container) return;
 
     const lang = I18n.getLang();
-    const stories = MOCK_DATA.trends?.stories || [];
-    const activeUser = MOCK_DATA.user;
+    const stories = TREND_FIXTURES?.stories || [];
+    const activeUser = USER_FIXTURES;
 
     let html = `
       <!-- User's Story Add Button -->
@@ -323,7 +327,7 @@ export class FeedPage {
     if (!container) return;
 
     const lang = I18n.getLang();
-    const topics = MOCK_DATA.trends?.topics || [];
+    const topics = TREND_FIXTURES?.topics || [];
 
     const html = topics.map(item => {
       const title = lang === 'ar' ? item.title_ar : item.title_en;
@@ -351,7 +355,7 @@ export class FeedPage {
     if (!container) return;
 
     const lang = I18n.getLang();
-    const suppliers = MOCK_DATA.trends?.top_suppliers || [];
+    const suppliers = TREND_FIXTURES?.top_suppliers || [];
 
     const html = suppliers.map(sup => {
       const name = lang === 'ar' ? sup.name_ar : sup.name_en;
@@ -385,7 +389,7 @@ export class FeedPage {
     if (!container) return;
 
     const lang = I18n.getLang();
-    const workshops = MOCK_DATA.trends?.upcoming_workshops || [];
+    const workshops = TREND_FIXTURES?.upcoming_workshops || [];
 
     const html = workshops.map(ws => {
       const title = lang === 'ar' ? ws.title_ar : ws.title_en;
@@ -416,20 +420,7 @@ export class FeedPage {
     container.innerHTML = html;
   }
 
-  /**
-   * Escape HTML entities in user input strings
-   * @param {string} str 
-   * @returns {string}
-   */
-  static escapeHtml(str) {
-    if (!str) return '';
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
-  }
+
 
   /**
    * Render Main Stream Feed Posts
@@ -442,9 +433,12 @@ export class FeedPage {
     const savedSet = new Set(this.getSavedRecipeIds());
     const likedSet = new Set(this.getLikedRecipeIds());
     const followingSet = new Set(this.getFollowingChefIds());
+    const activeUser = USER_FIXTURES || { id: '' };
 
     // Gather and filter recipes
-    let recipes = [...(MOCK_DATA.recipes || [])];
+    let recipes = [...(RECIPE_FIXTURES || [])]
+      .filter(r => !this.deletedRecipeIds.has(r.id) && !this.hiddenRecipeIds.has(r.id))
+      .map(r => ({ ...r, ...(this.recipeEdits.get(r.id) || {}) }));
 
     if (this.currentFilter === 'trending') {
       recipes.sort((a, b) => (b.likes_count || 0) - (a.likes_count || 0));
@@ -463,8 +457,26 @@ export class FeedPage {
 
     // Render user submitted posts first
     this.userPosts.forEach(post => {
+      const isSaved = savedSet.has(post.id);
+      const isLiked = likedSet.has(post.id);
+
+      const totalLikes = (post.likes_count || 0) + (isLiked ? 1 : 0);
+      const totalSaves = (post.saves_count || 0) + (isSaved ? 1 : 0);
+
+      const likeClass = isLiked
+        ? 'text-red-500 bg-surface-2 border-red-500'
+        : 'text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle';
+      const likeFill = isLiked ? 'currentColor' : 'none';
+
+      const saveClass = isSaved
+        ? 'text-brand-gold bg-surface-2 border-border-subtle'
+        : 'text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle';
+      const saveFill = isSaved ? 'currentColor' : 'none';
+
+      const isOwner = post.author_id === activeUser.id;
+
       html += `
-        <article class="bg-surface-1 border border-border-subtle rounded-2xl p-5 shadow-sm space-y-4 text-start">
+        <article class="bg-surface-1 border border-border-subtle rounded-2xl p-5 shadow-sm space-y-4 text-start relative" data-card-post-id="${post.id}">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-3">
               <img src="${this.escapeHtml(post.avatar)}" alt="${this.escapeHtml(post.author)}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle">
@@ -473,11 +485,74 @@ export class FeedPage {
                 <p class="text-[11px] text-text-muted">${this.escapeHtml(post.timeAgo)} • <span class="text-brand-gold font-semibold">${this.escapeHtml(post.handle)}</span></p>
               </div>
             </div>
-            <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle">
-              ${lang === 'ar' ? 'منشور جديد' : 'New Post'}
-            </span>
+            <div class="flex items-center gap-2 relative">
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-surface-2 text-brand-gold border border-border-subtle">
+                ${lang === 'ar' ? 'منشور جديد' : 'New Post'}
+              </span>
+
+              <!-- 3-dots option button -->
+              <button type="button" data-action="toggle-dropdown" class="p-1.5 text-text-muted hover:text-text-main hover:bg-surface-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Options">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="1"></circle>
+                  <circle cx="12" cy="5" r="1"></circle>
+                  <circle cx="12" cy="19" r="1"></circle>
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div class="absolute end-0 top-full mt-1 w-40 bg-surface-1 border border-border-subtle rounded-xl shadow-lg py-1 z-10 hidden dropdown-menu" data-dropdown>
+                ${isOwner ? `
+                  <button type="button" data-action="edit-post" data-post-id="${post.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-text-main hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                    <span>${I18n.t('btn.edit')}</span>
+                  </button>
+                  <button type="button" data-action="delete-post" data-post-id="${post.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-red-600 hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    <span>${I18n.t('btn.delete')}</span>
+                  </button>
+                ` : `
+                  <button type="button" data-action="report-post" data-post-id="${post.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-text-main hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg>
+                    <span>${I18n.t('btn.report')}</span>
+                  </button>
+                  <button type="button" data-action="hide-post" data-post-id="${post.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-text-main hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24M1 1l22 22"/></svg>
+                    <span>${I18n.t('btn.hide')}</span>
+                  </button>
+                `}
+              </div>
+            </div>
           </div>
           <p class="text-xs sm:text-sm text-text-main leading-relaxed whitespace-pre-line">${this.escapeHtml(post.content)}</p>
+
+          <!-- Interactive Actions Bar -->
+          <div class="pb-1 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <!-- Like Button -->
+              <button type="button" data-action="like" data-recipe-id="${post.id}" data-base-likes="${post.likes_count || 0}"
+                      class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${likeClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                      aria-label="Like recipe">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="${likeFill}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span class="action-count">${totalLikes.toLocaleString()}</span>
+              </button>
+
+              <!-- Save / Bookmark Button -->
+              <button type="button" data-action="save" data-recipe-id="${post.id}" data-base-saves="${post.saves_count || 0}"
+                      class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${saveClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                      aria-label="Save recipe">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="${saveFill}" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+                <span class="action-label hidden sm:inline">${isSaved ? I18n.t('btn.saved') : I18n.t('btn.save')}</span>
+                <span class="action-count">${totalSaves.toLocaleString()}</span>
+              </button>
+
+              <!-- Share Button -->
+              <button type="button" data-action="share" data-recipe-id="${post.id}"
+                      class="p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                      aria-label="Share recipe">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              </button>
+            </div>
+          </div>
         </article>
       `;
     });
@@ -486,6 +561,7 @@ export class FeedPage {
     recipes.forEach(recipe => {
       const isSaved = savedSet.has(recipe.id);
       const isLiked = likedSet.has(recipe.id);
+      const isOwner = recipe.author_id === activeUser.id;
       const isFollowing = followingSet.has(recipe.author_id);
 
       const title = lang === 'ar' ? (recipe.title_ar || recipe.title) : (recipe.title_en || recipe.title);
@@ -512,6 +588,13 @@ export class FeedPage {
         ? 'bg-surface-2 text-text-muted border-border-subtle'
         : 'bg-brand-gold hover:bg-brand-gold-hover text-white border-transparent';
 
+      const followButton = isOwner ? '' : `
+        <button type="button" data-action="follow" data-chef-id="${recipe.author_id}"
+                class="px-3.5 py-1.5 text-xs font-semibold rounded-xl border transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold ${followClass}">
+          ${followText}
+        </button>
+      `;
+
       // Ingredients chips
       const ingredientsPreview = (recipe.ingredients || []).slice(0, 3).map(ing => {
         const name = lang === 'ar' ? ing.name_ar : ing.name_en;
@@ -519,7 +602,7 @@ export class FeedPage {
       }).join(' ');
 
       html += `
-        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm space-y-4 text-start transition-all hover:border-border-subtle" data-card-recipe-id="${recipe.id}">
+        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm space-y-4 text-start transition-all hover:border-border-subtle relative" data-card-recipe-id="${recipe.id}">
           
           <!-- Post Author Header -->
           <div class="px-4 sm:px-5 pt-4 sm:pt-5 flex items-center justify-between gap-3">
@@ -542,11 +625,42 @@ export class FeedPage {
               </div>
             </div>
 
-            <!-- Follow Button -->
-            <button type="button" data-action="follow" data-chef-id="${recipe.author_id}"
-                    class="px-3.5 py-1.5 text-xs font-semibold rounded-xl border transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold ${followClass}">
-              ${followText}
-            </button>
+            <!-- Follow Button & 3-dots -->
+            <div class="flex items-center gap-2 relative">
+              ${followButton}
+
+              <!-- 3-dots option button -->
+              <button type="button" data-action="toggle-dropdown" class="p-1.5 text-text-muted hover:text-text-main hover:bg-surface-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Options">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="1"></circle>
+                  <circle cx="12" cy="5" r="1"></circle>
+                  <circle cx="12" cy="19" r="1"></circle>
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div class="absolute end-0 top-full mt-1 w-40 bg-surface-1 border border-border-subtle rounded-xl shadow-lg py-1 z-10 hidden dropdown-menu" data-dropdown>
+                ${isOwner ? `
+                  <button type="button" data-action="edit-post" data-post-id="${recipe.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-text-main hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                    <span>${I18n.t('btn.edit')}</span>
+                  </button>
+                  <button type="button" data-action="delete-post" data-post-id="${recipe.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-red-600 hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    <span>${I18n.t('btn.delete')}</span>
+                  </button>
+                ` : `
+                  <button type="button" data-action="report-post" data-post-id="${recipe.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-text-main hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg>
+                    <span>${I18n.t('btn.report')}</span>
+                  </button>
+                  <button type="button" data-action="hide-post" data-post-id="${recipe.id}" class="w-full text-start px-3 py-2 text-xs font-semibold text-text-main hover:bg-surface-2 transition-colors flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24M1 1l22 22"/></svg>
+                    <span>${I18n.t('btn.hide')}</span>
+                  </button>
+                `}
+              </div>
+            </div>
           </div>
 
           <!-- Recipe Body: Title & Teaser -->
@@ -557,7 +671,7 @@ export class FeedPage {
               </a>
             </h3>
             <p class="text-xs text-text-muted leading-relaxed line-clamp-2">
-              ${description}
+              ${this.escapeHtml(description) /* Escape description to prevent XSS */}
             </p>
           </div>
 
@@ -680,15 +794,18 @@ export class FeedPage {
           return;
         }
 
-        const activeUser = MOCK_DATA.user;
+        const activeUser = USER_FIXTURES;
         const newPost = {
           id: `post-${Date.now()}`,
+          author_id: activeUser.id,
           author: lang === 'ar' ? activeUser.name_ar : activeUser.name_en,
           handle: activeUser.handle,
           avatar: activeUser.avatar,
           content: content,
           timeAgo: lang === 'ar' ? 'الآن' : 'Just now',
-          created_at: new Date().toISOString()
+          created_at: new Date().toISOString(),
+          likes_count: 0,
+          saves_count: 0
         };
 
         this.userPosts.unshift(newPost);
@@ -784,7 +901,197 @@ export class FeedPage {
         }
         return;
       }
+
+      // Toggle dropdown
+      const toggleBtn = e.target.closest('[data-action="toggle-dropdown"]');
+      if (toggleBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const dropdown = toggleBtn.parentElement.querySelector('.dropdown-menu');
+        if (dropdown) {
+          // Close all other dropdowns
+          document.querySelectorAll('.dropdown-menu').forEach(dd => {
+            if (dd !== dropdown) {
+              dd.classList.add('hidden');
+            }
+          });
+          dropdown.classList.toggle('hidden');
+        }
+        return;
+      }
+
+      // Close dropdowns if clicking outside
+      if (!e.target.closest('.dropdown-menu') && !e.target.closest('[data-action="toggle-dropdown"]')) {
+        document.querySelectorAll('.dropdown-menu').forEach(dd => {
+          dd.classList.add('hidden');
+        });
+      }
+
+      // Delete post
+      const deleteBtn = e.target.closest('[data-action="delete-post"]');
+      if (deleteBtn) {
+        e.preventDefault();
+        const postId = deleteBtn.getAttribute('data-post-id');
+        this.pendingDeletePostId = postId;
+        this.pendingDeleteIsUserPost = this.userPosts.some(p => p.id === postId);
+
+        // Close the open 3-dots dropdown menu
+        document.querySelectorAll('.dropdown-menu').forEach(dd => {
+          dd.classList.add('hidden');
+        });
+
+        const modalEl = document.getElementById('modal-feed-delete-confirm');
+        if (modalEl) {
+          Modal.open('modal-feed-delete-confirm');
+        } else {
+          // ponytail: fallback for tests where the modal is not pre-created
+          if (this.pendingDeleteIsUserPost) {
+            this.userPosts = this.userPosts.filter(p => p.id !== postId);
+          } else {
+            this.deletedRecipeIds.add(postId);
+          }
+          Toast.success(I18n.t('toast.post_deleted'));
+          this.renderFeedPosts();
+          this.pendingDeletePostId = null;
+          this.pendingDeleteIsUserPost = false;
+        }
+        return;
+      }
+
+      // Edit post
+      const editBtn = e.target.closest('[data-action="edit-post"]');
+      if (editBtn) {
+        e.preventDefault();
+        const postId = editBtn.getAttribute('data-post-id');
+        this.pendingEditPostId = postId;
+
+        // Close the open 3-dots dropdown menu
+        document.querySelectorAll('.dropdown-menu').forEach(dd => {
+          dd.classList.add('hidden');
+        });
+
+        const textarea = document.getElementById('feed-edit-textarea');
+        const label = document.getElementById('feed-edit-modal-label');
+        const title = document.getElementById('feed-edit-modal-title');
+
+        const userPost = this.userPosts.find(p => p.id === postId);
+        if (userPost) {
+          this.pendingEditIsUserPost = true;
+          if (textarea) textarea.value = userPost.content;
+          if (label) {
+            label.textContent = I18n.t('feed.edit_post_prompt');
+            label.setAttribute('data-i18n', 'feed.edit_post_prompt');
+          }
+          if (title) {
+            title.textContent = I18n.t('feed.edit_post_title');
+            title.setAttribute('data-i18n', 'feed.edit_post_title');
+          }
+        } else {
+          const recipe = RECIPE_FIXTURES?.find(r => r.id === postId);
+          if (recipe) {
+            this.pendingEditIsUserPost = false;
+            const lang = I18n.getLang();
+            const edits = this.recipeEdits.get(postId) || {};
+            const currentDesc = lang === 'ar'
+              ? (edits.description_ar || recipe.description_ar)
+              : (edits.description_en || recipe.description_en);
+            if (textarea) textarea.value = currentDesc;
+            if (label) {
+              label.textContent = I18n.t('feed.edit_recipe_prompt');
+              label.setAttribute('data-i18n', 'feed.edit_recipe_prompt');
+            }
+            if (title) {
+              title.textContent = I18n.t('feed.edit_recipe_title');
+              title.setAttribute('data-i18n', 'feed.edit_recipe_title');
+            }
+          }
+        }
+        Modal.open('modal-feed-edit');
+        return;
+      }
+
+      // Hide post
+      const hideBtn = e.target.closest('[data-action="hide-post"]');
+      if (hideBtn) {
+        e.preventDefault();
+        const postId = hideBtn.getAttribute('data-post-id');
+        const isUserPost = this.userPosts.some(p => p.id === postId);
+        if (isUserPost) {
+          this.userPosts = this.userPosts.filter(p => p.id !== postId);
+        } else {
+          this.hiddenRecipeIds.add(postId);
+        }
+        Toast.success(I18n.t('toast.post_hidden'));
+        this.renderFeedPosts();
+        return;
+      }
+
+      // Report post
+      const reportBtn = e.target.closest('[data-action="report-post"]');
+      if (reportBtn) {
+        e.preventDefault();
+        Toast.success(I18n.t('toast.post_reported'));
+        const dropdown = reportBtn.closest('.dropdown-menu');
+        if (dropdown) {
+          dropdown.classList.add('hidden');
+        }
+        return;
+      }
     });
+
+    // Bind handlers for the action buttons inside the custom modals
+    const confirmDeleteBtn = document.getElementById('feed-confirm-delete-btn');
+    if (confirmDeleteBtn) {
+      confirmDeleteBtn.addEventListener('click', () => {
+        const postId = this.pendingDeletePostId;
+        if (postId) {
+          if (this.pendingDeleteIsUserPost) {
+            this.userPosts = this.userPosts.filter(p => p.id !== postId);
+          } else {
+            this.deletedRecipeIds.add(postId);
+          }
+          Toast.success(I18n.t('toast.post_deleted'));
+          this.renderFeedPosts();
+        }
+        Modal.close('modal-feed-delete-confirm');
+        this.pendingDeletePostId = null;
+        this.pendingDeleteIsUserPost = false;
+      });
+    }
+
+    const saveEditBtn = document.getElementById('feed-save-edit-btn');
+    if (saveEditBtn) {
+      saveEditBtn.addEventListener('click', () => {
+        const postId = this.pendingEditPostId;
+        const textarea = document.getElementById('feed-edit-textarea');
+        if (postId && textarea) {
+          const newContent = this.escapeHtml(textarea.value.trim());
+          if (this.pendingEditIsUserPost) {
+            const userPost = this.userPosts.find(p => p.id === postId);
+            if (userPost) {
+              userPost.content = newContent;
+              Toast.success(I18n.t('toast.post_updated'));
+              this.renderFeedPosts();
+            }
+          } else {
+            const recipe = RECIPE_FIXTURES?.find(r => r.id === postId);
+            if (recipe) {
+              const lang = I18n.getLang();
+              const edits = this.recipeEdits.get(postId) || {};
+              this.recipeEdits.set(postId, {
+                ...edits,
+                [lang === 'ar' ? 'description_ar' : 'description_en']: newContent
+              });
+              Toast.success(I18n.t('toast.recipe_updated'));
+              this.renderFeedPosts();
+            }
+          }
+        }
+        Modal.close('modal-feed-edit');
+        this.pendingEditPostId = null;
+        this.pendingEditIsUserPost = false;
+      });
+    }
 
     // 5. Re-render on language change event
     if (typeof window !== 'undefined') {
@@ -810,17 +1117,11 @@ export class FeedPage {
    */
   static init() {
     if (this.isInitialized) return;
+    if (typeof document === 'undefined') return;
+    this.deletedRecipeIds = new Set();
+    this.hiddenRecipeIds = new Set();
     this.renderAll();
     this.bindEvents();
     this.isInitialized = true;
-  }
-}
-
-// Auto-bootstrap when page loads
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => FeedPage.init());
-  } else {
-    FeedPage.init();
   }
 }

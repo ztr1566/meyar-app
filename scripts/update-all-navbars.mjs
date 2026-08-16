@@ -14,8 +14,7 @@ const pages = [
   { file: 'courses.html', activeNav: 'courses' },
   { file: 'chat.html', activeNav: 'chat' },
   { file: 'notifications.html', activeNav: 'notifications' },
-  { file: 'settings.html', activeNav: 'settings' },
-  { file: 'auth.html', activeNav: 'auth' }
+  { file: 'settings.html', activeNav: 'settings' }
 ];
 
 function generateHeader(activeNav) {

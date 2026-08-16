@@ -1,62 +1,45 @@
 /**
  * Meyar (معيار) Request for Quotation (RFQ) Manager
  * Manages B2B Commercial RFQ submissions, live price estimation, MOQ validation,
- * localStorage persistence (`meyar_rfqs`), drawer/modal lifecycle, and chat integration.
+ * transient session state, drawer/modal lifecycle, and chat integration.
  */
 
-import { MOCK_DATA } from '../data/mock-data.js';
+import { RFQ_FIXTURES, SUPPLY_FIXTURES, USER_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Modal } from '../core/modal.js';
 import { Toast } from '../core/toast.js';
 
 export class RFQManager {
-  static STORAGE_KEY = 'meyar_rfqs';
   static activeItem = null;
   static currentQuantity = 1;
   static isInitialized = false;
+  static rfqsStore = null;
 
   /**
-   * Seed / Initial RFQ list from mock data if storage is empty
+   * Reset in-memory RFQ store (for tests and session reset)
    */
-  static getInitialRFQs() {
-    const seed = [];
-    if (MOCK_DATA?.chats) {
-      MOCK_DATA.chats.forEach(chat => {
-        if (chat.rfq_card) {
-          seed.push({
-            ...chat.rfq_card,
-            partner_id: chat.partner?.id || 'supplier-1',
-            partner_name_ar: chat.partner?.name_ar || '',
-            partner_name_en: chat.partner?.name_en || '',
-            partner_avatar: chat.partner?.avatar || '',
-            partner_role: chat.partner?.role || 'supplier',
-            created_at: '2026-08-14T10:00:00Z',
-            chat_id: chat.id
-          });
-        }
-      });
-    }
-    return seed;
+  static reset() {
+    this.rfqsStore = null;
+    this.activeItem = null;
+    this.currentQuantity = 1;
   }
 
   /**
-   * Retrieve all saved RFQs from localStorage
+   * Clone the temporary RFQ fixtures for the current page session
+   */
+  static getInitialRFQs() {
+    return JSON.parse(JSON.stringify(RFQ_FIXTURES || []));
+  }
+
+  /**
+   * Retrieve all saved RFQs from in-memory store
    * @returns {Array<Object>}
    */
   static getRFQs() {
-    try {
-      const data = localStorage.getItem(this.STORAGE_KEY);
-      if (!data) {
-        const initial = this.getInitialRFQs();
-        if (initial.length > 0) {
-          localStorage.setItem(this.STORAGE_KEY, JSON.stringify(initial));
-        }
-        return initial;
-      }
-      return JSON.parse(data);
-    } catch {
-      return this.getInitialRFQs();
+    if (!this.rfqsStore) {
+      this.rfqsStore = this.getInitialRFQs();
     }
+    return this.rfqsStore;
   }
 
   /**
@@ -130,12 +113,12 @@ export class RFQManager {
   }
 
   /**
-   * Persist a new RFQ to localStorage and broadcast event
+   * Add a new RFQ to the current page session and broadcast event
    * @param {Object} rfqData 
    * @returns {Object}
    */
   static saveRFQ(rfqData) {
-    const item = rfqData.supplyItem || (rfqData.item_id ? MOCK_DATA.supplies?.find(s => s.id === rfqData.item_id) : null) || this.activeItem;
+    const item = rfqData.supplyItem || (rfqData.item_id ? SUPPLY_FIXTURES?.find(s => s.id === rfqData.item_id) : null) || this.activeItem;
     const qty = Math.max(item?.moq || 1, parseInt(rfqData.quantity, 10) || item?.moq || 1);
     const unitPrice = Number(item?.price || rfqData.unit_price || 0);
     const estimate = this.calculateEstimate(unitPrice, qty);
@@ -165,20 +148,15 @@ export class RFQManager {
       destination_en: rfqData.destination || rfqData.destination_en || '',
       destination: rfqData.destination || '',
       target_date: rfqData.target_date || new Date(Date.now() + 14 * 86400000).toISOString().split('T')[0],
-      company_name: rfqData.company_name || 'مطعم الأندلسية الراقي',
-      buyer_contact: rfqData.buyer_contact || 'الشيف فيصل الهاشمي (+966 50 123 4567)',
+      company_name: rfqData.company_name || USER_FIXTURES?.business_profile?.company_name_ar || '',
+      buyer_contact: rfqData.buyer_contact || `${USER_FIXTURES?.name_ar || ''} (${USER_FIXTURES?.email || ''})`,
       notes: rfqData.notes || '',
       created_at: new Date().toISOString()
     };
 
     const rfqs = this.getRFQs();
     const updated = [newRFQ, ...rfqs.filter(r => r.rfq_id !== newRFQ.rfq_id)];
-    
-    try {
-      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(updated));
-    } catch (e) {
-      console.error('Failed to persist RFQ to localStorage', e);
-    }
+    this.rfqsStore = updated;
 
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('meyar:rfq-submitted', { detail: { rfq: newRFQ } }));
@@ -201,12 +179,7 @@ export class RFQManager {
 
     rfqs[index].status = status;
     rfqs[index].updated_at = new Date().toISOString();
-
-    try {
-      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(rfqs));
-    } catch (e) {
-      console.error('Failed to update RFQ status in localStorage', e);
-    }
+    this.rfqsStore = rfqs;
 
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('meyar:rfq-status-updated', { detail: { rfqId, status } }));
@@ -223,7 +196,7 @@ export class RFQManager {
   static openDrawer(supplyIdOrItem, defaultQty = null) {
     let item = supplyIdOrItem;
     if (typeof supplyIdOrItem === 'string') {
-      item = MOCK_DATA.supplies?.find(s => s.id === supplyIdOrItem) || null;
+      item = SUPPLY_FIXTURES?.find(s => s.id === supplyIdOrItem) || null;
     }
 
     if (!item) {
@@ -403,7 +376,7 @@ export class RFQManager {
       formData = formOrData || {};
     }
 
-    const item = (formData.item_id ? MOCK_DATA.supplies?.find(s => s.id === formData.item_id) : null) || this.activeItem;
+    const item = (formData.item_id ? SUPPLY_FIXTURES?.find(s => s.id === formData.item_id) : null) || this.activeItem;
     if (!item) {
       Toast.error(I18n.getLang() === 'ar' ? 'يرجى تحديد الصنف المطلوب' : 'Please select a supply item');
       return false;
@@ -522,7 +495,12 @@ export class RFQManager {
    * Initialize event delegation for RFQ buttons and drawer actions
    */
   static init() {
+    if (typeof document !== 'undefined' && this.lastDocument !== document) {
+      this.isInitialized = false;
+      this.lastDocument = document;
+    }
     if (this.isInitialized || typeof document === 'undefined') return;
+    this.isInitialized = true;
 
     // 1. Delegated click handling
     document.addEventListener('click', (e) => {
@@ -614,16 +592,5 @@ export class RFQManager {
         this.renderHistory(historyContainer);
       }
     });
-
-    this.isInitialized = true;
-  }
-}
-
-// Auto initialize in browser context
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => RFQManager.init());
-  } else {
-    RFQManager.init();
   }
 }
