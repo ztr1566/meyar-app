@@ -53,6 +53,11 @@ if (typeof window !== 'undefined') {
   };
 }
 
+export function isFeedPath(pathname = '') {
+  const currentPath = pathname.split('/').filter(Boolean).pop()?.toLowerCase() || '';
+  return currentPath === 'feeds' || currentPath === 'feeds.html';
+}
+
 export function autoInitPage() {
   if (typeof document === 'undefined') return;
 
@@ -63,8 +68,8 @@ export function autoInitPage() {
     ? window.location.pathname.split('/').pop().toLowerCase()
     : '';
 
-  // 2. Feed Page (index.html or root or #feed-posts-container)
-  if (document.getElementById('feed-posts-container') || document.getElementById('stories-track') || currentPath === 'index.html' || currentPath === '') {
+  // 2. Feed Page (feeds route or DOM markers)
+  if (document.getElementById('feed-posts-container') || document.getElementById('stories-track') || isFeedPath(currentPath)) {
     FeedPage.init();
   }
 

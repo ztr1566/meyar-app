@@ -97,8 +97,8 @@ export function initApp() {
   try {
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const pathToNav = {
-      '': 'feed',
-      'index.html': 'feed',
+      'feeds': 'feed',
+      'feeds.html': 'feed',
       'explore.html': 'explore',
       'supplies.html': 'supplies',
       'courses.html': 'courses',
