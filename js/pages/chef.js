@@ -890,7 +890,7 @@ export class ChefPage {
                 <span class="font-mono font-semibold">${act.replies}</span>
               </button>
             </div>
-            <a href="index.html" class="hover:text-brand-gold font-medium">
+            <a href="feeds.html" class="hover:text-brand-gold font-medium">
               ${isAr ? 'الانتقال إلى المنشور' : 'View Post in Feed'}
             </a>
           </div>

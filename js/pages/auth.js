@@ -390,7 +390,7 @@ export class AuthPage {
     // Simulated redirect
     if (typeof window !== 'undefined' && window.location) {
       setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = 'feeds.html';
       }, 1000);
     }
 
@@ -469,10 +469,10 @@ export class AuthPage {
 
     Toast.success(I18n.t('auth.register_success'), I18n.t('common.success'));
 
-    // Simulated redirect based on chosen role
+    // Simulated redirect
     if (typeof window !== 'undefined' && window.location) {
       setTimeout(() => {
-        window.location.href = role === 'supplier' ? 'supplies.html' : 'index.html';
+        window.location.href = 'feeds.html';
       }, 1200);
     }
 
@@ -521,7 +521,7 @@ export class AuthPage {
 
     if (typeof window !== 'undefined' && window.location) {
       setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = 'feeds.html';
       }, 1000);
     }
 

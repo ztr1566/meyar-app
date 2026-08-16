@@ -4,7 +4,7 @@ import path from 'node:path';
 const rootDir = process.cwd();
 
 const pages = [
-  { file: 'index.html', activeNav: 'feed' },
+  { file: 'feeds.html', activeNav: 'feed' },
   { file: 'explore.html', activeNav: 'explore' },
   { file: 'recipe.html', activeNav: 'recipes' },
   { file: 'create-recipe.html', activeNav: 'create_recipe' },
@@ -32,7 +32,7 @@ function generateHeader(activeNav) {
       <!-- Start Section: Brand + Search Trigger -->
       <div class="flex items-center gap-2 sm:gap-3 shrink-0 min-w-0">
         <!-- Brand Identity -->
-        <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 group focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-xl p-1 shrink-0" aria-label="Meyar Home">
+        <a href="feeds.html" class="flex items-center gap-2 sm:gap-2.5 group focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-xl p-1 shrink-0" aria-label="Meyar Home">
           <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-surface-2 border border-border-subtle flex items-center justify-center shadow-sm group-hover:scale-105 group-hover:border-brand-gold transition-all shrink-0 p-1">
             <svg class="w-full h-full" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <defs>
@@ -73,7 +73,7 @@ function generateHeader(activeNav) {
 
       <!-- Center Section: Desktop Navigation Links (Clean, Compact, Single-Row) -->
       <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 shrink-0" aria-label="Main Navigation">
-        <a href="index.html" class="${getNavClass('feed')}" data-nav="feed" data-i18n="nav.feed">الرئيسية</a>
+        <a href="feeds.html" class="${getNavClass('feed')}" data-nav="feed" data-i18n="nav.feed">الرئيسية</a>
         <a href="explore.html" class="${getNavClass('explore')}" data-nav="explore" data-i18n="nav.explore">استكشف</a>
         <a href="supplies.html" class="${getNavClass('supplies')}" data-nav="supplies" data-i18n="nav.supplies">التوريدات</a>
         <a href="courses.html" class="${getNavClass('courses')}" data-nav="courses" data-i18n="nav.courses">الدورات</a>
@@ -197,6 +197,7 @@ for (const { file, activeNav } of pages) {
   if (!fs.existsSync(filePath)) continue;
 
   let content = fs.readFileSync(filePath, 'utf8');
+  content = content.replaceAll('href="index.html"', 'href="feeds.html"');
 
   // Replace header block
   const headerRegex = /<!-- ================= GLOBAL TOPBAR ================= -->[\s\S]*?<\/header>/;
