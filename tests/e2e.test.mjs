@@ -9,8 +9,8 @@ import { RFQManager } from '../js/modules/rfq.js';
 import { normalizeSearchQuery, SearchModule } from '../js/modules/search.js';
 import { ChatModule } from '../js/modules/chat-module.js';
 
-const ALL_12_PAGES = [
-  'index.html',
+const APP_PAGES = [
+  'feeds.html',
   'explore.html',
   'recipe.html',
   'create-recipe.html',
@@ -24,7 +24,9 @@ const ALL_12_PAGES = [
   'auth.html'
 ];
 
-const SEARCH_PAGES = ALL_12_PAGES.filter(page => page !== 'auth.html');
+const PUBLIC_PAGES = ['index.html'];
+const ALL_PAGES = [...APP_PAGES, ...PUBLIC_PAGES];
+const SEARCH_PAGES = APP_PAGES.filter(page => page !== 'auth.html');
 
 function extractSearchModal(content, page) {
   const start = content.indexOf('<!-- ================= SEARCH MODAL PALETTE ================= -->');
@@ -34,7 +36,7 @@ function extractSearchModal(content, page) {
 }
 
 test('E2E Suite: All 12 HTML Pages Exist and are Valid', (t) => {
-  for (const page of ALL_12_PAGES) {
+  for (const page of ALL_PAGES) {
     const filePath = path.resolve(process.cwd(), page);
     assert.ok(fs.existsSync(filePath), `Page file ${page} must exist in project root`);
     const content = fs.readFileSync(filePath, 'utf-8');
@@ -50,7 +52,7 @@ test('E2E Suite: All 12 HTML Pages Exist and are Valid', (t) => {
 });
 
 test('E2E Suite: Synchronous Anti-FOUC Script in <head> across all 12 pages', (t) => {
-  for (const page of ALL_12_PAGES) {
+  for (const page of ALL_PAGES) {
     const filePath = path.resolve(process.cwd(), page);
     const content = fs.readFileSync(filePath, 'utf-8');
     const headSection = content.substring(content.indexOf('<head>'), content.indexOf('</head>'));
@@ -80,7 +82,7 @@ test('E2E Suite: Synchronous Anti-FOUC Script in <head> across all 12 pages', (t
 });
 
 test('E2E Suite: Shared Search Modal Markup across all app pages', () => {
-  const canonical = extractSearchModal(fs.readFileSync(path.resolve(process.cwd(), 'index.html'), 'utf-8'), 'index.html');
+  const canonical = extractSearchModal(fs.readFileSync(path.resolve(process.cwd(), 'feeds.html'), 'utf-8'), 'feeds.html');
 
   for (const page of SEARCH_PAGES) {
     const content = fs.readFileSync(path.resolve(process.cwd(), page), 'utf-8');
@@ -89,7 +91,7 @@ test('E2E Suite: Shared Search Modal Markup across all app pages', () => {
 });
 
 test('E2E Suite: 100% Solid Surfaces - Zero Glassmorphism across all pages and JS/CSS sources', (t) => {
-  for (const page of ALL_12_PAGES) {
+  for (const page of ALL_PAGES) {
     const filePath = path.resolve(process.cwd(), page);
     const content = fs.readFileSync(filePath, 'utf-8');
     assert.ok(!content.includes('backdrop-' + 'blur'), `${page} must not contain any backdrop-blur classes`);
@@ -129,7 +131,7 @@ test('E2E Suite: Strict CSS Logical Properties Parity across all 12 pages', (t) 
     /\b(left|right)-[0-9]/g
   ];
 
-  for (const page of ALL_12_PAGES) {
+  for (const page of ALL_PAGES) {
     const filePath = path.resolve(process.cwd(), page);
     const content = fs.readFileSync(filePath, 'utf-8');
     for (const pat of forbiddenPatterns) {
@@ -144,7 +146,7 @@ test('E2E Suite: Strict CSS Logical Properties Parity across all 12 pages', (t) 
 });
 
 test('E2E Suite: Internal Link Integrity - Zero Broken Links across all 12 pages', (t) => {
-  for (const page of ALL_12_PAGES) {
+  for (const page of ALL_PAGES) {
     const filePath = path.resolve(process.cwd(), page);
     const content = fs.readFileSync(filePath, 'utf-8');
     const hrefMatches = [...content.matchAll(/href=[\"']([^\"']+)[\"']/g)];
@@ -177,7 +179,7 @@ test('E2E Suite: Internal Link Integrity - Zero Broken Links across all 12 pages
 test('E2E Suite: Bilingual Translation Dictionary - 100% Coverage of HTML data-i18n keys', (t) => {
   const allKeys = new Set();
 
-  for (const page of ALL_12_PAGES) {
+  for (const page of ALL_PAGES) {
     const filePath = path.resolve(process.cwd(), page);
     const content = fs.readFileSync(filePath, 'utf-8');
     const keyMatches = [...content.matchAll(/data-i18n(?:-placeholder|-aria-label)?=[\"']([^\"']+)[\"']/g)];

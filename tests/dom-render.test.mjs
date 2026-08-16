@@ -5,16 +5,21 @@ import assert from 'node:assert/strict';
 
 // Load compiled bundle and HTML
 const bundleCode = fs.readFileSync(path.join(process.cwd(), 'js/bundle.js'), 'utf8');
-const indexHtml = fs.readFileSync(path.join(process.cwd(), 'index.html'), 'utf8');
 
 test('Standalone Bundle - Full DOM Execution & Data Injection Test', async () => {
+  const feedsHtml = fs.readFileSync(path.join(process.cwd(), 'feeds.html'), 'utf8');
+  const indexHtml = fs.readFileSync(path.join(process.cwd(), 'index.html'), 'utf8');
+
   // Simple DOM simulation
-  const postsContainerMatch = indexHtml.includes('id="feed-posts-container"');
-  const storiesTrackMatch = indexHtml.includes('id="stories-track"');
-  const searchModalMatch = indexHtml.includes('id="search-modal"');
+  const postsContainerMatch = feedsHtml.includes('id="feed-posts-container"');
+  const storiesTrackMatch = feedsHtml.includes('id="stories-track"');
+  const searchModalMatch = feedsHtml.includes('id="search-modal"');
   
-  assert.ok(postsContainerMatch, 'feed-posts-container exists in index.html');
-  assert.ok(storiesTrackMatch, 'stories-track exists in index.html');
-  assert.ok(searchModalMatch, 'search-modal exists in index.html');
-  assert.ok(indexHtml.includes('src="./js/bundle.js"'), 'index.html references js/bundle.js');
+  assert.ok(postsContainerMatch, 'feed-posts-container exists in feeds.html');
+  assert.ok(storiesTrackMatch, 'stories-track exists in feeds.html');
+  assert.ok(searchModalMatch, 'search-modal exists in feeds.html');
+  assert.ok(feedsHtml.includes('src="./js/bundle.js"'), 'feeds.html references js/bundle.js');
+
+  assert.ok(!indexHtml.includes('id="feed-posts-container"'), 'feed-posts-container must not exist in index.html');
+  assert.ok(!indexHtml.includes('id="stories-track"'), 'stories-track must not exist in index.html');
 });
