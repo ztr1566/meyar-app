@@ -2,6 +2,7 @@ import Fastify from 'fastify';
 import { corsPlugin } from './plugins/cors.js';
 import { staticPlugin, PROJECT_ROOT } from './plugins/static.js';
 import { healthRoutes } from './routes/health.routes.js';
+import { registerDatabase } from './db/client.js';
 
 function errorBody(code, message) {
   return { error: { code, message } };
@@ -15,6 +16,8 @@ function safeStatusCode(error) {
 
 export function buildApp({ logger = true, staticRoot = PROJECT_ROOT } = {}) {
   const app = Fastify({ logger });
+
+  registerDatabase(app);
 
   app.setErrorHandler((error, request, reply) => {
     const statusCode = safeStatusCode(error);
