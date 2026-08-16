@@ -27,6 +27,22 @@ export const translations = {
     'nav.rfq_drawer': 'طلب تسعير',
     'nav.switch_lang': 'English',
 
+    // Public Landing Page
+    'landing.eyebrow': 'مساحتك المهنية في عالم الطهي',
+    'landing.title': 'اكتشف، ابتكر، ونمِّ عالمك الطهوي',
+    'landing.description': 'منصة واحدة تجمع الإلهام والمعرفة والفرص المهنية لمحترفي الطهي.',
+    'landing.feed_cta': 'استكشف الخلاصة',
+    'landing.register_cta': 'ابدأ الآن',
+    'landing.card_label': 'من الفكرة إلى الطبق',
+    'landing.card_title': 'معايير أعلى لكل تجربة طهو',
+    'landing.discovery_title': 'اكتشاف ملهم',
+    'landing.discovery_text': 'وصفات وأفكار من مجتمع طهو يتطور باستمرار.',
+    'landing.learning_title': 'تعلم عملي',
+    'landing.learning_text': 'دورات وورش تساعدك على تحويل الشغف إلى مهارة.',
+    'landing.opportunity_title': 'فرص أفضل',
+    'landing.opportunity_text': 'أدوات ومجتمع يدعمان نمو أعمال الطهي.',
+    'landing.footer_cta': 'ابدأ باستكشاف معيار',
+
     // Archetype Roles
     'role.chef': 'شيف محترف',
     'role.enthusiast': 'هاوي طهي',
@@ -641,6 +657,22 @@ export const translations = {
     'nav.search_placeholder': 'Search Meyar...',
     'nav.rfq_drawer': 'Request Quote',
     'nav.switch_lang': 'العربية',
+
+    // Public Landing Page
+    'landing.eyebrow': 'Your professional space for culinary craft',
+    'landing.title': 'Discover, create, and grow your culinary world',
+    'landing.description': 'One platform for inspiration, knowledge, and professional opportunities in food.',
+    'landing.feed_cta': 'Explore the feed',
+    'landing.register_cta': 'Get started',
+    'landing.card_label': 'From idea to plate',
+    'landing.card_title': 'A higher standard for every culinary experience',
+    'landing.discovery_title': 'Find inspiration',
+    'landing.discovery_text': 'Recipes and ideas from a culinary community that keeps evolving.',
+    'landing.learning_title': 'Learn by doing',
+    'landing.learning_text': 'Courses and workshops that turn passion into skill.',
+    'landing.opportunity_title': 'Grow with opportunity',
+    'landing.opportunity_text': 'Tools and a community built around culinary business growth.',
+    'landing.footer_cta': 'Start exploring Meyar',
 
     // Archetype Roles
     'role.chef': 'Professional Chef',

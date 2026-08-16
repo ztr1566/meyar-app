@@ -73,6 +73,21 @@
       "nav.search_placeholder": "\u0627\u0628\u062D\u062B \u0641\u064A \u0645\u0639\u064A\u0627\u0631...",
       "nav.rfq_drawer": "\u0637\u0644\u0628 \u062A\u0633\u0639\u064A\u0631",
       "nav.switch_lang": "English",
+      // Public Landing Page
+      "landing.eyebrow": "\u0645\u0633\u0627\u062D\u062A\u0643 \u0627\u0644\u0645\u0647\u0646\u064A\u0629 \u0641\u064A \u0639\u0627\u0644\u0645 \u0627\u0644\u0637\u0647\u064A",
+      "landing.title": "\u0627\u0643\u062A\u0634\u0641\u060C \u0627\u0628\u062A\u0643\u0631\u060C \u0648\u0646\u0645\u0651\u0650 \u0639\u0627\u0644\u0645\u0643 \u0627\u0644\u0637\u0647\u0648\u064A",
+      "landing.description": "\u0645\u0646\u0635\u0629 \u0648\u0627\u062D\u062F\u0629 \u062A\u062C\u0645\u0639 \u0627\u0644\u0625\u0644\u0647\u0627\u0645 \u0648\u0627\u0644\u0645\u0639\u0631\u0641\u0629 \u0648\u0627\u0644\u0641\u0631\u0635 \u0627\u0644\u0645\u0647\u0646\u064A\u0629 \u0644\u0645\u062D\u062A\u0631\u0641\u064A \u0627\u0644\u0637\u0647\u064A.",
+      "landing.feed_cta": "\u0627\u0633\u062A\u0643\u0634\u0641 \u0627\u0644\u062E\u0644\u0627\u0635\u0629",
+      "landing.register_cta": "\u0627\u0628\u062F\u0623 \u0627\u0644\u0622\u0646",
+      "landing.card_label": "\u0645\u0646 \u0627\u0644\u0641\u0643\u0631\u0629 \u0625\u0644\u0649 \u0627\u0644\u0637\u0628\u0642",
+      "landing.card_title": "\u0645\u0639\u0627\u064A\u064A\u0631 \u0623\u0639\u0644\u0649 \u0644\u0643\u0644 \u062A\u062C\u0631\u0628\u0629 \u0637\u0647\u0648",
+      "landing.discovery_title": "\u0627\u0643\u062A\u0634\u0627\u0641 \u0645\u0644\u0647\u0645",
+      "landing.discovery_text": "\u0648\u0635\u0641\u0627\u062A \u0648\u0623\u0641\u0643\u0627\u0631 \u0645\u0646 \u0645\u062C\u062A\u0645\u0639 \u0637\u0647\u0648 \u064A\u062A\u0637\u0648\u0631 \u0628\u0627\u0633\u062A\u0645\u0631\u0627\u0631.",
+      "landing.learning_title": "\u062A\u0639\u0644\u0645 \u0639\u0645\u0644\u064A",
+      "landing.learning_text": "\u062F\u0648\u0631\u0627\u062A \u0648\u0648\u0631\u0634 \u062A\u0633\u0627\u0639\u062F\u0643 \u0639\u0644\u0649 \u062A\u062D\u0648\u064A\u0644 \u0627\u0644\u0634\u063A\u0641 \u0625\u0644\u0649 \u0645\u0647\u0627\u0631\u0629.",
+      "landing.opportunity_title": "\u0641\u0631\u0635 \u0623\u0641\u0636\u0644",
+      "landing.opportunity_text": "\u0623\u062F\u0648\u0627\u062A \u0648\u0645\u062C\u062A\u0645\u0639 \u064A\u062F\u0639\u0645\u0627\u0646 \u0646\u0645\u0648 \u0623\u0639\u0645\u0627\u0644 \u0627\u0644\u0637\u0647\u064A.",
+      "landing.footer_cta": "\u0627\u0628\u062F\u0623 \u0628\u0627\u0633\u062A\u0643\u0634\u0627\u0641 \u0645\u0639\u064A\u0627\u0631",
       // Archetype Roles
       "role.chef": "\u0634\u064A\u0641 \u0645\u062D\u062A\u0631\u0641",
       "role.enthusiast": "\u0647\u0627\u0648\u064A \u0637\u0647\u064A",
@@ -669,6 +684,21 @@
       "nav.search_placeholder": "Search Meyar...",
       "nav.rfq_drawer": "Request Quote",
       "nav.switch_lang": "\u0627\u0644\u0639\u0631\u0628\u064A\u0629",
+      // Public Landing Page
+      "landing.eyebrow": "Your professional space for culinary craft",
+      "landing.title": "Discover, create, and grow your culinary world",
+      "landing.description": "One platform for inspiration, knowledge, and professional opportunities in food.",
+      "landing.feed_cta": "Explore the feed",
+      "landing.register_cta": "Get started",
+      "landing.card_label": "From idea to plate",
+      "landing.card_title": "A higher standard for every culinary experience",
+      "landing.discovery_title": "Find inspiration",
+      "landing.discovery_text": "Recipes and ideas from a culinary community that keeps evolving.",
+      "landing.learning_title": "Learn by doing",
+      "landing.learning_text": "Courses and workshops that turn passion into skill.",
+      "landing.opportunity_title": "Grow with opportunity",
+      "landing.opportunity_text": "Tools and a community built around culinary business growth.",
+      "landing.footer_cta": "Start exploring Meyar",
       // Archetype Roles
       "role.chef": "Professional Chef",
       "role.enthusiast": "Culinary Enthusiast",
@@ -6129,8 +6159,8 @@
     try {
       const currentPath = window.location.pathname.split("/").pop() || "index.html";
       const pathToNav = {
-        "": "feed",
-        "index.html": "feed",
+        "feeds": "feed",
+        "feeds.html": "feed",
         "explore.html": "explore",
         "supplies.html": "supplies",
         "courses.html": "courses",
@@ -11239,7 +11269,7 @@
                 <span class="font-mono font-semibold">${act.replies}</span>
               </button>
             </div>
-            <a href="index.html" class="hover:text-brand-gold font-medium">
+            <a href="feeds.html" class="hover:text-brand-gold font-medium">
               ${isAr ? "\u0627\u0644\u0627\u0646\u062A\u0642\u0627\u0644 \u0625\u0644\u0649 \u0627\u0644\u0645\u0646\u0634\u0648\u0631" : "View Post in Feed"}
             </a>
           </div>
@@ -17046,7 +17076,7 @@
       Toast.success(I18n.t("auth.login_success"), I18n.t("common.success"));
       if (typeof window !== "undefined" && window.location) {
         setTimeout(() => {
-          window.location.href = "index.html";
+          window.location.href = "feeds.html";
         }, 1e3);
       }
       return { success: true, user: sessionUser };
@@ -17112,7 +17142,7 @@
       Toast.success(I18n.t("auth.register_success"), I18n.t("common.success"));
       if (typeof window !== "undefined" && window.location) {
         setTimeout(() => {
-          window.location.href = role === "supplier" ? "supplies.html" : "index.html";
+          window.location.href = "feeds.html";
         }, 1200);
       }
       return { success: true, user: newUser };
@@ -17152,7 +17182,7 @@
       Toast.success(`${providerName}: ${I18n.t("auth.login_success")}`, I18n.t("common.success"));
       if (typeof window !== "undefined" && window.location) {
         setTimeout(() => {
-          window.location.href = "index.html";
+          window.location.href = "feeds.html";
         }, 1e3);
       }
       return sessionUser;
@@ -17218,11 +17248,15 @@
       formatQuantity
     };
   }
+  function isFeedPath(pathname = "") {
+    const currentPath = pathname.split("/").filter(Boolean).pop()?.toLowerCase() || "";
+    return currentPath === "feeds" || currentPath === "feeds.html";
+  }
   function autoInitPage() {
     if (typeof document === "undefined") return;
     initApp();
     const currentPath = typeof window !== "undefined" && window.location.pathname ? window.location.pathname.split("/").pop().toLowerCase() : "";
-    if (document.getElementById("feed-posts-container") || document.getElementById("stories-track") || currentPath === "index.html" || currentPath === "") {
+    if (document.getElementById("feed-posts-container") || document.getElementById("stories-track") || isFeedPath(currentPath)) {
       FeedPage.init();
     }
     if (document.getElementById("explore-results-grid") || document.getElementById("explore-search-input") || currentPath === "explore.html") {
