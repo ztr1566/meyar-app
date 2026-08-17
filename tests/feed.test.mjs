@@ -516,6 +516,35 @@ test('FeedPage - Comment submission preserves the active form and updates its li
   assert.equal(count.textContent, '1', 'Comment count should update in place');
 });
 
+test('FeedPage - Comment state normalizes IDs and preserves known counts', () => {
+  const { doc, Element } = setupDOM();
+  FeedPage.reset();
+  I18n.setLang('en');
+
+  const post = { id: 7, comments: [], comments_count: 8 };
+  FeedPage.getCommentCount(post);
+
+  const panel = new Element('section');
+  panel.id = 'comments-panel-7';
+  const list = new Element('div');
+  list.className = 'comments-list';
+  panel.appendChild(list);
+  const input = new Element('textarea');
+  input.id = 'comment-input-7';
+  input.value = 'A useful note.';
+  panel.appendChild(input);
+  doc.body.appendChild(panel);
+
+  const count = new Element('span');
+  count.setAttribute('data-comments-count', '7');
+  doc.body.appendChild(count);
+
+  FeedPage.submitComment('7');
+
+  assert.equal(FeedPage.getComments(post).length, 1, 'String DOM IDs should address numeric post records');
+  assert.equal(count.textContent, '9', 'Known comment counts should increment instead of resetting');
+});
+
 test('FeedPage - Post Composer Creation and Prepending', () => {
   const { doc, Element } = setupDOM();
   I18n.setLang('ar');

@@ -6287,6 +6287,7 @@
       this.likedRecipeIds = /* @__PURE__ */ new Set();
       this.followingChefIds = /* @__PURE__ */ new Set();
       this.commentsByPostId = /* @__PURE__ */ new Map();
+      this.commentCountsByPostId = /* @__PURE__ */ new Map();
       this.currentFilter = "all";
       this.userPosts = [];
       this.deletedRecipeIds = /* @__PURE__ */ new Set();
@@ -6299,11 +6300,14 @@
       this.isInitialized = false;
     }
     static getComments(post) {
-      if (!post?.id) return [];
-      if (!this.commentsByPostId.has(post.id)) {
-        this.commentsByPostId.set(post.id, Array.isArray(post.comments) ? [...post.comments] : []);
+      const postId = String(post?.id ?? "");
+      if (!postId) return [];
+      if (!this.commentsByPostId.has(postId)) {
+        const comments = Array.isArray(post.comments) ? [...post.comments] : [];
+        this.commentsByPostId.set(postId, comments);
+        this.commentCountsByPostId.set(postId, Math.max(comments.length, Number(post.comments_count) || 0));
       }
-      return this.commentsByPostId.get(post.id);
+      return this.commentsByPostId.get(postId);
     }
     static renderCommentCards(comments, formId) {
       const lang = I18n.getLang();
@@ -6328,7 +6332,7 @@
       `;
       }).join("");
     }
-    static renderCommentButton(post, count = this.getComments(post).length) {
+    static renderCommentButton(post, count = this.getCommentCount(post)) {
       const postId = escapeHtml(post.id);
       return `
       <button type="button" data-action="toggle-comments" data-comments-target="comments-panel-${postId}" data-post-id="${postId}" aria-controls="comments-panel-${postId}" aria-expanded="false"
@@ -6358,23 +6362,27 @@
     `;
     }
     static getCommentCount(post) {
-      return Math.max(this.getComments(post).length, Number(post?.comments_count) || 0);
+      const postId = String(post?.id ?? "");
+      this.getComments(post);
+      return this.commentCountsByPostId.get(postId) || 0;
     }
     static renderPostComments(postId) {
       if (typeof document === "undefined") return;
-      const comments = this.commentsByPostId.get(postId) || [];
-      const panel = document.getElementById(`comments-panel-${postId}`);
+      const normalizedPostId = String(postId ?? "");
+      const comments = this.commentsByPostId.get(normalizedPostId) || [];
+      const panel = document.getElementById(`comments-panel-${normalizedPostId}`);
       const list = panel?.querySelector(".comments-list");
-      if (list) list.innerHTML = this.renderCommentCards(comments, `comment-form-${escapeHtml(postId)}`);
+      if (list) list.innerHTML = this.renderCommentCards(comments, `comment-form-${escapeHtml(normalizedPostId)}`);
       document.querySelectorAll("[data-comments-count]").forEach((countEl) => {
-        if (countEl.getAttribute("data-comments-count") === postId) {
-          countEl.textContent = comments.length.toLocaleString();
+        if (countEl.getAttribute("data-comments-count") === normalizedPostId) {
+          countEl.textContent = (this.commentCountsByPostId.get(normalizedPostId) || comments.length).toLocaleString();
         }
       });
     }
     static submitComment(postId) {
-      if (!postId || typeof document === "undefined") return;
-      const input = document.getElementById(`comment-input-${postId}`);
+      const normalizedPostId = String(postId ?? "");
+      if (!normalizedPostId || typeof document === "undefined") return;
+      const input = document.getElementById(`comment-input-${normalizedPostId}`);
       const content = input?.value.trim();
       const lang = I18n.getLang();
       if (!input || !content) {
@@ -6383,7 +6391,8 @@
         return;
       }
       const activeUser = USER_FIXTURES;
-      const comments = this.commentsByPostId.get(postId) || [];
+      const comments = this.commentsByPostId.get(normalizedPostId) || [];
+      const knownCount = this.commentCountsByPostId.get(normalizedPostId) || comments.length;
       comments.push({
         id: `comment-${Date.now()}`,
         author_id: activeUser.id,
@@ -6393,10 +6402,11 @@
         created_at: lang === "ar" ? "\u0627\u0644\u0622\u0646" : "Just now",
         content
       });
-      this.commentsByPostId.set(postId, comments);
+      this.commentsByPostId.set(normalizedPostId, comments);
+      this.commentCountsByPostId.set(normalizedPostId, knownCount + 1);
       input.value = "";
-      this.renderPostComments(postId);
-      document.getElementById(`comments-panel-${postId}`)?.classList.remove("hidden");
+      this.renderPostComments(normalizedPostId);
+      document.getElementById(`comments-panel-${normalizedPostId}`)?.classList.remove("hidden");
     }
     /**
      * Get list of saved recipe IDs from in-memory set
@@ -7355,6 +7365,7 @@
   __publicField(FeedPage, "likedRecipeIds", /* @__PURE__ */ new Set());
   __publicField(FeedPage, "followingChefIds", /* @__PURE__ */ new Set());
   __publicField(FeedPage, "commentsByPostId", /* @__PURE__ */ new Map());
+  __publicField(FeedPage, "commentCountsByPostId", /* @__PURE__ */ new Map());
   __publicField(FeedPage, "pendingDeletePostId", null);
   __publicField(FeedPage, "pendingDeleteIsUserPost", false);
   __publicField(FeedPage, "pendingEditPostId", null);
@@ -8694,6 +8705,7 @@
       this.followingChefIds = /* @__PURE__ */ new Set();
       this.completedStepsMap = /* @__PURE__ */ new Map();
       this.commentsByRecipeId = /* @__PURE__ */ new Map();
+      this.commentCountsByRecipeId = /* @__PURE__ */ new Map();
       this.completedSteps = /* @__PURE__ */ new Set();
       this.currentRecipe = null;
       this.scalerInstance = null;
@@ -8760,12 +8772,19 @@
       return recipe;
     }
     static getComments() {
-      const recipeId = this.currentRecipe?.id;
+      const recipeId = String(this.currentRecipe?.id ?? "");
       if (!recipeId) return [];
       if (!this.commentsByRecipeId.has(recipeId)) {
-        this.commentsByRecipeId.set(recipeId, Array.isArray(this.currentRecipe.comments) ? [...this.currentRecipe.comments] : []);
+        const comments = Array.isArray(this.currentRecipe.comments) ? [...this.currentRecipe.comments] : [];
+        this.commentsByRecipeId.set(recipeId, comments);
+        this.commentCountsByRecipeId.set(recipeId, Math.max(comments.length, Number(this.currentRecipe.comments_count) || 0));
       }
       return this.commentsByRecipeId.get(recipeId);
+    }
+    static getCommentCount() {
+      const recipeId = String(this.currentRecipe?.id ?? "");
+      this.getComments();
+      return this.commentCountsByRecipeId.get(recipeId) || 0;
     }
     static renderCommentCards(comments) {
       const lang = I18n.getLang();
@@ -8797,7 +8816,7 @@
       const comments = this.getComments();
       list.innerHTML = comments.length ? this.renderCommentCards(comments) : `<p class="text-xs text-text-muted text-center py-4" data-i18n="no_comments_yet">${I18n.t("no_comments_yet")}</p>`;
       const countEl = document.getElementById("recipe-comments-count");
-      if (countEl) countEl.textContent = comments.length.toLocaleString();
+      if (countEl) countEl.textContent = this.getCommentCount().toLocaleString();
       const avatarEl = document.getElementById("recipe-comment-author-avatar");
       if (avatarEl) {
         avatarEl.src = USER_FIXTURES.avatar;
@@ -8816,7 +8835,10 @@
         input?.focus();
         return;
       }
-      this.getComments().push({
+      const comments = this.getComments();
+      const recipeId = String(this.currentRecipe.id);
+      const knownCount = this.commentCountsByRecipeId.get(recipeId) || comments.length;
+      comments.push({
         id: `comment-${Date.now()}`,
         author_id: USER_FIXTURES.id,
         author_name_ar: USER_FIXTURES.name_ar,
@@ -8825,6 +8847,7 @@
         created_at: lang === "ar" ? "\u0627\u0644\u0622\u0646" : "Just now",
         content
       });
+      this.commentCountsByRecipeId.set(recipeId, knownCount + 1);
       input.value = "";
       this.renderComments();
     }
@@ -9739,6 +9762,7 @@
   __publicField(RecipePage, "completedStepsMap", /* @__PURE__ */ new Map());
   // recipeId -> Set<number>
   __publicField(RecipePage, "commentsByRecipeId", /* @__PURE__ */ new Map());
+  __publicField(RecipePage, "commentCountsByRecipeId", /* @__PURE__ */ new Map());
 
   // js/pages/create-recipe.js
   var CreateRecipeStudio = class {

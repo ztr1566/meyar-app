@@ -518,6 +518,8 @@ test('RecipePage - Comments section renders structured cards and toggles', () =>
 
   const recipe = RecipePage.loadRecipe('recipe-1');
   const originalComments = recipe.comments;
+  const originalCommentCount = recipe.comments_count;
+  recipe.comments_count = 6;
   recipe.comments = [{
     id: 'comment-1',
     author_name_en: 'Kitchen Guest',
@@ -533,6 +535,7 @@ test('RecipePage - Comments section renders structured cards and toggles', () =>
     assert.ok(commentsList.innerHTML.includes('Kitchen Guest'), 'Recipe comments should render the author');
     assert.ok(commentsList.innerHTML.includes('&lt;script&gt;'), 'Recipe comments should escape user content');
     assert.ok(commentsList.innerHTML.includes('comment-card'), 'Recipe comments should render structured cards');
+    assert.equal(elementsById.get('recipe-comments-count').textContent, '6', 'Recipe should preserve the known comment count');
 
     const toggleButton = documentMock.createElement('button');
     toggleButton.setAttribute('data-action', 'toggle-recipe-comments');
@@ -551,6 +554,12 @@ test('RecipePage - Comments section renders structured cards and toggles', () =>
     } else {
       recipe.comments = originalComments;
     }
+    if (originalCommentCount === undefined) {
+      delete recipe.comments_count;
+    } else {
+      recipe.comments_count = originalCommentCount;
+    }
+    RecipePage.reset();
   }
 });
 

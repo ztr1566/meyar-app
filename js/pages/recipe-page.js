@@ -23,6 +23,7 @@ export class RecipePage {
   static followingChefIds = new Set();
   static completedStepsMap = new Map(); // recipeId -> Set<number>
   static commentsByRecipeId = new Map();
+  static commentCountsByRecipeId = new Map();
 
   /**
    * Reset in-memory recipe page state (for test isolation)
@@ -33,6 +34,7 @@ export class RecipePage {
     this.followingChefIds = new Set();
     this.completedStepsMap = new Map();
     this.commentsByRecipeId = new Map();
+    this.commentCountsByRecipeId = new Map();
     this.completedSteps = new Set();
     this.currentRecipe = null;
     this.scalerInstance = null;
@@ -109,12 +111,20 @@ export class RecipePage {
   }
 
   static getComments() {
-    const recipeId = this.currentRecipe?.id;
+    const recipeId = String(this.currentRecipe?.id ?? '');
     if (!recipeId) return [];
     if (!this.commentsByRecipeId.has(recipeId)) {
-      this.commentsByRecipeId.set(recipeId, Array.isArray(this.currentRecipe.comments) ? [...this.currentRecipe.comments] : []);
+      const comments = Array.isArray(this.currentRecipe.comments) ? [...this.currentRecipe.comments] : [];
+      this.commentsByRecipeId.set(recipeId, comments);
+      this.commentCountsByRecipeId.set(recipeId, Math.max(comments.length, Number(this.currentRecipe.comments_count) || 0));
     }
     return this.commentsByRecipeId.get(recipeId);
+  }
+
+  static getCommentCount() {
+    const recipeId = String(this.currentRecipe?.id ?? '');
+    this.getComments();
+    return this.commentCountsByRecipeId.get(recipeId) || 0;
   }
 
   static renderCommentCards(comments) {
@@ -154,7 +164,7 @@ export class RecipePage {
       : `<p class="text-xs text-text-muted text-center py-4" data-i18n="no_comments_yet">${I18n.t('no_comments_yet')}</p>`;
 
     const countEl = document.getElementById('recipe-comments-count');
-    if (countEl) countEl.textContent = comments.length.toLocaleString();
+    if (countEl) countEl.textContent = this.getCommentCount().toLocaleString();
 
     const avatarEl = document.getElementById('recipe-comment-author-avatar');
     if (avatarEl) {
@@ -176,7 +186,10 @@ export class RecipePage {
       return;
     }
 
-    this.getComments().push({
+    const comments = this.getComments();
+    const recipeId = String(this.currentRecipe.id);
+    const knownCount = this.commentCountsByRecipeId.get(recipeId) || comments.length;
+    comments.push({
       id: `comment-${Date.now()}`,
       author_id: USER_FIXTURES.id,
       author_name_ar: USER_FIXTURES.name_ar,
@@ -185,6 +198,7 @@ export class RecipePage {
       created_at: lang === 'ar' ? 'الآن' : 'Just now',
       content
     });
+    this.commentCountsByRecipeId.set(recipeId, knownCount + 1);
     input.value = '';
     this.renderComments();
   }

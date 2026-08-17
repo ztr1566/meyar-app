@@ -23,6 +23,7 @@ export class FeedPage {
   static likedRecipeIds = new Set();
   static followingChefIds = new Set();
   static commentsByPostId = new Map();
+  static commentCountsByPostId = new Map();
 
   static pendingDeletePostId = null;
   static pendingDeleteIsUserPost = false;
@@ -37,6 +38,7 @@ export class FeedPage {
     this.likedRecipeIds = new Set();
     this.followingChefIds = new Set();
     this.commentsByPostId = new Map();
+    this.commentCountsByPostId = new Map();
     this.currentFilter = 'all';
     this.userPosts = [];
     this.deletedRecipeIds = new Set();
@@ -50,11 +52,14 @@ export class FeedPage {
   }
 
   static getComments(post) {
-    if (!post?.id) return [];
-    if (!this.commentsByPostId.has(post.id)) {
-      this.commentsByPostId.set(post.id, Array.isArray(post.comments) ? [...post.comments] : []);
+    const postId = String(post?.id ?? '');
+    if (!postId) return [];
+    if (!this.commentsByPostId.has(postId)) {
+      const comments = Array.isArray(post.comments) ? [...post.comments] : [];
+      this.commentsByPostId.set(postId, comments);
+      this.commentCountsByPostId.set(postId, Math.max(comments.length, Number(post.comments_count) || 0));
     }
-    return this.commentsByPostId.get(post.id);
+    return this.commentsByPostId.get(postId);
   }
 
   static renderCommentCards(comments, formId) {
@@ -83,7 +88,7 @@ export class FeedPage {
     }).join('');
   }
 
-  static renderCommentButton(post, count = this.getComments(post).length) {
+  static renderCommentButton(post, count = this.getCommentCount(post)) {
     const postId = escapeHtml(post.id);
     return `
       <button type="button" data-action="toggle-comments" data-comments-target="comments-panel-${postId}" data-post-id="${postId}" aria-controls="comments-panel-${postId}" aria-expanded="false"
@@ -118,25 +123,29 @@ export class FeedPage {
   }
 
   static getCommentCount(post) {
-    return Math.max(this.getComments(post).length, Number(post?.comments_count) || 0);
+    const postId = String(post?.id ?? '');
+    this.getComments(post);
+    return this.commentCountsByPostId.get(postId) || 0;
   }
 
   static renderPostComments(postId) {
     if (typeof document === 'undefined') return;
-    const comments = this.commentsByPostId.get(postId) || [];
-    const panel = document.getElementById(`comments-panel-${postId}`);
+    const normalizedPostId = String(postId ?? '');
+    const comments = this.commentsByPostId.get(normalizedPostId) || [];
+    const panel = document.getElementById(`comments-panel-${normalizedPostId}`);
     const list = panel?.querySelector('.comments-list');
-    if (list) list.innerHTML = this.renderCommentCards(comments, `comment-form-${escapeHtml(postId)}`);
+    if (list) list.innerHTML = this.renderCommentCards(comments, `comment-form-${escapeHtml(normalizedPostId)}`);
     document.querySelectorAll('[data-comments-count]').forEach(countEl => {
-      if (countEl.getAttribute('data-comments-count') === postId) {
-        countEl.textContent = comments.length.toLocaleString();
+      if (countEl.getAttribute('data-comments-count') === normalizedPostId) {
+        countEl.textContent = (this.commentCountsByPostId.get(normalizedPostId) || comments.length).toLocaleString();
       }
     });
   }
 
   static submitComment(postId) {
-    if (!postId || typeof document === 'undefined') return;
-    const input = document.getElementById(`comment-input-${postId}`);
+    const normalizedPostId = String(postId ?? '');
+    if (!normalizedPostId || typeof document === 'undefined') return;
+    const input = document.getElementById(`comment-input-${normalizedPostId}`);
     const content = input?.value.trim();
     const lang = I18n.getLang();
     if (!input || !content) {
@@ -146,7 +155,8 @@ export class FeedPage {
     }
 
     const activeUser = USER_FIXTURES;
-    const comments = this.commentsByPostId.get(postId) || [];
+    const comments = this.commentsByPostId.get(normalizedPostId) || [];
+    const knownCount = this.commentCountsByPostId.get(normalizedPostId) || comments.length;
     comments.push({
       id: `comment-${Date.now()}`,
       author_id: activeUser.id,
@@ -156,10 +166,11 @@ export class FeedPage {
       created_at: lang === 'ar' ? 'الآن' : 'Just now',
       content
     });
-    this.commentsByPostId.set(postId, comments);
+    this.commentsByPostId.set(normalizedPostId, comments);
+    this.commentCountsByPostId.set(normalizedPostId, knownCount + 1);
     input.value = '';
-    this.renderPostComments(postId);
-    document.getElementById(`comments-panel-${postId}`)?.classList.remove('hidden');
+    this.renderPostComments(normalizedPostId);
+    document.getElementById(`comments-panel-${normalizedPostId}`)?.classList.remove('hidden');
   }
 
   /**
