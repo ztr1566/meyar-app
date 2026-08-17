@@ -554,6 +554,43 @@
           </div>
         </div>
 
+        <!-- Comments & Reviews -->
+        <section id="recipe-comments-section" class="p-5 sm:p-7 rounded-3xl bg-surface-1 border border-border-subtle shadow-sm space-y-4 text-start">
+          <div class="flex items-center justify-between gap-3 border-b border-border-subtle pb-4">
+            <h2 class="text-lg sm:text-xl font-extrabold text-text-main flex items-center gap-2">
+              <svg class="w-5 h-5 text-brand-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.94L3 21l1.94-4A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+              <span data-i18n="comments">التعليقات</span>
+              <span id="recipe-comments-count" class="min-w-6 px-1.5 py-0.5 rounded-full bg-surface-2 border border-border-subtle text-[10px] text-brand-gold text-center">0</span>
+            </h2>
+            <button type="button" data-action="toggle-recipe-comments" data-comments-target="recipe-comments-panel" aria-controls="recipe-comments-panel" aria-expanded="true"
+                    class="p-2 rounded-xl bg-surface-2 hover:bg-surface-1 text-text-muted hover:text-brand-gold border border-border-subtle transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold" aria-label="Toggle comments">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+          </div>
+
+          <div id="recipe-comments-panel" class="comments-panel space-y-4">
+            <form id="recipe-comment-form" class="comment-form">
+              <div class="flex items-start gap-3">
+                <img id="recipe-comment-author-avatar" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=100&q=80" alt="الشيف فيصل الهاشمي" class="w-9 h-9 rounded-xl object-cover border border-border-subtle shrink-0">
+                <div class="flex-1 min-w-0 space-y-2">
+                  <p id="recipe-comment-author" class="text-xs font-bold text-text-main">الشيف فيصل الهاشمي</p>
+                  <textarea id="recipe-comment-input" rows="2" data-i18n-placeholder="write_comment" placeholder="اكتب تعليقك هنا..."
+                            class="w-full resize-none rounded-xl bg-surface-2 border border-border-subtle px-3 py-2.5 text-xs sm:text-sm text-text-main placeholder:text-text-muted focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold"></textarea>
+                  <div class="flex justify-end">
+                    <button type="button" data-action="submit-recipe-comment" class="inline-flex items-center gap-1.5 rounded-xl bg-brand-gold hover:bg-brand-gold-hover px-3.5 py-2 text-xs font-bold text-white focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                      <span data-i18n="submit_comment">نشر التعليق</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div id="recipe-comments-list" class="comments-list">
+              <p class="text-xs text-text-muted text-center py-4" data-i18n="no_comments_yet">لا توجد تعليقات بعد</p>
+            </div>
+          </div>
+        </section>
+
         <!-- Chef Pro Notes & Mastery Techniques Card -->
         <div id="card-chef-notes" class="p-5 sm:p-7 rounded-3xl bg-surface-1 border border-border-subtle shadow-sm space-y-4 text-start">
           <h3 class="text-base sm:text-lg font-extrabold text-text-main flex items-center gap-2.5">

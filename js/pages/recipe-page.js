@@ -7,7 +7,7 @@
 import { CHEF_FIXTURES, RECIPE_FIXTURES, USER_FIXTURES } from '../data/fixtures/index.js';
 import { I18n } from '../core/i18n.js';
 import { Toast } from '../core/toast.js';
-import { isCurrentUserId } from '../core/utils.js';
+import { escapeHtml, isCurrentUserId } from '../core/utils.js';
 import { RecipeScaler } from '../modules/scaler.js';
 
 export class RecipePage {
@@ -22,6 +22,7 @@ export class RecipePage {
   static likedRecipeIds = new Set();
   static followingChefIds = new Set();
   static completedStepsMap = new Map(); // recipeId -> Set<number>
+  static commentsByRecipeId = new Map();
 
   /**
    * Reset in-memory recipe page state (for test isolation)
@@ -31,6 +32,7 @@ export class RecipePage {
     this.likedRecipeIds = new Set();
     this.followingChefIds = new Set();
     this.completedStepsMap = new Map();
+    this.commentsByRecipeId = new Map();
     this.completedSteps = new Set();
     this.currentRecipe = null;
     this.scalerInstance = null;
@@ -104,6 +106,87 @@ export class RecipePage {
     }
 
     return recipe;
+  }
+
+  static getComments() {
+    const recipeId = this.currentRecipe?.id;
+    if (!recipeId) return [];
+    if (!this.commentsByRecipeId.has(recipeId)) {
+      this.commentsByRecipeId.set(recipeId, Array.isArray(this.currentRecipe.comments) ? [...this.currentRecipe.comments] : []);
+    }
+    return this.commentsByRecipeId.get(recipeId);
+  }
+
+  static renderCommentCards(comments) {
+    const lang = I18n.getLang();
+    return comments.map(comment => {
+      const author = lang === 'ar'
+        ? (comment.author_name_ar || comment.author_ar || comment.author || 'عضو معيار')
+        : (comment.author_name_en || comment.author_en || comment.author || 'Meyar member');
+      const timestamp = comment.created_at || comment.timestamp || (lang === 'ar' ? 'الآن' : 'Just now');
+      const avatar = comment.author_avatar || USER_FIXTURES.avatar;
+      return `
+        <article class="comment-card flex items-start gap-3 p-4 rounded-2xl bg-surface-2 border border-border-subtle">
+          <img src="${escapeHtml(avatar)}" alt="${escapeHtml(author)}" class="w-9 h-9 rounded-xl object-cover border border-border-subtle shrink-0">
+          <div class="min-w-0 flex-1 space-y-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-xs sm:text-sm font-bold text-text-main truncate">${escapeHtml(author)}</span>
+              <time class="text-[10px] text-text-muted shrink-0">${escapeHtml(timestamp)}</time>
+            </div>
+            <p class="text-xs sm:text-sm text-text-muted leading-relaxed break-words [overflow-wrap:anywhere]">${escapeHtml(comment.content || '')}</p>
+            <button type="button" data-action="reply-comment" data-comment-form-target="recipe-comment-form" class="text-[11px] font-semibold text-brand-gold hover:text-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold rounded">
+              <span data-i18n="reply">${I18n.t('reply')}</span>
+            </button>
+          </div>
+        </article>
+      `;
+    }).join('');
+  }
+
+  static renderComments() {
+    if (typeof document === 'undefined' || !this.currentRecipe) return;
+    const list = document.getElementById('recipe-comments-list');
+    if (!list) return;
+
+    const comments = this.getComments();
+    list.innerHTML = comments.length
+      ? this.renderCommentCards(comments)
+      : `<p class="text-xs text-text-muted text-center py-4" data-i18n="no_comments_yet">${I18n.t('no_comments_yet')}</p>`;
+
+    const countEl = document.getElementById('recipe-comments-count');
+    if (countEl) countEl.textContent = comments.length.toLocaleString();
+
+    const avatarEl = document.getElementById('recipe-comment-author-avatar');
+    if (avatarEl) {
+      avatarEl.src = USER_FIXTURES.avatar;
+      avatarEl.alt = I18n.getLang() === 'ar' ? USER_FIXTURES.name_ar : USER_FIXTURES.name_en;
+    }
+    const authorEl = document.getElementById('recipe-comment-author');
+    if (authorEl) authorEl.textContent = I18n.getLang() === 'ar' ? USER_FIXTURES.name_ar : USER_FIXTURES.name_en;
+  }
+
+  static submitComment() {
+    if (!this.currentRecipe || typeof document === 'undefined') return;
+    const input = document.getElementById('recipe-comment-input');
+    const content = input?.value.trim();
+    const lang = I18n.getLang();
+    if (!input || !content) {
+      Toast.error(lang === 'ar' ? 'يرجى كتابة تعليق' : 'Please write a comment');
+      input?.focus();
+      return;
+    }
+
+    this.getComments().push({
+      id: `comment-${Date.now()}`,
+      author_id: USER_FIXTURES.id,
+      author_name_ar: USER_FIXTURES.name_ar,
+      author_name_en: USER_FIXTURES.name_en,
+      author_avatar: USER_FIXTURES.avatar,
+      created_at: lang === 'ar' ? 'الآن' : 'Just now',
+      content
+    });
+    input.value = '';
+    this.renderComments();
   }
 
   /**
@@ -952,6 +1035,35 @@ export class RecipePage {
       const target = e.target;
       if (!target) return;
 
+      // Comments section toggle
+      const commentsToggle = target.closest('[data-action="toggle-recipe-comments"]');
+      if (commentsToggle) {
+        e.preventDefault();
+        const panel = document.getElementById(commentsToggle.getAttribute('data-comments-target'));
+        if (panel) {
+          const isHidden = panel.classList.toggle('hidden');
+          commentsToggle.setAttribute('aria-expanded', String(!isHidden));
+        }
+        return;
+      }
+
+      // Focus the recipe comment form from an existing comment
+      const replyBtn = target.closest('[data-action="reply-comment"]');
+      if (replyBtn) {
+        e.preventDefault();
+        const form = document.getElementById(replyBtn.getAttribute('data-comment-form-target'));
+        form?.querySelector('textarea')?.focus();
+        return;
+      }
+
+      // Add a local recipe comment
+      const submitCommentBtn = target.closest('[data-action="submit-recipe-comment"]');
+      if (submitCommentBtn) {
+        e.preventDefault();
+        this.submitComment();
+        return;
+      }
+
       // 1. Scaler Stepper Actions
       const decBtn = target.closest('[data-action="decrement-servings"]');
       if (decBtn && this.scalerInstance) {
@@ -1092,6 +1204,7 @@ export class RecipePage {
       this.renderPairings();
       this.renderChefNotes();
       this.renderSteps();
+      this.renderComments();
       this.renderRelatedRecipes();
       if (this.scalerInstance) {
         this.scalerInstance.render();
@@ -1136,6 +1249,7 @@ export class RecipePage {
     this.renderChefNotes();
     this.scalerInstance.render();
     this.renderSteps();
+    this.renderComments();
     this.renderRelatedRecipes();
     this.updateActionStates();
     this.updateProgressUI();

@@ -451,6 +451,38 @@ test('FeedPage - Main Feed Stream Dynamic Recipe Cards Rendering', () => {
   assert.ok(feedCont.innerHTML.includes('data-action="like"'));
 });
 
+test('FeedPage - Comment action renders hooks and toggles the comments panel', () => {
+  const { doc, Element } = setupDOM();
+  I18n.setLang('en');
+
+  const feedCont = new Element('div');
+  feedCont.id = 'feed-posts-container';
+  doc.body.appendChild(feedCont);
+
+  FeedPage.renderFeedPosts(feedCont);
+
+  assert.ok(feedCont.innerHTML.includes('data-action="toggle-comments"'), 'Feed cards should render a comment action');
+  assert.ok(feedCont.innerHTML.includes('comments-panel'), 'Feed cards should render a comments panel');
+  assert.ok(feedCont.innerHTML.includes('comments-list'), 'Feed cards should render a comments list');
+  assert.ok(feedCont.innerHTML.includes('comment-form'), 'Feed cards should render a comment form');
+  assert.ok(feedCont.innerHTML.includes('no_comments_yet'), 'Feed cards should render the translated empty-state hook');
+
+  const toggleButton = new Element('button');
+  toggleButton.setAttribute('data-action', 'toggle-comments');
+  toggleButton.setAttribute('data-comments-target', 'comments-panel-recipe-1');
+  const panel = new Element('section');
+  panel.id = 'comments-panel-recipe-1';
+  panel.className = 'comments-panel hidden';
+  doc.body.appendChild(panel);
+  doc.body.appendChild(toggleButton);
+
+  FeedPage.bindEvents();
+  toggleButton.click();
+  assert.equal(panel.classList.contains('hidden'), false, 'Comment panel should expand');
+  toggleButton.click();
+  assert.equal(panel.classList.contains('hidden'), true, 'Comment panel should collapse');
+});
+
 test('FeedPage - Post Composer Creation and Prepending', () => {
   const { doc, Element } = setupDOM();
   I18n.setLang('ar');
@@ -653,4 +685,3 @@ test('FeedPage - Post Cards Word Breaking and Overflow Containment', () => {
   assert.ok(feedCont.innerHTML.includes('[overflow-wrap:anywhere]'), 'Post content paragraph must have [overflow-wrap:anywhere]');
   assert.ok(feedCont.innerHTML.includes('min-w-0'), 'Post card must contain min-w-0 for flex layout containment');
 });
-

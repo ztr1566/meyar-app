@@ -22,6 +22,7 @@ export class FeedPage {
   static savedRecipeIds = new Set();
   static likedRecipeIds = new Set();
   static followingChefIds = new Set();
+  static commentsByPostId = new Map();
 
   static pendingDeletePostId = null;
   static pendingDeleteIsUserPost = false;
@@ -35,6 +36,7 @@ export class FeedPage {
     this.savedRecipeIds = new Set();
     this.likedRecipeIds = new Set();
     this.followingChefIds = new Set();
+    this.commentsByPostId = new Map();
     this.currentFilter = 'all';
     this.userPosts = [];
     this.deletedRecipeIds = new Set();
@@ -56,6 +58,106 @@ export class FeedPage {
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
+  }
+
+  static getComments(post) {
+    if (!post?.id) return [];
+    if (!this.commentsByPostId.has(post.id)) {
+      this.commentsByPostId.set(post.id, Array.isArray(post.comments) ? [...post.comments] : []);
+    }
+    return this.commentsByPostId.get(post.id);
+  }
+
+  static renderCommentCards(comments, formId) {
+    const lang = I18n.getLang();
+    return comments.map(comment => {
+      const author = lang === 'ar'
+        ? (comment.author_name_ar || comment.author_ar || comment.author || 'عضو معيار')
+        : (comment.author_name_en || comment.author_en || comment.author || 'Meyar member');
+      const timestamp = comment.created_at || comment.timestamp || (lang === 'ar' ? 'الآن' : 'Just now');
+      const avatar = comment.author_avatar || USER_FIXTURES.avatar;
+      return `
+        <article class="comment-card flex items-start gap-2.5 p-3 rounded-xl bg-surface-2 border border-border-subtle">
+          <img src="${this.escapeHtml(avatar)}" alt="${this.escapeHtml(author)}" class="w-8 h-8 rounded-lg object-cover border border-border-subtle shrink-0">
+          <div class="min-w-0 flex-1 space-y-1">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-xs font-bold text-text-main truncate">${this.escapeHtml(author)}</span>
+              <time class="text-[10px] text-text-muted shrink-0">${this.escapeHtml(timestamp)}</time>
+            </div>
+            <p class="text-xs text-text-muted leading-relaxed break-words [overflow-wrap:anywhere]">${this.escapeHtml(comment.content || '')}</p>
+            <button type="button" data-action="reply-comment" data-comment-form-target="${formId}" class="text-[11px] font-semibold text-brand-gold hover:text-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold rounded">
+              <span data-i18n="reply">${I18n.t('reply')}</span>
+            </button>
+          </div>
+        </article>
+      `;
+    }).join('');
+  }
+
+  static renderCommentButton(post, count = this.getComments(post).length) {
+    const postId = this.escapeHtml(post.id);
+    return `
+      <button type="button" data-action="toggle-comments" data-comments-target="comments-panel-${postId}" data-post-id="${postId}" aria-controls="comments-panel-${postId}" aria-expanded="false"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+              aria-label="Comments">
+        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.94L3 21l1.94-4A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+        <span class="hidden sm:inline" data-i18n="comments">${I18n.t('comments')}</span>
+        <span class="action-count min-w-5 px-1.5 py-0.5 rounded-full bg-surface-1 border border-border-subtle text-[10px] text-center" data-comments-count="${postId}">${count.toLocaleString()}</span>
+      </button>
+    `;
+  }
+
+  static renderCommentPanel(post) {
+    const postId = this.escapeHtml(post.id);
+    const formId = `comment-form-${postId}`;
+    const comments = this.getComments(post);
+    const list = comments.length
+      ? this.renderCommentCards(comments, formId)
+      : `<p class="text-xs text-text-muted text-center py-3" data-i18n="no_comments_yet">${I18n.t('no_comments_yet')}</p>`;
+
+    return `
+      <section id="comments-panel-${postId}" class="comments-panel hidden mx-4 sm:mx-5 mb-4 pt-4 border-t border-border-subtle space-y-3 text-start" aria-label="Comments">
+        <div class="comments-list space-y-2" data-comments-list="${postId}">${list}</div>
+        <form id="${formId}" class="comment-form flex items-end gap-2" data-comment-form="${postId}">
+          <textarea id="comment-input-${postId}" rows="1" data-comment-input="${postId}" data-i18n-placeholder="write_comment" placeholder="${this.escapeHtml(I18n.t('write_comment'))}" class="min-h-9 flex-1 resize-none rounded-xl bg-surface-2 border border-border-subtle px-3 py-2 text-xs text-text-main placeholder:text-text-muted focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold"></textarea>
+          <button type="button" data-action="submit-comment" data-post-id="${postId}" class="shrink-0 inline-flex items-center gap-1.5 rounded-xl bg-brand-gold hover:bg-brand-gold-hover px-3 py-2 text-xs font-bold text-white focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            <span data-i18n="submit_comment">${I18n.t('submit_comment')}</span>
+          </button>
+        </form>
+      </section>
+    `;
+  }
+
+  static getCommentCount(post) {
+    return Math.max(this.getComments(post).length, Number(post?.comments_count) || 0);
+  }
+
+  static submitComment(postId) {
+    if (!postId || typeof document === 'undefined') return;
+    const input = document.getElementById(`comment-input-${postId}`);
+    const content = input?.value.trim();
+    const lang = I18n.getLang();
+    if (!input || !content) {
+      Toast.error(lang === 'ar' ? 'يرجى كتابة تعليق' : 'Please write a comment');
+      input?.focus();
+      return;
+    }
+
+    const activeUser = USER_FIXTURES;
+    const comments = this.commentsByPostId.get(postId) || [];
+    comments.push({
+      id: `comment-${Date.now()}`,
+      author_id: activeUser.id,
+      author_name_ar: activeUser.name_ar,
+      author_name_en: activeUser.name_en,
+      author_avatar: activeUser.avatar,
+      created_at: lang === 'ar' ? 'الآن' : 'Just now',
+      content
+    });
+    this.commentsByPostId.set(postId, comments);
+    input.value = '';
+    this.renderFeedPosts();
+    document.getElementById(`comments-panel-${postId}`)?.classList.remove('hidden');
   }
 
   /**
@@ -460,8 +562,9 @@ export class FeedPage {
       const isSaved = savedSet.has(post.id);
       const isLiked = likedSet.has(post.id);
 
-      const totalLikes = (post.likes_count || 0) + (isLiked ? 1 : 0);
-      const totalSaves = (post.saves_count || 0) + (isSaved ? 1 : 0);
+       const totalLikes = (post.likes_count || 0) + (isLiked ? 1 : 0);
+       const totalSaves = (post.saves_count || 0) + (isSaved ? 1 : 0);
+       const commentCount = this.getCommentCount(post);
 
       const likeClass = isLiked
         ? 'text-red-500 bg-surface-2 border-red-500'
@@ -529,14 +632,16 @@ export class FeedPage {
           <div class="pb-1 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
             <div class="flex items-center gap-1.5 sm:gap-2">
               <!-- Like Button -->
-              <button type="button" data-action="like" data-recipe-id="${post.id}" data-base-likes="${post.likes_count || 0}"
+               <button type="button" data-action="like" data-recipe-id="${post.id}" data-base-likes="${post.likes_count || 0}"
                       class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${likeClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
                       aria-label="Like recipe">
                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="${likeFill}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                <span class="action-count">${totalLikes.toLocaleString()}</span>
-              </button>
+                 <span class="action-count">${totalLikes.toLocaleString()}</span>
+               </button>
 
-              <!-- Save / Bookmark Button -->
+               ${this.renderCommentButton(post, commentCount)}
+
+               <!-- Save / Bookmark Button -->
               <button type="button" data-action="save" data-recipe-id="${post.id}" data-base-saves="${post.saves_count || 0}"
                       class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${saveClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
                       aria-label="Save recipe">
@@ -550,10 +655,11 @@ export class FeedPage {
                       class="p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
                       aria-label="Share recipe">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-              </button>
-            </div>
-          </div>
-        </article>
+               </button>
+             </div>
+           </div>
+           ${this.renderCommentPanel(post)}
+         </article>
       `;
     });
 
@@ -570,8 +676,9 @@ export class FeedPage {
       const cuisine = lang === 'ar' ? recipe.cuisine_ar : recipe.cuisine_en;
       const difficulty = lang === 'ar' ? recipe.difficulty_ar : recipe.difficulty_en;
 
-      const totalLikes = (recipe.likes_count || 0) + (isLiked ? 1 : 0);
-      const totalSaves = (recipe.saves_count || 0) + (isSaved ? 1 : 0);
+       const totalLikes = (recipe.likes_count || 0) + (isLiked ? 1 : 0);
+       const totalSaves = (recipe.saves_count || 0) + (isSaved ? 1 : 0);
+       const commentCount = this.getCommentCount(recipe);
 
       const likeClass = isLiked 
         ? 'text-red-500 bg-surface-2 border-red-500' 
@@ -714,14 +821,16 @@ export class FeedPage {
             
             <div class="flex items-center gap-1.5 sm:gap-2">
               <!-- Like Button -->
-              <button type="button" data-action="like" data-recipe-id="${recipe.id}" data-base-likes="${recipe.likes_count || 0}"
+               <button type="button" data-action="like" data-recipe-id="${recipe.id}" data-base-likes="${recipe.likes_count || 0}"
                       class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${likeClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
                       aria-label="Like recipe">
                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="${likeFill}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                <span class="action-count">${totalLikes.toLocaleString()}</span>
-              </button>
+                 <span class="action-count">${totalLikes.toLocaleString()}</span>
+               </button>
 
-              <!-- Save / Bookmark Button -->
+               ${this.renderCommentButton(recipe, commentCount)}
+
+               <!-- Save / Bookmark Button -->
               <button type="button" data-action="save" data-recipe-id="${recipe.id}" data-base-saves="${recipe.saves_count || 0}"
                       class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${saveClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
                       aria-label="Save recipe">
@@ -739,15 +848,16 @@ export class FeedPage {
             </div>
 
             <!-- View Full Recipe & Scaler CTA -->
-            <a href="recipe.html?id=${recipe.id}"
+             <a href="recipe.html?id=${recipe.id}"
                class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold text-brand-gold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
               <span>${lang === 'ar' ? 'عرض الوصفة والمقادير' : 'View Recipe & Scaler'}</span>
               <svg class="w-3.5 h-3.5 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-            </a>
+             </a>
 
-          </div>
+           </div>
+           ${this.renderCommentPanel(recipe)}
 
-        </article>
+         </article>
       `;
     });
 
@@ -839,6 +949,35 @@ export class FeedPage {
 
     // 4. Global Action Event Delegation (Like, Save, Follow, Share, Story View, Topic Filter)
     document.addEventListener('click', (e) => {
+      // Comments panel toggle
+      const commentsBtn = e.target.closest('[data-action="toggle-comments"]');
+      if (commentsBtn) {
+        e.preventDefault();
+        const panel = document.getElementById(commentsBtn.getAttribute('data-comments-target'));
+        if (panel) {
+          const isHidden = panel.classList.toggle('hidden');
+          commentsBtn.setAttribute('aria-expanded', String(!isHidden));
+        }
+        return;
+      }
+
+      // Focus a comment form from an existing comment
+      const replyBtn = e.target.closest('[data-action="reply-comment"]');
+      if (replyBtn) {
+        e.preventDefault();
+        const form = document.getElementById(replyBtn.getAttribute('data-comment-form-target'));
+        form?.querySelector('textarea')?.focus();
+        return;
+      }
+
+      // Add a local comment
+      const submitCommentBtn = e.target.closest('[data-action="submit-comment"]');
+      if (submitCommentBtn) {
+        e.preventDefault();
+        this.submitComment(submitCommentBtn.getAttribute('data-post-id'));
+        return;
+      }
+
       // Like
       const likeBtn = e.target.closest('[data-action="like"]');
       if (likeBtn) {

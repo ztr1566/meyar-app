@@ -167,6 +167,11 @@
       "btn.filter": "\u062A\u0635\u0641\u064A\u0629",
       "btn.report": "\u0625\u0628\u0644\u0627\u063A \u0639\u0646 \u0627\u0644\u0645\u0646\u0634\u0648\u0631",
       "btn.hide": "\u0625\u062E\u0641\u0627\u0621 \u0627\u0644\u0645\u0646\u0634\u0648\u0631",
+      "comments": "\u0627\u0644\u062A\u0639\u0644\u064A\u0642\u0627\u062A",
+      "write_comment": "\u0627\u0643\u062A\u0628 \u062A\u0639\u0644\u064A\u0642\u0643 \u0647\u0646\u0627...",
+      "no_comments_yet": "\u0644\u0627 \u062A\u0648\u062C\u062F \u062A\u0639\u0644\u064A\u0642\u0627\u062A \u0628\u0639\u062F",
+      "reply": "\u0631\u062F",
+      "submit_comment": "\u0646\u0634\u0631 \u0627\u0644\u062A\u0639\u0644\u064A\u0642",
       // Recipe Details & Serving Scaler
       "recipe.title": "\u0627\u0633\u0645 \u0627\u0644\u0648\u0635\u0641\u0629",
       "recipe.servings": "\u0627\u0644\u062D\u0635\u0635",
@@ -810,6 +815,11 @@
       "btn.filter": "Filter",
       "btn.report": "Report Post",
       "btn.hide": "Hide Post",
+      "comments": "Comments",
+      "write_comment": "Write your comment here...",
+      "no_comments_yet": "No comments yet",
+      "reply": "Reply",
+      "submit_comment": "Post Comment",
       // Recipe Details & Serving Scaler
       "recipe.title": "Recipe Title",
       "recipe.servings": "Servings",
@@ -6276,6 +6286,7 @@
       this.savedRecipeIds = /* @__PURE__ */ new Set();
       this.likedRecipeIds = /* @__PURE__ */ new Set();
       this.followingChefIds = /* @__PURE__ */ new Set();
+      this.commentsByPostId = /* @__PURE__ */ new Map();
       this.currentFilter = "all";
       this.userPosts = [];
       this.deletedRecipeIds = /* @__PURE__ */ new Set();
@@ -6291,6 +6302,94 @@
       if (str === null || str === void 0) return "";
       const text = String(str);
       return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+    static getComments(post) {
+      if (!post?.id) return [];
+      if (!this.commentsByPostId.has(post.id)) {
+        this.commentsByPostId.set(post.id, Array.isArray(post.comments) ? [...post.comments] : []);
+      }
+      return this.commentsByPostId.get(post.id);
+    }
+    static renderCommentCards(comments, formId) {
+      const lang = I18n.getLang();
+      return comments.map((comment) => {
+        const author = lang === "ar" ? comment.author_name_ar || comment.author_ar || comment.author || "\u0639\u0636\u0648 \u0645\u0639\u064A\u0627\u0631" : comment.author_name_en || comment.author_en || comment.author || "Meyar member";
+        const timestamp = comment.created_at || comment.timestamp || (lang === "ar" ? "\u0627\u0644\u0622\u0646" : "Just now");
+        const avatar = comment.author_avatar || USER_FIXTURES.avatar;
+        return `
+        <article class="comment-card flex items-start gap-2.5 p-3 rounded-xl bg-surface-2 border border-border-subtle">
+          <img src="${this.escapeHtml(avatar)}" alt="${this.escapeHtml(author)}" class="w-8 h-8 rounded-lg object-cover border border-border-subtle shrink-0">
+          <div class="min-w-0 flex-1 space-y-1">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-xs font-bold text-text-main truncate">${this.escapeHtml(author)}</span>
+              <time class="text-[10px] text-text-muted shrink-0">${this.escapeHtml(timestamp)}</time>
+            </div>
+            <p class="text-xs text-text-muted leading-relaxed break-words [overflow-wrap:anywhere]">${this.escapeHtml(comment.content || "")}</p>
+            <button type="button" data-action="reply-comment" data-comment-form-target="${formId}" class="text-[11px] font-semibold text-brand-gold hover:text-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold rounded">
+              <span data-i18n="reply">${I18n.t("reply")}</span>
+            </button>
+          </div>
+        </article>
+      `;
+      }).join("");
+    }
+    static renderCommentButton(post, count = this.getComments(post).length) {
+      const postId = this.escapeHtml(post.id);
+      return `
+      <button type="button" data-action="toggle-comments" data-comments-target="comments-panel-${postId}" data-post-id="${postId}" aria-controls="comments-panel-${postId}" aria-expanded="false"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+              aria-label="Comments">
+        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.94L3 21l1.94-4A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+        <span class="hidden sm:inline" data-i18n="comments">${I18n.t("comments")}</span>
+        <span class="action-count min-w-5 px-1.5 py-0.5 rounded-full bg-surface-1 border border-border-subtle text-[10px] text-center" data-comments-count="${postId}">${count.toLocaleString()}</span>
+      </button>
+    `;
+    }
+    static renderCommentPanel(post) {
+      const postId = this.escapeHtml(post.id);
+      const formId = `comment-form-${postId}`;
+      const comments = this.getComments(post);
+      const list = comments.length ? this.renderCommentCards(comments, formId) : `<p class="text-xs text-text-muted text-center py-3" data-i18n="no_comments_yet">${I18n.t("no_comments_yet")}</p>`;
+      return `
+      <section id="comments-panel-${postId}" class="comments-panel hidden mx-4 sm:mx-5 mb-4 pt-4 border-t border-border-subtle space-y-3 text-start" aria-label="Comments">
+        <div class="comments-list space-y-2" data-comments-list="${postId}">${list}</div>
+        <form id="${formId}" class="comment-form flex items-end gap-2" data-comment-form="${postId}">
+          <textarea id="comment-input-${postId}" rows="1" data-comment-input="${postId}" data-i18n-placeholder="write_comment" placeholder="${this.escapeHtml(I18n.t("write_comment"))}" class="min-h-9 flex-1 resize-none rounded-xl bg-surface-2 border border-border-subtle px-3 py-2 text-xs text-text-main placeholder:text-text-muted focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold"></textarea>
+          <button type="button" data-action="submit-comment" data-post-id="${postId}" class="shrink-0 inline-flex items-center gap-1.5 rounded-xl bg-brand-gold hover:bg-brand-gold-hover px-3 py-2 text-xs font-bold text-white focus:outline-none focus:ring-2 focus:ring-brand-gold">
+            <span data-i18n="submit_comment">${I18n.t("submit_comment")}</span>
+          </button>
+        </form>
+      </section>
+    `;
+    }
+    static getCommentCount(post) {
+      return Math.max(this.getComments(post).length, Number(post?.comments_count) || 0);
+    }
+    static submitComment(postId) {
+      if (!postId || typeof document === "undefined") return;
+      const input = document.getElementById(`comment-input-${postId}`);
+      const content = input?.value.trim();
+      const lang = I18n.getLang();
+      if (!input || !content) {
+        Toast.error(lang === "ar" ? "\u064A\u0631\u062C\u0649 \u0643\u062A\u0627\u0628\u0629 \u062A\u0639\u0644\u064A\u0642" : "Please write a comment");
+        input?.focus();
+        return;
+      }
+      const activeUser = USER_FIXTURES;
+      const comments = this.commentsByPostId.get(postId) || [];
+      comments.push({
+        id: `comment-${Date.now()}`,
+        author_id: activeUser.id,
+        author_name_ar: activeUser.name_ar,
+        author_name_en: activeUser.name_en,
+        author_avatar: activeUser.avatar,
+        created_at: lang === "ar" ? "\u0627\u0644\u0622\u0646" : "Just now",
+        content
+      });
+      this.commentsByPostId.set(postId, comments);
+      input.value = "";
+      this.renderFeedPosts();
+      document.getElementById(`comments-panel-${postId}`)?.classList.remove("hidden");
     }
     /**
      * Get list of saved recipe IDs from in-memory set
@@ -6633,6 +6732,7 @@
         const isLiked = likedSet.has(post.id);
         const totalLikes = (post.likes_count || 0) + (isLiked ? 1 : 0);
         const totalSaves = (post.saves_count || 0) + (isSaved ? 1 : 0);
+        const commentCount = this.getCommentCount(post);
         const likeClass = isLiked ? "text-red-500 bg-surface-2 border-red-500" : "text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle";
         const likeFill = isLiked ? "currentColor" : "none";
         const saveClass = isSaved ? "text-brand-gold bg-surface-2 border-border-subtle" : "text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle";
@@ -6692,14 +6792,16 @@
           <div class="pb-1 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
             <div class="flex items-center gap-1.5 sm:gap-2">
               <!-- Like Button -->
-              <button type="button" data-action="like" data-recipe-id="${post.id}" data-base-likes="${post.likes_count || 0}"
+               <button type="button" data-action="like" data-recipe-id="${post.id}" data-base-likes="${post.likes_count || 0}"
                       class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${likeClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
                       aria-label="Like recipe">
                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="${likeFill}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                <span class="action-count">${totalLikes.toLocaleString()}</span>
-              </button>
+                 <span class="action-count">${totalLikes.toLocaleString()}</span>
+               </button>
 
-              <!-- Save / Bookmark Button -->
+               ${this.renderCommentButton(post, commentCount)}
+
+               <!-- Save / Bookmark Button -->
               <button type="button" data-action="save" data-recipe-id="${post.id}" data-base-saves="${post.saves_count || 0}"
                       class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${saveClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
                       aria-label="Save recipe">
@@ -6713,10 +6815,11 @@
                       class="p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
                       aria-label="Share recipe">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-              </button>
-            </div>
-          </div>
-        </article>
+               </button>
+             </div>
+           </div>
+           ${this.renderCommentPanel(post)}
+         </article>
       `;
       });
       recipes.forEach((recipe) => {
@@ -6731,6 +6834,7 @@
         const difficulty = lang === "ar" ? recipe.difficulty_ar : recipe.difficulty_en;
         const totalLikes = (recipe.likes_count || 0) + (isLiked ? 1 : 0);
         const totalSaves = (recipe.saves_count || 0) + (isSaved ? 1 : 0);
+        const commentCount = this.getCommentCount(recipe);
         const likeClass = isLiked ? "text-red-500 bg-surface-2 border-red-500" : "text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle";
         const likeFill = isLiked ? "currentColor" : "none";
         const saveClass = isSaved ? "text-brand-gold bg-surface-2 border-border-subtle" : "text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle";
@@ -6860,14 +6964,16 @@
             
             <div class="flex items-center gap-1.5 sm:gap-2">
               <!-- Like Button -->
-              <button type="button" data-action="like" data-recipe-id="${recipe.id}" data-base-likes="${recipe.likes_count || 0}"
+               <button type="button" data-action="like" data-recipe-id="${recipe.id}" data-base-likes="${recipe.likes_count || 0}"
                       class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${likeClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
                       aria-label="Like recipe">
                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="${likeFill}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                <span class="action-count">${totalLikes.toLocaleString()}</span>
-              </button>
+                 <span class="action-count">${totalLikes.toLocaleString()}</span>
+               </button>
 
-              <!-- Save / Bookmark Button -->
+               ${this.renderCommentButton(recipe, commentCount)}
+
+               <!-- Save / Bookmark Button -->
               <button type="button" data-action="save" data-recipe-id="${recipe.id}" data-base-saves="${recipe.saves_count || 0}"
                       class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${saveClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
                       aria-label="Save recipe">
@@ -6885,15 +6991,16 @@
             </div>
 
             <!-- View Full Recipe & Scaler CTA -->
-            <a href="recipe.html?id=${recipe.id}"
+             <a href="recipe.html?id=${recipe.id}"
                class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold text-brand-gold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
               <span>${lang === "ar" ? "\u0639\u0631\u0636 \u0627\u0644\u0648\u0635\u0641\u0629 \u0648\u0627\u0644\u0645\u0642\u0627\u062F\u064A\u0631" : "View Recipe & Scaler"}</span>
               <svg class="w-3.5 h-3.5 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-            </a>
+             </a>
 
-          </div>
+           </div>
+           ${this.renderCommentPanel(recipe)}
 
-        </article>
+         </article>
       `;
       });
       container.innerHTML = html;
@@ -6965,6 +7072,29 @@
         });
       }
       document.addEventListener("click", (e) => {
+        const commentsBtn = e.target.closest('[data-action="toggle-comments"]');
+        if (commentsBtn) {
+          e.preventDefault();
+          const panel = document.getElementById(commentsBtn.getAttribute("data-comments-target"));
+          if (panel) {
+            const isHidden = panel.classList.toggle("hidden");
+            commentsBtn.setAttribute("aria-expanded", String(!isHidden));
+          }
+          return;
+        }
+        const replyBtn = e.target.closest('[data-action="reply-comment"]');
+        if (replyBtn) {
+          e.preventDefault();
+          const form = document.getElementById(replyBtn.getAttribute("data-comment-form-target"));
+          form?.querySelector("textarea")?.focus();
+          return;
+        }
+        const submitCommentBtn = e.target.closest('[data-action="submit-comment"]');
+        if (submitCommentBtn) {
+          e.preventDefault();
+          this.submitComment(submitCommentBtn.getAttribute("data-post-id"));
+          return;
+        }
         const likeBtn = e.target.closest('[data-action="like"]');
         if (likeBtn) {
           e.preventDefault();
@@ -7217,6 +7347,7 @@
   __publicField(FeedPage, "savedRecipeIds", /* @__PURE__ */ new Set());
   __publicField(FeedPage, "likedRecipeIds", /* @__PURE__ */ new Set());
   __publicField(FeedPage, "followingChefIds", /* @__PURE__ */ new Set());
+  __publicField(FeedPage, "commentsByPostId", /* @__PURE__ */ new Map());
   __publicField(FeedPage, "pendingDeletePostId", null);
   __publicField(FeedPage, "pendingDeleteIsUserPost", false);
   __publicField(FeedPage, "pendingEditPostId", null);
@@ -8547,7 +8678,6 @@
 
   // js/pages/recipe-page.js
   var RecipePage = class {
-    // recipeId -> Set<number>
     /**
      * Reset in-memory recipe page state (for test isolation)
      */
@@ -8556,6 +8686,7 @@
       this.likedRecipeIds = /* @__PURE__ */ new Set();
       this.followingChefIds = /* @__PURE__ */ new Set();
       this.completedStepsMap = /* @__PURE__ */ new Map();
+      this.commentsByRecipeId = /* @__PURE__ */ new Map();
       this.completedSteps = /* @__PURE__ */ new Set();
       this.currentRecipe = null;
       this.scalerInstance = null;
@@ -8620,6 +8751,75 @@
         recipe = RECIPE_FIXTURES[0];
       }
       return recipe;
+    }
+    static getComments() {
+      const recipeId = this.currentRecipe?.id;
+      if (!recipeId) return [];
+      if (!this.commentsByRecipeId.has(recipeId)) {
+        this.commentsByRecipeId.set(recipeId, Array.isArray(this.currentRecipe.comments) ? [...this.currentRecipe.comments] : []);
+      }
+      return this.commentsByRecipeId.get(recipeId);
+    }
+    static renderCommentCards(comments) {
+      const lang = I18n.getLang();
+      return comments.map((comment) => {
+        const author = lang === "ar" ? comment.author_name_ar || comment.author_ar || comment.author || "\u0639\u0636\u0648 \u0645\u0639\u064A\u0627\u0631" : comment.author_name_en || comment.author_en || comment.author || "Meyar member";
+        const timestamp = comment.created_at || comment.timestamp || (lang === "ar" ? "\u0627\u0644\u0622\u0646" : "Just now");
+        const avatar = comment.author_avatar || USER_FIXTURES.avatar;
+        return `
+        <article class="comment-card flex items-start gap-3 p-4 rounded-2xl bg-surface-2 border border-border-subtle">
+          <img src="${escapeHtml(avatar)}" alt="${escapeHtml(author)}" class="w-9 h-9 rounded-xl object-cover border border-border-subtle shrink-0">
+          <div class="min-w-0 flex-1 space-y-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-xs sm:text-sm font-bold text-text-main truncate">${escapeHtml(author)}</span>
+              <time class="text-[10px] text-text-muted shrink-0">${escapeHtml(timestamp)}</time>
+            </div>
+            <p class="text-xs sm:text-sm text-text-muted leading-relaxed break-words [overflow-wrap:anywhere]">${escapeHtml(comment.content || "")}</p>
+            <button type="button" data-action="reply-comment" data-comment-form-target="recipe-comment-form" class="text-[11px] font-semibold text-brand-gold hover:text-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold rounded">
+              <span data-i18n="reply">${I18n.t("reply")}</span>
+            </button>
+          </div>
+        </article>
+      `;
+      }).join("");
+    }
+    static renderComments() {
+      if (typeof document === "undefined" || !this.currentRecipe) return;
+      const list = document.getElementById("recipe-comments-list");
+      if (!list) return;
+      const comments = this.getComments();
+      list.innerHTML = comments.length ? this.renderCommentCards(comments) : `<p class="text-xs text-text-muted text-center py-4" data-i18n="no_comments_yet">${I18n.t("no_comments_yet")}</p>`;
+      const countEl = document.getElementById("recipe-comments-count");
+      if (countEl) countEl.textContent = comments.length.toLocaleString();
+      const avatarEl = document.getElementById("recipe-comment-author-avatar");
+      if (avatarEl) {
+        avatarEl.src = USER_FIXTURES.avatar;
+        avatarEl.alt = I18n.getLang() === "ar" ? USER_FIXTURES.name_ar : USER_FIXTURES.name_en;
+      }
+      const authorEl = document.getElementById("recipe-comment-author");
+      if (authorEl) authorEl.textContent = I18n.getLang() === "ar" ? USER_FIXTURES.name_ar : USER_FIXTURES.name_en;
+    }
+    static submitComment() {
+      if (!this.currentRecipe || typeof document === "undefined") return;
+      const input = document.getElementById("recipe-comment-input");
+      const content = input?.value.trim();
+      const lang = I18n.getLang();
+      if (!input || !content) {
+        Toast.error(lang === "ar" ? "\u064A\u0631\u062C\u0649 \u0643\u062A\u0627\u0628\u0629 \u062A\u0639\u0644\u064A\u0642" : "Please write a comment");
+        input?.focus();
+        return;
+      }
+      this.getComments().push({
+        id: `comment-${Date.now()}`,
+        author_id: USER_FIXTURES.id,
+        author_name_ar: USER_FIXTURES.name_ar,
+        author_name_en: USER_FIXTURES.name_en,
+        author_avatar: USER_FIXTURES.avatar,
+        created_at: lang === "ar" ? "\u0627\u0644\u0622\u0646" : "Just now",
+        content
+      });
+      input.value = "";
+      this.renderComments();
     }
     /**
      * Toggle save / bookmark status of a recipe
@@ -9340,6 +9540,29 @@
       document.addEventListener("click", (e) => {
         const target = e.target;
         if (!target) return;
+        const commentsToggle = target.closest('[data-action="toggle-recipe-comments"]');
+        if (commentsToggle) {
+          e.preventDefault();
+          const panel = document.getElementById(commentsToggle.getAttribute("data-comments-target"));
+          if (panel) {
+            const isHidden = panel.classList.toggle("hidden");
+            commentsToggle.setAttribute("aria-expanded", String(!isHidden));
+          }
+          return;
+        }
+        const replyBtn = target.closest('[data-action="reply-comment"]');
+        if (replyBtn) {
+          e.preventDefault();
+          const form = document.getElementById(replyBtn.getAttribute("data-comment-form-target"));
+          form?.querySelector("textarea")?.focus();
+          return;
+        }
+        const submitCommentBtn = target.closest('[data-action="submit-recipe-comment"]');
+        if (submitCommentBtn) {
+          e.preventDefault();
+          this.submitComment();
+          return;
+        }
         const decBtn = target.closest('[data-action="decrement-servings"]');
         if (decBtn && this.scalerInstance) {
           e.preventDefault();
@@ -9451,6 +9674,7 @@
         this.renderPairings();
         this.renderChefNotes();
         this.renderSteps();
+        this.renderComments();
         this.renderRelatedRecipes();
         if (this.scalerInstance) {
           this.scalerInstance.render();
@@ -9487,6 +9711,7 @@
       this.renderChefNotes();
       this.scalerInstance.render();
       this.renderSteps();
+      this.renderComments();
       this.renderRelatedRecipes();
       this.updateActionStates();
       this.updateProgressUI();
@@ -9505,6 +9730,8 @@
   __publicField(RecipePage, "likedRecipeIds", /* @__PURE__ */ new Set());
   __publicField(RecipePage, "followingChefIds", /* @__PURE__ */ new Set());
   __publicField(RecipePage, "completedStepsMap", /* @__PURE__ */ new Map());
+  // recipeId -> Set<number>
+  __publicField(RecipePage, "commentsByRecipeId", /* @__PURE__ */ new Map());
 
   // js/pages/create-recipe.js
   var CreateRecipeStudio = class {

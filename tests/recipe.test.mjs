@@ -316,6 +316,14 @@ function setupDOM() {
     'cooking-progress-bar',
     'btn-reset-cooking',
     'recipe-steps-container',
+    'recipe-comments-section',
+    'recipe-comments-panel',
+    'recipe-comments-count',
+    'recipe-comment-author-avatar',
+    'recipe-comment-author',
+    'recipe-comment-input',
+    'recipe-comments-list',
+    'recipe-comment-form',
     'card-chef-notes',
     'recipe-chef-notes-body',
     'section-related-recipes',
@@ -501,6 +509,49 @@ test('RecipePage - Full Initialization & DOM Rendering', (t) => {
   // Related recipes verification
   const relatedContainer = elementsById.get('related-recipes-container');
   assert.ok(relatedContainer.innerHTML.includes('قاروص البحر بالزعفران الملكي'));
+});
+
+test('RecipePage - Comments section renders structured cards and toggles', () => {
+  const { documentMock, elementsById } = setupDOM();
+  I18n.setLang('en');
+  RecipePage.reset();
+
+  const recipe = RecipePage.loadRecipe('recipe-1');
+  const originalComments = recipe.comments;
+  recipe.comments = [{
+    id: 'comment-1',
+    author_name_en: 'Kitchen Guest',
+    author_avatar: 'avatar.jpg',
+    created_at: '2026-08-17',
+    content: '<script>alert(1)</script> Excellent technique.'
+  }];
+
+  try {
+    RecipePage.init('recipe-1');
+
+    const commentsList = elementsById.get('recipe-comments-list');
+    assert.ok(commentsList.innerHTML.includes('Kitchen Guest'), 'Recipe comments should render the author');
+    assert.ok(commentsList.innerHTML.includes('&lt;script&gt;'), 'Recipe comments should escape user content');
+    assert.ok(commentsList.innerHTML.includes('comment-card'), 'Recipe comments should render structured cards');
+
+    const toggleButton = documentMock.createElement('button');
+    toggleButton.setAttribute('data-action', 'toggle-recipe-comments');
+    toggleButton.setAttribute('data-comments-target', 'recipe-comments-panel');
+    const panel = elementsById.get('recipe-comments-panel');
+    panel.className = 'comments-panel hidden';
+    documentMock.body.appendChild(toggleButton);
+
+    toggleButton.dispatchEvent({ type: 'click', target: toggleButton });
+    assert.equal(panel.classList.contains('hidden'), false, 'Recipe comments should expand');
+    toggleButton.dispatchEvent({ type: 'click', target: toggleButton });
+    assert.equal(panel.classList.contains('hidden'), true, 'Recipe comments should collapse');
+  } finally {
+    if (originalComments === undefined) {
+      delete recipe.comments;
+    } else {
+      recipe.comments = originalComments;
+    }
+  }
 });
 
 test('RecipePage - Dynamic Serving Scaler Integration', (t) => {
@@ -692,6 +743,9 @@ test('RecipePage - Strict Design & HTML Validation', (t) => {
   assert.ok(htmlContent.includes('id="scaler-btn-plus"'), 'recipe.html must have increment scaler button');
   assert.ok(htmlContent.includes('id="card-pairings"'), 'recipe.html must have pairings card');
   assert.ok(htmlContent.includes('id="card-nutrition"'), 'recipe.html must have nutrition card');
+  assert.ok(htmlContent.includes('id="recipe-comments-section"'), 'recipe.html must have comments section');
+  assert.ok(htmlContent.includes('class="comments-list"'), 'recipe.html must have comments list hook');
+  assert.ok(htmlContent.includes('class="comment-form"'), 'recipe.html must have comment form hook');
   assert.ok(htmlContent.includes('id="related-recipes-container"'), 'recipe.html must have related recipes container');
   assert.ok(htmlContent.includes('id="share-recipe-modal"'), 'recipe.html must have share modal');
 });

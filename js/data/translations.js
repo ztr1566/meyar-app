@@ -123,6 +123,11 @@ export const translations = {
     'btn.filter': 'تصفية',
     'btn.report': 'إبلاغ عن المنشور',
     'btn.hide': 'إخفاء المنشور',
+    'comments': 'التعليقات',
+    'write_comment': 'اكتب تعليقك هنا...',
+    'no_comments_yet': 'لا توجد تعليقات بعد',
+    'reply': 'رد',
+    'submit_comment': 'نشر التعليق',
 
     // Recipe Details & Serving Scaler
     'recipe.title': 'اسم الوصفة',
@@ -786,6 +791,11 @@ export const translations = {
     'btn.filter': 'Filter',
     'btn.report': 'Report Post',
     'btn.hide': 'Hide Post',
+    'comments': 'Comments',
+    'write_comment': 'Write your comment here...',
+    'no_comments_yet': 'No comments yet',
+    'reply': 'Reply',
+    'submit_comment': 'Post Comment',
 
     // Recipe Details & Serving Scaler
     'recipe.title': 'Recipe Title',
