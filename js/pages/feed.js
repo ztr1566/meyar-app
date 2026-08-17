@@ -9,7 +9,7 @@ import { RECIPE_FIXTURES, TREND_FIXTURES, USER_FIXTURES } from '../data/fixtures
 import { I18n } from '../core/i18n.js';
 import { Toast } from '../core/toast.js';
 import { Modal } from '../core/modal.js';
-import { isCurrentUserId } from '../core/utils.js';
+import { escapeHtml, isCurrentUserId } from '../core/utils.js';
 
 export class FeedPage {
   static currentFilter = 'all';
@@ -49,17 +49,6 @@ export class FeedPage {
     this.isInitialized = false;
   }
 
-  static escapeHtml(str) {
-    if (str === null || str === undefined) return '';
-    const text = String(str);
-    return text
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
-  }
-
   static getComments(post) {
     if (!post?.id) return [];
     if (!this.commentsByPostId.has(post.id)) {
@@ -78,13 +67,13 @@ export class FeedPage {
       const avatar = comment.author_avatar || USER_FIXTURES.avatar;
       return `
         <article class="comment-card flex items-start gap-2.5 p-3 rounded-xl bg-surface-2 border border-border-subtle">
-          <img src="${this.escapeHtml(avatar)}" alt="${this.escapeHtml(author)}" class="w-8 h-8 rounded-lg object-cover border border-border-subtle shrink-0">
+          <img src="${escapeHtml(avatar)}" alt="${escapeHtml(author)}" class="w-8 h-8 rounded-lg object-cover border border-border-subtle shrink-0">
           <div class="min-w-0 flex-1 space-y-1">
             <div class="flex items-center justify-between gap-2">
-              <span class="text-xs font-bold text-text-main truncate">${this.escapeHtml(author)}</span>
-              <time class="text-[10px] text-text-muted shrink-0">${this.escapeHtml(timestamp)}</time>
+              <span class="text-xs font-bold text-text-main truncate">${escapeHtml(author)}</span>
+              <time class="text-[10px] text-text-muted shrink-0">${escapeHtml(timestamp)}</time>
             </div>
-            <p class="text-xs text-text-muted leading-relaxed break-words [overflow-wrap:anywhere]">${this.escapeHtml(comment.content || '')}</p>
+            <p class="text-xs text-text-muted leading-relaxed break-words [overflow-wrap:anywhere]">${escapeHtml(comment.content || '')}</p>
             <button type="button" data-action="reply-comment" data-comment-form-target="${formId}" class="text-[11px] font-semibold text-brand-gold hover:text-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold rounded">
               <span data-i18n="reply">${I18n.t('reply')}</span>
             </button>
@@ -95,7 +84,7 @@ export class FeedPage {
   }
 
   static renderCommentButton(post, count = this.getComments(post).length) {
-    const postId = this.escapeHtml(post.id);
+    const postId = escapeHtml(post.id);
     return `
       <button type="button" data-action="toggle-comments" data-comments-target="comments-panel-${postId}" data-post-id="${postId}" aria-controls="comments-panel-${postId}" aria-expanded="false"
               class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
@@ -108,7 +97,7 @@ export class FeedPage {
   }
 
   static renderCommentPanel(post) {
-    const postId = this.escapeHtml(post.id);
+    const postId = escapeHtml(post.id);
     const formId = `comment-form-${postId}`;
     const comments = this.getComments(post);
     const list = comments.length
@@ -119,7 +108,7 @@ export class FeedPage {
       <section id="comments-panel-${postId}" class="comments-panel hidden mx-4 sm:mx-5 mb-4 pt-4 border-t border-border-subtle space-y-3 text-start" aria-label="Comments">
         <div class="comments-list space-y-2" data-comments-list="${postId}">${list}</div>
         <form id="${formId}" class="comment-form flex items-end gap-2" data-comment-form="${postId}">
-          <textarea id="comment-input-${postId}" rows="1" data-comment-input="${postId}" data-i18n-placeholder="write_comment" placeholder="${this.escapeHtml(I18n.t('write_comment'))}" class="min-h-9 flex-1 resize-none rounded-xl bg-surface-2 border border-border-subtle px-3 py-2 text-xs text-text-main placeholder:text-text-muted focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold"></textarea>
+          <textarea id="comment-input-${postId}" rows="1" data-comment-input="${postId}" data-i18n-placeholder="write_comment" placeholder="${escapeHtml(I18n.t('write_comment'))}" class="min-h-9 flex-1 resize-none rounded-xl bg-surface-2 border border-border-subtle px-3 py-2 text-xs text-text-main placeholder:text-text-muted focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold"></textarea>
           <button type="button" data-action="submit-comment" data-post-id="${postId}" class="shrink-0 inline-flex items-center gap-1.5 rounded-xl bg-brand-gold hover:bg-brand-gold-hover px-3 py-2 text-xs font-bold text-white focus:outline-none focus:ring-2 focus:ring-brand-gold">
             <span data-i18n="submit_comment">${I18n.t('submit_comment')}</span>
           </button>
@@ -130,6 +119,19 @@ export class FeedPage {
 
   static getCommentCount(post) {
     return Math.max(this.getComments(post).length, Number(post?.comments_count) || 0);
+  }
+
+  static renderPostComments(postId) {
+    if (typeof document === 'undefined') return;
+    const comments = this.commentsByPostId.get(postId) || [];
+    const panel = document.getElementById(`comments-panel-${postId}`);
+    const list = panel?.querySelector('.comments-list');
+    if (list) list.innerHTML = this.renderCommentCards(comments, `comment-form-${escapeHtml(postId)}`);
+    document.querySelectorAll('[data-comments-count]').forEach(countEl => {
+      if (countEl.getAttribute('data-comments-count') === postId) {
+        countEl.textContent = comments.length.toLocaleString();
+      }
+    });
   }
 
   static submitComment(postId) {
@@ -156,7 +158,7 @@ export class FeedPage {
     });
     this.commentsByPostId.set(postId, comments);
     input.value = '';
-    this.renderFeedPosts();
+    this.renderPostComments(postId);
     document.getElementById(`comments-panel-${postId}`)?.classList.remove('hidden');
   }
 
@@ -562,9 +564,9 @@ export class FeedPage {
       const isSaved = savedSet.has(post.id);
       const isLiked = likedSet.has(post.id);
 
-       const totalLikes = (post.likes_count || 0) + (isLiked ? 1 : 0);
-       const totalSaves = (post.saves_count || 0) + (isSaved ? 1 : 0);
-       const commentCount = this.getCommentCount(post);
+      const totalLikes = (post.likes_count || 0) + (isLiked ? 1 : 0);
+      const totalSaves = (post.saves_count || 0) + (isSaved ? 1 : 0);
+      const commentCount = this.getCommentCount(post);
 
       const likeClass = isLiked
         ? 'text-red-500 bg-surface-2 border-red-500'
@@ -582,10 +584,10 @@ export class FeedPage {
         <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden p-5 shadow-sm space-y-4 text-start relative min-w-0" data-card-post-id="${post.id}">
           <div class="flex items-center justify-between gap-2">
             <div class="flex items-center gap-3 min-w-0">
-              <img src="${this.escapeHtml(post.avatar)}" alt="${this.escapeHtml(post.author)}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle shrink-0">
+               <img src="${escapeHtml(post.avatar)}" alt="${escapeHtml(post.author)}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle shrink-0">
               <div class="min-w-0">
-                <h4 class="text-xs sm:text-sm font-bold text-text-main truncate">${this.escapeHtml(post.author)}</h4>
-                <p class="text-[11px] text-text-muted truncate">${this.escapeHtml(post.timeAgo)} • <span class="text-brand-gold font-semibold">${this.escapeHtml(post.handle)}</span></p>
+                 <h4 class="text-xs sm:text-sm font-bold text-text-main truncate">${escapeHtml(post.author)}</h4>
+                 <p class="text-[11px] text-text-muted truncate">${escapeHtml(post.timeAgo)} • <span class="text-brand-gold font-semibold">${escapeHtml(post.handle)}</span></p>
               </div>
             </div>
             <div class="flex items-center gap-2 relative shrink-0">
@@ -626,7 +628,7 @@ export class FeedPage {
               </div>
             </div>
           </div>
-          <p class="text-xs sm:text-sm text-text-main leading-relaxed whitespace-pre-line break-words [overflow-wrap:anywhere]">${this.escapeHtml(post.content)}</p>
+           <p class="text-xs sm:text-sm text-text-main leading-relaxed whitespace-pre-line break-words [overflow-wrap:anywhere]">${escapeHtml(post.content)}</p>
 
           <!-- Interactive Actions Bar -->
           <div class="pb-1 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
@@ -676,9 +678,9 @@ export class FeedPage {
       const cuisine = lang === 'ar' ? recipe.cuisine_ar : recipe.cuisine_en;
       const difficulty = lang === 'ar' ? recipe.difficulty_ar : recipe.difficulty_en;
 
-       const totalLikes = (recipe.likes_count || 0) + (isLiked ? 1 : 0);
-       const totalSaves = (recipe.saves_count || 0) + (isSaved ? 1 : 0);
-       const commentCount = this.getCommentCount(recipe);
+      const totalLikes = (recipe.likes_count || 0) + (isLiked ? 1 : 0);
+      const totalSaves = (recipe.saves_count || 0) + (isSaved ? 1 : 0);
+      const commentCount = this.getCommentCount(recipe);
 
       const likeClass = isLiked 
         ? 'text-red-500 bg-surface-2 border-red-500' 
@@ -778,7 +780,7 @@ export class FeedPage {
               </a>
             </h3>
             <p class="text-xs text-text-muted leading-relaxed line-clamp-2 break-words [overflow-wrap:anywhere]">
-              ${this.escapeHtml(description) /* Escape description to prevent XSS */}
+               ${escapeHtml(description) /* Escape description to prevent XSS */}
             </p>
           </div>
 

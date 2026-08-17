@@ -483,6 +483,39 @@ test('FeedPage - Comment action renders hooks and toggles the comments panel', (
   assert.equal(panel.classList.contains('hidden'), true, 'Comment panel should collapse');
 });
 
+test('FeedPage - Comment submission preserves the active form and updates its list', () => {
+  const { doc, Element } = setupDOM();
+  FeedPage.reset();
+
+  const feedCont = new Element('div');
+  feedCont.id = 'feed-posts-container';
+  doc.body.appendChild(feedCont);
+
+  const panel = new Element('section');
+  panel.id = 'comments-panel-recipe-1';
+  const list = new Element('div');
+  list.className = 'comments-list';
+  list.setAttribute('data-comments-list', 'recipe-1');
+  panel.appendChild(list);
+  const input = new Element('textarea');
+  input.id = 'comment-input-recipe-1';
+  input.value = 'Keep the pan very hot.';
+  panel.appendChild(input);
+  feedCont.appendChild(panel);
+
+  const count = new Element('span');
+  count.setAttribute('data-comments-count', 'recipe-1');
+  feedCont.appendChild(count);
+  FeedPage.commentsByPostId.set('recipe-1', []);
+
+  FeedPage.submitComment('recipe-1');
+
+  assert.ok(feedCont.children.includes(panel), 'Submitting should not replace the active card DOM');
+  assert.equal(input.value, '', 'Comment input should clear after submission');
+  assert.ok(list.innerHTML.includes('Keep the pan very hot.'), 'Submitted comment should appear in the list');
+  assert.equal(count.textContent, '1', 'Comment count should update in place');
+});
+
 test('FeedPage - Post Composer Creation and Prepending', () => {
   const { doc, Element } = setupDOM();
   I18n.setLang('ar');
