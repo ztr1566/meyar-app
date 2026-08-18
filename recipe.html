@@ -298,31 +298,31 @@
         </div>
 
         <!-- Action Buttons Bar (Interactive CTAs) -->
-        <div class="flex flex-wrap items-center gap-2.5 pt-2">
+        <div class="flex flex-wrap sm:flex-nowrap items-center gap-2.5 pt-2">
           <!-- Start Cooking Interactive CTA -->
           <a href="#card-cooking-mode" id="btn-start-cooking" data-action="start-cooking"
-             class="inline-flex items-center gap-2 px-5 py-3 text-sm font-bold bg-brand-gold hover:bg-brand-gold-hover text-white rounded-xl shadow-md transition-transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-brand-gold">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+             class="inline-flex items-center justify-center gap-2 h-11 px-5 text-sm font-bold bg-brand-gold hover:bg-brand-gold-hover text-white rounded-xl shadow-md transition-transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-brand-gold whitespace-nowrap shrink-0">
+            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="5 3 19 12 5 21 5 3"/>
             </svg>
-            <span data-i18n="recipe.start_cooking">بدء الطهي التفاعلي</span>
+            <span data-i18n="recipe.start_cooking" class="whitespace-nowrap">بدء الطهي التفاعلي</span>
           </a>
 
           <!-- Bookmark / Save Button -->
-          <button type="button" id="btn-save-recipe" data-action="save-recipe" data-recipe-id="recipe-1"
-                  class="p-3 text-text-muted hover:text-brand-gold bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold flex items-center gap-2 text-xs sm:text-sm font-semibold"
+          <button type="button" id="btn-save-recipe" data-action="save-recipe"
+                  class="inline-flex items-center justify-center gap-2 h-11 px-3.5 text-text-muted hover:text-brand-gold bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0"
                   aria-label="Bookmark Recipe">
-            <svg class="w-5 h-5 bookmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-5 h-5 bookmark-icon shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/>
             </svg>
-            <span class="save-label hidden sm:inline" data-i18n="btn.save">حفظ</span>
+            <span class="save-label hidden sm:inline whitespace-nowrap" data-i18n="btn.save">حفظ</span>
           </button>
 
           <!-- Like Recipe Button -->
-          <button type="button" id="btn-like-recipe" data-action="like-recipe" data-recipe-id="recipe-1"
-                  class="p-3 text-text-muted hover:text-red-500 bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold flex items-center gap-2 text-xs sm:text-sm font-semibold"
+          <button type="button" id="btn-like-recipe" data-action="like-recipe"
+                  class="inline-flex items-center justify-center gap-2 h-11 px-3.5 text-text-muted hover:text-red-500 bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0"
                   aria-label="Like Recipe">
-            <svg class="w-5 h-5 heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-5 h-5 heart-icon shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
             </svg>
             <span id="recipe-likes-count" class="font-bold text-text-main">1420</span>
@@ -330,9 +330,9 @@
 
           <!-- Share Recipe Button -->
           <button type="button" id="btn-share-recipe" data-action="share-recipe"
-                  class="p-3 text-text-muted hover:text-text-main bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                  class="inline-flex items-center justify-center h-11 w-11 text-text-muted hover:text-text-main bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0"
                   aria-label="Share Recipe">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
               <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/>
             </svg>
@@ -340,9 +340,9 @@
 
           <!-- Print Recipe Button -->
           <button type="button" id="btn-print-recipe" data-action="print-recipe"
-                  class="p-3 text-text-muted hover:text-text-main bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                  class="inline-flex items-center justify-center h-11 w-11 text-text-muted hover:text-text-main bg-surface-1 hover:bg-surface-2 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0"
                   aria-label="Print Recipe">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/>
             </svg>
           </button>

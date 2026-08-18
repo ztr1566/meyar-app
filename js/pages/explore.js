@@ -439,10 +439,6 @@ export class ExplorePage {
                     aria-label="Save recipe">
               <svg class="w-4 h-4 ${isSaved ? 'fill-current' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
             </button>
-            <a href="recipe.html?id=${recipe.id}" class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-brand-gold hover:bg-brand-gold-hover text-white rounded-xl shadow-sm transition-colors">
-              <span>${lang === 'ar' ? 'عرض الطبق' : 'Cook'}</span>
-              <svg class="w-3.5 h-3.5 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-            </a>
           </div>
         </div>
       </article>

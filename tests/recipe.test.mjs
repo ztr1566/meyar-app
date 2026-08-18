@@ -668,22 +668,34 @@ test('RecipePage - Bookmark, Like, and Chef Follow Session State', (t) => {
   assert.equal(elementsById.get('btn-follow-chef').classList.contains('hidden'), true, 'self-follow button must be hidden');
 
   // 1. Bookmark / Save
+  const saveBtn = elementsById.get('btn-save-recipe');
   const saved1 = RecipePage.toggleSave('recipe-1');
   assert.equal(saved1, true);
   assert.deepEqual(RecipePage.getSavedRecipeIds(), ['recipe-1']);
+  assert.ok(saveBtn.classList.contains('text-brand-gold'), 'Save button should have text-brand-gold');
+  assert.ok(saveBtn.classList.contains('border-brand-gold'), 'Save button should have border-brand-gold');
 
   const saved2 = RecipePage.toggleSave('recipe-1');
   assert.equal(saved2, false);
   assert.deepEqual(RecipePage.getSavedRecipeIds(), []);
+  assert.ok(!saveBtn.classList.contains('text-brand-gold'), 'Save button should remove text-brand-gold');
 
   // 2. Like
+  const likeBtn = elementsById.get('btn-like-recipe');
+  const likesCountEl = elementsById.get('recipe-likes-count');
+  const baseLikes = Number(RecipePage.currentRecipe.likes_count) || 1400;
   const liked1 = RecipePage.toggleLike('recipe-1');
   assert.equal(liked1, true);
   assert.deepEqual(RecipePage.getLikedRecipeIds(), ['recipe-1']);
+  assert.ok(likeBtn.classList.contains('text-red-500'), 'Like button should have text-red-500');
+  assert.ok(likeBtn.classList.contains('border-red-500'), 'Like button should have border-red-500');
+  assert.equal(likesCountEl.textContent, String(baseLikes + 1));
 
   const liked2 = RecipePage.toggleLike('recipe-1');
   assert.equal(liked2, false);
   assert.deepEqual(RecipePage.getLikedRecipeIds(), []);
+  assert.ok(!likeBtn.classList.contains('text-red-500'), 'Like button should remove text-red-500');
+  assert.equal(likesCountEl.textContent, String(baseLikes));
 
   // 3. Self-follow is rejected, while another chef can be followed.
   const followedSelf = RecipePage.toggleFollowChef('chef-1');

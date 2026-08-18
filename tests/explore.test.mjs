@@ -486,6 +486,21 @@ test('ExplorePage - Sorting Logic', () => {
   assert.ok(ExplorePage.getPopularityScore(popularSorted[0]) >= ExplorePage.getPopularityScore(popularSorted[popularSorted.length - 1]));
 });
 
+test('ExplorePage - Recipe Card Duplicate CTA Removal', () => {
+  setupDOM();
+  I18n.init();
+
+  const recipe = MOCK_DATA.recipes[0];
+
+  const recipeHtmlAr = ExplorePage.renderRecipeCard(recipe, 'ar');
+  assert.strictEqual(recipeHtmlAr.includes('عرض الطبق'), false, 'AR recipe card must not include duplicate CTA "عرض الطبق"');
+  assert.ok(recipeHtmlAr.includes(`recipe.html?id=${recipe.id}`), 'AR recipe card must still include recipe link');
+
+  const recipeHtmlEn = ExplorePage.renderRecipeCard(recipe, 'en');
+  assert.strictEqual(recipeHtmlEn.includes('Cook'), false, 'EN recipe card must not include duplicate CTA "Cook"');
+  assert.ok(recipeHtmlEn.includes(`recipe.html?id=${recipe.id}`), 'EN recipe card must still include recipe link');
+});
+
 test('ExplorePage - Bilingual Multi-Category Card Rendering', () => {
   setupDOM();
   I18n.init();

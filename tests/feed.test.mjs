@@ -165,29 +165,40 @@ function setupDOM() {
     _matchSingle(singleSel) {
       const s = singleSel.trim();
       if (!s) return false;
-      if (s.startsWith('#')) {
+      if (s.startsWith('#') && !s.includes('[')) {
         return this.id === s.slice(1);
       }
-      if (s.startsWith('.')) {
+      if (s.startsWith('.') && !s.includes('[')) {
         return this.classList.contains(s.slice(1));
       }
 
-      // Tag with attribute or bare attribute
-      const tagAttrMatch = s.match(/^([a-zA-Z0-9]+)?\[([a-zA-Z0-9_-]+)(?:="([^"]*)")?\]$/);
-      if (tagAttrMatch) {
-        const [_, tagName, attrName, attrVal] = tagAttrMatch;
-        if (tagName && this.tagName.toLowerCase() !== tagName.toLowerCase()) {
+      // Tag name prefix
+      let remaining = s;
+      const tagMatch = remaining.match(/^([a-zA-Z0-9]+)/);
+      if (tagMatch) {
+        if (this.tagName.toLowerCase() !== tagMatch[1].toLowerCase()) {
           return false;
         }
-        if (attrVal !== undefined) {
-          return this.getAttribute(attrName) === attrVal;
-        }
-        return this.hasAttribute(attrName);
+        remaining = remaining.slice(tagMatch[1].length);
       }
 
-      if (s.toLowerCase() === this.tagName.toLowerCase()) {
+      // Match all [attr="val"] or [attr]
+      const attrMatches = [...remaining.matchAll(/\[([a-zA-Z0-9_-]+)(?:="([^"]*)")?\]/g)];
+      if (attrMatches.length > 0) {
+        for (const [_, attrName, attrVal] of attrMatches) {
+          if (attrVal !== undefined) {
+            if (this.getAttribute(attrName) !== attrVal) return false;
+          } else {
+            if (!this.hasAttribute(attrName)) return false;
+          }
+        }
         return true;
       }
+
+      if (tagMatch && remaining === '') {
+        return true;
+      }
+
       return false;
     }
 
@@ -311,8 +322,22 @@ function setupDOM() {
 }
 
   test('FeedPage - Bookmark / Save Recipe Toggle and Session State', () => {
-  setupDOM();
+  const { doc, Element } = setupDOM();
   FeedPage.reset();
+
+  const saveBtn = new Element('button');
+  saveBtn.setAttribute('data-action', 'save');
+  saveBtn.setAttribute('data-recipe-id', 'recipe-1');
+  saveBtn.setAttribute('data-base-saves', '10');
+  const saveIcon = new Element('svg');
+  const saveLabel = new Element('span');
+  saveLabel.className = 'action-label';
+  const saveCount = new Element('span');
+  saveCount.className = 'action-count';
+  saveBtn.appendChild(saveIcon);
+  saveBtn.appendChild(saveLabel);
+  saveBtn.appendChild(saveCount);
+  doc.body.appendChild(saveBtn);
 
   // Initial state should be empty
   assert.deepEqual(FeedPage.getSavedRecipeIds(), []);
@@ -321,6 +346,10 @@ function setupDOM() {
   const isSaved1 = FeedPage.toggleSave('recipe-1');
   assert.equal(isSaved1, true, 'recipe-1 should now be saved');
   assert.deepEqual(FeedPage.getSavedRecipeIds(), ['recipe-1']);
+  assert.ok(saveBtn.classList.contains('text-brand-gold'), 'Save button should have active text-brand-gold');
+  assert.ok(saveBtn.classList.contains('border-brand-gold'), 'Save button should have active border-brand-gold');
+  assert.equal(saveIcon.getAttribute('fill'), 'currentColor', 'Save icon should be filled');
+  assert.equal(saveCount.textContent, '11', 'Save count should increment');
 
   // 2. Save recipe-2
   const isSaved2 = FeedPage.toggleSave('recipe-2');
@@ -331,11 +360,25 @@ function setupDOM() {
   const isSavedAgain = FeedPage.toggleSave('recipe-1');
   assert.equal(isSavedAgain, false, 'recipe-1 should now be unsaved');
   assert.deepEqual(FeedPage.getSavedRecipeIds(), ['recipe-2']);
+  assert.ok(!saveBtn.classList.contains('text-brand-gold'), 'Save button should remove text-brand-gold');
+  assert.equal(saveIcon.getAttribute('fill'), 'none', 'Save icon should not be filled');
+  assert.equal(saveCount.textContent, '10', 'Save count should return to base');
 });
 
   test('FeedPage - Like Recipe Toggle and Session State', () => {
-  setupDOM();
+  const { doc, Element } = setupDOM();
   FeedPage.reset();
+
+  const likeBtn = new Element('button');
+  likeBtn.setAttribute('data-action', 'like');
+  likeBtn.setAttribute('data-recipe-id', 'recipe-1');
+  likeBtn.setAttribute('data-base-likes', '50');
+  const likeIcon = new Element('svg');
+  const likeCount = new Element('span');
+  likeCount.className = 'action-count';
+  likeBtn.appendChild(likeIcon);
+  likeBtn.appendChild(likeCount);
+  doc.body.appendChild(likeBtn);
 
   // Initial state should be empty
   assert.deepEqual(FeedPage.getLikedRecipeIds(), []);
@@ -344,11 +387,18 @@ function setupDOM() {
   const isLiked1 = FeedPage.toggleLike('recipe-1');
   assert.equal(isLiked1, true, 'recipe-1 should be liked');
   assert.deepEqual(FeedPage.getLikedRecipeIds(), ['recipe-1']);
+  assert.ok(likeBtn.classList.contains('text-red-500'), 'Like button should have text-red-500');
+  assert.ok(likeBtn.classList.contains('border-red-500'), 'Like button should have border-red-500');
+  assert.equal(likeIcon.getAttribute('fill'), 'currentColor', 'Like icon should be filled');
+  assert.equal(likeCount.textContent, '51', 'Like count should increment');
 
   // 2. Unlike recipe-1
   const isLikedAgain = FeedPage.toggleLike('recipe-1');
   assert.equal(isLikedAgain, false, 'recipe-1 should be unliked');
   assert.deepEqual(FeedPage.getLikedRecipeIds(), []);
+  assert.ok(!likeBtn.classList.contains('text-red-500'), 'Like button should remove text-red-500');
+  assert.equal(likeIcon.getAttribute('fill'), 'none', 'Like icon should not be filled');
+  assert.equal(likeCount.textContent, '50', 'Like count should return to base');
 });
 
 test('FeedPage - Follow Chef Toggle and Session State', () => {

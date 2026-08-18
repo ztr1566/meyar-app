@@ -83,3 +83,18 @@ html[dir="ltr"] {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.feed-card {
+  container: feed-card / inline-size;
+}
+
+@container feed-card (max-width: 720px) {
+  .feed-card-footer {
+    flex-wrap: wrap;
+  }
+
+  .feed-card-actions {
+    flex-wrap: wrap;
+  }
+
+}

@@ -136,17 +136,14 @@ export class RecipePage {
       const timestamp = comment.created_at || comment.timestamp || (lang === 'ar' ? 'الآن' : 'Just now');
       const avatar = comment.author_avatar || USER_FIXTURES.avatar;
       return `
-        <article class="comment-card flex items-start gap-3 p-4 rounded-2xl bg-surface-2 border border-border-subtle">
+        <article class="comment-card w-[95%] me-auto flex items-start gap-3 p-4 rounded-2xl bg-surface-2 border border-border-subtle">
           <img src="${escapeHtml(avatar)}" alt="${escapeHtml(author)}" class="w-9 h-9 rounded-xl object-cover border border-border-subtle shrink-0">
           <div class="min-w-0 flex-1 space-y-1.5">
             <div class="flex items-center justify-between gap-2">
               <span class="text-xs sm:text-sm font-bold text-text-main truncate">${escapeHtml(author)}</span>
               <time class="text-[10px] text-text-muted shrink-0">${escapeHtml(timestamp)}</time>
             </div>
-            <p class="text-xs sm:text-sm text-text-muted leading-relaxed break-words [overflow-wrap:anywhere]">${escapeHtml(comment.content || '')}</p>
-            <button type="button" data-action="reply-comment" data-comment-form-target="recipe-comment-form" class="text-[11px] font-semibold text-brand-gold hover:text-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold rounded">
-              <span data-i18n="reply">${I18n.t('reply')}</span>
-            </button>
+            <p class="text-sm text-text-muted leading-relaxed break-words [overflow-wrap:anywhere]">${escapeHtml(comment.content || '')}</p>
           </div>
         </article>
       `;
@@ -978,17 +975,24 @@ export class RecipePage {
     const isSaved = savedIds.has(r.id);
     const saveBtn = document.getElementById('btn-save-recipe');
     if (saveBtn) {
-      const icon = saveBtn.querySelector('.bookmark-icon');
+      saveBtn.setAttribute('data-recipe-id', r.id);
+      const icon = saveBtn.querySelector('.bookmark-icon') || saveBtn.querySelector('svg');
       const label = saveBtn.querySelector('.save-label');
       if (isSaved) {
-        saveBtn.classList.add('text-brand-gold', 'bg-surface-2');
-        saveBtn.classList.remove('text-text-muted', 'bg-surface-1');
-        if (icon) icon.classList.add('fill-current');
+        saveBtn.classList.add('text-brand-gold', 'bg-surface-2', 'border-brand-gold');
+        saveBtn.classList.remove('text-text-muted', 'bg-surface-1', 'border-border-subtle');
+        if (icon) {
+          icon.setAttribute('fill', 'currentColor');
+          icon.classList.add('fill-current');
+        }
         if (label) label.textContent = I18n.getLang() === 'ar' ? 'محفوظة' : 'Saved';
       } else {
-        saveBtn.classList.remove('text-brand-gold', 'bg-surface-2');
-        saveBtn.classList.add('text-text-muted', 'bg-surface-1');
-        if (icon) icon.classList.remove('fill-current');
+        saveBtn.classList.remove('text-brand-gold', 'bg-surface-2', 'border-brand-gold');
+        saveBtn.classList.add('text-text-muted', 'bg-surface-1', 'border-border-subtle');
+        if (icon) {
+          icon.setAttribute('fill', 'none');
+          icon.classList.remove('fill-current');
+        }
         if (label) label.textContent = I18n.t('btn.save');
       }
     }
@@ -998,20 +1002,50 @@ export class RecipePage {
     const likeBtn = document.getElementById('btn-like-recipe');
     const likesCountEl = document.getElementById('recipe-likes-count');
     if (likeBtn) {
-      const icon = likeBtn.querySelector('.heart-icon');
+      likeBtn.setAttribute('data-recipe-id', r.id);
+      const icon = likeBtn.querySelector('.heart-icon') || likeBtn.querySelector('svg');
       const baseLikes = Number(r.likes_count) || 1400;
       if (isLiked) {
-        likeBtn.classList.add('text-red-500', 'bg-surface-2');
-        likeBtn.classList.remove('text-text-muted', 'bg-surface-1');
-        if (icon) icon.classList.add('fill-current');
+        likeBtn.classList.add('text-red-500', 'bg-surface-2', 'border-red-500');
+        likeBtn.classList.remove('text-text-muted', 'bg-surface-1', 'border-border-subtle');
+        if (icon) {
+          icon.setAttribute('fill', 'currentColor');
+          icon.classList.add('fill-current');
+        }
         if (likesCountEl) likesCountEl.textContent = (baseLikes + 1).toString();
       } else {
-        likeBtn.classList.remove('text-red-500', 'bg-surface-2');
-        likeBtn.classList.add('text-text-muted', 'bg-surface-1');
-        if (icon) icon.classList.remove('fill-current');
+        likeBtn.classList.remove('text-red-500', 'bg-surface-2', 'border-red-500');
+        likeBtn.classList.add('text-text-muted', 'bg-surface-1', 'border-border-subtle');
+        if (icon) {
+          icon.setAttribute('fill', 'none');
+          icon.classList.remove('fill-current');
+        }
         if (likesCountEl) likesCountEl.textContent = baseLikes.toString();
       }
     }
+
+    // Related recipes bookmark buttons
+    document.querySelectorAll('[data-action="save-recipe"]').forEach(btn => {
+      const id = btn.getAttribute('data-recipe-id');
+      if (!id || id === r.id) return;
+      const isCardSaved = savedIds.has(id);
+      const icon = btn.querySelector('svg');
+      if (isCardSaved) {
+        btn.classList.add('text-brand-gold');
+        btn.classList.remove('text-text-muted');
+        if (icon) {
+          icon.setAttribute('fill', 'currentColor');
+          icon.classList.add('fill-current', 'text-brand-gold');
+        }
+      } else {
+        btn.classList.remove('text-brand-gold');
+        btn.classList.add('text-text-muted');
+        if (icon) {
+          icon.setAttribute('fill', 'none');
+          icon.classList.remove('fill-current', 'text-brand-gold');
+        }
+      }
+    });
 
     // Follow button
     const isFollowing = followingIds.has(r.author_id);
@@ -1058,15 +1092,6 @@ export class RecipePage {
           const isHidden = panel.classList.toggle('hidden');
           commentsToggle.setAttribute('aria-expanded', String(!isHidden));
         }
-        return;
-      }
-
-      // Focus the recipe comment form from an existing comment
-      const replyBtn = target.closest('[data-action="reply-comment"]');
-      if (replyBtn) {
-        e.preventDefault();
-        const form = document.getElementById(replyBtn.getAttribute('data-comment-form-target'));
-        form?.querySelector('textarea')?.focus();
         return;
       }
 

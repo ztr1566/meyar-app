@@ -6309,24 +6309,21 @@
       }
       return this.commentsByPostId.get(postId);
     }
-    static renderCommentCards(comments, formId) {
+    static renderCommentCards(comments) {
       const lang = I18n.getLang();
       return comments.map((comment) => {
         const author = lang === "ar" ? comment.author_name_ar || comment.author_ar || comment.author || "\u0639\u0636\u0648 \u0645\u0639\u064A\u0627\u0631" : comment.author_name_en || comment.author_en || comment.author || "Meyar member";
         const timestamp = comment.created_at || comment.timestamp || (lang === "ar" ? "\u0627\u0644\u0622\u0646" : "Just now");
         const avatar = comment.author_avatar || USER_FIXTURES.avatar;
         return `
-        <article class="comment-card flex items-start gap-2.5 p-3 rounded-xl bg-surface-2 border border-border-subtle">
+        <article class="comment-card w-[95%] me-auto flex items-start gap-2.5 p-3 rounded-xl bg-surface-2 border border-border-subtle">
           <img src="${escapeHtml(avatar)}" alt="${escapeHtml(author)}" class="w-8 h-8 rounded-lg object-cover border border-border-subtle shrink-0">
           <div class="min-w-0 flex-1 space-y-1">
             <div class="flex items-center justify-between gap-2">
               <span class="text-xs font-bold text-text-main truncate">${escapeHtml(author)}</span>
               <time class="text-[10px] text-text-muted shrink-0">${escapeHtml(timestamp)}</time>
             </div>
-            <p class="text-xs text-text-muted leading-relaxed break-words [overflow-wrap:anywhere]">${escapeHtml(comment.content || "")}</p>
-            <button type="button" data-action="reply-comment" data-comment-form-target="${formId}" class="text-[11px] font-semibold text-brand-gold hover:text-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold rounded">
-              <span data-i18n="reply">${I18n.t("reply")}</span>
-            </button>
+            <p class="text-sm text-text-muted leading-relaxed break-words [overflow-wrap:anywhere]">${escapeHtml(comment.content || "")}</p>
           </div>
         </article>
       `;
@@ -6336,10 +6333,10 @@
       const postId = escapeHtml(post.id);
       return `
       <button type="button" data-action="toggle-comments" data-comments-target="comments-panel-${postId}" data-post-id="${postId}" aria-controls="comments-panel-${postId}" aria-expanded="false"
-              class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+              class="inline-flex items-center justify-center gap-1.5 h-9 px-2.5 text-xs font-semibold rounded-xl border text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold whitespace-nowrap shrink-0"
               aria-label="Comments">
         <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.94L3 21l1.94-4A8.5 8.5 0 1 1 21 11.5Z"/></svg>
-        <span class="hidden sm:inline" data-i18n="comments">${I18n.t("comments")}</span>
+        <span class="action-label hidden sm:inline" data-i18n="comments">${I18n.t("comments")}</span>
         <span class="action-count min-w-5 px-1.5 py-0.5 rounded-full bg-surface-1 border border-border-subtle text-[10px] text-center" data-comments-count="${postId}">${count.toLocaleString()}</span>
       </button>
     `;
@@ -6348,7 +6345,7 @@
       const postId = escapeHtml(post.id);
       const formId = `comment-form-${postId}`;
       const comments = this.getComments(post);
-      const list = comments.length ? this.renderCommentCards(comments, formId) : `<p class="text-xs text-text-muted text-center py-3" data-i18n="no_comments_yet">${I18n.t("no_comments_yet")}</p>`;
+      const list = comments.length ? this.renderCommentCards(comments) : `<p class="text-xs text-text-muted text-center py-3" data-i18n="no_comments_yet">${I18n.t("no_comments_yet")}</p>`;
       return `
       <section id="comments-panel-${postId}" class="comments-panel hidden mx-4 sm:mx-5 mb-4 pt-4 border-t border-border-subtle space-y-3 text-start" aria-label="Comments">
         <div class="comments-list space-y-2" data-comments-list="${postId}">${list}</div>
@@ -6372,7 +6369,7 @@
       const comments = this.commentsByPostId.get(normalizedPostId) || [];
       const panel = document.getElementById(`comments-panel-${normalizedPostId}`);
       const list = panel?.querySelector(".comments-list");
-      if (list) list.innerHTML = this.renderCommentCards(comments, `comment-form-${escapeHtml(normalizedPostId)}`);
+      if (list) list.innerHTML = this.renderCommentCards(comments);
       document.querySelectorAll("[data-comments-count]").forEach((countEl) => {
         if (countEl.getAttribute("data-comments-count") === normalizedPostId) {
           countEl.textContent = (this.commentCountsByPostId.get(normalizedPostId) || comments.length).toLocaleString();
@@ -6537,16 +6534,21 @@
         const baseLikes = parseInt(btn.getAttribute("data-base-likes") || "0", 10);
         const newCount = baseLikes + (isLiked ? 1 : 0);
         if (countEl) countEl.textContent = newCount.toLocaleString();
+        const icon = btn.querySelector("svg");
         if (isLiked) {
           btn.classList.add("text-red-500", "bg-surface-2", "border-red-500");
-          btn.classList.remove("text-text-muted", "bg-surface-2");
-          const icon = btn.querySelector("svg");
-          if (icon) icon.setAttribute("fill", "currentColor");
+          btn.classList.remove("text-text-muted", "border-border-subtle");
+          if (icon) {
+            icon.setAttribute("fill", "currentColor");
+            icon.classList.add("fill-current");
+          }
         } else {
-          btn.classList.remove("text-red-500", "bg-surface-2", "border-red-500");
-          btn.classList.add("text-text-muted", "bg-surface-2");
-          const icon = btn.querySelector("svg");
-          if (icon) icon.setAttribute("fill", "none");
+          btn.classList.remove("text-red-500", "border-red-500");
+          btn.classList.add("text-text-muted", "bg-surface-2", "border-border-subtle");
+          if (icon) {
+            icon.setAttribute("fill", "none");
+            icon.classList.remove("fill-current");
+          }
         }
       });
       document.querySelectorAll(`[data-action="save"][data-recipe-id="${recipeId}"]`).forEach((btn) => {
@@ -6558,16 +6560,21 @@
         if (labelEl) {
           labelEl.textContent = isSaved ? I18n.t("btn.saved") : I18n.t("btn.save");
         }
+        const icon = btn.querySelector("svg");
         if (isSaved) {
-          btn.classList.add("text-brand-gold", "bg-surface-2", "border-border-subtle");
-          btn.classList.remove("text-text-muted", "bg-surface-2");
-          const icon = btn.querySelector("svg");
-          if (icon) icon.setAttribute("fill", "currentColor");
+          btn.classList.add("text-brand-gold", "bg-surface-2", "border-brand-gold");
+          btn.classList.remove("text-text-muted", "border-border-subtle");
+          if (icon) {
+            icon.setAttribute("fill", "currentColor");
+            icon.classList.add("fill-current");
+          }
         } else {
-          btn.classList.remove("text-brand-gold", "bg-surface-2", "border-border-subtle");
-          btn.classList.add("text-text-muted", "bg-surface-2");
-          const icon = btn.querySelector("svg");
-          if (icon) icon.setAttribute("fill", "none");
+          btn.classList.remove("text-brand-gold", "border-brand-gold");
+          btn.classList.add("text-text-muted", "bg-surface-2", "border-border-subtle");
+          if (icon) {
+            icon.setAttribute("fill", "none");
+            icon.classList.remove("fill-current");
+          }
         }
       });
     }
@@ -6752,11 +6759,11 @@
         const commentCount = this.getCommentCount(post);
         const likeClass = isLiked ? "text-red-500 bg-surface-2 border-red-500" : "text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle";
         const likeFill = isLiked ? "currentColor" : "none";
-        const saveClass = isSaved ? "text-brand-gold bg-surface-2 border-border-subtle" : "text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle";
+        const saveClass = isSaved ? "text-brand-gold bg-surface-2 border-brand-gold" : "text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle";
         const saveFill = isSaved ? "currentColor" : "none";
         const isOwner = post.author_id === activeUser.id;
         html += `
-        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden p-5 shadow-sm space-y-4 text-start relative min-w-0" data-card-post-id="${post.id}">
+        <article class="feed-card bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden p-5 shadow-sm space-y-4 text-start relative min-w-0" data-card-post-id="${post.id}">
           <div class="flex items-center justify-between gap-2">
             <div class="flex items-center gap-3 min-w-0">
                <img src="${escapeHtml(post.avatar)}" alt="${escapeHtml(post.author)}" class="w-10 h-10 rounded-xl object-cover border border-border-subtle shrink-0">
@@ -6806,11 +6813,11 @@
            <p class="text-xs sm:text-sm text-text-main leading-relaxed whitespace-pre-line break-words [overflow-wrap:anywhere]">${escapeHtml(post.content)}</p>
 
           <!-- Interactive Actions Bar -->
-          <div class="pb-1 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
-            <div class="flex items-center gap-1.5 sm:gap-2">
+          <div class="feed-card-footer pb-1 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+            <div class="feed-card-actions flex items-center gap-1 sm:gap-1.5 md:gap-2">
               <!-- Like Button -->
                <button type="button" data-action="like" data-recipe-id="${post.id}" data-base-likes="${post.likes_count || 0}"
-                      class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${likeClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                        class="inline-flex items-center justify-center gap-1 sm:gap-1.5 h-9 px-2 sm:px-2.5 md:px-3 text-xs font-semibold rounded-xl border transition-colors ${likeClass} focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0"
                       aria-label="Like recipe">
                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="${likeFill}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                  <span class="action-count">${totalLikes.toLocaleString()}</span>
@@ -6820,16 +6827,16 @@
 
                <!-- Save / Bookmark Button -->
               <button type="button" data-action="save" data-recipe-id="${post.id}" data-base-saves="${post.saves_count || 0}"
-                      class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${saveClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                        class="inline-flex items-center justify-center gap-1 sm:gap-1.5 h-9 px-2 sm:px-2.5 md:px-3 text-xs font-semibold rounded-xl border transition-colors ${saveClass} focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0"
                       aria-label="Save recipe">
                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="${saveFill}" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
-                <span class="action-label hidden sm:inline">${isSaved ? I18n.t("btn.saved") : I18n.t("btn.save")}</span>
+                <span class="action-label hidden md:inline">${isSaved ? I18n.t("btn.saved") : I18n.t("btn.save")}</span>
                 <span class="action-count">${totalSaves.toLocaleString()}</span>
               </button>
 
               <!-- Share Button -->
               <button type="button" data-action="share" data-recipe-id="${post.id}"
-                      class="p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                       class="inline-flex items-center justify-center h-9 w-9 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0"
                       aria-label="Share recipe">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
                </button>
@@ -6854,7 +6861,7 @@
         const commentCount = this.getCommentCount(recipe);
         const likeClass = isLiked ? "text-red-500 bg-surface-2 border-red-500" : "text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle";
         const likeFill = isLiked ? "currentColor" : "none";
-        const saveClass = isSaved ? "text-brand-gold bg-surface-2 border-border-subtle" : "text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle";
+        const saveClass = isSaved ? "text-brand-gold bg-surface-2 border-brand-gold" : "text-text-muted bg-surface-2 hover:bg-surface-1 border-border-subtle";
         const saveFill = isSaved ? "currentColor" : "none";
         const followText = isFollowing ? I18n.t("btn.following") : I18n.t("btn.follow");
         const followClass = isFollowing ? "bg-surface-2 text-text-muted border-border-subtle" : "bg-brand-gold hover:bg-brand-gold-hover text-white border-transparent";
@@ -6869,7 +6876,7 @@
           return `<span class="inline-flex items-center text-[10px] font-medium px-2 py-0.5 rounded-lg bg-surface-2 border border-border-subtle text-text-muted">${name}</span>`;
         }).join(" ");
         html += `
-        <article class="bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm space-y-4 text-start transition-all hover:border-border-subtle relative min-w-0" data-card-recipe-id="${recipe.id}">
+        <article class="feed-card bg-surface-1 border border-border-subtle rounded-2xl overflow-hidden shadow-sm space-y-4 text-start transition-all hover:border-border-subtle relative min-w-0" data-card-recipe-id="${recipe.id}">
           
           <!-- Post Author Header -->
           <div class="px-4 sm:px-5 pt-4 sm:pt-5 flex items-center justify-between gap-3">
@@ -6893,7 +6900,7 @@
             </div>
 
             <!-- Follow Button & 3-dots -->
-            <div class="flex items-center gap-2 relative">
+            <div class="flex items-center gap-2 relative shrink-0">
               ${followButton}
 
               <!-- 3-dots option button -->
@@ -6977,12 +6984,12 @@
           </div>
 
           <!-- Interactive Actions Bar -->
-          <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+           <div class="feed-card-footer px-4 sm:px-5 pb-1 sm:pb-2 pt-3 border-t border-border-subtle flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-2">
             
-            <div class="flex items-center gap-1.5 sm:gap-2">
+            <div class="feed-card-actions flex items-center gap-1 sm:gap-1.5 md:gap-2">
               <!-- Like Button -->
                <button type="button" data-action="like" data-recipe-id="${recipe.id}" data-base-likes="${recipe.likes_count || 0}"
-                      class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${likeClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                        class="inline-flex items-center justify-center gap-1 sm:gap-1.5 h-9 px-2 sm:px-2.5 md:px-3 text-xs font-semibold rounded-xl border transition-colors ${likeClass} focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0"
                       aria-label="Like recipe">
                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="${likeFill}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                  <span class="action-count">${totalLikes.toLocaleString()}</span>
@@ -6992,27 +6999,20 @@
 
                <!-- Save / Bookmark Button -->
               <button type="button" data-action="save" data-recipe-id="${recipe.id}" data-base-saves="${recipe.saves_count || 0}"
-                      class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border transition-colors ${saveClass} focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                        class="inline-flex items-center justify-center gap-1 sm:gap-1.5 h-9 px-2 sm:px-2.5 md:px-3 text-xs font-semibold rounded-xl border transition-colors ${saveClass} focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0"
                       aria-label="Save recipe">
                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="${saveFill}" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
-                <span class="action-label hidden sm:inline">${isSaved ? I18n.t("btn.saved") : I18n.t("btn.save")}</span>
+                <span class="action-label hidden md:inline">${isSaved ? I18n.t("btn.saved") : I18n.t("btn.save")}</span>
                 <span class="action-count">${totalSaves.toLocaleString()}</span>
               </button>
 
               <!-- Share Button -->
               <button type="button" data-action="share" data-recipe-id="${recipe.id}"
-                      class="p-2 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                       class="inline-flex items-center justify-center h-9 w-9 text-text-muted hover:text-text-main bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0"
                       aria-label="Share recipe">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
               </button>
             </div>
-
-            <!-- View Full Recipe & Scaler CTA -->
-             <a href="recipe.html?id=${recipe.id}"
-               class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold text-brand-gold bg-surface-2 hover:bg-surface-1 border border-border-subtle rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
-              <span>${lang === "ar" ? "\u0639\u0631\u0636 \u0627\u0644\u0648\u0635\u0641\u0629 \u0648\u0627\u0644\u0645\u0642\u0627\u062F\u064A\u0631" : "View Recipe & Scaler"}</span>
-              <svg class="w-3.5 h-3.5 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-             </a>
 
            </div>
            ${this.renderCommentPanel(recipe)}
@@ -7097,13 +7097,6 @@
             const isHidden = panel.classList.toggle("hidden");
             commentsBtn.setAttribute("aria-expanded", String(!isHidden));
           }
-          return;
-        }
-        const replyBtn = e.target.closest('[data-action="reply-comment"]');
-        if (replyBtn) {
-          e.preventDefault();
-          const form = document.getElementById(replyBtn.getAttribute("data-comment-form-target"));
-          form?.querySelector("textarea")?.focus();
           return;
         }
         const submitCommentBtn = e.target.closest('[data-action="submit-comment"]');
@@ -7744,10 +7737,6 @@
                     aria-label="Save recipe">
               <svg class="w-4 h-4 ${isSaved ? "fill-current" : ""}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
             </button>
-            <a href="recipe.html?id=${recipe.id}" class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-brand-gold hover:bg-brand-gold-hover text-white rounded-xl shadow-sm transition-colors">
-              <span>${lang === "ar" ? "\u0639\u0631\u0636 \u0627\u0644\u0637\u0628\u0642" : "Cook"}</span>
-              <svg class="w-3.5 h-3.5 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-            </a>
           </div>
         </div>
       </article>
@@ -8793,17 +8782,14 @@
         const timestamp = comment.created_at || comment.timestamp || (lang === "ar" ? "\u0627\u0644\u0622\u0646" : "Just now");
         const avatar = comment.author_avatar || USER_FIXTURES.avatar;
         return `
-        <article class="comment-card flex items-start gap-3 p-4 rounded-2xl bg-surface-2 border border-border-subtle">
+        <article class="comment-card w-[95%] me-auto flex items-start gap-3 p-4 rounded-2xl bg-surface-2 border border-border-subtle">
           <img src="${escapeHtml(avatar)}" alt="${escapeHtml(author)}" class="w-9 h-9 rounded-xl object-cover border border-border-subtle shrink-0">
           <div class="min-w-0 flex-1 space-y-1.5">
             <div class="flex items-center justify-between gap-2">
               <span class="text-xs sm:text-sm font-bold text-text-main truncate">${escapeHtml(author)}</span>
               <time class="text-[10px] text-text-muted shrink-0">${escapeHtml(timestamp)}</time>
             </div>
-            <p class="text-xs sm:text-sm text-text-muted leading-relaxed break-words [overflow-wrap:anywhere]">${escapeHtml(comment.content || "")}</p>
-            <button type="button" data-action="reply-comment" data-comment-form-target="recipe-comment-form" class="text-[11px] font-semibold text-brand-gold hover:text-brand-gold-hover focus:outline-none focus:ring-2 focus:ring-brand-gold rounded">
-              <span data-i18n="reply">${I18n.t("reply")}</span>
-            </button>
+            <p class="text-sm text-text-muted leading-relaxed break-words [overflow-wrap:anywhere]">${escapeHtml(comment.content || "")}</p>
           </div>
         </article>
       `;
@@ -9507,17 +9493,24 @@
       const isSaved = savedIds.has(r.id);
       const saveBtn = document.getElementById("btn-save-recipe");
       if (saveBtn) {
-        const icon = saveBtn.querySelector(".bookmark-icon");
+        saveBtn.setAttribute("data-recipe-id", r.id);
+        const icon = saveBtn.querySelector(".bookmark-icon") || saveBtn.querySelector("svg");
         const label = saveBtn.querySelector(".save-label");
         if (isSaved) {
-          saveBtn.classList.add("text-brand-gold", "bg-surface-2");
-          saveBtn.classList.remove("text-text-muted", "bg-surface-1");
-          if (icon) icon.classList.add("fill-current");
+          saveBtn.classList.add("text-brand-gold", "bg-surface-2", "border-brand-gold");
+          saveBtn.classList.remove("text-text-muted", "bg-surface-1", "border-border-subtle");
+          if (icon) {
+            icon.setAttribute("fill", "currentColor");
+            icon.classList.add("fill-current");
+          }
           if (label) label.textContent = I18n.getLang() === "ar" ? "\u0645\u062D\u0641\u0648\u0638\u0629" : "Saved";
         } else {
-          saveBtn.classList.remove("text-brand-gold", "bg-surface-2");
-          saveBtn.classList.add("text-text-muted", "bg-surface-1");
-          if (icon) icon.classList.remove("fill-current");
+          saveBtn.classList.remove("text-brand-gold", "bg-surface-2", "border-brand-gold");
+          saveBtn.classList.add("text-text-muted", "bg-surface-1", "border-border-subtle");
+          if (icon) {
+            icon.setAttribute("fill", "none");
+            icon.classList.remove("fill-current");
+          }
           if (label) label.textContent = I18n.t("btn.save");
         }
       }
@@ -9525,20 +9518,48 @@
       const likeBtn = document.getElementById("btn-like-recipe");
       const likesCountEl = document.getElementById("recipe-likes-count");
       if (likeBtn) {
-        const icon = likeBtn.querySelector(".heart-icon");
+        likeBtn.setAttribute("data-recipe-id", r.id);
+        const icon = likeBtn.querySelector(".heart-icon") || likeBtn.querySelector("svg");
         const baseLikes = Number(r.likes_count) || 1400;
         if (isLiked) {
-          likeBtn.classList.add("text-red-500", "bg-surface-2");
-          likeBtn.classList.remove("text-text-muted", "bg-surface-1");
-          if (icon) icon.classList.add("fill-current");
+          likeBtn.classList.add("text-red-500", "bg-surface-2", "border-red-500");
+          likeBtn.classList.remove("text-text-muted", "bg-surface-1", "border-border-subtle");
+          if (icon) {
+            icon.setAttribute("fill", "currentColor");
+            icon.classList.add("fill-current");
+          }
           if (likesCountEl) likesCountEl.textContent = (baseLikes + 1).toString();
         } else {
-          likeBtn.classList.remove("text-red-500", "bg-surface-2");
-          likeBtn.classList.add("text-text-muted", "bg-surface-1");
-          if (icon) icon.classList.remove("fill-current");
+          likeBtn.classList.remove("text-red-500", "bg-surface-2", "border-red-500");
+          likeBtn.classList.add("text-text-muted", "bg-surface-1", "border-border-subtle");
+          if (icon) {
+            icon.setAttribute("fill", "none");
+            icon.classList.remove("fill-current");
+          }
           if (likesCountEl) likesCountEl.textContent = baseLikes.toString();
         }
       }
+      document.querySelectorAll('[data-action="save-recipe"]').forEach((btn) => {
+        const id = btn.getAttribute("data-recipe-id");
+        if (!id || id === r.id) return;
+        const isCardSaved = savedIds.has(id);
+        const icon = btn.querySelector("svg");
+        if (isCardSaved) {
+          btn.classList.add("text-brand-gold");
+          btn.classList.remove("text-text-muted");
+          if (icon) {
+            icon.setAttribute("fill", "currentColor");
+            icon.classList.add("fill-current", "text-brand-gold");
+          }
+        } else {
+          btn.classList.remove("text-brand-gold");
+          btn.classList.add("text-text-muted");
+          if (icon) {
+            icon.setAttribute("fill", "none");
+            icon.classList.remove("fill-current", "text-brand-gold");
+          }
+        }
+      });
       const isFollowing = followingIds.has(r.author_id);
       const followBtn = document.getElementById("btn-follow-chef");
       if (followBtn) {
@@ -9578,13 +9599,6 @@
             const isHidden = panel.classList.toggle("hidden");
             commentsToggle.setAttribute("aria-expanded", String(!isHidden));
           }
-          return;
-        }
-        const replyBtn = target.closest('[data-action="reply-comment"]');
-        if (replyBtn) {
-          e.preventDefault();
-          const form = document.getElementById(replyBtn.getAttribute("data-comment-form-target"));
-          form?.querySelector("textarea")?.focus();
           return;
         }
         const submitCommentBtn = target.closest('[data-action="submit-recipe-comment"]');
@@ -10947,10 +10961,13 @@
     static toggleLike(recipeId) {
       if (!recipeId) return false;
       const isLiked = this.likedRecipeIds.has(recipeId);
+      const isAr = I18n.getLang() === "ar";
       if (isLiked) {
         this.likedRecipeIds.delete(recipeId);
+        Toast.info(isAr ? "\u062A\u0645 \u0625\u0644\u063A\u0627\u0621 \u0627\u0644\u0625\u0639\u062C\u0627\u0628 \u0628\u0627\u0644\u0648\u0635\u0641\u0629" : "Recipe unliked");
       } else {
         this.likedRecipeIds.add(recipeId);
+        Toast.success(isAr ? "\u0623\u0639\u062C\u0628\u0643 \u0647\u0630\u0627 \u0627\u0644\u0637\u0628\u0642 \u0627\u0644\u0641\u0627\u062E\u0631!" : "Liked this gourmet dish!");
       }
       this.updateActionStates();
       return !isLiked;
@@ -11192,30 +11209,43 @@
       const savedSet = new Set(this.getSavedRecipeIds());
       const likedSet = new Set(this.getLikedRecipeIds());
       document.querySelectorAll('[data-action="toggle-save"]').forEach((btn) => {
-        const id = btn.getAttribute("data-id");
+        const id = btn.getAttribute("data-id") || btn.getAttribute("data-recipe-id");
         const isSaved = savedSet.has(id);
         const icon = btn.querySelector("svg");
         if (icon) {
           if (isSaved) {
             icon.setAttribute("fill", "currentColor");
-            btn.classList.add("text-brand-gold");
+            icon.classList.add("fill-current");
+            btn.classList.add("text-brand-gold", "border-brand-gold");
+            btn.classList.remove("text-text-muted");
           } else {
             icon.setAttribute("fill", "none");
-            btn.classList.remove("text-brand-gold");
+            icon.classList.remove("fill-current");
+            btn.classList.remove("text-brand-gold", "border-brand-gold");
+            btn.classList.add("text-text-muted");
           }
         }
       });
       document.querySelectorAll('[data-action="toggle-like"]').forEach((btn) => {
-        const id = btn.getAttribute("data-id");
+        const id = btn.getAttribute("data-id") || btn.getAttribute("data-recipe-id");
         const isLiked = likedSet.has(id);
         const icon = btn.querySelector("svg");
+        const recipe = RECIPE_FIXTURES.find((r) => r.id === id);
+        const countEl = btn.querySelector(".action-count") || btn.querySelector("span.font-mono");
+        if (recipe && countEl) {
+          countEl.textContent = String(recipe.likes_count + (isLiked ? 1 : 0));
+        }
         if (icon) {
           if (isLiked) {
             icon.setAttribute("fill", "currentColor");
+            icon.classList.add("fill-current");
             btn.classList.add("text-red-500");
+            btn.classList.remove("text-text-muted");
           } else {
             icon.setAttribute("fill", "none");
+            icon.classList.remove("fill-current");
             btn.classList.remove("text-red-500");
+            btn.classList.add("text-text-muted");
           }
         }
       });
@@ -11315,9 +11345,9 @@
             </div>
 
             <a href="recipe.html?id=${recipe.id}"
-               class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-2 hover:bg-surface-1 border border-border-subtle text-xs font-bold text-brand-gold transition-colors">
+               class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-2 hover:bg-surface-1 border border-border-subtle text-xs font-bold text-brand-gold transition-colors whitespace-nowrap">
               <span>${isAr ? "\u0639\u0631\u0636 \u0627\u0644\u0648\u0635\u0641\u0629" : "View Recipe"}</span>
-              <svg class="w-3.5 h-3.5 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              <svg class="w-3.5 h-3.5 rtl:rotate-180 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </a>
           </div>
         </article>

@@ -150,29 +150,40 @@ function setupDOM() {
     _matchSingle(singleSel) {
       const s = singleSel.trim();
       if (!s) return false;
-      if (s.startsWith('#')) {
+      if (s.startsWith('#') && !s.includes('[')) {
         return this.id === s.slice(1);
       }
-      if (s.startsWith('.')) {
+      if (s.startsWith('.') && !s.includes('[')) {
         return this.classList.contains(s.slice(1));
       }
 
-      // Tag with attribute or bare attribute
-      const tagAttrMatch = s.match(/^([a-zA-Z0-9]+)?\[([a-zA-Z0-9_-]+)(?:="([^"]*)")?\]$/);
-      if (tagAttrMatch) {
-        const [_, tagName, attrName, attrVal] = tagAttrMatch;
-        if (tagName && this.tagName.toLowerCase() !== tagName.toLowerCase()) {
+      // Tag name prefix
+      let remaining = s;
+      const tagMatch = remaining.match(/^([a-zA-Z0-9]+)/);
+      if (tagMatch) {
+        if (this.tagName.toLowerCase() !== tagMatch[1].toLowerCase()) {
           return false;
         }
-        if (attrVal !== undefined) {
-          return this.getAttribute(attrName) === attrVal;
-        }
-        return this.hasAttribute(attrName);
+        remaining = remaining.slice(tagMatch[1].length);
       }
 
-      if (s.toLowerCase() === this.tagName.toLowerCase()) {
+      // Match all [attr="val"] or [attr]
+      const attrMatches = [...remaining.matchAll(/\[([a-zA-Z0-9_-]+)(?:="([^"]*)")?\]/g)];
+      if (attrMatches.length > 0) {
+        for (const [_, attrName, attrVal] of attrMatches) {
+          if (attrVal !== undefined) {
+            if (this.getAttribute(attrName) !== attrVal) return false;
+          } else {
+            if (!this.hasAttribute(attrName)) return false;
+          }
+        }
         return true;
       }
+
+      if (tagMatch && remaining === '') {
+        return true;
+      }
+
       return false;
     }
 
@@ -459,7 +470,7 @@ function setupDOM() {
 
   ChefPage.isInitialized = false;
 
-  return { elementsById, listeners, storage, windowMock };
+  return { elementsById, listeners, storage, windowMock, doc: documentMock, Element };
 }
 
 test('ChefPage - Load Chef Profile by ID, URL Query, and Fallback', () => {
@@ -596,30 +607,56 @@ test('ChefPage - Follow / Unfollow Chef Session State & UI Feedback', () => {
 });
 
 test('ChefPage - Recipe Save & Like Toggles', () => {
-  setupDOM();
+  const { elementsById, Element } = setupDOM();
   ChefPage.reset();
   ChefPage.loadChef('chef-1');
   ChefPage.init();
+
+  const saveBtn = new Element('button');
+  saveBtn.setAttribute('data-action', 'toggle-save');
+  saveBtn.setAttribute('data-id', 'recipe-1');
+  const saveIcon = new Element('svg');
+  saveBtn.appendChild(saveIcon);
+  elementsById.set('card-save-1', saveBtn);
+
+  const likeBtn = new Element('button');
+  likeBtn.setAttribute('data-action', 'toggle-like');
+  likeBtn.setAttribute('data-id', 'recipe-1');
+  const likeIcon = new Element('svg');
+  const likeCount = new Element('span');
+  likeCount.className = 'font-mono';
+  likeBtn.appendChild(likeIcon);
+  likeBtn.appendChild(likeCount);
+  elementsById.set('card-like-1', likeBtn);
 
   // Test Bookmark Save Toggle
   assert.equal(ChefPage.getSavedRecipeIds().includes('recipe-1'), false);
   const isSaved = ChefPage.toggleSave('recipe-1');
   assert.equal(isSaved, true);
   assert.equal(ChefPage.getSavedRecipeIds().includes('recipe-1'), true);
+  assert.ok(saveBtn.classList.contains('text-brand-gold'));
+  assert.ok(saveBtn.classList.contains('border-brand-gold'));
+  assert.equal(saveIcon.getAttribute('fill'), 'currentColor');
 
   const isUnsaved = ChefPage.toggleSave('recipe-1');
   assert.equal(isUnsaved, false);
   assert.equal(ChefPage.getSavedRecipeIds().includes('recipe-1'), false);
+  assert.ok(!saveBtn.classList.contains('text-brand-gold'));
+  assert.equal(saveIcon.getAttribute('fill'), 'none');
 
   // Test Like Toggle
   assert.equal(ChefPage.getLikedRecipeIds().includes('recipe-1'), false);
   const isLiked = ChefPage.toggleLike('recipe-1');
   assert.equal(isLiked, true);
   assert.equal(ChefPage.getLikedRecipeIds().includes('recipe-1'), true);
+  assert.ok(likeBtn.classList.contains('text-red-500'));
+  assert.equal(likeIcon.getAttribute('fill'), 'currentColor');
 
   const isUnliked = ChefPage.toggleLike('recipe-1');
   assert.equal(isUnliked, false);
   assert.equal(ChefPage.getLikedRecipeIds().includes('recipe-1'), false);
+  assert.ok(!likeBtn.classList.contains('text-red-500'));
+  assert.equal(likeIcon.getAttribute('fill'), 'none');
 });
 
 test('ChefPage - Masterclass Course Enrollment', () => {

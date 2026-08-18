@@ -129,11 +129,14 @@ export class ChefPage {
   static toggleLike(recipeId) {
     if (!recipeId) return false;
     const isLiked = this.likedRecipeIds.has(recipeId);
+    const isAr = I18n.getLang() === 'ar';
 
     if (isLiked) {
       this.likedRecipeIds.delete(recipeId);
+      Toast.info(isAr ? 'تم إلغاء الإعجاب بالوصفة' : 'Recipe unliked');
     } else {
       this.likedRecipeIds.add(recipeId);
+      Toast.success(isAr ? 'أعجبك هذا الطبق الفاخر!' : 'Liked this gourmet dish!');
     }
 
     this.updateActionStates();
@@ -440,31 +443,44 @@ export class ChefPage {
     const likedSet = new Set(this.getLikedRecipeIds());
 
     document.querySelectorAll('[data-action="toggle-save"]').forEach(btn => {
-      const id = btn.getAttribute('data-id');
+      const id = btn.getAttribute('data-id') || btn.getAttribute('data-recipe-id');
       const isSaved = savedSet.has(id);
       const icon = btn.querySelector('svg');
       if (icon) {
         if (isSaved) {
           icon.setAttribute('fill', 'currentColor');
-          btn.classList.add('text-brand-gold');
+          icon.classList.add('fill-current');
+          btn.classList.add('text-brand-gold', 'border-brand-gold');
+          btn.classList.remove('text-text-muted');
         } else {
           icon.setAttribute('fill', 'none');
-          btn.classList.remove('text-brand-gold');
+          icon.classList.remove('fill-current');
+          btn.classList.remove('text-brand-gold', 'border-brand-gold');
+          btn.classList.add('text-text-muted');
         }
       }
     });
 
     document.querySelectorAll('[data-action="toggle-like"]').forEach(btn => {
-      const id = btn.getAttribute('data-id');
+      const id = btn.getAttribute('data-id') || btn.getAttribute('data-recipe-id');
       const isLiked = likedSet.has(id);
       const icon = btn.querySelector('svg');
+      const recipe = RECIPE_FIXTURES.find(r => r.id === id);
+      const countEl = btn.querySelector('.action-count') || btn.querySelector('span.font-mono');
+      if (recipe && countEl) {
+        countEl.textContent = String(recipe.likes_count + (isLiked ? 1 : 0));
+      }
       if (icon) {
         if (isLiked) {
           icon.setAttribute('fill', 'currentColor');
+          icon.classList.add('fill-current');
           btn.classList.add('text-red-500');
+          btn.classList.remove('text-text-muted');
         } else {
           icon.setAttribute('fill', 'none');
+          icon.classList.remove('fill-current');
           btn.classList.remove('text-red-500');
+          btn.classList.add('text-text-muted');
         }
       }
     });
@@ -576,9 +592,9 @@ export class ChefPage {
             </div>
 
             <a href="recipe.html?id=${recipe.id}"
-               class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-2 hover:bg-surface-1 border border-border-subtle text-xs font-bold text-brand-gold transition-colors">
+               class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-2 hover:bg-surface-1 border border-border-subtle text-xs font-bold text-brand-gold transition-colors whitespace-nowrap">
               <span>${isAr ? 'عرض الوصفة' : 'View Recipe'}</span>
-              <svg class="w-3.5 h-3.5 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              <svg class="w-3.5 h-3.5 rtl:rotate-180 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </a>
           </div>
         </article>
