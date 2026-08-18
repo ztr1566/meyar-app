@@ -189,3 +189,69 @@ test('recipe and comment CRUD validates input and enforces ownership', async () 
   const missing = await request('GET', `/api/recipes/${recipeId}`);
   assert.equal(missing.response.statusCode, 404);
 });
+
+test('supplier items and RFQs support CRUD with role and ownership rules', async () => {
+  const supplier = await register('SUPPLIER');
+  const other = await register('USER');
+  const item = await request('POST', '/api/supply-items', {
+    token: supplier.token,
+    body: {
+      title: 'API Test Mixer',
+      category: 'Equipment',
+      price: 1250,
+      unit: 'piece',
+      stock: 4,
+      status: 'IN_STOCK'
+    }
+  });
+  assert.equal(item.response.statusCode, 201);
+
+  const itemId = item.body.id;
+  createdSupplyItemIds.add(itemId);
+  const itemUpdate = await request('PATCH', `/api/supply-items/${itemId}`, {
+    token: supplier.token,
+    body: { stock: 3 }
+  });
+  assert.equal(itemUpdate.response.statusCode, 200);
+  assert.equal(itemUpdate.body.stock, 3);
+
+  const itemForbidden = await request('DELETE', `/api/supply-items/${itemId}`, {
+    token: other.token
+  });
+  assert.equal(itemForbidden.response.statusCode, 403);
+
+  const rfq = await request('POST', '/api/rfqs', {
+    token: other.token,
+    body: {
+      title: 'API Test Ingredient',
+      description: 'Need a commercial quantity for the integration test.',
+      budget: 500,
+      deadline: '2026-09-01',
+      requesterId: other.user.id
+    }
+  });
+  assert.equal(rfq.response.statusCode, 201);
+
+  const rfqId = rfq.body.id;
+  createdRfqIds.add(rfqId);
+  const rfqForbidden = await request('PATCH', `/api/rfqs/${rfqId}`, {
+    token: supplier.token,
+    body: { status: 'CLOSED' }
+  });
+  assert.equal(rfqForbidden.response.statusCode, 403);
+
+  const rfqUpdate = await request('PATCH', `/api/rfqs/${rfqId}`, {
+    token: other.token,
+    body: { status: 'CLOSED' }
+  });
+  assert.equal(rfqUpdate.response.statusCode, 200);
+  assert.equal(rfqUpdate.body.status, 'CLOSED');
+
+  const listedItems = await request('GET', '/api/supply-items?limit=10&offset=0');
+  const listedRfqs = await request('GET', '/api/rfqs?limit=10&offset=0');
+  assert.ok(listedItems.body.some(value => value.id === itemId));
+  assert.ok(listedRfqs.body.some(value => value.id === rfqId));
+
+  assert.equal((await request('DELETE', `/api/supply-items/${itemId}`, { token: supplier.token })).response.statusCode, 204);
+  assert.equal((await request('DELETE', `/api/rfqs/${rfqId}`, { token: other.token })).response.statusCode, 204);
+});
