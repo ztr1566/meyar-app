@@ -16,10 +16,9 @@ function errorBody(code, message) {
   return { error: { code, message } };
 }
 
-function safeStatusCode(error) {
-  return Number.isInteger(error.statusCode) && error.statusCode >= 400 && error.statusCode < 500
-    ? error.statusCode
-    : 500;
+function isFastifyValidationError(error) {
+  return error?.code === 'FST_ERR_VALIDATION'
+    || (typeof error?.code === 'string' && error.code.startsWith('FST_ERR_CTP_'));
 }
 
 export function buildApp({
@@ -33,14 +32,16 @@ export function buildApp({
 
   app.setErrorHandler((error, request, reply) => {
     const publicError = mapError(error);
-    const statusCode = safeStatusCode(publicError ?? error);
-    const isServerError = statusCode >= 500;
-    if (isServerError) request.log.error({ err: error }, 'Request failed');
+    if (publicError) {
+      return reply.status(publicError.statusCode).send(errorBody(publicError.code, publicError.message));
+    }
 
-    return reply.status(statusCode).send(errorBody(
-      isServerError ? 'INTERNAL_SERVER_ERROR' : (publicError?.code || error.code || 'REQUEST_ERROR'),
-      isServerError ? 'Internal Server Error' : (publicError?.message || error.message)
-    ));
+    if (isFastifyValidationError(error)) {
+      return reply.status(400).send(errorBody('VALIDATION_ERROR', 'Request validation failed'));
+    }
+
+    request.log.error({ err: error }, 'Request failed');
+    return reply.status(500).send(errorBody('INTERNAL_SERVER_ERROR', 'Internal Server Error'));
   });
 
   app.setNotFoundHandler((_request, reply) => {
