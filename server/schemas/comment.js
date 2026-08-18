@@ -7,3 +7,7 @@ export const commentCreateSchema = z.strictObject({
   authorId: id,
   recipeId: id
 });
+
+export const commentUpdateSchema = z.strictObject({
+  content: z.string().trim().min(1).max(2_000)
+});

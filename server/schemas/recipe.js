@@ -22,3 +22,6 @@ export const recipeCreateSchema = z.strictObject({
   steps: z.array(recipeStep).min(1).max(100),
   tags: z.array(z.string().trim().min(1).max(50)).max(30)
 });
+
+export const recipeUpdateSchema = recipeCreateSchema.partial()
+  .refine(value => Object.keys(value).length > 0, 'At least one recipe field is required');

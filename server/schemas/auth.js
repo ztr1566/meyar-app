@@ -15,3 +15,5 @@ export const loginSchema = z.strictObject({
   email: z.email(),
   password: z.string().min(1).max(128)
 });
+
+export const authorizationSchema = z.string().regex(/^Bearer\s+\S+$/i);
