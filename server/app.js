@@ -6,6 +6,8 @@ import { authRoutes } from './routes/auth.routes.js';
 import { userRoutes } from './routes/users.routes.js';
 import { recipeRoutes } from './routes/recipes.routes.js';
 import { commentRoutes } from './routes/comments.routes.js';
+import { supplyItemRoutes } from './routes/supply-items.routes.js';
+import { rfqRoutes } from './routes/rfqs.routes.js';
 import { registerDatabase } from './db/client.js';
 import { createAuthenticate } from './auth/guard.js';
 import { mapError } from './errors.js';
@@ -54,5 +56,7 @@ export function buildApp({
   app.register(userRoutes, { prefix: '/api/users', authenticate });
   app.register(recipeRoutes, { prefix: '/api/recipes', authenticate });
   app.register(commentRoutes, { prefix: '/api', authenticate });
+  app.register(supplyItemRoutes, { prefix: '/api/supply-items', authenticate });
+  app.register(rfqRoutes, { prefix: '/api/rfqs', authenticate });
   return app;
 }
