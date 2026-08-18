@@ -118,3 +118,74 @@ test('authentication, duplicate registration, and cross-owner updates fail safel
   });
   assert.equal(forbidden.response.statusCode, 403);
 });
+
+test('recipe and comment CRUD validates input and enforces ownership', async () => {
+  const owner = await register('CHEF');
+  const other = await register('USER');
+  const recipeInput = {
+    title: 'API Test Recipe',
+    description: 'A recipe description long enough for the API integration test.',
+    prepTime: 10,
+    cookTime: 20,
+    servings: 2,
+    difficulty: 'Medium',
+    ingredients: [{ name: 'Salt', amount: 1, unit: 'tsp' }],
+    steps: [{ instruction: 'Season and serve.' }],
+    tags: ['test']
+  };
+
+  const invalid = await request('POST', '/api/recipes', {
+    token: owner.token,
+    body: { ...recipeInput, unexpected: true }
+  });
+  assert.equal(invalid.response.statusCode, 400);
+  assert.equal(invalid.body.error.code, 'VALIDATION_ERROR');
+
+  const created = await request('POST', '/api/recipes', {
+    token: owner.token,
+    body: recipeInput
+  });
+  assert.equal(created.response.statusCode, 201);
+  const recipeId = created.body.id;
+  createdRecipeIds.add(recipeId);
+
+  const listed = await request('GET', '/api/recipes?limit=10&offset=0');
+  assert.equal(listed.response.statusCode, 200);
+  assert.ok(listed.body.some(recipe => recipe.id === recipeId));
+
+  const comment = await request('POST', `/api/recipes/${recipeId}/comments`, {
+    token: owner.token,
+    body: { content: 'Useful API comment.', authorId: owner.user.id, recipeId }
+  });
+  assert.equal(comment.response.statusCode, 201);
+  createdCommentIds.add(comment.body.id);
+
+  const comments = await request('GET', `/api/recipes/${recipeId}/comments`);
+  assert.equal(comments.response.statusCode, 200);
+  assert.equal(comments.body[0].content, 'Useful API comment.');
+
+  const commentId = comment.body.id;
+  const forbidden = await request('PATCH', `/api/comments/${commentId}`, {
+    token: other.token,
+    body: { content: 'Cross-owner edit' }
+  });
+  assert.equal(forbidden.response.statusCode, 403);
+
+  const updatedComment = await request('PATCH', `/api/comments/${commentId}`, {
+    token: owner.token,
+    body: { content: 'Updated API comment.' }
+  });
+  assert.equal(updatedComment.response.statusCode, 200);
+
+  const updatedRecipe = await request('PATCH', `/api/recipes/${recipeId}`, {
+    token: owner.token,
+    body: { title: 'Updated API Recipe' }
+  });
+  assert.equal(updatedRecipe.response.statusCode, 200);
+  assert.equal(updatedRecipe.body.title, 'Updated API Recipe');
+
+  const deleted = await request('DELETE', `/api/recipes/${recipeId}`, { token: owner.token });
+  assert.equal(deleted.response.statusCode, 204);
+  const missing = await request('GET', `/api/recipes/${recipeId}`);
+  assert.equal(missing.response.statusCode, 404);
+});
