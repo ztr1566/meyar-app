@@ -4,6 +4,11 @@ import { hashPassword, signToken, verifyPassword } from '../auth/tokens.js';
 import { PUBLIC_USER_SELECT } from './selects.js';
 
 const INVALID_CREDENTIALS = 'Invalid email or password';
+const REGISTRATION_ROLES = Object.freeze({
+  CHEF: 'CHEF',
+  SUPPLIER: 'SUPPLIER',
+  USER: 'USER'
+});
 
 export async function registerUser(input, { secret }) {
   const email = input.email.toLowerCase();
@@ -14,7 +19,7 @@ export async function registerUser(input, { secret }) {
       passwordHash,
       name: input.name,
       handle: input.handle,
-      role: input.role
+      role: REGISTRATION_ROLES[input.role] ?? REGISTRATION_ROLES.USER
     },
     select: PUBLIC_USER_SELECT
   });

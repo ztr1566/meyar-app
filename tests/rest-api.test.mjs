@@ -49,7 +49,8 @@ async function register(role = 'USER') {
       role
     }
   });
-  assert.equal(result.response.statusCode, 201);
+  assert.equal(result.response.statusCode, 201, result.response.body);
+  assert.ok(result.body?.user?.id, 'registration response must include a user id');
   createdUserIds.add(result.body.user.id);
   return result.body;
 }

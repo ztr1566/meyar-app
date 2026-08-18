@@ -20,11 +20,12 @@ export async function getUser(id) {
   return user;
 }
 
-export function updateUser(id, actorId, data) {
+export function updateUser(id, actorId, profile) {
   assertOwner(actorId, id);
+  const { name, handle, avatar, bio, location } = profile;
   return prisma.user.update({
     where: { id },
-    data,
+    data: { name, handle, avatar, bio, location },
     select: PUBLIC_USER_SELECT
   });
 }
