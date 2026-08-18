@@ -28,7 +28,7 @@ export async function getRecipe(id) {
     where: { id },
     include: RECIPE_DETAIL_INCLUDE
   });
-  if (!recipe) throw notFound('Recipe not found');
+  if (!recipe) throw notFound();
   return recipe;
 }
 

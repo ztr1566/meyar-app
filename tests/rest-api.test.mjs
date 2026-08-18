@@ -255,3 +255,21 @@ test('supplier items and RFQs support CRUD with role and ownership rules', async
   assert.equal((await request('DELETE', `/api/supply-items/${itemId}`, { token: supplier.token })).response.statusCode, 204);
   assert.equal((await request('DELETE', `/api/rfqs/${rfqId}`, { token: other.token })).response.statusCode, 204);
 });
+
+test('API rejects missing auth, malformed params, unknown fields, and missing resources', async () => {
+  const unauthenticated = await request('POST', '/api/recipes', { body: {} });
+  assert.equal(unauthenticated.response.statusCode, 400);
+
+  const noToken = await request('GET', '/api/auth/me');
+  assert.deepEqual(noToken.body.error, {
+    code: 'UNAUTHORIZED',
+    message: 'Authentication required'
+  });
+
+  const missing = await request('GET', '/api/recipes/does-not-exist');
+  assert.deepEqual(missing.body.error, {
+    code: 'NOT_FOUND',
+    message: 'Resource not found'
+  });
+  assert.doesNotMatch(missing.response.body, /stack|prisma|passwordHash/i);
+});
