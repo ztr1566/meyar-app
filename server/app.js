@@ -4,6 +4,8 @@ import { staticPlugin, PROJECT_ROOT } from './plugins/static.js';
 import { healthRoutes } from './routes/health.routes.js';
 import { authRoutes } from './routes/auth.routes.js';
 import { userRoutes } from './routes/users.routes.js';
+import { recipeRoutes } from './routes/recipes.routes.js';
+import { commentRoutes } from './routes/comments.routes.js';
 import { registerDatabase } from './db/client.js';
 import { createAuthenticate } from './auth/guard.js';
 import { mapError } from './errors.js';
@@ -50,5 +52,7 @@ export function buildApp({
   const authenticate = createAuthenticate({ secret: authSecret });
   app.register(authRoutes, { prefix: '/api/auth', secret: authSecret });
   app.register(userRoutes, { prefix: '/api/users', authenticate });
+  app.register(recipeRoutes, { prefix: '/api/recipes', authenticate });
+  app.register(commentRoutes, { prefix: '/api', authenticate });
   return app;
 }

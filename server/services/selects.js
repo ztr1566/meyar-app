@@ -19,3 +19,11 @@ export const PUBLIC_AUTHOR_SELECT = {
   avatar: true,
   verified: true
 };
+
+export const PUBLIC_COMMENT_SELECT = {
+  id: true,
+  content: true,
+  createdAt: true,
+  updatedAt: true,
+  author: { select: PUBLIC_AUTHOR_SELECT }
+};
