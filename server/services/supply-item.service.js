@@ -53,9 +53,12 @@ export async function updateSupplyItem(id, actor, supplyData) {
   if (!supplyItem) throw notFound('Supply item not found');
   assertOwner(actor.id, supplyItem.supplierId);
 
+  const updateData = { ...supplyData };
+  delete updateData.supplierId;
+
   return prisma.supplyItem.update({
     where: { id },
-    data: supplyData,
+    data: updateData,
     select: SUPPLY_ITEM_SELECT
   });
 }

@@ -58,6 +58,7 @@ export async function updateRfq(id, actorId, rfqData) {
   assertOwner(actorId, rfq.requesterId);
 
   const updateData = { ...rfqData };
+  delete updateData.requesterId;
   if (updateData.deadline) updateData.deadline = new Date(updateData.deadline);
 
   return prisma.rfq.update({
